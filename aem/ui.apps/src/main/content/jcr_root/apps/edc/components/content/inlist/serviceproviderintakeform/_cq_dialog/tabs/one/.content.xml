@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured" jcr:title="Step 1"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content jcr:primaryType="nt:unstructured"
+         sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <title
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Title"
+                required="{Boolean}true"
+                name="./title"/>
+            <description
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                fieldLabel="Description"
+                name="./description"
+                required="{Boolean}true"
+                useFixedInlineToolbar="{Boolean}true">
+                <rtePlugins jcr:primaryType="nt:unstructured">
+                    <format
+                        jcr:primaryType="nt:unstructured"
+                        features="*"/>
+                    <lists
+                        jcr:primaryType="nt:unstructured"
+                        features="*"/>
+                    <links
+                        jcr:primaryType="nt:unstructured"
+                        features="*"/>
+                </rtePlugins>
+                <uiSettings jcr:primaryType="nt:unstructured">
+                    <cui jcr:primaryType="nt:unstructured">
+                        <inline
+                            jcr:primaryType="nt:unstructured"
+                            toolbar="[format#bold,format#italic,format#underline,#lists,links#modifylink,links#unlink,links#anchor]">
+                            <popovers jcr:primaryType="nt:unstructured">
+                                <lists
+                                    jcr:primaryType="nt:unstructured"
+                                    items="[lists#unordered,lists#ordered,lists#outdent,lists#indent]"
+                                    ref="lists"/>
+                            </popovers>
+                        </inline>
+                    </cui>
+                </uiSettings>
+            </description>
+            <stepbluetitle
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Step 1 progress title"
+                name="./step1bluetitle"
+                required="{Boolean}true"/>
+            <steptitle
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Step 1 title"
+                name="./step1title"
+                required="{Boolean}true"/>
+            <stepdescription
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                fieldLabel="Step 1 description"
+                name="./step1description"/>
+            <firstname
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <heading
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/text"
+                        class="coral-Form-fieldlabel"
+                        text="First name"/>
+                    <well
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <label
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Label"
+                                name="./firstnameLabel"
+                                required="{Boolean}true"/>
+                            <help
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Placeholder"
+                                name="./firstnameHelp"/>
+                        </items>
+                    </well>
+                </items>
+            </firstname>
+            <lastname
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <heading
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/text"
+                        class="coral-Form-fieldlabel"
+                        text="Last name"/>
+                    <well
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <label
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Label"
+                                name="./lastnameLabel"
+                                required="{Boolean}true"/>
+                            <help
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Placeholder"
+                                name="./lastnameHelp"/>
+                        </items>
+                    </well>
+                </items>
+            </lastname>
+            <jobtitle
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <heading
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/text"
+                        class="coral-Form-fieldlabel"
+                        text="Job title"/>
+                    <well
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <label
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Label"
+                                name="./jobtitleLabel"
+                                required="{Boolean}true"/>
+                            <help
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Placeholder"
+                                name="./jobtitleHelp"/>
+                        </items>
+                    </well>
+                </items>
+            </jobtitle>
+            <businessemail
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <heading
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/text"
+                        class="coral-Form-fieldlabel"
+                        text="Business email"/>
+                    <well
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <label
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Label"
+                                name="./businessemailLabel"
+                                required="{Boolean}true"/>
+                            <help
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Placeholder"
+                                name="./businessemailHelp"/>
+                        </items>
+                    </well>
+                </items>
+            </businessemail>
+            <businessphone
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <heading
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/text"
+                        class="coral-Form-fieldlabel"
+                        text="Contact phone"/>
+                    <well
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <label
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Label"
+                                name="./businessphoneLabel"
+                                required="{Boolean}true"/>
+                            <help
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Placeholder"
+                                name="./businessphoneHelp"/>
+                        </items>
+                    </well>
+                </items>
+            </businessphone>
+            <sectiontitlereferralinfo
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Referral information title"
+                name="./referralinfoheading"/>
+            <sectiondescriptionreferralinfo
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                fieldLabel="Referral information description"
+                name="./referralinfodescription"/>
+            <preferredway
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <heading
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/text"
+                        class="coral-Form-fieldlabel"
+                        text="Preferred way to receive referrals"/>
+                    <well
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <label
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Label"
+                                name="./preferredwayLabel"
+                                required="{Boolean}true"/>
+                        </items>
+                    </well>
+                </items>
+            </preferredway>
+            <followuptime
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <heading
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/text"
+                        class="coral-Form-fieldlabel"
+                        text="Time to follow up"/>
+                    <well
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <label
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Label"
+                                name="./followuptimeLabel"
+                                required="{Boolean}true"/>
+                            <help
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Placeholder"
+                                name="./followuptimeHelp"/>
+                        </items>
+                    </well>
+                </items>
+            </followuptime>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <option1
+        jcr:primaryType="nt:unstructured"
+        enName="No exports"
+        frName="Pas d'exportations"
+        value="No exports"/>
+    <option2
+        jcr:primaryType="nt:unstructured"
+        enName="Last 12 months"
+        frName="Moins de 12 mois"
+        value="Last 12 months"/>
+    <option3
+        jcr:primaryType="nt:unstructured"
+        enName="1-3 years"
+        frName="1-3 ans"
+        value="1-3 years"/>
+    <option4
+        jcr:primaryType="nt:unstructured"
+        enName="4-5 years"
+        frName="4-5 ans"
+        value="4-5 years"/>
+    <option5
+        jcr:primaryType="nt:unstructured"
+        enName="6-10 years"
+        frName="6-10 ans"
+        value="6-10 years"/>
+    <option6
+        jcr:primaryType="nt:unstructured"
+        enName="More than 10 years"
+        frName="Plus de 10 ans"
+        value="More than 10 years"/>
+</jcr:root>

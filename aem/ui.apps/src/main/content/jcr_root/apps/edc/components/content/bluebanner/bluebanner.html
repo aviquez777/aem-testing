@@ -1,0 +1,29 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+<sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.bodyText}"/>
+<sly data-sly-use.cta1="${'com.edc.edcweb.core.models.ParamTextUrlLinks' @ linkText=properties.linkText1, linkUrl=properties.linkUrl1, linkTarget=properties.linkTarget1}"/>
+<sly data-sly-use.cta2="${'com.edc.edcweb.core.models.ParamTextUrlLinks' @ linkText=properties.linkText2, linkUrl=properties.linkUrl2, linkTarget=properties.linkTarget2}"/>
+    <section class="c-blue-banner ${properties.fullWidth == 'yes' ? 'full-width' : ''}  " data-event-component="" data-event-type="" data-event-name="banner-lightblue" data-event-engagement="1" data-event-action="" data-event-level="1">
+        <div class="blue-banner-container ${properties.bannerColor}">
+                <div>
+                    <img data-sly-test="${properties.bannerImg}" src="${properties.bannerImg}" alt="${properties.imgAlt ? properties.imgAlt : 'Image Banner'}" />
+                    <h3 data-sly-test="${properties.bodyTitle}" class="banner-title">${properties.bodyTitle}</h3>
+                    <div class="banner-content">
+                        <sly data-sly-test="${!properties.linkText2}">
+                            <p>${properties.bodyText @ context="html"} <span><a href="${cta1.linkUrl}" target="${cta1.linkTarget}" >${cta1.linkText}</a></span></p>
+                        </sly>  
+                        <sly data-sly-test="${properties.linkText2}">
+                            <p>${properties.bodyText @ context="html"}</p>
+                            <div class="links">
+                                <a href="${cta1.linkUrl}" target="${cta1.linkTarget}" >${cta1.linkText}</a>
+                                <a href="${cta2.linkUrl}" target="${cta2.linkTarget}">${cta2.linkText}</a>
+                            </div>
+                        </sly>
+                    </div>
+                </div>
+            </sly>
+        </div>
+    </section>
+</sly>

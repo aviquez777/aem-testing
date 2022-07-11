@@ -1,0 +1,192 @@
+@charset "UTF-8";
+.c-apsg-form {
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+    margin: 6.5rem 0;
+}
+
+.c-apsg-form * {
+    box-sizing: border-box;
+}
+
+.c-apsg-form span.error {
+    display: none;
+}
+
+.c-apsg-form .form-group input.error ~ span.error,
+.c-apsg-form .form-group input.error + span.error,
+.c-apsg-form .form-group select.error + span.error,
+.c-apsg-form .form-group textarea.error + span.error,
+.c-apsg-form .form-group .c-dropdown span.error {
+    margin-bottom: 1.25rem;
+}
+
+.c-apsg-form .error span.error {
+    display: block;
+}
+
+.c-apsg-form .hide {
+    display: none;
+}
+
+.c-apsg-form .form-row::after {
+    clear: both;
+    content: '';
+    display: block;
+}
+
+.c-apsg-form.processing {
+    border-bottom: 0;
+}
+
+.c-apsg-form.processing .content {
+    display: none;
+}
+
+.c-apsg-form .content {
+    padding: 0 15px;
+}
+
+.c-apsg-form .content .form-group.edc-reference-number {
+    display: none;
+}
+
+.c-apsg-form .content .form-group.edc-reference-number.show {
+    display: block;
+}
+
+.c-apsg-form .content .bank-section .other-bank {
+    display: none;
+}
+
+.c-apsg-form .content .bank-section .other-bank.show {
+    display: block;
+}
+
+.c-apsg-form .content .grey-bg {
+    background-color: #f5f5f5;
+    border-radius: 4px;
+}
+
+.c-apsg-form .content .checkbox-item {
+    display: flex;
+    padding: 1rem;
+    margin: 0;
+    margin-bottom: .5rem;
+}
+
+.c-apsg-form .content .checkbox-item input {
+    display: inline-block;
+    width: 1rem;
+    margin: 0;
+    margin-top: 4px;
+}
+
+.c-apsg-form .content .checkbox-item .input-description {
+    display: inline-block;
+    width: calc(100% - 1rem);
+    padding-left: 1rem;
+}
+
+.c-apsg-form .content .checkbox-item .input-description label {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.c-apsg-form .content .checkbox-item span.error {
+    margin-bottom: 0;
+}
+
+.c-apsg-form .content .checkbox-item label {
+    margin: 0;
+}
+
+.c-apsg-form .content .submit-disclaimer {
+    padding-bottom: 1rem;
+}
+
+.c-apsg-form .content .submit-disclaimer p {
+    display: inline-block;
+    margin: 0;
+    padding: 0 1rem 1rem 3rem;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    color: #191919;
+}
+
+.c-apsg-form .content .actions button {
+    margin-bottom: 32px;
+}
+
+.c-apsg-form .content .text div:not(.options) {
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% - 32px);
+    margin-top: 0;
+}
+
+.c-apsg-form .content .text div:not(.options) p {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.7142;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+@media (min-width: 720px) {
+    .c-apsg-form .content .text div:not(.options) p {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-apsg-form .content .text div:not(.options) p {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+.c-apsg-form .content textarea {
+    resize: none;
+}
+
+.c-apsg-form .content .input-group-icon .calendar::after {
+    content: "";
+    font-family: "iconfonts";
+    font-style: normal;
+    color: #004a6b;
+    font-size: 14px;
+}
+
+@media (min-width: 960px) {
+    .c-apsg-form {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-apsg-form {
+        width: 50%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-apsg-form .content .title {
+        margin-bottom: 3rem;
+    }
+}

@@ -1,0 +1,215 @@
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+
+<sly data-sly-use.formsTemplates="${'/apps/edc/components/common/forms.html'}"/>
+<sly data-sly-use.buttonTemplate="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+<sly data-sly-use.dropdownTemplates="${'/apps/edc/components/common/dropdown.html'}" />
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+
+<sly data-sly-include="/apps/edc/components/common/csrf-token.html"/>
+
+<sly data-sly-test.hasvalues="${properties.tcTitle}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !hasvalues}"/>
+<sly data-sly-use.brokerRegistrationForm="com.edc.edcweb.core.models.BrokerRegistrationForm"/>
+
+<sly data-sly-use.messages="com.edc.edcweb.core.models.FormCommonMessages"/>
+
+<!--/* Provinces */-->
+<sly data-sly-use.ds="${'com.edc.edcweb.core.models.FormCommonObjects' @ path ='/apps/edc/settings/wcm/designs/edc-data/province'}"/>
+<sly data-sly-test.provinces="${ds.optionsFromDataSourcePath}" />
+
+<div data-sly-test="${hasvalues}">
+    <sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+    <sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+    <sly data-sly-use.encryptedPath="${'com.edc.edcweb.core.helpers.EncryptUtils' @ toEncrypt=currentPage.path}"/>
+    <sly data-sly-use.multifield="${'com.edc.edcweb.core.helpers.MultifieldReaderHelper' @ multifield = 'itemsTermsConditions'}"/>
+    <sly data-sly-test.tcs="${multifield.fields}"/>
+    <section class="c-broker-registration" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'broker registration form'}" data-event-type="form" data-event-name="form submit - broker registration" data-event-engagement="3" data-event-action="main body" data-event-destination-page="" data-event-level="primary">
+        <div class="steps step-1">
+            <h2>${properties.tcTopText}</h2>
+            <p>${properties.tcNote}</p>
+            <h2>${properties.tcTitle}</h2>
+            <sly data-sly-list="${tcs}">
+                <sly data-sly-test.accordionId="${uuid}-${itemList.count}"/>
+                <div class="accordion-${accordionId}">
+                    <div class="panel" aria-label="${item.tcItemTitle}" role="region" aria-expanded="${wcmmode.disabled ? 'false' : 'true'}">
+                        <h3 class="button-heading">
+                            <button class="panel-label" id="panel-button-${accordionId}" aria-expanded="${wcmmode.disabled ? 'false' : 'true'}"  aria-controls="content-container-${accordionId}">${item.tcItemTitle}
+                                <i class="icon-arrow"></i><!-- //NOSONAR -->
+                            </button>
+                        </h3>
+                        <div id="content-container-${accordionId}" aria-labelledby="panel-button-${accordionId}" aria-hidden="${wcmmode.disabled ? 'true' : 'false'}" class="panel-inner shown">
+                            <div class="panel-content">
+                                ${item.tcItemText @ context='html'}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </sly>
+            <div class="text">
+                <h3>${properties.acknowledgementTitle}</h3>
+                ${properties.acknowledgementText @ context='html'}
+            </div>
+            <form>
+                <div class="form-disclaimer form-group grey-bg">
+                    <input type="checkbox" data-checkbox="1" class="form-control" id="step1Confirmation" name="step1Confirmation" data-no-url required/>
+                    <label for="step1Confirmation">${properties.ckTermsConditionsText}</label>
+                    <span class="error" data-checkbox-message="${messages.formErrorMessages.required}"></span>
+                </div>
+                <div class="actions">
+                    <!--/* <button type="button" class="button edc-primary-btn">
+                        <span>${properties.ctaContinue ? properties.ctaContinue : 'Continue' }</span>
+                    </button> */-->
+                    <div data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled', buttontext=properties.ctaContinue ? properties.ctaContinue : 'Continue', btntype='button'}"  data-sly-unwrap></div>
+                </div>
+            </form>
+        </div>
+        <div class="steps step-2 ${wcmmode.edit ? '': 'hide'}">
+            <!--/* AddressComplete */-->
+            <sly data-sly-test.addressService="${brokerRegistrationForm.addressCompleteService}" />
+            <sly data-sly-test.addressCompleteKey="${brokerRegistrationForm.addressCompleteKey @ context='text'}"/>
+            <link data-sly-test="${addressCompleteKey}" rel="stylesheet" type="text/css" href="${brokerRegistrationForm.addressCompleteCSSUrl @ context='text'}${addressService == 'CandaPost' ? addressCompleteKey : '' @ context='text'}" />
+            <script data-sly-test="${addressCompleteKey}" type="text/javascript" src="${brokerRegistrationForm.addressCompleteJSUrl @ context='text'}${addressService == 'CandaPost' ? addressCompleteKey : '' @ context='text'}"></script>
+            <!--/* AddressComplete */-->
+            <form method="post" name="${brokerRegistrationForm.eloquaFormName}" novalidate="" action="/bin/brokerForm" id="form${brokerRegistrationForm.eloquaFormId}" class="broker-registration-form">
+                <sly data-sly-call="${formsTemplates.formhiddenfields @ elqFormName=brokerRegistrationForm.eloquaFormName,
+                lang=brokerRegistrationForm.pageLanguage, inquiryID=properties.inquiryID,
+                formID=brokerRegistrationForm.eloquaFormId}">
+                </sly>
+                <input type="hidden" name="_charset_" id="_charset_" class="form-control" data-no-url value="UTF-8" />
+                <input type="hidden"class="form-control" validation-rule="none" name="cp" value="${encryptedPath.encrypted}"/>
+                <div class="content">
+                    <h2 class="title">${properties.brokerRegistrationTitle}</h2>
+                    <p>${properties.brokerRegistrationNote}.</p>
+                    <div class="form-row">
+                        <div class="firstName">
+                            <label for="firstName">${properties.firstname}</label>
+                            <input type="text" class="form-control" name="firstName" id="firstName" data-no-url="true" required="" validation-rule="name" />
+                            <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                        </div>
+                        <div class="lastName">
+                            <label for="lastName">${properties.lastName}</label>
+                            <input type="text" class="form-control" name="lastName" id="lastName" data-no-url="true" required="" validation-rule="name" />
+                            <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="jobTitle">
+                            <label for="jobTitle">${properties.jobTitle}</label>
+                            <input type="text" id="jobTitle" class="form-control" name="title" data-no-url="true" required="" validation-rule="none" />
+                            <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="companyName">
+                            <label for="companyName">${properties.legalNameCompany}</label>
+                            <input type="text" class="form-control" name="companyName" id="companyName" placeholder="${properties.legalNameCompanyPlaceHolder}" data-no-url="true" required="" validation-rule="legalName" />
+                            <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="companyAddress">
+                            <label for="companyAddress1-${uuid}">${properties.address}</label>
+                            <input type="text" class="form-control" name="companyAddress" id="companyAddress1-${uuid}" data-no-url="true" required="" validation-rule="address1" />
+                            <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                        </div>
+                        <div class="companyAddress2">
+                            <label for="companyAddress2-${uuid}"></label>
+                            <input type="text" class="form-control" name="companyAddress2" id="companyAddress2-${uuid}" placeholder="${properties.secondAddress}" data-no-url="true" validation-rule="address2" />
+                            <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="city">
+                            <label for="companyCity-${uuid}">${properties.city}</label>
+                            <input type="text" class="form-control" name="companyCity" id="companyCity-${uuid}" data-no-url="true" required="" validation-rule="city" />
+                            <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                        </div>
+                        <div class="postalCode">
+                            <label for="companyPostal-${uuid}">${properties.postalCode}</label>
+                            <input type="text" class="form-control" name="companyPostalCan" id="companyPostal-${uuid}" data-no-url="true" required="" validation-rule="postalCodeCan" />
+                            <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.canpostalcode}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="province">
+                            <div class="c-dropdown">
+                                <div class="dropdown-overlay">
+                                    <sly data-sly-call="${dropdownTemplates.dropdown @ name='province', label=properties.provinceTerritory,
+                    placeholder=properties.provinceTerritoryPlaceholder, required=true, nourl=true,
+                    requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=provinces, uuid=uuid}">
+                                    </sly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="phone-number">
+                            <label for="phoneNumber">${properties.businessPhone}</label>
+                            <input type="tel" class="form-control" placeholder="${properties.businessPhonePlaceholder}" name="phoneNumber" id="phoneNumber" required="" />
+                            <span class="error" data-req-message="${messages.formErrorMessages.required}" data-tel-message="${messages.formErrorMessages.phone}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="emailAddress">
+                            <label for="emailAddress">${properties.emailAddress}</label>
+                            <input type="email" class="form-control" name="emailAddress" id="emailAddress" required="" />
+                            <span class="error" data-req-message="${messages.formErrorMessages.required}" data-email-message="${messages.formErrorMessages.email}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="companyWebsite">
+                            <label for="companyWebsite">${properties.website}</label>
+                            <input type="text" class="form-control" name="companyWebsite" id="companyWebsite" placeholder="${properties.websitePlaceholder}" required=""  />
+                            <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                        </div>
+                    </div>
+                    <div class="form-disclaimer form-group grey-bg">
+                        <input type="checkbox" id="acceptDisclaimer" data-checkbox="2" class="form-control" name="acceptDisclaimer" data-no-url="true" value="yes" required="" />
+                        <label for="acceptDisclaimer">
+                            <span>${properties.acceptDisclaimer @ context='html'}</span>
+                        </label>
+                        <span class="error" data-checkbox-message="${messages.formErrorMessages.checkbox}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                    </div>
+                    <div class="form-disclaimer form-group">
+                        <input type="checkbox" class="form-control" name="caslConsent" id="caslConsent" data-no-url="true" value="yes" />
+                        <label for="caslConsent">${properties.checkboxNewsletters}</label>
+                        <span class="error" data-checkbox-message="${messages.formErrorMessages.checkbox}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                    </div>
+                    <div class="actions">
+                        <!--/* <button type="submit">
+                            <span>${properties.submit ? properties.submit : 'Submit'}</span>
+                        </button> */-->
+                        <div data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled', buttontext=properties.submit ? properties.submit : 'Submit', btntype='button'}"  data-sly-unwrap></div>
+                    </div>
+                    <div class="submit-failed-message hide">
+                        <p>${properties.submitfailedMessage}</p>
+                    </div>
+                </div>
+
+                <div class="c-processing-screen ${wcmmode.edit ? 'c-processing-screen--edit': ''}" role="complementary">
+                    <div class="processing-section">
+                        <div class="loading">
+                            <div class="spinning-circle">
+                                <div class="outer-circle">
+                                    <div class="inner-cirle">${properties.loadingText}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <h2>${properties.processingTitle}</h2>
+                        <p>${properties.processingMessage}</p>
+                    </div>
+                    <div class="success-message">
+                        <h2 class="title-color">${properties.successTitle}</h2>
+                        <div>${properties.successMessage}</div>
+                    </div>
+                </div>
+
+            </form>
+            <sly data-sly-use.scriptsTemplate="/apps/edc/components/common/autocompletescripts.html"/>
+            <sly data-sly-test="${addressService == 'CandaPost'}" data-sly-call="${scriptsTemplate.canadPost @ apiKey=addressCompleteKey}"/>
+            <sly data-sly-test="${addressService == 'Loqate'}" data-sly-call="${scriptsTemplate.loqate @ apiKey=addressCompleteKey, uuid=uuid, useDefaultCountry='true'}"/>
+        </div>
+    </section>
+</div>

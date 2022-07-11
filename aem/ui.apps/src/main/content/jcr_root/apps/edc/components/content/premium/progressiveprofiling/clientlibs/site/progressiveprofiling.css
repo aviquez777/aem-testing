@@ -1,0 +1,605 @@
+.c-progressive-profiling {
+    border-top: 1px solid rgba(51, 51, 51, 0.3);
+    box-sizing: border-box;
+    margin-bottom: 32px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.c-progressive-profiling * {
+    box-sizing: border-box;
+}
+
+.c-progressive-profiling.email-closed {
+    border-top: 0;
+}
+
+.c-progressive-profiling.processing {
+    flex-direction: column;
+}
+
+.c-progressive-profiling.hide,
+.c-progressive-profiling .hide,
+.c-progressive-profiling span.error {
+    display: none;
+}
+
+.c-progressive-profiling .sneak-peek-container {
+    text-align: center;
+}
+
+.c-progressive-profiling .sneak-peek-container .sneak-peek {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+}
+
+.c-progressive-profiling .success-message {
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    width: 100%;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+}
+
+@media (min-width: 720px) {
+    .c-progressive-profiling .success-message {
+        width: 100%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.c-progressive-profiling .success-message h2 {
+    margin-bottom: 32px;
+}
+
+.c-progressive-profiling .description {
+    font-size: 19px;
+    line-height: 1.6;
+}
+
+.c-progressive-profiling.l1-4 .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.c-progressive-profiling.l1-4 .form-group .email-disclaimer,
+.c-progressive-profiling.l1-4 .form-group .form-ctas {
+    display: flex;
+}
+
+.c-progressive-profiling.l1-4 .form-group .email-disclaimer .button,
+.c-progressive-profiling.l1-4 .form-group .form-ctas .button {
+    width: 100%;
+}
+
+.c-progressive-profiling.l1-4 .form-group p {
+    order: 1;
+}
+
+.c-progressive-profiling.l1-4 .form-group label {
+    order: 2;
+}
+
+.c-progressive-profiling.l1-4 .form-group input {
+    order: 3;
+}
+
+.c-progressive-profiling.l1-4 .form-group .email-disclaimer {
+    order: 5;
+}
+
+.c-progressive-profiling.l1-4 .form-group span {
+    order: 6;
+}
+
+.c-progressive-profiling.l1-4 .form-group .form-ctas {
+    order: 4;
+    margin-bottom: 1rem;
+}
+
+.c-progressive-profiling form.accessed .email-disclaimer.hide {
+    display: none;
+}
+
+.c-progressive-profiling .myedc-container {
+    background-color: #f4f8fc;
+    text-align: center;
+    margin: auto;
+    padding: 2.5rem 1rem;
+}
+
+.c-progressive-profiling .myedc-container.hide {
+    display: none;
+}
+
+.c-progressive-profiling .myedc-container h3 {
+    margin-top: 0;
+}
+
+.c-progressive-profiling .myedc-container a {
+    font-weight: 300;
+}
+
+.c-progressive-profiling .myedc-container a.button {
+    border: 1px solid #2f78c6;
+    background-color: #f4f8fc;
+    color: #1a65b2;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.c-progressive-profiling .myedc-container a.secondary-anchor {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #404041;
+    display: block;
+    margin-top: 0.5rem;
+}
+
+.c-progressive-profiling.logged-in form {
+    padding: 0;
+}
+
+.c-progressive-profiling.logged-in.hide,
+.c-progressive-profiling.logged-in .myedc-container {
+    display: none;
+}
+
+.c-progressive-profiling.logged-in .level-1 h2 {
+    text-align: center;
+}
+
+.c-progressive-profiling.logged-in .level-1 .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.c-progressive-profiling.logged-in .level-1 .form-group label,
+.c-progressive-profiling.logged-in .level-1 .form-group .email-submit,
+.c-progressive-profiling.logged-in .level-1 .form-group .email-disclaimer {
+    display: none;
+}
+
+.c-progressive-profiling.logged-in .level-1 .form-group .form-ctas {
+    order: 1;
+}
+
+.c-progressive-profiling.logged-in .level-1 .form-group .form-ctas .button {
+    width: 100%;
+}
+
+.c-progressive-profiling.logged-in .level-1 .form-group .description {
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.7142;
+    order: 2;
+}
+
+.c-progressive-profiling .levels {
+    clear: both;
+}
+
+.c-progressive-profiling .levels.email-section {
+    overflow: auto;
+}
+
+.c-progressive-profiling .levels .bottom-ctas {
+    align-items: center;
+    clear: both;
+}
+
+.c-progressive-profiling .levels .bottom-ctas .email-disclaimer {
+    padding-right: 30px;
+}
+
+.c-progressive-profiling .levels .bottom-ctas .email-disclaimer > p {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    letter-spacing: 0.4px;
+    line-height: 2;
+    margin: 0;
+}
+
+@media (min-width: 720px) {
+    .c-progressive-profiling .levels .bottom-ctas .email-disclaimer > p {
+        font-size: .75rem;
+        line-height: 2;
+        letter-spacing: 0.4px;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-progressive-profiling .levels .bottom-ctas .email-disclaimer > p {
+        font-size: .75rem;
+        line-height: 2;
+        letter-spacing: 0.4px;
+    }
+}
+
+.c-progressive-profiling .levels .form-ctas {
+    margin-bottom: 32px;
+}
+
+.c-progressive-profiling .levels .form-ctas .back,
+.c-progressive-profiling .levels .form-ctas .cancel {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+}
+
+.c-progressive-profiling .levels .form-ctas .cancel {
+    margin-bottom: 48px;
+}
+
+.c-progressive-profiling .levels .form-group {
+    margin-bottom: 16px;
+}
+
+.c-progressive-profiling .levels .form-group .email-disclaimer > p {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    letter-spacing: 0.4px;
+    line-height: 2;
+    margin-bottom: 32px;
+    margin-top: 0;
+}
+
+@media (min-width: 720px) {
+    .c-progressive-profiling .levels .form-group .email-disclaimer > p {
+        font-size: .75rem;
+        line-height: 2;
+        letter-spacing: 0.4px;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-progressive-profiling .levels .form-group .email-disclaimer > p {
+        font-size: .75rem;
+        line-height: 2;
+        letter-spacing: 0.4px;
+    }
+}
+
+.c-progressive-profiling .levels .level-1 .form-group input.error ~ span.error {
+    margin-bottom: 1rem;
+}
+
+.c-progressive-profiling .levels .level-1,
+.c-progressive-profiling .levels .level-2,
+.c-progressive-profiling .levels .level-3,
+.c-progressive-profiling .levels .level-4,
+.c-progressive-profiling .levels .level-5 {
+    min-height: 1px;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    width: 100%;
+}
+
+@media (min-width: 720px) {
+    .c-progressive-profiling .levels .level-1,
+    .c-progressive-profiling .levels .level-2,
+    .c-progressive-profiling .levels .level-3,
+    .c-progressive-profiling .levels .level-4,
+    .c-progressive-profiling .levels .level-5 {
+        width: 100%;
+        float: left;
+    }
+}
+
+.c-progressive-profiling .levels .level-1 .section-title,
+.c-progressive-profiling .levels .level-2 .section-title,
+.c-progressive-profiling .levels .level-3 .section-title,
+.c-progressive-profiling .levels .level-4 .section-title,
+.c-progressive-profiling .levels .level-5 .section-title {
+    border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+    margin-bottom: 2rem;
+    margin-top: 0;
+    padding-bottom: .5rem;
+}
+
+.c-progressive-profiling .levels .headings,
+.c-progressive-profiling .levels .title {
+    margin-bottom: 32px;
+    margin-top: 48px;
+}
+
+.c-progressive-profiling .levels .subheading {
+    margin-bottom: 0;
+}
+
+.c-progressive-profiling .status {
+    border-top: 1px solid rgba(51, 51, 51, 0.3);
+    clear: both;
+}
+
+.c-progressive-profiling .status .status-bar {
+    min-height: 1px;
+    padding-left: 0;
+    padding-right: 15px;
+    position: relative;
+    width: 8.33333333%;
+    float: left;
+    border-top: 4px solid #007C03;
+}
+
+.c-progressive-profiling .status.full .status-bar {
+    padding: 0;
+    width: 0;
+}
+
+.c-progressive-profiling .show {
+    display: inline-block;
+}
+
+.c-progressive-profiling .show-block {
+    display: block;
+}
+
+.c-progressive-profiling .show-flex {
+    align-items: center;
+    display: flex;
+    display: -webkit-flex;
+}
+
+.c-progressive-profiling .space-center {
+    justify-content: space-between;
+}
+
+.c-progressive-profiling .space-end {
+    justify-content: flex-end;
+}
+
+.c-progressive-profiling .title-color {
+    color: #26a2b5;
+}
+
+@media (min-width: 720px) {
+    .c-progressive-profiling .levels {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 66.66666667%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-progressive-profiling .levels {
+        width: 66.66666667%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-progressive-profiling .levels .form-ctas .cancel {
+        margin-bottom: 0;
+    }
+    .c-progressive-profiling .levels .form-group {
+        margin-bottom: 32px;
+    }
+    .c-progressive-profiling .levels .headings {
+        margin-bottom: 48px;
+        margin-top: 0;
+    }
+    .c-progressive-profiling .levels .input-group {
+        display: flex;
+        display: -webkit-flex;
+    }
+    .c-progressive-profiling .levels .input-group .first {
+        padding-right: 16px;
+    }
+    .c-progressive-profiling .levels .input-group .last {
+        padding-left: 16px;
+        padding-right: 0;
+    }
+    .c-progressive-profiling .levels .input-half {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-progressive-profiling .levels .input-half {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-progressive-profiling .levels .input-full {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 100%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-progressive-profiling .levels .input-full {
+        width: 100%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-progressive-profiling .levels .title {
+        margin-top: 64px;
+    }
+    .c-progressive-profiling h3 {
+        line-height: 32px;
+    }
+    .c-progressive-profiling.l1-4 form:not(.accessed) .form-group {
+        display: block;
+    }
+    .c-progressive-profiling.l1-4 form:not(.accessed) .form-group .email-disclaimer,
+    .c-progressive-profiling.l1-4 form:not(.accessed) .form-group .form-ctas {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+        padding: 0;
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-progressive-profiling.l1-4 form:not(.accessed) .form-group .email-disclaimer,
+    .c-progressive-profiling.l1-4 form:not(.accessed) .form-group .form-ctas {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-progressive-profiling.l1-4 form:not(.accessed) .form-group .form-ctas .button {
+        width: auto;
+        margin-right: 0;
+        margin-left: auto;
+    }
+    .c-progressive-profiling .myedc-container {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 66.66666667%;
+        margin: 3rem auto;
+        padding: 5.75rem 5.25rem;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-progressive-profiling .myedc-container {
+        width: 66.66666667%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-progressive-profiling .myedc-container a.button {
+        margin: 1rem 2rem;
+    }
+    .c-progressive-profiling .status {
+        margin-bottom: 80px;
+        margin-top: 16px;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-progressive-profiling {
+        display: flex;
+    }
+    .c-progressive-profiling[data-sneak-peek='yes'] {
+        justify-content: center;
+    }
+    .c-progressive-profiling form.hide ~ .myedc-container {
+        margin: 4rem auto;
+    }
+    .c-progressive-profiling .description {
+        font-size: 20px;
+    }
+    .c-progressive-profiling form,
+    .c-progressive-profiling .myedc-container,
+    .c-progressive-profiling .c-processing-screen {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 720px) {
+    .c-progressive-profiling form,
+    .c-progressive-profiling .myedc-container,
+    .c-progressive-profiling .c-processing-screen {
+        width: 50%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-progressive-profiling form .email-section,
+    .c-progressive-profiling form .levels {
+        width: 100%;
+    }
+    .c-progressive-profiling form.accessed {
+        width: 100%;
+    }
+    .c-progressive-profiling form.accessed .email-section,
+    .c-progressive-profiling form.accessed .levels {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 720px) {
+    .c-progressive-profiling form.accessed .email-section,
+    .c-progressive-profiling form.accessed .levels {
+        width: 50%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-progressive-profiling .myedc-container {
+        margin: 4rem auto 4rem 85px;
+        padding: 5.75rem 5.25rem;
+    }
+    .c-progressive-profiling.l5 form {
+        margin-top: 2rem;
+    }
+    .c-progressive-profiling.logged-in {
+        display: flex;
+        justify-content: flex-start;
+    }
+    .c-progressive-profiling.logged-in form {
+        width: auto;
+        max-width: 50%;
+    }
+    .c-progressive-profiling.logged-in .level-1 h2 {
+        text-align: left;
+    }
+    .c-progressive-profiling.logged-in .level-1 .form-group {
+        flex-direction: row;
+        align-items: center;
+        padding-right: 30px;
+    }
+    .c-progressive-profiling.logged-in .level-1 .form-group .form-ctas button {
+        width: auto;
+    }
+    .c-progressive-profiling.logged-in .level-1 .form-group .description {
+        flex: 1 1;
+        width: min-content;
+        min-width: 180px;
+        text-align: left;
+        padding-left: 30px;
+    }
+    .c-progressive-profiling.logged-in .level-1 .form-group .description,
+    .c-progressive-profiling.logged-in .level-1 .form-group .form-ctas {
+        margin: 0;
+    }
+}

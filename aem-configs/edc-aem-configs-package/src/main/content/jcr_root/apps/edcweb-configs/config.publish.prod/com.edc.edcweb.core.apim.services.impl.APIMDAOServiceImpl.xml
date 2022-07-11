@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+    accessTokenURL="https://login.microsoftonline.com/d4167d58-713e-4e8f-8ba2-869b5491fb80/oauth2/token"
+    clientId="fed8f489-29d7-4c33-90c3-5a75c5bb4e0c"
+    clientSecret="0Hcj~5Fso0PnD1-fYW8_-814kDdz8t_WxI"
+    grandType="client_credentials"
+    resource="https://EDCanada.onmicrosoft.com/feca0df1-7871-4a63-a947-f4e6deaa0598"
+    proxyURL="https://proxy.api.edc.ca/"
+    subscriptionKey="7311923f35a44a1fa2c5e3dc7bc0c92a"
+    servicePointInListSupplierFilter="inlist/api/inlist/v1/suppliersOfflineClient/"
+    servicePointInListSupplierProfile="inlist/api/inlist/v1/suppliers/" />
+<!--
+    From: Burcew, Arek (External Consultant) <Arek.Burcew.ExternalConsultant@edc.ca> 
+    Sent: Friday, June 18, 2021 1:21 PM Key It’s because InList is a KB product 
+    and all the others are Integration Team products.
+-->

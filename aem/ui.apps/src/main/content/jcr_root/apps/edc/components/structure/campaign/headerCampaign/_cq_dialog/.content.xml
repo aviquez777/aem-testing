@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+	xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+	xmlns:cq="http://www.day.com/jcr/cq/1.0"
+	xmlns:jcr="http://www.jcp.org/jcr/1.0"
+	xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+	jcr:primaryType="nt:unstructured" jcr:title="Header Campaign"
+	sling:resourceType="cq/gui/components/authoring/dialog">
+	<content jcr:primaryType="nt:unstructured"
+		sling:resourceType="granite/ui/components/foundation/container">
+		<layout jcr:primaryType="nt:unstructured"
+			sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+			type="nav" />
+		<items jcr:primaryType="nt:unstructured">
+			<logo jcr:primaryType="nt:unstructured" jcr:title="Logo Details"
+				sling:resourceType="granite/ui/components/foundation/section">
+				<layout jcr:primaryType="nt:unstructured"
+					sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns" />
+				<items jcr:primaryType="nt:unstructured">
+					<column jcr:primaryType="nt:unstructured"
+						sling:resourceType="granite/ui/components/foundation/container">
+						<items jcr:primaryType="nt:unstructured">
+							<login jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/foundation/container">
+								<items jcr:primaryType="nt:unstructured">
+									<heading jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/foundation/text"
+										text="EDC logo" />
+									<well jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/foundation/container">
+										<layout jcr:primaryType="nt:unstructured"
+											sling:resourceType="granite/ui/components/foundation/layouts/well" />
+										<items jcr:primaryType="nt:unstructured">
+											<logoimage jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+												fieldLabel="Logo image file"
+												fieldDescription="Choose the image for the left side of the header"
+												name="./logoimage" rootPath="/content/dam/edc" />
+											<whitelogo jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+												fieldLabel="White Logo image file"
+												fieldDescription="Choose the image for the left side of the header when scroll"
+												name="./whitelogo" rootPath="/content/dam/edc" />
+											<logotarget jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/select"
+												fieldDescription="Specify whether to open this link in a new or existing window"
+												fieldLabel="Link target" name="./logotarget">
+												<items jcr:primaryType="nt:unstructured">
+													<existing jcr:primaryType="nt:unstructured"
+														text="Existing window" value="_self" />
+													<new jcr:primaryType="nt:unstructured"
+														text="New window" value="_blank" />
+												</items>
+											</logotarget>
+											<logoalttext jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+												fieldLabel="Alternate text" name="./logoalttext"
+												wrapperClass="core-image-alt" />
+											<logourl jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+												fieldLabel="Link url" name="./logourl"
+												required="{Boolean}false" rootPath="/content/edc" />
+										</items>
+									</well>
+								</items>
+							</login>
+						</items>
+					</column>
+				</items>
+			</logo>
+			<staticlinks jcr:primaryType="nt:unstructured"
+				jcr:title="Static Links"
+				sling:resourceType="granite/ui/components/foundation/section">
+				<layout jcr:primaryType="nt:unstructured"
+					sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+					margin="{Boolean}false" />
+				<items jcr:primaryType="nt:unstructured">
+					<column jcr:primaryType="nt:unstructured"
+						sling:resourceType="granite/ui/components/foundation/container">
+						<items jcr:primaryType="nt:unstructured">
+							<phonenumber jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+								fieldDescription="Appears on the desktop view and is also used for the &quot;tel&quot; link on mobile devices."
+								fieldLabel="Toll free number (1-XXX-XXX-XXXX)"
+								name="./phonenumber" required="{Boolean}false" />
+							<heading jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/foundation/text"
+								text="CTA" />
+							<ctatarget jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/form/select"
+								fieldDescription="Specify whether to open this CTA in a new or existing window"
+								fieldLabel="Target" name="./ctatarget">
+								<items jcr:primaryType="nt:unstructured">
+									<existing jcr:primaryType="nt:unstructured"
+										text="Existing window" value="_self" />
+									<new jcr:primaryType="nt:unstructured" text="New window"
+										value="_blank" />
+								</items>
+							</ctatarget>
+							<ctatext jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+								fieldLabel="Text" name="./ctatext" required="{Boolean}false" />
+							<ctaurl jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+								fieldLabel="Url" name="./ctaurl" required="{Boolean}false"
+								rootPath="/content/edc" />
+						</items>
+					</column>
+				</items>
+			</staticlinks>
+			<dynamiclinks jcr:primaryType="nt:unstructured"
+				jcr:title="Links"
+				sling:resourceType="granite/ui/components/foundation/section">
+				<layout jcr:primaryType="nt:unstructured"
+					sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+					margin="{Boolean}false" />
+				<items jcr:primaryType="nt:unstructured">
+					<column jcr:primaryType="nt:unstructured"
+						sling:resourceType="granite/ui/components/foundation/container">
+						<items jcr:primaryType="nt:unstructured">
+							<heading jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/text"
+								text="*Please note that a Value Proposition Banner Component must be added right after the header in order to have the sticky functionality." />
+							<multi jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+								composite="{Boolean}true" fieldLabel="Links">
+								<field jcr:primaryType="nt:unstructured"
+									sling:resourceType="granite/ui/components/foundation/form/fieldset"
+									name="./links">
+									<items jcr:primaryType="nt:unstructured">
+										<column jcr:primaryType="nt:unstructured"
+											sling:resourceType="granite/ui/components/coral/foundation/well">
+											<items jcr:primaryType="nt:unstructured">
+												<title jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+													fieldDescription="Please enter Title" fieldLabel="Title"
+													required="{Boolean}false" name="./linktext" />
+												<target jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+													fieldDescription="Please enter Link Target"
+													fieldLabel="Link Target" name="./linkurl"
+													rootPath="/content/edc" validation="field.target" />
+												<heading jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/coral/foundation/text"
+													text="*Link target of Section Title Component if it is on the same page" />
+											</items>
+										</column>
+									</items>
+								</field>
+							</multi>
+						</items>
+					</column>
+				</items>
+			</dynamiclinks>
+			<accessibility jcr:primaryType="nt:unstructured"
+				jcr:title="Accessibility"
+				sling:resourceType="granite/ui/components/foundation/section">
+				<layout jcr:primaryType="nt:unstructured"
+					sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+					margin="{Boolean}false" />
+				<items jcr:primaryType="nt:unstructured">
+					<column jcr:primaryType="nt:unstructured"
+						sling:resourceType="granite/ui/components/foundation/container">
+						<items jcr:primaryType="nt:unstructured">
+							<skip jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+								fieldLabel="Skip navigation message" name="./skip"
+								required="{Boolean}true" />
+						</items>
+					</column>
+				</items>
+			</accessibility>
+			<header jcr:primaryType="nt:unstructured" jcr:title="Header"
+				sling:resourceType="granite/ui/components/foundation/section">
+				<layout jcr:primaryType="nt:unstructured"
+					sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+					margin="{Boolean}false" />
+				<items jcr:primaryType="nt:unstructured">
+					<column jcr:primaryType="nt:unstructured"
+						sling:resourceType="granite/ui/components/foundation/container">
+						<items jcr:primaryType="nt:unstructured">
+							<newheader jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/foundation/form/checkbox"
+								defaultChecked="{Boolean}false"
+								fieldDescription="Version normally used or stablished when in the page there is a value proposition banner."
+								ignoreData="{Boolean}false" 
+								name="./newheader"
+								text="Use Transparent animated header." 
+								uncheckedValue="{Boolean}false"
+								wrapperClass="campaign-variant"
+								value="{Boolean}true" />
+							<stickyvariant jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/foundation/form/checkbox"
+								defaultChecked="{Boolean}false"
+								fieldDescription="Version normally used when page is a home campaign, home campaign pages doesn't have present a value proposition banner in the page."
+								ignoreData="{Boolean}false" 
+								name="./stickyvariant"
+								text="Use sticky header white background." 
+								uncheckedValue="{Boolean}false"
+								wrapperClass="campaign-variant"
+								value="{Boolean}true" />
+							<alert jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/alert"
+								jcr:title="IMPORTANT"
+								variant="info"
+								size="S"
+								text="By clearing checks author makes sure that default navigation bar will be rendered."/>
+							<clearcheckmarksbtn jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/button"
+								text="Clear checks"
+								granite:class="clear-checkboxes"
+								type="button"
+								variant="primary"/>
+						</items>
+					</column>
+				</items>
+			</header>
+		</items>
+	</content>
+</jcr:root>

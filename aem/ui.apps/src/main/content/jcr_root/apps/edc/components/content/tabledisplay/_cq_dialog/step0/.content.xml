@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Step 0 - Rendering Options"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container"
+        granite:class="td-dialog-initial-values-pane">
+        <items jcr:primaryType="nt:unstructured">
+            <step0 jcr:primaryType="nt:unstructured"
+                jcr:title="Rendering Options"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                    <items jcr:primaryType="nt:unstructured">
+                        <showHideTitleAndDescription jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                            fieldLabel="Show or Hide Title And Description"
+                            fieldDescription="Use this feature to specify if Title And Description Will be shown."
+                            name="./showHideTitleAndDescription"
+                            granite:class="cq-dialog-dropdown-showhide">
+                            <granite:data
+                                jcr:primaryType="nt:unstructured"
+                                cq-dialog-dropdown-showhide-target=".visible-showhide-target"/>
+                            <items jcr:primaryType="nt:unstructured">
+                                <titleDescShown jcr:primaryType="nt:unstructured"
+                                    text="Show (Container for Title and Description is shown)"
+                                    selected="{Boolean}true"
+                                    value="visible"/>
+                                <titleDescHidden jcr:primaryType="nt:unstructured"
+                                    text="Hide (Container for Title and Description is Hidden)"
+                                    value="hidden"/>
+                            </items>
+                        </showHideTitleAndDescription>
+                        <titleDescSection jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            granite:class="hide visible-showhide-target">
+                            <granite:data
+                                jcr:primaryType="nt:unstructured"
+                                showhidetargetvalue="visible"/>
+                            <items jcr:primaryType="nt:unstructured">
+                                <showHideTitleOnly jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                    fieldLabel="Show or Hide Title Only"
+                                    fieldDescription="Use this feature to specify if Title will be shown."
+                                    name="./showHideTitleOnly">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <titleShown jcr:primaryType="nt:unstructured"
+                                            text="Show"
+                                            selected="{Boolean}true"
+                                            value="default"/>
+                                        <titleHidden jcr:primaryType="nt:unstructured"
+                                            text="Hide"
+                                            value="hidden"/>
+                                    </items>
+                                </showHideTitleOnly>
+                                <showHideDescriptionOnly jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                    fieldLabel="Show or Hide Desription Only"
+                                    fieldDescription="Use this feature to specify if Description will be shown."
+                                    name="./showHideDescriptionOnly">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <descShown jcr:primaryType="nt:unstructured"
+                                            text="Show"
+                                            selected="{Boolean}true"
+                                            value="default"/>
+                                        <descHidden jcr:primaryType="nt:unstructured"
+                                            text="Hide"
+                                            value="hidden"/>
+                                    </items>
+                                </showHideDescriptionOnly>
+                            </items>
+                        </titleDescSection>
+                        <showHideFooterNotes jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                            fieldLabel="Show or Hide Footer Notes Only"
+                            fieldDescription="Use this feature to specify if Footer Notes will be shown."
+                            name="./showHideFooterNotes">
+                            <items jcr:primaryType="nt:unstructured">
+                                <descShown jcr:primaryType="nt:unstructured"
+                                    text="Show"
+                                    selected="{Boolean}true"
+                                    value="default"/>
+                                <descHidden jcr:primaryType="nt:unstructured"
+                                    text="Hide"
+                                    value="hidden"/>
+                            </items>
+                        </showHideFooterNotes>
+                    </items>
+            </step0>
+        </items>
+    </content>
+</jcr:root>

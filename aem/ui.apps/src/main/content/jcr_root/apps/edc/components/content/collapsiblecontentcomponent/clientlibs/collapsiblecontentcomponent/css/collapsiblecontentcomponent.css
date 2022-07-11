@@ -1,0 +1,203 @@
+.c-collapsible-content-component {
+    width: 100%;
+    padding: 1.5rem 1rem;
+    box-sizing: border-box;
+}
+
+.c-collapsible-content-component .collapsible-main-content {
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+}
+
+.c-collapsible-content-component .collapsible-main-content h1.left,
+.c-collapsible-content-component .collapsible-main-content .main-image-container picture.left,
+.c-collapsible-content-component .collapsible-main-content h2.left,
+.c-collapsible-content-component .collapsible-main-content p.left {
+    text-align: left;
+}
+
+.c-collapsible-content-component .collapsible-main-content h1.center,
+.c-collapsible-content-component .collapsible-main-content .main-image-container picture.center,
+.c-collapsible-content-component .collapsible-main-content h2.center,
+.c-collapsible-content-component .collapsible-main-content p.center {
+    text-align: center;
+}
+
+.c-collapsible-content-component .collapsible-main-content h1,
+.c-collapsible-content-component .collapsible-main-content h2,
+.c-collapsible-content-component .collapsible-main-content p {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.c-collapsible-content-component .collapsible-main-content h1,
+.c-collapsible-content-component .collapsible-main-content h2 {
+    color: #333;
+    font-weight: bold;
+}
+
+.c-collapsible-content-component .collapsible-main-content h1 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    letter-spacing: -.013rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.c-collapsible-content-component .collapsible-main-content .main-image-container {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    padding: 0;
+}
+
+.c-collapsible-content-component .collapsible-main-content .main-image-container picture img {
+    display: block;
+    width: 100%;
+}
+
+.c-collapsible-content-component .collapsible-main-content h2 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    letter-spacing: -.013rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.c-collapsible-content-component .collapsible-main-content p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-bottom: 0;
+}
+
+.c-collapsible-content-component .collapsible-related-content {
+    overflow: hidden;
+}
+
+.c-collapsible-content-component .collapsible-related-content.collapse {
+    display: none;
+}
+
+.c-collapsible-content-component .collapsible-related-content.expand {
+    display: block;
+}
+
+.c-collapsible-content-component .collapsible-related-content .collapsible-card-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.c-collapsible-content-component .collapsible-related-content .collapsible-card-container:last-child {
+    padding-bottom: 2rem;
+}
+
+.c-collapsible-content-component .collapsible-related-content .collapsible-card-container .collapsible-card-image {
+    display: none;
+}
+
+.c-collapsible-content-component .collapsible-related-content .collapsible-card-container .collapsible-card-content {
+    width: 100%;
+}
+
+.c-collapsible-content-component .collapsible-related-content .collapsible-card-container .collapsible-card-content h2,
+.c-collapsible-content-component .collapsible-related-content .collapsible-card-container .collapsible-card-content p,
+.c-collapsible-content-component .collapsible-related-content .collapsible-card-container .collapsible-card-content a {
+    width: inherit;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.c-collapsible-content-component .collapsible-related-content .collapsible-card-container .collapsible-card-content h2,
+.c-collapsible-content-component .collapsible-related-content .collapsible-card-container .collapsible-card-content p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.c-collapsible-content-component .collapsible-related-content .collapsible-card-container .collapsible-card-content h2 {
+    color: #333;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    letter-spacing: -.013rem;
+    font-weight: bold;
+}
+
+.c-collapsible-content-component .collapsible-related-content .collapsible-card-container .collapsible-card-content p {
+    color: #000;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.c-collapsible-content-component .collapsible-related-content .collapsible-card-container .collapsible-card-content a {
+    color: #2f78c6;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1rem;
+}
+
+.c-collapsible-content-component .view-more-cta {
+    display: block;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #2f78c6;
+    font-weight: bold;
+    text-align: center;
+}
+
+@media (min-width: 720px) {
+    .c-collapsible-content-component .collapsible-main-content .main-image-container {
+        width: 100%;
+        padding-left: 5.938rem;
+        padding-right: 5.938rem;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .c-collapsible-content-component .collapsible-main-content .main-image-container.center {
+        justify-content: center;
+    }
+    .c-collapsible-content-component .collapsible-main-content .main-image-container.left {
+        padding-left: 0;
+        justify-content: left;
+    }
+    .c-collapsible-content-component .collapsible-main-content .main-image-container picture img {
+        display: inline-block;
+        width: 33.125rem;
+        height: 16rem;
+    }
+    .c-collapsible-content-component .collapsible-main-content h2 {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+    .c-collapsible-content-component .collapsible-related-content .collapsible-card-container .collapsible-card-image {
+        display: block;
+        padding-right: 1rem;
+        width: 6rem;
+        height: 6rem;
+    }
+    .c-collapsible-content-component .collapsible-related-content .collapsible-card-container .collapsible-card-content h2 {
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-collapsible-content-component .collapsible-main-content h1 {
+        font-size: 1.875rem;
+        line-height: 2.5rem;
+    }
+    .c-collapsible-content-component .collapsible-main-content h2 {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+    .c-collapsible-content-component .collapsible-main-content .main-image-container {
+        padding-left: 12.938rem;
+        padding-right: 12.938rem;
+        box-sizing: border-box;
+    }
+    .c-collapsible-content-component .collapsible-main-content .main-image-container picture img {
+        width: 41.375rem;
+        height: 20rem;
+    }
+}

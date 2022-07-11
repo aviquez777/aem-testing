@@ -1,0 +1,1 @@
+articleauthors-authoring.js

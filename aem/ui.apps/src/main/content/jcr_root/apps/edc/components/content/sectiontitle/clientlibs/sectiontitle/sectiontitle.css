@@ -1,0 +1,8 @@
+.section-title [aria-hidden="true"] {
+    display: initial;
+}
+
+.section-title h2 {
+    padding-left: .8rem;
+    padding-right: .8rem;
+}

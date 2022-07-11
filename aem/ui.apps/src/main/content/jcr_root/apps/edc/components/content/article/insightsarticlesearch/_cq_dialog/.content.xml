@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0"  xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Insights Article Search"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <articlesTab
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Articles"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <articlespath
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                fieldDescription="Path to location of articles (e.g., /content/edc/en/articles)."
+                                fieldLabel="Articles path"
+                                name="./articlespath"
+                                required="{Boolean}true"
+                                rootPath="/content/edc"/>
+                            <maxitems
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                defaultValue="10"
+                                fieldDescription="Default value: 10"
+                                fieldLabel="Maximum articles per page"
+                                min="{Double}0.0"
+                                name="./articlesperpage"/>
+                                <showAllCards
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                    text="Make list based on custom tag/tags instead of premium/non-premium (override default)"
+                                    name="./showAllCards"
+                                    class="cq-insights-check-showhide"
+                                    value="{Boolean}true"
+                                    cq-insights-check-showhide-target=".customtags-showhide-target"/>
+                                <tagsContainer
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/container"
+                                    class="hide customtags-showhide-target"
+                                    showhidetargetvalue="true">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <tags
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                                            fieldDescription="Overriden on country details pages by component using CountryCTA in the policy."
+                                            fieldLabel="Show only articles with these tag(s) [for all articles select only the namespace]"
+                                            multiple="{Boolean}true"
+                                            name="./tagids"
+                                            required="{Boolean}false"
+                                            rootPath="/content/cq:tags/edc">
+                                            <granite:data
+                                                jcr:primaryType="nt:unstructured"
+                                                cq-msm-lockable="cq:tags"/>
+                                        </tags>
+                                    </items>
+                                </tagsContainer>
+                        </items>
+                    </articlesTab>
+                    <filtersTab
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Filters"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <filtersmulti
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                composite="{Boolean}true"
+                                fieldLabel="Filters sections">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                    name="./filtertags">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <column
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/well">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <isTrending
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                                    text="Is trending topics?"
+                                                    name="./isTrending"
+                                                    class="cq-insights-check-showhide"
+                                                    value="{Boolean}true"
+                                                    cq-insights-check-showhide-target=".trendingtopics-showhide-target"/>
+                                                <mainContainer
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/container"
+                                                    class="hide trendingtopics-showhide-target"
+                                                    showhidetargetvalue="">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <parenttag
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                                                            fieldDescription="Tag translations will be used as the header for this filters section, children of this parent tag will be added automatically as subfilters"
+                                                            fieldLabel="Filter section parent tag"
+                                                            multiple="{Boolean}false"
+                                                            name="./parenttag"
+                                                            required="{Boolean}false"
+                                                            rootPath="/content/cq:tags/edc">
+                                                            <granite:data
+                                                                jcr:primaryType="nt:unstructured"
+                                                                cq-msm-lockable="cq:tags"/>
+                                                        </parenttag>
+                                                        <exclude
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                                                            fieldDescription="Exclude tags that are children of the parent tag"
+                                                            fieldLabel="Exclude tags"
+                                                            multiple="{Boolean}true"
+                                                            name="./exclude"
+                                                            required="{Boolean}false"
+                                                            rootPath="/content/cq:tags/edc">
+                                                            <granite:data
+                                                                jcr:primaryType="nt:unstructured"
+                                                                cq-msm-lockable="cq:tags"/>
+                                                        </exclude>
+                                                    </items>
+                                                </mainContainer>
+                                                <trendingContainer
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/container"
+                                                    class="hide trendingtopics-showhide-target"
+                                                    showhidetargetvalue="true">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <trendingLabel
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Trending topic label"
+                                                            name="./trendingLabel"
+                                                            required="{Boolean}false"/>
+                                                        <trendingTopics
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                                                            fieldDescription="Tags selected from the taxonomy to appear in this section as a filter option."
+                                                            fieldLabel="Trending topic filters"
+                                                            multiple="{Boolean}true"
+                                                            name="./trendingTopics"
+                                                            rootPath="/content/cq:tags/edc"
+                                                            required="{Boolean}false" />
+                                                    </items>
+                                                </trendingContainer>
+                                                <depth
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                    fieldDescription="Number of levels to show under the parent tag"
+                                                    fieldLabel="Filter tree levels"
+                                                    name="./depth"
+                                                    required="{Boolean}false">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <one
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="1"
+                                                            value="1"/>
+                                                        <two
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="2"
+                                                            value="2"/>
+                                                    </items>
+                                                </depth>
+                                                <showMore
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                                    fieldDescription="Limit visible subfilters to 3 and display 'Show more' link"
+                                                    text="Display 'Show more' link"
+                                                    name="./showMore"
+                                                    value="{Boolean}true"/>
+                                            </items>
+                                        </column>
+                                    </items>
+                                </field>
+                            </filtersmulti>
+                        </items>
+                    </filtersTab>
+                    <generalTab
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="General"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <filterlabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="Shown in filter top section and button to open modal (tablet/mobile)"
+                                fieldLabel="Filter label"
+                                name="./filterlabel"
+                                required="{Boolean}true"/>
+                            <clearalllabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="Shown after filter tags and in modal button (tablet/mobile)"
+                                fieldLabel="Clear All label"
+                                name="./clearalllabel"
+                                required="{Boolean}true"/>
+                            <showmorelabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Show more label"
+                                name="./showmorelabel"
+                                required="{Boolean}true"/>
+                            <showlesslabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Show less label"
+                                name="./showlesslabel"
+                                required="{Boolean}true"/>
+                            <applylabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="Shown in modal buttons (tablet/mobile)"
+                                fieldLabel="Apply label"
+                                name="./applylabel"
+                                required="{Boolean}true"/>
+                            <linktarget
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldDescription="Determines if the results will open in the current or new window. "
+                                fieldLabel="Target result links"
+                                name="./linktarget"
+                                required="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <new
+                                        jcr:primaryType="nt:unstructured"
+                                        text="New window"
+                                        value="_blank"/>
+                                    <existing
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Existing window"
+                                        value="_self"/>
+                                </items>
+                            </linktarget>
+                        </items>
+                    </generalTab>
+                    <noresultsTab
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="No Results"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <noresulttitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="No results title"
+                                name="./noresulttitle"
+                                required="{Boolean}true"/>
+                            <noresultmessage
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                fieldDescription="Enter the no results message."
+                                fieldLabel="No results message"
+                                name="./noresultmessage"
+                                required="{Boolean}true"
+                                useFixedInlineToolbar="{Boolean}true">
+                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                    <format
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <justify
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <lists
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <paraformat
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*">
+                                        <formats jcr:primaryType="nt:unstructured">
+                                            <small
+                                                jcr:primaryType="nt:unstructured"
+                                                description="Small"
+                                                tag="small"/>
+                                            <default_p
+                                                jcr:primaryType="nt:unstructured"
+                                                description="Paragraph"
+                                                tag="p"/>
+                                            <default_h1
+                                                jcr:primaryType="nt:unstructured"
+                                                description="Heading 1"
+                                                tag="h1"/>
+                                            <default_h2
+                                                jcr:primaryType="nt:unstructured"
+                                                description="Heading 2"
+                                                tag="h2"/>
+                                            <default_h3
+                                                jcr:primaryType="nt:unstructured"
+                                                description="Heading 3"
+                                                tag="h3"/>
+                                            <default_h4
+                                                jcr:primaryType="nt:unstructured"
+                                                description="Heading 4"
+                                                tag="h4"/>
+                                            <default_h5
+                                                jcr:primaryType="nt:unstructured"
+                                                description="Heading 5"
+                                                tag="h5"/>
+                                            <default_h6
+                                                jcr:primaryType="nt:unstructured"
+                                                description="Heading 6"
+                                                tag="h6"/>
+                                            <default_blockquote
+                                                jcr:primaryType="nt:unstructured"
+                                                description="Quote"
+                                                tag="blockquote"/>
+                                            <default_pre
+                                                jcr:primaryType="nt:unstructured"
+                                                description="Preformatted"
+                                                tag="pre"/>
+                                        </formats>
+                                    </paraformat>
+                                    <links
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <image
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <subsuperscript
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <misctools
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*">
+                                        <specialCharsConfig jcr:primaryType="nt:unstructured">
+                                            <chars jcr:primaryType="nt:unstructured">
+                                                <copyright
+                                                    jcr:primaryType="nt:unstructured"
+                                                    entity="&amp;#169;"/>
+                                                <trademark
+                                                    jcr:primaryType="nt:unstructured"
+                                                    entity="&amp;#8482;"/>
+                                                <registered
+                                                    jcr:primaryType="nt:unstructured"
+                                                    entity="&amp;#174;"/>
+                                                <emDash
+                                                    jcr:primaryType="nt:unstructured"
+                                                    entity="&amp;#8212;"/>
+                                                <pound
+                                                    jcr:primaryType="nt:unstructured"
+                                                    entity="&amp;#163;"/>
+                                                <nbsp
+                                                    jcr:primaryType="nt:unstructured"
+                                                    entity="&amp;#160;"/>
+                                            </chars>
+                                        </specialCharsConfig>
+                                    </misctools>
+                                    <styles
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*">
+                                        <styles jcr:primaryType="nt:unstructured">
+                                            <plainSpan
+                                                jcr:primaryType="nt:unstructured"
+                                                cssName="defaultSpan"
+                                                text="Default (add span tag)"/>
+                                            <lead
+                                                jcr:primaryType="nt:unstructured"
+                                                cssName="lead"
+                                                text="Lead"/>
+                                        </styles>
+                                    </styles>
+                                </rtePlugins>
+                                <uiSettings jcr:primaryType="nt:unstructured">
+                                    <cui jcr:primaryType="nt:unstructured">
+                                        <inline
+                                            jcr:primaryType="nt:unstructured"
+                                            toolbar="[format#bold,format#italic,format#underline,#justify,#lists,subsuperscript#subscript,subsuperscript#superscript,links#modifylink,links#unlink,#image,misctools#specialchars,#styles,#paraformat]">
+                                            <popovers jcr:primaryType="nt:unstructured">
+                                                <justify
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[justify#justifyleft,justify#justifycenter,justify#justifyright]"
+                                                        ref="justify"/>
+                                                <lists
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[lists#unordered,lists#ordered,lists#outdent,lists#indent]"
+                                                        ref="lists"/>
+                                                <paraformat
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="paraformat:getFormats:paraformat-pulldown"
+                                                        ref="paraformat"/>
+                                                <styles
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="styles:getStyles:styles-pulldown"
+                                                        ref="styles"/>
+                                            </popovers>
+                                        </inline>
+                                    </cui>
+                                </uiSettings>
+                            </noresultmessage>
+                        </items>
+                    </noresultsTab>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

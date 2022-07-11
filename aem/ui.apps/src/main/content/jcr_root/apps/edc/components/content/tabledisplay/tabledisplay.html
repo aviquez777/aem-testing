@@ -1,0 +1,25 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.tdModel="com.edc.edcweb.core.components.tabledisplay.TableDisplay"/>
+<sly data-sly-use.td="tdtemplate.html"/>
+<sly data-sly-test.step3="${tdModel.isStepThreeReady}"/>
+
+<section data-sly-test="${step3}" class="c-table-display-wrapper">
+    <div class="c-table-display-${tdModel.tableType}">
+        <div class="c-table-display">
+            <div data-sly-test="${properties.showHideTitleAndDescription == 'visible'}" class="c-table-display__header">
+                <h2 data-sly-test="${properties.showHideTitleOnly != 'hidden'}">${tdModel.tableTitle @ context='html'}</h2>
+                <p  data-sly-test="${properties.showHideDescriptionOnly != 'hidden'}">${tdModel.tableDescription @ context='html'}</p>
+            </div>
+            <div class="c-table-display__content " data-rows-to-render="${tdModel.rowsToRender}">
+                <div data-sly-call="${td.tdVersionOne @ resource=tdModel}" data-sly-unwrap></div>
+            </div>
+            <div  data-sly-test="${properties.showHideFooterNotes != 'hidden'}" class="c-table-display__footer">
+                <div class="c-table-display__footer-notes">
+                    <p>${tdModel.tableFooterNotes @ context='html'}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !step3}"></sly>
+

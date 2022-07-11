@@ -1,0 +1,24 @@
+<template data-sly-template.spifthree="${@ properties, uuid, messages}">
+
+    <div class="level level-3 hide">
+        <h2 class="title">
+            <span class="title-color">${properties.step3bluetitle}</span> ${properties.step3title}
+        </h2>
+        <p data-sly-test="${properties.step3description}" class="description">${properties.step3description}</p>
+        <div class="form-group" data-form-field="productsServ">
+            <label for="productsServ-${uuid}">${properties.productsservLabel}</label>
+            <textarea id="productsServ-${uuid}" class="form-control" rows="6" maxLength="2000" name="productsServ" placeholder="${properties.productsservHelp}" validation-rule="none"></textarea>
+            <span class="error" data-req-message="${messages.formErrorMessages.required}"></span>
+        </div>
+        <div class="form-group" data-form-field="elevatorPitch">
+            <label for="elevatorPitch-${uuid}">${properties.elevatorpitchLabel}</label>
+            <textarea id="elevatorPitch-${uuid}" class="form-control" rows="6" maxLength="2000" name="elevatorPitch" placeholder="${properties.elevatorpitchHelp}" required="" validation-rule="none"></textarea>
+            <span class="error" data-req-message="${messages.formErrorMessages.required}"></span>
+        </div>
+        <div class="form-group" data-form-field="competitiveAd">
+            <label for="competitiveAd-${uuid}">${properties.competitiveadLabel}</label>
+            <textarea id="competitiveAd-${uuid}" class="form-control" rows="6" maxLength="2000" name="competitiveAd" placeholder="${properties.competitiveadHelp}" validation-rule="none"></textarea>
+            <span class="error" data-req-message="${messages.formErrorMessages.required}"></span>
+        </div>
+    </div>
+</template>

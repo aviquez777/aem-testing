@@ -1,0 +1,253 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-use.messages="com.edc.edcweb.core.models.FormCommonMessages"/>
+<sly data-sly-use.matchmaking="com.edc.edcweb.core.models.Matchmaking"/>
+<sly data-sly-use.formsTemplates="${'/apps/edc/components/common/forms.html'}" />
+<sly data-sly-test.hasvalues="${properties.ctaprevious}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !hasvalues}"/>
+<sly data-sly-use.dropdownTemplates="${'/apps/edc/components/common/dropdown.html'}" />
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+<sly data-sly-use.ibButtonTemplate="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+
+<div class="c-matchmaking-events" data-sly-test="${hasvalues}">
+    <sly data-sly-test="${matchmaking.eloquaFormName || matchmaking.eloquaFormSubmitURL || matchmaking.eloquaSiteId}" >
+    <form name="${matchmaking.eloquaFormName}" novalidate="" action="${matchmaking.eloquaFormSubmitURL}" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'Matchmaking Form'}" data-event-type="form" data-event-name="form submit" data-event-engagement="3" data-event-action="main body"  data-event-level="primary">
+        <sly data-sly-call="${formsTemplates.formhiddenfields @ elqFormName=matchmaking.eloquaFormName, elqSiteId=matchmaking.eloquaSiteId,
+                lang=matchmaking.pageLanguage, inquiryID=properties.inquiryID,
+                formID='MMLevel5'}">
+        </sly>
+        <input type="hidden" name="eventID" class="form-control" data-no-url="" value="${properties.eventID}" />
+        <input type="hidden" name="ciNumber" class="form-control" data-no-url="" value="" />
+        <input type="hidden" name="caslConsent" id="caslhidden${uuid}" class="form-control" data-no-url="" value="yes" />
+        <div class="status">
+            <span class="status-bar"></span>
+        </div>
+        <div class="levels">
+            <div class="level level-1 show">
+                <h2 data-sly-test="${properties.step1bluetitle || properties.step1title}"><span class="title-color">${properties.step1bluetitle}</span> ${properties.step1title}</h2>
+                <div data-form-field="firstName" class="form-group">
+                    <label for="firstName-${uuid}">${properties.firstname}</label>
+                    <input id="firstName-${uuid}" type="text" class="form-control" name="firstName" data-no-url="true" required="" validation-rule="name">
+                    <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                </div>
+                <div data-form-field="lastName" class="form-group">
+                    <label for="lastName-${uuid}">${properties.lastname}</label>
+                    <input id="lastName-${uuid}" type="text" class="form-control" name="lastName" data-no-url="true" required="" validation-rule="name">
+                    <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                </div>
+                <div data-form-field="title" class="form-group">
+                    <label for="title-${uuid}">${properties.jobtitle}</label>
+                    <input id="title-${uuid}" type="text" class="form-control" name="title" data-no-url="true" required="" validation-rule="none">
+                    <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                </div>
+                <div data-form-field="emailAddress" class="form-group">
+                    <label for="emailAddress-${uuid}">${properties.businessemail}</label>
+                    <input id="emailAddress-${uuid}" type="email" class="form-control email" placeholder="${properties.businessemailplaceholder}" name="emailAddress" required="">
+                    <span class="error" data-req-message="${messages.formErrorMessages.required}" data-email-message="${messages.formErrorMessages.email}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                </div>
+                <div data-form-field="busPhone" class="form-group" data-sly-test="${!properties.businessphonehide}">
+                    <label for="busPhone-${uuid}">${properties.businessphone}</label>
+                    <input id="busPhone-${uuid}" type="tel" class="form-control" name="busPhone" placeholder="${properties.businessphoneplaceholder}" required="">
+                    <span class="error" data-req-message="${messages.formErrorMessages.required}" data-tel-message="${messages.formErrorMessages.phone}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                </div>
+                <div data-form-field="mobilePhone" class="form-group" data-sly-test="${!properties.mobilephonehide}">
+                    <label for="mobilePhone-${uuid}">${properties.mobilephone}</label>
+                    <input id="mobilePhone-${uuid}" type="tel" class="form-control" name="mobilePhone" placeholder="${properties.mobilephoneplaceholder}">
+                    <span class="error" data-tel-message="${messages.formErrorMessages.phone}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                </div>
+            </div>
+            <div class="level level-2 hide">
+                <h2 data-sly-test="${properties.step2bluetitle || properties.step2title}"><span class="title-color">${properties.step2bluetitle}</span> ${properties.step2title}</h2>
+                <div data-form-field="companyName" class="form-group">
+                    <label for="companyName-${uuid}">${properties.companyname}</label>
+                    <input id="companyName-${uuid}" type="text" class="form-control" name="companyName" placeholder="${properties.companynameplaceholder}" data-no-url="true" required="" validation-rule="legalName">
+                    <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                </div>
+                <div data-form-field="mainPhone" class="form-group">
+                    <label for="mainPhone-${uuid}">${properties.mainphone}</label>
+                    <input id="mainPhone-${uuid}" type="tel" class="form-control" name="mainPhone" placeholder="${properties.mainphoneplaceholder}" required="">
+                    <span class="error" data-req-message="${messages.formErrorMessages.required}" data-tel-message="${messages.formErrorMessages.phone}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                </div>
+                <div data-form-field="companyAddress1" class="form-group">
+                    <label for="companyAddress1-${uuid}">${properties.companyaddress}</label>
+                    <input id="companyAddress1-${uuid}" type="text" class="form-control" name="companyAddress1" data-no-url="true" required="" validation-rule="address1">
+                    <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                </div>
+                <div data-form-field="companyCountry" class="form-group country">
+                    <sly data-sly-call="${dropdownTemplates.dropdown @ name='companyCountry', uuid=uuid, label=properties.companycountry,
+                        placeholder=properties.companycountryplaceholder, required=true, nourl=true,
+                        requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=matchmaking.countriesitems}">
+                    </sly>
+                </div>
+                <div data-form-field="companyProvince" class="form-group province">
+                    <sly data-sly-call="${dropdownTemplates.dropdown @ name='companyProvince', uuid=uuid, label=properties.companyprovince,
+                        placeholder=properties.companyprovinceplaceholder, required=true, nourl=true,
+                        requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=matchmaking.provincesitems,
+                        additionalclasses='can'}">
+                    </sly>
+                    <sly data-sly-call="${dropdownTemplates.dropdown @ name='companyProvince-alt', uuid=uuid, label=properties.companyprovince,
+                        placeholder=properties.usstatesplaceholder, required=true, nourl=true,
+                        requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=matchmaking.usstatesitems,
+                        additionalclasses='hide usa'}">
+                    </sly>
+                    <label for="companyProvinceInput-${uuid}" class="hide">${properties.companyprovince}</label>
+                    <input id="companyProvinceInput-${uuid}" type="text" class="form-control hide" name="companyProvinceInput" data-no-url="true" required="" placeholder="${properties.companyprovinceinputplaceholder}" validation-rule="province">
+                    <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                </div>
+                <div data-form-field="companyPostal" class="form-group">
+                    <label for="companyPostal-${uuid}">${properties.companypostal}</label>
+                    <input id="companyPostal-${uuid}" type="text" class="form-control" name="companyPostal" data-no-url="true" required="" validation-rule="postalCode">
+                    <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.postalcode}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                </div>
+                <div data-form-field="companyCity" class="form-group">
+                    <label for="companyCity-${uuid}">${properties.companycity}</label>
+                    <input id="companyCity-${uuid}" type="text" class="form-control" name="companyCity" data-no-url="true" required="" validation-rule="city">
+                    <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                </div>
+                <div data-form-field="website1" class="form-group" data-sly-test="${!properties.websitehide}">
+                    <label for="website1-${uuid}">${properties.website}</label>
+                    <input id="website1-${uuid}" type="text" class="form-control" name="website1" required="">
+                    <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                </div>
+                <div data-form-field="linkedin1" class="form-group" data-sly-test="${!properties.linkedinhide}">
+                    <label for="linkedin1-${uuid}">${properties.linkedin}</label>
+                    <input id="linkedin1-${uuid}" type="text" class="form-control" name="linkedin1">
+                    <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                </div>
+                <div class="form-group" data-form-field="annualSales">
+                    <sly data-sly-call="${dropdownTemplates.dropdown @ name='annualSales', uuid=uuid, label=properties.annualsales,
+                        placeholder=properties.annualsalesplaceholder, required=true, nourl=true,
+                        requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=matchmaking.annualsalesitems}">
+                    </sly>
+                </div>
+                <div class="form-group" data-form-field="employees">
+                    <sly data-sly-call="${dropdownTemplates.dropdown @ name='employees', uuid=uuid, label=properties.employees,
+                        placeholder=properties.employeesplaceholder, required=true, nourl=true,
+                        requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=matchmaking.employeesitems}">
+                    </sly>
+                </div>
+            </div>
+            <div class="level level-3 hide">
+                <h2 data-sly-test="${properties.step3bluetitle || properties.step3title}"><span class="title-color">${properties.step3bluetitle}</span> ${properties.step3title}</h2>
+                <div class="form-group" data-form-field="industry">
+                    <sly data-sly-call="${dropdownTemplates.dropdown @ name='industry', uuid=uuid, label=properties.industry,
+                        placeholder=properties.industryplaceholder, required=true, nourl=true,
+                        requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=matchmaking.industryitems}">
+                    </sly>
+                </div>
+                <div class="form-group" data-form-field="elevatorPitch" data-sly-test="${!properties.elevatorpitchhide}">
+                    <label for="elevatorPitch-${uuid}">${properties.elevatorpitch}</label>
+                    <textarea id="elevatorPitch-${uuid}" class="form-control" rows="6" maxlength="3999" data-max-length="3999" name="elevatorPitch" placeholder="${properties.elevatorpitchplaceholder}" required=""></textarea>
+                    <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                </div>
+                <div class="form-group" data-form-field="currentProjects" data-sly-test="${!properties.currentprojectshide}">
+                    <label for="currentProjects-${uuid}">${properties.currentprojects}</label>
+                    <textarea id="currentProjects-${uuid}" class="form-control" rows="6" maxlength="3999" data-max-length="3999" name="currentProjects" placeholder="${properties.currentprojectsplaceholder}" required=""></textarea>
+                    <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                </div>
+                <div class="form-group" data-form-field="businessPart" data-sly-test="${!properties.businessparthide}">
+                    <label for="businessPart-${uuid}">${properties.businesspart}</label>
+                    <textarea id="businessPart-${uuid}" class="form-control" rows="6" maxlength="3999" data-max-length="3999" name="businessPart" placeholder="${properties.businesspartplaceholder}" required=""></textarea>
+                    <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                </div>
+                <div class="form-group" data-form-field="competitiveAd" data-sly-test="${!properties.competitiveadhide}">
+                    <label for="competitiveAd-${uuid}">${properties.competitivead}</label>
+                    <textarea id="competitiveAd-${uuid}" class="form-control" rows="6" maxlength="3999" data-max-length="3999" name="competitiveAd" placeholder="${properties.competitiveadplaceholder}" required=""></textarea>
+                    <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                </div>
+                <div class="form-group" data-form-field="productsServ" data-sly-test="${!properties.productsservhide}">
+                    <label for="productsServ-${uuid}">${properties.productsserv}</label>
+                    <textarea id="productsServ-${uuid}" class="form-control" rows="6" maxlength="600" data-max-length="600" name="productsServ" placeholder="${properties.productsservplaceholder}" required=""></textarea>
+                    <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                </div>
+                <div class="form-group" data-form-field="certifications" data-sly-test="${!properties.certificationshide}">
+                    <label for="certifications-${uuid}">${properties.certifications}</label>
+                    <textarea id="certifications-${uuid}" class="form-control" rows="6" maxlength="600" data-max-length="600" name="certifications" placeholder="${properties.certificationsplaceholder}" required=""></textarea>
+                    <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                </div>
+                <div class="form-group" data-form-field="industrySvd" data-sly-test="${!properties.industrysvdhide}">
+                    <sly data-sly-call="${dropdownTemplates.dropdown @ dropdowntype='multiple', name='industrySvd', uuid=uuid, label=properties.industrysvd,
+                         placeholder=properties.industrysvdplaceholder,
+                         required=true, nourl=true, buttontext=properties.industrysvdconfirm, clearalltext=properties.industrysvdclear,
+                         singulartext=properties.industrysvdsingular, pluraltext=properties.industrysvdplural,
+                         requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=matchmaking.industrysvditems}">
+                    </sly>
+                </div>
+                <div class="form-group" data-form-field="subindustrySvd" data-sly-test="${!properties.subindustrysvdhide}">
+                    <sly data-sly-call="${dropdownTemplates.dropdown @ dropdowntype='multiple', name='subindustrySvd', uuid=uuid, label=properties.subindustrysvd,
+                         placeholder=properties.subindustrysvdplaceholder,
+                         required=true, nourl=true, buttontext=properties.subindustrysvdconfirm, clearalltext=properties.subindustrysvdclear,
+                         singulartext=properties.subindustrysvdsingular, pluraltext=properties.subindustrysvdplural,
+                         requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=matchmaking.subindustrysvditems}">
+                    </sly>
+                </div>
+            </div>
+            <div class="level level-4 hide">
+                <h2 data-sly-test="${properties.step4bluetitle || properties.step4title}"><span class="title-color">${properties.step4bluetitle}</span> ${properties.step4title}</h2>
+                <div data-form-field="tradeStatus" class="form-group">
+                    <sly data-sly-call="${dropdownTemplates.dropdown @ name='tradeStatus', uuid=uuid, label=properties.tradestatus,
+                        placeholder=properties.tradestatusplaceholder, required=true, nourl=true,
+                        requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=matchmaking.tradestatusitems}">
+                    </sly>
+                </div>
+                <div class="form-group" data-form-field="marketsInt">
+                    <sly data-sly-call="${dropdownTemplates.dropdown @ dropdowntype='multiple', name='marketsInt-large', uuid=uuid, label=properties.marketsint,
+                         placeholder=properties.marketsintplaceholder,
+                         required=true, nourl=true, buttontext=properties.marketsintconfirm, clearalltext=properties.marketsintclear,
+                         singulartext=properties.marketsintsingular, pluraltext=properties.marketsintplural,
+                         requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=matchmaking.marketsintitems}">
+                    </sly>
+                </div>
+                <div class="form-group" data-form-field="painPoint">
+                    <sly data-sly-call="${dropdownTemplates.dropdown @ dropdowntype='multiple', name='painPoint', uuid=uuid, label=properties.painpoint,
+                         placeholder=properties.painpointplaceholder,
+                         required=true, nourl=true, buttontext=properties.painpointconfirm, clearalltext=properties.painpointclear,
+                         singulartext=properties.painpointsingular, pluraltext=properties.painpointplural,
+                         requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=matchmaking.painpointitems}">
+                    </sly>
+                </div>
+                <div class="form-group" data-form-field="marketsExport" data-sly-test="${!properties.marketsexporthide}">
+                    <sly data-sly-call="${dropdownTemplates.dropdown @ dropdowntype='multiple', name='marketsExport', uuid=uuid, label=properties.marketsexport,
+                         placeholder=properties.marketsexportplaceholder,
+                         required=true, nourl=true, buttontext=properties.marketsexportconfirm, clearalltext=properties.marketsexportclear,
+                         singulartext=properties.marketsexportsingular, pluraltext=properties.marketsexportplural,
+                         requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=matchmaking.marketsexportitems}">
+                    </sly>
+                </div>
+                <div class="form-group" data-form-field="exportSales" data-sly-test="${!properties.exportsaleshide}">
+                    <sly data-sly-call="${dropdownTemplates.dropdown @ name='exportSales', uuid=uuid, label=properties.exportsales,
+                        placeholder=properties.exportsalesplaceholder, required=true, nourl=true,
+                        requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=matchmaking.exportsalesitems}">
+                    </sly>
+                </div>
+                <div class="form-group" data-form-field="otherQuestions" data-sly-test="${!properties.otherquestionshide}">
+                    <label for="otherQuestions-${uuid}">${properties.otherquestions}</label>
+                    <textarea id="otherQuestions-${uuid}" class="form-control" rows="6" maxlength="3999" data-max-length="3999" name="otherQuestions" placeholder="${properties.otherquestionsplaceholder}"></textarea>
+                </div>
+                <div class="form-group" data-form-field="otherAttendees" data-sly-test="${!properties.otherattendeeshide}">
+                    <label for="otherAttendees-${uuid}">${properties.otherattendees}</label>
+                    <textarea id="otherAttendees-${uuid}" class="form-control" rows="6" maxlength="3999" data-max-length="3999" name="otherAttendees" placeholder="${properties.otherattendeesplaceholder}"></textarea>
+                </div>
+                <div class="form-disclaimer" data-sly-test="${!properties.consentmm1hide}">
+                    <input id="consentMM1-${uuid}" type="checkbox" name="consentMM1" data-no-url="true" value="yes">
+                    <label for="consentMM1-${uuid}">${properties.consentmm1}</label>
+                    <span class="error" data-checkbox-message="${messages.formErrorMessages.checkbox}"></span>
+                    <div>
+                        ${properties.caslconsent @ context='html'}
+                    </div>
+                </div>
+            </div>
+            <div class="form-ctas bottom-ctas show-flex space-end">
+                <div data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='link', isUsedForModal='nomodal', buttonstate='enabled', link='#', action='back', buttontext=properties.ctaprevious, buttoncssclasses='back cta hide unstyled'}"  data-sly-unwrap></div>
+                <div data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled',action='next', buttontext=properties.ctanext, btntype='submit', buttoncssclasses='show next-btn'}"  data-sly-unwrap></div>
+                <div data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled',action='done', buttontext=properties.ctasubmit, btntype='submit', buttoncssclasses='hide done-btn'}"  data-sly-unwrap></div>
+            </div>
+        </div>
+    </form>
+    <div class="success-message hide">
+        <h2 class="title-color">${properties.successTitle}</h2>
+        <div>${properties.successPrimaryText @ context='html'}</div>
+    </div>
+    </sly>
+</div>

@@ -1,0 +1,176 @@
+article.article .authors {
+    margin-top: 0;
+}
+
+article.article .authors .author.article {
+    display: block;
+    margin-bottom: 32px;
+    overflow: hidden;
+}
+
+article.article .authors .author.article img {
+    display: block;
+    background-color: #c4cfca;
+    border: 1px solid rgba(51, 51, 51, 0.25);
+    border-radius: 100%;
+    height: 60px;
+    margin: 0 auto 32px;
+    width: 60px;
+}
+
+article.article .authors .author.article .info {
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    width: 83.33333333%;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-align: center;
+}
+
+article.article .authors .author.article .info .name {
+    color: #333;
+    font-family: "Georgia", "Times New Roman", Times, serif;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.7142;
+    display: inline-block;
+    float: none;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+}
+
+@media (min-width: 720px) {
+    article.article .authors .author.article .info .name {
+        font-size: .875rem;
+        line-height: 1.7142;
+    }
+}
+
+@media (min-width: 960px) {
+    article.article .authors .author.article .info .name {
+        font-size: .875rem;
+        line-height: 1.7142;
+    }
+}
+
+article.article .authors .author.article .info .company,
+article.article .authors .author.article .info .position {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    letter-spacing: 0.4px;
+    line-height: 2;
+    display: block;
+    float: none;
+}
+
+@media (min-width: 720px) {
+    article.article .authors .author.article .info .company,
+    article.article .authors .author.article .info .position {
+        font-size: .75rem;
+        line-height: 2;
+    }
+}
+
+@media (min-width: 960px) {
+    article.article .authors .author.article .info .company,
+    article.article .authors .author.article .info .position {
+        font-size: .75rem;
+        line-height: 2;
+    }
+}
+
+article.article .authors .author.article .info .linkedin {
+    margin: auto;
+}
+
+article.article .authors .author.article .info a.linkedin::after {
+    margin: 0 auto;
+}
+
+article.article .authors .author.article .info::after {
+    position: relative;
+}
+
+article.article .authors .author.article .biography a {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+}
+
+@media (min-width: 720px) {
+    article.article .authors {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    article.article .authors {
+        width: 100%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    article.article .authors .author.article img {
+        display: block;
+        float: left;
+        height: 130px;
+        margin: 0;
+        width: 130px;
+    }
+    article.article .authors .author.article .info {
+        min-height: 1px;
+        padding-left: 32px;
+        padding-right: 15px;
+        position: relative;
+        width: 66.66666667%;
+        margin-bottom: 32px;
+        text-align: left;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 960px) {
+    article.article .authors .author.article .info {
+        width: 66.66666667%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    article.article .authors .author.article .info .linkedin {
+        margin: 8px 0;
+    }
+    article.article .authors .author.article .info a.linkedin::after {
+        margin: 0;
+    }
+    article.article .authors .author.article .info::after {
+        display: block;
+    }
+    article.article .authors .author.article .biography {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 100%;
+        clear: both;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 960px) {
+    article.article .authors .author.article .biography {
+        width: 100%;
+        float: left;
+    }
+}

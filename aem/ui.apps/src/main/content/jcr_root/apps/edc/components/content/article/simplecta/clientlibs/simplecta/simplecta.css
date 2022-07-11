@@ -1,0 +1,186 @@
+.premiumcta-wrapper {
+    box-sizing: border-box;
+    margin: 32px 15px 0;
+    min-width: 0;
+    padding: 32px 0;
+}
+
+.premiumcta-wrapper::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.premiumcta-wrapper.key-line {
+    border-top: 1px solid rgba(51, 51, 51, 0.3);
+}
+
+.premiumcta-wrapper.no-padding {
+    margin: 0;
+}
+
+.premiumcta-wrapper.no-padding .premiumcta {
+    margin-left: 0;
+    min-height: 1px;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    width: 100%;
+}
+
+@media (min-width: 720px) {
+    .premiumcta-wrapper.no-padding .premiumcta {
+        width: 100%;
+        float: left;
+    }
+}
+
+.premiumcta-wrapper.single-button {
+    margin: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.premiumcta-wrapper.single-button .premiumcta {
+    margin-left: 0;
+    min-height: 1px;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    width: 100%;
+}
+
+@media (min-width: 720px) {
+    .premiumcta-wrapper.single-button .premiumcta {
+        width: 100%;
+        float: left;
+    }
+}
+
+.premiumcta-wrapper h2 {
+    /**paddings for content heading **/
+    margin: 16px 0;
+    color: #4386ac;
+    margin-top: 0 !important;
+    text-align: left;
+}
+
+@media (min-width: 960px) {
+    .premiumcta-wrapper h2 {
+        margin: 32px 0;
+    }
+}
+
+.premiumcta-wrapper h2.center {
+    text-align: center;
+}
+
+.premiumcta-wrapper h2.right {
+    text-align: right;
+}
+
+.premiumcta-wrapper p {
+    margin: 1.25em 0;
+    text-align: left;
+}
+
+.premiumcta-wrapper p.center {
+    text-align: center;
+}
+
+.premiumcta-wrapper p.right {
+    text-align: right;
+}
+
+.premiumcta-wrapper .button-container.center {
+    text-align: center;
+}
+
+.premiumcta-wrapper .button-container.right {
+    text-align: right;
+}
+
+.premiumcta-wrapper .button-container .edc-secondary-btn {
+    color: #333;
+}
+
+@media (min-width: 720px) {
+    .premiumcta-wrapper {
+        margin: 64px 0 0;
+        padding: 48px 0;
+    }
+    .premiumcta-wrapper .premiumcta {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .premiumcta-wrapper .premiumcta {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .premiumcta-wrapper .premiumcta {
+        margin-left: 8.33333333%;
+    }
+}
+
+@media (min-width: 960px) {
+    .premiumcta-wrapper {
+        margin: 64px 0 0;
+        padding: 48px 0;
+    }
+    .premiumcta-wrapper .premiumcta {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 720px) {
+    .premiumcta-wrapper .premiumcta {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 720px) {
+    .premiumcta-wrapper .premiumcta {
+        margin-left: 25%;
+    }
+}
+
+@media (min-width: 1140px) {
+    .premiumcta-wrapper {
+        margin: 64px 0 0;
+        padding: 48px 0;
+    }
+    .premiumcta-wrapper .premiumcta {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 1140px) and (min-width: 720px) {
+    .premiumcta-wrapper .premiumcta {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 1140px) and (min-width: 720px) {
+    .premiumcta-wrapper .premiumcta {
+        margin-left: 25%;
+    }
+}

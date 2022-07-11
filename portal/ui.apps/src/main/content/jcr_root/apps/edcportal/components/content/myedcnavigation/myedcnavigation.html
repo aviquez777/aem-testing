@@ -1,0 +1,56 @@
+<sly data-sly-use.multifieldDashboard="${'com.edc.edcportal.core.helpers.MultifieldReaderHelper' @ multifield='itemsDashboard'}"/>
+<sly data-sly-test.dashboard="${multifieldDashboard.fields}"/>
+<sly data-sly-use.multifieldMyProfile="${'com.edc.edcportal.core.helpers.MultifieldReaderHelper' @ multifield='itemsMyProfile'}"/>
+<sly data-sly-test.myProfile="${multifieldMyProfile.fields}"/>
+<sly data-sly-use.model="${'com.edc.edcportal.core.models.MyEdcNavigation'}"/>
+
+<nav class="c-myedc-nav-cont">
+    <div class="c-myedc-nav" data-sticky="true">
+     <div class="tab-labels-container">
+         <div class="c-dropdown">
+             <div class="dropdown-overlay">
+                 <label for="select-label-748b36d9-eacd-490e-83fc-3253cb3ce5f7">${'mobile-navigation-title' @ i18n}</label>
+                 <div class="dropdown-container">
+                     <div class="dropdown-title">
+                         <span class="label-text">${'mobile-navigation-title' @ i18n}</span>
+                         <span class="close-btn"></span>
+                     </div>
+
+                     <select name="select-label" data-sly-test="${model.linkUrlDashboard && model.linkUrlMyProfile}" class="form-control ui selection dropdown" required="" data-no-url="true" data-limit="">
+                         <option value="${'my-dashboard-title' @ i18n}">${'my-dashboard-title' @ i18n}</option>
+                         <option value="${'manage-my-profile-title' @ i18n}">${'manage-my-profile-title' @ i18n}</option>
+                     </select>
+                     <span class="error" data-req-message="This is a required field." data-select-one-message="This is a required field."></span>
+                 </div>
+             </div>
+         </div>
+
+         <ul class="tab-labels">
+             <li data-sly-test="${model.linkUrlDashboard}">
+                 <a x-cq-linkchecker="skip" href="${model.linkUrlDashboard}" class="${model.isDashboard ? 'selected' : ''}" data-link-target="${model.linkUrlDashboard}">
+                     ${'my-dashboard-title' @ i18n}
+                 </a>
+                 <ul data-sly-list="${dashboard}">
+                     <li>
+                         <a href="${item.anchorLinkDashboard}" data-target="section${itemList.count}">
+                             ${item.anchorTextDashboard}
+                         </a>
+                     </li>
+                 </ul>
+             </li>
+             <li data-sly-test="${model.linkUrlMyProfile}">
+                 <a x-cq-linkchecker="skip" href="${model.linkUrlMyProfile}" class="${model.isMyProfile ? 'selected' : ''}"  data-link-target="${model.linkUrlMyProfile}">
+                     ${'manage-my-profile-title' @ i18n}
+                 </a>
+                <ul data-sly-list="${myProfile}">
+                     <li>
+                         <a href="${item.anchorLinkMyProfile}" data-target="section${itemList.count}">
+                             ${item.anchorTextMyProfile}
+                         </a>
+                     </li>
+                 </ul>
+             </li>
+         </ul>
+     </div>
+    </div>
+ </nav>

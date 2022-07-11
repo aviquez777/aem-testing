@@ -1,0 +1,331 @@
+.c-tap-form {
+    box-sizing: border-box;
+    margin: 3rem 0;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.c-tap-form * {
+    box-sizing: border-box;
+}
+
+.c-tap-form .cta {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.c-tap-form .hide,
+.c-tap-form .hide-label,
+.c-tap-form span.error {
+    display: none;
+}
+
+.c-tap-form input[type='checkbox'] {
+    cursor: pointer;
+    float: left;
+}
+
+.c-tap-form .levels {
+    clear: both;
+}
+
+.c-tap-form .levels .bottom-ctas {
+    clear: both;
+}
+
+.c-tap-form .levels .form-ctas .back {
+    font-weight: 600;
+    margin-right: 32px;
+}
+
+.c-tap-form .levels .form-group {
+    margin-bottom: 1rem;
+}
+
+.c-tap-form .levels .level {
+    min-height: 1px;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    width: 100%;
+}
+
+@media (min-width: 720px) {
+    .c-tap-form .levels .level {
+        width: 100%;
+        float: left;
+    }
+}
+
+.c-tap-form .levels .level .description {
+    margin-bottom: 0;
+}
+
+.c-tap-form .levels .level h3 {
+    margin-bottom: 2rem;
+    margin-top: 3.5rem;
+}
+
+.c-tap-form .levels .level .sub-section h3 {
+    margin-top: 2rem;
+}
+
+.c-tap-form .levels .heading h2 {
+    margin-bottom: 1.5rem;
+}
+
+.c-tap-form .form-disclaimer {
+    margin-bottom: 2rem;
+    padding: 1rem 19px;
+}
+
+.c-tap-form .form-disclaimer.background {
+    background-color: #f5f5f5;
+    border-radius: 4px;
+}
+
+.c-tap-form .form-disclaimer label {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.7142;
+    font-weight: normal;
+    display: table-cell;
+}
+
+@media (min-width: 720px) {
+    .c-tap-form .form-disclaimer label {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-tap-form .form-disclaimer label {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+.c-tap-form .form-disclaimer label p {
+    margin: 0;
+}
+
+.c-tap-form .form-disclaimer p {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.7142;
+    font-weight: normal;
+}
+
+@media (min-width: 720px) {
+    .c-tap-form .form-disclaimer p {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-tap-form .form-disclaimer p {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+.c-tap-form .success-message {
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    width: 100%;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+}
+
+@media (min-width: 720px) {
+    .c-tap-form .success-message {
+        width: 100%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.c-tap-form .success-message h2 {
+    margin-bottom: 2rem;
+}
+
+.c-tap-form .success-message p {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.c-tap-form .status {
+    border-top: 1px solid rgba(51, 51, 51, 0.3);
+    clear: both;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+}
+
+.c-tap-form .status .status-bar {
+    min-height: 1px;
+    padding-left: 0;
+    padding-right: 15px;
+    position: relative;
+    width: 25%;
+    float: left;
+    border-top: 4px solid #007C03;
+}
+
+.c-tap-form .show {
+    display: inline-block;
+}
+
+.c-tap-form .show-block {
+    display: block;
+}
+
+.c-tap-form .show-flex {
+    align-items: center;
+    display: flex;
+}
+
+.c-tap-form .space-end {
+    justify-content: flex-end;
+}
+
+.c-tap-form .title-color {
+    color: #26a2b5;
+}
+
+@media (min-width: 720px) {
+    .c-tap-form .hide-label {
+        display: block;
+        opacity: 0;
+    }
+    .c-tap-form .levels {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 66.66666667%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-tap-form .levels {
+        width: 66.66666667%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-tap-form .levels .form-group {
+        margin-bottom: 1.5rem;
+    }
+    .c-tap-form .levels .input-group {
+        display: flex;
+    }
+    .c-tap-form .levels .input-group .first {
+        padding-right: 8px;
+    }
+    .c-tap-form .levels .input-group .last {
+        padding-left: 8px;
+        padding-right: 0;
+    }
+    .c-tap-form .levels .input-half {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-tap-form .levels .input-half {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-tap-form .levels .input-mid {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 15px;
+        position: relative;
+        width: 66.66666667%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-tap-form .levels .input-mid {
+        width: 66.66666667%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-tap-form .levels .input-small {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 15px;
+        position: relative;
+        width: 33.33333333%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-tap-form .levels .input-small {
+        width: 33.33333333%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-tap-form .success-message {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-tap-form .success-message {
+        width: 50%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-tap-form .levels {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 720px) {
+    .c-tap-form .levels {
+        width: 50%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

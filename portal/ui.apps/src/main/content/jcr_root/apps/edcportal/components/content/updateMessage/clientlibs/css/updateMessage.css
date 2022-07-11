@@ -1,0 +1,78 @@
+.c-success-message {
+    -moz-transition: max-height 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+    -o-transition: max-height 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+    -webkit-transition: max-height 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+    transition: max-height 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    height: 56px;
+    max-height: 56px;
+    z-index: 10;
+    background-color: #2f78c6;
+    display: flex;
+    align-items: center;
+}
+
+.c-success-message * {
+    box-sizing: border-box;
+}
+
+.c-success-message .content-info {
+    padding-left: 1rem;
+}
+
+.c-success-message .content-info p {
+    font-size: 14px;
+    line-height: 1.7142;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    color: #fff;
+    margin: 0;
+}
+
+.c-success-message .content-accept .close-button {
+    cursor: pointer;
+    color: #fff;
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    text-decoration: none;
+    background-color: transparent;
+    font-style: normal;
+    border-radius: 0;
+    font-weight: normal;
+    display: inline-block;
+    padding: 0;
+    transition: none;
+}
+
+.c-success-message .content-accept .close-button span::after {
+    margin: 0;
+    right: 0;
+}
+
+.c-success-message .content-accept .close-button:hover span, .c-success-message .content-accept .close-button:active span, .c-success-message .content-accept .close-button:focus span {
+    padding: 0;
+}
+
+.c-success-message .content-accept .close-button::after {
+    content: "";
+    font-family: 'iconfonts';
+    font-size: 42px;
+}
+
+.c-success-message.hide {
+    max-height: 0;
+}
+
+@media (min-width: 720px) {
+    .c-success-message {
+        justify-content: center;
+    }
+    .c-success-message .content-info p {
+        text-align: center;
+    }
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+  xmlns:jcr="http://www.jcp.org/jcr/1.0"
+  jcr:primaryType="sling:OsgiConfig"
+  getLoginUrl="http://localhost:8888/myedc/auth/Login?target=/en/my-account/home.html"
+  webinarWindowTime="-15"
+  getAddressCompleteService="Loqate"
+  getAddressCompleteCSSUrl="//services.postcodeanywhere.co.uk/css/address-3.91.css"
+  getAddressCompleteJSUrl="//services.postcodeanywhere.co.uk/js/address-3.91.js"
+  getAddressCompleteKey="JB71-XW85-PU21-PJ25"/>

@@ -1,0 +1,5 @@
+.richtext-container .coral-RichText.is-edited table,
+.richtext-container .rte-sourceEditor table {
+    width: 100%;
+}
+

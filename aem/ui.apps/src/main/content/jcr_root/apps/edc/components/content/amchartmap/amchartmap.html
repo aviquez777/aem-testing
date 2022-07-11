@@ -1,0 +1,27 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-use.amchartmap="com.edc.edcweb.core.models.AmChartMap"/>
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-test.hasvalues="${amchartmap.hasValues}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !hasvalues}"/>
+
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+<div data-sly-test="hasvalues" class="c-ammap globe" id="c-ammap-${uuid}" data-event-action="main body" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'AmChart Map'}" data-type-map="worldHigh" data-service-url="${currentPage.name}/_jcr_content.amchartmap.json" data-uuid-map="${uuid}" data-images-path="/etc.clientlibs/edc/clientlibs/clientlib-base/resources/images/ammap/">
+    <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html" data-sly-test.clientlibCategories="edc.amchartmap" data-sly-call="${clientLib.all @ categories=clientlibCategories}" />
+    <div class="c-ammap-map" id="c-ammap-map-${uuid}"></div>
+
+    <div data-sly-test.accordion="${amchartmap.accordionData}" data-sly-repeat.item="${accordion}" class="c-ammap-accordion" id="c-ammap-accordion-${uuid}" aria-expanded="${wcmmode.disabled ? 'false' : 'true'}" data-stay-open="${properties.stayOpen ? 'true': 'false'}" data-event-component="accordion" data-event-type="form" data-event-name="Accordion Panel" data-event-engagement="3" data-event-action="main body" data-event-level="primary">
+        <div class="panel" aria-label="${item.title}" role="region" aria-expanded="false" id="${item.code}-${uuid}"  aria-expanded="${wcmmode.disabled ? 'false' : 'true'}"  aria-controls="content-container-${uuid}">
+            <h3 class="button-heading">
+               <button id="panel-button-${uuid}" class="panel-label" aria-expanded="${wcmmode.disabled ? 'false' : 'true'}"  aria-controls="content-container-${uuid}">${item.title}
+                    <i class="icon-arrow"></i><!-- //NOSONAR -->
+                </button>
+            </h3>
+            <div id="content-container-${uuid}" aria-labelledby="panel-button-${uuid}" aria-hidden="${wcmmode.disabled ? 'true' : 'false'}" class="panel-inner shown">
+                <div class="panel-content">
+                    ${item.description @ context='html'}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

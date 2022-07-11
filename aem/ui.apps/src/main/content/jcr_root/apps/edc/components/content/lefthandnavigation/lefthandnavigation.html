@@ -1,0 +1,25 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.model="com.edc.edcweb.core.models.LeftHandNavigation" />
+<sly data-sly-test.pages="${model.pages}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !pages}"/>
+<sly data-sly-use.dropdownTemplates="${'/apps/edc/components/common/dropdown.html'}" />
+
+<nav class="c-left-hand-nav ${model.noBottomMargin ? 'no-b-margin' : ''}" data-sly-test.mainmenu="${pages}">
+    <sly data-sly-call="${dropdownTemplates.dropdown @ name='left-hand-nav', label=model.navTitle,
+        placeholder='', variation='nav', options=mainmenu, currentpagepath=currentPage.path}">
+    </sly>
+    <div class="left-hand main-nav">
+        <ul data-sly-list.item="${mainmenu}">
+            <li class="parent-link ${(currentPage.path == item.page.path) ? 'selected' : ''}">
+                <a x-cq-linkchecker="valid" target="${model.target}" class="link" aria-expanded="false" href="${item.page.properties['substitutepath'] ? item.page.properties['substitutepath'] : item.page.path @ extension='html'}">${item.page.navigationTitle ? item.page.navigationTitle : item.page.title}</a>
+                <span role="button" aria-label="${'Expand Sub Options' @ i18n}"></span>
+
+                <ul data-sly-test.children="${item.children}" data-sly-list.subitem="${children}">
+                    <li class="${(currentPage.path == subitem.page.path) ? 'selected' : ''}">
+                        <a x-cq-linkchecker="valid" target="${model.target}" class="sublink" href="${subitem.page.properties['substitutepath'] ? subitem.page.properties['substitutepath'] : subitem.page.path @ extension='html'}">${subitem.page.navigationTitle ? subitem.page.navigationTitle : subitem.page.title}</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>

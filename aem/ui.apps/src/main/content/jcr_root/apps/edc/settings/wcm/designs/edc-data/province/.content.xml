@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <ab
+        jcr:primaryType="nt:unstructured"
+        enName="Alberta"
+        frName="Alberta"
+        value="AB" />
+    <bc
+        jcr:primaryType="nt:unstructured"
+        enName="British Columbia"
+        frName="Colombie-Britannique"
+        value="BC" />
+    <mb
+        jcr:primaryType="nt:unstructured"
+        enName="Manitoba"
+        frName="Manitoba"
+        value="MB" />
+    <nb
+        jcr:primaryType="nt:unstructured"
+        enName="New Brunswick"
+        frName="Nouveau-Brunswick"
+        value="NB" />
+    <nf
+        jcr:primaryType="nt:unstructured"
+        enName="Newfoundland and Labrador"
+        frName="Terre-Neuve-et-Labrador"
+        value="NF" />
+    <ns
+        jcr:primaryType="nt:unstructured"
+        enName="Nova Scotia"
+        frName="Nouvelle-Écosse"
+        value="NS" />
+    <nt
+        jcr:primaryType="nt:unstructured"
+        enName="Northwest Territories"
+        frName="Territoires du Nord-Ouest"
+        value="NT" />
+    <nu
+        jcr:primaryType="nt:unstructured"
+        enName="Nunavut"
+        frName="Nunavut"
+        value="NU" />
+    <on
+        jcr:primaryType="nt:unstructured"
+        enName="Ontario"
+        frName="Ontario"
+        value="ON" />
+    <pe
+        jcr:primaryType="nt:unstructured"
+        enName="Prince Edward Island"
+        frName="Île-du-Prince-Édouard"
+        value="PE" />
+    <pq
+        jcr:primaryType="nt:unstructured"
+        enName="Quebec"
+        frName="Québec"
+        value="PQ" />
+    <sk
+        jcr:primaryType="nt:unstructured"
+        enName="Saskatchewan"
+        frName="Saskatchewan"
+        value="SK" />
+    <yt
+        jcr:primaryType="nt:unstructured"
+        enName="Yukon"
+        frName="Yukon"
+        value="YT" />
+</jcr:root>

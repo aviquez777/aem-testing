@@ -1,0 +1,98 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-test.imageInBody="${properties.fileReference}" />
+<sly data-sly-test.textBackground="${properties.textBackground}" />
+<sly data-sly-test.featureProduct="${properties.fcFileReference}" />
+<sly data-sly-call="${templates.placeholder @ isEmpty = !imageInBody && !textBackground && !featureProduct}"/>
+<sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+<sly data-sly-use.policyReader="com.edc.edcweb.core.models.PolicyReader" />
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+<sly data-sly-use.ibButtonTemplate="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+
+<sly data-sly-test="${properties.componentType == 'imageinbodytext'}">
+    <sly data-sly-test.imagesize="${properties.imagePosition == 'sm' ? 'small' : ''}" />
+    <sly data-sly-test.imagesize="${properties.imagePosition == 'md' ? 'medium' : imagesize}" />
+    <sly data-sly-test.imagesize="${properties.imagePosition == 'lg' ? 'large' : imagesize}" />
+    <sly data-sly-test.imagesize="${properties.imagePosition == 'de' ? 'default' : imagesize}" />
+    <sly data-sly-test.linkstyle="${properties.linkstyle == 'button' ? 'button edc-tertiary-btn' : 'tertiary'}" />
+
+    <section class="image-body-text ${imagesize}">
+        <div data-sly-test="${properties.header}" class="text-before-image ${properties.beforealignment}">
+            ${properties.header @ context='html'}
+        </div>
+        <div class="content-image content-image-${imagesize} ${properties.imagealignment}">
+
+            <sly data-sly-test="${!properties.enlargeImage || properties.enlargeImage == 'no' || imagesize == 'small' || imagesize == 'default'}">
+                <sly data-sly-call="${commonTemplates.picture @ desktop=properties.fileReference, tablet=properties.tabletFileReference, phone=properties.teaserimage, imageAlt=properties.imageAlt}"/>
+            </sly>
+
+            <!-- Enlarge Image -->
+            <sly data-sly-test="${properties.enlargeImage == 'yes' && (imagesize == 'medium' || imagesize == 'large')}">
+                <div class="img-wrapper" title="${policyReader.labels['expandLabel'] || 'Expand'}">
+                    <a href="#" class="modal-trigger" data-modal-to-trigger="${uuid}-modal-enlarge-image">
+                        <sly data-sly-call="${commonTemplates.picture @ desktop=properties.fileReference, tablet=properties.tabletFileReference, phone=properties.teaserimage, imageAlt=properties.imageAlt}"/>
+                    </a>
+                    <div class="c-modal modal-example" role="dialog" aria-modal="true">
+                        <button type="button" class="edc-btn-unstyled modal-trigger anchor" data-modal-to-trigger="${uuid}-modal-enlarge-image">${policyReader.labels['expandLabel'] || 'Expand'}</button>
+                        <div class="modal-dialog enlarge-image" id="${uuid}-modal-enlarge-image">
+                            <div class="modal-shade"></div>
+                            <div class="modal-container">
+                                <button class="edc-btn-icon modal-close" aria-label="Close">
+                                    <span>${policyReader.labels['closeLabel'] || 'Close'}</span>
+                                </button>
+                                <div class="modal-content" role="region" aria-labelledby="modal-enlarge-image-content-${uuid}">
+                                    <div id="modal-enlarge-image-content-${uuid}" class="modal-title">
+                                        <span class="sr-only">modal image</span>
+                                    </div>
+                                    <div class="modal-img">
+                                        <img src="${properties.fullResolution}" alt="${properties.fullResolutionAlt}" />
+                                        <div data-sly-test.caption="${properties.caption}" class="image-caption">
+                                            ${caption @ context='html'}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </sly>
+        </div>
+        <div data-sly-test.caption="${properties.caption}" class="image-caption ${properties.imagealignment}">
+            ${caption @ context='html'}
+        </div>
+        <div data-sly-test="${properties.body}" class="text-after-image ${properties.textalignment}">
+            ${properties.body @ context='html'}
+        </div>
+        <sly data-sly-test="${properties.linktext && properties.linkurl}">
+            <sly data-sly-use.link="${'com.edc.edcweb.core.models.PageModelHelper' @ path = properties.linkurl}" />
+            <div class="content-link ${properties.ctaalignment}">
+                <div data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='link', isUsedForModal='nomodal', buttonstate='enabled', link=link.url, buttontext=properties.linktext,buttoncssclasses=linkstyle, target=properties.linktarget, linkchecker='valid'}"  data-sly-unwrap></div>
+            </div>
+        </sly>
+    </section>
+</sly>
+
+<sly data-sly-test="${properties.componentType == 'textbackground'}">
+    <sly data-sly-test.background="${properties.typeTextBackground == 'lb' ? 'bg-light' : 'bg-dark'}" />
+    <section class="text-background ${background}">
+        <h3 data-sly-test="${properties.title}">${properties.title}</h3>
+        <sly data-sly-test="${properties.textBackground}">
+            ${properties.textBackground @ context='html'}
+        </sly>
+    </section>
+</sly>
+
+<sly data-sly-test="${properties.componentType == 'productfeature'}">
+    <section class="text-background bg-lighter">
+        <h3 data-sly-test="${properties.fcSmallHeader}" class="subtitle">${properties.fcSmallHeader}</h3>
+        <h2 data-sly-test="${properties.fcTitle}">${properties.fcTitle}</h2>
+        <img data-sly-test="${properties.fcFileReference}" src="${properties.fcFileReference}" alt="${properties.fcAlt}" />
+        <sly data-sly-test="${properties.fcDescription}">
+            ${properties.fcDescription @ context='html'}
+        </sly>
+        <div class="btn-area" data-sly-test="${properties.fcCtaText && properties.fcCtaLink}">
+            <sly data-sly-use.urlres="${'com.edc.edcweb.core.models.PageModelHelper' @ path = properties.fcCtaLink}"/>
+            <div data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='link', isUsedForModal='nomodal', buttonstate='enabled', link=urlres.url, buttontext=properties.fcCtaText, buttoncssclasses='button edc-primary-btn', linkchecker='valid'}"  data-sly-unwrap></div>
+        </div>
+    </section>
+</sly>

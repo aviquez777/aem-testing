@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+  xmlns:cq="http://www.day.com/jcr/cq/1.0"
+  xmlns:jcr="http://www.jcp.org/jcr/1.0"
+  xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+  jcr:primaryType="nt:unstructured" jcr:title="Slides"
+  sling:resourceType="cq/gui/components/authoring/dialog">
+  <content jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/container">
+    <items jcr:primaryType="nt:unstructured">
+      <headline
+        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+        fieldLabel="Headline"
+        fieldDescription="Mandatory headline for each of the case studies"
+        jcr:primaryType="nt:unstructured" required="{Boolean}true"
+        name="./headline" />
+      <name
+        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+        fieldLabel="Name"
+        fieldDescription="Mandatory name for each of the case studies"
+        jcr:primaryType="nt:unstructured"
+        required="{Boolean}true"
+        name="./clientName" />
+      <namemobile
+        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+        fieldLabel="Mobile name text"
+        fieldDescription="If authored, this text will be displayed on mobile view"
+        jcr:primaryType="nt:unstructured"
+        name="./clientNameMobile" />
+      <company
+        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+        fieldLabel="Company"
+        fieldDescription="Mandatory company for each of the case studies"
+        jcr:primaryType="nt:unstructured"
+        required="{Boolean}true"
+        name="./clientCompany" />
+      <companymobile
+        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+        fieldLabel="Mobile company text"
+        fieldDescription="If authored, this text will be displayed on mobile view"
+        jcr:primaryType="nt:unstructured"
+        name="./clientCompanyMobile" />
+      <slideimages jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+          <heading jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/text"
+            class="coral-Form-fieldlabel"
+            text="Slide View Images" />
+          <well jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+            <layout jcr:primaryType="nt:unstructured"
+              sling:resourceType="granite/ui/components/coral/foundation/layouts/well" />
+            <items jcr:primaryType="nt:unstructured">
+              <info jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/text"
+                text="Please Follow the specified file dimensions." />
+              <desktop jcr:primaryType="nt:unstructured"
+                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                fieldDescription="Image dimension: 368 x 320"
+                fieldLabel="Desktop Breakpoint Image 368 x 320"
+                mimeTypes="[image]"
+                multiple="{Boolean}false"
+                name="./fileReference"
+                required="{Boolean}true"
+                rootPath="/content/dam/edc" />
+              <tablet jcr:primaryType="nt:unstructured"
+                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                fieldDescription="Image dimension: 270 x 152"
+                fieldLabel="Tablet Breakpoint Image 270 x 152"
+                mimeTypes="[image]"
+                multiple="{Boolean}false"
+                name="./tabletFileReference"
+                required="{Boolean}true"
+                rootPath="/content/dam/edc" />
+              <teaserimage jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                fieldDescription="Image dimension: 135 x 80"
+                fieldLabel="Mobile Breakpoint Image 135 x 80"
+                required="{Boolean}true"
+                name="./teaserImage"
+                rootPath="/content/dam/edc" />
+              <imagealttext
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Used as the alternate text for all article images"
+                fieldLabel="Image Alternate Text"
+                required="{Boolean}true"
+                name="./imageAltText" />
+            </items>
+          </well>
+        </items>
+      </slideimages>
+    </items>
+  </content>
+</jcr:root>

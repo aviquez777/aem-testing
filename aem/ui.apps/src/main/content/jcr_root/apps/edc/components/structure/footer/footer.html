@@ -1,0 +1,46 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.model="com.edc.edcweb.core.models.Footer"/>
+<sly data-sly-use.footerTemplate="/apps/edc/components/common/footer.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !model.leftTitle}"/>
+
+<footer id="footer" class="full-width" data-sly-test="${model.leftTitle}">
+    <div class="container">
+        <section class="footer-nav">
+            <nav aria-label="${model.ariaLabel}">
+                <sly data-sly-call="${footerTemplate.footersection @ sectionTitle=model.leftTitle, sectionLinks=model.leftLinks, sectionID=model.leftID, ariaControlsParam = model.leftAriaControls}" />
+                <sly data-sly-call="${footerTemplate.footersection @ sectionTitle=model.centerTitle, sectionLinks=model.centerLinks, sectionID=model.centerID, ariaControlsParam = model.centerAriaControlsl}" />
+                <sly data-sly-call="${footerTemplate.footersection @ sectionTitle=model.rightTitle, sectionLinks=model.rightLinks, sectionID=model.rightID, ariaControlsParam = model.rightAriaControls}" />
+
+                <div class="footer-nav-section contact" aria-expanded="false">
+                    <div class="contact-links">
+                        <sly data-sly-call="${footerTemplate.footersectiontitle @ title=model.contactTitle, classes=model.classes, id=model.contactID, ariaControls = model.contactAriaControls}"/>
+                        <ul class="nav-links" aria-hidden="true" id="${model.contactAriaControls}" role="region" aria-labelledby="${model.contactID}" data-sly-test="${model.phoneNumber != null && model.contactLinks.size > 0}">
+                            <li>
+                                <a x-cq-linkchecker="valid" class="mobile" href="tel:${model.phoneNumber}">
+                                    <span class="phone-icon"></span> ${model.phoneNumber}
+                                </a>
+                            </li>
+                            <sly data-sly-list="${model.contactLinks}">
+                                <li>
+                                    <a x-cq-linkchecker="valid" href="${item.linkUrl}" target="${item.linkTarget}"> ${item.linkText}</a>
+                                </li>
+                            </sly>
+                        </ul>
+                        <sly data-sly-call="${footerTemplate.footersectiontitle @ title=model.socialTitle, classes='connect'}" />
+                        <ul class="social-icons" data-sly-list="${model.socialLinks}">
+                            <li>
+                                <a href="${item.linkUrl}" target="${item.linkTarget}">
+                                    <span aria-label="${item.linkText}" class="iconfont ${item.linkText}"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </section>
+    </div>
+
+    <sly data-sly-call="${footerTemplate.footerbottomsection @ canadaLogoUrl=model.canadaLogoUrl, canadaLogoTarget=model.canadaLogoTarget, canadaLogoPath=model.canadaLogoPath, canadaLogoPath2x=model.canadaLogoPath2x, canadaImgAlt=model.canadaImgAlt,
+        edcLogoUrl=model.edcLogoUrl, edcLogoTarget=model.edcLogoTarget, edcLogoPath=model.edcLogoPath, edcLogoPath2x=model.edcLogoPath2x, edcImgAlt=model.edcImgAlt,
+        bottomLinks=model.bottomLinks, companyName=model.companyName, edcAddress=model.edcAddress}" />
+</footer>

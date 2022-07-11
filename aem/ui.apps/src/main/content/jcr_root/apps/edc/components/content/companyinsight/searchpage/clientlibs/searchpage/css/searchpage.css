@@ -1,0 +1,34 @@
+.c-company-insight-search-default {
+    box-sizing: border-box;
+}
+
+.c-company-insight-search-default * {
+    box-sizing: border-box;
+}
+
+.c-company-insight-search-default .search-info .disclaimer {
+    text-align: center;
+    margin: 0 1rem;
+}
+
+.c-company-insight-search-default .search-info .disclaimer p {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.c-company-insight-search-default .search-info .section-blurb .fade-in-slide-up {
+    font-size: 16px;
+}
+
+@media (min-width: 720px) {
+    .c-company-insight-search-default .search-info .disclaimer {
+        margin: 0 8rem;
+    }
+    .c-company-insight-search-default .search-info .section-blurb {
+        margin: 0 2rem;
+    }
+    .c-company-insight-search-default .search-info .section-blurb .fade-in-slide-up {
+        width: calc(100% - 4rem);
+    }
+}

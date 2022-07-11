@@ -1,0 +1,129 @@
+.show-separator,
+.keyline,
+.separator {
+    border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+}
+
+/**paddings for content heading **/
+.spacing-content-headings {
+    margin: 16px 0;
+}
+
+@media (min-width: 960px) {
+    .spacing-content-headings {
+        margin: 32px 0;
+    }
+}
+
+.wrapper-card-grid {
+    margin-top: 80px;
+}
+
+.wrapper-card-grid > .title {
+    margin: 0 15px;
+    text-align: center;
+}
+
+.wrapper-card-grid .view-more-cta {
+    margin-bottom: 80px;
+    text-align: center;
+    min-height: 27px;
+}
+
+.wrapper-card-grid .view-more-cta p {
+    display: initial;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    color: #37769a;
+    text-decoration: underline;
+    margin: 0;
+    cursor: pointer;
+}
+
+.wrapper-card-grid .view-more-cta.hide {
+    display: none;
+}
+
+.wrapper-card-grid .view-more-cta a {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+}
+
+.content-card-grid {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+}
+
+.content-card-grid .content-card {
+    box-sizing: border-box;
+    float: left;
+    margin: 0 30px 30px 0;
+    width: calc(100% - 30px);
+}
+
+.content-card-grid .content-card.premium {
+    width: calc(100% - 30px);
+}
+
+.content-card-grid * {
+    box-sizing: border-box;
+}
+
+@media (min-width: 720px) {
+    .content-card-grid {
+        padding: 50px 15px;
+    }
+    .content-card-grid .content-card {
+        width: calc(50% - 30px);
+    }
+    .content-card-grid .content-card.premium {
+        width: calc(100% - 30px);
+    }
+}
+
+@media (min-width: 960px) {
+    .content-card-grid {
+        width: 100%;
+    }
+    .content-card-grid .content-card {
+        width: calc(33% - 30px);
+    }
+    .content-card-grid .content-card.premium {
+        width: calc(66% - 30px);
+    }
+}
+
+@supports (display: grid) {
+    .content-card-grid {
+        display: grid;
+        grid-auto-flow: dense;
+        grid-gap: 30px;
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        padding: 30px 15px;
+    }
+    .content-card-grid .content-card {
+        justify-self: stretch;
+        margin: 0;
+        width: 100%;
+    }
+    .content-card-grid .content-card.premium {
+        width: 100%;
+    }
+    @media (min-width: 720px) {
+        .content-card-grid {
+            grid-template-columns: repeat(2, 1fr);
+            padding: 48px 15px;
+        }
+        .content-card-grid .content-card.premium {
+            grid-column-end: span 2;
+        }
+    }
+    @media (min-width: 960px) {
+        .content-card-grid {
+            padding: 48px 15px;
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}

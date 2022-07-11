@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured" jcr:title="Card Page"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content jcr:primaryType="nt:unstructured"
+             sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <position
+                    sling:resourceType="/libs/granite/ui/components/coral/foundation/heading"
+                    level="3"
+                    text="Position 7"
+                    jcr:primaryType="nt:unstructured"/>
+            <cardType
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/form/select"
+                    class="cq-dialog-dropdown-showhide"
+                    cq-dialog-dropdown-showhide-target=".ftl-cardtype-showhide-target-7"
+                    fieldDescription="Determines the type of card to display."
+                    fieldLabel="Card Type"
+                    validation="thought-leadership"
+                    name="./cardtype7">
+                <items jcr:primaryType="nt:unstructured">
+                    <pullFromMostRecentOpt
+                            jcr:primaryType="nt:unstructured"
+                            text="Pull from most recent"
+                            value="pullfrommostrecent"/>
+                    <selectPagePath
+                            jcr:primaryType="nt:unstructured"
+                            text="Existing AEM page to display"
+                            value="pagepath"/>
+                    <customAuthorOpt
+                            jcr:primaryType="nt:unstructured"
+                            text="Author Manually"
+                            value="customauthor"/>
+                </items>
+            </cardType>
+            <pullFromMostRecent
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/container"
+                    class="hide ftl-cardtype-showhide-target-7 foundation-layout-util-vmargin"
+                    showhidetargetvalue="pullfrommostrecent">
+                <items jcr:primaryType="nt:unstructured">
+                    <noConfigNeeded
+                            sling:resourceType="granite/ui/components/coral/foundation/text"
+                            text="Configuration is not required for this card type"
+                            jcr:primaryType="nt:unstructured"/>
+                </items>
+            </pullFromMostRecent>
+            <selectPagePath
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/container"
+                    class="hide ftl-cardtype-showhide-target-7 foundation-layout-util-vmargin"
+                    showhidetargetvalue="pagepath">
+                <items jcr:primaryType="nt:unstructured">
+                    <card1
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                        rootPath="/content/edc"
+                        emptyText="Path to target page"
+                        fieldLabel="Existing AEM Page"
+                        forceSelection="{Boolean}true"
+                        name="./card7"
+                        required="{Boolean}true"/>
+                </items>
+            </selectPagePath>
+            <customAuthor
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/container"
+                    class="hide ftl-cardtype-showhide-target-7 foundation-layout-util-vmargin customauthor"
+                    showhidetargetvalue="customauthor">
+                <items jcr:primaryType="nt:unstructured">
+                    <title
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Title"
+                            fieldDescription="Text shown on the main screen"
+                            jcr:primaryType="nt:unstructured"
+                            name="./title7"
+                            required="{Boolean}true"/>
+                    <url
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Link url"
+                        fieldDescription="Select page or type external url"
+                        rootPath="/content/edc"
+                        name="./url7"
+                        required="{Boolean}true"/>
+                    <target
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldDescription="If external URL, choose new tab/page"
+                        fieldLabel="URL opens on"
+                        name="./linkTarget7"
+                        required="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <existing
+                                jcr:primaryType="nt:unstructured"
+                                text="Existing tab/page"
+                                value="_self"/>
+                            <new
+                                jcr:primaryType="nt:unstructured"
+                                text="New tab/page"
+                                value="_blank"/>
+                        </items>
+                    </target>
+                    <image
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                            allowUpload="{Boolean}false"
+                            autoStart="{Boolean}true"
+                            class="cq-droptarget"
+                            validation="image"
+                            fieldDescription="Image to show. 768x440 if it's hero/premium card, 375x210 for others."
+                            fieldLabel="Image"
+                            fileNameParameter="./externalImageName7"
+                            fileReferenceParameter="./externalImageReference7"
+                            mimeTypes="[image]"
+                            multiple="{Boolean}false"
+                            name="./image7"
+                            title="Upload Image Asset"
+                            uploadUrl="${suffix.path}"
+                            useHTML5="{Boolean}true"
+                            required="{Boolean}false"/>
+                    <imagealignment
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/form/select"
+                            fieldDescription="Determines the alignment of the image as a background."
+                            fieldLabel="Image focal point"
+                            name="./imageAlign7"
+                            required="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                                <left
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Left"
+                                        value="left"/>
+                                <center
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Center"
+                                        value="center"/>
+                                <right
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Right"
+                                        value="right"
+                                        selected="{Boolean}true"/>
+                        </items>
+                    </imagealignment>
+                    <alt
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Image alternate text"
+                        fieldDescription="Image alternate text."
+                        name="./imageAlt7"
+                        required="{Boolean}true"/>
+                    <formatType
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                        fieldDescription="Select the format type label"
+                        fieldLabel="Format type"
+                        name="./formatType7"
+                        rootPath="/edc/format-type"
+                        required="{Boolean}true"
+                        multiple="{Boolean}false">
+                    </formatType>
+                </items>
+            </customAuthor>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,61 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-use.multipletabs="com.edc.edcweb.core.models.MultipleTabs">
+    <sly data-sly-test.showBusinessEnvironment="${properties.usebusinessenvironment}" />
+    <sly data-sly-test.hasBusinessEnvironmentInfo="${multipletabs.tabTitle && multipletabs.businessEnvironment}" />
+</sly>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.tabheadingone ||  (showBusinessEnvironment && !hasBusinessEnvironmentInfo)  }"/>
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+<section data-sly-test="${(!showBusinessEnvironment && properties.tabheadingone) || (showBusinessEnvironment && hasBusinessEnvironmentInfo) }" class="tab-set" id="${uuid}"  data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'Multiple Tabs'}" data-event-type="interaction"   data-event-engagement="1" data-event-action="main body">
+    <h2 data-sly-test="${properties.title}">${properties.title}</h2>
+    <div class="tabs">
+        <nav role="tablist">
+            <div class="tab-labels-container">
+                <ul class="tab-labels">
+                    <!--/* Pull data from country info and policy */-->
+                    <li role="presentation" data-sly-test="${showBusinessEnvironment && hasBusinessEnvironmentInfo}">
+                        <button type="button" class="tab-label selected" id="${uuid}-tab1" aria-controls="${uuid}-panel1" role="tab" aria-selected="true">${multipletabs.tabTitle}</button>
+                    </li>
+                    <!--/* Pull data from component dialog */-->
+                    <li role="presentation" data-sly-test="${properties.tabheadingone && !showBusinessEnvironment}">
+                        <button type="button" class="tab-label selected" id="${uuid}-tab1" aria-controls="${uuid}-panel1" role="tab" aria-selected="true">${properties.tabheadingone}</button>
+                    </li>
+
+                    <li role="presentation" data-sly-test="${properties.tabheadingtwo}">
+                        <button type="button" class="tab-label" id="${uuid}-tab2" aria-controls="${uuid}-panel2" role="tab" aria-selected="false">${properties.tabheadingtwo}</button>
+                    </li>
+                    <li role="presentation" data-sly-test="${properties.tabheadingthree}">
+                        <button type="button" class="tab-label" id="${uuid}-tab3" aria-controls="${uuid}-panel3" role="tab" aria-selected="false">${properties.tabheadingthree}</button>
+                    </li>
+                    <li role="presentation" data-sly-test="${properties.tabheadingfour}">
+                        <button type="button" class="tab-label" id="${uuid}-tab4" aria-controls="${uuid}-panel4" role="tab" aria-selected="false">${properties.tabheadingfour}</button>
+                    </li>
+               </ul>
+            </div>
+            <div class="actions-nav">
+                <button type="button" class="icon icon-arrow-right"><span>${multipletabs.scrollleft}</span></button>
+                <button type="button" class="icon icon-arrow-left"><span>${multipletabs.scrollright}</span></button>
+            </div>
+        </nav>
+        <div id="tab-content-${uuid}" aria-live="polite">
+            <!--/* Pull data from country info and policy */-->
+            <article data-sly-attribute.data-linkid="${properties.linkidone}" data-sly-test="${showBusinessEnvironment && hasBusinessEnvironmentInfo}" class="tab-panel show" id="${uuid}-panel1" role="tabpanel" aria-labelledby="${uuid}-tab1">
+                <div class="tab-panel-content">${multipletabs.businessEnvironment @ context='html'}</div>
+            </article>
+            <!--/* Pull data from component dialog */-->
+            <article data-sly-attribute.data-linkid="${properties.linkidone}" data-sly-test="${properties.tabheadingone && !showBusinessEnvironment}" class="tab-panel show" id="${uuid}-panel1" role="tabpanel" aria-labelledby="${uuid}-tab1">
+                <div class="tab-panel-content">${properties.tabrtftextone @ context='html'}</div>
+            </article>
+            <article data-sly-attribute.data-linkid="${properties.linkidtwo}" data-sly-test="${properties.tabheadingtwo}" class="tab-panel" id="${uuid}-panel2" role="tabpanel" aria-labelledby="${uuid}-tab2">
+                <div class="tab-panel-content">${properties.tabrtftexttwo @ context='html'}</div>
+            </article>
+            <article data-sly-attribute.data-linkid="${properties.linkidthree}" data-sly-test="${properties.tabheadingthree}" class="tab-panel" id="${uuid}-panel3" role="tabpanel" aria-labelledby="${uuid}-tab3">
+                <div class="tab-panel-content">${properties.tabrtftextthree @ context='html'}</div>
+            </article>
+            <article data-sly-attribute.data-linkid="${properties.linkidfour}" data-sly-test="${properties.tabheadingfour}" class="tab-panel" id="${uuid}-panel4" role="tabpanel" aria-labelledby="${uuid}-tab4">
+                <div class="tab-panel-content">${properties.tabrtftextfour @ context='html'}</div>
+            </article>
+        </div>
+    </div>
+</section>

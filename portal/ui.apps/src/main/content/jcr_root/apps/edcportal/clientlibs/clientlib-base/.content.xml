@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:ClientLibraryFolder"
+    allowProxy="{Boolean}true"
+    categories="[edcportal.base]"
+    dependencies="[jquery]"
+    embed="[core.wcm.components,edcportal.site,edcportal.components.header,edcportal.components.footer,edcportal.components.selectprofile,edcportal.components.manageprofile,edcportal.components.myedcnavigation,edcportal.components.managemyaccount,edc.components.sectiontitle,edcportal.components.myedcbanner,edcportal.components.updateMessage,edcportal.components.dashboard,edcportal.components.multiselect,edc.components.quick-search,edcportal.components.introtext,edcportal.components.stepprogressbar,edc.moreinfomodal,edc.inclusivetrade]"/>

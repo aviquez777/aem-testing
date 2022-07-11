@@ -1,0 +1,943 @@
+@charset "UTF-8";
+/* If video player is active share bar has to be hide */
+.video-active.addthis-smartlayers-desktop .atss,
+.video-active.addthis-smartlayers-mobile .atss {
+    z-index: -1;
+}
+
+body.no-scroll {
+    position: fixed;
+}
+
+body.no-scroll .container.articles {
+    z-index: 1000201;
+}
+
+@media (min-width: 720px) {
+    body.no-scroll {
+        position: relative;
+    }
+}
+
+.c-page-hero-banner {
+    box-sizing: border-box;
+    min-height: 1px;
+    overflow: hidden;
+    position: relative;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 3.5rem;
+}
+
+.c-page-hero-banner * {
+    box-sizing: border-box;
+}
+
+.c-page-hero-banner .img-wrapper,
+.c-page-hero-banner .video-wrapper {
+    order: 1;
+    overflow: hidden;
+    padding-top: 56%;
+    position: relative;
+    height: 0;
+}
+
+.c-page-hero-banner .img-wrapper::after,
+.c-page-hero-banner .video-wrapper::after {
+    content: '';
+    z-index: 1;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 11vw 103vw;
+    border-color: transparent transparent #fff;
+    position: absolute;
+    bottom: -1px;
+    right: 0;
+}
+
+.c-page-hero-banner .video-wrapper video,
+.c-page-hero-banner .video-wrapper img {
+    min-height: 210px;
+    height: 100%;
+    position: absolute;
+    width: auto;
+    top: 0;
+}
+
+.c-page-hero-banner .video-wrapper video {
+    display: none;
+}
+
+.c-page-hero-banner .container {
+    order: 3;
+    background-image: linear-gradient(to top, #f4f8fc 0%, #fff 100%);
+    padding-bottom: 3.5rem;
+}
+
+.c-page-hero-banner .container::before {
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 62px;
+    left: -16px;
+    position: absolute;
+    width: 100%;
+}
+
+.c-page-hero-banner .container.chevrons::before {
+    content: '';
+    background-image: url("/etc.clientlibs/edc/clientlibs/clientlib-base/resources/images/icon-chevrons-light.svg");
+}
+
+.c-page-hero-banner .container.backslashes::before {
+    content: '';
+    background-image: url("/etc.clientlibs/edc/clientlibs/clientlib-base/resources/images/icon-backslashes-light.svg");
+}
+
+.c-page-hero-banner .container.pyramids::before {
+    content: '';
+    background-image: url("/etc.clientlibs/edc/clientlibs/clientlib-base/resources/images/icon-pyramids-light.svg");
+}
+
+.c-page-hero-banner .container.waves::before {
+    content: '';
+    background-image: url("/etc.clientlibs/edc/clientlibs/clientlib-base/resources/images/icon-waves-light.svg");
+}
+
+.c-page-hero-banner .container .content {
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    width: 100%;
+    float: left;
+    text-align: center;
+    padding-top: .9375rem;
+}
+
+.c-page-hero-banner .container .content .status-text {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    line-height: 20px;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.c-page-hero-banner .container .content .status-text.hidden {
+    display: none;
+}
+
+.c-page-hero-banner .container .content .status-text::before {
+    font-family: "iconfonts";
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    margin-right: .5rem;
+}
+
+.c-page-hero-banner .container .content h3.tagline {
+    color: #404041;
+    font-size: 14px;
+    line-height: 1.7142;
+    margin-bottom: .5rem;
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.c-page-hero-banner .container .content .title {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.1px;
+    line-height: 1.33333;
+    margin: 0;
+    color: #2f78c6;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 720px) {
+    .c-page-hero-banner .container .content .title {
+        font-size: 1.875rem;
+        line-height: 1.6;
+        letter-spacing: -0.1px;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-page-hero-banner .container .content .title {
+        font-size: 3rem;
+        line-height: 1.1666;
+        letter-spacing: -0.2px;
+    }
+}
+
+.c-page-hero-banner .container .content p {
+    color: #333;
+    font-family: "Georgia", "Times New Roman", Times, serif;
+    font-size: 19px;
+    font-weight: normal;
+    line-height: 1.6842;
+    letter-spacing: 0;
+    animation-delay: 1.8s;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 720px) {
+    .c-page-hero-banner .container .content p {
+        font-size: 1.1875rem;
+        line-height: 1.6842;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-page-hero-banner .container .content p {
+        font-size: 1.25rem;
+        line-height: 1.6;
+        letter-spacing: 0;
+    }
+}
+
+.c-page-hero-banner .container .content .webinar-ctas {
+    display: none;
+}
+
+.c-page-hero-banner .container .btn-container button,
+.c-page-hero-banner .container .btn-container a {
+    width: 100%;
+}
+
+.c-page-hero-banner .img-wrapper img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.c-page-hero-banner .video-modal {
+    position: fixed;
+    height: 0;
+    width: 100%;
+    z-index: 1000001;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    background-color: #000;
+    -webkit-transition: visibility 0.5s, opacity 0.5s, height 0s ease-in-out 0.5s;
+    transition: visibility 0.5s, opacity 0.5s, height 0s ease-in-out 0.5s;
+}
+
+.c-page-hero-banner .video-modal.show {
+    height: 100%;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: visibility 0.5s, opacity 0.5s;
+    transition: visibility 0.5s, opacity 0.5s;
+}
+
+.c-page-hero-banner .video-modal.show .video-close {
+    display: block;
+}
+
+.c-page-hero-banner .video-modal .video-close {
+    position: relative;
+    display: none;
+    width: 100%;
+    height: 70px;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-image: linear-gradient(to bottom, #000 15%, transparent 100%);
+}
+
+.c-page-hero-banner .video-modal .video-close button {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    top: 0;
+    right: 0;
+    padding: 0;
+    background-color: transparent;
+    color: #fff;
+    text-decoration: none;
+    margin: 1.25rem 10px 0 0;
+}
+
+.c-page-hero-banner .video-modal .video-close button .close-text {
+    padding-right: 0;
+}
+
+.c-page-hero-banner .video-modal .video-close button .close-text::after {
+    display: none;
+}
+
+.c-page-hero-banner .video-modal .video-close button .close {
+    font-family: "iconfonts";
+    font-style: normal;
+    font-size: 14px;
+    line-height: 1.2rem;
+    padding-left: .375rem;
+    padding-right: 0;
+}
+
+.c-page-hero-banner .video-modal .video-close button .close::after {
+    content: "";
+    right: 0;
+    font-size: 14px;
+    margin-right: 0;
+    opacity: 1;
+    position: relative;
+    top: 0;
+    max-height: unset;
+    bottom: 0;
+    transform: none;
+    transition: 0;
+    width: auto;
+}
+
+.c-page-hero-banner .video-modal .video-container {
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.c-page-hero-banner .video-modal .video-container .video {
+    height: 100%;
+    margin: auto;
+    width: 100%;
+    z-index: 5;
+}
+
+.c-page-hero-banner .video-modal .video-container .video .player {
+    z-index: 15;
+}
+
+.c-page-hero-banner .video-modal .video-container .video .video-preview {
+    height: 100%;
+    padding: 0;
+    z-index: 1;
+}
+
+.c-page-hero-banner .video-modal .video-container .video .video-preview button {
+    display: none;
+}
+
+.c-page-hero-banner .arkadin-modal.hide {
+    display: none;
+}
+
+.c-page-hero-banner.live .container .content .status-text {
+    color: #c8102e;
+    align-items: center;
+}
+
+.c-page-hero-banner.live .container .content .status-text::before {
+    content: '';
+    background: #c8102e;
+    border-radius: 50%;
+}
+
+.c-page-hero-banner.ondemand .container .content .status-text {
+    color: #3fa67a;
+}
+
+.c-page-hero-banner.ondemand .container .content .status-text::before {
+    content: "";
+}
+
+.c-page-hero-banner.upcoming .container .content .status-text {
+    color: #175a9f;
+}
+
+.c-page-hero-banner.upcoming .container .content .status-text::before {
+    content: "";
+}
+
+.c-page-hero-banner.webinar .container .content .btn-container {
+    display: none;
+}
+
+.c-page-hero-banner.webinar .container .content .btn-container.show {
+    display: block;
+}
+
+.c-page-hero-banner.webinar .container .content .c-webinar-ctas {
+    display: block;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal {
+    z-index: 100;
+    position: fixed;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal.hide {
+    display: none;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-shade {
+    background-color: #fff;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container {
+    background-color: #fff;
+    position: fixed;
+    transform: translate(-50%, 0);
+    top: 0;
+    left: 50%;
+    width: 100%;
+    z-index: 2;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-close {
+    position: absolute;
+    right: 0;
+    text-decoration: none;
+    top: 0;
+    z-index: 10;
+    padding: 0;
+    width: 48px;
+    height: 48px;
+    background-color: transparent;
+    color: #000;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-close::after {
+    font-family: "iconfonts";
+    color: #000;
+    content: "";
+    font-size: 2.5rem;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-title,
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-text {
+    color: #333;
+    font-family: "Georgia", "Times New Roman", Times, serif;
+    font-size: 17px;
+    line-height: 27px;
+    margin: 0;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-title {
+    background-color: #f4f8fc;
+    padding: 1.6875rem 3.3125rem 1.6875rem 2.125rem;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-title h2 {
+    margin: 0;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-text {
+    position: relative;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-text.section-fixed.shadow-after::after, .c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-text.section-fixed.shadow-before::before {
+    position: absolute;
+    content: '';
+    width: 98%;
+    height: 2.6rem;
+    left: 0;
+    z-index: 1;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-text.section-fixed.shadow-after::after {
+    background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8), #fff);
+    bottom: 0;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-text.section-fixed.shadow-before::before {
+    background: linear-gradient(360deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8), #fff);
+    top: 0;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-text .text-section {
+    /* Track */
+    /* Handle */
+    /* Handle on hover */
+    padding: 1.5rem 0;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-text .text-section::-webkit-scrollbar {
+    width: 10px;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-text .text-section::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-text .text-section::-webkit-scrollbar-thumb {
+    background: #ebebeb;
+    background: -moz-linear-gradient(left, #ebebeb 0%, #ebebeb 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #ebebeb), color-stop(50%, #ebebeb), color-stop(51%, rgba(255, 255, 255, 0)), color-stop(71%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(255, 255, 255, 0)));
+    background: -webkit-linear-gradient(left, #ebebeb 0%, #ebebeb 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: -o-linear-gradient(left, #ebebeb 0%, #ebebeb 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: -ms-linear-gradient(left, #ebebeb 0%, #ebebeb 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to right, #ebebeb 0%, #ebebeb 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebebeb', endColorstr='#ffffff', GradientType=1 );
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-text .text-section::-webkit-scrollbar-thumb:hover {
+    background: #ebebeb;
+    background: -moz-linear-gradient(left, #cccccc 0%, #cccccc 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #cccccc), color-stop(50%, #cccccc), color-stop(51%, rgba(255, 255, 255, 0)), color-stop(71%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(255, 255, 255, 0)));
+    background: -webkit-linear-gradient(left, #cccccc 0%, #cccccc 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: -o-linear-gradient(left, #cccccc 0%, #cccccc 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: -ms-linear-gradient(left, #cccccc 0%, #cccccc 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to right, #cccccc 0%, #cccccc 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebebeb', endColorstr='#ffffff', GradientType=1 );
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-text .text-section .terms-and-conditions-section {
+    padding: 0 1.5rem;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-text .text-section .terms-and-conditions-section p {
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-text .text-section .terms-and-conditions-section > div.hide {
+    display: none;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-text .text-section .casl-section {
+    padding: 0 1rem;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-text .text-section .casl-section.hide {
+    display: none;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-text .text-section .casl-section .checkbox-item {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    margin-bottom: .5rem;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-text .text-section .casl-section .checkbox-item input {
+    display: inline-block;
+    width: 1rem;
+    margin: 0;
+    margin-top: 4px;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-text .text-section .casl-section .checkbox-item .input-description {
+    display: inline-block;
+    width: calc(100% - 1rem);
+    padding-left: 1rem;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-text .text-section .casl-section .checkbox-item .input-description label p {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-text .text-section .casl-section .checkbox-item label {
+    margin: 0;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-text .text-section .wit-section {
+    padding: 0 1rem;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-text .text-section .wit-section > p {
+    padding: 0 .5rem;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-text .text-section .wit-section.hide {
+    display: none;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-text .text-section .wit-section .radio-item {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    margin-bottom: .5rem;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-text .text-section .wit-section .radio-item input {
+    display: inline-block;
+    width: 1rem;
+    margin: 0;
+    margin-top: 4px;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-text .text-section .wit-section .radio-item .input-description {
+    display: inline-block;
+    width: calc(100% - 1rem);
+    padding-left: 1rem;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-text .text-section .wit-section .radio-item .input-description label p {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-text .text-section .wit-section .radio-item label {
+    margin: 0;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-text .text-section .casl-section input[type='radio'],
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-text .text-section .wit-section input[type='radio'] {
+    border: 1px solid rgba(51, 51, 51, 0.3);
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .anchor-container {
+    position: absolute;
+    bottom: .5rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+    width: 40px;
+    z-index: 2;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .anchor-container.hide {
+    display: none;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .anchor-container .circle-button {
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(25, 25, 25, 0.1);
+    background: #2f78c6;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    position: relative;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .anchor-container .circle-button::before {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 6px;
+    color: #fff;
+    content: "";
+    font-family: "iconfonts";
+    font-size: 16px;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-ctas {
+    margin: 0 .25rem;
+    padding: 2.5rem 1.5625rem;
+    border-top: 1px solid #ccc;
+    text-align: center;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-ctas button {
+    display: block;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-ctas button.edc-primary-btn {
+    width: 100%;
+    padding: .75rem 1.875rem;
+}
+
+.c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-ctas button.no-btn {
+    background-color: transparent;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    border-radius: 0;
+    text-decoration: underline;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0;
+    transition: none;
+    color: #2f78c6;
+    margin-top: 1rem;
+}
+
+@media (min-width: 720px) {
+    .c-page-hero-banner {
+        max-height: 800px;
+        background-image: linear-gradient(to right, #f4f8fc 0%, #fff 50%);
+    }
+    .c-page-hero-banner .container .content .title {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        font-size: 24px;
+        line-height: 1.3333;
+    }
+    .c-page-hero-banner .container .content p {
+        margin-bottom: 1.5rem;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    .c-page-hero-banner .container {
+        height: 100%;
+        margin-top: 0;
+        position: absolute;
+        transform: translate(-50%, 0);
+        background: none;
+        left: 50%;
+        padding-bottom: 0;
+    }
+    .c-page-hero-banner .container .content {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 41.66666667%;
+        transform: translate(0, -50%);
+        top: 50%;
+        padding-top: 0;
+        padding-right: 0;
+        text-align: left;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-page-hero-banner .container .content {
+        width: 41.66666667%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-page-hero-banner .container .content .status-text {
+        font-size: 15px;
+        line-height: 24px;
+        margin-top: 0;
+        justify-content: flex-start;
+    }
+    .c-page-hero-banner .container .content .status-text::before {
+        width: 12px;
+        height: 12px;
+    }
+    .c-page-hero-banner .container .content h3.tagline {
+        justify-content: flex-start;
+    }
+    .c-page-hero-banner .container .content .btn-container {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 100%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-page-hero-banner .container .content .btn-container {
+        width: 100%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-page-hero-banner .container .content .btn-container button,
+    .c-page-hero-banner .container .content .btn-container a {
+        width: auto;
+    }
+    .c-page-hero-banner .container .content .title {
+        margin-top: 0;
+    }
+    .c-page-hero-banner .container::after {
+        display: none;
+    }
+    .c-page-hero-banner .container::before {
+        height: 130px;
+        left: -50px;
+        top: 2.5rem;
+    }
+    .c-page-hero-banner .video-wrapper video {
+        display: block;
+    }
+    .c-page-hero-banner .video-wrapper img {
+        display: none;
+    }
+    .c-page-hero-banner .video-wrapper,
+    .c-page-hero-banner .img-wrapper {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 50%;
+        height: 0;
+        padding-top: 57.29166666666667%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-page-hero-banner .video-wrapper,
+    .c-page-hero-banner .img-wrapper {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-page-hero-banner .video-wrapper,
+    .c-page-hero-banner .img-wrapper {
+        left: 50%;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-page-hero-banner .video-wrapper::after,
+    .c-page-hero-banner .img-wrapper::after {
+        content: '';
+        z-index: 1;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 100vw 7vh 0 0;
+        border-color: #fff transparent transparent;
+        position: relative;
+        margin-left: -1px;
+    }
+    .c-page-hero-banner .video-wrapper::after,
+    .c-page-hero-banner .img-wrapper::after {
+        margin-left: 0;
+    }
+    .c-page-hero-banner .video-wrapper img,
+    .c-page-hero-banner .video-wrapper video,
+    .c-page-hero-banner .img-wrapper img,
+    .c-page-hero-banner .img-wrapper video {
+        height: 100%;
+        width: auto;
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+    }
+    .c-page-hero-banner .video-wrapper.left img,
+    .c-page-hero-banner .video-wrapper.left video,
+    .c-page-hero-banner .img-wrapper.left img,
+    .c-page-hero-banner .img-wrapper.left video {
+        transform: translate(0, 0);
+        left: 0;
+    }
+    .c-page-hero-banner .video-wrapper.center img,
+    .c-page-hero-banner .video-wrapper.center video,
+    .c-page-hero-banner .img-wrapper.center img,
+    .c-page-hero-banner .img-wrapper.center video {
+        transform: translate(-50%, 0);
+        left: 50%;
+    }
+    .c-page-hero-banner .video-wrapper.right img,
+    .c-page-hero-banner .video-wrapper.right video,
+    .c-page-hero-banner .img-wrapper.right img,
+    .c-page-hero-banner .img-wrapper.right video {
+        transform: translate(-100%, 0);
+        left: 100%;
+    }
+    .c-page-hero-banner .video-modal .video-close button {
+        margin-right: 2.5rem;
+    }
+    .c-page-hero-banner.webinar .arkadin-modal .modal-shade {
+        background-color: rgba(25, 25, 25, 0.8);
+    }
+    .c-page-hero-banner.webinar .arkadin-modal .modal-container {
+        width: 590px;
+        box-shadow: 0 0 1.5em rgba(0, 0, 0, 0.35);
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+    }
+    .c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-title {
+        background-color: #f4f8fc;
+        padding: 2rem 4rem;
+    }
+    .c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-text .text-section {
+        padding: 2rem 0;
+    }
+    .c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-text .text-section .terms-and-conditions-section {
+        padding: 0 4rem;
+    }
+    .c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-text .text-section .wit-section > p {
+        padding: 0 2rem;
+    }
+    .c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-text .text-section .casl-section,
+    .c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-text .text-section .wit-section {
+        padding: 0 4rem 2rem 2rem;
+    }
+    .c-page-hero-banner.webinar .arkadin-modal .modal-container .modal-ctas button.edc-primary-btn {
+        margin: auto;
+        width: 330px;
+        padding: 1.25rem 1.875rem;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-page-hero-banner {
+        max-height: 800px;
+    }
+    .c-page-hero-banner .container .content .title {
+        font-size: 30px;
+        line-height: 40px;
+    }
+    .c-page-hero-banner .container .content p {
+        font-size: 20px;
+        line-height: 1.6;
+    }
+    .c-page-hero-banner .container::before {
+        height: 185px;
+        left: -50px;
+        top: 5rem;
+    }
+    .c-page-hero-banner .video-wrapper,
+    .c-page-hero-banner .img-wrapper {
+        padding-top: 37.77777777777778%;
+    }
+    .c-page-hero-banner .video-modal .video-close {
+        height: 180px;
+    }
+    .c-page-hero-banner .video-modal .video-close button {
+        margin-top: 1.875rem;
+    }
+    .c-page-hero-banner .video-modal .video-container {
+        height: 100%;
+    }
+    .c-page-hero-banner .video-modal .video-container .video {
+        padding-top: 0;
+    }
+}
+
+@media (min-width: 1140px) {
+    .c-page-hero-banner {
+        border-top: 1px solid rgba(51, 51, 51, 0.3);
+        max-height: 800px;
+    }
+    .c-page-hero-banner .container::before {
+        left: -180px;
+    }
+    .c-page-hero-banner .container.waves::before {
+        left: -80px;
+    }
+    .c-page-hero-banner .img-wrapper {
+        height: 0;
+    }
+    .c-page-hero-banner .img-wrapper::after {
+        border-width: 100vw 15vh 0 0;
+    }
+}

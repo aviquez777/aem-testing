@@ -1,0 +1,9 @@
+<template data-sly-template.level3="${@  uuid, properties, formLabels, formErrorMessages, formType}">
+    <div class="level level-3 ${wcmmode.disabled ? 'hide' : 'show'}" data-level-title="${properties.itmtitle}">
+        <h2 data-sly-test="${!wcmmode.disabled}">
+            <span class="title-color"><em>Step 3 of 4</em></span> ${properties.itmtitle}
+        </h2>
+        <sly data-sly-use.template="/apps/edc/components/common/inclusivetrade/inclusivetrade.html"/>
+        <sly data-sly-call="${template.inclusivetrade @ uuid = uuid, properties = properties, formErrorMessages=formErrorMessages}"/>
+    </div>
+</template>

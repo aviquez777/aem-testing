@@ -1,0 +1,66 @@
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-use.messages="com.edc.edcweb.core.models.FormCommonMessages"/>
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = true, emptyTextAppend='Form will display properly on published mode'}"/>
+
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+<sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+<sly data-sly-use.hiddenFieldTemplate="/apps/edc/components/common/forms.html"/>
+<sly data-sly-use.fieldTemplate="fieldstemplate.html"/>
+<sly data-sly-use.dropdownTemplates="${'/apps/edc/components/common/dropdown.html'}"/>
+<sly data-sly-use.encoderPath="${'com.edc.edcweb.core.helpers.Base64EnconderHelper' @ toEncode=currentPage.path}"/>
+<sly data-sly-use.encoderResource="${'com.edc.edcweb.core.helpers.Base64EnconderHelper' @ toEncode=properties['sling:resourceType']}"/>
+<sly data-sly-use.ibButtonTemplate="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+
+<div data-sly-test="${properties.gatedContentPath}" class="c-gated-content-access-form">
+    <sly data-sly-test.componentName="${datalayer.componentTitle ? datalayer.componentTitle : 'Gated Content Access Form'}" />
+    <!--/* inlclide lib to handle csrf token for us*/-->
+    <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html" data-sly-test.clientlibCategories="granite.csrf.standalone" data-sly-call="${clientLib.js @ categories=clientlibCategories}" />
+    <form class="email-section" novalidate="" action="/bin/gatedContentServlet"  data-event-component="${componentName} step 1" data-event-type="form" data-event-action="main body" data-event-name="button click – download our guide">
+        <h2>${properties.emailFormTitle}</h2>
+        ${properties.emailForDescription @ context='html'}
+         <div class="form-group">
+            <label for="email-address">${properties.emailLabel}</label>
+            <input type="email" class="form-control email-submit" placeholder="${properties.emailHelperText}" name="emailAddress" id="emailAddress-${uuid}" required="">
+            <span class="error" data-req-message="${messages.formErrorMessages.required}" data-email-message="${messages.formErrorMessages.email}"></span>
+        </div>
+        <div class="form-disclaimer">
+            <div class="actions">
+                <sly data-sly-test.attrs="${['data-english-text',properties.submiEmailButtonEnTxt ? properties.submiEmailButtonEnTxt : 'access content'] @ join = '='}"/>
+                <div data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled', buttontext=properties.submiEmailButton, btntype='submit', customattribs=attrs}"  data-sly-unwrap></div>
+            </div>
+            <div class="text">
+              ${properties.caslText @ context='html'}
+            </div>
+        </div>
+         <!--/** Bug 159966 form not found in a vanity url **/-->
+        <input type="hidden"class="form-control" validation-rule="none" name="ovpa" value="${encoderPath.encoded}"/>
+        <input type="hidden"class="form-control" validation-rule="none" name="rtype" value="${encoderResource.encoded}"/>    
+    </form>
+    <form class="form-section ${wcmmode.disabled ? 'hide' : 'show'}" novalidate="" action="/bin/gatedContentServlet" data-event-component="${componentName} step 2" data-event-type="form" data-event-name="form submit – ${componentName}" data-event-action="main body" data-engagement-type="3" data-event-level="1">
+        <sly data-sly-call="${hiddenFieldTemplate.formhiddenfields @  elqFormName = properties.formID, formID = properties.formID, docID = properties.docID, inquiryID = properties.inquiryID}"/>
+        <input type="hidden" class="form-control" name="emailAddress" value="" />
+        <div class="form-header">
+            <h2>${properties.formTitle}</h2>
+             ${properties.formDescription @ context='html'}
+        </div>
+        <h3>${properties.aboutYourself}</h3>
+        <p>${properties.allFieldsAre} <strong>${properties.required}</strong>.</p>
+        <sly data-sly-use.multifield="${'com.edc.edcweb.core.helpers.MultifieldReaderHelper' @ multifield='questions'}"/>
+            <sly data-sly-list.question="${multifield.fields}">
+                <sly data-sly-call="${fieldTemplate.fields @  fieldName=question.questionType, fieldLabel=question.questionLabel, fieldHelperText=question.questionHelperText, uuid=uuid, commonTemplates=commonTemplates, dropdownTemplates=dropdownTemplates, messages=messages}"/>
+            </sly>
+        <div class="actions">
+            <sly data-sly-test.attrs2="${['data-english-text',properties.submitFormButtonEnTxt ? properties.submitFormButtonEnTxt : 'submit step'] @ join = '='}"/>
+            <div data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled', buttontext=properties.submitFormButton, btntype='submit', customattribs=ibModel2.getAttributeMap}"  data-sly-unwrap></div>
+        </div>
+        <!--/** Bug 159966 form not found in a vanity url **/-->
+        <input type="hidden"class="form-control" validation-rule="none" name="ovpa" value="${encoderPath.encoded}"/>
+        <input type="hidden"class="form-control" validation-rule="none" name="rtype" value="${encoderResource.encoded}"/>    
+    </form>
+    <div class="submit-failed-message ${wcmmode.disabled ? 'hide' : 'show'}">
+        <p>${properties.submitErrorText}</p>
+    </div>
+    <div data-sly-resource="${'processingScreen' @ resourceType='edc/components/content/processingscreen'}"></div>
+</div>

@@ -1,0 +1,64 @@
+.c-form-field-info {
+    float: left;
+    width: 100%;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.c-form-field-info * {
+    box-sizing: border-box;
+}
+
+.c-form-field-info.hide {
+    display: none;
+}
+
+.c-form-field-info .info {
+    border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+}
+
+.c-form-field-info .info p {
+    margin: 0;
+}
+
+.c-form-field-info .info .field-title {
+    font-weight: 600;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-bottom: .5rem;
+}
+
+.c-form-field-info .info .field-value {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #888888;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 720px) {
+    .c-form-field-info {
+        text-align: left;
+    }
+    .c-form-field-info.half {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-form-field-info.half {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-form-field-info.half:nth-child(even) {
+        padding-left: 1rem;
+    }
+    .c-form-field-info.half:nth-child(odd) {
+        padding-right: 1rem;
+    }
+}

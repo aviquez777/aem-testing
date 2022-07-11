@@ -1,0 +1,168 @@
+nav.breadcrumb {
+    padding: 0 1rem;
+}
+
+@media (min-width: 720px) {
+    nav.breadcrumb {
+        margin-top: 1.5rem;
+        padding: 0;
+    }
+}
+
+.c-company-insight-search-results {
+    box-sizing: border-box;
+}
+
+.c-company-insight-search-results * {
+    box-sizing: border-box;
+}
+
+.c-company-insight-search-results .search-info {
+    padding: 0 1rem;
+}
+
+.c-company-insight-search-results .search-info .results-section {
+    border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+    padding-bottom: 3rem;
+}
+
+.c-company-insight-search-results .search-info .results-section h2 {
+    margin-top: 0;
+}
+
+.c-company-insight-search-results .search-info .section-blurb div.fade-in-slide-up {
+    font-size: 16px;
+}
+
+.c-company-insight-search-results .results {
+    margin: 0;
+    padding: 0;
+}
+
+.c-company-insight-search-results .result {
+    width: 100%;
+    margin-bottom: 1rem;
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(25, 25, 25, 0.1);
+    -webkit-transition: box-shadow .5s ease;
+    -moz-transition: box-shadow .5s ease;
+    transition: box-shadow .5s ease;
+}
+
+.c-company-insight-search-results .result:hover {
+    -webkit-box-shadow: 0 0 20px 10px rgba(51, 51, 51, 0.1);
+    -moz-box-shadow: 0 0 20px 10px rgba(51, 51, 51, 0.1);
+    box-shadow: 0 0 20px 10px rgba(51, 51, 51, 0.1);
+}
+
+.c-company-insight-search-results .result.hide {
+    display: none;
+}
+
+.c-company-insight-search-results .result-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+}
+
+.c-company-insight-search-results .result-card__main-info {
+    flex: 1;
+    background-color: #f4f8fc;
+    padding: 1rem;
+}
+
+.c-company-insight-search-results .result-card__main-info--title {
+    margin-top: 0;
+    color: #2f78c6;
+    text-decoration: underline;
+}
+
+.c-company-insight-search-results .result-card__main-info--text.separate {
+    margin-top: 1rem;
+}
+
+.c-company-insight-search-results .result-card__secondary-info {
+    flex: 1;
+    display: flex;
+}
+
+.c-company-insight-search-results .result-card__secondary-info--specific {
+    flex: 1;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.c-company-insight-search-results .result-card__secondary-info--specific:last-child {
+    border-left: 1px solid rgba(51, 51, 51, 0.3);
+}
+
+.c-company-insight-search-results .result-card__secondary-info--specific h4 {
+    margin-top: 0;
+    color: #ccc;
+}
+
+.c-company-insight-search-results .result-card__secondary-info--specific p {
+    font-weight: 600;
+}
+
+.c-company-insight-search-results .result p {
+    margin: 0;
+}
+
+.c-company-insight-search-results .main-actions {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.c-company-insight-search-results .main-actions .no-btn {
+    background-color: transparent;
+    font-style: normal;
+    border-radius: 0;
+    color: #2f78c6;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0;
+    transition: none;
+}
+
+.c-company-insight-search-results .main-actions .no-btn span {
+    text-decoration: underline;
+}
+
+.c-company-insight-search-results .main-actions .no-btn span::after {
+    display: none;
+}
+
+.c-company-insight-search-results .main-actions .no-btn:hover span, .c-company-insight-search-results .main-actions .no-btn:active span, .c-company-insight-search-results .main-actions .no-btn:focus span {
+    padding: 0;
+}
+
+.c-company-insight-search-results .main-actions .no-btn.hide {
+    display: none;
+}
+
+@media (min-width: 720px) {
+    .c-company-insight-search-results .search-info {
+        padding: 0;
+    }
+    .c-company-insight-search-results .search-info .section-blurb {
+        margin: 0 2rem;
+    }
+    .c-company-insight-search-results .search-info .section-blurb .fade-in-slide-up {
+        width: calc(100% - 4rem);
+    }
+    .c-company-insight-search-results .result-card {
+        flex-direction: row;
+    }
+    .c-company-insight-search-results .result-card__main-info {
+        padding: 3rem 2rem;
+    }
+    .c-company-insight-search-results .result-card__secondary-info--specific {
+        padding: 2rem 1rem;
+    }
+}

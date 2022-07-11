@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <questions
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Form Properties"
+                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items
+                            jcr:primaryType="nt:unstructured">
+                            <formContentPath
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                fieldLabel="Form Content Path (required in case of redirect)"
+                                fieldDescription="Form Content Path (required in case of redirect)"
+                                name="./formContentPath"
+                                required="{Boolean}false"
+                                forceSelection="{Boolean}true"
+                                rootPath="/content/edc"/>
+                            <assetGroupName
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Asset Group Name (required in case of gating)"
+                                fieldDescription="Provdided by Dec or Content team, check Wiki for more info."
+                                validation="checkvarname"
+                                name="./assetGroupName"
+                                required="{Boolean}false"/>
+                            <formID
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Eloqua Form Name"
+                                fieldDescription="Eloqua Form Name Provided by EloquaTeam, usually alphanumeric  (i.e MIP12_QQC_123)"
+                                name="./formID"
+                                required="{Boolean}true"/>
+                            <docID
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Eloqua docID"
+                                fieldDescription="Enter the Eloqua docID"
+                                name="./docID"/>
+                            <inquiryIDversionA
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Eloqua inquiryID (version A)"
+                                fieldDescription="Enter the inquiryID for version A of the calculator"
+                                name="./inquiryIDversionA"/>
+                            <inquiryIDversionB
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Eloqua inquiryID (version B)"
+                                fieldDescription="Enter the inquiryID for version B of the calculator"
+                                name="./inquiryIDversionB"/>
+                            </items>
+                    </column>
+                </items>
+            </questions>
+        </items>
+    </content>
+</jcr:root>

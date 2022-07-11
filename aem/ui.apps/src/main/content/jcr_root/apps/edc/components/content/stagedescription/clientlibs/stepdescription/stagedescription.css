@@ -1,0 +1,191 @@
+@charset "UTF-8";
+.c-stage {
+    border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+    margin: 0 15px 1rem;
+    padding: 1.25rem 0 3.5rem;
+    box-sizing: border-box;
+}
+
+.c-stage * {
+    box-sizing: border-box;
+}
+
+.c-stage .description {
+    margin-bottom: 1.5rem;
+}
+
+.c-stage .description h2 {
+    width: 100%;
+    margin-top: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.c-stage .description p {
+    color: #404041;
+}
+
+.c-stage .description p:last-child {
+    margin-bottom: 0;
+}
+
+.c-stage .steps h3 {
+    margin-top: 0;
+}
+
+.c-stage .steps ul {
+    color: #404041;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.c-stage .steps ul li {
+    padding: 1rem 0 1rem 2.25rem;
+    position: relative;
+    border-bottom: 1px solid #ebebeb;
+    margin: 0;
+}
+
+.c-stage .steps ul li::before {
+    top: inherit;
+    content: '•';
+    left: 5px;
+    position: absolute;
+}
+
+.c-stage .steps ul li:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.c-stage .steps ul li:first-child {
+    padding-top: 0;
+}
+
+.c-stage .content-button {
+    width: 100%;
+}
+
+@media (min-width: 720px) {
+    .c-stage {
+        padding-bottom: 4.5rem;
+    }
+    .c-stage::after {
+        display: block;
+        content: '';
+        clear: both;
+    }
+    .c-stage .description {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-stage .description {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-stage .description h2 {
+        margin-bottom: 1.5rem;
+    }
+    .c-stage .steps {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 0;
+        position: relative;
+        width: 50%;
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-stage .steps {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-stage .steps h3 {
+        padding: 0;
+        margin-bottom: 2rem;
+    }
+    .c-stage .steps ul li {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+    .c-stage .content-button {
+        width: auto;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-stage {
+        padding-top: 2.5rem;
+        padding-bottom: 6.5rem;
+    }
+    .c-stage .description {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 41.66666667%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 720px) {
+    .c-stage .description {
+        width: 41.66666667%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 720px) {
+    .c-stage .description {
+        margin-left: 8.33333333%;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-stage .description h2 {
+        margin-bottom: .75rem;
+    }
+    .c-stage .steps {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 33.33333333%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 720px) {
+    .c-stage .steps {
+        width: 33.33333333%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 720px) {
+    .c-stage .steps {
+        margin-left: 8.33333333%;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-stage .steps h3 {
+        margin-bottom: 1.25rem;
+    }
+    .c-stage .steps ul li {
+        padding-top: .8125rem;
+        padding-bottom: .8125rem;
+    }
+}

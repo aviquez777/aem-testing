@@ -1,0 +1,94 @@
+.c-investor-relations {
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    width: 100%;
+    float: left;
+    box-sizing: border-box;
+    margin-bottom: 3.5rem;
+}
+
+.c-investor-relations * {
+    box-sizing: border-box;
+}
+
+.c-investor-relations .hide {
+    display: none;
+}
+
+.c-investor-relations .show {
+    display: inline-block;
+}
+
+.c-investor-relations button {
+    width: 50%;
+    float: right;
+}
+
+.c-investor-relations.extended-form .input-radio-group {
+    margin-bottom: 4rem;
+}
+
+.c-investor-relations.extended-form label {
+    width: 80%;
+}
+
+.c-investor-relations.extended-form input[type='radio'] {
+    border: 0;
+    background-color: transparent;
+    width: auto;
+}
+
+.c-investor-relations.extended-form input[type='radio']:focus {
+    box-shadow: unset;
+}
+
+.c-investor-relations.extended-form input[type='radio']::after {
+    left: 0;
+}
+
+.c-investor-relations.extended-form input[type='radio']::before {
+    left: 0;
+}
+
+.c-investor-relations.extended-form input[type='radio'] label {
+    left: 40px;
+}
+
+@media (min-width: 720px) {
+    .c-investor-relations {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+        margin: 6.5rem 0;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-investor-relations {
+        width: 80%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-investor-relations .actions {
+        text-align: right;
+    }
+    .c-investor-relations button {
+        width: auto;
+        float: none;
+    }
+    .c-investor-relations.extended-form .input-radio-group {
+        margin-bottom: 0;
+        display: block;
+    }
+    .c-investor-relations.extended-form label {
+        width: auto;
+    }
+}

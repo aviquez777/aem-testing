@@ -1,0 +1,136 @@
+.c-covid-response-page-card {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 2.25rem 0 2.5rem;
+    border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+}
+
+.c-covid-response-page-card * {
+    box-sizing: border-box;
+}
+
+.c-covid-response-page-card .card-header .title {
+    margin-top: .5rem;
+    margin-bottom: 1rem;
+}
+
+.c-covid-response-page-card .card-header .card-tags {
+    margin-bottom: 1rem;
+    color: #707070;
+}
+
+.c-covid-response-page-card .card-header .card-tags .card-dept {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.c-covid-response-page-card .card-header .card-tags .card-dept::before {
+    content: '';
+    display: inline-block;
+    height: 5px;
+    width: 20px;
+    background-color: #8c294e;
+    border-radius: 1px;
+    margin-right: .5rem;
+}
+
+.c-covid-response-page-card .card-content.has-image {
+    margin-top: 1rem;
+}
+
+.c-covid-response-page-card .card-content .card-img {
+    display: none;
+}
+
+.c-covid-response-page-card .card-content .card-texts .title {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.c-covid-response-page-card .card-content .card-texts .description,
+.c-covid-response-page-card .card-content .card-texts .description p {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.7142;
+    font-weight: normal;
+    color: #707070;
+    margin-top: .5rem;
+    margin-bottom: 0;
+}
+
+@media (min-width: 720px) {
+    .c-covid-response-page-card .card-content .card-texts .description,
+    .c-covid-response-page-card .card-content .card-texts .description p {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-covid-response-page-card .card-content .card-texts .description,
+    .c-covid-response-page-card .card-content .card-texts .description p {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+.c-covid-response-page-card .card-content .card-texts .description:first-child,
+.c-covid-response-page-card .card-content .card-texts .description p:first-child {
+    margin-top: 0;
+}
+
+.c-covid-response-page-card .card-content .card-texts .secondary-cta,
+.c-covid-response-page-card .card-content .card-texts .pdf-cta {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    font-size: .8rem;
+    margin-top: 1rem;
+}
+
+.c-covid-response-page-card .card-content .card-texts .secondary-cta a {
+    color: #000;
+}
+
+.c-covid-response-page-card .card-content .card-texts .pdf-cta a {
+    color: #2f78c6;
+}
+
+.c-covid-response-page-card .card-content .card-action {
+    margin-top: 1rem;
+}
+
+@media (min-width: 720px) {
+    .c-covid-response-page-card .card-header .card-tags {
+        margin-bottom: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    .c-covid-response-page-card .card-content {
+        display: flex;
+    }
+    .c-covid-response-page-card .card-content .card-img {
+        display: block;
+        flex: 1;
+        margin-right: 1rem;
+    }
+    .c-covid-response-page-card .card-content .card-img img {
+        width: 100%;
+    }
+    .c-covid-response-page-card .card-content .card-texts {
+        flex: 3;
+    }
+    .c-covid-response-page-card .card-content .card-action {
+        flex: 1;
+        margin-top: 0;
+        margin-left: 2rem;
+    }
+}

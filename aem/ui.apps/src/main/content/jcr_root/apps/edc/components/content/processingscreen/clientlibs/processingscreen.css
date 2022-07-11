@@ -1,0 +1,136 @@
+.c-processing-screen {
+    box-sizing: border-box;
+    text-align: center;
+    display: none;
+    padding: 5rem 0;
+    position: relative;
+}
+
+.c-processing-screen--edit {
+    display: block;
+}
+
+.c-processing-screen * {
+    box-sizing: border-box;
+}
+
+.c-processing-screen .processing-section .loading {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    padding: 7px;
+}
+
+.c-processing-screen .processing-section .loading .spinning-circle {
+    background-color: #fff;
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    box-shadow: #bde3e8 0 0 0 4px;
+}
+
+.c-processing-screen .processing-section .loading .spinning-circle::before, .c-processing-screen .processing-section .loading .spinning-circle::after {
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    content: '';
+    top: 0;
+}
+
+.c-processing-screen .processing-section .loading .spinning-circle::before {
+    border-radius: 10rem 0 0 10rem;
+    left: 0;
+    -webkit-transform-origin: 100%;
+    transform-origin: 100%;
+    -webkit-animation: load2 2s infinite ease 1.5s;
+    animation: load2 2s infinite ease 1.5s;
+}
+
+.c-processing-screen .processing-section .loading .spinning-circle::after {
+    border-radius: 0 10rem 10rem 0;
+    left: 50%;
+    -webkit-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+    -webkit-animation: load2 2s infinite ease;
+    animation: load2 2s infinite ease;
+}
+
+@-webkit-keyframes load2 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes load2 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.c-processing-screen .processing-section .loading .spinning-circle .outer-circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    border: 2.5px solid #175a9f;
+    box-shadow: #fff 0 0 0 6px;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.c-processing-screen .processing-section .loading .spinning-circle .outer-circle .inner-cirle {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #26a2b5;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.7142;
+    border: 2.5px solid #26a2b5;
+    border-radius: 50%;
+}
+
+.c-processing-screen .processing-section h2 {
+    color: #26a2b5;
+}
+
+.c-processing-screen .success-message {
+    display: none;
+}
+
+.c-processing-screen .success-message h2 {
+    color: #26a2b5;
+}
+
+.processing .c-processing-screen {
+    display: block;
+}
+
+.processed .c-processing-screen {
+    display: block;
+}
+
+.processed .c-processing-screen .processing-section {
+    display: none;
+}
+
+.processed .c-processing-screen .success-message {
+    display: block;
+}

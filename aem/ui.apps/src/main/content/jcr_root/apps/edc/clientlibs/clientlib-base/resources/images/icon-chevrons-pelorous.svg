@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="361px" height="233px" viewBox="0 0 361 233" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon/ Chevrons Pelorous</title>
+    <desc>Created with Sketch.</desc>
+    <g id="S4---Theme-Colour-Documentation" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon/-Chevrons-Pelorous" transform="translate(-92.000000, -1.000000)" fill="#26A2B5" fill-rule="nonzero">
+            <polygon id="Chevron" transform="translate(225.725201, 117.418112) rotate(-315.000000) translate(-225.725201, -117.418112) " points="143.296492 68.9888067 143.327536 35.1757035 308.153909 35.0243737 308.002644 199.780792 274.175184 199.81185 274.295405 68.8685345"></polygon>
+            <polygon id="Chevron" transform="translate(336.000813, 117.418112) rotate(-315.000000) translate(-336.000813, -117.418112) " points="253.572104 68.9888067 253.603148 35.1757035 418.429521 35.0243737 418.278256 199.780792 384.450796 199.81185 384.571017 68.8685345"></polygon>
+            <polygon id="Chevron" transform="translate(116.717124, 117.418112) rotate(-315.000000) translate(-116.717124, -117.418112) " points="165.287329 68.8685345 34.2884156 68.9888067 34.31946 35.1757035 199.145833 35.0243737 198.994567 199.780792 165.167107 199.81185"></polygon>
+        </g>
+    </g>
+</svg>

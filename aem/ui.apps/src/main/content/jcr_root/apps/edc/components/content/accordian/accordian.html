@@ -1,0 +1,17 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"/>
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+
+<div data-target="${properties.target}" class="panel" aria-label="${properties.title}" role="region" aria-expanded="${wcmmode.disabled ? 'false' : 'true'}" data-stay-open="${properties.stayOpen ? 'true': 'false'}" data-event-component="accordion" data-event-type="form" data-event-name="Accordion Panel" data-event-engagement="3" data-event-action="main body" data-event-level="primary">
+    <h3 class="button-heading">
+        <button id="panel-button-${uuid}" class="panel-label" aria-expanded="${wcmmode.disabled ? 'false' : 'true'}"  aria-controls="content-container-${uuid}">${properties.title} 
+            <i class="icon-arrow"></i><!-- //NOSONAR -->
+        </button>
+    </h3>
+    <div id="content-container-${uuid}" aria-labelledby="panel-button-${uuid}" aria-hidden="${wcmmode.disabled ? 'true' : 'false'}" class="panel-inner shown">
+        <div class="panel-content">
+            <div data-sly-resource="${@path='par', resourceType='foundation/components/parsys'}"></div>
+        </div>
+    </div>
+</div>

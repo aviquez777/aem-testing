@@ -1,0 +1,335 @@
+@charset "UTF-8";
+pre {
+    white-space: pre-wrap;
+}
+
+.tab-set {
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 32px 15px;
+    width: 100%;
+}
+
+.tab-set * {
+    box-sizing: border-box;
+}
+
+.tab-set h2 {
+    /**paddings for content heading **/
+    margin: 16px 0;
+}
+
+@media (min-width: 960px) {
+    .tab-set h2 {
+        margin: 32px 0;
+    }
+}
+
+.tab-set .tabs {
+    position: relative;
+}
+
+.tab-set .tabs.fade-shadow-right::after {
+    content: '';
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    top: -2px;
+    right: -15px;
+    -webkit-box-shadow: inset -60px 0 50px -44px white;
+    -moz-box-shadow: inset -60px 0 50px -44px white;
+    box-shadow: inset -60px 0 50px -44px white;
+    background: linear-gradient(270deg, #fff, rgba(255, 255, 255, 0) 100%);
+    z-index: 1;
+}
+
+.tab-set .tabs.fade-shadow-left::before {
+    content: '';
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    top: -2px;
+    left: -15px;
+    -webkit-box-shadow: inset 60px 0 50px -44px white;
+    -moz-box-shadow: inset 60px 0 50px -44px white;
+    box-shadow: inset 60px 0 50px -44px white;
+    background: linear-gradient(90deg, #fff, rgba(255, 255, 255, 0) 100%);
+    z-index: 1;
+}
+
+.tab-set nav,
+.tab-set .nav-bar {
+    height: 60px;
+    overflow: hidden;
+    width: calc(100% + 30px);
+    margin-left: -15px;
+    border-bottom: 1px solid #ccc;
+}
+
+.tab-set nav .tab-labels-container,
+.tab-set .nav-bar .tab-labels-container {
+    height: 100px;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+.tab-set nav .actions-nav .icon,
+.tab-set .nav-bar .actions-nav .icon {
+    background: none;
+    padding: 0;
+    top: 10px;
+    position: absolute;
+    font-family: "iconfonts";
+    font-style: normal;
+    font-size: 40px;
+    z-index: 2;
+}
+
+.tab-set nav .actions-nav .icon span,
+.tab-set .nav-bar .actions-nav .icon span {
+    display: none;
+}
+
+.tab-set nav .actions-nav .icon.icon-arrow-right,
+.tab-set .nav-bar .actions-nav .icon.icon-arrow-right {
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    right: -14px;
+    display: none;
+}
+
+.tab-set nav .actions-nav .icon.icon-arrow-right.show,
+.tab-set .nav-bar .actions-nav .icon.icon-arrow-right.show {
+    display: block;
+}
+
+.tab-set nav .actions-nav .icon.icon-arrow-left,
+.tab-set .nav-bar .actions-nav .icon.icon-arrow-left {
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    left: -14px;
+    display: none;
+}
+
+.tab-set nav .actions-nav .icon.icon-arrow-left.show,
+.tab-set .nav-bar .actions-nav .icon.icon-arrow-left.show {
+    display: block;
+}
+
+.tab-set nav ul,
+.tab-set .nav-bar ul {
+    height: 61px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.tab-set nav ul li,
+.tab-set .nav-bar ul li {
+    display: table-cell;
+    white-space: nowrap;
+}
+
+.tab-set nav ul li a,
+.tab-set nav ul li button,
+.tab-set .nav-bar ul li a,
+.tab-set .nav-bar ul li button {
+    display: block;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    text-align: center;
+    color: #757575;
+    padding: 19px 18px;
+    margin: 0;
+    text-decoration: none;
+    background-color: transparent;
+    border-radius: 0;
+}
+
+.tab-set nav ul li a.selected,
+.tab-set nav ul li button.selected,
+.tab-set .nav-bar ul li a.selected,
+.tab-set .nav-bar ul li button.selected {
+    color: #1a65b2;
+    border-bottom: 2px solid #1a65b2;
+    padding-bottom: 17px;
+}
+
+.tab-set nav ul li a:focus,
+.tab-set nav ul li button:focus,
+.tab-set .nav-bar ul li a:focus,
+.tab-set .nav-bar ul li button:focus {
+    outline: none;
+}
+
+.tab-set div .tab-panel {
+    display: none;
+    color: #404041;
+    font-family: "Georgia", "Times New Roman", Times, serif;
+    margin-top: -165px;
+    padding-top: 165px;
+}
+
+.tab-set div .tab-panel.show {
+    display: block;
+}
+
+.tab-set:not(.c-export-journey) div .tab-panel .tab-panel-content {
+    margin-top: 32px;
+}
+
+.tab-set:not(.c-export-journey):not('c-multi-select') div .tab-panel ul {
+    margin-top: 32px;
+    padding: 0;
+}
+
+.tab-set:not(.c-export-journey):not('c-multi-select') div .tab-panel ul li {
+    margin: 14px 0;
+    padding-left: 36px;
+    position: relative;
+}
+
+.tab-set:not(.c-export-journey):not('c-multi-select') div .tab-panel ul li::before {
+    content: '•';
+    left: 5px;
+    position: absolute;
+    top: 0;
+}
+
+.tab-set:not(.c-export-journey) div .tab-panel ol {
+    margin-top: 2rem;
+    list-style: decimal;
+    padding-left: 1.875rem;
+}
+
+.tab-set:not(.c-export-journey) div .tab-panel ol li {
+    margin: .875rem 0;
+    padding: 0 1.875rem 0 1.25rem;
+}
+
+.tab-set:not(.c-export-journey) div .tab-panel small {
+    font-size: 12px;
+}
+
+.tab-set:not(.country-grid) nav ul li a,
+.tab-set:not(.country-grid) nav ul li button,
+.tab-set:not(.country-grid) .nav-bar ul li a,
+.tab-set:not(.country-grid) .nav-bar ul li button {
+    line-height: 20px;
+    padding: 20px 18px;
+}
+
+.tab-set:not(.country-grid) nav ul li a.selected,
+.tab-set:not(.country-grid) nav ul li button.selected,
+.tab-set:not(.country-grid) .nav-bar ul li a.selected,
+.tab-set:not(.country-grid) .nav-bar ul li button.selected {
+    padding-bottom: 17px;
+}
+
+@media (min-width: 720px) {
+    .tab-set h2 {
+        width: 66.66666667%;
+        text-align: center;
+        padding: 0 20px;
+        margin: 0 auto 16px;
+    }
+    .tab-set .tabs {
+        width: 100%;
+    }
+    .tab-set .tabs nav,
+    .tab-set .tabs .nav-bar {
+        width: 100%;
+        margin-left: 0;
+    }
+    .tab-set .tabs .tab-content {
+        padding-left: 18px;
+    }
+    .tab-set:not(.c-export-journey) .tab-panel ol,
+    .tab-set:not(.c-export-journey) .tab-panel ul {
+        overflow: hidden;
+    }
+    .tab-set:not(.c-export-journey) .tab-panel ol li,
+    .tab-set:not(.c-export-journey) .tab-panel ul li {
+        width: 43%;
+        float: left;
+    }
+    .tab-set:not(.c-export-journey) .tab-panel ol li:nth-child(2n + 1),
+    .tab-set:not(.c-export-journey) .tab-panel ul li:nth-child(2n + 1) {
+        clear: both;
+    }
+    .tab-set .tabs nav .tab-labels-container,
+    .tab-set .tabs .nav-bar .tab-labels-container {
+        overflow-x: hidden;
+    }
+    .tab-set .tabs nav ul,
+    .tab-set .tabs .nav-bar ul {
+        overflow: hidden;
+    }
+    .tab-set .tabs nav ul li a,
+    .tab-set .tabs nav ul li button,
+    .tab-set .tabs .nav-bar ul li a,
+    .tab-set .tabs .nav-bar ul li button {
+        text-align: center;
+    }
+    .tab-set .tabs nav .actions-nav .icon::before,
+    .tab-set .tabs .nav-bar .actions-nav .icon::before {
+        color: #333;
+        content: "";
+    }
+}
+
+@media (min-width: 960px) {
+    .tab-set {
+        padding: 64px 15px;
+    }
+    .tab-set h2 {
+        width: 33.33333333%;
+        text-align: left;
+        margin: 32px 0;
+        padding: 0;
+        float: left;
+    }
+    .tab-set h2 + .tabs {
+        width: 41.66666667%;
+        margin-left: 16.66666667%;
+        float: left;
+    }
+    .tab-set:not(.c-export-journey) .tab-panel ol li,
+    .tab-set:not(.c-export-journey) .tab-panel ul li {
+        width: 100%;
+        float: none;
+    }
+    .tab-set nav ul li a,
+    .tab-set nav ul li button,
+    .tab-set .nav-bar ul li a,
+    .tab-set .nav-bar ul li button {
+        padding: 20px 18px;
+        position: relative;
+    }
+    .tab-set nav ul li a::after,
+    .tab-set nav ul li button::after,
+    .tab-set .nav-bar ul li a::after,
+    .tab-set .nav-bar ul li button::after {
+        content: '';
+        border-bottom: 1px solid #ccc;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+    .tab-set nav ul li a.selected::after,
+    .tab-set nav ul li button.selected::after,
+    .tab-set .nav-bar ul li a.selected::after,
+    .tab-set .nav-bar ul li button.selected::after {
+        display: none;
+    }
+}

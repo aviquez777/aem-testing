@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:description="Subheadings"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Subheadings"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+         <!--  Variables named to maintain order and allow add others in between if necessary -->
+          <yearsinbussiness
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+            fieldDescription=""
+            fieldLabel="Years in bussiness"
+            name="./field10"/>
+          <numemployees
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+            fieldDescription=""
+            fieldLabel="Number of employees"
+            name="./field20"/>
+          <location
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+            fieldDescription=""
+            fieldLabel="Location"
+            name="./field30"/>
+          <industry
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+            fieldDescription=""
+            fieldLabel="Industry"
+            name="./field40"/>
+          <keyforeginmarkets
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+            fieldDescription=""
+            fieldLabel="Key foreign markets"
+            name="./field50"/>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured" jcr:title="Step 7"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content jcr:primaryType="nt:unstructured"
+             sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <stepbluetitle
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Step 7 progress title"
+                name="./step7bluetitle"
+                required="{Boolean}true"/>
+            <steptitle
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Step 7 title"
+                name="./step7title"
+                required="{Boolean}true"/>
+            <stepdescription
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                fieldLabel="Step 7 description"
+                name="./step7description"/>
+            <destinationcountry1
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <heading
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/text"
+                        class="coral-Form-fieldlabel"
+                        text="Destination country 1"/>
+                    <well
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <label
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Label"
+                                name="./destinationcountry1Label"
+                                required="{Boolean}true"/>
+                            <help
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Placeholder"
+                                name="./destinationcountry1Help"/>
+                        </items>
+                    </well>
+                </items>
+            </destinationcountry1>
+            <destinationcountry2
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <heading
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/text"
+                        class="coral-Form-fieldlabel"
+                        text="Destination country 2"/>
+                    <well
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <label
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Label"
+                                name="./destinationcountry2Label"
+                                required="{Boolean}true"/>
+                            <help
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Placeholder"
+                                name="./destinationcountry2Help"/>
+                        </items>
+                    </well>
+                </items>
+            </destinationcountry2>
+            <destinationcountry3
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <heading
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/text"
+                        class="coral-Form-fieldlabel"
+                        text="Destination country 3"/>
+                    <well
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <label
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Label"
+                                name="./destinationcountry3Label"
+                                required="{Boolean}true"/>
+                            <help
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Placeholder"
+                                name="./destinationcountry3Help"/>
+                        </items>
+                    </well>
+                </items>
+            </destinationcountry3>
+            <otherdestinationcountries
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <heading
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/text"
+                        class="coral-Form-fieldlabel"
+                        text="Other destination countries"/>
+                    <well
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <label
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Label"
+                                name="./otherdestinationcountriesLabel"
+                                required="{Boolean}true"/>
+                            <help
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Placeholder"
+                                name="./otherdestinationcountriesHelp"/>
+                            <confirm
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Confirm button"
+                                name="./otherdestinationcountriesConfirm"
+                                required="{Boolean}true"/>
+                            <clear
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Clear all"
+                                name="./otherdestinationcountriesClear"
+                                required="{Boolean}true"/>
+                            <singularoption
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Singular option selected"
+                                name="./otherdestinationcountriesSingular"
+                                required="{Boolean}true"/>
+                            <pluraloptions
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Plural option selected"
+                                name="./otherdestinationcountriesPlural"
+                                required="{Boolean}true"/>
+                        </items>
+                    </well>
+                </items>
+            </otherdestinationcountries>
+            <countriesshipfreightchargescollect
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <heading
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/text"
+                        class="coral-Form-fieldlabel"
+                        text="Countries to ship 'freight charges collect'"/>
+                    <well
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <label
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Label"
+                                name="./countriesshipfreightchargescollectLabel"
+                                required="{Boolean}true"/>
+                            <help
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Placeholder"
+                                name="./countriesshipfreightchargescollectHelp"/>
+                            <confirm
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Confirm button"
+                                name="./countriesshipfreightchargescollectConfirm"
+                                required="{Boolean}true"/>
+                            <clear
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Clear all"
+                                name="./countriesshipfreightchargescollectClear"
+                                required="{Boolean}true"/>
+                            <singularoption
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Singular option selected"
+                                name="./countriesshipfreightchargescollectSingular"
+                                required="{Boolean}true"/>
+                            <pluraloptions
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Plural option selected"
+                                name="./countriesshipfreightchargescollectPlural"
+                                required="{Boolean}true"/>
+                        </items>
+                    </well>
+                </items>
+            </countriesshipfreightchargescollect>
+        </items>
+    </content>
+</jcr:root>

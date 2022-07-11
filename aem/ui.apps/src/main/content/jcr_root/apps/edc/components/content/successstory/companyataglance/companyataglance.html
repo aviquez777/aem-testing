@@ -1,0 +1,19 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.subheadings="com.edc.edcweb.core.models.PolicyReader" />
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"/>
+<sly data-sly-test.policy="${subheadings.policy}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !policy, emptyTextAppend='No Labels defined'}"/>
+
+<sly data-sly-test.labels="${subheadings.labels}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !subheadings}"/>
+
+<section class="c-company-at-a-glance" role="complementary" data-sly-test="${subheadings.policy && properties.title}">
+    <h4 class="title" data-sly.test="${properties.title}">${properties.title}</h4>
+
+    <sly data-sly-list.label="${labels}">
+        <div class="item" data-sly-test="${properties[label] || (pageProperties['productService'] && label == 'field60')}">
+            <h4 class="label">${labels[label]}</h4>
+            <p class="text">${ pageProperties['productService'] && label == "field60" ? pageProperties['productService'] : properties[label] }</p>
+        </div>
+    </sly>
+</section>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <option1
+        jcr:primaryType="nt:unstructured"
+        enName="Customers outside of Canada"
+        frName="des clients à l’étranger."
+        value="Exporter"/>
+    <option2
+        jcr:primaryType="nt:unstructured"
+        enName="Potential contracts outside of Canada"
+        frName="des contrats potentiels à l’étranger."
+        value="Ready to Export"/>
+    <option3
+        jcr:primaryType="nt:unstructured"
+        enName="Investments outside of Canada (e.g. warehouse, office, etc.)"
+        frName="des investissements à l’étranger (p. ex. : entrepôt, bureaux)."
+        value="CDIA"/>
+    <option4
+        jcr:primaryType="nt:unstructured"
+        enName="Customers in Canada who then sell outside of Canada"
+        frName="des clients canadiens qui vendent ensuite à l’étranger."
+        value="Indirect Exporter"/>
+    <option5
+        jcr:primaryType="nt:unstructured"
+        enName="Business operations are entirely within Canada"
+        frName="des activités commerciales exclusivement au Canada."
+        value="Non Exporter"/>
+</jcr:root>

@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Image in Body Text / Text Background / Product Feature"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <granite:data
+            jcr:primaryType="nt:unstructured"
+            dialog-id="dialog-imageinbodytext" />
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <componentType
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        granite:class="cq-dialog-dropdown-showhide"
+                        fieldDescription="Determines the type of component to display."
+                        fieldLabel="Component"
+                        name="./componentType">
+                        <granite:data
+                            jcr:primaryType="nt:unstructured"
+                            cq-dialog-dropdown-showhide-target=".list-option-component-showhide-target" />
+                        <items jcr:primaryType="nt:unstructured">
+                            <imageInBodyTextOpt
+                                jcr:primaryType="nt:unstructured"
+                                selected="{Boolean}true"
+                                text="Image in Body Text"
+                                value="imageinbodytext" />
+                            <textBackgroundOpt
+                                jcr:primaryType="nt:unstructured"
+                                text="Text Background"
+                                value="textbackground" />
+                            <productFeatureOpt
+                                jcr:primaryType="nt:unstructured"
+                                text="Product Feature"
+                                value="productfeature" />
+                        </items>
+                    </componentType>
+                    <imageInBodyText
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        granite:class="hide list-option-component-showhide-target foundation-layout-util-vmargin">
+                        <granite:data
+                            jcr:primaryType="nt:unstructured"
+                            showhidetargetvalue="imageinbodytext" />
+                        <items jcr:primaryType="nt:unstructured">
+                            <rtftextHeader
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                fieldLabel="Text before image"
+                                name="./header"
+                                useFixedInlineToolbar="{Boolean}true">
+                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                    <paraformat
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*">
+                                        <formats jcr:primaryType="nt:unstructured">
+                                            <default_h1
+                                                jcr:primaryType="nt:unstructured"
+                                                description="Heading 1"
+                                                tag="h1"/>
+                                            <default_h2
+                                                jcr:primaryType="nt:unstructured"
+                                                description="Heading 2"
+                                                tag="h2"/>
+                                            <default_h3
+                                                jcr:primaryType="nt:unstructured"
+                                                description="Heading 3"
+                                                tag="h3"/>
+                                            <default_h4
+                                                jcr:primaryType="nt:unstructured"
+                                                description="Heading 4"
+                                                tag="h4"/>
+                                            <default_h5
+                                                jcr:primaryType="nt:unstructured"
+                                                description="Heading 5"
+                                                tag="h5"/>
+                                            <default_h6
+                                                jcr:primaryType="nt:unstructured"
+                                                description="Heading 6"
+                                                tag="h6"/>
+                                            <default_p
+                                                jcr:primaryType="nt:unstructured"
+                                                description="Paragraph"
+                                                tag="p"/>
+                                        </formats>
+                                    </paraformat>
+                                    <format
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*" />
+                                    <justify
+                                        jcr:primaryType="nt:unstructured"
+                                        features="" />
+                                    <lists
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*" />
+                                    <links
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*" />
+                                    <subsuperscript
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*" />
+                                </rtePlugins>
+                                <uiSettings jcr:primaryType="nt:unstructured">
+                                    <cui jcr:primaryType="nt:unstructured">
+                                        <inline
+                                            jcr:primaryType="nt:unstructured"
+                                            toolbar="[#paraformat,#format,#lists,links#modifylink,links#unlink]">
+                                            <popovers jcr:primaryType="nt:unstructured">
+                                                <paraformat
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="paraformat:getFormats:paraformat-pulldown"
+                                                    ref="paraformat"/>
+                                                <format
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[format#bold,format#italic,format#underline,subsuperscript#subscript,subsuperscript#superscript]"
+                                                    ref="format" />
+                                                <lists
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[lists#unordered,lists#ordered]"
+                                                    ref="lists" />
+                                            </popovers>
+                                        </inline>
+                                    </cui>
+                                </uiSettings>
+                            </rtftextHeader>
+                            <beforealignment
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                fieldDescription="This alignment applies only for desktop view and image size set to 'Default Width'"
+                                fieldLabel="Choose alignment for text before image"
+                                name="./beforealignment">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <left
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/radio"
+                                        checked="{Boolean}true"
+                                        selected="{Boolean}true"
+                                        text="Left (default)"
+                                        value="left" />
+                                    <center
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/radio"
+                                        text="Center"
+                                        value="center" />
+                                    <right
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/radio"
+                                        text="Right"
+                                        value="right" />
+                                </items>
+                            </beforealignment>
+                            <position
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                fieldLabel="Choose image size"
+                                fieldDescription="The recommended sizes are Small 255px, Medium 540px, Large 920px"
+                                name="./imagePosition">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <lg
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/radio"
+                                        checked="{Boolean}true"
+                                        selected="{Boolean}true"
+                                        text="Pulled Image (large)"
+                                        value="lg" />
+                                    <md
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/radio"
+                                        text="Full Width (medium)"
+                                        value="md" />
+                                    <sm
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/radio"
+                                        text="Floated (small)"
+                                        value="sm" />
+                                    <de
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/radio"
+                                        text="Default Width"
+                                        value="de" />
+                                </items>
+                            </position>
+                            <imagealignment
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                fieldDescription="This alignment applies only for desktop view and image size set to 'Default Width'"
+                                fieldLabel="Choose image alignment"
+                                name="./imagealignment">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <left
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/radio"
+                                        checked="{Boolean}true"
+                                        selected="{Boolean}true"
+                                        text="Left (default)"
+                                        value="image-left" />
+                                    <center
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/radio"
+                                        text="Center"
+                                        value="image-center" />
+                                    <right
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/radio"
+                                        text="Right"
+                                        value="image-right" />
+                                </items>
+                            </imagealignment>
+                            <desktop
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                fieldLabel="Desktop Breakpoint Image *"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                name="./fileReference"
+                                rootPath="/content/dam/edc">
+                                <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    validation="imageinbodytext.field.fileReference" />
+                            </desktop>
+                            <tablet
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                fieldLabel="Tablet Breakpoint Image"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                name="./tabletFileReference"
+                                rootPath="/content/dam/edc"/>
+                            <teaserimage
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                fieldLabel="Mobile Breakpoint Image"
+                                name="./teaserimage"
+                                rootPath="/content/dam/edc"/>
+                            <imageAlt
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Image alternate text *"
+                                name="./imageAlt"
+                                wrapperClass="core-image-alt"
+                                validation="imageinbodytext.field.imageAlt" />
+                            <rtftextCaption
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                fieldLabel="Caption image"
+                                name="./caption"
+                                useFixedInlineToolbar="{Boolean}true">
+                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                    <links
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*" />
+                                </rtePlugins>
+                                <uiSettings jcr:primaryType="nt:unstructured">
+                                    <cui jcr:primaryType="nt:unstructured">
+                                        <inline
+                                            jcr:primaryType="nt:unstructured"
+                                            toolbar="[links#modifylink,links#unlink]">
+                                        </inline>
+                                    </cui>
+                                </uiSettings>
+                            </rtftextCaption>
+                            <enlargeImage
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                defaultChecked="{Boolean}false"
+                                ignoreData="{Boolean}false"
+                                name="./enlargeImage"
+                                text="Is It an Enlarge Image? It only applies for Pulled Image (large) and Full Width (medium)"
+                                uncheckedValue="no"
+                                value="yes"/>
+                            <fullResolution
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                fieldLabel="Full Resolution Image *"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                name="./fullResolution"
+                                rootPath="/content/dam/edc">
+                                <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    validation="imageinbodytext.field.fullResolution" />
+                            </fullResolution>
+                            <fullResolutionAlt
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Full Resolution Image alternate text *"
+                                name="./fullResolutionAlt"
+                                validation="imageinbodytext.field.fullResolutionAlt" />
+                            <rtftextBody
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                fieldLabel="Text after image"
+                                name="./body"
+                                useFixedInlineToolbar="{Boolean}true">
+                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                    <paraformat
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*">
+                                        <formats jcr:primaryType="nt:unstructured">
+                                            <default_h1
+                                                jcr:primaryType="nt:unstructured"
+                                                description="Heading 1"
+                                                tag="h1"/>
+                                            <default_h2
+                                                jcr:primaryType="nt:unstructured"
+                                                description="Heading 2"
+                                                tag="h2"/>
+                                            <default_h3
+                                                jcr:primaryType="nt:unstructured"
+                                                description="Heading 3"
+                                                tag="h3"/>
+                                            <default_h4
+                                                jcr:primaryType="nt:unstructured"
+                                                description="Heading 4"
+                                                tag="h4"/>
+                                            <default_h5
+                                                jcr:primaryType="nt:unstructured"
+                                                description="Heading 5"
+                                                tag="h5"/>
+                                            <default_h6
+                                                jcr:primaryType="nt:unstructured"
+                                                description="Heading 6"
+                                                tag="h6"/>
+                                            <default_p
+                                                jcr:primaryType="nt:unstructured"
+                                                description="Paragraph"
+                                                tag="p"/>
+                                        </formats>
+                                    </paraformat>
+                                    <format
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*" />
+                                    <justify
+                                        jcr:primaryType="nt:unstructured"
+                                        features="" />
+                                    <lists
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*" />
+                                    <links
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*" />
+                                    <subsuperscript
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*" />
+                                </rtePlugins>
+                                <uiSettings jcr:primaryType="nt:unstructured">
+                                    <cui jcr:primaryType="nt:unstructured">
+                                        <inline
+                                            jcr:primaryType="nt:unstructured"
+                                            toolbar="[#paraformat,#format,#lists,links#modifylink,links#unlink]">
+                                            <popovers jcr:primaryType="nt:unstructured">
+                                                <paraformat
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="paraformat:getFormats:paraformat-pulldown"
+                                                    ref="paraformat"/>
+                                                <format
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[format#bold,format#italic,format#underline,subsuperscript#subscript,subsuperscript#superscript]"
+                                                    ref="format" />
+                                                <lists
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[lists#unordered,lists#ordered]"
+                                                    ref="lists" />
+                                            </popovers>
+                                        </inline>
+                                    </cui>
+                                </uiSettings>
+                            </rtftextBody>
+                            <textalignment
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                fieldDescription="This alignment applies only for desktop view."
+                                fieldLabel="Choose text alignment"
+                                name="./textalignment">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <left
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/radio"
+                                        checked="{Boolean}true"
+                                        selected="{Boolean}true"
+                                        text="Left (default)"
+                                        value="left" />
+                                    <center
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/radio"
+                                        text="Center"
+                                        value="center" />
+                                    <right
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/radio"
+                                        text="Right"
+                                        value="right" />
+                                </items>
+                            </textalignment>
+                            <ctatext
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Link text"
+                                name="./linktext"/>
+                            <ctaurl
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                fieldLabel="Link URL"
+                                name="./linkurl"
+                                required="{Boolean}false"
+                                rootPath="/content/edc"/>
+                            <ctatarget
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldDescription="Determines if the link will open in the current or new window."
+                                fieldLabel="Link target"
+                                name="./linktarget">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <existing
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Existing window"
+                                        value="_self"/>
+                                    <new
+                                        jcr:primaryType="nt:unstructured"
+                                        text="New window"
+                                        value="_blank"/>
+                                </items>
+                            </ctatarget>
+                            <ctastyle
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                    fieldDescription="Determines if the link will open in the current or new window."
+                                    fieldLabel="Link styling"
+                                    name="./linkstyle">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <existing
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Link (default)"
+                                        value="link"/>
+                                    <new
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Button"
+                                        value="button"/>
+                                </items>
+                            </ctastyle>
+                            <ctaalignment
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                fieldDescription="This alignment applies only for desktop view."
+                                fieldLabel="Choose link alignment"
+                                name="./ctaalignment">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <left
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/radio"
+                                        checked="{Boolean}true"
+                                        selected="{Boolean}true"
+                                        text="Left (default)"
+                                        value="left" />
+                                    <center
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/radio"
+                                        text="Center"
+                                        value="center" />
+                                    <right
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/radio"
+                                        text="Right"
+                                        value="right" />
+                                </items>
+                            </ctaalignment>
+                        </items>
+                    </imageInBodyText>
+                    <textBackground
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        granite:class="hide list-option-component-showhide-target foundation-layout-util-vmargin">
+                        <granite:data
+                            jcr:primaryType="nt:unstructured"
+                            showhidetargetvalue="textbackground" />
+                        <items jcr:primaryType="nt:unstructured">
+                            <title
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Heading *"
+                                name="./title"
+                                validation="textbackground.field.title" />
+                            <typeTextBackground
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                fieldLabel="Choose background"
+                                name="./typeTextBackground">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <lg
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/radio"
+                                        checked="{Boolean}true"
+                                        selected="{Boolean}true"
+                                        text="Light-charcoal"
+                                        value="lc" />
+                                    <md
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/radio"
+                                        text="Light-blue"
+                                        value="lb" />
+                                </items>
+                            </typeTextBackground>
+                            <rtftextBackground
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                fieldLabel="Text Background *"
+                                name="./textBackground"
+                                useFixedInlineToolbar="{Boolean}true"
+                                class="rte-validation-required"
+                                validation="textbackground.field.textBackground">
+                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                    <format
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*" />
+                                    <justify
+                                        jcr:primaryType="nt:unstructured"
+                                        features="" />
+                                    <lists
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*" />
+                                    <links
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*" />
+                                    <subsuperscript
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*" />
+                                </rtePlugins>
+                                <uiSettings jcr:primaryType="nt:unstructured">
+                                    <cui jcr:primaryType="nt:unstructured">
+                                        <inline
+                                            jcr:primaryType="nt:unstructured"
+                                            toolbar="[#format,#lists,links#modifylink,links#unlink]">
+                                            <popovers jcr:primaryType="nt:unstructured">
+                                                <format
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[format#bold,format#italic,format#underline,subsuperscript#subscript,subsuperscript#superscript]"
+                                                    ref="format" />
+                                                <lists
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[lists#unordered,lists#ordered]"
+                                                    ref="lists" />
+                                            </popovers>
+                                        </inline>
+                                    </cui>
+                                </uiSettings>
+                            </rtftextBackground>
+                        </items>
+                    </textBackground>
+                    <productFeature
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        granite:class="hide list-option-component-showhide-target foundation-layout-util-vmargin">
+                        <granite:data
+                            jcr:primaryType="nt:unstructured"
+                            showhidetargetvalue="productfeature" />
+                        <items jcr:primaryType="nt:unstructured">
+                            <fcSmallHeader
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Small header"
+                                name="./fcSmallHeader" />
+                            <fcTitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Title"
+                                name="./fcTitle" />
+                            <fcFileReference
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                fieldLabel="Image *"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                name="./fcFileReference"
+                                rootPath="/content/dam/edc">
+                                <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    validation="productfeature.field.fcFileReference" />
+                            </fcFileReference>
+                            <fcAlt
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Image alternate text *"
+                                name="./fcAlt"
+                                wrapperClass="core-image-alt"
+                                validation="productfeature.field.fcAlt" />
+                            <fcDescription
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                fieldLabel="Text Background"
+                                name="./fcDescription"
+                                useFixedInlineToolbar="{Boolean}true">
+                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                    <format
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*" />
+                                    <justify
+                                        jcr:primaryType="nt:unstructured"
+                                        features="" />
+                                    <lists
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*" />
+                                    <links
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*" />
+                                    <subsuperscript
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*" />
+                                </rtePlugins>
+                                <uiSettings jcr:primaryType="nt:unstructured">
+                                    <cui jcr:primaryType="nt:unstructured">
+                                        <inline
+                                            jcr:primaryType="nt:unstructured"
+                                            toolbar="[#format,#lists,links#modifylink,links#unlink]">
+                                            <popovers jcr:primaryType="nt:unstructured">
+                                                <format
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[format#bold,format#italic,format#underline,subsuperscript#subscript,subsuperscript#superscript]"
+                                                    ref="format" />
+                                                <lists
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[lists#unordered,lists#ordered]"
+                                                    ref="lists" />
+                                            </popovers>
+                                        </inline>
+                                    </cui>
+                                </uiSettings>
+                            </fcDescription>
+                            <fcCtaText
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Text for the CTA button"
+                                fieldLabel="Text for the CTA button"
+                                name="./fcCtaText" />
+                            <fcCtaLink
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                fieldDescription="The URL visitors will be directed to after clicking the CTA button."
+                                fieldLabel="CTA link url"
+                                name="./fcCtaLink"
+                                rootPath="/content/edc"/>
+                            <fcCtaTarget
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldDescription="Determines if the link will open in the current or new window. "
+                                fieldLabel="CTA link target"
+                                name="./fcCtaTarget">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <existing
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Existing window"
+                                        value="_self"/>
+                                    <new
+                                        jcr:primaryType="nt:unstructured"
+                                        text="New window"
+                                        value="_blank"/>
+                                </items>
+                            </fcCtaTarget>
+                        </items>
+                    </productFeature>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

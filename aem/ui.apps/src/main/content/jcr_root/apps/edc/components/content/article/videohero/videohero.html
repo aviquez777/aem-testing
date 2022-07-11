@@ -1,0 +1,100 @@
+<sly data-sly-use.pageserie="com.edc.edcweb.core.models.Series" />
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.videoid}"/>
+<sly data-sly-use.page="com.adobe.cq.wcm.core.components.models.Page"/>
+<sly data-sly-use.articlepage="${'com.edc.edcweb.core.models.ArticlePage' @ page = currentPage}"/>
+<sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+
+<!--/** ------------------------------------------------------ **/-->
+<!--/** If page language is French, use the French date format **/-->
+<!--/** ------------------------------------------------------ **/-->
+<sly data-sly-test="${page.language == 'fr'}">
+<sly data-sly-test.dateformat="dd MMMM yyyy"/>
+</sly>
+<!--/** ------------------------------------------------------ **/-->
+<!--/** Default is English, so if not French... use the        **/-->
+<!--/** English date format                                    **/-->
+<!--/** ------------------------------------------------------ **/-->
+<sly data-sly-test="${page.language != 'fr'}">
+<sly data-sly-test.dateformat="MMMM dd, yyyy"/>
+</sly>
+<!--/** ------------------------------------------------------ **/-->
+<header class="video-heading" data-sly-test="${properties.videoid}">
+<!--/** ------------------------------------------------------ **/-->
+<!--/**                    D E S K T O P                       **/-->
+<!--/** ------------------------------------------------------ **/-->
+<sly data-sly-test.desktop="${pageProperties['fileReference']}" />
+<!--/** ------------------------------------------------------ **/-->
+<!--/** If no fileReference @ the page properties level, take  **/-->
+<!--/** the one from the component properties level            **/-->
+<!--/** ------------------------------------------------------ **/-->
+<sly data-sly-test="${!desktop}">
+<sly data-sly-test.desktop="${properties.fileReference}"/>
+</sly>
+<!--/** ------------------------------------------------------ **/-->
+<!--/**                     T A B L E T                        **/-->
+<!--/** ------------------------------------------------------ **/-->
+<sly data-sly-test.tablet="${pageProperties['tabletFileReference']}" />
+<!--/** ------------------------------------------------------ **/-->
+<!--/** If no tabletFileReference @ the page properties level, **/-->
+<!--/** take the one from the component properties level       **/-->
+<!--/** ------------------------------------------------------ **/-->
+<sly data-sly-test="${!tablet}">
+<sly data-sly-test.tablet="${properties.tabletFileReference ? properties.tabletFileReference : desktop}"/>
+</sly>
+<!--/** ------------------------------------------------------ **/-->
+<!--/**                      P H O N E                         **/-->
+<!--/** ------------------------------------------------------ **/-->
+<sly data-sly-test.phone="${pageProperties['teaserimage']}" /> 
+<!--/** ------------------------------------------------------ **/-->
+<!--/** If no teaserimage @ the page properties level, take    **/-->
+<!--/** the one from the component properties level. In theory **/-->
+<!--/** there should always be a teaser at the page level as   **/-->
+<!--/** as it has been mandatory for quite a while. Ignoring   **/-->
+<!--/** that for now (this code will be removed after content  **/-->
+<!--/** migration is completed anyway).                        **/-->
+<!--/** ------------------------------------------------------ **/-->
+<sly data-sly-test="${!phone}">
+<sly data-sly-test.phone="${properties.phoneFileReference ? properties.phoneFileReference : desktop}" /> 
+</sly>
+        <div class="container">
+            <div class="main-header">
+            <div class="wrapper-breadcrumb" data-sly-test="${articlepage.breadCrumbLink}">
+                <nav class="breadcrumb">
+                    <ol>
+                        <li>
+                            <a href="${articlepage.breadCrumbLink}">${articlepage.breadCrumbLabel}</a>
+                        </li>
+                        <li>
+                           <a data-sly-use.urlRes="${'com.edc.edcweb.core.models.PageModelHelper' @ path = currentPage.path}" href="${urlRes.url}" aria-current="page">${articlepage.ContentTypeTitle}</a>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+            <h1 class="title">${pageProperties.pageTitle}</h1>
+                <p class="synopsis">${pageProperties['articlesynopsis']}</p>
+
+                <p class="meta-info">
+                    <sly data-sly-test="${pageProperties['publishdate'] == 'first'}">
+                                 <time data-sly-test.havefirstpublished="${pageProperties['firstpublished']}" dateTime="${pageProperties['firstpublished']}">
+                                    <span class="date">${dateformat @ format=pageProperties['firstpublished'], locale=page.language}</span>
+                                 </time>
+                        <time><span data-sly-test="${!havefirstpublished}">&lt;Not yet published&gt;</span></time>
+                    </sly>
+                    <sly data-sly-test="${pageProperties['publishdate'] ==  'last'}">
+                                 <time data-sly-test.havelastpublished="${pageProperties['cq:lastReplicated']}" dateTime="${pageProperties['cq:lastReplicated']}">
+                                    <span class="date">${dateformat @ format=pageProperties['cq:lastReplicated'], locale=page.language}</span>
+                                 </time>
+                        <time data-sly-test="${!havelastpublished}" dateTime="${pageProperties['jcr:created']}">
+                            <span class="date">${dateformat @ format=pageProperties['jcr:created'], locale=page.language}</span>
+                        </time>
+                    </sly>
+                    <span data-sly-use.tagresolver="${'com.edc.edcweb.core.models.Tags' @ tagId=properties.primarytag}" class="category">
+                        <a x-cq-linkchecker href="/content/edc/${page.language}/tag/${tagresolver.tagByTagId.name}.html" >${tagresolver.titleByTagId}</a>
+                  </span>
+                <span class="series-breadcrumb" data-sly-test="${pageserie.isSerie && pageserie.IsValid }">${pageserie.PartLabel}${pageserie.IndexCurrentPage}${pageserie.OfLabel}${pageserie.NbPartSeries}${pageserie.SeriesLabel}</span>
+                </p>
+                <sly data-sly-call="${commonTemplates.youtube @ videoId=properties.videoid, desktop=desktop, tablet=tablet, phone=phone, imageAlt=pageProperties['imagealttext']}"/>
+            </div>
+        </div>
+    </header>

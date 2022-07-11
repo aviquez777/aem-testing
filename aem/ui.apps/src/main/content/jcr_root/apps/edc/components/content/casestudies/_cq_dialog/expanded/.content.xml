@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+  xmlns:cq="http://www.day.com/jcr/cq/1.0"
+  xmlns:jcr="http://www.jcp.org/jcr/1.0"
+  xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+  jcr:primaryType="nt:unstructured" jcr:title="Expanded View"
+  sling:resourceType="cq/gui/components/authoring/dialog">
+  <content jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/container">
+    <items jcr:primaryType="nt:unstructured">
+      <expandedview jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+          <heading jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/text"
+            class="coral-Form-fieldlabel"
+            text="Expanded View" />
+          <well jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+            <layout jcr:primaryType="nt:unstructured"
+              sling:resourceType="granite/ui/components/coral/foundation/layouts/well" />
+            <items jcr:primaryType="nt:unstructured">
+              <videoid jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Optional Video Youtube ID"
+                fieldLabel="Video Youtube ID"
+                name="./videoId" />
+              <info jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/text"
+                text="If Video Youtube ID is not entered, the images below will be used. Please Follow the specified file dimensions." />
+              <expandeddesktop
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                fieldDescription="Image dimension: 1,110 x 625"
+                fieldLabel="Desktop Breakpoint Image 1,110 x 625"
+                mimeTypes="[image]"
+                multiple="{Boolean}false"
+                name="./expandedfileReference"
+                required="{Boolean}true"
+                rootPath="/content/dam/edc" />
+              <expandedtablet
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                fieldDescription="Image dimension: 690 x 389"
+                fieldLabel="Tablet Breakpoint Image  690 x 389"
+                mimeTypes="[image]"
+                multiple="{Boolean}false"
+                name="./expandedtabletFileReference"
+                required="{Boolean}true"
+                rootPath="/content/dam/edc" />
+              <expandedteaserimage
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                fieldDescription="Image dimension: 354 x 234"
+                fieldLabel="Mobile Breakpoint Image 354 x 234"
+                name="./expandedTeaserImage"
+                required="{Boolean}true"
+                rootPath="/content/dam/edc" />
+              <expandedimagealttext
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Used as the alternate text for all article images"
+                fieldLabel="Image Alternate Text"
+                required="{Boolean}false"
+                name="./expandedImageAltText" />
+              <blockquote jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                fieldDescription="Quote that displays in the bottom left section of the expanded view"
+                fieldLabel="Quote"
+                name="./blockQuote"
+                required="{Boolean}true" />
+              <displayname jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                text="Display Name under the quote?"
+                value="{Boolean}true"
+                uncheckedValue="{Boolean}false"
+                defaultChecked="{Boolean}true"
+                name="./displayName" />
+              <displaycompany
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                text="Display Company under the quote?"
+                value="{Boolean}true"
+                uncheckedValue="{Boolean}false"
+                defaultChecked="{Boolean}true"
+                name="./displayCompany" />
+              <quotedetails
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Quote details"
+                fieldDescription="Optional details of the case study displayed under the quote."
+                jcr:primaryType="nt:unstructured"
+                name="./quoteDetails"
+                required="{Boolean}false" />
+              <expandedheadline
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Case Study Headline"
+                fieldDescription="Optional, if no information is entered the slide headline will be used"
+                jcr:primaryType="nt:unstructured"
+                name="./expandedHeadline"
+                required="{Boolean}true" />
+              <expandeddescription
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                fieldDescription="Expanded description of the case study."
+                fieldLabel="Case Study Description"
+                required="{Boolean}true"
+                useFixedInlineToolbar="{Boolean}true"
+                name="./expandedDescription" />
+              <attributionfields
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/text"
+                class="coral-Form-fieldlabel"
+                text="Attribution Fields" />
+              <attributionwell
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <layout jcr:primaryType="nt:unstructured"
+                  sling:resourceType="granite/ui/components/coral/foundation/layouts/well" />
+                <items jcr:primaryType="nt:unstructured">
+                  <attr1title
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    fieldLabel="Attribution Title 1"
+                    name="./attr1Title"
+                    required="{Boolean}false" />
+                  <attr1text jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    fieldLabel="Attribution Text 1"
+                    name="./attr1Text"
+                    required="{Boolean}false" />
+                  <attr2title
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    fieldLabel="Attribution Title 2"
+                    name="./attr2Title"
+                    required="{Boolean}false" />
+                  <attr2text jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    fieldLabel="Attribution Text 2"
+                    name="./attr2Text"
+                    required="{Boolean}false" />
+                  <attr3title
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    fieldLabel="Attribution Title 3"
+                    name="./attr3Title"
+                    required="{Boolean}false" />
+                  <attr3text jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    fieldLabel="Attribution Text 3"
+                    name="./attr3Text"
+                    required="{Boolean}false" />
+                </items>
+              </attributionwell>
+            </items>
+          </well>
+        </items>
+      </expandedview>
+    </items>
+  </content>
+</jcr:root>

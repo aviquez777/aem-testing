@@ -1,0 +1,20 @@
+<template data-sly-template.chapter="${@ ebookChapter, ctaText, nextChapter, chapter, of, minute, minutes, readTime, currentItem, totalItems}">
+    <div class="content-ebook" data-event-value="${ebookChapter.chapterNumber}">
+        <h3 class="title">
+          ${chapter} ${ebookChapter.chapterNumber} ${of} ${totalItems}:
+        </h3>
+        <h2 class="subTitle">${ebookChapter.chapterTitle}</h2>
+        <p class="timeRead">
+          <strong data-sly-test.mins="${ebookChapter.chapterTimeToRead}">${mins} ${mins == 1 ? minute : minutes } ${readTime}</strong>
+        </p>
+        <div class="info-book">
+            ${ebookChapter.chapterIntro}
+        </div>
+        <sly data-sly-test="${ctaText}">
+          <sly data-sly-use.urlres="${'com.edc.edcweb.core.models.PageModelHelper' @ path =  ebookChapter.chapterUrl}"/>
+          <sly data-sly-test.ctaurl="${urlres.url || itemurl}" />
+          <sly data-sly-use.buttonTemplate="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+          <div data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='link', isUsedForModal='nomodal', buttonstate='enabled', link=ctaurl, buttontext=ctaText, target='_self', linkchecker='skip', buttoncssclasses='button edc-primary-btn'}"  data-sly-unwrap></div>
+        </sly>
+    </div>
+</template>

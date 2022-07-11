@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:template="/conf/edcportal/settings/wcm/templates/content-page"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="401"
+        sling:resourceType="edcportal/components/structure/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <responsivegrid
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid">
+                <errormessage
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="edcportal/components/content/errormessage"
+                    errorMessage="Désolé, quelque chose a mal tourné. Veuillez réessayer plus tard."
+                    linkTarget="_self"
+                    linkText="Retour à page d'accueil"
+                    linkUrl="/content/myedc/fr"/>
+            </responsivegrid>
+        </root>
+    </jcr:content>
+</jcr:root>

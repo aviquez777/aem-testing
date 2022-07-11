@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}false"
+    jcr:primaryType="cq:WorkflowModel"
+    jcr:uuid="033267bb-8661-4e62-8382-c68709864b2a"
+    sling:resourceType="cq/workflow/components/model"
+    description="No Description"
+    title="EDC Self Publishing">
+    <metaData
+        cq:generatingPage="/conf/global/settings/workflow/models/edc-self-publishing/jcr:content"
+        cq:lastModified="{Long}1627492583257"
+        cq:lastModifiedBy="admin"
+        jcr:primaryType="nt:unstructured"
+        workflowStages="[Workflow Start,On Proofread,Proofread Denied,On Review,Reviewer Denied,Approve to Publish,Publisher Denied,Waiting for Publishing,Publishing]"/>
+    <nodes jcr:primaryType="nt:unstructured">
+        <node0
+            jcr:primaryType="cq:WorkflowNode"
+            title="Start"
+            type="START">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node0>
+        <node1
+            jcr:primaryType="cq:WorkflowNode"
+            description="A sample participant chooser that chooses the workflow initiator as participant."
+            title="Workflow Initiator Participant Chooser"
+            type="DYNAMIC_PARTICIPANT">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                DYNAMIC_PARTICIPANT="/libs/workflow/scripts/initiator-participant-chooser.ecma"
+                PROCESS_AUTO_ADVANCE="true"
+                workflowStage="Workflow Start"/>
+        </node1>
+        <node2
+            jcr:primaryType="cq:WorkflowNode"
+            title="OR_SPLIT"
+            type="OR_SPLIT">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node2>
+        <node3
+            jcr:primaryType="cq:WorkflowNode"
+            title="OR_JOIN"
+            type="OR_JOIN">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node3>
+        <node4
+            jcr:primaryType="cq:WorkflowNode"
+            description="Assign to proofreaders"
+            title="Assign Page For Proof-read"
+            type="DYNAMIC_PARTICIPANT">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                DYNAMIC_PARTICIPANT="com.edc.edcweb.core.workflow.SelectParticipantStep"
+                PROCESS_ARGS="userGroupId=edc-self-publishing-proofreaders,subject=PROOF-READ: -title-of-page- ,template=/conf/global/settings/workflow/notification/email/edc/ready-for-proofread/en.txt,emailType=notification"
+                timeoutMillis=" "
+                workflowStage="On Proofread"/>
+        </node4>
+        <node5
+            jcr:primaryType="cq:WorkflowNode"
+            title="Proofreader Takes Ownership"
+            type="DYNAMIC_PARTICIPANT">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                DYNAMIC_PARTICIPANT="com.edc.edcweb.core.workflow.SelectParticipantStep"
+                workflowStage="On Proofread"/>
+        </node5>
+        <node6
+            jcr:primaryType="cq:WorkflowNode"
+            title="Edits have been made"
+            type="DYNAMIC_PARTICIPANT">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                DYNAMIC_PARTICIPANT="com.edc.edcweb.core.workflow.SelectParticipantStep"
+                PROCESS_ARGS="userGroupId=edc-self-publishing-reviewers,subject=FYI: Edits have been made on  -title-of-page- ,template=/conf/global/settings/workflow/notification/email/edc/edits-have-been-made/en.txt,emailType=fyi"
+                timeoutMillis=" "
+                workflowStage="On Proofread"/>
+        </node6>
+        <node7
+            jcr:primaryType="cq:WorkflowNode"
+            description="Goto Step"
+            title="Assign Page For Review"
+            type="PROCESS">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                PROCESS="com.adobe.granite.workflow.core.process.GotoProcess"
+                PROCESS_AUTO_ADVANCE="false"
+                script="function check() {&#xd;&#xa;&#x9;return true;&#xd;&#xa;}"
+                TARGET_NODE_ID="node8"
+                TARGET_NODE_PATH="/conf/global/settings/workflow/models/edc-self-publishing/jcr:content/flow/dynamicparticipant1"
+                workflowStage="On Review"/>
+        </node7>
+        <node8
+            jcr:primaryType="cq:WorkflowNode"
+            title="Assign Page For Review"
+            type="DYNAMIC_PARTICIPANT">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                DYNAMIC_PARTICIPANT="com.edc.edcweb.core.workflow.SelectParticipantStep"
+                PROCESS_ARGS="userGroupId=edc-self-publishing-reviewers,subject=REVIEW: -title-of-page- ,template=/conf/global/settings/workflow/notification/email/edc/ready-for-review/en.txt,emailType=notification"
+                timeoutMillis=" "
+                workflowStage="On Review"/>
+        </node8>
+        <node9
+            jcr:primaryType="cq:WorkflowNode"
+            title="Reviewer Takes Ownership"
+            type="DYNAMIC_PARTICIPANT">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                DYNAMIC_PARTICIPANT="com.edc.edcweb.core.workflow.SelectParticipantStep"
+                workflowStage="On Proofread"/>
+        </node9>
+        <node10
+            jcr:primaryType="cq:WorkflowNode"
+            title="OR_SPLIT"
+            type="OR_SPLIT">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node10>
+        <node11
+            jcr:primaryType="cq:WorkflowNode"
+            title="OR_JOIN"
+            type="OR_JOIN">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node11>
+        <node12
+            jcr:primaryType="cq:WorkflowNode"
+            title="Reviewer Denies"
+            type="DYNAMIC_PARTICIPANT">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                DYNAMIC_PARTICIPANT="com.edc.edcweb.core.workflow.SelectParticipantStep"
+                PROCESS_ARGS="userGroupId=edc-self-publishing-authors,subject=EDIT : -title-of-page- ,template=/conf/global/settings/workflow/notification/email/edc/needs-to-be-edited/en.txt,emailType=notification"
+                timeoutMillis=" "
+                workflowStage="On Proofread"/>
+        </node12>
+        <node13
+            jcr:primaryType="cq:WorkflowNode"
+            title="Author Takes Ownership"
+            type="DYNAMIC_PARTICIPANT">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                DYNAMIC_PARTICIPANT="com.edc.edcweb.core.workflow.SelectParticipantStep"
+                workflowStage="Proofread Denied"/>
+        </node13>
+        <node14
+            jcr:primaryType="cq:WorkflowNode"
+            description="Goto Step"
+            title="Assign Page For Review"
+            type="PROCESS">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                PROCESS="com.adobe.granite.workflow.core.process.GotoProcess"
+                PROCESS_AUTO_ADVANCE="false"
+                script="function check() {&#xd;&#xa;&#x9;return true;&#xd;&#xa;}"
+                TARGET_NODE_ID="node8"
+                TARGET_NODE_PATH="/conf/global/settings/workflow/models/edc-self-publishing/jcr:content/flow/dynamicparticipant1"
+                workflowStage="Reviewer Denied"/>
+        </node14>
+        <node15
+            jcr:primaryType="cq:WorkflowNode"
+            title="Assign Page For Publish"
+            type="DYNAMIC_PARTICIPANT">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                DYNAMIC_PARTICIPANT="com.edc.edcweb.core.workflow.SelectParticipantStep"
+                PROCESS_ARGS="userGroupId=edc-self-publishing-publishers,subject=PUBLISH: -title-of-page- ,template=/conf/global/settings/workflow/notification/email/edc/ready-for-qa-publish/en.txt,emailType=notification"
+                timeoutMillis=" "
+                workflowStage="On Proofread"/>
+        </node15>
+        <node16
+            jcr:primaryType="cq:WorkflowNode"
+            title="Publisher Takes Ownership"
+            type="DYNAMIC_PARTICIPANT">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                DYNAMIC_PARTICIPANT="com.edc.edcweb.core.workflow.SelectParticipantStep"
+                workflowStage="On Proofread"/>
+        </node16>
+        <node17
+            jcr:primaryType="cq:WorkflowNode"
+            title="OR_SPLIT"
+            type="OR_SPLIT">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node17>
+        <node18
+            jcr:primaryType="cq:WorkflowNode"
+            title="OR_JOIN"
+            type="OR_JOIN">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node18>
+        <node19
+            jcr:primaryType="cq:WorkflowNode"
+            title="Publisher Denies"
+            type="DYNAMIC_PARTICIPANT">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                DYNAMIC_PARTICIPANT="com.edc.edcweb.core.workflow.SelectParticipantStep"
+                PROCESS_ARGS="userGroupId=edc-self-publishing-authors,subject=EDIT : -title-of-page- ,template=/conf/global/settings/workflow/notification/email/edc/needs-to-be-edited/en.txt,emailType=notification"
+                timeoutMillis=" "
+                workflowStage="On Proofread"/>
+        </node19>
+        <node20
+            jcr:primaryType="cq:WorkflowNode"
+            title="Author Takes Ownership"
+            type="DYNAMIC_PARTICIPANT">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                DYNAMIC_PARTICIPANT="com.edc.edcweb.core.workflow.SelectParticipantStep"
+                workflowStage="Proofread Denied"/>
+        </node20>
+        <node21
+            jcr:primaryType="cq:WorkflowNode"
+            description="Goto Step"
+            title="Assign Page For Publish"
+            type="PROCESS">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                PROCESS="com.adobe.granite.workflow.core.process.GotoProcess"
+                PROCESS_AUTO_ADVANCE="false"
+                script="function check() {&#xd;&#xa;&#x9;return true;&#xd;&#xa;}"
+                TARGET_NODE_ID="node15"
+                TARGET_NODE_PATH="/conf/global/settings/workflow/models/edc-self-publishing/jcr:content/flow/or2/2/dynamicparticipant1"
+                workflowStage="Publisher Denied"/>
+        </node21>
+        <node22
+            jcr:primaryType="cq:WorkflowNode"
+            title="Schedule Publish Date"
+            type="DYNAMIC_PARTICIPANT">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                DIALOG_PATH="/apps/edc/components/workflow/publishTime/cq:dialog"
+                DYNAMIC_PARTICIPANT="com.edc.edcweb.core.workflow.SelectParticipantStep"
+                workflowStage="Publishing"/>
+        </node22>
+        <node23
+            jcr:primaryType="cq:WorkflowNode"
+            description="Select a date to publish at later time&#xd;&#xa;Leave date blank to publish innmediatelly"
+            title="Publish Page and Assets"
+            type="PROCESS">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                PROCESS="com.edc.edcweb.core.workflow.PublishPageDate"
+                PROCESS_ARGS="userGroupId=edc-self-publishing-publishers,subject=FYI: -title-of-page- has been Published/Scheduled for Publishing,template=/conf/global/settings/workflow/notification/email/edc/published-scheduled-for-publishing/en.txt,emailType=fyi"
+                PROCESS_AUTO_ADVANCE="true"
+                workflowStage="Waiting for Publishing"/>
+        </node23>
+        <node24
+            jcr:primaryType="cq:WorkflowNode"
+            title="Waiting For Activation"
+            type="DYNAMIC_PARTICIPANT">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                DYNAMIC_PARTICIPANT="com.edc.edcweb.core.workflow.SelectParticipantStep"
+                timeoutHandler="com.adobe.granite.workflow.console.timeout.autoadvance.AbsoluteTimeAutoAdvancer"
+                workflowStage="Publishing"/>
+        </node24>
+        <node25
+            jcr:primaryType="cq:WorkflowNode"
+            description="A process to create a version for either a page or an asset."
+            title="Create Version"
+            type="PROCESS">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                PROCESS="com.day.cq.wcm.workflow.process.CreateVersionProcess"
+                PROCESS_AUTO_ADVANCE="true"/>
+        </node25>
+        <node26
+            jcr:primaryType="cq:WorkflowNode"
+            title="Do the Publish Page and Assets"
+            type="PROCESS">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                PROCESS="com.edc.edcweb.core.workflow.PublishPageAndAssets"
+                PROCESS_ARGS="userGroupId=edc-self-publishing-publishers,subject=FYI: -title-of-page- has been Published!,template=/conf/global/settings/workflow/notification/email/edc/published-scheduled-for-publishing/en.txt,emailType=fyi"
+                PROCESS_AUTO_ADVANCE="true"
+                workflowStage="Publishing"/>
+        </node26>
+        <node27
+            jcr:primaryType="cq:WorkflowNode"
+            title="End"
+            type="END">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node27>
+    </nodes>
+    <transitions jcr:primaryType="nt:unstructured">
+        <node0_x0023_node1
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node0"
+            rule=""
+            to="node1">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node0_x0023_node1>
+        <node1_x0023_node2
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node1"
+            to="node2">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node1_x0023_node2>
+        <node2_x0023_node4
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node2"
+            rule=""
+            to="node4">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                isDefault="true"/>
+        </node2_x0023_node4>
+        <node4_x0023_node5
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node4"
+            rule=""
+            to="node5">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node4_x0023_node5>
+        <node5_x0023_node6
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node5"
+            rule=""
+            to="node6">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node5_x0023_node6>
+        <node6_x0023_node3
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node6"
+            to="node3">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node6_x0023_node3>
+        <node2_x0023_node7
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node2"
+            rule=""
+            to="node7">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                isDefault="false"/>
+        </node2_x0023_node7>
+        <node7_x0023_node3
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node7"
+            to="node3">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node7_x0023_node3>
+        <node3_x0023_node8
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node3"
+            rule=""
+            to="node8">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node3_x0023_node8>
+        <node8_x0023_node9
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node8"
+            rule=""
+            to="node9">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node8_x0023_node9>
+        <node9_x0023_node10
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node9"
+            to="node10">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node9_x0023_node10>
+        <node10_x0023_node12
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node10"
+            rule=""
+            to="node12">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                isDefault="true"/>
+        </node10_x0023_node12>
+        <node12_x0023_node13
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node12"
+            rule=""
+            to="node13">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node12_x0023_node13>
+        <node13_x0023_node14
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node13"
+            rule=""
+            to="node14">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node13_x0023_node14>
+        <node14_x0023_node11
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node14"
+            to="node11">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node14_x0023_node11>
+        <node10_x0023_node15
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node10"
+            rule=""
+            to="node15">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                isDefault="false"/>
+        </node10_x0023_node15>
+        <node15_x0023_node16
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node15"
+            rule=""
+            to="node16">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node15_x0023_node16>
+        <node16_x0023_node17
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node16"
+            to="node17">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node16_x0023_node17>
+        <node17_x0023_node19
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node17"
+            rule=""
+            to="node19">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                isDefault="true"/>
+        </node17_x0023_node19>
+        <node19_x0023_node20
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node19"
+            rule=""
+            to="node20">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node19_x0023_node20>
+        <node20_x0023_node21
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node20"
+            rule=""
+            to="node21">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node20_x0023_node21>
+        <node21_x0023_node18
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node21"
+            to="node18">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node21_x0023_node18>
+        <node17_x0023_node22
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node17"
+            rule=""
+            to="node22">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                isDefault="false"/>
+        </node17_x0023_node22>
+        <node22_x0023_node23
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node22"
+            rule=""
+            to="node23">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node22_x0023_node23>
+        <node23_x0023_node24
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node23"
+            rule=""
+            to="node24">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node23_x0023_node24>
+        <node24_x0023_node25
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node24"
+            rule=""
+            to="node25">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node24_x0023_node25>
+        <node25_x0023_node26
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node25"
+            rule=""
+            to="node26">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node25_x0023_node26>
+        <node26_x0023_node18
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node26"
+            to="node18">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node26_x0023_node18>
+        <node18_x0023_node11
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node18"
+            to="node11">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node18_x0023_node11>
+        <node11_x0023_node27
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node11"
+            to="node27">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node11_x0023_node27>
+    </transitions>
+</jcr:root>

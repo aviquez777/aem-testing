@@ -1,0 +1,232 @@
+<sly data-sly-use.profiling="${'com.edc.edcweb.core.models.progressiveprofiling.ProgressiveProfiling' }" />
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-use.messages="com.edc.edcweb.core.models.FormCommonMessages"/>
+<sly data-sly-test.sneakPeekVal="${properties.peakLabel ? 'yes' : 'no'}"/>
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.heading}" />
+<sly data-sly-call="${templates.placeholder @ isEmpty = properties.heading, emptyTextAppend='Component will render properly only on publish mode'}"/>
+<sly data-sly-test.DocID="${profiling.Mode == 'mode_ebook_regular' && sneakPeekVal ? properties.docID : profiling.DocID}" />
+<sly data-sly-test.personaEbookNoEditMode="${profiling.Mode == 'mode_ebook_persona' && !wcmmode.edit}" />
+<sly data-sly-use.dropdownTemplates="${'/apps/edc/components/common/dropdown.html'}" />
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+<sly data-sly-use.buttonTemplate="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+
+<div data-sly-test="${properties.heading && !profiling.needHideComponent}" class="c-progressive-profiling ${personaEbookNoEditMode ? 'email-closed' : ''}" data-event-component="Progressive Profiling" data-event-action="main body" data-sneak-peek="${sneakPeekVal}" data-mea-unlocked="no" data-level5="${profiling.levelFive}" data-service-url="${profiling.userStatusServiceUrl}" data-page-title="${currentPage.title}" data-product-type="${profiling.productTypeValue}" data-product-desc="${profiling.productDescValue}">
+    <a data-sly-test="${properties.anchortarget}" class="anchor" data-target="${properties.anchortarget}"></a>
+    <div data-sly-test="${properties.peakLabel}" class="sneak-peek-container hide">
+        <a class="sneak-peek" target="_blank">${properties.peakLabel}</a>
+    </div>
+    <sly data-sly-include="/apps/edc/components/common/csrf-token.html"/>
+    <form name="MIP18-KC-197-TEST-ONLY" class="${personaEbookNoEditMode ? 'hide' : ''}" action="${profiling.PostUrl}" data-target="${properties.linkTarget}" data-mode="${profiling.Mode}" data-premium-url="${profiling.premiumUrl}" data-external-premium-url="${profiling.externalPremiumUrl}" data-teaser-url="${currentPage.getPath}" data-asset-tier="${properties.assetTier}" data-ref-premium-url="${profiling.refPremiumURL}" novalidate="{}" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'Progressive Profiling'}" data-event-type="form" data-event-name="form submit" data-event-engagement="3" data-event-action="main body"  data-event-destination-page="${profiling.PremiumUrlFull}" data-event-level="primary">
+        <input type="hidden" name="elqCustomerGUID" class="form-control" data-no-url="" value="" />
+        <input type="hidden" name="elqCookieWrite" class="form-control" data-no-url="" value="0" />
+        <input type="hidden" name="docID" class="form-control" data-no-url="" value="${DocID}" />
+        <input type="hidden" name="inquiryID" class="form-control" data-no-url="" value="${profiling.inquiryID}" />
+        <input type="hidden" name="fullFromPage" class="form-control" value="" />
+        <input type="hidden" name="fromPage" class="form-control" value="" />
+        <input type="hidden" name="refPage" class="form-control" value="" />
+        <div class="levels email-section">
+            <div class="level-1 show">
+                <h2 class="title title-color"><span class="out">${profiling.heading}</span><span class="in hide">${profiling.headingLoggedIn}</span></h2>
+                <div class="form-group">
+                    <p class="description"><span class="out">${profiling.subtitle}</span><span class="in hide">${profiling.subtitleLoggedIn}</span></p>
+                    <sly data-sly-test.itemEmail="${profiling.FormData.ContentMap['email']}" />
+                    <label for="emailAddress-${uuid}">${itemEmail.Label}</label>
+                    <input type="email" class="form-control email-submit" placeholder="${itemEmail.Help}" name="emailAddress" id="emailAddress-${uuid}" required="">
+                    <span class="error" data-req-message="${messages.formErrorMessages.required}" data-email-message="${messages.formErrorMessages.email}"></span>
+                    <div data-sly-test="${profiling.disclaimer} " class="email-disclaimer">${profiling.disclaimer @ context='html'}</div>
+                    <div class="form-ctas hide">
+                        <sly data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled', buttontext=profiling.submitButton, btntype='submit', buttoncssclasses='ibtn-lg submit show', action='email-submit'}"  data-sly-unwrap></sly>
+                        <sly data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='link', buttonstate='enabled', linkchecker='valid', link=profiling.loginLinkUrl, buttontext=profiling.submitButtonLoggedIn, buttoncssclasses='button hide in', customattribs=attrs1}"  data-sly-unwrap></sly>
+                        <sly data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='link', buttonstate='enabled', linkchecker='valid', link=profiling.registerLinkUrl, buttontext=profiling.submitButtonL5, buttoncssclasses='hide level5', customattribs=attrs2}"  data-sly-unwrap></sly>
+                        <sly data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='link', buttonstate='enabled', linkchecker='valid', buttontext=profiling.cancelButton, link='#', buttoncssclasses='unstyled cancel cta hide', action='email-cancel', customattribs=attrs2}"  data-sly-unwrap></sly>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-sly-test="${!properties.peakLabel}" class="status hide">
+            <span class="status-bar"></span>
+        </div>
+        <div data-sly-test="${!properties.peakLabel}" class="levels fields-section">
+            <div class="headings hide">
+
+                <div class="level-2-heading hide">
+                    <h2 class="heading title-color">${(profiling.Mode == 'mode_knowledge' && properties.headingP2) ? properties.headingP2 : profiling.PropertiesMap['headingP2']}</h2>
+                    <p class="subheading">${(profiling.Mode == 'mode_knowledge' && properties.subtitleP2) ? properties.subtitleP2 : profiling.PropertiesMap['subtitleP2']} </p>
+                </div>
+                <div class="level-3-heading hide">
+                    <h2 class="heading title-color">${profiling.PropertiesMap['headingP3']} </h2>
+                    <p class="subheading">${profiling.PropertiesMap['subtitleP3']} </p>
+                </div>
+                <div class="level-4-heading hide">
+                    <h2 class="heading title-color">${profiling.PropertiesMap['headingP4']} </h2>
+                    <p class="subheading">${profiling.PropertiesMap['subtitleP4']} </p>
+                </div>
+                <div class="level-5-heading hide">
+                    <h2 class="heading title-color">${profiling.PropertiesMap['headingP5']} </h2>
+                    <p class="subheading">${profiling.PropertiesMap['subtitleP5']} </p>
+                </div>
+            </div>
+            <div class="level-2 hide">
+                <h3 class="section-title hide">${(profiling.Mode == 'mode_knowledge' && properties.headerPersonal) ? properties.headerPersonal : profiling.PropertiesMap['headingP2']}</h3>
+                <div class="input-group hide form-row">
+                    <sly data-sly-test.itemInput="${profiling.FormData.ContentMap['firstName']}" />
+                    <div data-form-field="firstName" class="form-group input-full hide">
+                        <label for="firstName-${uuid}">${itemInput.Label}</label>
+                        <input type="text" class="form-control" name="firstName" id="firstName-${uuid}" data-no-url="true"  required="" validation-rule="name">
+                        <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                    </div>
+                    <sly data-sly-test.itemInput="${profiling.FormData.ContentMap['lastName']}" />
+                    <div data-form-field="lastName" class="form-group input-full hide">
+                        <label for="lastName-${uuid}">${itemInput.Label}</label>
+                        <input type="text" class="form-control" name="lastName" id="lastName-${uuid}" data-no-url="true" required="" validation-rule="name">
+                        <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                    </div>
+                </div>
+                <sly data-sly-test.itemInput="${profiling.FormData.ContentMap['title']}" />
+                <div data-form-field="title" class="form-group hide">
+                    <label for="title-${uuid}">${itemInput.Label}</label>
+                    <input type="text" class="form-control" name="title" id="title-${uuid}" data-no-url="true"  required="" validation-rule="title">
+                    <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                </div>
+                <sly data-sly-test.itemInput="${profiling.FormData.ContentMap['companyName']}" />
+                <div data-form-field="companyName" class="form-group hide">
+                    <label for="companyName-${uuid}">${itemInput.Label}</label>
+                    <input type="text" class="form-control" name="companyName" id="companyName-${uuid}" placeholder="${itemInput.Help}" data-no-url="true" required="" validation-rule="legalName">
+                    <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                </div>
+                <sly data-sly-test.itemInput="${profiling.FormData.ContentMap['tradeStatus']}" />
+                <div data-form-field="tradeStatus" class="form-group hide">
+                    <sly data-sly-call="${dropdownTemplates.dropdown @ name='tradeStatus', uuid=uuid, label=itemInput.Label,
+                        placeholder=itemInput.Help, required=true, nourl=true,
+                        requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=itemInput.SelectMap}">
+                    </sly>
+                </div>
+                <sly data-sly-test.itemInput="${profiling.FormData.ContentMap['mainPhone']}" />
+                <div data-form-field="mainPhone" class="form-group hide">
+                    <label for="mainPhone-${uuid}">${itemInput.Label}</label>
+                    <input type="tel" class="form-control" name="mainPhone" id="mainPhone-${uuid}" placeholder="${itemInput.Help}" required="">
+                    <span class="error" data-req-message="${messages.formErrorMessages.required}" data-tel-message="${messages.formErrorMessages.phone}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                </div>
+            </div>
+            <div class="level-3 hide">
+                <h3 class="section-title hide">${(profiling.Mode == 'mode_knowledge' && properties.headerCompany) ? properties.headerCompany : profiling.PropertiesMap['headingP3']}</h3>
+                <sly data-sly-test.itemInput="${profiling.FormData.ContentMap['companyAddress1']}" />
+                <div class="form-group main-address hide" data-form-field="companyAddress1">
+                    <label for="companyAddress1-${uuid}">${itemInput.Label}</label>
+                    <input type="text" class="form-control" name="companyAddress1" id="companyAddress1-${uuid}" placeholder="${itemInput.Help}" data-no-url="true" required="" validation-rule="address1">
+                    <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                </div>
+                <sly data-sly-test.itemInput="${profiling.FormData.ContentMap['companyAddress2']}" />
+                <div class="form-group hide" data-form-field="companyAddress2">
+                    <label for="companyAddress2-${uuid}" class="hide">${itemInput.Label}</label>
+                    <input type="text" class="form-control" name="companyAddress2" id="companyAddress2-${uuid}" placeholder="${itemInput.Help}" data-no-url="true" data-value="optional" validation-rule="address2">
+                    <span class="error" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                </div>
+                <sly data-sly-test.itemInput="${profiling.FormData.ContentMap['companyCountry']}" />
+                <div class="form-group hide country" data-form-field="companyCountry">
+                    <sly data-sly-call="${dropdownTemplates.dropdown @ name='companyCountry', uuid=uuid, label=itemInput.Label,
+                        placeholder=itemInput.Help, required=true, nourl=true,
+                        requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=itemInput.SelectMap}">
+                    </sly>
+                </div>
+                <sly data-sly-test.itemInput="${profiling.FormData.ContentMap['companyProvince']}" />
+                <div class="form-group hide province" data-form-field="companyProvince">
+                    <sly data-sly-call="${dropdownTemplates.dropdown @ name='companyProvince', uuid=uuid, label=itemInput.Label,
+                        placeholder=itemInput.Help, required=true, nourl=true,
+                        requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=itemInput.SelectMap,
+                        additionalclasses='can'}">
+                    </sly>
+                    <sly data-sly-call="${dropdownTemplates.dropdown @ name='companyProvince-alt', uuid=uuid, label=itemInput.Label,
+                        placeholder=itemInput.usstatehelp, required=true, nourl=true,
+                        requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=itemInput.statesMap,
+                        additionalclasses='hide usa'}">
+                    </sly>
+                    <label class="hide" for="companyProvinceInput-${uuid}">${itemInput.Label}</label>
+                    <input type="text" id="companyProvinceInput-${uuid}" name="companyProvinceInput" class="form-control hide" placeholder="${itemInput.inputhelp}" data-no-url="true" validation-rule="province" />
+                    <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                </div>
+                <div class="input-group hide form-row">
+                    <sly data-sly-test.itemInput="${profiling.FormData.ContentMap['companyCity']}" />
+                    <div class="form-group input-full hide" data-form-field="companyCity">
+                        <label for="companyCity-${uuid}">${itemInput.Label}</label>
+                        <input type="text" class="form-control" name="companyCity" id="companyCity-${uuid}" data-no-url="true" required="" validation-rule="city">
+                        <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                    </div>
+                    <sly data-sly-test.itemInput="${profiling.FormData.ContentMap['companyPostal']}" />
+                    <div class="form-group input-full hide" data-form-field="companyPostal">
+                        <label for="companyPostal-${uuid}">${itemInput.Label}</label>
+                        <input type="text" class="form-control" name="companyPostal" id="companyPostal-${uuid}" data-no-url="true" required="" validation-rule="postalCode">
+                        <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.postalcode}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="level-4 hide">
+                <h3 class="section-title hide">${(profiling.Mode == 'mode_knowledge' && properties.headerBusiness) ? properties.headerBusiness : profiling.PropertiesMap['headingP4']}</h3>
+                <sly data-sly-test.itemInput="${profiling.FormData.ContentMap['annualSales']}" />
+                <div class="form-group hide" data-form-field="annualSales">
+                    <sly data-sly-call="${dropdownTemplates.dropdown @ name='annualSales', uuid=uuid, label=itemInput.Label,
+                        placeholder=itemInput.Help, required=true, nourl=true,
+                        requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=itemInput.SelectMap}">
+                    </sly>
+                </div>
+                <sly data-sly-test.itemInput="${profiling.FormData.ContentMap['employees']}" />
+                <div class="form-group hide" data-form-field="employees">
+                    <sly data-sly-call="${dropdownTemplates.dropdown @ name='employees', uuid=uuid, label=itemInput.Label,
+                        placeholder=itemInput.Help, required=true, nourl=true,
+                        requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=itemInput.SelectMap}">
+                    </sly>
+                </div>
+                <sly data-sly-test.itemInput="${profiling.FormData.ContentMap['painPoint']}" />
+                <div class="form-group hide" data-form-field="painPoint">
+                    <sly data-sly-call="${dropdownTemplates.dropdown @ dropdowntype='multiple', name='painPoint', uuid=uuid, label=itemInput.Label,
+                         placeholder=itemInput.Help,
+                         required=true, nourl=true, buttontext=itemInput.confirm, clearalltext=itemInput.clear,
+                         singulartext=itemInput.singular, pluraltext=itemInput.plural,
+                         requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=itemInput.SelectMap}">
+                    </sly>
+                </div>
+            </div>
+            <div class="level-5 hide">
+                <sly data-sly-test.itemInput="${profiling.FormData.ContentMap['industry']}" />
+                <div class="form-group hide" data-form-field="industry">
+                    <sly data-sly-call="${dropdownTemplates.dropdown @ name='industry', uuid=uuid, label=itemInput.Label,
+                        placeholder=itemInput.Help, required=true, nourl=true,
+                        requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=itemInput.SelectMap}">
+                    </sly>
+                </div>
+                <sly data-sly-test.itemInput="${profiling.FormData.ContentMap['marketsInt']}" />
+                <div class="form-group hide" data-form-field="marketsInt">
+                    <sly data-sly-call="${dropdownTemplates.dropdown @ dropdowntype='multiple', name='marketsInt-large', uuid=uuid, label=itemInput.Label,
+                         placeholder=itemInput.Help,
+                         required=true, nourl=true, buttontext=itemInput.confirm, clearalltext=itemInput.clear,
+                         singulartext=itemInput.singular, pluraltext=itemInput.plural,
+                         requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=itemInput.SelectMap}">
+                    </sly>
+                </div>
+            </div>
+            <div class="form-ctas bottom-ctas space-end hide">
+                <sly data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='link', buttonstate='enabled', linkchecker='valid', buttontext=profiling.PropertiesMap['backButton'], link='#', buttoncssclasses='unstyled back cta hide', action='back'}" data-sly-unwrap></sly>
+                <sly data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled', buttontext=profiling.PropertiesMap['nextButton'], btntype='submit', buttoncssclasses='next-btn hide', action='next'}" data-sly-unwrap></sly>
+                <sly data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled', buttontext=profiling.PropertiesMap['doneButton'], btntype='submit', buttoncssclasses='done-btn hide', action='form-submit'}" data-sly-unwrap></sly>
+            </div>
+        </div>
+        <div class="levels submit-failed-message hide">
+            <p>${messages.formErrorMessages.elqerror}</p>
+        </div>
+    </form>
+    <div class="myedc-container ${sneakPeekVal == 'yes' || personaEbookNoEditMode ? ' hide' : ''}">
+        <h3>${profiling.upsellTitle}</h3>
+        <p>${profiling.upsellDesc}</p>
+        <div data-sly-call="${buttonTemplate.ibTemplate @ buttoncssclasses='secondary-outline', buttonbehavior='link', isUsedForModal='nomodal', buttonstate='enabled', link=profiling.buttonLinkUrl, buttontext=profiling.upsellCtaText, target='_self', linkchecker='skip'}"  data-sly-unwrap></div>
+        <sly data-sly-test.optlinkText="${profiling.upsellOptLinkText}"/>
+        <div data-slyt-test="${optlinkText}" data-sly-call="${buttonTemplate.ibTemplate @ buttoncssclasses='unstyled secondary-anchor', buttonbehavior='link', isUsedForModal='nomodal', buttonstate='enabled', link=profiling.loginLinkUrl, buttontext=optlinkText, target='_self', linkchecker='skip'}"  data-sly-unwrap></div>
+    </div>
+    <sly data-sly-test.tagName="${wcmmode.disabled ? '' : 'div'}"/>
+     <!--/** Processing Screen **/-->
+    <sly data-sly-resource="${'processingScreen' @ resourceType='edc/components/content/processingscreen', decorationTagName=tagName}'}"/>
+</div>
+<!--/** Consent Request Gating **/-->
+<sly data-sly-test="${profiling.Mode == 'mode_crg'}" data-sly-resource="${'consentrequestgating' @ resourceType='edc/components/content/premium/consentrequestgating', decorationTagName=tagName}"/>
+

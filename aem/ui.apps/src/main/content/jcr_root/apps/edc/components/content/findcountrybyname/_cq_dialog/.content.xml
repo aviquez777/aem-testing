@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Find Country by Name"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                <items jcr:primaryType="nt:unstructured">
+                    <general
+                        jcr:title="General Content"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns" 
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <title
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Enter a title"
+                                        fieldLabel="Title"
+                                        name="./title"/>
+                                    <introText
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Enter intro text"
+                                        fieldLabel="Intro text"
+                                        name="./introText"/>
+                                    <placeholder
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Enter the placeholder for search input. Defaults to 'Search by country'"
+                                        fieldLabel="Placeholder for search input"
+                                        required="{Boolean}true"
+                                        name="./placeholderSearch"/>
+                                </items>
+                            </column>
+                        </items>
+                    </general>
+                    <imagesTab
+                        jcr:title="Image Information"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <desktop
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldLabel="Desktop breakpoint image"
+                                        mimeTypes="[image]"
+                                        multiple="{Boolean}false"
+                                        name="./fileReference"
+                                        required="{Boolean}true"
+                                        rootPath="/content/dam/edc"/>
+                                    <tablet
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldLabel="Tablet breakpoint image"
+                                        mimeTypes="[image]"
+                                        multiple="{Boolean}false"
+                                        name="./tabletFileReference"
+                                        rootPath="/content/dam/edc"/>
+                                    <phone
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldLabel="Phone breakpoint image"
+                                        mimeTypes="[image]"
+                                        multiple="{Boolean}false"
+                                        name="./phoneFileReference"
+                                        rootPath="/content/dam/edc"/>
+                                    <alt
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Alternate text"
+                                        name="./alt"
+                                        required="{Boolean}true"
+                                        wrapperClass="core-image-alt"/>
+                                </items>
+                            </column>
+                        </items>
+                    </imagesTab>
+                    <resultsBox
+                        jcr:title="Results Box"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <countryName
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Enter the country name column title. Defaults to 'Country Name'"
+                                        fieldLabel="Country name label"
+                                        required="{Boolean}true"
+                                        name="./countryNameLabel"/>
+                                    <edcPosition
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Enter the EDC position label. Defaults to 'EDC position'"
+                                        fieldLabel="EDC position label"
+                                        required="{Boolean}true"
+                                        name="./edcPositionLabel"/>
+                                    <!-- <ccc
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Enter the risk rating label. Defaults to 'Risk rating'"
+                                        fieldLabel="Risk rating label"
+                                        required="{Boolean}true"
+                                        name="./cccLabel"/> -->
+                                    <noResultsMessage
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Enter the no results message. Defaults to 'No matches found. Please try a new search.'"
+                                        fieldLabel="No results message"
+                                        required="{Boolean}true"
+                                        name="./noResultsMessage"/>
+                                    <openResultsInSameTab
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                        name="./openInSameTab"
+                                        value="{Boolean}true"
+                                        text="Open results in same tab"/>
+                                </items>
+                            </column>
+                        </items>
+                    </resultsBox>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

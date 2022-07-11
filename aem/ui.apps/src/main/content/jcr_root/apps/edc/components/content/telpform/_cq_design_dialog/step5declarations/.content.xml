@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <directexporter jcr:primaryType="nt:unstructured"
+                jcr:title="Direct exporter declaration"
+                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                <items jcr:primaryType="nt:unstructured">
+                    <detext
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldDescription="Declarations heading paragraph"
+                        fieldLabel="Declarations heading paragraph"
+                        required="{Boolean}true"
+                        name="./detext"/>
+                    <delist jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield" 
+                        fieldDescription="Declarations list items" 
+                        fieldLabel="Declarations list items" 
+                        composite="{Boolean}true"
+                        required="{Boolean}true"> 
+                        <field jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container" 
+                                name="./delist"> 
+                            <items jcr:primaryType="nt:unstructured">
+                                <delistitem jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield" 
+                                    fieldLabel="Declaration text"
+                                    fieldDescription="Declaration list item text"
+                                    required="{Boolean}true"
+                                    name="./delistitem" />
+                            </items> 
+                        </field> 
+                    </delist>
+                    <detext2
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldDescription="Further declarations heading paragraph"
+                        fieldLabel="Further declarations heading paragraph"
+                        required="{Boolean}true"
+                        name="./detext2"/>
+                    <delist2 jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield" 
+                        fieldDescription="Further declarations list items" 
+                        fieldLabel="Further declarations list items" 
+                        composite="{Boolean}true"
+                        required="{Boolean}true"> 
+                        <field jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container" 
+                                name="./delist2"> 
+                            <items jcr:primaryType="nt:unstructured">
+                                <delist2item jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield" 
+                                    fieldLabel="Declaration text"
+                                    fieldDescription="Declaration text (if last, must be primary country of export text)"
+                                    required="{Boolean}true"
+                                    name="./delist2item" />
+                            </items> 
+                        </field> 
+                    </delist2>
+                </items>
+            </directexporter>
+            <indirectexporter jcr:primaryType="nt:unstructured"
+                jcr:title="Indirect exporter declaration"
+                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                <items jcr:primaryType="nt:unstructured">
+                    <ietext
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldDescription="Declarations heading paragraph"
+                        fieldLabel="Declarations heading paragraph"
+                        required="{Boolean}true"
+                        name="./ietext"/>
+                    <ielist jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield" 
+                        fieldDescription="Declarations list items" 
+                        fieldLabel="Declarations list items" 
+                        composite="{Boolean}true"
+                        required="{Boolean}true"> 
+                        <field jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container" 
+                                name="./ielist"> 
+                            <items jcr:primaryType="nt:unstructured">
+                                <ielistitem jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield" 
+                                    fieldLabel="Declaration text"
+                                    fieldDescription="Declaration list item text"
+                                    required="{Boolean}true"
+                                    name="./ielistitem" />
+                            </items> 
+                        </field> 
+                    </ielist>
+                    <ietext2
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldDescription="Further declarations heading paragraph"
+                        fieldLabel="Further declarations heading paragraph"
+                        required="{Boolean}true"
+                        name="./ietext2"/>
+                    <ielist2 jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield" 
+                        fieldDescription="Further declarations list items" 
+                        fieldLabel="Further declarations list items" 
+                        composite="{Boolean}true"
+                        required="{Boolean}true"> 
+                        <field jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container" 
+                                name="./ielist2"> 
+                            <items jcr:primaryType="nt:unstructured">
+                                <ielist2item jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield" 
+                                    fieldLabel="Declaration text"
+                                    fieldDescription="Declaration text (if last, must be primary country of export text)"
+                                    required="{Boolean}true"
+                                    name="./ielist2item" />
+                            </items> 
+                        </field> 
+                    </ielist2>
+                </items>
+            </indirectexporter>
+            <futuredirectexporter jcr:primaryType="nt:unstructured"
+                jcr:title="Future exporter declaration"
+                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                <items jcr:primaryType="nt:unstructured">
+                    <fetext
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldDescription="Declarations heading paragraph"
+                        fieldLabel="Declarations heading paragraph"
+                        required="{Boolean}true"
+                        name="./fetext"/>
+                    <felist jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield" 
+                        fieldDescription="Declarations list items" 
+                        fieldLabel="Declarations list items" 
+                        composite="{Boolean}true"
+                        required="{Boolean}true"> 
+                        <field jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container" 
+                                name="./felist"> 
+                            <items jcr:primaryType="nt:unstructured">
+                                <felistitem jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield" 
+                                    fieldLabel="Declaration text"
+                                    fieldDescription="Declaration list item text"
+                                    required="{Boolean}true"
+                                    name="./felistitem" />
+                            </items> 
+                        </field> 
+                    </felist>
+                    <fetext2
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldDescription="Further declarations heading paragraph"
+                        fieldLabel="Further declarations heading paragraph"
+                        required="{Boolean}true"
+                        name="./fetext2"/>
+                    <felist2 jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield" 
+                        fieldDescription="Further declarations list items" 
+                        fieldLabel="Further declarations list items" 
+                        composite="{Boolean}true"
+                        required="{Boolean}true"> 
+                        <field jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container" 
+                                name="./felist2"> 
+                            <items jcr:primaryType="nt:unstructured">
+                                <felist2item jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield" 
+                                    fieldLabel="Declaration text"
+                                    fieldDescription="Declaration text (if last, must be primary country of export text)"
+                                    required="{Boolean}true"
+                                    name="./felist2item" />
+                            </items> 
+                        </field> 
+                    </felist2>
+                </items>
+            </futuredirectexporter>
+            <directindirectexporter jcr:primaryType="nt:unstructured"
+                jcr:title="Direct / Indirect exporter declaration"
+                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                <items jcr:primaryType="nt:unstructured">
+                    <detext
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldDescription="Declarations heading paragraph"
+                        fieldLabel="Declarations heading paragraph"
+                        required="{Boolean}true"
+                        name="./diindetext"/>
+                    <delist jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield" 
+                        fieldDescription="Declarations list items" 
+                        fieldLabel="Declarations list items" 
+                        composite="{Boolean}true"
+                        required="{Boolean}true"> 
+                        <field jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container" 
+                                name="./diindelist"> 
+                            <items jcr:primaryType="nt:unstructured">
+                                <delistitem jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield" 
+                                    fieldLabel="Declaration text"
+                                    fieldDescription="Declaration list item text"
+                                    required="{Boolean}true"
+                                    name="./diindelistitem" />
+                            </items> 
+                        </field> 
+                    </delist>
+                    <detext2
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldDescription="Further declarations heading paragraph"
+                        fieldLabel="Further declarations heading paragraph"
+                        required="{Boolean}true"
+                        name="./diindetext2"/>
+                    <delist2 jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield" 
+                        fieldDescription="Further declarations list items" 
+                        fieldLabel="Further declarations list items" 
+                        composite="{Boolean}true"
+                        required="{Boolean}true"> 
+                        <field jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container" 
+                                name="./diindelist2"> 
+                            <items jcr:primaryType="nt:unstructured">
+                                <delist2item jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield" 
+                                    fieldLabel="Declaration text"
+                                    fieldDescription="Declaration text (if last, must be primary country of export text)"
+                                    required="{Boolean}true"
+                                    name="./diindelist2item" />
+                            </items> 
+                        </field> 
+                    </delist2>
+                </items>
+            </directindirectexporter>
+            <domestic jcr:primaryType="nt:unstructured"
+                jcr:title="Domestic declaration"
+                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                <items jcr:primaryType="nt:unstructured">
+                    <domtext
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldDescription="Declarations heading paragraph"
+                        fieldLabel="Declarations heading paragraph"
+                        required="{Boolean}false"
+                        name="./domtext"/>
+                    <domlist jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield" 
+                        fieldDescription="Declarations list items" 
+                        fieldLabel="Declarations list items" 
+                        composite="{Boolean}true"
+                        required="{Boolean}false"> 
+                        <field jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container" 
+                                name="./domlist"> 
+                            <items jcr:primaryType="nt:unstructured">
+                                <dolistitem jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield" 
+                                    fieldLabel="Declaration text"
+                                    fieldDescription="Declaration list item text"
+                                    required="{Boolean}false"
+                                    name="./domlistitem" />
+                            </items> 
+                        </field> 
+                    </domlist>
+                    <domtext2
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldDescription="Further declarations heading paragraph"
+                        fieldLabel="Further declarations heading paragraph"
+                        required="{Boolean}false"
+                        name="./domtext2"/>
+                    <domlist2 jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield" 
+                        fieldDescription="Further declarations list items" 
+                        fieldLabel="Further declarations list items" 
+                        composite="{Boolean}true"
+                        required="{Boolean}false"> 
+                        <field jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container" 
+                                name="./domlist2"> 
+                            <items jcr:primaryType="nt:unstructured">
+                                <delist2item jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield" 
+                                    fieldLabel="Declaration text"
+                                    fieldDescription="Declaration text"
+                                    required="{Boolean}false"
+                                    name="./domlist2item" />
+                            </items> 
+                        </field> 
+                    </domlist2>
+                </items>
+            </domestic>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,41 @@
+<template data-sly-template.step2="${@  uuid, properties, formLabels, formErrorMessages, dropdownTemplates, inquiry}">
+    <div class="level level-2 tab-panel ${wcmmode.edit ? 'show' : 'hide'}" data-tab-number="2" data-tab-content="UNIQUEID-panel2-${uuid}" id="UNIQUEID-panel2-${uuid}" role="tabpanel" aria-labelledby="UNIQUEID-panel2-${uuid}">
+        <h3>${properties.companyinfotitle} <span>${properties.companyinfobluetitle}</span>
+        </h3>
+        <p class="description">${properties.companyinfodescription}</p>
+        <div data-form-field="companyName" class="form-group">
+            <label for="companyName-${uuid}">${formLabels.companyname}</label>
+            <input type="text" id="companyName-${uuid}" class="form-control" name="companyName" placeholder="${formLabels.companynameph}" data-no-url="true" required="" validation-rule="companyName" data-min-length="2" />
+            <span class="error" data-req-message="${formErrorMessages.required}" data-text-message="${formErrorMessages.format}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}"></span>
+        </div>
+        <div class="form-group" data-form-field="industry">
+            <sly data-sly-call="${dropdownTemplates.dropdown @ name='industry', uuid=uuid, label=formLabels.industry,
+                placeholder=formLabels.industryddph, required=true, nourl=true,
+                requirederror=formErrorMessages.required, invaliderror=formErrorMessages.required, options=inquiry.industryitems}">
+            </sly>
+        </div>
+        <div class="form-group" data-form-field="employees">
+            <sly data-sly-call="${dropdownTemplates.dropdown @ name='employees', uuid=uuid, label=formLabels.employees, placeholder=formLabels.employeesddph, required=true, nourl=true,
+                requirederror=formErrorMessages.required, invaliderror=formErrorMessages.required, options=inquiry.employeesitems}">
+            </sly>
+        </div>
+        <div data-form-field="poFuture" class="form-group poFuture">
+            <label id="poFuture-${uuid}">${formLabels.openpayment}</label>
+            <div class="radio-group" role="radiogroup" aria-labelledby="poFuture-${uuid}">
+                <div data-sly-repeat="${inquiry.pofutureitems}" class="radio-option">
+                    <input type="radio" class="form-control" id="poFuture-${uuid}" name="poFuture" value="${item}" required="" />
+                    <label for="poFuture-${uuid}">${inquiry.pofutureitems[item]}</label>
+                </div>
+                <span class="error" data-req-message="${formErrorMessages.required}"></span>
+            </div>
+        </div>
+        <div class="form-group" data-form-field="tradeStatus">
+            <sly data-sly-call="${dropdownTemplates.dropdown @ name='tradeStatus', uuid=uuid, label=formLabels.tradestatus,
+                placeholder=formLabels.tradestatusddph, required=true, nourl=true,
+                requirederror=formErrorMessages.required, invaliderror=formErrorMessages.required, options=inquiry.tradestatusitems}">
+            </sly>
+        </div>
+        <sly data-sly-use.template="/apps/edc/components/common/inclusivetrade/inclusivetrade.html"/>
+        <sly data-sly-call="${template.inclusivetrade @ uuid = uuid, properties = properties, formErrorMessages=formErrorMessages}"/>
+    </div>
+</template>

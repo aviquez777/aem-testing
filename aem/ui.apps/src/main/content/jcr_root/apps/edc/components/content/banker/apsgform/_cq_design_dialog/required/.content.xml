@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Fields"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <bank
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Label text for Bank"
+                fieldLabel="Bank Label"
+                name="./banklabel"
+                required="{Boolean}true"/>
+            <firstName
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Label text for First name"
+                fieldLabel="First name label"
+                name="./firstNameLabel"
+                required="{Boolean}true"/>
+            <lastName
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Label text for Last name"
+                fieldLabel="Last name label"
+                name="./lastNameLabel"
+                required="{Boolean}true"/>
+            <emailAddress
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Label text for E-mail address"
+                fieldLabel="E-mail label"
+                name="./emailAddressLabel"
+                required="{Boolean}true"/>
+            <customerName
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Label text for Customer Name"
+                fieldLabel="Customer Name label"
+                name="./customerNameLabel"
+                required="{Boolean}true"/>
+            <accountPsgNumber
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Label text for Account PSG Number"
+                fieldLabel="Account PSG Number"
+                name="./accountPsgNumberLabel"
+                required="{Boolean}true"/>
+            <requestingCover
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Label text for Request for Cover Radio Group"
+                fieldLabel="Request for Cover Radio Group"
+                name="./requestingCoverLabel"
+                required="{Boolean}true"/>
+            <yes
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Label text for Request for Cover Radio Button Yes"
+                fieldLabel="Request for Cover Radio Button Yes"
+                name="./requestingCoverYesLabel"
+                required="{Boolean}true"/>
+            <no
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Label text for Request for Cover Radio Button No"
+                fieldLabel="Request for Cover Radio Button No"
+                name="./requestingCoverNoLabel"
+                required="{Boolean}true"/>
+             <edcRefNumber
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Label text for EDC reference number"
+                fieldLabel="EDC reference number"
+                name="./edcRefNumber"
+                required="{Boolean}true"/>
+        </items>
+    </content>
+</jcr:root>

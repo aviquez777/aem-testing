@@ -1,0 +1,18 @@
+/**paddings for content heading **/
+.spacing-content-headings {
+    margin: 16px 0;
+}
+
+@media (min-width: 960px) {
+    .spacing-content-headings {
+        margin: 32px 0;
+    }
+}
+
+.c-persona-content {
+    display: none;
+}
+
+.c-persona-content.show {
+    display: block;
+}

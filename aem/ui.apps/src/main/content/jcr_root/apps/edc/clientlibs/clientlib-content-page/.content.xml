@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          jcr:primaryType="cq:ClientLibraryFolder"
+          allowProxy="{Boolean}true"
+          categories="[edc.content.page]"
+          dependencies="[]"
+          embed="[edc.myedc.infobanner,edc.myedc.signintoyouraccount,edc.components.homepage.valuepropositionbanner,edc.components.multiplevideolineup, edc.components.featuregrid,edc.campaigns.campaignsentencebuilder,edc.components.headercampaign,edc.components.footercampaign,edc.event,edc.components.articleauthorsevent,edc.components.eventdatelocation,edc.components.eventrelatedinfo,edc.components.webinarsummary,edc.components.webinarcta,edc.mea.components.contactprofiles,edc.mea.components.countrygrid,edc.components.tagcloud,edc.components.leadintext,edc.components.seriesbanner,edc.components.articlehero,edc.components.productformcards,edc.components.productcardsbanker,edc.components.apsgform,edc.components.supplierprofile,edc.components.inlistfilter,edc.components.feedbackform,edc.components.serviceproviderintakeform,edc.components.telpform,edc.components.grcsearch,edc.components.grctabs,edc.ehhanswer,edc.components.ehhfilter,edc.components.ehhsearch,edc.components.ehhsearchresult,edc.components.ehhteamform,edc.components.covidrespfilter,edc.components.covidproductcard]"/>

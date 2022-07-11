@@ -1,0 +1,38 @@
+<sly data-sly-use.model="com.edc.edcweb.core.models.MultipleVideoLineUp"/>
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !model.title}"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+
+<sly data-sly-test="${model.title}">
+    <section role="contentinfo" class="multiple-video-lineup ${model.keyline == 'top' ? 'key-line' : ''}"  data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'Multiple Video Line-up'}" data-event-type="link" data-event-level="secondary" data-event-engagement="1">
+        <h2 class="title">${model.title}</h2>
+        <p class="subtitle">${model.subtitle}</p>
+        <div data-sly-test="${model.pages && model.pages.size > 0}" class="content-video-grid">
+            <sly data-sly-list="${model.pages}">
+                <div class="container-video">
+                    <div class="content-video" data-event-action="${itemList.count}" data-event-text="${item.pageTitle}">
+                        <a href="${item.path}" aria-label="play video" class="video-img ${item.imageAlignment}" data-event-name="link click – video thumbnail">
+                            ${model.policy_videoplaybtn}
+                            <img src="${item.tabletFileReference}" alt="${item.imagealttext}" class="video-thumbnail">
+                            <span class="start-video">
+                                <img src="/etc.clientlibs/edc/clientlibs/clientlib-base/resources/images/video-play.svg" alt="${model.policy_videoplaybtn}">
+                            </span>
+                        </a>
+                        <div class="video-content">
+                            <h4 class="subtitle">
+                                ${item.tagline}
+                            </h4>
+                            <h3 class="title">
+                                <a href="${item.path}" data-event-name="link click – video title">${item.pageTitle}</a>
+                            </h3>
+                            <p class="description">${item.pageDescription}</p>
+                        </div>
+                    </div>
+                </div>
+            </sly>
+        </div>
+        <div data-sly-test="${model.viewMoreText && model.viewMoreLink}" class="view-more">
+            <a href="${model.viewMoreLink}" target="${model.viewMoreTarget}">${model.viewMoreText}</a>
+        </div>
+    </section>
+</sly>

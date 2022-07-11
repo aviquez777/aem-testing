@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Left-hand Navigation New"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <navigation
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                margin="{Boolean}false">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <startingpage
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                fieldLabel="Starting page for navigation"
+                                name="./startingpage"
+                                required="{Boolean}true"
+                                forceSelection="{Boolean}true"
+                                rootPath="/content/edc"/>
+                            <target
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldDescription="Specify whether to open menu links in a new or existing window"
+                                fieldLabel="Menu item target"
+                                name="./menutarget">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <existing
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Existing window"
+                                        value="_self"/>
+                                    <new
+                                        jcr:primaryType="nt:unstructured"
+                                        text="New window"
+                                        value="_blank"/>
+                                </items>
+                            </target>
+                            <navtitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Menu Title"
+                                name="./navTitle"
+                                required="{Boolean}true"/>
+                            <expandlabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Expand Arial Label"
+                                name="./expandLabel"
+                                required="{Boolean}true"/>
+                            <noBottomMargin
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                defaultChecked="{Boolean}false"
+                                fieldLabel="Remove bottom margin from mobile and tablet breakpoints"
+                                name="./noBottomMargin"
+                                required="{Boolean}false"
+                                text="Remove bottom margin from mobile and tablet breakpoints"
+                                value="{Boolean}true"/>
+                        </items>
+                    </column>
+                </items>
+            </navigation>
+        </items>
+    </content>
+</jcr:root>

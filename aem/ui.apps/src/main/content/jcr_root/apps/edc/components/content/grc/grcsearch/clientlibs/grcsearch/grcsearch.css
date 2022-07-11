@@ -1,0 +1,524 @@
+@charset "UTF-8";
+.c-business-registry-selector * {
+    box-sizing: border-box;
+}
+
+.c-business-registry-selector .hide {
+    display: none;
+}
+
+.c-business-registry-selector .search-container {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.c-business-registry-selector .search-image {
+    display: none;
+}
+
+.c-business-registry-selector .search-box {
+    position: relative;
+}
+
+.c-business-registry-selector .search-box .search-input {
+    display: block;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-bottom: 0;
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    /* Internet Explorer 10-11 */
+    /* Microsoft Edge */
+    /* Removes the x button in IE */
+}
+
+.c-business-registry-selector .search-box .search-input::placeholder {
+    color: #333;
+    opacity: 1;
+}
+
+.c-business-registry-selector .search-box .search-input:-ms-input-placeholder {
+    color: #333;
+}
+
+.c-business-registry-selector .search-box .search-input::-ms-input-placeholder {
+    color: #333;
+}
+
+.c-business-registry-selector .search-box .search-input::-ms-clear {
+    display: none;
+}
+
+.c-business-registry-selector .search-box .search-btn {
+    height: 50px;
+    padding: 1rem;
+    position: absolute;
+    right: 1px;
+    margin: 1px;
+    top: 4px;
+    width: auto;
+    border: 0;
+    border-radius: 0 4px 4px 0;
+    font-size: 14px;
+    color: #2f78c6;
+    background-color: #fff;
+}
+
+.c-business-registry-selector .search-box .search-btn::before {
+    content: "";
+    font-family: "iconfonts";
+    font-weight: normal;
+}
+
+.c-business-registry-selector .search-box .search-results {
+    display: none;
+    width: 100%;
+    background-color: #fff;
+}
+
+.c-business-registry-selector .search-box .search-results ul {
+    margin: 0;
+    padding: 0;
+}
+
+.c-business-registry-selector .search-box .search-results ul li {
+    line-height: 1;
+}
+
+.c-business-registry-selector .search-box .search-results ul li:hover a {
+    background-color: #f4f8fc;
+    color: #1a65b2;
+}
+
+.c-business-registry-selector .search-box .search-results ul li a {
+    padding: 11.6px 1rem;
+}
+
+.c-business-registry-selector .search-box .search-results ul li a:focus {
+    background-color: #f4f8fc;
+    color: #1a65b2;
+}
+
+.c-business-registry-selector .search-box .search-results ul li.no-results {
+    padding: 15px;
+    font-size: 16px;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.c-business-registry-selector .search-box .search-results ul li.no-results:hover {
+    background-color: transparent;
+}
+
+.c-business-registry-selector .search-box .search-results ul li.hidden {
+    display: none;
+}
+
+.c-business-registry-selector .search-box .search-results ul li > a {
+    color: inherit;
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.c-business-registry-selector .search-box .search-results ul li .country {
+    margin: 0;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    text-transform: capitalize;
+    line-height: 1.7142;
+}
+
+.c-business-registry-selector .search-box .search-results ul li .country::after {
+    clear: both;
+    content: ' ';
+    display: block;
+}
+
+.c-business-registry-selector .search-box.open .search-container {
+    -webkit-box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
+    background: #fff;
+    box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
+    border-radius: 4px;
+    padding-bottom: .25rem;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
+
+.c-business-registry-selector .search-box.open .divider {
+    padding: 0 1rem;
+    width: 100%;
+}
+
+.c-business-registry-selector .search-box.open .divider span {
+    border-top: 1px solid #ccc;
+    display: block;
+}
+
+.c-business-registry-selector .search-box.open .search-input {
+    border: 0;
+}
+
+.c-business-registry-selector .search-box.open .search-input:focus {
+    border-color: transparent;
+}
+
+.c-business-registry-selector .search-box.open .search-btn::before {
+    content: "";
+}
+
+.c-business-registry-selector .search-box.open .search-results {
+    display: block;
+}
+
+.c-business-registry-selector.banner {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    box-sizing: border-box;
+    padding-bottom: 2rem;
+    background-color: #fff;
+}
+
+.c-business-registry-selector.banner.full-width {
+    position: relative;
+}
+
+.c-business-registry-selector.banner .img-wrapper {
+    position: relative;
+    background: #fff;
+    padding-top: 85%;
+    overflow: hidden;
+}
+
+.c-business-registry-selector.banner .img-wrapper img {
+    position: absolute;
+    min-width: 100vw;
+    min-height: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.c-business-registry-selector.banner .img-wrapper .border-division {
+    display: block;
+    height: 15vw;
+    position: absolute;
+    width: 100%;
+    bottom: -11vw;
+    z-index: 1;
+}
+
+.c-business-registry-selector.banner .img-wrapper .border-division .diagonal {
+    height: 100%;
+    background-color: #fff;
+    display: block;
+    transform: skew(0deg, -4deg);
+    -ms-transform: skew(0deg, -4deg);
+    -webkit-transform: skew(0deg, -4deg);
+}
+
+.c-business-registry-selector.banner .container {
+    margin-top: -240px;
+    position: relative;
+    padding: 0 1rem;
+    z-index: 1;
+}
+
+.c-business-registry-selector.banner .container .content {
+    padding: 2rem 0;
+    background-color: #fff;
+    box-shadow: 0 1px 3px 0 rgba(51, 51, 51, 0.08), 0 0.5px 5px 2px rgba(51, 51, 51, 0.05);
+    border-radius: 4px;
+}
+
+.c-business-registry-selector.banner .container .content .search-content {
+    padding-bottom: 3.5rem;
+}
+
+.c-business-registry-selector.banner .container .content .intro,
+.c-business-registry-selector.banner .container .content .search-box {
+    min-height: 1px;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    width: 83.33333333%;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.c-business-registry-selector.banner .container .content .intro {
+    margin-bottom: 2.5rem;
+}
+
+.c-business-registry-selector.banner .container .content .intro h1 {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: 0;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 720px) {
+    .c-business-registry-selector.banner .container .content .intro h1 {
+        font-size: 1.5rem;
+        line-height: 1.6666;
+        letter-spacing: -0.1px;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-business-registry-selector.banner .container .content .intro h1 {
+        font-size: 1.875rem;
+        line-height: 1.3333;
+        letter-spacing: -0.2px;
+    }
+}
+
+.c-business-registry-selector.banner .container .content .intro :last-child {
+    margin-bottom: 0;
+}
+
+.c-business-registry-selector.banner .search-container {
+    position: absolute;
+    width: 100%;
+}
+
+.c-business-registry-selector.banner .head-text {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.7142;
+    margin: 0;
+}
+
+@media (min-width: 720px) {
+    .c-business-registry-selector.banner .head-text {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-business-registry-selector.banner .head-text {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+
+.c-business-registry-selector.inline .inline-container {
+    margin-bottom: 1.5rem;
+}
+
+.c-business-registry-selector.inline .registry-info,
+.c-business-registry-selector.inline .c-product-form-card {
+    margin-bottom: 2.5rem;
+}
+
+.c-business-registry-selector.inline .no-results {
+    border-top: 1px solid rgba(51, 51, 51, 0.3);
+    padding-top: 2.5rem;
+}
+
+.c-business-registry-selector.inline .no-results h4 {
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+.c-business-registry-selector.inline .no-results p:last-child {
+    margin-bottom: 0;
+}
+
+.c-business-registry-selector.landing {
+    margin-bottom: 3.5rem;
+}
+
+.c-business-registry-selector.landing label {
+    margin-bottom: .8rem;
+}
+
+.c-business-registry-selector.landing .search-container {
+    margin-bottom: 1rem;
+}
+
+.c-business-registry-selector.landing .landing-link {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+}
+
+@media (min-width: 720px) {
+    .c-business-registry-selector.banner .search-content {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 58.33333333%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-business-registry-selector.banner .search-content {
+        width: 58.33333333%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-business-registry-selector.banner .search-content {
+        left: 8.33333333%;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-business-registry-selector.banner .img-wrapper {
+        padding-top: 51%;
+    }
+    .c-business-registry-selector.banner .img-wrapper img {
+        min-width: 100vw;
+    }
+    .c-business-registry-selector.banner .container {
+        margin-top: -210px;
+    }
+    .c-business-registry-selector.banner .container .content {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 83.33333333%;
+        align-items: center;
+        display: flex;
+        padding: 3rem 0;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-business-registry-selector.banner .container .content {
+        width: 83.33333333%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-business-registry-selector.banner .container .content .search-image {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 25%;
+        display: block;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-business-registry-selector.banner .container .content .search-image {
+        width: 25%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-business-registry-selector.banner .container .content .search-image {
+        left: 8.33333333%;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-business-registry-selector.banner .container .content .search-image img {
+        height: 120px;
+        width: 120px;
+    }
+    .c-business-registry-selector.banner .container .content .intro {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 100%;
+        margin: 0 0 1.5rem;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-business-registry-selector.banner .container .content .intro {
+        width: 100%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-business-registry-selector.banner .container .content .search-box {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 100%;
+        margin: 0;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-business-registry-selector.banner .container .content .search-box {
+        width: 100%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-business-registry-selector.inline .inline-container {
+        width: auto;
+    }
+    .c-business-registry-selector.landing {
+        margin-bottom: 4.5rem;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-business-registry-selector.banner .img-wrapper {
+        padding-top: 37.8%;
+    }
+    .c-business-registry-selector.banner .img-wrapper .border-division {
+        bottom: -10vw;
+    }
+    .c-business-registry-selector.banner .img-wrapper .border-division .diagonal {
+        transform: skew(0deg, -5deg);
+        -ms-transform: skew(0deg, -5deg);
+        -webkit-transform: skew(0deg, -5deg);
+    }
+    .c-business-registry-selector.banner .container {
+        margin-top: -178px;
+    }
+    .c-business-registry-selector.banner .container .content {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 100%;
+        padding: 4.5rem 0;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-business-registry-selector.banner .container .content {
+        width: 100%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-business-registry-selector.banner .container .content .search-image img {
+        height: 160px;
+        width: 160px;
+    }
+    .c-business-registry-selector .landing {
+        margin-bottom: 6.5rem;
+    }
+}

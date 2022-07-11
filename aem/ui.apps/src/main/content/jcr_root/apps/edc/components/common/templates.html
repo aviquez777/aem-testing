@@ -1,0 +1,401 @@
+<!--/*~~~~~~~~~~~~~~~~~~~~~  B U T T O N  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Button - display a button link
+
+  Parameters:
+    buttontype    - the type of button, possible values are:
+                    hidden    - the button will not be visible
+                    primary   - use the edc-primary-btn CSS class
+                    secondary - use the edc-secondary-btn CSS class
+    buttontext    - text to be shown in the button
+    buttonlink    - URL to be loaded when the button is clicked
+    buttontarget  - target of the button, possible values are:
+                    _blank    - URL is loaded into a new window. This is default
+                    _parent   - URL is loaded into the parent frame
+                    _self     - URL replaces the current page
+                    _top      - URL replaces any framesets that may be loaded
+    buttononclick - function that this button should call before its link
+    buttonclasses - Custom classes for the button
+    buttonanchor  - Target to the element to scroll down when the button is clicked (anchor link)
+    btntype       - optional, type of button
+    eventname     - optional, value given to data-event-name attribute with the event's name for analytics
+    eventlevel    - optional, value given to data-event-level attribute with the event's name for analytics
+    eventtype     - optional, value given to data-event-type attribute with the event's type for analytics
+    analytics     - optional, value given to data-analytics attribute for analytics
+
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+<template data-sly-template.button="${@ buttontype, buttontext, buttonlink, buttontarget, buttononclick, buttonclasses, buttonanchor, btntype, eventname, eventlevel, eventtype, analytics}">
+    <section data-sly-test="${buttontype ==   'primary'    }"
+             data-sly-call="${genericbutton @ btnclasses='edc-primary-btn fade-in-slide-up', btntext=buttontext, btnlink=buttonlink, btntarget=buttontarget, btnonclick=buttononclick, btntype=btntype, eventname=eventname, eventlevel=eventlevel, eventtype=eventtype, analytics=analytics}"
+             data-sly-unwrap></section>
+
+    <section data-sly-test="${buttontype ==   'secondary'  }"
+             data-sly-call="${genericbutton @ btnclasses='edc-secondary-btn fade-in-slide-up', btntext=buttontext, btnlink=buttonlink, btntarget=buttontarget, btnonclick=buttononclick, btntype=btntype, eventname=eventname, eventlevel=eventlevel, eventtype=eventtype, analytics=analytics}"
+             data-sly-unwrap></section>
+
+    <section data-sly-test="${buttontype == 'video'}" data-sly-unwrap>
+        <button class="${(buttonclasses ? buttonclasses : 'edc-video-btn fade-in-slide-up')}" type="${btntype ? btntype : 'button'}">
+            <span>${buttontext}</span>
+        </button>
+    </section>
+
+    <section data-sly-test="${buttontype == 'anchor'}" data-sly-unwrap>
+        <button class="${(buttonclasses ? buttonclasses : 'edc-primary-btn fade-in-slide-up')}" type="${btntype ? btntype : 'button'}" data-target="${buttonanchor}">
+            <span>${buttontext}</span>
+        </button>
+    </section>
+</template>
+
+<!--/*~~~~~~~~~~~~~~~~~~~~~  G E N E R I C   B U T T O N  ~~~~~~~~~~~~~~~~~~~~~~
+  Generic Button - just display a generic button link with given parameters
+
+  Parameters:
+    btnclasses   - the CSS classes of button
+    btntext      - text to be shown in the button
+    btnlink      - URL to be loaded when the button is clicked
+    btntarget    - target of the button
+    btnonclick   - function that this button should call before its link
+    eventname   - optional, value given to data-event-name attribute with the event's name for analytics
+    eventlevel  - optional, value given to data-event-level attribute with the event's name for analytics
+    eventtype   - optional, value given to data-event-type attribute with the event's type for analytics
+    analytics   - optional, value given to data-analytics attribute for analytics
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+<template data-sly-template.genericbutton="${@ btnclasses, btntext, btnlink, btntarget, btnonclick, btntype, eventname, eventlevel, eventtype, analytics}">
+    <button class="${btnclasses}" type="${btntype ? btntype : 'button'}" onClick="${btnonclick @ context='text'};window.open('${btnlink @ context='text'}', '${btntarget @ context='scriptToken'}');" data-sly-attribute.data-event-name="${eventname}" data-sly-attribute.data-event-level="${eventlevel}" data-sly-attribute.data-event-type="${eventtype}" data-sly-attribute.data-analytics="${analytics}">
+        <span>${btntext}</span>
+    </button>
+</template>
+
+<!--/*~~~~~~~~~~~~~~~~~~~~~  S I M P L E   B U T T O N  ~~~~~~~~~~~~~~~~~~~~~~
+  Simple Button - just display a generic button with given parameters
+
+  Parameters:
+    btnclasses   - the CSS classes of button
+    btntext      - text to be shown in the button
+    btntype      - optional, type of button
+    action       - optional, value given to data-event-name attribute with the event's name for analytics
+    eventname    - optional, value given to data-event-name attribute with the event's name for analytics
+    eventlevel   - optional, value given to data-event-level attribute with the event's name for analytics
+    eventtype    - optional, value given to data-event-type attribute with the event's type for analytics
+    analytics    - optional, value given to data-analytics attribute for analytics
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+<template data-sly-template.simplebutton="${@ btnclasses, btntype, btntext, action, eventname, eventlevel, eventtype, analytics, btndisabled}">
+    <button class="${btnclasses}" type="${btntype ? btntype : 'button'}" data-sly-attribute.data-action="${action}" data-sly-attribute.data-event-name="${eventname}" data-sly-attribute.data-event-level="${eventlevel}" data-sly-attribute.data-event-type="${eventtype}" data-sly-attribute.data-analytics="${analytics}" data-sly-attribute.disabled="${btndisabled}">
+        <span>${btntext}</span>
+    </button>
+</template>
+
+
+
+<!--/*~~~~~~~~~~~~~~~~~~~~~  L I N K  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Link - display a link
+
+  Parameters:
+    link        - the url of the link
+    ctatext     - the text displayed as part of the link if the type is 'link'
+    target      - the target attribute for the link (_self, _blank)
+    classes     - a space separated list of classes to apply to the link
+    type      - represents the type of link being rendered (eg link, modal, etc)
+    modaltext     - the text displayed as part of the link if the type is 'modal'.  CTA types render an additional span used to show chevrons.
+    modaltrigger  - optional, used by models identifies the name of the element containing the model content
+    linkchecker   - optional, value given to x-cq-linkchecker attribute to allow for "invalid" (non-AEM) links to be specified
+              Valid values are:
+                 'valid', 'skip'
+    eventname   - optional, value given to data-event-name attribute with the event's name for analytics
+    eventlevel  - optional, value given to data-event-level attribute with the event's name for analytics
+    eventtype   - optional, value given to data-event-type attribute with the event's type for analytics
+    analytics   - optional, value given to data-analytics attribute for analytics
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+
+<template data-sly-template.link="${@ link, ctatext, target, classes, type, modaltext, modaltrigger, linkchecker, arialabelledby, eventname, eventlevel, eventtype, analytics}">
+    <section data-sly-test="${type ==   'link'    }"
+             data-sly-call="${genericlink @ link=link, text=ctatext, target=target, classes=classes, modaltrigger='', linkchecker=linkchecker, arialabelledby=arialabelledby, eventname=eventname, eventlevel=eventlevel, eventtype=eventtype, analytics=analytics}"
+             data-sly-unwrap></section>
+
+    <section data-sly-test="${type ==   'cta'    }"
+             data-sly-call="${ctalink @ link=link, text=ctatext, target=target, classes=classes, modaltrigger='', linkchecker=linkchecker, eventname=eventname, eventlevel=eventlevel, eventtype=eventtype, analytics=analytics}"
+             data-sly-unwrap></section>
+
+    <section data-sly-test="${type ==   'ctamodal'  }"
+             data-sly-test.classmodal="${classes} modal-trigger"
+             data-sly-call="${ctalink @ link='', text=modaltext, target='', classes=classmodal, modaltrigger=modaltrigger, linkchecker=linkchecker, eventname=eventname, eventlevel=eventlevel, eventtype=eventtype, analytics=analytics}"
+             data-sly-unwrap></section>
+
+    <section data-sly-test="${type ==   'modal'  }"
+             data-sly-test.classmodal="${classes} modal-trigger"
+             data-sly-call="${genericlink @ link='', text=modaltext, target='', classes=classmodal, modaltrigger=modaltrigger, linkchecker=linkchecker, eventname=eventname, eventlevel=eventlevel, eventtype=eventtype, analytics=analytics}"
+             data-sly-unwrap></section>
+</template>
+
+<template data-sly-template.genericlink="${@ link, text, target, classes, modaltrigger, linkchecker, arialabelledby, eventname, eventlevel, eventtype, analytics}">
+    <a x-cq-linkchecker="${linkchecker}" data-sly-attribute.href="${link}" data-sly-attribute.target="${target}" data-sly-attribute.class="${classes}" data-sly-attribute.data-modal-to-trigger="${modaltrigger}" aria-labelledby="${arialabelledby}" data-sly-attribute.data-event-name="${eventname}" data-sly-attribute.data-event-level="${eventlevel}" data-sly-attribute.data-event-type="${eventtype}" data-sly-attribute.data-analytics="${analytics}"><span>${text}</span></a>
+</template>
+
+<template data-sly-template.ctalink="${@ link, text, target, classes, modaltrigger, linkchecker, eventname, eventlevel, eventtype, analytics}">
+    <a x-cq-linkchecker="${linkchecker}" data-sly-attribute.href="${link}" data-sly-attribute.target="${target}" data-sly-attribute.class="${classes}" data-sly-attribute.data-modal-to-trigger="${modaltrigger}" data-sly-attribute.data-event-name="${eventname}" data-sly-attribute.data-event-level="${eventlevel}" data-sly-attribute.data-event-type="${eventtype}" data-sly-attribute.data-analytics="${analytics}"><span>${text}</span></a>
+</template>
+
+<template data-sly-template.anchorlink="${@ text, classes, target, eventname}">
+    <a data-sly-attribute.href="#" data-sly-attribute.class="${classes}" data-sly-attribute.data-target="${target}" data-sly-attribute.data-event-name="${eventname}"><span>${text}</span></a>
+</template>
+
+<template data-sly-template.linkoranchor="${@ link, text, classes, target, eventname}">
+    <sly data-sly-test.anchortarget="${target ? ['#', target] : '#' @ join=''}"/>
+    <a data-sly-attribute.href="${link ? link : anchortarget}" data-sly-attribute.class="${classes}" data-sly-attribute.target="${link ? target : ''}" data-sly-attribute.data-target="${!link ? target : ''}" data-sly-attribute.data-event-name="${eventname}"><span>${text}</span></a>
+</template>
+
+
+<!--/*~~~~~~~~~~~~~~~~~~~~~  I M A G E  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Responsive Image
+
+  Parameters:
+    phoneFileReference        - optional reference to the phone image
+    tabletFileReference       - optional reference to the tablet image
+    desktopFileReference      - the reference to the desktop image
+    altText             - optional alternative text
+
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+
+<template data-sly-template.image="${@ phoneFileReference, tabletFileReference, desktopFileReference, altText, lazyLoad}">
+    <sly data-sly-test.desktop="${desktopFileReference}" />
+    <sly data-sly-test.tablet="${tabletFileReference ? tabletFileReference : desktopFileReference}" />
+    <sly data-sly-test.phone="${phoneFileReference ? phoneFileReference : desktopFileReference}" />
+
+    <section data-sly-test="${lazyLoad ==   'false'    }"
+             data-sly-call="${staticimage @ phoneFileReference=phone, tabletFileReference=tablet, desktopFileReference=desktop, altText=altText}"
+             data-sly-unwrap/>
+
+    <section data-sly-test="${lazyLoad ==   'true'    }"
+             data-sly-call="${breakpointimage @ phoneFileReference=phone, tabletFileReference=tablet, desktopFileReference=desktop, altText=altText}"
+             data-sly-unwrap/>
+</template>
+
+<template data-sly-template.staticimage="${@ phoneFileReference, tabletFileReference, desktopFileReference, altText}">
+    <img src="${phoneFileReference}" srcset="${phoneFileReference} 719w, ${tabletFileReference} 959w, ${desktopFileReference} 1800w" alt="${altText}" />
+</template>
+
+<template data-sly-template.breakpointimage="${@ phoneFileReference, tabletFileReference, desktopFileReference, altText}">
+    <div class="img-wrapper cq-dd-image">
+        <div data-sly-unwrap="${wcmmode.disabled}"
+             data-sly-test="${desktopFileReference}"
+             data-title="${altText}" data-asset="${desktopFileReference}">
+
+            <noscript data-cmp-image="{&#34;smartImages&#34;:[&#34;${phoneFileReference}&#34;,&#34;${tabletFileReference}&#34;,&#34;${desktopFileReference}&#34;],&#34;smartSizes&#34;:[719,959,1800],&#34;lazyEnabled&#34;:true}">
+                <img src="${desktopFileReference}"
+                     alt="${altText}"
+                     title="${altText}" />
+            </noscript>
+        </div>
+    </div>
+</template>
+
+<!--/*~~~~~~~~~~~~~~~~~~~~~  PICTURE  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Picture - display a picture element with image for breakpoints.
+
+  Parameters:
+    desktop     - the image for desktop
+    tablet    - the image for tablet
+    phone   - the image for desktop
+    imageAlt  - the alternate text for the image
+    transform - 
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+
+<template data-sly-template.picture="${@ desktop, tablet, phone, imageAlt, transform, bannerType, widthDesktop, heightDesktop}">
+    <sly data-sly-test.imageDesktop="${desktop}"/>
+    <sly data-sly-test.imageTablet="${tablet ? tablet : desktop}"/>
+    <sly data-sly-test.imagePhone="${phone ? phone : desktop}" />
+    <!--/*  Check for Named Transform Image Servlet to use */-->
+    <sly data-sly-test="${transform}">
+        <sly data-sly-test="${bannerType}">
+            <sly data-sly-test.transformType="${transform}-${bannerType}"/>
+        </sly>
+        <sly data-sly-test="${!bannerType}">
+            <sly data-sly-test.transformType="${transform}"/>
+        </sly>
+        <sly data-sly-test="${imageDesktop}">
+            <sly data-sly-test.imageDesktop="${'{0}.transform/{1}-desktop/image.jpg' @ format=[imageDesktop,transformType]}"/>
+        </sly>
+        <sly data-sly-test="${imageTablet}">
+            <sly data-sly-test.imageTablet="${'{0}.transform/{1}-tablet/image.jpg' @ format=[imageTablet,transformType]}"/>
+        </sly>
+        <sly data-sly-test="${imagePhone}">
+            <sly data-sly-test.imagePhone="${'{0}.transform/{1}-phone/image.jpg' @ format=[imagePhone,transformType]}"/>
+        </sly>
+    </sly>
+    <picture data-sly-test="${imageDesktop || imageTablet || imagePhone}">
+        <source media="(min-width: 960px)" srcSet="${imageDesktop}" sizes="100vw" />
+        <source media="(min-width: 720px)" srcSet="${imageTablet}" sizes="100vw" />
+        <source  media="(min-width: 320px)" srcSet="${imagePhone}" sizes="100vw" />
+        <img src="${imagePhone}" alt="${imageAlt || true}" width="${widthDesktop}" height="${heightDesktop}" />
+    </picture>
+</template>
+
+<!--/*~~~~~~~~~~~~~~~~~~~~~  DATE  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Date - display the provided date using the current page language format
+
+  Parameters:
+    date     - the date to display
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+
+<template data-sly-template.date="${@ date}">
+    <sly data-sly-test="${date}">
+        <sly data-sly-test.pageLang="${currentPage.language.language}"/>
+        <sly data-sly-test.dateformat="${pageLang == 'fr' ? 'dd MMMM yyyy' : 'MMMM dd, yyyy'}"/>
+        <sly data-sly-test.itemdate="${dateformat @ format=date, locale=pageLang}"/>
+        ${itemdate}
+    </sly>
+</template>
+
+<!--/*~~~~~~~~~~~~~~~~~~~~~  P H O N E - L I N K  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Phone Link - display a link / button
+
+  Parameters:
+    link        - the url of the link
+    text        - the text displayed as part of the link
+    classes     - a space separated list of classes to apply to the link
+    linkchecker   - optional, value given to x-cq-linkchecker attribute to allow for "invalid" (non-AEM) links to be specified
+              Valid values are:
+                 'valid', 'skip'
+    eventname   - optional, value given to data-event-name attribute with the event's name for analytics
+    eventlevel  - optional, value given to data-event-level attribute with the event's name for analytics
+    eventtype   - optional, value given to data-event-type attribute with the event's type for analytics
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+
+<template data-sly-template.phonelink="${@ phonenumber, text, classes, linkchecker, eventname, eventlevel, eventtype}">
+    <sly data-sly-test.link="${'tel:{0}' @ format=[phonenumber]}"/>
+    <sly data-sly-test.phonetext="${'{0} {1}' @ format=[text, phonenumber]}"/>
+    <sly data-sly-call="${genericlink @ link=link, text=phonetext, classes=classes, linkchecker=linkchecker, eventname=eventname, eventlevel=eventlevel, eventtype=eventtype}"></sly>
+</template>
+
+
+<!--/*~~~~~~~~~~~~~~~~~~~~~  M A I L  T O  - L I N K  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Phone Link - display a link / button
+
+  Parameters:
+    link        - the url of the link
+    text        - the text displayed as part of the link
+    classes     - a space separated list of classes to apply to the link
+    linkchecker   - optional, value given to x-cq-linkchecker attribute to allow for "invalid" (non-AEM) links to be specified
+              Valid values are:
+                 'valid', 'skip'
+    eventname   - optional, value given to data-event-name attribute with the event's name for analytics
+    eventlevel  - optional, value given to data-event-level attribute with the event's name for analytics
+    eventtype   - optional, value given to data-event-type attribute with the event's type for analytics
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+
+<template data-sly-template.mailtolink="${@ email, text, classes, linkchecker, eventname, eventlevel, eventtype}">
+    <sly data-sly-test.mailto="${'mailto:{0}' @ format=[email]}"/>
+    <sly data-sly-test.mailtext="${'{0} {1}' @ format=[text, email]}"/>
+    <sly data-sly-call="${genericlink @ link=mailto, text=mailtext, classes=classes, linkchecker=linkchecker, eventname=eventname, eventlevel=eventlevel, eventtype=eventtype}"></sly>
+</template>
+
+<!--/*~~~~~~~~~~~~~~~~~~~~~  M O D A L  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Modal - generic modal markup
+
+  Parameters:
+    classes        - a space separated list of classes to apply to the link
+    id             - modal id, have to be match with "data-modal-to-trigger"
+    title          - title displayed in the modal
+    description    - content displayed in the modal
+    closemobile    - text displayed in close mobile button
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+
+<template data-sly-template.modal="${@ classes, id, title, description, closemobile}">
+    <sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+    <sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+    <div class="modal-dialog ${classes}" id="${id}">
+        <div class="modal-shade"></div>
+        <div class="modal-container">
+            <button class="edc-btn-icon modal-close" aria-label="${closemobile}">
+                <span></span>
+            </button>
+            <div class="modal-content" role="region" aria-labelledby="${[uuid,'label'] @ join='-'}" aria-describedby="${[uuid,'desc'] @ join='-'}">
+                <div id="${[uuid,'label'] @ join='-'}" class="modal-title">
+                    <h2 class="title">${title}</h2>
+                </div>
+                <div id="${[uuid,'desc'] @ join='-'}" class="modal-richtext">
+                    ${description @ context='html'}
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<!--/*~~~~~~~~~~~~~~~~~~~~~  TIPS  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Tips - renders the tips component
+
+  Parameters:
+    title            - Tip title
+    displayIcon      - true if the icon should be displayed
+    description      - Tip description
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+<template data-sly-template.tips="${@ title, displayIcon, description}">
+    <section data-sly-test="${title}" class="c-tips">
+        <h2 class="title ${displayIcon ? 'tip' : ''}">${title}</h2>
+        <div class="description">${description @ context='html'}</div>
+    </section>
+</template>
+</template>
+
+<!--/*~~~~~~~~~~~~~~~~~~~~~  P R O D U C T  F O R M  C A R D  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Modal - generic modal markup
+
+  Parameters:
+    title          - Card title
+    description    - Card description
+    ctatext        - CTA text
+    ctaurl         - CTA link URL
+    linktext       - Secondary link text (not applicable to GRC)
+    linkurl        - Secondary link URL (not applicable to GRC)
+    imagepath      - Path to image resource (only for GRC)
+    imagealt       - Alt text for the image (only for GRC)
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+
+<template data-sly-template.productFormCard="${@ isGRC, title, description, ctatext, ctaurl, linktext, linkurl, imagepath, imagealt}">
+    <div class="c-product-form-card ${isGRC ? 'grc-card' : ''}">
+        <sly data-sly-use.buttonTemplate="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+        <div class="card-content">
+            <h2 class="title">${title}</h2>
+            <p data-sly-test="${description}" class="description">${description}</p>
+            <sly data-sly-use.linkresolver="${'com.edc.edcweb.core.helpers.LinkExternalizer' @srcPath=ctaurl, scheme=request.scheme}"/>
+            <sly data-sly-test="${isGRC}" data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='link', isUsedForModal='nomodal', buttonstate='enabled', link=linkresolver.LinkWithHtmlExtension, action='', buttontext=ctatext, target='_blank', linkchecker='valid', buttoncssclasses='button', eventname='button click - download'}" />
+        </div>
+        <div data-sly-test="${!isGRC}" class="card-actions">
+            <sly data-sly-use.linkresolver="${'com.edc.edcweb.core.helpers.LinkExternalizer' @srcPath=ctaurl, scheme=request.scheme}"/>
+            <sly data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='link', isUsedForModal='nomodal', buttonstate='enabled', link=linkresolver.LinkWithHtmlExtension, action='', buttontext=ctatext, target='_blank', linkchecker='valid', buttoncssclasses='button', eventname='button click - download'}" />
+            <div data-sly-test="${linktext && linkurl && !isGRC}" class="secondary-cta">
+
+                <sly data-sly-use.linkresolver="${'com.edc.edcweb.core.helpers.LinkExternalizer' @srcPath=linkurl, scheme=request.scheme}"/>
+
+                <sly data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='link', isUsedForModal='nomodal', buttonstate='enabled', link=linkresolver.LinkWithHtmlExtension, action='', buttontext=linktext, target='_blank', linkchecker='valid', buttoncssclasses=''}" />
+            </div>
+        </div>
+        <div data-sly-test="${isGRC && imagepath}" class="card-image">
+            <img alt="${imagealt}" src="${imagepath}" />
+        </div>
+    </div>
+</template>
+
+<!--/*~~~~~~~~~~~~~~~~~~~~~  YOUTUBE VIDEO  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Generic youtube video markup
+
+  Parameters:
+    videoId       - Video ID
+    desktop       - Optional. Image thumbnail for desktop
+    tablet        - Optional. Image thumbnail for tablet
+    phone         - Optional. Image thumbnail for phone
+    alttext       - Optional. Image alt text
+    playtext      - Optional. Play button text
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+
+<template data-sly-template.youtube="${@ videoId, desktop, tablet, phone, alttext, playtext}">
+  <div class="video-container" data-sly-test="${videoId}">
+      <div id="video-${videoId}" class="video" data-video-id="${videoId}" data-event-component="video" data-event-name="video" data-engagement-type="1" data-event-level="primary">
+          <div class="player" id="player-${videoId}"></div>
+          <div class="video-preview">
+              <button type="button" class="start-video">${playtext ? playtext : "play"}</button>
+              <sly data-sly-test="${desktop || tablet || phone}" data-sly-call="${picture @ desktop=desktop, tablet=tablet, phone=phone, imageAlt=alttext}" />
+              <img data-sly-test="${!desktop && !tablet && !phone}" src="https://img.youtube.com/vi/${videoId}/0.jpg" alt="${alttext}" />
+          </div>
+      </div>
+  </div>
+</template>

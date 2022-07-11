@@ -1,0 +1,15 @@
+#TELP Form Mapping#
+RewriteRule ^/TELP-application-form$    /content/edc/en/solutions/working-capital/trade-expansion-lending-program.html [NC,PT]
+RewriteRule ^/TELP-annotated-application-form$  /content/dam/edc/en/solution/trade-expansion-lending-program/TELP-annotated-application-form.pdf [NC,PT]
+RewriteRule ^/TELP-waiver$      /content/dam/edc/en/solution/trade-expansion-lending-program/TELP-waiver.pdf [NC,PT]
+RewriteRule ^/TELP-declaration$ /content/dam/edc/en/solution/trade-expansion-lending-program/TELP-declaration.pdf [NC,PT]
+RewriteRule ^/content/dam/edc/en/solution/export-guarantee-program/application-form/telp.pdf$   /content/dam/edc/en/solution/trade-expansion-lending-program/TELP-application-form.pdf [R=301,L,NC]
+
+RewriteRule ^/PPEI-formulaire-de-demande$       /content/edc/fr/solutions/fonds-roulement/programme-prets-expansion-internationale.html [NC,PT]
+RewriteRule ^/PPEI-formulaire-de-demande-annote$        /content/dam/edc/fr/solution/programme-prets-expansion-internationale/PPEI-formulaire-de-demande-annote.pdf [NC,PT]
+RewriteRule ^/PPEI-renonciation$        /content/dam/edc/fr/solution/programme-prets-expansion-internationale/PPEI-renonciation.pdf [NC,PT]
+RewriteRule ^/PPEI-declaration$ /content/dam/edc/fr/solution/programme-prets-expansion-internationale/PPEI-declaration.pdf [NC,PT]
+RewriteRule ^/content/dam/edc/fr/solution/export-guarantee-program/application-form/telp.pdf$ /content/dam/edc/fr/solution/programme-prets-expansion-internationale/PPEI-formulaire-de-demande.pdf [R=301,L,NC]
+
+RewriteRule ^/content/dam/edc/en/non-premium/egp_temporary_measures_covid_19.pdf$ /content/dam/edc/en/non-premium/egp-temporary-measures-for-fis.pdf [R=301,L,NC]
+RewriteRule ^/content/dam/edc/fr/non-premium/egp_temporary_measures_covid_19.pdf$ /content/dam/edc/fr/non-premium/egp-temporary-measures-for-fis.pdf [R=301,L,NC]

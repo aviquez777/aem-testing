@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured" jcr:title="Step 6"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content jcr:primaryType="nt:unstructured"
+             sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <stepbluetitle
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Step 6 progress title"
+                name="./step6bluetitle"
+                required="{Boolean}true"/>
+            <steptitle
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Step 6 title"
+                name="./step6title"
+                required="{Boolean}true"/>
+            <stepdescription
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                fieldLabel="Step 6 description"
+                name="./step6description"/>
+            <cciffamember
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <heading
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/text"
+                        class="coral-Form-fieldlabel"
+                        text="Are you an active CIFFA member?"/>
+                    <well
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <label
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Label"
+                                name="./cciffamemberLabel"
+                                required="{Boolean}true"/>
+                            <yesLabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="'Yes' label"
+                                name="./cciffamemberYes"
+                                required="{Boolean}true"/>
+                            <noLabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="'No' label"
+                                name="./cciffamemberNo"
+                                required="{Boolean}true"/>
+                        </items>
+                    </well>
+                </items>
+            </cciffamember>
+            <companymembership
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <heading
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/text"
+                        class="coral-Form-fieldlabel"
+                        text="Other company memberships"/>
+                    <well
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <label
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Label"
+                                name="./companymembershipLabel"
+                                required="{Boolean}true"/>
+                            <help
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Placeholder"
+                                name="./companymembershipHelp"/>
+                        </items>
+                    </well>
+                </items>
+            </companymembership>
+            <companycertifications
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <heading
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/text"
+                        class="coral-Form-fieldlabel"
+                        text="Company certifications"/>
+                    <well
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <label
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Label"
+                                name="./companycertificationsLabel"
+                                required="{Boolean}true"/>
+                            <help
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Placeholder"
+                                name="./companycertificationsHelp"/>
+                            <confirm
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Confirm button"
+                                name="./companycertificationsConfirm"
+                                required="{Boolean}true"/>
+                            <clear
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Clear all"
+                                name="./companycertificationsClear"
+                                required="{Boolean}true"/>
+                            <singularoption
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Singular option selected"
+                                name="./companycertificationsSingular"
+                                required="{Boolean}true"/>
+                            <pluraloptions
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Plural option selected"
+                                name="./companycertificationsPlural"
+                                required="{Boolean}true"/>
+                        </items>
+                    </well>
+                </items>
+            </companycertifications>
+            <othercompanycertifications
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <heading
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/text"
+                        class="coral-Form-fieldlabel"
+                        text="Other company certifications"/>
+                    <well
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <label
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Label"
+                                name="./othercompanycertificationsLabel"
+                                required="{Boolean}true"/>
+                            <help
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Placeholder"
+                                name="./othercompanycertificationsHelp"/>
+                        </items>
+                    </well>
+                </items>
+            </othercompanycertifications>
+            <modesoftransportation
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <heading
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/text"
+                        class="coral-Form-fieldlabel"
+                        text="Modes of transportation offered"/>
+                    <well
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <label
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Label"
+                                name="./modesoftransportationLabel"
+                                required="{Boolean}true"/>
+                            <help
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Placeholder"
+                                name="./modesoftransportationHelp"/>
+                            <confirm
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Confirm button"
+                                name="./modesoftransportationConfirm"
+                                required="{Boolean}true"/>
+                            <clear
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Clear all"
+                                name="./modesoftransportationClear"
+                                required="{Boolean}true"/>
+                            <singularoption
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Singular option selected"
+                                name="./modesoftransportationSingular"
+                                required="{Boolean}true"/>
+                            <pluraloptions
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Plural option selected"
+                                name="./modesoftransportationPlural"
+                                required="{Boolean}true"/>
+                        </items>
+                    </well>
+                </items>
+            </modesoftransportation>
+            <transportationfleet
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <heading
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/text"
+                        class="coral-Form-fieldlabel"
+                        text="Modes of transportation with transportation fleet?"/>
+                    <well
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <label
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Label"
+                                name="./transportationfleetLabel"
+                                required="{Boolean}true"/>
+                            <help
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Placeholder"
+                                name="./transportationfleetHelp"/>
+                            <confirm
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Confirm button"
+                                name="./transportationfleetConfirm"
+                                required="{Boolean}true"/>
+                            <clear
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Clear all"
+                                name="./transportationfleetClear"
+                                required="{Boolean}true"/>
+                            <singularoption
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Singular option selected"
+                                name="./transportationfleetSingular"
+                                required="{Boolean}true"/>
+                            <pluraloptions
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Plural option selected"
+                                name="./transportationfleetPlural"
+                                required="{Boolean}true"/>
+                        </items>
+                    </well>
+                </items>
+            </transportationfleet>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,15 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-test.theScript="${properties.spaScript}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !theScript}"/>
+
+<sly data-sly-test="${theScript}">
+    <!--/* Changed app root as instructed on US 157979 authoreable on task 202059 (defaults to connections-app) */-->
+    <sly data-sly-test.appRoot="${properties.appRoot ? properties.appRoot : 'connections-app'}"/>
+    <sly data-sly-use.model="com.edc.edcweb.core.helpers.GenerateTimeStamp" />
+    <sly data-sly-test.scriptUrl="${'{0}?t={1}' @ format=[theScript, model.strTimestamp]}"/>
+    <section class="c-spa-script ${properties.makeFullWidth}"> 
+        <!--/* "unsafe" = to set "other" elements, XSS security must be turned off, check AEM documentation */-->
+        <span data-sly-element="${appRoot @context='unsafe'}">${wcmmode.disabled ? '' : 'Click here to add SPA page URL'}</span>
+        <script type="text/javascript" src="${scriptUrl @ context='text'}"></script>
+    </section>
+</sly>

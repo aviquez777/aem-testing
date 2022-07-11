@@ -1,0 +1,101 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+<sly data-sly-use.cta1="${'com.edc.edcweb.core.models.ParamTextUrlLinks' @ linkText=properties.cta1text, linkUrl=properties.cta1link, linkTarget=properties.cta1target}"/>
+<sly data-sly-use.cta2="${'com.edc.edcweb.core.models.ParamTextUrlLinks' @ linkText=properties.cta2text, linkUrl=properties.cta2link, linkTarget=properties.cta2target}"/>
+<sly data-sly-use.cta3="${'com.edc.edcweb.core.models.ParamTextUrlLinks' @ linkText=properties.cta3text, linkUrl=properties.cta3link, linkTarget=properties.cta3target}"/>
+<sly data-sly-use.cta4="${'com.edc.edcweb.core.models.ParamTextUrlLinks' @ linkText=properties.cta4text, linkUrl=properties.cta4link, linkTarget=properties.cta4target}"/>
+
+<div id="quote-calculator" data-sly-test="${properties.title}"  data-event-component="${datalayer.componentTitle ? datalayer.componentTitle : 'SCI Quote Calculator'}" data-event-action="main body" data-event-page="${datalayer.pageURL}" data-max-limit="${properties.amounttoinsuremaxvalue ? properties.amounttoinsuremaxvalue : '500000'}">
+    <section class="quote-calculator full-width" role="complementary" data-sly-attribute.id="${properties.linkid}">
+        <div class="container">
+            <h2 class="title">
+                ${properties.title}
+            </h2>
+            <div class="content">
+                <div class="amount">
+                    <label for="quote-calculator-amount">${properties.amounttoinsure}</label>
+                    <div class="input-container">
+                        <input id="quote-calculator-amount" type="text" placeholder="${properties.amounttoinsureplaceholder}" class="numeric" inputMode="numeric" maxlength="9"/>
+                        <div class="symbol"></div>
+                    </div>
+                    <span id="zero-amount" class="error">${properties.zeroamounttoinsure}</span>
+                </div>
+                <div>
+                    <label for="coverage-duration">${properties.coverageperiod}</label>
+                    <select id="coverage-duration" name="coverage-duration" disabled>
+                        <option value="0">...</option>
+                        <option value="90">90 ${properties.coverageperiodunit}</option>
+                        <option value="180">180 ${properties.coverageperiodunit}</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="coverage-payment-time">${properties.paymentterms}</label>
+                    <select id="coverage-payment-time" name="coverage-payment-time" disabled>
+                        <option value="0">...</option>
+                        <option value="0-90">${properties.paymenttermsoptionone} ${properties.coverageperiodunit}</option>
+                        <option value="91-180">${properties.paymenttermsoptiontwo} ${properties.coverageperiodunit}</option>
+                    </select>
+                </div>
+            </div>
+            <div id="coverage-error" class="notifications amount">${properties.coverageerrormessage @ context='html'}</div>
+            <div id="coverage-success" class="notifications valid">
+                <p>${properties.coveragesuccess @ context="html"}</p>
+                <h2><span id="min-coverage-amount"></span> - <span id="max-coverage-amount"></span><sup>*</sup></h2>
+            </div>
+        </div>
+    </section>
+
+    <section id="quote-calculator-disclaimer-wrong-amount" class="quote-calculator-disclaimer full-width">
+        <div class="container show-separator">
+            <div class="back hide-mobile">
+                <button>${properties.backtostart}</button>
+            </div>
+            <div class="right">
+                <div class="wrong-amount">
+                    <a class="submit" href="${cta1.linkUrl}" target="${cta1.linkTarget}">${cta1.linkText}</a>
+                    <sly data-sly-test="${cta2.linkText}"
+                         data-sly-call="${commonTemplates.link @ type='link', link=cta2.resolvedLinkUrl, ctatext=cta2.linkText, target=cta2.linkTarget, classes='button edc-primary-btn btn-cta', linkchecker='valid'}"/>
+
+                    <p class="note schedule">
+                        ${properties.servicehours}<br/>
+                        <span class="hide-mobile"><strong>${properties.calltext} ${properties.phonenumber}</strong></span>
+                    </p>
+                    <sly data-sly-call="${commonTemplates.phonelink @ phonenumber=properties.phonenumber, text=properties.calltext, classes='button edc-tertiary-btn btn-tel', linkchecker='valid'}"/>
+                    <div class="back">
+                        <button>${properties.backtostart}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="quote-calculator-disclaimer-success" class="quote-calculator-disclaimer full-width">
+        <div class="container show-separator">
+            <div class="back hide-mobile">
+                <button>${properties.backtostart}</button>
+            </div>
+            <div class="right">
+                <div class="valid">
+                    <a class="submit" href="${cta3.linkUrl}" target="${cta3.linkTarget}">${cta3.linkText}</a>
+                    <sly data-sly-test="${cta4.linkText}"
+                         data-sly-call="${commonTemplates.link @ type='link', link=cta4.resolvedLinkUrl, ctatext=cta4.linkText, target=cta4.linkTarget, classes='button edc-primary-btn btn-cta', linkchecker='valid'}"/>
+
+                    <p class="note disclaimer">
+                        *${properties.disclaimer}
+                    </p>
+
+                    <p class="note schedule">
+                        ${properties.servicehours}<br/>
+                        <span class="hide-mobile"><strong>${properties.calltext} ${properties.phonenumber}</strong></span>
+                    </p>
+                    <sly data-sly-call="${commonTemplates.phonelink @ phonenumber=properties.phonenumber, text=properties.calltext, classes='button edc-tertiary-btn btn-tel', linkchecker='valid'}"/>
+                    <div class="back">
+                        <button>${properties.backtostart}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

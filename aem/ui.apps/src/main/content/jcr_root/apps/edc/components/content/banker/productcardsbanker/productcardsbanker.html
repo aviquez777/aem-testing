@@ -1,0 +1,36 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.model="com.edc.edcweb.core.models.ProductCardsBanker"/>
+<sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !model.cards}"/>
+<sly data-sly-use.buttonTemplate="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+
+<section data-sly-test="${model.cards}" class="c-product-matrix-list-banker full-width" aria-labelledby="c-product-matrix-link-banker-${uuid}">
+    <div class="container">
+        <header data-sly-test="${properties.title || properties.description}">
+            <h2 data-sly-test="${properties.title}" id="c-product-matrix-link-banker-${uuid}">${properties.title}</h2>
+            <p data-sly-test="${properties.description}">${properties.description}</p>
+        </header>
+        <div class="product-list ${model.typeDisplay}" data-sly-list.card="${model.cards}">
+            <article class="c-product-card-banker banker" role="complementary" aria-labelledby="product-card-unique-id-${uuid}" data-event-component="product card banker" data-event-type="link" data-event-engagement="1" data-event-level="primary" data-event-action="product card banker">
+                <header>
+                    <p data-sly-test="${card.headline}" class="headline">${card.headline}</p>
+                    <h3 data-sly-test="${card.name}" id="product-card-unique-id-1-${uuid}" class="title">${card.name}</h3>
+                    <p data-sly-test="${card.description}" class="description">${card.description}</p>
+                </header>
+                <div class="content">
+                    <h4 data-sly-test="${card.leadintext}" class="lead-copy">${card.leadintext}</h4>
+                    <ul data-sly-list="${card.bullets}">
+                        <li>${item}</li>
+                    </ul>
+                </div>
+                <footer data-sly-test="${card.ctalink && card.ctatext}">
+                    <sly data-sly-test="${card.ctalink && card.ctatext}"
+                         data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='link', buttonstate='enabled', link=card.ctalink, buttontext=card.ctatext, target=card.ctatarget, buttoncssclasses='button btn-small', linkchecker='valid', eventName='link click - product card'}"  />
+
+                </footer>
+            </article>
+        </div>
+    </div>
+</section>

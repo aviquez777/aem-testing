@@ -1,0 +1,100 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-use.grcsearch="com.edc.edcweb.core.models.grc.GRCSearch"/>
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+<sly data-sly-test.isBanner="${properties.displaytype == 'inbanner'}"/>
+<sly data-sly-test.isContent="${properties.displaytype == 'incontent'}"/>
+<sly data-sly-test.isGuide="${properties.displaytype == 'guide'}"/>
+
+<sly data-sly-use.dropdownTemplates="${'/apps/edc/components/common/dropdown.html'}" />
+<sly data-sly-use.messages="com.edc.edcweb.core.models.FormCommonMessages"/>
+<sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+
+<sly data-sly-test.desktop="${properties.fileReference}" />
+<sly data-sly-test.tablet="${properties.tabletFileReference ? properties.tabletFileReference : desktop}" />
+<sly data-sly-test.phone="${properties.phoneFileReference ? properties.phoneFileReference : desktop}" />
+
+<section data-sly-test.countries="${grcsearch.countriesData}" class="c-business-registry-selector ${isBanner ? 'banner full-width' : 'inline'} ${isGuide ? 'landing' : ''}" data-sly-attribute.role="${isBanner ? 'banner' : ''}" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'GRC Country Search'}" data-event-type="link" data-event-name="link click - country" data-event-engagement="1" data-event-action="main body">
+    <div data-sly-test="${desktop && isBanner}" class="img-wrapper">
+        <sly data-sly-test="${desktop || tablet || phone}" data-sly-call="${commonTemplates.picture @ desktop=desktop, tablet=tablet, phone=phone, imageAlt=properties.alt}"/>
+        <div class="border-division">
+            <div class="diagonal"></div>
+        </div>
+    </div>
+    <div class="${isBanner ? 'container' : 'inline-container'}">
+        <div class="content">
+            <div class="search-image" data-sly-test="${isBanner}">
+                <img src="${properties.illustration}" alt="${properties.illustrationalt}" />
+            </div>
+            <div class="search-content">
+                <div class="intro" data-sly-test="${isBanner}">
+                    <p class="head-text">${properties.header}</p>
+                    <h1 data-sly-test="${properties.title}">${properties.title}</h1>
+                    <p data-sly-test="${properties.description}">${properties.description}</p>
+                </div>
+                <div class="search-box" data-directions-text="${grcsearch.directionsText}" data-results-text="${grcsearch.resultsText}" data-noresults-text="${grcsearch.noresultsText}">
+                    <sly data-sly-test.searchLabel="${isBanner ? properties.searchLabel1 : (isContent ? properties.searchLable2 : (isGuide ? properties.searchLabelGuide : ''))}" ></sly>
+                    <label for="search-${uuid}">${searchLabel}</label>
+                    <div class="search-container" data-selected=${grcsearch.countryCode}>
+
+                        <sly data-sly-test.searchPlaceholder="${isBanner ? properties.placeholder : (isContent ? properties.placeholdercontent : (isGuide ? properties.placeholderGuide : ''))}" ></sly>
+                        <input id="search-${uuid}" type="text" class="search-input" placeholder="${searchPlaceholder}" aria-label="${'Search' @ i18n}" aria-owns="search-results-${uuid}" aria-controls="sr-announce" data-place-holder="${searchPlaceholder}" />
+                        <button type="button" class="search-btn" aria-label="${'Search' @ i18n}" data-open-label="${'Open' @ i18n}" data-close-label="${'Close' @ i18n}s" tabindex="-1"></button>
+                        <div class="divider">
+                            <span></span>
+                        </div>
+                        <div id="search-results-${uuid}" class="search-results" aria-hidden="true">
+                            <ul role="listbox" aria-label="${'Search Results' @ i18n}" aria-selected="false">
+                                <li data-sly-repeat="${countries}" class="hidden" role="option" aria-selected="false">
+                                    <a x-cq-linkchecker="valid" href="${item.url}" target="${properties.searchtarget}">
+                                        <div class="country" data-code="${item.countryCode}" data-acronyms="US,USA" data-sly-test="${item.countryCode == 'USA'}" data-english-name="${item.countryNameEn}">${item.countryName}</div>
+                                        <div class="country" data-code="${item.countryCode}" data-acronyms="UAE" data-sly-test="${item.countryCode == 'UAE'}" data-english-name="${item.countryNameEn}">${item.countryName}</div>
+                                        <div class="country" data-code="${item.countryCode}" data-acronyms="UK" data-sly-test="${item.countryCode == 'UK'}" data-english-name="${item.countryNameEn}">${item.countryName}</div>
+                                        <div class="country" data-code="${item.countryCode}" data-sly-test="${item.countryCode != 'USA' && item.countryCode != 'UAE' && item.countryCode != 'UK'}" data-english-name="${item.countryNameEn}">${item.countryName}</div>
+                                    </a>
+                                </li>
+                                <sly data-sly-test.noResults="${isBanner ? properties.noResultsMessage : (isContent ? properties.noResultsMessageContent : (isGuide ? properties.noResultsMessageGuide : ''))}" ></sly>
+                                <li class="hidden no-results" role="option" aria-selected="false">${noResults}</li>
+                            </ul>
+                        </div>
+                        <div id="sr-announce" aria-live="polite" class="sr-only"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <sly data-sly-test="${isContent && grcsearch.countryCode == 'USA'}" data-sly-call="${dropdownTemplates.dropdown @ name='us-states', label=properties.statelabel,
+            placeholder=properties.stateplaceholder, nourl=true,
+            requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format,
+            options=grcsearch.usstates, optionvalue='tagValue', optiontext=(grcsearch.langAbbr == 'en' ? 'enName' : 'frName'), optiondatalayer='enName'}">
+        </sly>
+    </div>
+    <div class="registry-info" data-sly-test="${isContent}">
+        <!-- No Country registry -->
+        <div data-sly-test="${!grcsearch.grcRegistry}" class="info" data-code="${grcsearch.countryCode}">
+            <!-- Default Message -->
+            <div data-sly-test="${!grcsearch.countryCode}" class="no-results">
+                <h4>${properties.defaultStateTitle}</h4>
+                <div>${properties.defaultStateDesc @ context='html'}</div>
+            </div>
+            <!-- Country no registry -->
+            <div data-sly-test="${grcsearch.countryCode}" class="no-results">
+                <h4>${properties.noRegTitle}</h4>
+                <p>${properties.noRegDesc}</p>
+            </div>
+        </div>
+        <!-- Country registry -->
+        <div data-sly-test.registry="${grcsearch.grcRegistry}" class="info" data-code="${grcsearch.countryCode}">
+            <sly data-sly-test="${registry.busRegName && registry.busRegUrl && registry.busRegUrlText}" data-sly-call="${commonTemplates.productFormCard @ isGRC=true, title=registry.busRegName, description=registry.busRegDesc, ctaurl=registry.busRegUrl, ctatext=registry.busRegUrlText, imagepath=properties.busRegIcon, imagealt=properties.busRegIconAlt}" />
+            <sly data-sly-test="${registry.busRegTipsTitle && registry.busRegTips}" data-sly-call="${commonTemplates.tips @ title=registry.busRegTipsTitle, displayIcon=true, description=registry.busRegTips}"/>
+        </div>
+        <!-- States registry -->
+        <div data-sly-repeat.state="${grcsearch.statesRegistry}" class="info hide" data-code="${state.name}">
+            <sly data-sly-test="${state.busRegName && state.busRegUrl && state.busRegUrlText}" data-sly-call="${commonTemplates.productFormCard @ isGRC=true, title=state.busRegName, description=state.busRegDesc, ctaurl=state.busRegUrl, ctatext=state.busRegUrlText, imagepath=properties.busRegIcon, imagealt=properties.busRegIconAlt}" />
+            <sly data-sly-test="${state.busRegTipsTitle && state.busRegTips}" data-sly-call="${commonTemplates.tips @ title=state.busRegTipsTitle, displayIcon=true, description=state.busRegTips}"/>
+        </div>
+    </div>
+    <sly data-sly-use.linkresolver="${'com.edc.edcweb.core.helpers.LinkExternalizer' @srcPath=properties.linkTextUrl, scheme=request.scheme}" ></sly>
+    <sly data-sly-test="${isGuide}" data-sly-call="${commonTemplates.link @ link=linkresolver.LinkWithHtmlExtension, ctatext=properties.linkTextGuide, target=properties.linkTargetGuide, classes='landing-link', type='link',  linkchecker='valid'}">
+    </sly>
+</section>

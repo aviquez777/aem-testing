@@ -1,0 +1,103 @@
+.header-container.campaignheader {
+    position: relative;
+    height: 65px;
+}
+
+.header-container.campaignheader .top-nav.scrolldown {
+    top: 0;
+}
+
+header.campaign-header .header-nav .logo {
+    margin-left: 1.25rem;
+}
+
+header.campaign-header .header-nav nav ul {
+    margin-right: 1.25rem;
+}
+
+header.campaign-header .header-nav nav ul li {
+    display: none;
+    margin: 0;
+}
+
+header.campaign-header .header-nav nav ul li,
+header.campaign-header .header-nav nav ul li a {
+    color: #333;
+    font-size: 12px;
+}
+
+header.campaign-header .header-nav nav ul li.separator {
+    background-color: #ccc;
+    width: 1px;
+    margin: 1rem;
+    padding: 0;
+    height: 40px;
+}
+
+header.campaign-header .header-nav nav ul li.language {
+    margin-left: .5rem;
+}
+
+header.campaign-header .header-nav nav ul li.language .language-toggle span.language-m {
+    display: block;
+}
+
+header.campaign-header .header-nav nav ul li.language .language-toggle span.language-d {
+    display: none;
+}
+
+header.campaign-header .header-nav nav ul li a {
+    padding: 0;
+}
+
+header.campaign-header .header-nav nav ul li a::before {
+    display: none;
+}
+
+header.campaign-header .header-nav nav ul li:last-child {
+    display: block;
+}
+
+@media (min-width: 720px) {
+    header.campaign-header .header-nav nav ul {
+        margin-right: 0;
+    }
+    header.campaign-header .header-nav nav ul li {
+        margin-right: 1.875rem;
+    }
+    header.campaign-header .header-nav nav ul li.separator {
+        display: inline-block;
+        height: 40px;
+        margin: 0;
+        padding: 0;
+    }
+    header.campaign-header .header-nav nav ul li.language {
+        margin-left: 1.875rem;
+    }
+    header.campaign-header .header-nav nav ul li.language .language-toggle {
+        display: block;
+        margin: 0;
+    }
+    header.campaign-header .header-nav nav ul li.language .language-toggle span.language-d {
+        display: block;
+    }
+    header.campaign-header .header-nav nav ul li.language .language-toggle span.language-m {
+        display: none;
+    }
+    header.campaign-header .header-nav nav ul li a {
+        font-size: 12px;
+        padding: 0;
+    }
+    header.campaign-header .header-nav nav ul li a::before {
+        display: none;
+    }
+    header.campaign-header .header-nav nav ul li:nth-last-child(3) {
+        display: block;
+    }
+}
+
+@media (min-width: 960px) {
+    header.campaign-header .header-nav nav ul li {
+        display: block;
+    }
+}

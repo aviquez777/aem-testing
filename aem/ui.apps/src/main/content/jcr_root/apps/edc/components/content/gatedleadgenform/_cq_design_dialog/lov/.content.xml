@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <questionLov
+                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                fieldDescription="Click '+' to add a new value to the list"
+                fieldLabel="List of Values"
+                jcr:primaryType="nt:unstructured"
+                composite="{Boolean}true" 
+                required="{Boolean}false"
+                granite:class="gatedleadgenform-cq-dialog-lov-multi-field">
+                <field
+                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                    jcr:primaryType="nt:unstructured"
+                    name="./questionLov">
+                    <items jcr:primaryType="nt:unstructured">
+                        <value
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Value"
+                            fieldDescription="Value"
+                            name="./value"
+                            required="{Boolean}true"/>
+                        <enName
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="English Label"
+                            fieldDescription="English Label"
+                            name="./enName"
+                            required="{Boolean}true"/>
+                        <frName
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="French Label"
+                            fieldDescription="French Label"
+                            name="./frName"
+                            required="{Boolean}true"/>
+                    </items>
+                </field>
+            </questionLov>
+        </items>
+    </content>
+</jcr:root>

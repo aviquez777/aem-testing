@@ -1,0 +1,50 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-use.tags="com.edc.edcweb.core.models.SentenceBuilder"/>
+
+<section class="sentence-builder full-width" role="region" aria-labelledby="sentenceBuilderTitle" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'Sentence Builder'}" data-event-type="drop-down" data-event-name="selection" data-event-engagement="1.5" data-event-action="header" data-event-level="primary" data-category-json="${tags.categoryJson ? tags.categoryJson : '{}'}" data-sly-test="${properties.title}">
+    <div class="sentence-builder-body">
+        <div class="container">
+            <div class="text fade-in-slide-up">
+                <h1 data-sly-test="${properties.title}" id="sentenceBuilderTitle" class="title">${properties.title}</h1>
+                <p data-sly-test="${properties.description}" class="subtitle">${properties.description}</p>
+            </div>
+        </div>
+        <div class="content"></div>
+        <div class="sentence">
+            <div class="rows fade-in-slide-up">
+                <div class="sentence-row">
+                    <label id="sentenceBuilderA-text" class="text-label">${properties.lookingto @context='text'}</label>
+                    <div class="select">
+                        <span id="sentenceBuilderA-label" class="label" tabindex="0">&nbsp;<span></span></span>
+                        <select id="sentenceBuilderA" data-event-selection="1" aria-labelledby="sentenceBuilderA-text"></select>
+                    </div>
+                </div>
+                <div class="sentence-row">
+                    <label id="sentenceBuilderB-text" class="text-label">${properties.learnabout @context='text'}</label>
+                    <div class="select">
+                        <span id="sentenceBuilderB-label" class="label disabled" tabindex="0">&nbsp;<span></span></span>
+                        <select disabled id="sentenceBuilderB" data-event-selection="2" aria-labelledby="sentenceBuilderB-text"></select>
+                    </div>
+                </div>
+                <div class="sentence-row">
+                    <label id="sentenceBuilderC-text" class="text-label">${properties.inthe @context='text'}</label>
+                    <div class="select">
+                        <span id="sentenceBuilderC-label" class="label text-surrounded" tabindex="0">&nbsp;<span></span></span>
+                        <select id="sentenceBuilderC" data-event-selection="3" aria-labelledby="sentenceBuilderC-text">
+                            <option></option>
+                            <sly data-sly-list="${tags.regions}"><option value="${item.id}">${item.title}</option></sly>
+                        </select>
+                    </div>
+                    <span>${properties.region @context='text'}</span>
+                </div>
+                <div class="clear-section" data-sly-test="${properties.clearfilters}">
+                    <div class="clear-container">
+                        <a href="#" class="clear-btn">${properties.clearfilters}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

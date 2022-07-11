@@ -1,0 +1,28 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.multifield="${'com.edc.edcweb.core.helpers.MultifieldReaderHelper' @ multifield='items'}"/>
+<sly data-sly-test.cards="${multifield.fields}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !cards}"/>
+<sly data-sly-test.isProductForm="${properties.type == 'product'}"/>
+<sly data-sly-test.isFormLibrary="${properties.type == 'library'}"/>
+<sly data-sly-test.isGRC="${properties.type == 'grc'}"/>
+<sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+
+<section data-sly-test="${cards}" class="c-product-form-card-grid ${(properties.keyline == 'top' && !isGRC) ? 'keyline' : ''} ${isFormLibrary ? 'forms-library' : ''} ${isProductForm ? 'product-page' : ''} ${isGRC ? 'global-risk-check' : ''}" role="complementary" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'Product Form Cards'}" >
+    <div data-sly-test="${!isGRC}" class="title-section">
+        <h2 data-sly-test="${properties.title}" class="title">${properties.title}</h2>
+        <p data-sly-test="${properties.description && isProductForm}" class="description">${properties.description}</p>
+        <sly data-sly-use.linkresolver="${'com.edc.edcweb.core.helpers.LinkExternalizer' @srcPath=properties.linkurl, scheme=request.scheme}"/>
+        <sly data-sly-test="${properties.linktext && properties.linkurl && isFormLibrary}"
+             data-sly-call="${commonTemplates.link @ type = 'link', link=linkresolver.LinkWithHtmlExtension, ctatext=properties.linktext, target=properties.linktarget, linkchecker='valid'}"/>
+    </div>
+    <div data-sly-list="${cards}" class="grid-wrapper">
+        <div class="card">
+            <sly data-sly-call="${commonTemplates.productFormCard @ isGRC=isGRC, title=item.title, description=item.description, ctatext=item.ctatext, ctaurl=item.ctaurl, linktext=item.linktext, linkurl=item.linkurl, imagepath=item.imagepath, imagealt=item.imagealt}"></sly>
+        </div>
+    </div>
+    <div class="view-more" data-sly-test="${properties.viewmoretext && properties.viewmoreurl && !isGRC}">
+        <sly data-sly-use.linkresolver="${'com.edc.edcweb.core.helpers.LinkExternalizer' @srcPath=properties.viewmoreurl, scheme=request.scheme}"/>
+        <sly data-sly-call="${commonTemplates.link @ type = 'link', link=linkresolver.LinkWithHtmlExtension, ctatext=properties.viewmoretext, target=properties.viewmoretarget, linkchecker='valid'}"/>
+    </div>
+</section>

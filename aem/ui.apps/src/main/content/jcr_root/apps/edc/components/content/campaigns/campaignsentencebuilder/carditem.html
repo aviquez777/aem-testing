@@ -1,0 +1,28 @@
+<template data-sly-template.item="${@ item, cardCategory, cardTarget}">
+  <sly data-sly-test.pageLang="${item.language.language}"/>
+  <sly data-sly-test.dateformat="${pageLang == 'fr' ? 'dd MMMM yyyy' : 'MMMM dd, yyyy'}"/>
+  <sly data-sly-use.articlepage="${'com.edc.edcweb.core.models.ArticlePage' @ page = item}"/>
+  <sly data-sly-use.pagedate="${'com.edc.edcweb.core.models.PageModelHelper' @ page = item}" data-sly-test.dateText="${dateformat @ format=pagedate.date, locale=pageLang}"/>
+
+  <div class="card" data-card-category="${cardCategory}">
+    <div class="card-image">
+      <a data-sly-test="${item.properties['teaserimage']}"
+        data-sly-use.urlRes="${'com.edc.edcweb.core.models.PageModelHelper' @ path = item.path}"
+        href="${urlRes.url}" target="${cardTarget}" aria-label="Link">
+        <img src="${item.properties['teaserimage']}" alt="${item.properties['imagealttext']}">
+      </a>
+    </div>
+    <div class="card-content">
+      <div class="card-info">
+        <span class="category-tag ${articlepage.contentTypeClassName} stacked">${articlepage.contentTypeTitle}</span>
+        <span class="date">${dateText}</span>
+      </div>
+      <h4 class="title">
+        <a href="${urlRes.url}" target="${cardTarget}">
+          ${item.pageTitle || item.title || item.name}
+        </a>
+      </h4>
+      <p class="description">${item.properties['articlesynopsis']}</p>
+    </div>
+  </div>
+</template>

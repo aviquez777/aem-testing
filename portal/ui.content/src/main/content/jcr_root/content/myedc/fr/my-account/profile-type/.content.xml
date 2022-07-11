@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastReplicationAction="Activate"
+        cq:template="/conf/edcportal/settings/wcm/templates/register-page"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:language="fr"
+        jcr:title="Type De Profil"
+        sling:alias="type-de-profil"
+        sling:resourceType="edcportal/components/structure/page"
+        firstpublished="{Date}2018-10-25T15:28:29.803-04:00">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <myedcbanner
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="edcportal/components/content/myedcbanner"
+                noMarginTop="{Boolean}true"
+                headline="Compte MonEDC"/>
+            <rightcolumn
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid">
+                <cq:responsive jcr:primaryType="nt:unstructured">
+                    <default
+                            jcr:primaryType="nt:unstructured"
+                            width="12"/>
+                </cq:responsive>
+                <profiletype
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="edcportal/components/content/selectprofile"
+                    currentStep="2"
+                    ofWord="sur"
+                    segments="3"
+                    stepTitle="Choisissez le profil qui vous décrit le mieux"
+                    stepWord="Étape">
+                    <needassistance
+                            fragmentPath="/content/experience-fragments/myedc/needAssistance/need-assistance-fr"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="cq/experience-fragments/editor/components/experiencefragment"/>
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <default
+                                jcr:primaryType="nt:unstructured"
+                                width="12"/>
+                    </cq:responsive>
+                </profiletype>
+            </rightcolumn>
+        </root>
+    </jcr:content>
+</jcr:root>

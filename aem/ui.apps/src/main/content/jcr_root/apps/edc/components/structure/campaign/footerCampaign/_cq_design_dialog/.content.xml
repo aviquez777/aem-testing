@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Footer Campaign"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured"
+            sling:hideChildren="[links]">
+            <contact
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Contact Section"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                    margin="{Boolean}false"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured"
+                            sling:hideChildren="[contacttitle,phonenumber,phonelabel,links]">
+                        </items>
+                    </column>
+                </items>
+            </contact>
+            <bottom jcr:primaryType="nt:unstructured">
+                <items jcr:primaryType="nt:unstructured">
+                    <column jcr:primaryType="nt:unstructured">
+                        <items jcr:primaryType="nt:unstructured">
+                            <edclogo jcr:primaryType="nt:unstructured">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <well jcr:primaryType="nt:unstructured">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <edclogo
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldDescription="The EDC logo shown in the footer component."
+                                                fieldLabel="Logo image file (white)"
+                                                mimeTypes="[image]"
+                                                multiple="{Boolean}false"
+                                                name="./edclogo"
+                                                rootPath="/content/dam/edc"/>
+                                            <edclogo2x
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldDescription="The EDC logo 2x shown in the footer component."
+                                                fieldLabel="Logo image 2x file (white)"
+                                                mimeTypes="[image]"
+                                                multiple="{Boolean}false"
+                                                name="./edclogo2x"
+                                                rootPath="/content/dam/edc"/>
+                                            <edclogoblack
+                                                sling:orderBefore="edcalttext"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldDescription="The EDC logo black shown in the footer component with saffron or sandstone theme color."
+                                                fieldLabel="Logo image file (black)"
+                                                mimeTypes="[image]"
+                                                multiple="{Boolean}false"
+                                                name="./edclogoblack"
+                                                rootPath="/content/dam/edc"/>
+                                            <edclogo2xblack
+                                                sling:orderBefore="edcalttext"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldDescription="The EDC logo 2x black shown in the footer component with saffron or sandstone theme color."
+                                                fieldLabel="Logo image 2x file (black)"
+                                                mimeTypes="[image]"
+                                                multiple="{Boolean}false"
+                                                name="./edclogo2xblack"
+                                                rootPath="/content/dam/edc"/>
+                                        </items>
+                                    </well>
+                                </items>
+                            </edclogo>
+                            <canadalogo jcr:primaryType="nt:unstructured">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <well jcr:primaryType="nt:unstructured">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <canadalogo
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldDescription="The Government of Canada logo shown in the footer component."
+                                                fieldLabel="Logo image file (white)"
+                                                mimeTypes="[image]"
+                                                multiple="{Boolean}false"
+                                                name="./canadalogo"
+                                                rootPath="/content/dam/edc"/>
+                                            <canadalogo2x
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldDescription="The Government of Canada logo 2x shown in the footer component."
+                                                fieldLabel="Logo image 2x file (white)"
+                                                mimeTypes="[image]"
+                                                multiple="{Boolean}false"
+                                                name="./canadalogo2x"
+                                                rootPath="/content/dam/edc"/>
+                                            <canadalogoblack
+                                                sling:orderBefore="canadaalttext"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldDescription="The Government of Canada logo black shown in the footer component with saffron or sandstone theme color."
+                                                fieldLabel="Logo image file (black)"
+                                                mimeTypes="[image]"
+                                                multiple="{Boolean}false"
+                                                name="./canadalogoblack"
+                                                rootPath="/content/dam/edc"/>
+                                            <canadalogo2xblack
+                                                sling:orderBefore="canadaalttext"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldDescription="The Government of Canada logo 2x black shown in the footer component with saffron or sandstone theme color."
+                                                fieldLabel="Logo image 2x file (black)"
+                                                mimeTypes="[image]"
+                                                multiple="{Boolean}false"
+                                                name="./canadalogo2xblack"
+                                                rootPath="/content/dam/edc"/>
+                                        </items>
+                                    </well>
+                                </items>
+                            </canadalogo>
+                        </items>
+                    </column>
+                </items>
+            </bottom>
+        </items>
+    </content>
+</jcr:root>

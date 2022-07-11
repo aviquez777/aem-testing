@@ -1,0 +1,241 @@
+.c-business-connections-login-button {
+    border-top: 1px solid rgba(51, 51, 51, 0.3);
+    box-sizing: border-box;
+    margin-bottom: 32px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.c-business-connections-login-button * {
+    box-sizing: border-box;
+}
+
+.c-business-connections-login-button .hide {
+    display: none;
+}
+
+.c-business-connections-login-button .default-content .btn-area {
+    min-height: 1px;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    width: 100%;
+    margin: 3rem auto;
+}
+
+@media (min-width: 720px) {
+    .c-business-connections-login-button .default-content .btn-area {
+        width: 100%;
+        float: left;
+    }
+}
+
+.c-business-connections-login-button .default-content .btn-area > h2 {
+    color: #26a2b5;
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+}
+
+.c-business-connections-login-button .default-content .btn-area > p {
+    font-size: 19px;
+    line-height: 1.6;
+}
+
+.c-business-connections-login-button .default-content .myedc-container {
+    background-color: #f4f8fc;
+    text-align: center;
+    margin: auto;
+    padding: 2.5rem 1rem;
+}
+
+.c-business-connections-login-button .default-content .myedc-container.hide {
+    display: none;
+}
+
+.c-business-connections-login-button .default-content .myedc-container h3 {
+    margin-top: 0;
+}
+
+.c-business-connections-login-button .default-content .myedc-container a {
+    font-weight: 600;
+}
+
+.c-business-connections-login-button .default-content .myedc-container a.button {
+    border: 1px solid #2f78c6;
+    background-color: #f4f8fc;
+    color: #1a65b2;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.c-business-connections-login-button .loggedin-content {
+    min-height: 1px;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    width: 100%;
+    margin: 3rem auto;
+}
+
+@media (min-width: 720px) {
+    .c-business-connections-login-button .loggedin-content {
+        width: 100%;
+        float: left;
+    }
+}
+
+.c-business-connections-login-button .loggedin-content > h2 {
+    color: #26a2b5;
+    margin-bottom: 1rem;
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.c-business-connections-login-button .loggedin-content .btn-container {
+    text-align: center;
+}
+
+.c-business-connections-login-button .loggedin-content .btn-container p {
+    font-size: 19px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.c-business-connections-login-button .loggedin-content .btn-container a {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+@media (min-width: 720px) {
+    .c-business-connections-login-button .default-content .btn-area {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 66.66666667%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-business-connections-login-button .default-content .btn-area {
+        width: 66.66666667%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-business-connections-login-button .default-content .myedc-container {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 66.66666667%;
+        padding: 5.75rem 5.25rem;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-business-connections-login-button .default-content .myedc-container {
+        width: 66.66666667%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-business-connections-login-button .default-content .myedc-container a.button {
+        margin: 1rem 2rem;
+    }
+    .c-business-connections-login-button .loggedin-content {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 66.66666667%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-business-connections-login-button .loggedin-content {
+        width: 66.66666667%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-business-connections-login-button .loggedin-content .btn-container a {
+        width: auto;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-business-connections-login-button .default-content {
+        display: flex;
+    }
+    .c-business-connections-login-button .default-content.hide {
+        display: none;
+    }
+    .c-business-connections-login-button .default-content .btn-area {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+        padding-right: 10%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 720px) {
+    .c-business-connections-login-button .default-content .btn-area {
+        width: 50%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-business-connections-login-button .default-content .myedc-container {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+        margin: 4rem auto 4rem 85px;
+        padding: 5.75rem 5.25rem;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 720px) {
+    .c-business-connections-login-button .default-content .myedc-container {
+        width: 50%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-business-connections-login-button .loggedin-content {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 720px) {
+    .c-business-connections-login-button .loggedin-content {
+        width: 50%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

@@ -1,0 +1,632 @@
+@charset "UTF-8";
+.c-ehh-team-form {
+    box-sizing: border-box;
+    margin-bottom: 3.5rem;
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.c-ehh-team-form * {
+    box-sizing: border-box;
+}
+
+.c-ehh-team-form.hide,
+.c-ehh-team-form .hide {
+    display: none;
+}
+
+.c-ehh-team-form span.error {
+    display: none;
+    padding-bottom: 1rem;
+}
+
+.c-ehh-team-form.form.cp-content:not(.hide) {
+    display: flex;
+}
+
+.c-ehh-team-form.default.form.cp-content {
+    border-top: 1px solid rgba(51, 51, 51, 0.3);
+}
+
+.c-ehh-team-form:not(.default) form.cp-content .form-success {
+    text-align: center;
+}
+
+.c-ehh-team-form:not(.default) form.cp-content .success-title {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: 0;
+    margin-top: 1.5rem;
+}
+
+@media (min-width: 720px) {
+    .c-ehh-team-form:not(.default) form.cp-content .success-title {
+        font-size: 1.5rem;
+        line-height: 1.6666;
+        letter-spacing: -0.1px;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-ehh-team-form:not(.default) form.cp-content .success-title {
+        font-size: 1.875rem;
+        line-height: 1.3333;
+        letter-spacing: -0.2px;
+    }
+}
+
+.c-ehh-team-form:not(.default) form.cp-content .success-description {
+    margin-bottom: 1.5rem;
+}
+
+.c-ehh-team-form:not(.default) .resource-info .info-title {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0;
+}
+
+@media (min-width: 720px) {
+    .c-ehh-team-form:not(.default) .resource-info .info-title {
+        font-size: 1.25rem;
+        line-height: 1.2;
+        letter-spacing: -0.1px;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-ehh-team-form:not(.default) .resource-info .info-title {
+        font-size: 1.375rem;
+        line-height: 1.4545;
+        letter-spacing: -0.2px;
+    }
+}
+
+.c-ehh-team-form form.cp-content {
+    min-height: 1px;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    width: 100%;
+    float: left;
+    padding-top: 3.5rem;
+}
+
+.c-ehh-team-form form.cp-content .form-title {
+    margin: 0 0 1rem;
+}
+
+.c-ehh-team-form form.cp-content .form-description {
+    margin-bottom: 2rem;
+}
+
+.c-ehh-team-form form.cp-content .form-description ol {
+    list-style-position: inside;
+    list-style-type: decimal;
+}
+
+.c-ehh-team-form form.cp-content .form-description ul {
+    list-style-position: inside;
+    list-style-type: initial;
+}
+
+.c-ehh-team-form form.cp-content .form-description ul li {
+    font-family: "Georgia", "Times New Roman", Times, serif;
+}
+
+.c-ehh-team-form form.cp-content .form-description :last-child {
+    margin-bottom: 0;
+}
+
+.c-ehh-team-form form.cp-content textarea {
+    margin-bottom: 1rem;
+}
+
+.c-ehh-team-form form.cp-content .c-dropdown .ui.selection.dropdown {
+    margin-bottom: 2rem;
+}
+
+.c-ehh-team-form form.cp-content button,
+.c-ehh-team-form form.cp-content .button {
+    width: 100%;
+}
+
+.c-ehh-team-form form.cp-content .success-title {
+    margin-top: 0;
+}
+
+.c-ehh-team-form form.cp-content .success-description ol {
+    list-style-position: inside;
+    list-style-type: decimal;
+}
+
+.c-ehh-team-form form.cp-content .success-description ul {
+    list-style-position: inside;
+    list-style-type: initial;
+}
+
+.c-ehh-team-form form.cp-content .success-description ul li {
+    font-family: "Georgia", "Times New Roman", Times, serif;
+}
+
+.c-ehh-team-form form.cp-content .success-description :last-child {
+    margin-bottom: 0;
+}
+
+.c-ehh-team-form .resource-info,
+.c-ehh-team-form .ehh-info {
+    text-align: center;
+}
+
+.c-ehh-team-form .resource-info .info-title,
+.c-ehh-team-form .ehh-info .info-title {
+    margin-top: 0;
+}
+
+.c-ehh-team-form .resource-info .info-description,
+.c-ehh-team-form .ehh-info .info-description {
+    margin-bottom: 1.5rem;
+}
+
+.c-ehh-team-form .resource-info .info-description ol,
+.c-ehh-team-form .ehh-info .info-description ol {
+    list-style-position: inside;
+    list-style-type: decimal;
+}
+
+.c-ehh-team-form .resource-info .info-description ul,
+.c-ehh-team-form .ehh-info .info-description ul {
+    list-style-position: inside;
+    list-style-type: initial;
+}
+
+.c-ehh-team-form .resource-info .info-description ul li,
+.c-ehh-team-form .ehh-info .info-description ul li {
+    font-family: "Georgia", "Times New Roman", Times, serif;
+}
+
+.c-ehh-team-form .resource-info .info-description :last-child,
+.c-ehh-team-form .ehh-info .info-description :last-child {
+    margin-bottom: 0;
+}
+
+.c-ehh-team-form .resource-info .button,
+.c-ehh-team-form .ehh-info .button {
+    width: 100%;
+}
+
+.c-ehh-team-form .ehh-info {
+    border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+    margin-bottom: 3.5rem;
+    padding-bottom: 3.5rem;
+}
+
+.c-ehh-team-form .ehh-info .info-title {
+    margin-bottom: 2rem;
+}
+
+.c-ehh-team-form .form-modal {
+    z-index: 100;
+    position: fixed;
+}
+
+.c-ehh-team-form .form-modal.hide {
+    display: none;
+}
+
+.c-ehh-team-form .form-modal .modal-shade {
+    background-color: #fff;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.c-ehh-team-form .form-modal .modal-container {
+    background-color: #fff;
+    position: fixed;
+    transform: translate(-50%, 0);
+    top: 0;
+    left: 50%;
+    width: 100%;
+    z-index: 2;
+}
+
+.c-ehh-team-form .form-modal .modal-container .modal-close {
+    position: absolute;
+    right: 0;
+    text-decoration: none;
+    top: 0;
+    z-index: 10;
+    padding: 0;
+    width: 48px;
+    height: 48px;
+    background-color: transparent;
+    color: #000;
+}
+
+.c-ehh-team-form .form-modal .modal-container .modal-close::after {
+    font-family: "iconfonts";
+    color: #000;
+    content: "";
+    font-size: 2.5rem;
+}
+
+.c-ehh-team-form .form-modal .modal-container .modal-title,
+.c-ehh-team-form .form-modal .modal-container .modal-text {
+    color: #333;
+    font-family: "Georgia", "Times New Roman", Times, serif;
+    font-size: 17px;
+    line-height: 27px;
+    margin: 0;
+}
+
+.c-ehh-team-form .form-modal .modal-container .modal-title {
+    background-color: #f4f8fc;
+    padding: 1.6875rem 3.3125rem 1.6875rem 2.125rem;
+    text-align: center;
+}
+
+.c-ehh-team-form .form-modal .modal-container .modal-title h2 {
+    margin: 0;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.c-ehh-team-form .form-modal .modal-container .modal-text {
+    position: relative;
+    border-bottom: 1px solid #ccc;
+}
+
+.c-ehh-team-form .form-modal .modal-container .modal-text.section-fixed.shadow-after::after, .c-ehh-team-form .form-modal .modal-container .modal-text.section-fixed.shadow-before::before {
+    position: absolute;
+    content: '';
+    width: 98%;
+    height: 2.6rem;
+    left: 0;
+    z-index: 1;
+}
+
+.c-ehh-team-form .form-modal .modal-container .modal-text.section-fixed.shadow-after::after {
+    background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8), #fff);
+    bottom: 0;
+}
+
+.c-ehh-team-form .form-modal .modal-container .modal-text.section-fixed.shadow-before::before {
+    background: linear-gradient(360deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8), #fff);
+    top: 0;
+}
+
+.c-ehh-team-form .form-modal .modal-container .modal-text .text-section {
+    /* Track */
+    /* Handle */
+    /* Handle on hover */
+    padding: 2rem;
+}
+
+.c-ehh-team-form .form-modal .modal-container .modal-text .text-section::-webkit-scrollbar {
+    width: 10px;
+}
+
+.c-ehh-team-form .form-modal .modal-container .modal-text .text-section::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.c-ehh-team-form .form-modal .modal-container .modal-text .text-section::-webkit-scrollbar-thumb {
+    background: #ebebeb;
+    background: -moz-linear-gradient(left, #ebebeb 0%, #ebebeb 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #ebebeb), color-stop(50%, #ebebeb), color-stop(51%, rgba(255, 255, 255, 0)), color-stop(71%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(255, 255, 255, 0)));
+    background: -webkit-linear-gradient(left, #ebebeb 0%, #ebebeb 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: -o-linear-gradient(left, #ebebeb 0%, #ebebeb 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: -ms-linear-gradient(left, #ebebeb 0%, #ebebeb 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to right, #ebebeb 0%, #ebebeb 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebebeb', endColorstr='#ffffff', GradientType=1 );
+}
+
+.c-ehh-team-form .form-modal .modal-container .modal-text .text-section::-webkit-scrollbar-thumb:hover {
+    background: #ebebeb;
+    background: -moz-linear-gradient(left, #cccccc 0%, #cccccc 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #cccccc), color-stop(50%, #cccccc), color-stop(51%, rgba(255, 255, 255, 0)), color-stop(71%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(255, 255, 255, 0)));
+    background: -webkit-linear-gradient(left, #cccccc 0%, #cccccc 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: -o-linear-gradient(left, #cccccc 0%, #cccccc 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: -ms-linear-gradient(left, #cccccc 0%, #cccccc 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to right, #cccccc 0%, #cccccc 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebebeb', endColorstr='#ffffff', GradientType=1 );
+}
+
+.c-ehh-team-form .form-modal .modal-container .anchor-container {
+    position: absolute;
+    bottom: .5rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+    width: 40px;
+    z-index: 2;
+}
+
+.c-ehh-team-form .form-modal .modal-container .anchor-container.hide {
+    display: none;
+}
+
+.c-ehh-team-form .form-modal .modal-container .anchor-container .circle-button {
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(25, 25, 25, 0.1);
+    background: #2f78c6;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    position: relative;
+}
+
+.c-ehh-team-form .form-modal .modal-container .anchor-container .circle-button::before {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 6px;
+    color: #fff;
+    content: "";
+    font-family: "iconfonts";
+    font-size: 16px;
+}
+
+.c-ehh-team-form .form-modal .modal-container .modal-ctas {
+    margin: 0 .25rem;
+    padding: 2.5rem 1.5625rem;
+    text-align: center;
+}
+
+.c-ehh-team-form .form-modal .modal-container .modal-ctas button {
+    display: block;
+}
+
+.c-ehh-team-form .form-modal .modal-container .modal-ctas button.c-interaction-button {
+    margin: 1rem auto;
+    width: 100%;
+    padding: .75rem 1.875rem;
+}
+
+@media (min-width: 720px) {
+    .c-ehh-team-form {
+        margin-bottom: 4.5rem;
+    }
+    .c-ehh-team-form form.cp-content {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 66.66666667%;
+        padding-top: 4.5rem;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-ehh-team-form form.cp-content {
+        width: 66.66666667%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-ehh-team-form form.cp-content .form-title {
+        margin-bottom: 1.5rem;
+    }
+    .c-ehh-team-form form.cp-content .form-submit {
+        display: flex;
+        justify-content: flex-end;
+    }
+    .c-ehh-team-form form.cp-content .button,
+    .c-ehh-team-form form.cp-content button {
+        width: auto;
+    }
+    .c-ehh-team-form .resource-info,
+    .c-ehh-team-form .ehh-info {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 83.33333333%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-ehh-team-form .resource-info,
+    .c-ehh-team-form .ehh-info {
+        width: 83.33333333%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-ehh-team-form .resource-info .info-description,
+    .c-ehh-team-form .ehh-info .info-description {
+        margin-bottom: 2rem;
+    }
+    .c-ehh-team-form .resource-info .button,
+    .c-ehh-team-form .ehh-info .button {
+        width: auto;
+    }
+    .c-ehh-team-form .ehh-info {
+        margin-bottom: 4.5rem;
+        padding-bottom: 4.5rem;
+    }
+    .c-ehh-team-form .ehh-info .info-title {
+        margin-bottom: 2rem;
+    }
+    .c-ehh-team-form .form-modal .modal-shade {
+        background-color: rgba(25, 25, 25, 0.8);
+    }
+    .c-ehh-team-form .form-modal .modal-container {
+        width: 590px;
+        box-shadow: 0 0 1.5em rgba(0, 0, 0, 0.35);
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+    }
+    .c-ehh-team-form .form-modal .modal-container .modal-title {
+        background-color: #f4f8fc;
+        padding: 2rem 4rem;
+    }
+    .c-ehh-team-form .form-modal .modal-container .modal-ctas button.c-interaction-button {
+        width: 300px;
+        padding: 1.25rem 1.875rem;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-ehh-team-form {
+        margin-bottom: 6.5rem;
+    }
+    .c-ehh-team-form form.cp-content {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 50%;
+        padding-top: 2.5rem;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-ehh-team-form form.cp-content {
+        width: 50%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-ehh-team-form form.cp-content .form-title {
+        margin-bottom: 2rem;
+    }
+    .c-ehh-team-form .resource-info,
+    .c-ehh-team-form .ehh-info {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-ehh-team-form .resource-info,
+    .c-ehh-team-form .ehh-info {
+        width: 50%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-ehh-team-form .ehh-info {
+        margin-bottom: 6.5rem;
+        padding-bottom: 6.5rem;
+    }
+    .c-ehh-team-form .resource-info .info-title {
+        color: #333;
+        font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.5;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 720px) {
+    .c-ehh-team-form .resource-info .info-title {
+        font-size: 1.25rem;
+        line-height: 1.2;
+        letter-spacing: -0.1px;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-ehh-team-form .resource-info .info-title {
+        font-size: 1.375rem;
+        line-height: 1.4545;
+        letter-spacing: -0.2px;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-ehh-team-form.default form.cp-content {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 100%;
+        padding-top: 6.5rem;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-ehh-team-form.default form.cp-content {
+        width: 100%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-ehh-team-form.default .form-info {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-ehh-team-form.default .form-info {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-ehh-team-form.default .form-fields,
+    .c-ehh-team-form.default .form-success,
+    .c-ehh-team-form.default .c-processing-screen {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 0;
+        position: relative;
+        width: 41.66666667%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-ehh-team-form.default .form-fields,
+    .c-ehh-team-form.default .form-success,
+    .c-ehh-team-form.default .c-processing-screen {
+        width: 41.66666667%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-ehh-team-form.default .form-fields,
+    .c-ehh-team-form.default .form-success,
+    .c-ehh-team-form.default .c-processing-screen {
+        left: 8.33333333%;
+    }
+}

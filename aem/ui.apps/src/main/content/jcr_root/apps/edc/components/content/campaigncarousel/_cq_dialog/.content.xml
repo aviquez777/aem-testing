@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0" 
+    xmlns:jcr="http://www.jcp.org/jcr/1.0" 
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Campaign Product Carousel | Properties"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <carouselTitle jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Carousel Title"
+                        fieldDescription="Field used to specify the main title of the component."
+                        value=""
+                        required="{Boolean}true"
+                        name="./carouselTitle"/>
+                    <alert jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/alert"
+                        jcr:title="Card Image Instructions"
+                        variant="info"
+                        size="S"
+                        text="For the images used on each card the sizes of the image must be Width(375px) and Height(210px) these sizes are used for mobile, tablet and desktop."/>
+                    <multi jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                        granite:class="campaign-carousel"
+                        composite="{Boolean}true"
+                        fieldLabel="Carousel slides (At least 4 slides for carousel)"
+                        validation="multifield-limit-min:4-max:10">
+                        <field jcr:primaryType="nt:unstructured"
+                            granite:class="carousel-slide"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                            name="./slides">
+                            <items jcr:primaryType="nt:unstructured">
+                                <populationMode
+                                    granite:class="cq-dialog-dropdown-showhide-multi"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                    fieldLabel="Authoring Type"
+                                    fieldDescription="Field used to specify if the component is manually authored or auto populated."
+                                    validation="mf-remove-hidden-required"
+                                    name="./populationMode">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            cq-dialog-dropdown-showhide-target=".populationMode-showhide-target"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <automatic
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Automatic Population"
+                                                value="automatic"/>
+                                            <manual
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Manual Population"
+                                                value="manual"/>
+                                        </items>
+                                </populationMode>
+                                <dynamic jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    granite:class="hide populationMode-showhide-target">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            showhidetargetvalue="manual"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <cardImagePath jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                rootPath="/content/dam/edc/"
+                                                fieldLabel="Choose the target image."
+                                                fieldDescription="This field is used to specify the targe image that must be included in the card."
+                                                required="{Boolean}true"
+                                                name="./cardImagePath">
+                                            </cardImagePath>
+                                            <cardImageAlt jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Type the image alt"
+                                                fieldDescription="Field used to provide the alt text to the image selected."
+                                                value=""
+                                                required="{Boolean}true"
+                                                name="./cardImageAlt">
+                                            </cardImageAlt>
+                                            <cardTitle jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Type the Card Title."
+                                                fieldDescription="Field used to provide the title that will be displayed in a card."
+                                                value=""
+                                                required="{Boolean}true"
+                                                name="./cardTitle">
+                                            </cardTitle>
+                                        </items>
+                                </dynamic>
+                                <cardLabel jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Type the card label."
+                                    fieldDescription="Field used to edit the card label."
+                                    value=""
+                                    required="{Boolean}true"
+                                    name="./cardLabel"/>
+                                <cardURL jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                    rootPath="/content/edc/"
+                                    fieldLabel="Provide the path to the target page."
+                                    fieldDescription="Field used to provide the path where the card will be pointing to."
+                                    required="{Boolean}true"
+                                    name="./cardURL"/>
+                                <cardLinkTargetType jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                    fieldLabel="Card Link Target Type"
+                                    fieldDescription="Field used to specify if the target page will be open in a new tab or the current tab."
+                                    name="./cardLinkTargetType">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <primary jcr:primaryType="nt:unstructured"
+                                            text="Open in New Tab."
+                                            value="_blank"/>
+                                        <secondary jcr:primaryType="nt:unstructured"
+                                            text="Open in Current Tab."
+                                            value="_self"/>
+                                    </items>
+                                </cardLinkTargetType>
+                            </items>
+                        </field>
+                    </multi>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

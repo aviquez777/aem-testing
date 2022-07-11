@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Product Cards Banker"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <granite:data
+            jcr:primaryType="nt:unstructured"
+            dialog-id="dialog-productcardsbanker" />
+        <items jcr:primaryType="nt:unstructured">
+            <tabs jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <headlinetab jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        jcr:title="Headline Details">
+                        <items jcr:primaryType="nt:unstructured">
+                            <configTab jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                margin="{Boolean}false">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <headline
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Title"
+                                        name="./title"/>
+                                    <headlinetext
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                        fieldLabel="Description"
+                                        name="./description"/>
+                                </items>
+                            </configTab>
+                        </items>
+                    </headlinetab>
+                    <cardtab jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        jcr:title="Product Cards">
+                        <items jcr:primaryType="nt:unstructured">
+                            <configTab jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                margin="{Boolean}false">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <threecolumns
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                        defaultChecked="{Boolean}false"
+                                        fieldDescription="Display any number of cards in 3 columns, aligned left"
+                                        fieldLabel="Always display cards in 3 columns"
+                                        ignoreData="{Boolean}false"
+                                        name="./threecolumns"
+                                        required="{Boolean}false"
+                                        text="Always display cards in 3 columns"
+                                        uncheckedValue="no"
+                                        value="yes"/>
+                                    <multicards
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                        composite="{Boolean}true"
+                                        fieldLabel="Card items"
+                                        name="./multicardsitems">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                                            name="./carditems">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <column
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <card
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <name
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                    fieldLabel="Product Name"
+                                                                    name="./name"
+                                                                    required="{Boolean}true"/>
+                                                                <headline
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                    fieldLabel="Product Headline"
+                                                                    name="./headline"/>
+                                                                <description
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                                    fieldLabel="Product Description"
+                                                                    fieldDescription="The description should not be more than 85 characters including spaces"
+                                                                    name="./description"/>
+                                                                <leadintext
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                    fieldLabel="Product Lead-in Text"
+                                                                    name="./leadintext"/>
+                                                                <bullets
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                                    <items jcr:primaryType="nt:unstructured">
+                                                                        <bullet1
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                            fieldLabel="Bullet 1"
+                                                                            fieldDescription="The bullet should not be more than 85 characters including spaces"
+                                                                            name="./bullet1"/>
+                                                                        <bullet2
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                            fieldLabel="Bullet 2"
+                                                                            fieldDescription="The bullet should not be more than 85 characters including spaces"
+                                                                            name="./bullet2"/>
+                                                                        <bullet3
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                            fieldLabel="Bullet 3"
+                                                                            fieldDescription="The bullet should not be more than 85 characters including spaces"
+                                                                            name="./bullet3"/>
+                                                                        <bullet4
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                            fieldLabel="Bullet 4"
+                                                                            fieldDescription="The bullet should not be more than 85 characters including spaces"
+                                                                            name="./bullet4"/>
+                                                                        <bullet5
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                            fieldLabel="Bullet 5"
+                                                                            fieldDescription="The bullet should not be more than 85 characters including spaces"
+                                                                            name="./bullet5"/>
+                                                                    </items>
+                                                                </bullets>
+                                                                <ctatext
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                    fieldLabel="CTA text"
+                                                                    name="./ctatext"
+                                                                    required="{Boolean}true"/>
+                                                                <ctalink
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                    fieldLabel="CTA url"
+                                                                    name="./ctalink"
+                                                                    required="{Boolean}true"
+                                                                    rootPath="/content/edc"/>
+                                                                <ctatarget
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                                    fieldLabel="CTA target"
+                                                                    name="./ctatarget">
+                                                                    <items jcr:primaryType="nt:unstructured">
+                                                                        <existing
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            text="Existing window"
+                                                                            value="_self"/>
+                                                                        <new
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            text="New window"
+                                                                            value="_blank"/>
+                                                                    </items>
+                                                                </ctatarget>
+                                                            </items>
+                                                        </card>
+                                                    </items>
+                                                </column>
+                                            </items>
+                                        </field>
+                                    </multicards>
+                                </items>
+                            </configTab>
+                        </items>
+                    </cardtab>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

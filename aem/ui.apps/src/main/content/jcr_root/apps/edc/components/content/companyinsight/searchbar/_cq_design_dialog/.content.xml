@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Company Insight Search Form - Embed use only"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <general jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}false"
+                        jcr:title="General">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <companyLabel
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Enter the text for the Company label"
+                                        fieldLabel="Company label"
+                                        required="{Boolean}true"
+                                        name="./companyLabel"/>
+                                    <companyPlaceholder
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Enter the text for the Company placeholder"
+                                        fieldLabel="Company placeholder"
+                                        required="{Boolean}true"
+                                        name="./companyPlaceholder"/>
+                                    <countryLabel
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Enter the text for the Country label"
+                                        fieldLabel="Country label"
+                                        required="{Boolean}true"
+                                        name="./countryLabel"/>
+                                    <countryPlaceholder
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Enter the text for the Country placeholder"
+                                        fieldLabel="Country placeholder"
+                                        required="{Boolean}true"
+                                        name="./countryPlaceholder"/>
+                                    <minLengthError
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Enter the text for the Minimum length error"
+                                        fieldLabel="Minimum length error"
+                                        required="{Boolean}true"
+                                        name="./minLengthError"/>
+                                    <maxLengthError
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Enter the text for the Maximum length error"
+                                        fieldLabel="Maximum length error"
+                                        required="{Boolean}true"
+                                        name="./maxLengthError"/>
+                                    <notFoundMsg
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Enter the text for the No found message error"
+                                        fieldLabel="Not Found Error Message Text"
+                                        required="{Boolean}true"
+                                        name="./notFoundMsg"/>
+                                    <wellin
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                    <layout
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <heading
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/text"
+                                            class="coral-Form-fieldlabel"
+                                            text="Accessibility"/>
+                                        <searchBtnText
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldDescription="Enter the text for the search button (text not visible)"
+                                            fieldLabel="Search button text"
+                                            required="{Boolean}true"
+                                            name="./searchBtnText"/>
+                                        <directionsText
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldDescription="Enter the text for directions"
+                                            fieldLabel="Directions text"
+                                            required="{Boolean}true"
+                                            name="./directionsText"/>
+                                        <ariaSearchResultLabel
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldDescription="Enter the Aria search result label for the country selector"
+                                            fieldLabel="Aria search result label"
+                                            required="{Boolean}true"
+                                            name="./ariaSearchResultLabel"/>
+                                        </items>
+                                    </wellin>
+                                </items>
+                            </column>
+                        </items>
+                    </general>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

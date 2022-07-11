@@ -1,0 +1,191 @@
+.c-product-form-card {
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(25, 25, 25, 0.1);
+    -webkit-transition: box-shadow .5s ease;
+    -moz-transition: box-shadow .5s ease;
+    transition: box-shadow .5s ease;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 2.25rem 1.25rem 2.5rem;
+}
+
+.c-product-form-card:hover {
+    -webkit-box-shadow: 0 0 20px 10px rgba(51, 51, 51, 0.1);
+    -moz-box-shadow: 0 0 20px 10px rgba(51, 51, 51, 0.1);
+    box-shadow: 0 0 20px 10px rgba(51, 51, 51, 0.1);
+}
+
+.c-product-form-card * {
+    box-sizing: border-box;
+}
+
+.c-product-form-card .card-content .title {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.7777;
+    margin: 0;
+}
+
+@media (min-width: 720px) {
+    .c-product-form-card .card-content .title {
+        font-size: 1.125rem;
+        line-height: 1.7777;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-product-form-card .card-content .title {
+        font-size: 1.25rem;
+        line-height: 1.4;
+        letter-spacing: 0;
+    }
+}
+
+.c-product-form-card .card-content .description {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.7142;
+    font-weight: normal;
+    color: #707070;
+    margin-top: .5rem;
+    margin-bottom: 0;
+}
+
+@media (min-width: 720px) {
+    .c-product-form-card .card-content .description {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-product-form-card .card-content .description {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+.c-product-form-card .card-actions {
+    margin-top: 1rem;
+}
+
+.c-product-form-card .card-actions .secondary-cta {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.c-product-form-card .card-image {
+    align-self: center;
+}
+
+.c-product-form-card .card-image img {
+    width: 104px;
+    height: 104px;
+}
+
+.c-product-form-card.grc-card {
+    justify-content: space-between;
+    flex-direction: row;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+}
+
+.c-product-form-card.grc-card .card-content {
+    width: inherit;
+    padding-right: 16px;
+}
+
+.c-product-form-card.grc-card .description {
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 719px) {
+    .c-product-form-card .card-actions .button {
+        padding: 12px 30px;
+    }
+    .c-product-form-card .card-actions .button:hover {
+        padding: 12px 25px;
+    }
+    .c-product-form-card .card-actions .button:hover span {
+        padding-right: 10px;
+    }
+    .c-product-form-card .card-actions .button:hover span::after {
+        margin-right: -20px;
+    }
+    .c-product-form-card .card-image {
+        display: none;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-product-form-card {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .c-product-form-card.no-desc {
+        align-items: center;
+    }
+    .c-product-form-card .card-content {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 20px;
+        position: relative;
+        width: 63.33333333%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-product-form-card .card-content {
+        width: 63.33333333%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-product-form-card .card-actions {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 36.66666667%;
+        align-self: flex-end;
+        text-align: center;
+        margin-top: 0;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-product-form-card .card-actions {
+        width: 36.66666667%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-product-form-card .card-actions .button {
+        width: 100%;
+    }
+    .c-product-form-card.grc-card .card-content {
+        padding-right: 16px;
+    }
+}
+
+@media (min-width: 1140px) {
+    .c-product-form-card.grc-card .card-content {
+        padding-right: 32px;
+    }
+}

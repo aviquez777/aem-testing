@@ -1,0 +1,100 @@
+body.modal-is-open.on-measure-questions {
+    height: auto;
+}
+
+.c-inclusive-trade-measure-questions, .section .levels .c-inclusive-trade-measure-questions,
+.section .content .c-inclusive-trade-measure-questions,
+form .levels .c-inclusive-trade-measure-questions,
+form .content .c-inclusive-trade-measure-questions,
+div .levels .c-inclusive-trade-measure-questions,
+div .content .c-inclusive-trade-measure-questions,
+section form .levels .c-inclusive-trade-measure-questions,
+section form .content .c-inclusive-trade-measure-questions,
+div form .levels .c-inclusive-trade-measure-questions,
+div form .content .c-inclusive-trade-measure-questions {
+    float: left;
+    width: 100%;
+}
+
+.c-inclusive-trade-measure-questions h3, .section .levels .c-inclusive-trade-measure-questions h3, .section .content .c-inclusive-trade-measure-questions h3, form .levels .c-inclusive-trade-measure-questions h3, form .content .c-inclusive-trade-measure-questions h3, div .levels .c-inclusive-trade-measure-questions h3, div .content .c-inclusive-trade-measure-questions h3 {
+    padding-bottom: 1rem;
+}
+
+.c-inclusive-trade-measure-questions p, .section .levels .c-inclusive-trade-measure-questions p, .section .content .c-inclusive-trade-measure-questions p, form .levels .c-inclusive-trade-measure-questions p, form .content .c-inclusive-trade-measure-questions p, div .levels .c-inclusive-trade-measure-questions p, div .content .c-inclusive-trade-measure-questions p {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.c-inclusive-trade-measure-questions ul, .section .levels .c-inclusive-trade-measure-questions ul, .section .content .c-inclusive-trade-measure-questions ul, form .levels .c-inclusive-trade-measure-questions ul, form .content .c-inclusive-trade-measure-questions ul, div .levels .c-inclusive-trade-measure-questions ul, div .content .c-inclusive-trade-measure-questions ul {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.c-inclusive-trade-measure-questions ul li, .section .levels .c-inclusive-trade-measure-questions ul li, .section .content .c-inclusive-trade-measure-questions ul li, form .levels .c-inclusive-trade-measure-questions ul li, form .content .c-inclusive-trade-measure-questions ul li, div .levels .c-inclusive-trade-measure-questions ul li, div .content .c-inclusive-trade-measure-questions ul li {
+    float: left;
+    width: 100%;
+    list-style-type: disc;
+    margin: 5px 0;
+}
+
+.c-inclusive-trade-measure-questions .c-more-information-modal, .section .levels .c-inclusive-trade-measure-questions .c-more-information-modal, .section .content .c-inclusive-trade-measure-questions .c-more-information-modal, form .levels .c-inclusive-trade-measure-questions .c-more-information-modal, form .content .c-inclusive-trade-measure-questions .c-more-information-modal, div .levels .c-inclusive-trade-measure-questions .c-more-information-modal, div .content .c-inclusive-trade-measure-questions .c-more-information-modal, .c-inclusive-trade-measure-questions .c-more-information-modal.on-title {
+    margin-top: .3rem;
+    padding-left: .75rem;
+}
+
+.c-inclusive-trade-measure-questions .c-more-information-modal button.modal-triggerer {
+    padding: 0;
+    height: 13px;
+    width: 13px;
+}
+
+.c-inclusive-trade-measure-questions .checkbox-item, .section .levels .c-inclusive-trade-measure-questions .checkbox-item, .section .content .c-inclusive-trade-measure-questions .checkbox-item, form .levels .c-inclusive-trade-measure-questions .checkbox-item, form .content .c-inclusive-trade-measure-questions .checkbox-item, div .levels .c-inclusive-trade-measure-questions .checkbox-item, div .content .c-inclusive-trade-measure-questions .checkbox-item {
+    width: 100%;
+    float: left;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    padding: 0;
+    background: transparent;
+    border-radius: none;
+}
+
+.c-inclusive-trade-measure-questions .checkbox-item .input-description {
+    display: inline-block;
+    width: calc(90% - 1rem);
+}
+
+.c-inclusive-trade-measure-questions .checkbox-item input[type='checkbox'].disabled {
+    background-color: #ebebeb;
+    border-color: 1px solid #ccc;
+}
+
+.c-inclusive-trade-measure-questions .checkbox-item label, .section .levels .c-inclusive-trade-measure-questions .checkbox-item label, .section .content .c-inclusive-trade-measure-questions .checkbox-item label, section form .levels .c-inclusive-trade-measure-questions .checkbox-item label, section form .content .c-inclusive-trade-measure-questions .checkbox-item label, div form .levels .c-inclusive-trade-measure-questions .checkbox-item label, div form .content .c-inclusive-trade-measure-questions .checkbox-item label {
+    margin-bottom: 0;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 22px;
+}
+
+.c-inclusive-trade-measure-questions .extra-question, .section .levels .c-inclusive-trade-measure-questions .extra-question, .section .content .c-inclusive-trade-measure-questions .extra-question, form .levels .c-inclusive-trade-measure-questions .extra-question, form .content .c-inclusive-trade-measure-questions .extra-question, div .levels .c-inclusive-trade-measure-questions .extra-question, div .content .c-inclusive-trade-measure-questions .extra-question {
+    float: left;
+    width: 100%;
+}
+
+.c-inclusive-trade-measure-questions .extra-question.hide {
+    display: none;
+}
+
+.c-inclusive-trade-measure-questions .extra-question p, .section .levels .c-inclusive-trade-measure-questions .extra-question p, .section .content .c-inclusive-trade-measure-questions .extra-question p, section form .levels .c-inclusive-trade-measure-questions .extra-question p, section form .content .c-inclusive-trade-measure-questions .extra-question p, div form .levels .c-inclusive-trade-measure-questions .extra-question p, div form .content .c-inclusive-trade-measure-questions .extra-question p {
+    margin-bottom: 1rem;
+}
+
+.c-inclusive-trade-measure-questions .extra-question label, .section .levels .c-inclusive-trade-measure-questions .extra-question label, .section .content .c-inclusive-trade-measure-questions .extra-question label, section form .levels .c-inclusive-trade-measure-questions .extra-question label, section form .content .c-inclusive-trade-measure-questions .extra-question label, div form .levels .c-inclusive-trade-measure-questions .extra-question label, div form .content .c-inclusive-trade-measure-questions .extra-question label {
+    float: left;
+}
+
+.c-inclusive-trade-measure-questions .extra-question div[data-form-field] input {
+    margin-bottom: 1.5em;
+}

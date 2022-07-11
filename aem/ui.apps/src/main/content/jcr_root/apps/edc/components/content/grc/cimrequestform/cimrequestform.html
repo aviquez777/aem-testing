@@ -1,0 +1,159 @@
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+<sly data-sly-use.messages="com.edc.edcweb.core.models.FormCommonMessages"/>
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"/>
+<sly data-sly-use.ibTemplateObj="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+
+<!--/* inlclude lib to handle csrf token for us*/-->
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html" data-sly-test.clientlibCategories="granite.csrf.standalone" data-sly-call="${clientLib.js @ categories=clientlibCategories}" />
+
+<div data-sly-test="${properties.title}" class="c-cim-form" data-url="/bin/myedc/userprofiletype">
+    <form class="${wcmmode.edit ? '': 'hide'}" name="EDC-CIM-FORM" novalidate="" action="/bin/cimRequestForm">
+        <input type="hidden" class="form-control" data-no-url="true" name="userName" value="" />
+        <input type="hidden" class="form-control" data-no-url="true" name="userEmail" value="" />
+        <input type="hidden" name="_charset_" id="_charset_" class="form-control" data-no-url="" value="UTF-8" />
+        <h2 class="title">${properties.title}</h2>
+        <p class="description">${properties.description}</p>
+        <section class="form-section">
+            <h3 class="section-title">${properties.companyInfoTitle}</h3>
+            <div data-form-field="companyName" class="form-group">
+                <label for="companyName-${uuid}">${properties.companyNameLabel}</label>
+                <input type="text" id="companyName-${uuid}" class="form-control" name="companyName" placeholder="${properties.companyNamePlaceholder}" data-no-url="true" required="" validation-rule="legalName" />
+                <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+            </div>
+            <div data-form-field="website1" class="form-group">
+                <label for="website1-${uuid}">${properties.websiteLabel}</label>
+                <input type="text" id="website1-${uuid}" class="form-control" name="website1" placeholder="${properties.websitePlaceholder}" validation-rule="none" />
+                <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+            </div>
+        </section>
+        <section class="form-section">
+            <h3 data-sly-test="${properties.headquartersTitle}" class="section-title">${properties.headquartersTitle}</h3>
+            <div data-form-field="companyCountry" class="form-group country">
+                <div class="c-dropdown">
+                    <div class="dropdown-overlay">
+                        <label for="companyCountry-${uuid}">${properties.countryLabel}</label>
+                        <div class="dropdown-container">
+                            <div class="dropdown-title">
+                                <span class="label-text">${properties.countryLabel}</span>
+                                <span class="close-btn"></span>
+                            </div>
+                            <sly data-sly-use.ds="${'com.edc.edcweb.core.models.FormCommonObjects' @ path='/apps/edc/settings/wcm/designs/edc-data/countries', list='CAN'}"></sly>
+                            <select name="companyCountry" id="companyCountry-${uuid}" class="form-control ui selection dropdown" required="" data-no-url="true" data-default-value="${properties.countryPlaceholder}" data-limit="">
+                                <option value="" hidden="">${properties.countryPlaceholder}</option>
+                                <option data-sly-repeat.item="${ds.optionsFromDataSourcePath}" value="${ds.optionsFromDataSourcePath[item]}">${ds.optionsFromDataSourcePath[item]}</option>
+                            </select>
+                            <span class="error dropdown-error" data-req-message="${messages.formErrorMessages.required}" data-select-one-message="${messages.formErrorMessages.format}"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-form-field="companyAddress1" class="form-group input-mid first">
+                <label for="companyAddress1-${uuid}">${properties.addressLabel}</label>
+                <input type="text" id="companyAddress1-${uuid}" class="form-control" name="companyAddress1" data-no-url="true" placeholder="${properties.addressPlaceholder}" validation-rule="address1" />
+                <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+            </div>
+            <div data-form-field="companyCity" class="form-group">
+                <label for="companyCity-${uuid}">${properties.cityLabel}</label>
+                <input type="text" id="companyCity-${uuid}" class="form-control" name="companyCity" data-no-url="true" placeholder="${properties.cityPlaceholder}" validation-rule="city" />
+                <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+            </div>
+            <div class="input-group form-row">
+                <div data-form-field="companyProvince" class="form-group input-half first province">
+                    <div class="c-dropdown hide can">
+                        <div class="dropdown-overlay">
+                            <label for="companyProvince-${uuid}">${properties.provinceLabel}</label>
+                            <div class="dropdown-container">
+                                <div class="dropdown-title">
+                                    <span class="label-text">${properties.provinceLabel}</span>
+                                    <span class="close-btn"></span>
+                                </div>
+                                <sly data-sly-use.ds="${'com.edc.edcweb.core.models.FormCommonObjects' @ path='/apps/edc/settings/wcm/designs/edc-data/usStates'}"></sly>
+                                <select name="companyProvince" id="companyProvince-${uuid}" class="form-control ui selection dropdown" data-no-url="true" data-default-value="${properties.provincePlaceholder}" data-limit="">
+                                    <option value="" hidden="">${properties.provincePlaceholder}</option>
+                                    <option data-sly-repeat.item="${ds.optionsFromDataSourcePath}" value="${ds.optionsFromDataSourcePath[item]}">${ds.optionsFromDataSourcePath[item]}</option>
+                                </select>
+                                <span class="error dropdown-error" data-req-message="${messages.formErrorMessages.required}" data-select-one-message="${messages.formErrorMessages.format}"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="c-dropdown hide usa">
+                        <div class="dropdown-overlay">
+                            <label for="companyProvince-alt-${uuid}">${properties.provinceLabel}</label>
+                            <div class="dropdown-container">
+                                <div class="dropdown-title">
+                                    <span class="label-text">${properties.provinceLabel}</span>
+                                    <span class="close-btn"></span>
+                                </div>
+                                <sly data-sly-use.ds="${'com.edc.edcweb.core.models.FormCommonObjects' @ path='/apps/edc/settings/wcm/designs/edc-data/usStates'}"></sly>
+                                <select name="companyProvince-alt" id="companyProvince-alt-${uuid}" class="form-control ui selection dropdown" data-no-url="true" data-default-value="${properties.provincePlaceholder}" data-limit="">
+                                    <option value="" hidden="">${properties.provincePlaceholder}</option>
+                                    <option data-sly-repeat.item="${ds.optionsFromDataSourcePath}" value="${ds.optionsFromDataSourcePath[item]}">${ds.optionsFromDataSourcePath[item]}</option>
+                                </select>
+                                <span class="error dropdown-error" data-req-message="${messages.formErrorMessages.required}" data-select-one-message="${messages.formErrorMessages.format}"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <label for="companyProvinceInput-${uuid}">${properties.provinceLabel}</label>
+                    <input type="text" id="companyProvinceInput-${uuid}" name="companyProvinceInput" class="form-control" data-no-url="true" placeholder="${properties.provincePlaceholder}" validation-rule="province" />
+                    <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                </div>
+                <div data-form-field="companyPostal" class="form-group input-half last">
+                    <label for="companyPostal-${uuid}">${properties.postalCodeLabel}</label>
+                    <input type="text" id="companyPostal-${uuid}" class="form-control" name="companyPostal" data-no-url="true" placeholder="${properties.postalCodePlaceholder}" validation-rule="postalCode" />
+                    <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.postalcode}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                </div>
+            </div>
+        </section>
+        <section class="form-submit">
+            <div class="form-disclaimer">
+                ${properties.consentText @ context='html'}
+            </div>
+            <div class="form-cta">
+                <div data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='button', isUsedForModal='nomodal', buttonstate='enabled', buttontext=properties.submitBtn, btntype='submit'}"  data-sly-unwrap></div>
+            </div>
+        </section>
+        <div class="submit-failed-message hide">
+            <p>${messages.formErrorMessages.elqerror}</p>
+        </div>
+    </form>
+    <div class="form-success hide">
+        <div class="message-wrapper">
+            <div class="success-message hide">
+                <div class="message-content">
+                    <img class="success" src="${properties.successIcon}" alt="${properties.successTitle}" />
+                    <h2 class="title">${properties.successTitle}</h2>
+                    <div class="description">
+                        ${properties.successText @ context='html'}
+                    </div>
+                    <div class="isv-code hide">
+                        <p>${properties.isvText}<span> </span></p>
+                        <p class="code"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="insight-guide ${wcmmode.edit ? 'hide': ''}">
+                <h2 class="title" data-can-text="${properties.secondaryTitle}" data-alternate-text="${properties.alternativeTitle}"></h2>
+                <div class="description">
+                    <div class="can-text hide">
+                        ${properties.secondaryText @ context='html'}
+                    </div>
+                    <div class="alternate-text hide">
+                        ${properties.alternativeText @ context='html'}
+                    </div>
+                </div>
+                <sly data-sly-use.canadaURL="${'com.edc.edcweb.core.helpers.LinkExternalizer' @srcPath=properties.linkurl, scheme=request.scheme}"></sly>
+                <sly data-sly-use.alternateURL="${'com.edc.edcweb.core.helpers.LinkExternalizer' @srcPath=properties.alternativeCtaLink, scheme=request.scheme}"></sly>
+                <div class="link-container" data-can-url="${canadaURL.LinkWithHtmlExtension}" data-alternate-url="${alternateURL.LinkWithHtmlExtension}"
+                     data-can-text="${properties.ctatext}" data-alternate-text="${properties.alternativeCtaText}"
+                     data-can-target="${properties.linktarget}" data-alternate-target="${properties.alternativeCtaTarget}">
+                    <a class="button edc-primary-btn" href="#">
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <sly data-sly-resource="${'processingScreen' @ resourceType='edc/components/content/processingscreen'}" />
+</div>

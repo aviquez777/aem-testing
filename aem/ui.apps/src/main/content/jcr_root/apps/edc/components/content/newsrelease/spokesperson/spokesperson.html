@@ -1,0 +1,19 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.model="com.edc.edcweb.core.models.NewsReleaseSpokesperson" />
+<sly data-sly-test.title="${model.title}" />
+<sly data-sly-test.spokesperson="${model.spokeperson}" />
+<sly data-sly-call="${templates.placeholder @ isEmpty = !title, emptyTextAppend='No policy defined for component'}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !spokesperson, emptyTextAppend='Please check Article Author component on page'}"/>
+
+<section class="c-spokesperson" role="complementary" data-sly-test="${title && spokesperson}">
+  <sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+  <h2>${title}</h2>
+  <p data-sly.test="${spokesperson.authorname}">${spokesperson.authorname}</p>
+  <p data-sly.test="${spokesperson.company}">${spokesperson.company}</p>
+  <p data-sly.test="${spokesperson.phone}">
+    <sly data-sly-call="${commonTemplates.phonelink @ phonenumber=spokesperson.phone, linkchecker='valid'}"/>
+  </p>
+  <p data-sly.test="${spokesperson.email}">
+    <sly data-sly-call="${commonTemplates.mailtolink @ email=spokesperson.email, linkchecker='valid'}"/>
+  </p>
+</section>

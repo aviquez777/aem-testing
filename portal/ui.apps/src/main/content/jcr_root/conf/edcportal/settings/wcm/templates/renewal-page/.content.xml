@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Template">
+    <jcr:content
+        cq:lastModified="{Date}2019-03-27T14:46:08.529-04:00"
+        cq:lastModifiedBy="admin"
+        cq:templateType="/conf/edcportal/settings/wcm/template-types/myedc-page"
+        jcr:description="Single column page template used by Renewal page"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Renewal Page Template"
+        status="enabled"/>
+</jcr:root>

@@ -1,0 +1,105 @@
+.c-edc-position {
+    padding: 0 15px;
+    margin-bottom: 4rem;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.c-edc-position * {
+    box-sizing: border-box;
+}
+
+.c-edc-position h3,
+.c-edc-position p.subtitle {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: 0;
+}
+
+@media (min-width: 720px) {
+    .c-edc-position h3,
+    .c-edc-position p.subtitle {
+        font-size: .9375rem;
+        line-height: 1.6;
+        letter-spacing: -0.2px;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-edc-position h3,
+    .c-edc-position p.subtitle {
+        font-size: .9375rem;
+        line-height: 1.6;
+        letter-spacing: -0.2px;
+    }
+}
+
+.c-edc-position .subtitle {
+    margin-bottom: 1rem;
+}
+
+.c-edc-position h3 {
+    margin-bottom: 1rem;
+}
+
+.c-edc-position h2.title {
+    color: #26a2b5;
+    margin-bottom: 1.5rem;
+}
+
+.c-edc-position img {
+    width: 100%;
+    max-width: 160px;
+}
+
+.c-edc-position ul {
+    padding-left: 0;
+}
+
+.c-edc-position ul li {
+    color: #333;
+    font-family: "Georgia", "Times New Roman", Times, serif;
+    position: relative;
+}
+
+.c-edc-position ul li::before {
+    background: #333;
+    border-radius: 100%;
+    content: '';
+    display: inline-block;
+    height: 4px;
+    margin: 2px 6px;
+    position: relative;
+    width: 4px;
+}
+
+.c-edc-position a.learn-about {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@media (min-width: 720px) {
+    .c-edc-position {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 41.66666667%;
+        margin-bottom: 5rem;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-edc-position {
+        width: 41.66666667%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-edc-position {
+        margin-left: 8.33333333%;
+    }
+}

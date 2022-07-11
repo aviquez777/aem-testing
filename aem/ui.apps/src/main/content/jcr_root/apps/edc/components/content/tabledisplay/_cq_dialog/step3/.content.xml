@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Stpep 3 - Table Design"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container"
+        granite:class="td-dialog-table-design-pane">
+        <items jcr:primaryType="nt:unstructured">
+         <step3 jcr:primaryType="nt:unstructured"
+            jcr:title="Table Design"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <isTableSortable jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldLabel="Is Table Sortable?"
+                        fieldDescription="Use this feature to specify if table is sortable."
+                        name="./isTableSortable"
+                        granite:class="cq-dialog-dropdown-showhide">
+                        <granite:data
+                            jcr:primaryType="nt:unstructured"
+                            cq-dialog-dropdown-showhide-target=".sortable-showhide-target"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <variant1 jcr:primaryType="nt:unstructured"
+                                text="Default (Sort Functionality Not Required)."
+                                selected="{Boolean}true"
+                                value="default"/>
+                            <variant2 jcr:primaryType="nt:unstructured"
+                                text="Sortable (Activate Sort Functionality)"
+                                value="sortable"/>
+                        </items>
+                    </isTableSortable>
+                    <instructions jcr:primaryType="nt:unstructured"
+                        granite:class="hide sortable-showhide-target"
+                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                        <granite:data
+                            jcr:primaryType="nt:unstructured"
+                            showhidetargetvalue="sortable"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <alert
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/alert"
+                                size="S"
+                                text="IMPORTANT."
+                                variant="warning"/>
+                            <heading1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                level="4"
+                                text="Sortable Functionality Constraints."/>
+                            <instructions
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                resize="none"
+                                disabled="{Boolean}true"
+                                granite:class="td-field-readonly"
+                                value="Normally sortable functionality will just work with tables that have same quantity of columns per row. For other table variants please deactivate this functionality. Functionality is just rendered in view as publish mode to avoid confusions in data inserted while authoring."/>
+                        </items>
+                    </instructions>
+                    <theader
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/include"
+                        path="edc/components/content/tabledisplay/cq:dialog/step3/theader/content"/>
+                    <tbody
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/include"
+                        path="edc/components/content/tabledisplay/cq:dialog/step3/tbody/content"/>
+                    <tfooter
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/include"
+                        path="edc/components/content/tabledisplay/cq:dialog/step3/tfooter/content"/>
+                </items>
+            </step3>
+        </items>
+    </content>
+</jcr:root>

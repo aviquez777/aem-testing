@@ -1,0 +1,155 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml 
+trigger:
+  - develop
+  
+variables:
+- group: WhiteSource
+
+resources:
+  repositories:
+  - repository: test-automation
+    type: git
+    name: Digital Platform/test-automation
+stages:
+#  - stage: Build
+#    jobs:
+#    - job: build
+#      steps:
+#        - checkout: self
+#          clean: true
+#        - task: Maven@3
+#          inputs:
+#            publishJUnitResults: false
+#        - task: EDCWhiteSourceUAWrapper@1
+#          inputs:
+#              WS_APIKEY: $(apiKey)
+#              UserKey: $(userKey)
+#              WS_DOWNLOAD_URL: 'https://unified-agent.s3.amazonaws.com/wss-unified-agent.jar'
+#              WS_WSS_URL: 'https://app.whitesourcesoftware.com/agent'
+#              ProductIdentifier: 'productToken'
+#              WS_PRODUCTTOKEN: '6c2846fd1f0a4ed09e5bbcb76e9ad304eba4ffd04656420c905e7c7112cd34a8'
+#              ProjectIdentifier: 'projectToken'
+#              WS_PROJECTTOKEN: '426face5b75f46cc84297753b978277fb5e694dfa2a4427d87869cdc0a1d43f0'
+              #overrideDefaultArguments: true
+              #arguments: "-jar $(build_workingdirectory)/wss-unified-agent.jar -generateScanReport true -d $(build_workingdirectory) -whiteSourceFolderPath $(build_workingdirectory)"
+  - stage: Tests
+    pool:
+     name: Test
+     demands:
+      - Agent.Name -equals ai3112_c3rnpd_vs2017_svc
+    # jobs: 
+    # - job: test
+    #   steps:
+    #      - checkout: test-automation
+    #        clean: true
+    #        timeoutInMinutes: 60
+    #      - task: DotNetCoreCLI@2
+    #        inputs:
+    #          command: 'restore'
+    #          projects: '**/*.csproj'
+    #          feedsToUse: 'select'
+    #      - task: NuGetToolInstaller@0
+    #        displayName: Use NuGet 4.4.1
+    #        inputs:
+    #         versionSpec: 4.4.1
+    #      - task: PowerShell@2
+    #        displayName: Get agent Chrome version
+    #        inputs:
+    #         targetType: inline 
+    #         script: "#2021-10-29 from Eric Belanger\n#Get the current version of Chrome and save it to a the pipeline variable ChromeVersion. \n\n$path32bit = \"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe\"\n$path64bit = \"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\"\n\nif(Test-Path -Path $path64bit)\n{\n    \n   $version = ((Get-Item $path64bit).VersionInfo).ProductVersion.PadRight(14,'0')\n}\nelse\n{\n    Write-Host \"Chrome 64 bit is not installed.\"\n    if(Test-Path -Path $path32bit)\n    {\n       $version = ((Get-Item $path32bit).VersionInfo).ProductVersion.PadRight(14,'0')\n    }\n    else\n    {\n       Write-Host \"Chrome 32 bit is not installed.\"\n       Write-Error \"Chrome 64 or 32 bit are not installed\"\n    }\n}\nif($version)\n{\n    Write-Host \"##vso[task.setvariable variable=ChromeVersion]\"$version\n}"
+    #      - task: NuGetCommand@2
+    #        displayName: Restore
+    #        inputs:
+    #         selectOrConfig: 'config'
+    #         nugetConfigPath: 'nuget.config'  
+    #         solution: '**/*.sln'
+    #      - task: NuGetCommand@2
+    #        displayName: Nuget update ChromeDriver
+    #        inputs:
+    #         command: custom
+    #         arguments: 'update $(System.DefaultWorkingDirectory)\EDC.AEM.AT\EDC.AEM.AT.sln -id Selenium.WebDriver.ChromeDriver -Version $(ChromeVersion) -Source https://api.nuget.org/v3/index.json'
+    #        continueOnError: true
+        #  - task: VSBuild@1
+        #    inputs:
+        #     solution: '**\*.sln'
+        #     vsVersion: '15.0'
+        #     msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactstagingdirectory)\\"'
+         
+#         - script: 'dotnet vstest EDC.AEM.AT.Tests.dll /TestCaseFilter:"TestCategory=footer" --Settings:PPR.runsettings /logger:trx;LogFileName=[filename].trx'
+#         - task: DotNetCoreCLI@2
+#           displayName: 'Run unit tests'
+#           inputs:
+#            command: 'test'
+#            arguments: '--no-build'
+#            publishTestResults: true
+#            projects: '**/*.Tests.csproj'
+            
+    variables:
+      solution: '**/*.sln'
+      buildPlatform: 'Any CPU'
+      buildConfiguration: 'Release'
+    jobs:
+      - job: test
+        timeoutInMinutes: 0
+        cancelTimeoutInMinutes: 0
+        steps:
+        - checkout: test-automation
+          clean: true
+        
+        - task: NuGetToolInstaller@0
+          displayName: Use NuGet 4.4.1
+          inputs:
+            versionSpec: 4.4.1
+
+        - task: PowerShell@2
+          displayName: Get agent Chrome version
+          inputs:
+              targetType: inline
+              script: "#2021-10-29 from Eric Belanger\n#Get the current version of Chrome and save it to a the pipeline variable ChromeVersion. \n\n$path32bit = \"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe\"\n$path64bit = \"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\"\n\nif(Test-Path -Path $path64bit)\n{\n    \n   $version = ((Get-Item $path64bit).VersionInfo).ProductVersion.PadRight(14,'0')\n}\nelse\n{\n    Write-Host \"Chrome 64 bit is not installed.\"\n    if(Test-Path -Path $path32bit)\n    {\n       $version = ((Get-Item $path32bit).VersionInfo).ProductVersion.PadRight(14,'0')\n    }\n    else\n    {\n       Write-Host \"Chrome 32 bit is not installed.\"\n       Write-Error \"Chrome 64 or 32 bit are not installed\"\n    }\n}\nif($version)\n{\n    Write-Host \"##vso[task.setvariable variable=ChromeVersion]\"$version\n}"
+
+        - task: NuGetCommand@2
+          displayName: Restore
+          inputs:
+            selectOrConfig: 'config'
+            nugetConfigPath: 'nuget.config'  
+            solution: $(solution)
+
+        - task: NuGetCommand@2
+          displayName: Nuget update ChromeDriver
+          inputs:
+              command: custom
+              arguments: 'update $(System.DefaultWorkingDirectory)\EDC.AEM.AT\EDC.AEM.AT.sln -id Selenium.WebDriver.ChromeDriver -Version $(ChromeVersion) -Source https://api.nuget.org/v3/index.json '
+          continueOnError: true
+
+        - task: VSBuild@1
+          inputs:
+            solution: '**\*.sln'
+            vsVersion: '15.0'
+            msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactstagingdirectory)\\"'
+
+        - task: CopyFiles@2
+          inputs:
+            targetFolder: '$(Build.ArtifactStagingDirectory)' 
+        
+        - task: VSTest@2
+          displayName: Tests
+          timeoutInMinutes: 0
+          inputs:
+            testSelector: testAssemblies
+            runInParallel: true
+            testAssemblyVer2: |
+              **\*EDC.AEM.AT.Tests.dll
+              !**\obj\**
+          # testAssemblyVer2: |
+          #   **\*EDC.AEM.AT.Tests.dll
+          #   **\*test*.dll
+          #   !**\*TestAdapter.dll
+          #   !**\obj\**
+            #testFiltercriteria: 'TestCategory=redirect'
+            searchFolder: $(build.artifactstagingdirectory)
+            resultsFolder: $(Agent.TempDirectory)/TestResults
+            runSettingsFile: $(build.artifactstagingdirectory)/EDC.AEM.AT/EDC.AEM.AT.Tests/PPR.runsettings
+

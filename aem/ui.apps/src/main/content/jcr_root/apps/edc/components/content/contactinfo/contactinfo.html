@@ -1,0 +1,35 @@
+<sly data-sly-use.model="com.edc.edcweb.core.models.ContactInfo"/>
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !model.title}"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+
+<section data-sly-test="${model.title}" class="contact-information full-width" itemScope itemType="http://schema.org/Organization" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'Contact Information'}" data-event-type="link"  data-event-level="primary" data-event-engagement="2" data-event-action="bottom" >
+    <div class="container">
+        <div class="content">
+            <div>
+                <h2>${model.title}</h2>
+                <p class="subtitle">${model.schedule}</p>
+                <p class="phone-number">
+                    <span itemProp="telephone" content="${model.phonenumber}">
+                        <sly data-sly-call="${commonTemplates.phonelink @ phonenumber=model.phonenumber, linkchecker='valid'}"/>
+                    </span>
+                </p>
+                <p>${model.submittext}
+                    <sly data-sly-test.eventname="${'{0}{1}' @ format=['link click - ', model.linktext]}"></sly>
+                    <sly data-sly-test="${model.linktext}"
+                         data-sly-call="${commonTemplates.link @ link=model.linkurl, ctatext=model.linktext, target=model.linktarget, classes='', type='link', modaltext='', modaltrigger='', linkchecker='valid', eventname=eventname}"/>
+                </p>
+            </div>
+            <div data-sly-test="${model.fileReference}" class="customer-rep" itemScope itemType="http://schema.org/Person">
+                <div class="customer-info" data-sly-test="${model.employeename || model.employeetitle}">
+                    <p data-sly-test="${model.employeename}" itemProp="name"><strong>${model.employeename}</strong></p>
+                    <p data-sly-test="${model.employeetitle}" itemProp="jobTitle">${model.employeetitle}</p>
+                </div>
+                <div class="customer-image">
+                    <img src="${model.fileReference}" alt="${model.employeename}  ${model.employeetitle}" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

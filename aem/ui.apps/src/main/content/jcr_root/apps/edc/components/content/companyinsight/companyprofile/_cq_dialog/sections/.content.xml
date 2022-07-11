@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <elegible
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Section Map"
+                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items
+                            jcr:primaryType="nt:unstructured">
+                            <sectionMap
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                composite="{Boolean}true"
+                                required="{Boolean}true"
+                                fieldLabel="Sections">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    name="./fieldMap">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <column
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                            <items jcr:primaryType="nt:unstructured">
+                                              <keyName
+                                                  jcr:primaryType="nt:unstructured"
+                                                  sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                  fieldLabel="Section Key Name"
+                                                  fieldDescription="Ask dev for this"
+                                                  required="true"
+                                                  name="./keyName"/>
+                                              <title
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Language specific section title"
+                                                fieldLabel="Section Title"
+                                                name="./title"/>
+                                              <displayIfNull
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Display this text if nothing is sent by the API"
+                                                fieldLabel="Default Section Text"
+                                                name="./displayIfNull"/>
+                                              <sectionClass
+                                                  jcr:primaryType="nt:unstructured"
+                                                  sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                  fieldLabel="Section CSS Class"
+                                                  fieldDescription="class to apply to the section. Ask dev for this"
+                                                  required="false"
+                                                  name="./sectionClass"/>
+                                                <fieldList
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                    composite="{Boolean}true"
+                                                    required="{Boolean}true"
+                                                    fieldLabel="Field List">
+                                                    <field
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                        name="./fieldList">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <column
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                                <items jcr:primaryType="nt:unstructured">
+                                                                  <fieldName
+                                                                      jcr:primaryType="nt:unstructured"
+                                                                      sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                      fieldLabel="JSON Key name"
+                                                                      fieldDescription="Ask dev for this"
+                                                                      required="true"
+                                                                      name="./fieldName"/>
+                                                                  <fieldLabel
+                                                                      jcr:primaryType="nt:unstructured"
+                                                                      sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                      fieldLabel="Field Label"
+                                                                      fieldDescription="Optional field Label"
+                                                                      required="false"
+                                                                      name="./fieldLabel"/>
+                                                                </items>
+                                                            </column>
+                                                        </items>
+                                                    </field>
+                                                </fieldList>
+                                            </items>
+                                        </column>
+                                    </items>
+                                </field>
+                            </sectionMap>
+                        </items>
+                    </column>
+                </items>
+            </elegible>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,89 @@
+.c-blue-banner {
+    text-decoration: none;
+}
+
+.c-blue-banner .blue-banner-container {
+    border: 1px solid #1a65b2;
+    border-radius: .25rem;
+}
+
+.c-blue-banner .blue-banner-container div:first-child {
+    margin: 1rem 1rem 0;
+}
+
+.c-blue-banner .banner-white {
+    background-color: #fff;
+}
+
+.c-blue-banner .banner-lightblue {
+    background-color: #f4f8fc;
+}
+
+.c-blue-banner img {
+    float: initial;
+    padding: 0 1rem 1rem 0;
+    max-width: 3rem;
+    max-height: 3rem;
+}
+
+.c-blue-banner .banner-title {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: .5rem;
+}
+
+.c-blue-banner p {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+    display: table;
+    line-height: 1.5rem;
+    padding: 0;
+    margin: 0;
+}
+
+.c-blue-banner .banner-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 1.75rem;
+}
+
+.c-blue-banner .banner-content div {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+}
+
+.c-blue-banner .links {
+    margin-top: 1.75rem;
+}
+
+.c-blue-banner .links a {
+    display: block;
+}
+
+.c-blue-banner .links a:first-child {
+    margin-bottom: 1.75rem;
+}
+
+@media (min-width: 720px) {
+    .c-blue-banner img {
+        float: left;
+        padding: 0 1rem 1rem 0;
+        max-width: 3rem;
+        max-height: 3rem;
+    }
+    .c-blue-banner .links {
+        width: 100%;
+        text-align: right;
+    }
+    .c-blue-banner .links a {
+        display: inline-block;
+        margin-left: 1.75rem;
+        margin-bottom: 0;
+    }
+    .c-blue-banner .links a:first-child {
+        margin-bottom: 0;
+    }
+}

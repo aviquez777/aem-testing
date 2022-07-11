@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items
+            jcr:primaryType="nt:unstructured">
+            <inquirytitle
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Inquiry info title"
+                fieldDescription="Black text part of the inquiry info title"
+                name="./inquirytitle"
+                required="{Boolean}true"/>
+            <inquirybluetitle
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Inquiry info blue title"
+                fieldDescription="Blue text part of the inquiry info title"
+                name="./inquirybluetitle"
+                required="{Boolean}true"/>
+            <inquirydescription
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Inquiry info description"
+                fieldDescription="Text under Inquiry info title"
+                name="./inquirydescription"
+                required="{Boolean}true"/>
+        </items>
+    </content>
+</jcr:root>

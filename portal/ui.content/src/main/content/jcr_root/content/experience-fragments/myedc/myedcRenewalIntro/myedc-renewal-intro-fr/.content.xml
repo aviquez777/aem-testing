@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:tags="[]"
+        cq:template="/conf/edc/settings/wcm/templates/edc-experience-fragment"
+        cq:xfMasterVariation="{Boolean}true"
+        cq:xfVariantType="web"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Renewal Form Introduction French"
+        jcr:uuid="4304d9d1-615c-49b5-a0c4-da162fa2bde9"
+        sling:resourceType="edc/components/structure/xfpage">
+        <root
+            jcr:lastModified="{Date}2016-11-22T17:31:48.669+02:00"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <introtext
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="edcportal/components/content/introtext"
+                text="&lt;h2 style=&quot;text-align: center;&quot;>&lt;span class=&quot;blue-light&quot;>Mettez à jour votre profil&lt;/span>&lt;/h2>&#xa;&lt;h3 style=&quot;text-align: center;&quot;>Assurez-vous que vos renseignements sont à jour&lt;/h3>&#xa;&lt;p style=&quot;text-align: center;&quot;>Chaque année, en fonction des renseignements de votre profil, nous cherchons des moyens de vous offrir des solutions plus utiles. &lt;/p>&#xa;&lt;p style=&quot;text-align: center;&quot;>Veuillez revoir et actualiser votre profil, puis cliquez sur le bouton d’enregistrement pour poursuivre vers MonEDC. &lt;/p>&#xa;&lt;p style=&quot;text-align: center;&quot;>À titre de rappel, préserver votre vie privée est important pour nous. Soyez assuré que vos renseignements ne seront jamais vendus à des tiers. Pour en savoir plus, lisez notre &lt;a x-cq-linkchecker=&quot;valid&quot; href=&quot;/fr/enonce-confidentialite.html&quot;>politique de confidentialité&lt;/a>.&lt;/p>"
+                textIsRich="true"/>
+        </root>
+    </jcr:content>
+    <rep:policy/>
+</jcr:root>

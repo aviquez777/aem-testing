@@ -1,0 +1,109 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = true, emptyTextAppend='Component will render properlt only on publish mode, and once profile is selected'}"/>
+
+<sly data-sly-test="${wcmmode.disabled && !interceptor.doRedirect}" data-sly-use.ds="${'com.edc.edcportal.core.models.FormCommonObjects' @ path ='/apps/edcportal/settings/wcm/designs/myEDC-data/profileType'}"/>
+<sly data-sly-test.profiles="${ds.optionsFromDataSourcePath}"/>
+
+<sly data-sly-test="${wcmmode.disabled}" data-sly-use.model="${'com.edc.edcportal.core.models.ManageProfile'}"/>
+
+<sly data-sly-test.headers="${model.headers}"/>
+<sly data-sly-test.formFields="${model.formFields}"/>
+<sly data-sly-test.formFieldErrors="${model.formFieldErrors}"/>
+<sly data-sly-test.formDefinitions="${model.fieldDefinitions}"/>
+<sly data-sly-test.lang="${model.language}"/>
+<sly data-sly-test.profileType="${model.profileType}"/>
+<sly data-sly-test.isRegistration="${model.showTC}" />
+<sly data-sly-test.isRenewal="${model.isRenewal}" />
+<sly data-sly-test.addressService="${model.addressCompleteService}" />
+
+<sly data-sly-use.fieldsTemplate="/apps/edcportal/components/content/common/fieldstemplate.html" />
+<sly data-sly-use.uuidmodel="${'com.edc.edcportal.core.helpers.GenerateUuid'}"/>
+<sly data-sly-test.uuid="${uuidmodel.uuid}"/>
+
+<sly data-sly-use.tooltipTemplate="/apps/edcportal/components/content/common/tooltip.html" />
+<sly data-sly-use.dropdownTemplate="/apps/edcportal/components/content/common/dropdown.html" />
+<sly data-sly-use.multiSelectTemplate="/apps/edcportal/components/content/common/multiselect.html" />
+<sly data-sly-use.ds="${'com.edc.edcportal.core.models.FormCommonObjects' @ path ='/apps/edcportal/settings/wcm/designs/myEDC-data/formErrors'}"/>
+<sly data-sly-test.errorMessages="${ds.optionsFromDataSourcePath}"/>
+<!--/* AddressComplete */-->
+<sly data-sly-test.addressCompleteKey="${model.addressCompleteKey @ context='text'}"/>
+<link rel="stylesheet" type="text/css" href="${model.addressCompleteCSSUrl @ context='text'}${addressService == 'CandaPost' ? addressCompleteKey : '' @ context='text'}" />
+<script type="text/javascript" src="${model.addressCompleteJSUrl @ context='text'}${addressService == 'CandaPost' ? addressCompleteKey : '' @ context='text'}"></script>
+<!--/* AddressComplete */-->
+<form name="account-registration" class="c-update-detailed-information extended-form ${profileType}" action="${model.postUrl}" id="form200" method="post"  data-event-component="Update Detailed Information Form" data-event-type="form" data-event-value="doc ID" data-event-action="main body" data-event-engagement="3">
+  <input type="hidden" value="${request.parameterMap.redirectUrl}" name="redirectUrl" class="discard-input">
+  <input type="hidden" value="${request.queryString}" name="qstext" class="discard-input">
+  <input type="hidden" value="${request.parameterMap.dataShareConsent}" name="dataShareConsent" class="discard-input">
+  <input type="hidden" value="${request.parameterMap.webinarRegPending}" name="webinarRegPending" class="discard-input">
+  <input type="hidden" name="_charset_" value="UTF-8"/>
+
+  <sly data-sly-test="${isRenewal}">
+    <sly data-sly-use.renewalsUtmTemplate="/apps/edcportal/components/content/common/renewal_utms.html" />
+    <sly data-sly-call="${renewalsUtmTemplate.hiddenFields}"/>
+  </sly> 
+
+  <div class="form page-2" data-event-name="form submit - myedc profile step 2">
+    <sly data-sly-test="${isRegistration || !wcmmode.disabled}">
+        <sly data-sly-use.stepbar="/apps/edcportal/components/content/common/segmentedprogressbar/segmentedprogressbar.html"/>
+        <sly data-sly-call="${stepbar.spb @ customTitle=model.formTitle}"/>
+        <p>${model.formSubtitle @ context='html'}</p>
+    </sly>
+    
+    <h2 class="title" data-sly-test="${!isRegistration || !wcmmode.disabled}">${properties.titleKey @ i18n}</h2>
+    <p data-sly-test="${properties.allFieldsReqKey && !model.formSubtitle}">${properties.allFieldsReqKey @ i18n}</p>
+
+    <sly data-sly-list="${formFields}">
+      <sly data-sly-test.formDefinition="${formDefinitions[item]}"/>
+      <sly data-sly-test.fieldValue="${formFields[item]}"/>
+      <sly data-sly-test="${item == 'companyCountry'}">
+        <sly data-sly-test.currentCountry="${fieldValue}"/>  
+      </sly>
+
+      <!--/** US 321052 Financial Institution Profile Updates **/-->
+        <sly data-sly-test="${formDefinition['fieldName'] == 'companyName'}">
+            <sly data-sly-test.fiCompanyNameCanVal="${fieldValue}"/>
+        </sly>
+        <sly data-sly-test="${formDefinition['fieldName'] == 'companyNameCan'}">
+            <sly data-sly-test.fieldValue="${fiCompanyNameCanVal}"/>
+        </sly>
+        <sly data-sly-test="${formDefinition['fieldName'] == 'fiJobRole'}">
+            <sly data-sly-test.fiOtherJobRoleVal="${fieldValue}"/>
+        </sly>
+        <sly data-sly-test="${formDefinition['fieldName'] == 'fiOtherJobRole'}">
+            <sly data-sly-test.fieldValue="${fiOtherJobRoleVal}"/>
+        </sly>
+     <!--/** US 321052 Financial Institution Profile Updates **/-->
+      <sly data-sly-test="${formDefinition}" data-sly-call="${fieldsTemplate.fieldItem @ properties = properties, profileType = profileType, 
+      fieldDefinition = formDefinition, fieldValue = fieldValue, lang = lang, uuid = uuid, fieldErrors = formFieldErrors[item], 
+      currentCountry = currentCountry, tooltipTemplate = tooltipTemplate, dropdownTemplate = dropdownTemplate, 
+      multiSelectTemplate = multiSelectTemplate, errors = errorMessages}" />
+    </sly>
+    <!--/** do not use form-group for the below div **/-->
+    <div data-sly-test="${isRegistration}" class="terms-conditions">
+        <sly data-sly-test.onErrorClass="${formFieldErrors ? 'error' : ''}"/>
+        <input type="checkbox" class="form-control ${onErrorClass}" name="termsConditions" id="termsConditions${uuid}" data-no-url="true" value="yes" required/>
+        <label for="termsConditions${uuid}">
+            <sly data-sly-use.urlres="${'com.edc.edcportal.core.models.PageModelHelper' @ path = properties.tcLink}"/>
+            <p>${'label-text-i-understand-terms-conditions' @ i18n} <a href=${urlres.url} target="_blank">${'link-text-terms-conditions' @ i18n}</a> ${'label-text-i-understand-terms-conditions-2' @ i18n}</p>
+        </label>
+        <span class="error" data-req-message="${errorMessages.required}." data-select-one-message="${errorMessages.required}.">${formFieldErrors ? errorMessages.required : ''}</span>
+      </div>
+  </div>
+
+  <div class="actions">
+    <sly data-sly-test="${!properties.showCancelButton}">&nbsp;</sly>
+    <a x-cq-linkchecker="skip" href="${model.profilePageLink}" data-sly-test="${properties.showCancelButton}">${'link-text-cancel' @ i18n}</a>
+    <button type="submit" class="button btn-small edc-primary-btn">
+      <span>${isRegistration ? 'button-text-finish' : 'button-text-save-detail-info' @ i18n}</span>
+    </button>
+  </div>
+</form>
+ <div class="keyline"></div>
+ <sly data-sly-test="${wcmmode.disabled}">
+     <sly data-sly-resource="${'needassistance' @ resourceType='cq/experience-fragments/editor/components/experiencefragment'}"/>
+ </sly>
+ <sly data-sly-test="${model.showAutoComplete}">
+    <sly data-sly-use.scriptsTemplate="/apps/edcportal/components/content/common/autocompletescripts.html"/>
+    <sly data-sly-test="${addressService == 'CandaPost'}" data-sly-call="${scriptsTemplate.canadPost @ apiKey=addressCompleteKey}"/>
+    <sly data-sly-test="${addressService == 'Loqate'}" data-sly-call="${scriptsTemplate.loqate @ apiKey=addressCompleteKey, uuid=uuid}"/>
+</sly>

@@ -1,0 +1,47 @@
+<template data-sly-template.default="${@ title, subtitle, text, iconpath, iconalt}">
+    <section class="c-company-insight-search-default-banner blue-section full-width">
+        <div class="container">
+            <h1 class="title">${title}</h1>
+            <div class="search-bar">
+                <div class="search-image">
+                    <img src="${iconpath}" alt="${iconalt}" />
+                </div>
+                <div class="search-content">
+                    <h2>${subtitle}</h2>
+                    <p>${text}</p>
+                    <sly data-sly-resource="${'searchbar-res' @ resourceType='edc/components/content/companyinsight/searchbar', decorationTagName='div'}"/>
+                </div>
+            </div>
+        </div>
+    </section >
+</template>
+<template data-sly-template.results="${@ title, iconpath, iconalt}">
+    <section class="c-company-insight-search-results-banner blue-section full-width">
+        <div class="container">
+            <div class="search-bar">
+                <div class="search-image">
+                    <img src="${iconpath}" alt="${iconalt}" />
+                </div>
+                <div class="search-content">
+                    <h1>${title @ context='html'}</h1>
+                    <sly data-sly-test="!wcmmode.disabled}" data-sly-resource="${'searchbar-res' @ resourceType='edc/components/content/companyinsight/searchbar', decorationTagName='div'}"/>
+                </div>
+            </div>
+        </div>
+    </section >
+</template>
+<template data-sly-template.profile="${@ backpageurl}">
+    <section class="c-company-insight-corporation-banner dark-blue-section full-width">
+        <div class="container">
+            <div class="search-bar">
+                <div class="search-back">
+                    <a href="${backpageurl}" x-cq-linkchecker="skip" class="button back-on-header"></a>
+                </div>
+                <div class="show-search-mobile">
+                    <button class="button show-search"></button>
+                </div>
+                <sly data-sly-resource="${'searchbar-res' @ resourceType='edc/components/content/companyinsight/searchbar', decorationTagName='div', cssClassName='search-content hide'}"/>
+            </div>
+        </div>
+    </section >
+</template>

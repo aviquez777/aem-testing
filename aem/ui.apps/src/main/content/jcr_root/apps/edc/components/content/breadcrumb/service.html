@@ -1,0 +1,20 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.model="com.edc.edcweb.core.models.Breadcrumb"/>
+<sly data-sly-test.breadcrumbs="${model.breadcrumbList}"/>
+<sly data-sly-test.hasBreadcrumbs="${breadcrumbs.size > 0}"/>
+<sly data-sly-test.hasPolicy="${model.hasPolicy}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = (!hasPolicy && !hasBreadcrumbs), emptyTextAppend='No policy defined for component'}"/>
+
+<sly data-sly-use.profilemodel="com.edc.edcweb.core.models.inlist.InListSupplierProfile"/>
+<sly data-sly-test.profile="${profilemodel.supplierProfile}" />
+
+<sly data-sly-call="${templates.placeholder @ isEmpty = !hasBreadcrumbs || !profile.name}"/>
+
+<nav aria-label="Breadcrumb" class="breadcrumb" data-sly-test="${hasPolicy || (hasBreadcrumbs && profile.name)}">
+    <ol data-sly-list.crumb="${breadcrumbs}">
+        <li data-sly-list.key="${crumb}">
+            <a data-sly-test="${!crumbList.last}" href="${key}">${crumb[key]}</a>
+            <a data-sly-test="${crumbList.last}" data-sly-attribute.aria-current="${crumbList.last && crumbList.count != 1 ? 'page' : ''}" href="${key}">${profile.name}</a>
+        </li>
+    </ol>
+</nav>

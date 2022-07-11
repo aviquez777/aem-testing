@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+  xmlns:jcr="http://www.jcp.org/jcr/1.0"
+  jcr:primaryType="sling:OsgiConfig"
+  getTokenUrl="https://login.microsoftonline.com/d4167d58-713e-4e8f-8ba2-869b5491fb80/oauth2/token"
+  getClientId="{String}{51f0f521e0854b2e0c17bfd95b5679443b689d3b927e2b6d81f17675389a56a291574ff6411b5cbc26b01592e0446d6ea84a1f709f896d778b88899a4181daf5}"
+  getClientSecret="{String}{122e782ae51137f5fff4b5c1802d895065fbea48f0154f625cfbe6c1233a7df80ad5af2d6ff806374431394020ada8e8d325aa398adbd5a7061c3b7ca7800450}"
+  getOCPSubscriptionKey="{String}{cace073e6b4b26fad5e586e76318bf504b4b708a796a5c21d5f7cb8ca1d4a7cd7f0fbff7ddec9033385680e44567813c10bcadecb73accee65ab2125d0ebdf2b}"
+  getProxyUrl="https://proxyqac.api.edc.ca"
+  />

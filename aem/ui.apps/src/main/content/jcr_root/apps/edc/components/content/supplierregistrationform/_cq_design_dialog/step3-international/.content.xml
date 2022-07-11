@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Step 3 (International flow)"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <wiretransferbenname
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Wire transfer beneficiary name label"
+                name="./wiretransferbenname"
+                required="{Boolean}true"/>
+            <wiretransferbennameplaceholder
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Wire transfer beneficiary name placeholder"
+                name="./wiretransferbennameplaceholder"
+                required="{Boolean}false"/>
+            <wiretransferaccnum
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Wire transfer account number main label"
+                name="./wiretransferaccnum"
+                required="{Boolean}true"/>
+            <wiretransferaccnumlabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Wire transfer beneficiary account number label"
+                name="./wiretransferaccnumlabel"
+                required="{Boolean}true"/>
+            <wiretransferaccnumplaceholder
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Wire transfer beneficiary account number placeholder"
+                name="./wiretransferaccnumplaceholder"
+                required="{Boolean}false"/>
+            <wiretransferibanlabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Wire transfer IBAN label"
+                name="./wiretransferibanlabel"
+                required="{Boolean}true"/>
+            <wiretransferibanplaceholder
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Wire transfer IBAN placeholder"
+                name="./wiretransferibanplaceholder"
+                required="{Boolean}false"/>
+            <wiretransfercurrencylabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Wire transfer currency label"
+                name="./wiretransfercurrencylabel"
+                required="{Boolean}true"/>
+            <wiretransfercurrencyplaceholder
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Wire transfer currency placeholder"
+                name="./wiretransfercurrencyplaceholder"
+                required="{Boolean}false"/>
+            <wiretransferbenbanklabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Wire transfer beneficiary bank label"
+                name="./wiretransferbenbanklabel"
+                required="{Boolean}true"/>
+            <wiretransferbenbankplaceholder
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Wire transfer beneficiary bank placeholder"
+                name="./wiretransferbenbankplaceholder"
+                required="{Boolean}false"/>
+            <wiretransferbenswiftlabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Wire transfer beneficiary swift label"
+                name="./wiretransferbenswiftlabel"
+                required="{Boolean}true"/>
+            <wiretransferbenswiftplaceholder
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Wire transfer beneficiary swift placeholder"
+                name="./wiretransferbenswiftplaceholder"
+                required="{Boolean}false"/>
+            <wiretransferintbanklabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Wire transfer intermediary bank label"
+                name="./wiretransferintbanklabel"
+                required="{Boolean}true"/>
+            <wiretransferintbankplaceholder
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Wire transfer intermediary bank placeholder"
+                name="./wiretransferintbankplaceholder"
+                required="{Boolean}false"/>
+            <wiretransferintswiftlabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Wire transfer intermediary swift label"
+                name="./wiretransferintswiftlabel"
+                required="{Boolean}true"/>
+            <wiretransferintswiftplaceholder
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Wire transfer intermediary swift placeholder"
+                name="./wiretransferintswiftplaceholder"
+                required="{Boolean}false"/>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,31 @@
+<sly data-sly-use.multifield="${'com.edc.edcweb.core.helpers.MultifieldReaderHelper' @ multifield='questions'}"/>
+<sly data-sly-test.mfQuests="${multifield.fields}"/>
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = mfQuests}"/>
+
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+<sly data-sly-use.dropdownTemplates="${'/apps/edc/components/common/dropdown.html'}" />
+    <h3 class="q-text"></h3>
+    <p class="q-subtext"></p>
+    <div class="q-answer-type q-options"></div>
+    <div class="q-answer-type q-dropdown hide">
+        <div class="dropdown-option-container single-dropdown">
+            <sly data-sly-call="${dropdownTemplates.dropdown @ name='dropdown', uuid=uuid, label='',
+                    placeholder='', buttontext=properties.multiconfirmtext, requirederror=formErrorMessages.required, invaliderror=formErrorMessages.required}">
+            </sly>
+        </div>
+        <div class="dropdown-option-container multi-dropdown">
+            <sly data-sly-call="${dropdownTemplates.dropdown @ dropdowntype='multiple', name='multidropdown', uuid=uuid, label='',
+                    placeholder='', buttontext=properties.multiconfirmtext, clearalltext=properties.multiclearalltext,
+                    singulartext=properties.multisingulartext, pluraltext=properties.multipluraltext,
+                    requirederror=formErrorMessages.required, invaliderror=formErrorMessages.required}">
+            </sly>
+        </div>
+    </div>
+    <div class="q-answer-type q-slider hide">
+        <p class="slider-value">$<span>0</span>
+        </p>
+        <input type="range" min="0" max="300000000" step="500000" class="slider" value="0" />
+    </div>

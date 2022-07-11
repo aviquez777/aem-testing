@@ -1,0 +1,39 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-test.isComponentReady="${properties.mainTitle && properties.mainDescription}"/>
+<sly data-sly-test.isImageSectionReady="${properties.desktopMainImagePath && properties.tabletMainImagePath && properties.phoneMainImagePath}" />
+
+<section data-sly-test="${isComponentReady}" class="c-collapsible-content-component">
+    <div class="collapsible-main-content">
+        <h1 class="${properties.mainTitleAlignment}">${properties.mainTitle}</h1>
+        <div data-sly-test="${isImageSectionReady}" class="main-image-container ${properties.mainImageAlignment}">
+            <picture class="image">
+                <source media="(min-width: 960px)" srcSet="${properties.desktopMainImagePath}" />
+                <source media="(min-width: 720px)" srcSet="${properties.tabletMainImagePath}" />
+                <source media="(max-width: 719px)" srcSet="${properties.phoneMainImagePath}" />
+                <img src="${properties.desktopMainImagePath}" alt="${properties.mainImageAltText}" />
+            </picture>
+        </div>
+        <h2 data-sly-test="${properties.mainSubtitle}" class="${properties.mainSubtitleAlignment}">${properties.mainSubtitle}</h2>
+        <p class="${properties.mainDescriptionAlignment}">${properties.mainDescription @ context='html'}</p>
+    </div>
+    <div class="collapsible-related-content collapse">
+        <sly data-sly-list.rsrc="${resource.getChildren}">
+            <sly data-sly-test="${rsrc.name == 'relatedCollapsibleCardsItems'}">
+                <sly data-sly-list.cards="${rsrc.getChildren}">
+                    <div class="collapsible-card-container">
+                        <div class="collapsible-card-image">
+                            <img width="100%" data-sly-test="${cards.cardImage}"src="${cards.cardImage}" alt="${cards.cardImageAltText}" />
+                        </div>
+                        <div class="collapsible-card-content">
+                            <h2>${cards.cardTitle}</h2>
+                            <p>${cards.cardDescription @ context='html'}</p>
+                            <a class="learn-more-cta" href="${cards.cardLinkURL}" target="${cards.cardLinkTarget}">${cards.cardLinkText}</a>
+                        </div>
+                    </div>
+                </sly>
+            </sly>
+        </sly>
+    </div>
+    <a class="view-more-cta" href="#" data-view-more-text="${properties.viewMoreCTAText}" data-view-less-text="${properties.viewLessCTAText}"></a>
+</section>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !isComponentReady}"></sly>

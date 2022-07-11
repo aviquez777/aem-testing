@@ -1,0 +1,63 @@
+.c-slim-banner {
+    background-color: #26a2b5;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.c-slim-banner.bottom-margin {
+    margin-bottom: 2rem;
+}
+
+.c-slim-banner .container {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 3rem 2.25rem 2rem 1rem;
+    overflow-x: hidden;
+}
+
+.c-slim-banner .container h2,
+.c-slim-banner .container h2 p,
+.c-slim-banner .container h3,
+.c-slim-banner .container h3 p {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+}
+
+.c-slim-banner .container .hero-overline,
+.c-slim-banner .container .hero-overline p {
+    font-size: .875rem;
+    line-height: .875rem;
+    padding-bottom: .625rem;
+    margin: 0;
+}
+
+.c-slim-banner .container .hero-title,
+.c-slim-banner .container .hero-title p {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    margin: 0;
+}
+
+.c-slim-banner .container .hero-overline p,
+.c-slim-banner .container .hero-title p {
+    padding: 0;
+}
+
+@media (min-width: 720px) {
+    .c-slim-banner .container {
+        padding: 3rem 0 2rem;
+    }
+    .c-slim-banner .container .hero-title {
+        font-size: 1.875rem;
+        line-height: 1.875rem;
+    }
+}
+
+@media (min-width: 1440px) {
+    .c-slim-banner .container {
+        padding: 3rem 0 2rem;
+    }
+    .c-slim-banner .container .hero-title {
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+}

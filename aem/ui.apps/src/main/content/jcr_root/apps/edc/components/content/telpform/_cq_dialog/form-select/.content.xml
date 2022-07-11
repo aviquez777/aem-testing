@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <form-seelct
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Step 3"
+                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items
+                            jcr:primaryType="nt:unstructured">
+                            <intro
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="wcm/foundation/components/text"
+                                text="Please select the type of form will be presented to the client"/>
+                            <formType
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldDescription="Determines the Form Type"
+                                fieldLabel="Form Type"
+                                name="./formType"
+                                required="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <tlp
+                                        jcr:primaryType="nt:unstructured"
+                                        text="TELP"
+                                        value="TLP"/>
+                                    <bcap
+                                        jcr:primaryType="nt:unstructured"
+                                        text="BCAP"
+                                        value="COVIDR-E"/>
+                                    <mmg
+                                        jcr:primaryType="nt:unstructured"
+                                        text="MMG"
+                                        value="MMG"/>
+                                    <bcap-ext
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Trade Recovery Guarantee"
+                                        value="BCAP-EXT"/>
+                                </items>
+                            </formType>
+                            <prescreen
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                emptyOption="{Boolean}false"
+                                fieldDescription="PreScreen Only if instructed, otherwise keep default 'No Pre-Screen'"
+                                fieldLabel="PreScreen Only if instructed"
+                                multiple="{Boolean}false"
+                                name="./preScreen"
+                                ordered="{Boolean}false"
+                                required="{Boolean}true"
+                                granite:class="cq-dialog-dropdown-showhide-multi">
+                                <granite:data
+                                        jcr:primaryType="nt:unstructured"
+                                        cq-dialog-dropdown-showhide-target=".quest-type-hide-show"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <noPreScreen
+                                        jcr:primaryType="nt:unstructured"
+                                        text="No Pre-Screen"
+                                        value="false"/>
+                                    <showPreScreen
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Show Pre-Screen"
+                                        value="true"/>
+                                </items>
+                            </prescreen>
+                            <showPreScreen
+                                jcr:primaryType="nt:unstructured"
+                                granite:class="hide quest-type-hide-show"
+                                sling:resourceType="granite/ui/components/coral/foundation/well">
+                                <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    showhidetargetvalue="true"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <headingNormal
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/text"
+                                        class="coral-Heading--4"
+                                        text="Please remeber configure the Pre-screen and set the Questionaies to Dynamic Loading"/> 
+                                </items>
+                            </showPreScreen>
+                        </items>
+                    </column>
+                </items>
+            </form-seelct>
+        </items>
+    </content>
+</jcr:root>

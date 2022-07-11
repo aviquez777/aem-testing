@@ -1,0 +1,34 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.authorname}"/>
+
+<article data-sly-test="${properties.authorname}" class="author-detail-page">
+	<div class="color-bg full-width">
+		<div class="container">
+
+			<div class="author-detail">
+				<div class="author bio" itemscope="" itemtype="http://schema.org/Person">
+				    <img src="${properties.fileReference}" alt="${properties.imgalt}" itemProp="image" data-sly-test="${properties.fileReference}"/>
+			    	<img src="/content/dam/edc/system/author-default.jpg" alt="" itemProp="image"  data-sly-test="${!properties.fileReference}"/>
+					<div class="info">
+						<span class="detail h3">
+							<span class="name" itemprop="name">${properties.authorname}</span>
+							<span class="position" data-sly-test="${properties.jobtitle}">${properties.jobtitle}</span>
+							<span class="company" itemType="http://schema.org/EducationalOrganization">
+								<span itemProp="name">${properties.company}</span>
+							</span>
+							<a data-sly-test="${properties.phone}" href="tel:${properties.phone}">
+								<span itemProp="telephone" class="phone">${properties.phone}</span>
+							</a>
+							<a data-sly-test="${properties.email}" href="mailto:${properties.email}">
+								<span itemProp="email" class="email">${properties.email}</span>
+							</a>
+						</span>
+						<a href="${properties.linkedin}" target="${properties.linktarget}" class="linkedin" title="Linkedin - ${properties.authorname}" data-sly-test="${properties.linkedin}"><span>${properties.authorname}</span></a>
+					</div>
+					<div class="biography">${properties.biography @ context="html"}</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</article>

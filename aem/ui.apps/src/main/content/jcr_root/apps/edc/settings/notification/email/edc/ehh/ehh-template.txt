@@ -1,0 +1,145 @@
+<table style="width: 100%; border-collapse: collapse; font-family: sans-serif; font-size: 12px;" border="0" cellpadding="0" cellspacing="0">
+    <tr style="border-collapse: collapse;">
+        <th style="text-align: left; padding: 5px 0; border-collapse: collapse;"><h1 style="font-size: 16px; font-weight: 600; margin: 10px 0 15px 0;">${emailEmailLabel}</h1></th>
+    </tr>
+    <tr style="border-collapse: collapse;">
+        <th style="text-align: left; padding: 5px 0; border-collapse: collapse;"><small>${InternalUseLabel}</small></th>
+    </tr>
+        <tr style="height: 40px;">
+        <td>&nbsp;</td>
+    </tr>
+    <tr style="border-collapse: collapse;">
+        <td style="border-collapse: collapse;">
+            <table style="width: 70%; border-collapse: collapse; font-family: sans-serif; font-size: 12px;" border="0" cellpadding="0" cellspacing="0">
+                <tr style="border-collapse: collapse;">
+                    <td style="color: #004A6B; font-weight: 600; border-collapse: collapse; padding: 5px 0;">${emailRequestDateLabel}</td>
+                    <td style="border-collapse: collapse; padding: 5px 0;">${requestDateText}</td>
+                </tr>
+                <tr style="border-collapse: collapse;">
+                    <td style="color: #004A6B; font-weight: 600; border-collapse: collapse; padding: 5px 0;">${emailLanguageLabel}</td>
+                    <td style=" border-collapse: collapse; padding: 5px 0;">${languageText}</td>
+                </tr>
+                <tr style="border-collapse: collapse;">
+                    <td style="color: #004A6B; font-weight: 600; border-collapse: collapse; padding: 5px 0;">${formURLLabel}</td>
+                    <td style=" border-collapse: collapse; padding: 5px 0;">${urlFormText}</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr style="height: 40px;">
+        <td>&nbsp;</td>
+    </tr>
+    <tr style="border-collapse: collapse;">
+        <td style="border-collapse: collapse;">
+            <table style="width: 100%; border-collapse: collapse; font-family: sans-serif; font-size: 12px;" border="0" cellpadding="0" cellspacing="0">
+                <tr style="border-collapse: collapse;">
+                    <th style="font-size: 14px; font-weight: 600; text-align: left; border: 1px solid #DEDCDA; border-collapse: collapse; padding: 5px 0;">${EHHQuestionRequestTitle}</th>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr style="border-collapse: collapse;">
+        <td style="border-collapse: collapse;">
+            <table style="width: 100%; border-collapse: collapse; font-family: sans-serif; font-size: 12px;" border="0" cellpadding="0" cellspacing="0">
+                <tr style="border-collapse: collapse;">
+                    <td style="width: 35%; border: 1px solid #DEDCDA; color: #004A6B; font-weight: 600; border-collapse: collapse; padding: 5px 0; background-color: #DEDCDA;">${questionLabel}</td>
+                            <td style="border: 1px solid #DEDCDA; border-collapse: collapse; padding: 5px 0;">${howCanWeHelpYouText}</td>
+                </tr>
+                <tr style="border-collapse: collapse;">
+                    <td style="width: 35%; border: 1px solid #DEDCDA; color: #004A6B; font-weight: 600; border-collapse: collapse; padding: 5px 0; background-color: #DEDCDA;">${marketOptionLabel}</td>
+                    <td style="border: 1px solid #DEDCDA; border-collapse: collapse; padding: 5px 0;">${MarketsText}</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr style="height: 40px;">
+        <td>&nbsp;</td>
+    </tr>
+    <tr style="border-collapse: collapse;">
+        <td style="border-collapse: collapse;">
+            <table style="width: 100%; border-collapse: collapse; font-family: sans-serif; font-size: 12px;" border="0" cellpadding="0" cellspacing="0">
+                <tr style="border-collapse: collapse;">
+                    <th style="font-size: 14px; font-weight: 600; text-align: left; border: 1px solid #DEDCDA; border-collapse: collapse; padding: 5px 0;">${userProfileTitle}</th>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr style="border-collapse: collapse;">
+        <td style="border-collapse: collapse;">
+            <table style="width: 100%; border-collapse: collapse; font-family: sans-serif; font-size: 12px;" border="0" cellpadding="0" cellspacing="0">
+                <tr style="border-collapse: collapse;">
+                    <td style="width: 35%; border: 1px solid #DEDCDA; color: #004A6B; font-weight: 600; border-collapse: collapse; padding: 5px 0; background-color: #DEDCDA;">${firstNameLabel}</td>
+                    <td style="border: 1px solid #DEDCDA; border-collapse: collapse; padding: 5px 0;">${firstNameText}</td>
+                </tr>
+                <tr style="border-collapse: collapse;">
+                    <td style="width: 35%; border: 1px solid #DEDCDA; color: #004A6B; font-weight: 600; border-collapse: collapse; padding: 5px 0; background-color: #DEDCDA;">${lastNameLabel}</td>
+                    <td style="border: 1px solid #DEDCDA; border-collapse: collapse; padding: 5px 0;">${lastNameText}</td>
+                </tr>
+                <tr style="border-collapse: collapse;">
+                    <td style="width: 35%; border: 1px solid #DEDCDA; color: #004A6B; font-weight: 600; border-collapse: collapse; padding: 5px 0; background-color: #DEDCDA;">${businessEmailAddressLabel}</td>
+                    <td style="border: 1px solid #DEDCDA; border-collapse: collapse; padding: 5px 0;">${emailText}</td>
+                </tr>
+                <tr style="border-collapse: collapse;">
+                    <td style="width: 35%; border: 1px solid #DEDCDA; color: #004A6B; font-weight: 600; border-collapse: collapse; padding: 5px 0; background-color: #DEDCDA;">${JobTitleLabel}</td>
+                    <td style="border: 1px solid #DEDCDA; border-collapse: collapse; padding: 5px 0;">${JobTitleText}</td>
+                </tr>
+                <tr style="border-collapse: collapse;">
+                    <td style="width: 35%; border: 1px solid #DEDCDA; color: #004A6B; font-weight: 600; border-collapse: collapse; padding: 5px 0; background-color: #DEDCDA;">${TradeStatusLabel}</td>
+                    <td style="border: 1px solid #DEDCDA; border-collapse: collapse; padding: 5px 0;">${TradeStatusText}</td>
+                </tr>
+                <tr style="border-collapse: collapse;">
+                    <td style="width: 35%; border: 1px solid #DEDCDA; color: #004A6B; font-weight: 600; border-collapse: collapse; padding: 5px 0; background-color: #DEDCDA;">${CompanyNameLabel}</td>
+                    <td style="border: 1px solid #DEDCDA; border-collapse: collapse; padding: 5px 0;">${CompanyNameText}</td>
+                </tr>
+                <tr style="border-collapse: collapse;">
+                    <td style="width: 35%; border: 1px solid #DEDCDA; color: #004A6B; font-weight: 600; border-collapse: collapse; padding: 5px 0; background-color: #DEDCDA;">${CompanyPhoneLabel}</td>
+                    <td style="border: 1px solid #DEDCDA; border-collapse: collapse; padding: 5px 0;">${CompanyPhoneText}</td>
+                </tr>
+                <tr style="border-collapse: collapse;">
+                    <td style="width: 35%; border: 1px solid #DEDCDA; color: #004A6B; font-weight: 600; border-collapse: collapse; padding: 5px 0; background-color: #DEDCDA;">${AddressLabel}</td>
+                    <td style="border: 1px solid #DEDCDA; border-collapse: collapse; padding: 5px 0;">${AddressText}</td>
+                </tr>
+                <tr style="border-collapse: collapse;">
+                    <td style="width: 35%; border: 1px solid #DEDCDA; color: #004A6B; font-weight: 600; border-collapse: collapse; padding: 5px 0; background-color: #DEDCDA;">${CityLabel}</td>
+                    <td style="border: 1px solid #DEDCDA; border-collapse: collapse; padding: 5px 0;">${CityText}</td>
+                </tr>
+                <tr style="border-collapse: collapse;">
+                    <td style="width: 35%; border: 1px solid #DEDCDA; color: #004A6B; font-weight: 600; border-collapse: collapse; padding: 5px 0; background-color: #DEDCDA;">${ProvinceLabel}</td>
+                    <td style="border: 1px solid #DEDCDA; border-collapse: collapse; padding: 5px 0;">${ProvinceText}</td>
+                </tr>
+                <tr style="border-collapse: collapse;">
+                    <td style="width: 35%; border: 1px solid #DEDCDA; color: #004A6B; font-weight: 600; border-collapse: collapse; padding: 5px 0; background-color: #DEDCDA;">${PostalCodeLabel}</td>
+                    <td style="border: 1px solid #DEDCDA; border-collapse: collapse; padding: 5px 0;">${PostalCodeText}</td>
+                </tr>
+                <tr style="border-collapse: collapse;">
+                    <td style="width: 35%; border: 1px solid #DEDCDA; color: #004A6B; font-weight: 600; border-collapse: collapse; padding: 5px 0; background-color: #DEDCDA;">${CountryLabel}</td>
+                    <td style="border: 1px solid #DEDCDA; border-collapse: collapse; padding: 5px 0;">${CountryText}</td>
+                </tr>
+                <tr style="border-collapse: collapse;">
+                    <td style="width: 35%; border: 1px solid #DEDCDA; color: #004A6B; font-weight: 600; border-collapse: collapse; padding: 5px 0; background-color: #DEDCDA;">${AnnualSalesLabel}</td>
+                    <td style="border: 1px solid #DEDCDA; border-collapse: collapse; padding: 5px 0;">${AnnualSalesText}</td>
+                </tr>
+                <tr style="border-collapse: collapse;">
+                    <td style="width: 35%; border: 1px solid #DEDCDA; color: #004A6B; font-weight: 600; border-collapse: collapse; padding: 5px 0; background-color: #DEDCDA;">${EmployeesLabel}</td>
+                    <td style="border: 1px solid #DEDCDA; border-collapse: collapse; padding: 5px 0;">${EmployeesText}</td>
+                </tr>
+                <tr style="border-collapse: collapse;">
+                    <td style="width: 35%; border: 1px solid #DEDCDA; color: #004A6B; font-weight: 600; border-collapse: collapse; padding: 5px 0; background-color: #DEDCDA;">${PainPointLabel}</td>
+                    <td style="border: 1px solid #DEDCDA; border-collapse: collapse; padding: 5px 0;">${PainPointText}</td>
+                </tr>
+                <tr style="border-collapse: collapse;">
+                    <td style="width: 35%; border: 1px solid #DEDCDA; color: #004A6B; font-weight: 600; border-collapse: collapse; padding: 5px 0; background-color: #DEDCDA;">${IndustryLabel}</td>
+                    <td style="border: 1px solid #DEDCDA; border-collapse: collapse; padding: 5px 0;">${IndustryText}</td>
+                </tr>
+                <tr style="border-collapse: collapse;">
+                    <td style="width: 35%; border: 1px solid #DEDCDA; color: #004A6B; font-weight: 600; border-collapse: collapse; padding: 5px 0; background-color: #DEDCDA;">${countriesPlanningSell2YearsLabel}</td>
+                    <td style="border: 1px solid #DEDCDA; border-collapse: collapse; padding: 5px 0;">${countriesPlanningSell2YearsText}</td>
+                </tr>
+                <tr style="border-collapse: collapse;">
+                    <td style="width: 35%; border: 1px solid #DEDCDA; color: #004A6B; font-weight: 600; border-collapse: collapse; padding: 5px 0; background-color: #DEDCDA;">${EDCCookieUseLabel}</td>
+                    <td style="border: 1px solid #DEDCDA; border-collapse: collapse; padding: 5px 0;"><!--${EDCCookieUseText}--></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

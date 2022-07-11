@@ -1,0 +1,1 @@
+imageinbodytext.js

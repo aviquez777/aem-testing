@@ -1,0 +1,105 @@
+<template data-sly-template.step2="${@  uuid, properties, formLabels, formErrorMessages,  acceptedExt}">
+    <div class="level level-2 ${wcmmode.edit ? '' : 'hide'}">
+        <h2>
+            <span class="title-color">${formLabels.step2Of3}</span> ${properties.step2title}
+        </h2>
+        <h3>${properties.companyidtitle}</h3>
+        <div class="company-identifier hide" data-display="canadian">
+            <label id="canadian-identifier-type-${uuid}">${formLabels.idtypecantitle}</label>
+            <div class="radio-group" role="radiogroup" aria-labelledby="canadian-identifier-type-${uuid}">
+                <div class="form-group">
+                    <div class="radio-option">
+                        <input type="radio" class="form-control discard-input" id="goodsAndServicesRadio-${uuid}" name="canadian-identifier-type" value="canGstHstNumber" required="" />
+                        <label for="goodsAndServicesRadio-${uuid}">${formLabels.idtypegsthstlabel}</label>
+                    </div>
+                    <div class="form-group goods-and-services">
+                        <input type="text" id="canGstHstNumber-${uuid}" class="form-control disabled" disabled="" name="canGstHstNumber" data-no-url="true" />
+                        <span class="input-inner-text">${formLabels.idtypegsthstplaceholder}</span>
+                        <span class="error" data-req-message="${formErrorMessages.required}" data-text-message="${formErrorMessages.validIdentifier}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="radio-option">
+                        <input type="radio" class="form-control discard-input" id="sinRadio-${uuid}" name="canadian-identifier-type" value="canSinNumber" required="" />
+                        <label for="sinRadio-${uuid}">${formLabels.idtypesinlabel}</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="canSinNumber-${uuid}" class="form-control disabled" disabled="" name="canSinNumber" data-no-url="true" data-mask="___-___-___" />
+                        <span class="error" data-req-message="${formErrorMessages.required}" data-text-message="${formErrorMessages.validIdentifier}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}"></span>
+                    </div>
+                </div>
+            </div>
+            <span class="error" data-req-message="${formErrorMessages.required}"></span>
+        </div>
+        <div class="company-identifier hide" data-display="american">
+            <div data-form-field="usaTin" class="form-group tin">
+                <label for="usaTin-${uuid}">${formLabels.tinlabel}</label>
+                <input type="text" id="usaTin-${uuid}" class="form-control" data-min-length="9" data-max-length="9" validation-rule="numbersOnly" name="usaTin" data-no-url="true" placeholder="${formLabels.tinplaceholder}" />
+                <span class="error" data-req-message="${formErrorMessages.required}" data-text-message="${formErrorMessages.validIdentifier}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}"></span>
+            </div>
+        </div>
+        <div class="company-identifier hide" data-display="international">
+            <label id="internationalIdentifierType-${uuid}">${formLabels.idtypeinttitle}</label>
+            <div class="radio-group" role="radiogroup" aria-labelledby="internationalIdentifierType-${uuid}">
+                <div class="form-group">
+                    <div class="radio-option">
+                        <input type="radio" class="form-control discard-input" id="internationalBinRadio-${uuid}" name="internationalIdentifierType" value="internationalBin" required="" />
+                        <label for="internationalBinRadio-${uuid}">${formLabels.idtypebinlabel}</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="internationalBin-${uuid}" class="form-control disabled" disabled="" name="internationalBin" data-no-url="true" validation-rule="numbersOnly" data-min-length="1" data-max-length="30" placeholder="${formLabels.idtypebinplaceholder}" />
+                        <span class="error" data-req-message="${formErrorMessages.required}" data-text-message="${formErrorMessages.format}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="radio-option">
+                        <input type="radio" class="form-control discard-input" id="internationalVatRadio-${uuid}" name="internationalIdentifierType" value="internationalVat" required="" />
+                        <label for="internationalVatRadio-${uuid}">${formLabels.idtypevatlabel}</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="internationalVat-${uuid}" class="form-control disabled" disabled="" name="internationalVat" data-no-url="true" validation-rule="numbersOnly" data-min-length="1" data-max-length="30" placeholder="${formLabels.idtypevatplaceholder}" />
+                        <span class="error" data-req-message="${formErrorMessages.required}" data-text-message="${formErrorMessages.format}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="radio-option">
+                        <input type="radio" class="form-control discard-input" id="internationalNinRadio-${uuid}" name="internationalIdentifierType" value="internationalNin" required=""  />
+                        <label for="internationalNinRadio-${uuid}">${formLabels.idtypeninlabel}</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="internationalNin-${uuid}" class="form-control disabled" disabled="" name="internationalNin" data-no-url="true" validation-rule="numbersOnly" placeholder="${formLabels.idtypeninplaceholder}" />
+                        <span class="error" data-req-message="${formErrorMessages.required}" data-text-message="${formErrorMessages.format}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}"></span>
+                    </div>
+                </div>
+            </div>
+            <span class="error" data-req-message="${formErrorMessages.required}"></span>
+        </div>
+        <hr />
+        <div data-form-field="supplier-type" class="form-group">
+            <sly data-sly-use.supplierRadios="${'com.edc.edcweb.core.models.lovapi.GenericLov' @ lovType = 'RegistrationType'}"/>
+            <label id="supplierType-${uuid}">${formLabels.suptypelabel}</label>
+            <div data-sly-list="${supplierRadios.valueMapList}" class="radio-group" role="radiogroup" aria-labelledby="supplierType-${uuid}">
+                <div class="radio-option">
+                    <input type="radio" class="form-control" id="${item.lovId}-${uuid}" name="supplierType" value="${item.lovValue}" required="" />
+                    <label for="${item.lovId}-${uuid}">${item.lovName}</label>
+                </div>
+            </div>
+            <span class="error" data-req-message="${formErrorMessages.required}"></span>
+        </div>
+        <div class="form-group">
+            <sly data-sly-use.fileUploadTemplate="${'/apps/edc/components/common/fileupload.html'}" />
+            <sly data-sly-call="${fileUploadTemplate.fileUpload @ name='sampleInvoinceFile', 
+                title=properties.sampleinvoicetitle,
+                text=properties.sampleinvoicedesc,
+                btnText=formLabels.uploadbuttonlabel,
+                filesQty=formLabels.filequantitylimit,
+                filesQuantityLimitTxt=properties.uploadmaxfilesbef,
+                fileSizeLimit=formLabels.filesizelimit,
+                fileSizeLimitUpToTxt=properties.uploadfilesizebef, 
+                fileSizeLimitTotalTxt=properties.uploadfilesizeaft, 
+                formErrorMessages=formErrorMessages,
+                required='required',
+                acceptedExt=acceptedExt}"/>
+        </div>
+    </div>
+</template>

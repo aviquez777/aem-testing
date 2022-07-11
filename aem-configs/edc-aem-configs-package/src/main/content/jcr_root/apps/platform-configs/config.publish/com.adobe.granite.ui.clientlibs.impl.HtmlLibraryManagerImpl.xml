@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+    htmllibmanager.disable.replacement="[]"
+    htmllibmanager.path.list="[/apps,/libs,/etc]"
+    htmllibmanager.useFileSystemOutputCache="true"
+    htmllibmanager.fileSystemOutputCacheLocation=""
+    htmllibmanager.timing="false"
+    htmllibmanager.debug="false"
+    htmllibmanager.minify="true"
+    htmllibmanager.gzip="true"
+    htmllibmanager.processor.js="[min:gcc]"
+    htmllibmanager.processor.css="[min:yui]"
+    />

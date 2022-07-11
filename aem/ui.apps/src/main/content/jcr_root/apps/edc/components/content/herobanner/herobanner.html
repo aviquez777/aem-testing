@@ -1,0 +1,67 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.heroBanner="com.edc.edcweb.core.components.HeroBanner" />
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-test.hasDialogValues="${properties.heading && properties.fileReference}"/>
+<sly data-sly-test.hasPolicyValues="${heroBanner.policy_heading && heroBanner.policy_fileReference}"/>
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !hasDialogValues}"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+
+<sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+
+<sly data-sly-test = "${hasDialogValues}">
+    <sly data-sly-test.heading="${properties.heading}"/>
+    <sly data-sly-test.desktop="${properties.fileReference}"/>
+    <sly data-sly-test.tablet="${properties.tabletFileReference ? properties.tabletFileReference : properties.fileReference}"/>
+    <sly data-sly-test.phone="${properties.phoneFileReference ? properties.phoneFileReference : properties.fileReference}" />
+    <sly data-sly-test.alt="${properties.alt}"/>
+    <sly data-sly-test.text="${properties.text}"/>
+    <sly data-sly-test.tagline="${properties.tagline}"/>
+    <sly data-sly-test.linktext="${properties.linktext}"/>
+    <sly data-sly-test.resolvedButtonLink="${heroBanner.resolvedButtonLink}"/>
+    <sly data-sly-test.linktarget="${properties.linktarget}"/>
+    <sly data-sly-test.bgicon="${properties.backgroundIcon}"/>
+</sly>
+<sly data-sly-test = "${!hasDialogValues && hasPolicyValues}">
+    <sly data-sly-test.heading="${heroBanner.policy_heading}"/>
+    <sly data-sly-test.desktop="${heroBanner.policy_fileReference}"/>
+    <sly data-sly-test.tablet="${heroBanner.policy_tabletFileReference ? heroBanner.policy_tabletFileReference : heroBanner.policy_fileReference}"/>
+    <sly data-sly-test.phone="${heroBanner.policy_phoneFileReference ? heroBanner.policy_phoneFileReference : heroBanner.policy_fileReference}" />
+    <sly data-sly-test.alt="${heroBanner.policy_alt}"/>
+    <sly data-sly-test.text="${heroBanner.policy_text}"/>
+    <sly data-sly-test.tagline="${heroBanner.policy_tagline}"/>
+    <sly data-sly-test.linktext="${heroBanner.policy_linktext}"/>
+    <sly data-sly-test.resolvedButtonLink="${heroBanner.resolvedPolicyButtonLink}"/>
+    <sly data-sly-test.linktarget="${heroBanner.policy_linktarget}"/>
+    <sly data-sly-test.bgicon="${heroBanner.policy_bgicon}"/>
+</sly>
+<sly data-sly-use.ibButtonTemplate="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+
+<sly data-sly-test="${hasDialogValues || hasPolicyValues}">
+    <section role="banner" class="c-hero-banner full-width" data-event-engagement="1" data-event-action="hero banner" data-event-page="${datalayer.pageURL}" data-event-level="primary" aria-labelledby="HEROBANNER-${uuid}">
+        <div class="container ${bgicon}">
+            <div class="content">      
+                <h3 class="tagline ${properties.showdate ? ' red-tagline' : ''}" data-sly-test="${properties.showdate || tagline}">
+                    <sly data-sly-test="${properties.showdate}"> <sly
+                    data-sly-use.lastPublishedDate="${'com.edc.edcweb.core.helpers.DateFormater' @date=heroBanner.pageLastPublished, formatEN='EEE, MMMMM d, yyyy', formatFR='EEE, d MMMMM, yyyy'}" />
+                        ${properties.lastUpdatedText} ${lastPublishedDate.DateConvertedLocale}
+                    </sly>    
+                    <sly data-sly-test="${!properties.showdate && tagline}">
+                        ${tagline}
+                    </sly>
+                </h3>
+                <h1 id="HEROBANNER-${uuid}" class="title">${properties.rtetitle ? properties.rtetitle : heading @ context="html"}</h1>
+                <p>${properties.rtedescription ? properties.rtedescription : text @ context="html"}</p>
+                <div class="btn-container" data-sly-test="${linktext && resolvedButtonLink}">
+                    <div data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='link', isUsedForModal='nomodal', buttonstate='enabled', link=resolvedButtonLink, buttontext=linktext, target=linktarget, linkchecker='valid', buttoncssclasses='edc-primary-btn fade-in-slide-up'}"  data-sly-unwrap></div>
+                </div>
+            </div>
+        </div>
+        <div class="img-wrapper">
+            <div>
+                <sly data-sly-test="${desktop || tablet || phone}" data-sly-call="${commonTemplates.picture @ desktop=desktop, tablet=tablet, phone=phone, imageAlt=alt}"/>
+            </div>
+        </div>
+        <div class="white-space"></div>
+    </section>
+</sly>

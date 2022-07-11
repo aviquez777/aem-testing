@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Page Hero Banner"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <accessibility
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Accessibility"
+                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                margin="{Boolean}true">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                    margin="{Boolean}false"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <videoplaybtn
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Video Play Button text"
+                                required="{Boolean}true"
+                                name="./videoplaybtn"/>
+                            <videonotsupport
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Video not supported text"
+                                required="{Boolean}true"
+                                name="./videonotsupport"/>
+                           <arkadinmodal
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/text"
+                                class="coral-Form-fieldlabel"
+                                text="Arkadin Modal"/>
+                            <wellin
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <layout
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <arkadimodalariascroll
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Arkadin Modal Aria Scroll text"
+                                        fieldDescription="Arkadin Modal Aria Scroll text i.e. 'Scroll to the button to accept'"
+                                        required="{Boolean}true"
+                                        name="./arkadinmodalariascroll"/>
+                                    <arkadinmodalariaclose
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Arkadin Modal Aria Close text"
+                                        fieldDescription="Arkadin Modal Aria CLose text i.e. 'Click to close the more information modal'"
+                                        required="{Boolean}true"
+                                        name="./arkadinmodalariaclose"/>
+                                </items>
+                           </wellin>
+                        </items>
+                    </column>
+                </items>
+            </accessibility>
+            <webinar
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Webinar"
+                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                margin="{Boolean}true">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                    margin="{Boolean}false"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Webinar"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                        margin="{Boolean}true">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                            margin="{Boolean}false"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <upcomingtagtext
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="'Upcoming Webinar' label text"
+                                        fieldDescription="If the webinar is in the future, a tagline above the title must display (e.g 'UPCOMING WEBINAR')"
+                                        requiered="${Boolean}true"
+                                        name="./upcomingtagtext" />
+                                    <livetagtext
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="'Live' label text"
+                                        fieldDescription="If the webinar is live, a tagline above the title must display (e.g 'LIVE')"
+                                        requiered="${Boolean}true"
+                                        name="./livetagtext" />
+                                    <ondemandtagtext
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="'On Demand' label text"
+                                        fieldDescription="If the webinar has already occurred, the tagline above the title must display (e.g 'AVAILABLE ON DEMAND')"
+                                        requiered="${Boolean}true"
+                                        name="./ondemandtagtext" />
+                                     <arkadinmodal
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/text"
+                                        class="coral-Form-fieldlabel"
+                                        text="Arkadin Modal"/>
+                                    <wellin
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <arkadinmodaltitle
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Arkadin Modal Title"
+                                                fieldDescription="Arkadin Modal Title e.g.'Just one more thing'"
+                                                requiered="${Boolean}true"
+                                                name="./arkadinmodaltitle" />
+                                            <selfidlov
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                fieldDescription="Click '+' to add a new value option for Self-identification radio buttons"
+                                                fieldLabel="Self-identification radio buttons value options (No need to author in French)"
+                                                jcr:primaryType="nt:unstructured"
+                                                composite="{Boolean}true">
+                                                <field
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    name="./selfidlov">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <selfidvalue
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Self-identification radio value"
+                                                            fieldDescription="Will be shown as an option when creating radio buttons under Self-identification radio buttons, in the page properties, under Event Detail tab"
+                                                            required="${Boolean}true"
+                                                            name="./selfidvalue" />
+                                                    </items>
+                                                </field>
+                                            </selfidlov>
+                                            <arkadinmodaltext
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                                fieldLabel="Disclaimer Paragraph 1"
+                                                fieldDescription="Disclaimer Paragraph 1 i.e. 'By registering for this event you aegree...'"
+                                                requiered="${Boolean}true"
+                                                name="./arkadinmodaltext"
+                                                useFixedInlineToolbar="{Boolean}true">
+                                            <rtePlugins jcr:primaryType="nt:unstructured">
+                                                <paraformat
+                                                    jcr:primaryType="nt:unstructured"
+                                                    features="*">
+                                                    <formats jcr:primaryType="nt:unstructured">
+                                                        <default_h1
+                                                            jcr:primaryType="nt:unstructured"
+                                                            description="Heading 1"
+                                                            tag="h1"/>
+                                                        <default_h2
+                                                            jcr:primaryType="nt:unstructured"
+                                                            description="Heading 2"
+                                                            tag="h2"/>
+                                                        <default_h3
+                                                            jcr:primaryType="nt:unstructured"
+                                                            description="Heading 3"
+                                                            tag="h3"/>
+                                                        <default_h4
+                                                            jcr:primaryType="nt:unstructured"
+                                                            description="Heading 4"
+                                                            tag="h4"/>
+                                                        <default_h5
+                                                            jcr:primaryType="nt:unstructured"
+                                                            description="Heading 5"
+                                                            tag="h5"/>
+                                                        <default_h6
+                                                            jcr:primaryType="nt:unstructured"
+                                                            description="Heading 6"
+                                                            tag="h6"/>
+                                                        <default_p
+                                                            jcr:primaryType="nt:unstructured"
+                                                            description="Paragraph"
+                                                            tag="p"/>
+                                                    </formats>
+                                                </paraformat>
+                                                <format
+                                                    jcr:primaryType="nt:unstructured"
+                                                    features="*"/>
+                                                <links
+                                                    jcr:primaryType="nt:unstructured"
+                                                    features="*"/>
+                                                <subsuperscript
+                                                    jcr:primaryType="nt:unstructured"
+                                                    features="*"/>
+                                            </rtePlugins>
+                                            <uiSettings jcr:primaryType="nt:unstructured">
+                                                <cui jcr:primaryType="nt:unstructured">
+                                                    <inline
+                                                        jcr:primaryType="nt:unstructured"
+                                                        toolbar="[#paraformat,#format,links#modifylink,links#unlink]">
+                                                        <popovers jcr:primaryType="nt:unstructured">
+                                                            <paraformat
+                                                                jcr:primaryType="nt:unstructured"
+                                                                items="paraformat:getFormats:paraformat-pulldown"
+                                                                ref="paraformat"/>
+                                                            <format
+                                                                jcr:primaryType="nt:unstructured"
+                                                                items="[format#bold,format#italic,format#underline,subsuperscript#subscript,subsuperscript#superscript]"
+                                                                ref="format"/>
+                                                        </popovers>
+                                                    </inline>
+                                                </cui>
+                                            </uiSettings>
+                                            </arkadinmodaltext>
+                                           <arkadinagreebuttontext
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Agree Button text"
+                                                fieldDescription="Agree Button text i.e. 'Agree'"
+                                                requiered="${Boolean}true"
+                                                name="./arkadinagreebuttontext" />
+                                             <arkadincancelbuttontext
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Cancel Button text"
+                                                fieldDescription="Cancel Button Text i.e 'Cancel and return to MyEDC'"
+                                                requiered="${Boolean}true"
+                                                name="./arkadincancelbuttontext" />
+                                        </items>
+                                   </wellin>
+                                </items>
+                            </column>
+                        </items>
+                    </column>
+                </items>
+            </webinar>
+        </items>
+    </content>
+</jcr:root>

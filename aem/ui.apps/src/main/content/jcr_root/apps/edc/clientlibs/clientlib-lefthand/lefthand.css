@@ -1,0 +1,15 @@
+nav.breadcrumb {
+    margin: 1.5rem 0;
+}
+
+@media (min-width: 720px) {
+    nav.breadcrumb {
+        margin: 1rem 0 2.5rem;
+    }
+}
+
+@media (min-width: 960px) {
+    nav.breadcrumb {
+        margin: 2.5rem 0 4.25rem;
+    }
+}

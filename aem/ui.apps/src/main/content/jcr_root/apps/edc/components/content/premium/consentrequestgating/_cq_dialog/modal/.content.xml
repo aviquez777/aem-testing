@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <modalTitle
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Title"
+                name="./modalTitle"
+                required="{Boolean}true"/>
+            <modalTopDescription
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                fieldLabel="Top Description"
+                name="./modalTopDescription"
+                useFixedInlineToolbar="{Boolean}true"
+                required="{Boolean}true">
+                <rtePlugins jcr:primaryType="nt:unstructured">
+                    <format
+                        jcr:primaryType="nt:unstructured"
+                        features="*"/>
+                    <lists
+                        jcr:primaryType="nt:unstructured"
+                        features="*"/>
+                    <links
+                        jcr:primaryType="nt:unstructured"
+                        features="*"/>
+                </rtePlugins>
+                <uiSettings jcr:primaryType="nt:unstructured">
+                    <cui jcr:primaryType="nt:unstructured">
+                        <inline
+                            jcr:primaryType="nt:unstructured"
+                            toolbar="[format#bold,format#italic,format#underline,#lists,links#modifylink,links#unlink,links#anchor]">
+                            <popovers jcr:primaryType="nt:unstructured">
+                                <lists
+                                    jcr:primaryType="nt:unstructured"
+                                    items="[lists#unordered,lists#ordered,lists#outdent,lists#indent]"
+                                    ref="lists"/>
+                            </popovers>
+                        </inline>
+                    </cui>
+                </uiSettings>
+            </modalTopDescription>
+            <checkboxes
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                composite="{Boolean}true"
+                required="{Boolean}true"
+                fieldLabel="Checkboxes">
+                <field
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                    name="./checkboxes">
+                    <items jcr:primaryType="nt:unstructured">
+                        <checkboxValue
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Checkbox Value"
+                            name="./checkboxValue"
+                            required="{Boolean}true"/>
+                        <checkboxText
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                            fieldLabel="Checkbox Text"
+                            name="./checkboxText"
+                            useFixedInlineToolbar="{Boolean}true"
+                            required="{Boolean}true">
+                            <rtePlugins jcr:primaryType="nt:unstructured">
+                                <format
+                                    jcr:primaryType="nt:unstructured"
+                                    features="*"/>
+                                <lists
+                                    jcr:primaryType="nt:unstructured"
+                                    features="*"/>
+                                <links
+                                    jcr:primaryType="nt:unstructured"
+                                    features="*"/>
+                            </rtePlugins>
+                            <uiSettings jcr:primaryType="nt:unstructured">
+                                <cui jcr:primaryType="nt:unstructured">
+                                    <inline
+                                        jcr:primaryType="nt:unstructured"
+                                        toolbar="[format#bold,format#italic,format#underline,#lists,links#modifylink,links#unlink,links#anchor]">
+                                        <popovers jcr:primaryType="nt:unstructured">
+                                            <lists
+                                                jcr:primaryType="nt:unstructured"
+                                                items="[lists#unordered,lists#ordered,lists#outdent,lists#indent]"
+                                                ref="lists"/>
+                                        </popovers>
+                                    </inline>
+                                </cui>
+                            </uiSettings>
+                        </checkboxText>
+                    </items>
+                </field> 
+            </checkboxes>
+            <acceptCtaText
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Accept CTA text"
+                fieldDescription="Text for the accept button"
+                name="./acceptCtaText"
+                required="{Boolean}true"/>
+            <acceptEnglishText
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Aria Accept English CTA text"
+                fieldDescription="Aria Text for the accept button"
+                name="./acceptEnglishText"
+                required="{Boolean}true"/>
+            <cancelText
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Cancel Link Text"
+                name="./cancelText"
+                required="{Boolean}true"/>
+            <cancelEnglishText
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Aria Cancel English CTA text"
+                fieldDescription="Aria Text for the cancel link"
+                name="./cancelEnglishText"
+                required="{Boolean}true"/>
+            <modalTitle
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Title"
+                name="./modalTitle"
+                required="{Boolean}true"/>
+            <modalBottomDescription
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                fieldLabel="Bottom Description"
+                name="./modalBottomDescription"
+                useFixedInlineToolbar="{Boolean}true"
+                required="{Boolean}true">
+                <rtePlugins jcr:primaryType="nt:unstructured">
+                    <format
+                        jcr:primaryType="nt:unstructured"
+                        features="*"/>
+                    <lists
+                        jcr:primaryType="nt:unstructured"
+                        features="*"/>
+                    <links
+                        jcr:primaryType="nt:unstructured"
+                        features="*"/>
+                </rtePlugins>
+                <uiSettings jcr:primaryType="nt:unstructured">
+                    <cui jcr:primaryType="nt:unstructured">
+                        <inline
+                            jcr:primaryType="nt:unstructured"
+                            toolbar="[format#bold,format#italic,format#underline,#lists,links#modifylink,links#unlink,links#anchor]">
+                            <popovers jcr:primaryType="nt:unstructured">
+                                <lists
+                                    jcr:primaryType="nt:unstructured"
+                                    items="[lists#unordered,lists#ordered,lists#outdent,lists#indent]"
+                                    ref="lists"/>
+                            </popovers>
+                        </inline>
+                    </cui>
+                </uiSettings>
+            </modalBottomDescription>
+        </items>
+    </content>
+</jcr:root>

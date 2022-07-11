@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="sling:Folder">
+    <jcr:content jcr:primaryType="nt:unstructured"/>
+    <items jcr:primaryType="nt:unstructured">
+        <tabs
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/tabs"
+            size="L">
+            <items jcr:primaryType="nt:unstructured">
+                <tab1
+                    granite:rel="aem-assets-metadata-form-tab"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Basic"
+                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                    listOrder="0">
+                    <granite:data
+                        jcr:primaryType="nt:unstructured"
+                        tabid="f84cc8d6-60ab-474e-bdf8-a0b7a434f289"/>
+                    <items jcr:primaryType="nt:unstructured">
+                        <col1
+                            granite:rel="aem-assets-metadata-form-column"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            listOrder="0">
+                            <items jcr:primaryType="nt:unstructured">
+                                <pdftitle
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Pdf Title"
+                                    name="./jcr:content/metadata/pdf:Title">
+                                    <granite:data
+                                        jcr:primaryType="nt:unstructured"
+                                        metaType="text"/>
+                                </pdftitle>
+                                <subject
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Subject"
+                                    name="./jcr:content/metadata/dc:subject">
+                                    <granite:data
+                                        jcr:primaryType="nt:unstructured"
+                                        metaType="text"/>
+                                </subject>
+                            </items>
+                        </col1>
+                        <col2
+                            granite:rel="aem-assets-metadata-form-column"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            listOrder="1">
+                            <items jcr:primaryType="nt:unstructured">
+                                <_x0031_523281319203
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="dam/gui/coral/components/admin/schemaforms/formbuilder/sectionfield"
+                                    fieldLabel="Gated Premium Content">
+                                    <granite:data
+                                        jcr:primaryType="nt:unstructured"
+                                        metaType="section"/>
+                                </_x0031_523281319203>
+                                <_x0031_523281395310
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Eloqua Document Id"
+                                    name="./jcr:content/eloquaDocId"
+                                    required="{Boolean}true"
+                                    showEmptyInReadOnly="true">
+                                    <granite:data
+                                        jcr:primaryType="nt:unstructured"
+                                        metaType="text"/>
+                                </_x0031_523281395310>
+                                <_x0031_523281434904
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                    defaultValue=" "
+                                    fieldLabel="Asset Tier"
+                                    name="./jcr:content/assetTier"
+                                    required="{Boolean}true"
+                                    showEmptyInReadOnly="true">
+                                    <granite:data
+                                        jcr:primaryType="nt:unstructured"
+                                        metaType="number"/>
+                                </_x0031_523281434904>
+                                <_x0031_592412179835
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="dam/gui/components/admin/schemafield"
+                                    emptyText="Select Option"
+                                    fieldLabel="Seo Exclude"
+                                    name="./jcr:content/seoExclude"
+                                    resourceType="dam/gui/coral/components/admin/schemaforms/formbuilder/formfields/v2/metadataselect">
+                                    <granite:data
+                                        jcr:primaryType="nt:unstructured"
+                                        choicesCascading="default"
+                                        cq-msm-lockable="./seoExclude"
+                                        metaType="dropdown"
+                                        requiredCascading="default"
+                                        visibilityCascading="default"/>
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <_x0031_592412200287
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Exclude from Search"
+                                            value="true"/>
+                                        <_x0031_592412215870
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Include on Searches"
+                                            value="false"/>
+                                    </items>
+                                </_x0031_592412179835>
+                                <_x0031_603903248343
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="dam/gui/components/admin/schemafield"
+                                    emptyText="/content/edc/..."
+                                    fieldDescription="Use same format as path selectors: '/content/edc/...' with no '.html' at the end"
+                                    fieldLabel="Pdf landing page url (no '.html')"
+                                    name="./jcr:content/pdflandingpage"
+                                    resourceType="granite/ui/components/coral/foundation/form/textfield">
+                                    <granite:data
+                                        jcr:primaryType="nt:unstructured"
+                                        cq-msm-lockable="./pdflandingpage"
+                                        metaType="text"
+                                        requiredCascading="default"
+                                        visibilityCascading="default"/>
+                                </_x0031_603903248343>
+                                <_x0031_608153227896
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="dam/gui/components/admin/schemafield"
+                                    fieldLabel="Content Request Gating"
+                                    resourceType="dam/gui/coral/components/admin/schemaforms/formbuilder/sectionfield">
+                                    <granite:data
+                                        jcr:primaryType="nt:unstructured"
+                                        metaType="section"/>
+                                </_x0031_608153227896>
+                                <_x0031_608153260183
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="dam/gui/components/admin/schemafield"
+                                    emptyText="Select Option"
+                                    fieldDescription="Make sure the progressive profiling on the provided landing page is properly configured ."
+                                    fieldLabel="Use Content Request Gating?"
+                                    name="./jcr:content/isCRG"
+                                    resourceType="dam/gui/coral/components/admin/schemaforms/formbuilder/formfields/v2/metadataselect">
+                                    <granite:data
+                                        jcr:primaryType="nt:unstructured"
+                                        cq-msm-lockable="./isCRG"
+                                        metaType="dropdown"/>
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <_x0031_608153322758
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Yes Please Use CRG on this PDF"
+                                            value="true"/>
+                                        <_x0031_608153367922
+                                            jcr:primaryType="nt:unstructured"
+                                            text="No Please Do Not Use CRG on this PDF"
+                                            value="false"/>
+                                    </items>
+                                    <cascadeitems
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="dam/gui/coral/components/admin/schemaforms/formbuilder/cascadeitems"/>
+                                </_x0031_608153260183>
+                            </items>
+                        </col2>
+                        <col3
+                            granite:rel="aem-assets-metadata-form-column"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            listOrder="2"/>
+                    </items>
+                </tab1>
+                <tab2
+                    granite:rel="aem-assets-metadata-form-tab"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Advanced"
+                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                    listOrder="1">
+                    <granite:data
+                        jcr:primaryType="nt:unstructured"
+                        tabid="7c927721-1473-492f-b949-4fa2f82a32a0"/>
+                    <items jcr:primaryType="nt:unstructured">
+                        <col1
+                            granite:rel="aem-assets-metadata-form-column"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            listOrder="0"/>
+                        <col2
+                            granite:rel="aem-assets-metadata-form-column"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            listOrder="1"/>
+                        <col3
+                            granite:rel="aem-assets-metadata-form-column"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            listOrder="2"/>
+                        <col4
+                            granite:rel="aem-assets-metadata-form-column"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            listOrder="3"/>
+                    </items>
+                </tab2>
+                <tab3
+                    granite:rel="aem-assets-metadata-form-tab"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="IPTC"
+                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                    listOrder="2">
+                    <granite:data jcr:primaryType="nt:unstructured"/>
+                    <items jcr:primaryType="nt:unstructured">
+                        <col1
+                            granite:rel="aem-assets-metadata-form-column"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            listOrder="0"/>
+                        <col2
+                            granite:rel="aem-assets-metadata-form-column"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            listOrder="1"/>
+                        <col3
+                            granite:rel="aem-assets-metadata-form-column"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            listOrder="2"/>
+                    </items>
+                </tab3>
+                <tab4
+                    granite:rel="aem-assets-metadata-form-tab"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="IPTC Extension"
+                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                    listOrder="3">
+                    <granite:data jcr:primaryType="nt:unstructured"/>
+                    <items jcr:primaryType="nt:unstructured">
+                        <col1
+                            granite:rel="aem-assets-metadata-form-column"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            listOrder="0"/>
+                        <col2
+                            granite:rel="aem-assets-metadata-form-column"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            listOrder="1"/>
+                        <col3
+                            granite:rel="aem-assets-metadata-form-column"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            listOrder="2"/>
+                    </items>
+                </tab4>
+            </items>
+        </tabs>
+    </items>
+</jcr:root>

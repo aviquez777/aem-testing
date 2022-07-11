@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <back
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Back button text"
+                name="./back"
+                required="{Boolean}true"/>
+            <next
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Next button text"
+                name="./next"
+                required="{Boolean}true"/>
+            <submit
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Submit button text"
+                name="./submit"
+                required="{Boolean}true"/>
+            <scrollright
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Scroll buttons will show if nav width exceeds its container width"
+                fieldLabel="Scroll right button text"
+                name="./scrollright"
+                required="{Boolean}true"/>
+            <scrollleft
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Scroll buttons will show if nav width exceeds its container width"
+                fieldLabel="Scroll left button text"
+                name="./scrollleft"
+                required="{Boolean}true"/>
+            <multipleddconfirm
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Multiple dropdown confirm button text"
+                name="./multipleddconfirm"
+                required="{Boolean}true"/>
+            <multipleddclear
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Multiple dropdown clear text"
+                name="./multipleddclear"
+                required="{Boolean}true"/>
+            <multipleddsingular
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Multiple dropdown singular text"
+                name="./multipleddsingular"
+                required="{Boolean}true"/>
+            <multipleddplural
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Multiple dropdown plural text"
+                name="./multipleddplural"
+                required="{Boolean}true"/>
+        </items>
+    </content>
+</jcr:root>

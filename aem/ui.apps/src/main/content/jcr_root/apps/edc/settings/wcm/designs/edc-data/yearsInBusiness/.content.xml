@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <option1
+        jcr:primaryType="nt:unstructured"
+        enName="0 to 2"
+        frName="0 à 2"
+        value="0 to 2"/>
+    <option2
+        jcr:primaryType="nt:unstructured"
+        enName="3 to 9"
+        frName="3 à 9"
+        value="3 to 9"/>
+    <option3
+        jcr:primaryType="nt:unstructured"
+        enName="10 and over"
+        frName="10 et plus"
+        value="10 and over"/>
+</jcr:root>

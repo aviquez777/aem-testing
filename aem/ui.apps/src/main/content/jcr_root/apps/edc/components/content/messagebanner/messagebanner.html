@@ -1,0 +1,38 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.model="com.edc.edcweb.core.models.PolicyReader" />
+<sly data-sly-test.policy="${model.policy}"/>
+<sly data-sly-call="${template.placeholder @ isEmpty = !policy && !properties.override, emptyTextAppend='No Policy defined'}" />
+<sly data-sly-call="${template.placeholder @ isEmpty = policy ||  properties.override, emptyTextAppend='Component will render only when necessary'}" />
+
+<section data-sly-test="${policy && !properties.override}" class="c-message-banner full-width error hide">
+    <sly data-sly-test.labels="${model.labels}"/>
+    <div class="content-info">
+        <p class="load-error">${labels.pageloaderror}</p>
+        <p class="gdpr-error hide">${labels.gdprerror} <button type="button">${labels.gdprmodalbuttontext}</button>.</p>
+    </div>
+    <div class="content-accept">
+        <button class="close-button" aria-label=${labels.closebutton}></button>
+    </div>
+    <div class="error-modal hide" role="dialog" aria-modal="true">
+        <div class="modal-shade"></div>
+        <div class="modal-container">
+            <button type="button" class="modal-close" aria-label="${labels.closedescription}"></button>
+            <div class="modal-title">
+                <h2>${labels.gdprmodaltitle}</h2>
+            </div>
+            <div class="modal-text shadow-after">
+                <div class="text-section">
+                    ${labels.gdprmodaltext @ context='html'}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section data-sly-test="${properties.override}" class="c-message-banner full-width error hide">
+    <div class="content-info">
+        <p class="load-error"></p>
+    </div>
+    <div class="content-accept">
+        <button class="close-button" aria-label=${properties.closebutton}></button>
+    </div>
+</section>

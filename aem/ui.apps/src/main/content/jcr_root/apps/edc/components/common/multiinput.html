@@ -1,0 +1,27 @@
+<template data-sly-template.multiInput="${@ label, name, id, uuid, maxItems, dataDelimiter, placeholder, formErrorMessages, disclaimer, disabled, inputType}">
+    <!--/* inject clientlib */ -->
+    <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="${clientLib.all @ categories='edc.multiinput'}" />
+    <sly data-sly-test.fieldId="${id ? id : name}"/>
+    <sly data-sly-test.fieldType="${inputType ? inputType : 'text'}"/>
+    <sly data-sly-test.isEmail="${fieldType == 'email'}"/>
+
+    <div class="c-multi-input form-control" data-items-allowed="${maxItems}"  data-delimeter="${dataDelimiter}">
+        <label for="${fieldId}-${uuid}" data-sly-test="${label}">${label}</label>
+        <div class="input-group input-append">
+            <input type="${fieldType}" data-sly-attribute.disabled="${disabled}" class="discard-input ${disabled}" id="${fieldId}-${uuid}" placeholder="${placeholder}" />
+            <div class="input-group-icon">
+                <button type="button" class="no-btn">
+                    <span class="add-input">
+                        <img src="/etc.clientlibs/edc/clientlibs/clientlib-base/resources/images/add-button.svg" alt="add input button" />
+                    </span>
+                </button>
+            </div>
+        </div>
+        <input type="hidden" class="inputs-list" name="${name}" />
+        <span class="error" data-req-message="${formErrorMessages.required}" data-email-message="${formErrorMessages.email}" data-already-added-message="${isEmail ? formErrorMessages.emailalready : formErrorMessages.duplicateItemMultifield}" data-max-items="${isEmail ? formErrorMessages.maxemails : formErrorMessages.maxItemsMultiField}"></span>
+        <ul data-button-image="/etc.clientlibs/edc/clientlibs/clientlib-base/resources/images/add-button.svg"></ul>
+        <div class="multiinput-disclaimer">
+            ${disclaimer @ context='html'}
+        </div>
+    </div>
+</template>

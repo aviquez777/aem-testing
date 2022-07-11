@@ -1,0 +1,81 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.model="com.edc.edcweb.core.models.PolicyReader" />
+<sly data-sly-test.resultnumber="${model.labels['resultsnumber']}" />
+<sly data-sly-test.policy="${model.policy}"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.relatedquestions}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !policy, emptyTextAppend='No policy data defined'}"/>
+<sly data-sly-use.multifield="${'com.edc.edcweb.core.helpers.MultifieldReaderHelper' @ multifield='questions'}"/>
+<sly data-sly-use.buttonTemplate="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+
+<div class="c-ehh-search-results ${wcmmode.edit ? '' : 'init-js'}" data-action="/bin/qnaMakerServlet" data-sly-test="${properties.relatedquestions}" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'EHH Search Result'}" data-event-engagement="1"  data-event-action="main body" data-read-more="${properties.readmore}" data-results="${resultnumber}">
+    <div class="c-processing-screen" role="complementary">
+        <div class="processing-section">
+            <div class="loading">
+                <div class="spinning-circle">
+                    <div class="outer-circle">
+                        <div class="inner-cirle">${properties.loading}</div>
+                    </div>
+                </div>
+            </div>
+            <h2>${properties.loadingtitle}</h2>
+            <p>${properties.loadingdescription}</p>
+        </div>
+    </div>
+    <div class="answer-info ${wcmmode.edit ? '' : 'hide'}">
+        <div class="answer-header">
+            <span class="results-label">${properties.showtopresult}</span>
+            <h3 class="top-results"></h3>
+        </div>
+        <div class="answer-profile ${wcmmode.edit ? '' : 'hide'}">
+            <div class="author article" itemscope="" itemType="http://schema.org/Person">
+                <a href="#authordetailpage" target="_blank" title="Name">
+                    <img src="images/default-avatar.jpg" alt="Name" itemProp="image" width="200" height="200" />
+                </a>
+                <div class="info">
+                    <a href="#authordetailpage" target="_blank">
+                        <span class="name" itemProp="name"></span>
+                    </a>
+                    <span class="position" itemProp="jobTitle"></span>
+                    <span class="company" itemscope="" itemType="http://schema.org/EducationalOrganization">
+                        <span itemProp="name"></span>
+                    </span>
+                    <a href="#" class="linkedin" target="_blank" title=""><span></span></a>
+                </div>
+                <div class="biography"></div>
+            </div>
+        </div>
+        <div class="answer ${wcmmode.edit ? '' : 'hide'}" data-id="" data-event-type="ehh search" data-event-name="results">
+            <h2 class="question-title"></h2>
+            <p class="answer-content"></p>
+            <sly data-sly-resource="${'yesNo' @ resourceType='edc/components/content/yesnoquestion'}"></sly>
+        </div>
+        <div class="related-questions" data-event-name="recommended click">
+            <h4 class="title">${properties.relatedquestions}</h4>
+            <ul class="question-list"></ul>
+            <div class="load-more ${wcmmode.edit ? '' : 'hide'}" data-load-more-english="Load more results" data-load-more-event="load more results button">
+                <div data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled', buttontext=properties.loadmoreresult, btntype='button', buttoncssclasses='edc-btn-unstyled load-btn'}"  data-sly-unwrap></div>
+            </div>
+        </div>
+    </div>
+    <div class="information-container ${wcmmode.edit ? '' : 'hide'}">
+        <div class="information">
+            <div class="welcome ${wcmmode.edit ? '' : 'hide'}">
+                ${properties.defaultmessage @ context='html'}
+            </div>
+            <div class="no-answers ${wcmmode.edit ? '' : 'hide'}">
+                ${properties.noresultmessage @ context='html'}
+            </div>
+        </div>
+    </div>
+    <div class="default-questions ${wcmmode.edit ? '' : 'hide'}">
+        <h4 class="title" data-welcome="${properties.defaultquestions}" data-no-answers="${properties.noresultquestions}"></h4>
+        <ul class="question-list" data-sly-list="${multifield.fields}">
+            <li class="question default-question" data-english-label="${item.question}">
+                <a>
+                    <span>${item.question}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

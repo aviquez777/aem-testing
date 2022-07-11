@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <option1
+        jcr:primaryType="nt:unstructured"
+        enName="Manufacturer"
+        frName="Fabricant"
+        value="Manufacturer"/>
+    <option2
+        jcr:primaryType="nt:unstructured"
+        enName="Wholesaler"
+        frName="Marchand en gros"
+        value="Wholesaler"/>
+    <option3
+        jcr:primaryType="nt:unstructured"
+        enName="Distributor"
+        frName="Distributeur"
+        value="Distributor"/>
+    <option4
+        jcr:primaryType="nt:unstructured"
+        enName="Retailer"
+        frName="Détaillant"
+        value="Retailer"/>
+    <option5
+        jcr:primaryType="nt:unstructured"
+        enName="Consumer"
+        frName="Consommateur"
+        value="Consumer"/>
+</jcr:root>

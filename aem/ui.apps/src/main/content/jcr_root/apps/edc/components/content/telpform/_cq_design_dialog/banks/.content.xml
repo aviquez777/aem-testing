@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <bank jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Label for Bank Dropdown"
+                required="{Boolean}true"
+                fieldLabel="Label for Bank Dropdown"
+                name="./bankLabel"/>
+            <bankPlaceholder jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Text for Please select on Bank Dropdown Placeholder"
+                required="{Boolean}true"
+                fieldLabel="Bank Dropdown Placeholder"
+                name="./bankPlaceholder"/>
+            <bankErrorMsg jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Messge when an invalid email from the bank is enetered. The selected bank's domain will be added automatically"
+                fieldLabel="Bank's email error message"
+                required="{Boolean}true"
+                name="./bankErrorMsg"/>
+            <banks jcr:primaryType="nt:unstructured"
+                 sling:resourceType="granite/ui/components/coral/foundation/form/multifield" 
+                 fieldDescription="Click '+' to add a new bank" 
+                 fieldLabel="Banks (not required for COVIDR-E form)" 
+                 composite="{Boolean}true"
+                 required="{Boolean}false"> 
+                 <field jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container" 
+                         name="./banks"> 
+                     <items jcr:primaryType="nt:unstructured">
+                        <headingBank
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/text"
+                            class="coral-Heading--4"
+                            text="Bank:"/> 
+                         <bankValue jcr:primaryType="nt:unstructured"
+                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield" 
+                             fieldLabel="Bank Value"
+                             fieldDescription="Value Send to AEM when submitting the form. Ussually the English Name"
+                             required="{Boolean}true"
+                             name="./bankValue" /> 
+                         <bankName jcr:primaryType="nt:unstructured"
+                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield" 
+                             fieldDescription="Bank's Name"
+                             fieldLabel="Bank's Name"
+                             required="{Boolean}true"
+                             name="./bankName" />
+                        <bankDomain jcr:primaryType="nt:unstructured"
+                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield" 
+                             fieldDescription="Bank's Domain for email validation Royal Bank of Canada = rbc.com. multiple domins separated by '::' ex rbc.com::rbc.ca"
+                             fieldLabel="Bank's Domain (multiple separated by 2 colons '::')"
+                             required="{Boolean}true"
+                             name="./bankDomain" />
+                         <bankSpecialMsgTitle jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldDescription="i.e. Please note"
+                            fieldLabel="Bank's special message title (Optional)"
+                            required="{Boolean}false"
+                            name="./bankSpecialMsgTitle"/>
+                         <bankSpecialMsg jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                            fieldDescription="htlml markup accepted &lt;strong&gt;XYZ@bnc.ca&lt;/strong&gt;"
+                            fieldLabel="Bank's special message (Optional)"
+                            required="{Boolean}false"
+                            name="./bankSpecialMsg"/>
+                     </items> 
+                 </field> 
+            </banks>
+        </items>
+    </content>
+</jcr:root>

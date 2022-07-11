@@ -1,0 +1,210 @@
+<template data-sly-template.fields="${@ model, questionList, messages}"> 
+    <sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+    <sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+    <sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+    <sly data-sly-use.dropdownTemplates="${'/apps/edc/components/common/dropdown.html'}"/>
+    <sly data-sly-use.multiSelectTemplate="/apps/edc/components/common/multiselect.html" />
+    <sly data-sly-test.hasCountry="" />
+
+    <!--/* Countries */-->
+    <sly data-sly-use.ds="${'com.edc.edcweb.core.models.FormCommonObjects' @ path ='/apps/edc/settings/wcm/designs/edc-data/countries', sort = true}"/>
+    <sly data-sly-test.countries="${ds.optionsFromDataSourcePath}" />
+     <!--/* Provinces */-->
+    <sly data-sly-use.ds="${'com.edc.edcweb.core.models.FormCommonObjects' @ path ='/apps/edc/settings/wcm/designs/edc-data/province', sort = true}"/>
+    <sly data-sly-test.provinces="${ds.optionsFromDataSourcePath}" />
+     <!--/* States  */-->
+    <sly data-sly-use.ds="${'com.edc.edcweb.core.models.FormCommonObjects' @ path ='/apps/edc/settings/wcm/designs/edc-data/usStates', sort = true}"/>
+    <sly data-sly-test.states="${ds.optionsFromDataSourcePath}" />
+
+    <sly data-sly-list.question="${questionList}">
+        <sly data-sly-test.questionType="${question.questionType}"/>  
+        <!--/* Text Field */-->
+        <sly data-sly-test="${questionType == 'Text Field'}" data-sly-call="${textField @ fieldName=question.questionFieldName,
+            questionLabel=question.questionLabel, questionHelperText=question.questionHelperText,
+            uuid=uuid, messages=messages}"/>
+        <!--/* Phone Block */-->
+        <sly data-sly-test="${questionType == 'Phone Block'}" data-sly-call="${phoneBlock @ fieldName=question.questionFieldName,
+            questionLabel=question.questionLabel, questionHelperText=question.questionHelperText,
+            uuid=uuid, messages=messages}"/>
+        <!--/* Single Select*/-->
+        <sly data-sly-test="${questionType == 'Single Select'}" data-sly-call="${singleSelect @ fieldName=question.questionFieldName,
+            questionLabel=question.questionLabel, questionHelperText=question.questionHelperText, lov=question.questionLovPath, 
+            dropdownTemplates=dropdownTemplates, uuid=uuid, messages=messages, otherLabel=question.questionOtherlabel, 
+            otherHelperText=question.questionOtherHelperText}"/>
+        <!--/* Multi Select */-->
+        <sly data-sly-test="${questionType == 'Multi Select'}" data-sly-call="${multiSelect @ fieldName=question.questionFieldName,
+            questionLabel=question.questionLabel, questionHelperText=question.questionHelperText, lov=question.questionLovPath,
+            dropdownTemplates=dropdownTemplates, uuid=uuid, messages=messages}"/>
+        <!--/* Country Multi Select */-->
+         <sly data-sly-test="${questionType == 'Country Multi Select'}" data-sly-call="${countryMultiSelect @ fieldName=question.questionFieldName,
+            questionLabel=question.questionLabel, questionHelperText=question.questionHelperText, lov=question.questionLovPath,
+            multiSelectTemplate=multiSelectTemplate, uuid=uuid, messages=messages}"/>
+        <!--/* Yes / No Radio */-->
+        <sly data-sly-test="${questionType == 'Yes / No Radio'}" data-sly-call="${yesNoRadio @ fieldName=question.questionFieldName,
+            questionLabel=question.questionLabel, questionHelperText=question.questionHelperText,
+            uuid=uuid, messages=messages}"/>
+        <!--/* Address Block / Set flag so only one conutry block is shown */-->
+        <sly data-sly-test="${(questionType == 'Address Block') && !hasCountry}" data-sly-test.hasCountry="true" data-sly-call="${addressBlock @ model=model, questionLabel=question.questionLabel, 
+            dropdownTemplates=dropdownTemplates, uuid=uuid, messages=messages, countries=countries, provinces=provinces, states=states}"/>
+        <!--/* Country Province City */-->
+        <sly data-sly-test="${(questionType == 'Country Prov/State City Block') && !hasCountry}" data-sly-test.hasCountry="true" data-sly-call="${cpcBlock @ questionLabel=question.questionLabel, 
+            dropdownTemplates=dropdownTemplates, uuid=uuid, messages=messages, countries=countries, provinces=provinces, states=states, 
+            showCountry=true}"/>
+        <!--/* Name Block / Set flag so only one conutry block is shown */-->
+        <sly data-sly-test="${questionType == 'Name Block'}" data-sly-call="${nameBlock @ 
+            fieldName=question.questionFieldName, questionLabel=question.questionLabel, questionHelperText=question.questionHelperText,
+            uuid=uuid, messages=messages}"/>
+    </sly>
+</template>
+<!--/* Text Field */-->
+<template data-sly-template.textField="${@ fieldName, questionLabel, questionHelperText, uuid, messages, validation, min, max}}">
+    <div data-form-field="${fieldName}" class="form-group ${fieldName} ${wcmmode.disabled ? 'hide' : 'show'}">
+        <label for="${fieldName}-${uuid}">${questionLabel}</label>
+        <input type="text" class="form-control" name="${fieldName}" id="${fieldName}-${uuid}" data-no-url="true" required="" placeholder="${questionHelperText}" validation-rule="${validation ? validation : 'name'}" data-min-length="${min ? min : '0'}" data-max-length="${max ? max : '100'}" maxlength="100">
+        <span class="error" data-req-message="${messages.required}" data-text-message="${messages.format}" data-length-min-message="${messages.minlength}" data-length-max-message="${messages.maxlength}"></span>
+    </div>
+</template>
+<!--/* Single Select*/-->
+<template data-sly-template.singleSelect="${@ fieldName, questionLabel, questionHelperText, lov, dropdownTemplates, uuid, messages, otherLabel, otherHelperText}">
+    <sly data-sly-test.hasOther="${(otherLabel && otherHelperText) ? 'has-other' : ''}" />
+    <div data-sly-test="${lov}" data-form-field="${fieldName}" class="form-group ${hasOther} ${wcmmode.disabled ? 'hide' : 'show'}">
+        <sly data-sly-use.ds="${'com.edc.edcweb.core.models.FormCommonObjects' @ path = lov}"/>
+        <sly data-sly-test.selectMap="${ds.optionsFromDataSourcePath}" />
+        <sly data-sly-call="${dropdownTemplates.dropdown @ name=fieldName, label=questionLabel,
+            placeholder=questionHelperText, uuid=uuid, required=true, nourl=true,
+            requirederror=messages.required, invaliderror=messages.format, 
+            options=selectMap}">
+        </sly>
+        <div class="other-section" data-sly-test="${hasOther}">
+            <label for="${fieldName}Other-${uuid}">${otherLabel}</label>
+            <input type="text" id="${fieldName}Other-${uuid}" class="form-control" name="" placeholder="${otherHelperText}" validation-rule="name" />
+            <span class="error" data-req-message="${messages.required}" data-text-message="${messages.format}" data-length-min-message="${messages.minlength}" data-length-max-message="${messages.maxlength}"></span>
+        </div>
+    </div>
+</template>
+<!--/* Multi Select */-->
+<template data-sly-template.multiSelect="${@ fieldName, questionLabel, questionHelperText, lov, dropdownTemplates, uuid, messages}">
+    <div data-sly-test="${lov}" data-form-field="${fieldName}" class="form-group ${wcmmode.disabled ? 'hide' : 'show'}">
+        <sly data-sly-use.ds="${'com.edc.edcweb.core.models.FormCommonObjects' @ path = lov}"/>
+        <sly data-sly-test.selectMap="${ds.optionsFromDataSourcePath}" />
+        <sly data-sly-call="${dropdownTemplates.dropdown @ dropdowntype='multiple', name=fieldName, label=questionLabel,
+             placeholder=questionHelperText, uuid=uuid, required=true, nourl=true, 
+             buttontext=properties.buttonText, clearalltext=properties.optionClear,
+             singulartext=properties.optionSingular, pluraltext=properties.optionPlural,
+             requirederror=messages.required, invaliderror=messages.format, 
+             options=selectMap}">
+        </sly>
+    </div>
+</template>
+<!--/* Country Multi Select*/-->
+<template data-sly-template.countryMultiSelect="${@ fieldName, questionLabel, questionHelperText, lov, multiSelectTemplate, uuid, messages}">
+    <div data-sly-test="${lov}" data-form-field="${fieldName}" class="form-group ${wcmmode.disabled ? 'hide' : 'show'}">
+        <sly data-sly-call="${multiSelectTemplate.multiselect @ fieldName=fieldName, label=questionLabel, 
+        placeholder=questionHelperText, isRequired=true, isRequiredError=messages.required,lovPath=lov}"/>
+    </div>
+</template>
+<!--/* Yes / No Radio */-->
+<template data-sly-template.yesNoRadio="${@ fieldName, questionLabel, questionHelperText, uuid, messages}">
+    <div data-form-field="${fieldName}" class="form-group ${wcmmode.disabled ? 'hide' : 'show'}">
+        <label id="${fieldName}-${uuid}">${questionLabel}</label>
+        <div class="form-row radio-group" role="radiogroup" aria-labelledby="${fieldName}-${uuid}">
+            <div class="radio-option">
+                <input type="radio" class="form-control" id="${fieldName}Yes-${uuid}" name="${fieldName}" value="yes" data-no-url="true" required/>
+                <label for="${fieldName}Yes-${uuid}">${properties.yesLabel}</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" class="form-control" id="${fieldName}No-${uuid}" name="${fieldName}" value="no" data-no-url="true" required/>
+                <label for="${fieldName}No-${uuid}">${properties.noLabel}</label>
+            </div>
+        </div>
+        <span class="error" data-req-message="${messages.required}"></span>
+    </div>
+</template>
+<!--/* Address Block */-->
+<template data-sly-template.addressBlock="${@ model, questionLabel, dropdownTemplates, uuid, messages, countries, provinces, states}">
+    <!--/* AddressComplete */-->
+    <sly data-sly-test.addressService="${model.addressCompleteService}" />
+    <sly data-sly-test.addressCompleteKey="${model.addressCompleteKey @ context='text'}"/>
+    <link data-sly-test="${addressCompleteKey}" rel="stylesheet" type="text/css" href="${model.addressCompleteCSSUrl @ context='text'}${addressService == 'CandaPost' ? addressCompleteKey : '' @ context='text'}" />
+    <script data-sly-test="${addressCompleteKey}" type="text/javascript" src="${model.addressCompleteJSUrl @ context='text'}${addressService == 'CandaPost' ? addressCompleteKey : '' @ context='text'}"></script>
+    <!--/* AddressComplete */-->
+    <sly data-sly-call="${countrySelect @ dropdownTemplates=dropdownTemplates, uuid=uuid, messages=messages, countries=countries}"/>
+        <div class="form-group company-address ${wcmmode.disabled ? 'hide' : 'show'}">
+            <label for="companyAddress1-${uuid}">${properties.companyAddress1Label}</label>
+            <input type="text" id="companyAddress1-${uuid}" class="form-control" name="companyAddress1" placeholder="${properties.companyAddress1Ph}" data-no-url="true" required="" validation-rule="specialAddress" data-min-length="2" data-max-length="200" maxlength="100"/>
+            <span class="error" data-req-message="${messages.required}" data-text-message="${messages.format2}" data-pobox-message="${messages.specialAddress}" data-length-min-message="${messages.minlength}" data-length-max-message="${messages.maxlength}"></span>
+        </div>
+        <div class="form-group company-address2 ${wcmmode.disabled ? 'hide' : 'show'}">
+            <label for="companyAddress2-${uuid}" data-sly-test="${properties.companyAddress2Label}">${properties.companyAddress2Label}</label>
+            <input type="text" id="companyAddress2-${uuid}" class="form-control" name="companyAddress2" placeholder="${properties.companyAddress2Ph}" data-no-url="true" validation-rule="address2" maxlength="100" data-max-length="100"/>
+            <span class="error" data-req-message="${messages.required}" data-text-message="${messages.format}" data-length-min-message="${messages.minlength}" data-length-max-message="${messages.maxlength}" data-no-url-message="${messages.nourl}"></span>
+        </div>
+        <sly data-sly-call="${cpcBlock @ dropdownTemplates=dropdownTemplates, uuid=uuid, messages=messages, countries=countries, 
+            provinces=provinces, states=states, showPost=true}"/>
+    </sly>
+    <sly data-sly-use.scriptsTemplate="/apps/edc/components/common/autocompletescripts.html"/>
+    <sly data-sly-test="${addressService == 'CandaPost'}" data-sly-call="${scriptsTemplate.canadPost @ apiKey=addressCompleteKey}"/>
+    <sly data-sly-test="${addressService == 'Loqate'}" data-sly-call="${scriptsTemplate.loqate @ apiKey=addressCompleteKey, uuid=uuid, useDefaultCountry='true'}"/>
+</template>
+<!--/* Country Province City */-->
+<template data-sly-template.cpcBlock="${@ questionLabel, dropdownTemplates, uuid, messages, countries, provinces, states, showCountry, showPost}">
+    <sly data-sly-test="${showCountry}" data-sly-call="${countrySelect @ dropdownTemplates=dropdownTemplates, uuid=uuid, messages=messages, countries=countries,showCountry=showCountry}"/>
+    <div data-form-field="companyCity" class="form-group company-city ${wcmmode.disabled ? 'hide' : 'show'}">
+        <label for="companyCity-${uuid}">${properties.companyCityLabel}</label>
+        <input type="text" id="companyCity-${uuid}" class="form-control" name="companyCity" placeholder="${properties.companyCityPh}" data-no-url="true" required="" validation-rule="city" data-min-length="2" data-max-length="100"  maxlength="100"/>
+        <span class="error" data-req-message="${messages.required}" data-text-message="${messages.format}" data-length-min-message="${messages.minlength}" data-length-max-message="${messages.maxlength}"  data-no-url-message="${messages.nourl}"></span>
+    </div>
+    <div class="${showPost ? 'form-row' : ''}">
+        <div data-form-field="companyProvince " class="form-group province ${wcmmode.disabled ? 'hide' : 'show'}">
+            <sly data-sly-call="${dropdownTemplates.dropdown @ name='companyProvince', uuid=uuid, label=properties.provinceLabel,
+                placeholder=properties.provincePh, required=true, nourl=true, additionalclasses='can',
+                requirederror=messages.required, invaliderror=messages.required, options=provinces}">
+            </sly>  
+            <sly data-sly-call="${dropdownTemplates.dropdown @ name='companyProvince-alt', uuid=uuid, label=properties.stateLabel,
+                placeholder=properties.statePh, required=true, nourl=true, additionalclasses='hide usa',
+                requirederror=messages.required, invaliderror=messages.required, options=states}">
+            </sly>
+            <label class="hide" for="companyProvinceInput-${uuid}">${properties.companyProvinceLabel}</label>
+            <input type="text" id="companyProvinceInput-${uuid}" name="companyProvinceInput" placeholder="${formLabels.provinceph}" class="form-control hide" data-no-url="true" validation-rule="province" maxlength="100"/>
+            <span class="error" data-req-message="${messages.required}" data-text-message="${messages.format}" data-length-min-message="${messages.minlength}" data-length-max-message="${messages.maxlength}" ></span>
+        </div>
+        <div data-sly-test="${showPost}" data-form-field="companyPostal" class="form-group company-postal ${wcmmode.disabled ? 'hide' : 'show'}">
+            <label for="companyPostal-${uuid}" data-default-label="${properties.companyPostalLabel}" data-can-label="${properties.provinceLabel}" data-usa-label="${properties.stateLabel}">${properties.companyPostalLabel}</label>
+            <input type="text" id="companyPostal-${uuid}" class="form-control" name="companyPostal" placeholder="${properties.companyPostalPh}" data-no-url="true" required="" validation-rule="postalCode" maxlength="100"/>
+            <span class="error" data-req-message="${messages.required}" data-text-message="${messages.postalcode}"  data-text-secondary-message="${messages.alphadashesspaces}"  data-length-min-message="${messages.minlength}" data-length-max-message="${messages.maxlength}" data-no-url-message="${messages.nourl}"></span>
+        </div>
+    </div>
+</template>
+<!-- Phone Block -->
+<template data-sly-template.phoneBlock="${@ uuid=uuid, messages=messages}">
+    <div class="form-row">
+        <div data-form-field="mainPhone" class="form-group main-phone ${wcmmode.disabled ? 'hide' : 'show'}">
+            <label for="mainPhone-${uuid}">${properties.mainPhoneLabel}</label>
+            <input type="tel" class="form-control" name="mainPhone" id="mainPhone-${uuid}" required="" placeholder="${properties.mainPhonePh}" validation-rule="specialPhone" data-min-length="1" data-max-length="30" />
+            <span class="error" data-req-message="${messages.required}" data-tel-message="${messages.phone}" data-length-min-message="${messages.minlength}" data-length-max-message="${messages.maxlength}"></span>
+        </div>
+        <div class="form-group phone-ext ${wcmmode.disabled ? 'hide' : 'show'}">
+            <label for="CoMainPhoneExt-${uuid}">${properties.coMainPhoneExtLabel}</label>
+            <input type="tel" id="ext-${uuid}" class="form-control" name="CoMainPhoneExt" placeholder="${properties.coMainPhoneExtPh}" validation-rule="phoneExt" />
+            <span class="error" data-req-message="${messages.required}" data-tel-message="${messages.phoneExt}" data-length-min-message="${messages.minlength}" data-length-max-message="${messages.maxlength}"></span>
+        </div>
+    </div>
+</template>
+<!-- Name Block -->
+<template data-sly-template.nameBlock="${@ uuid, messages}">
+    <div class="form-row">
+        <sly data-sly-call="${textField @ fieldName='firstName', questionLabel=properties.firstNameLabel,
+            questionHelperText=properties.firstNamePh, uuid=uuid, messages=messages, validation='name', min='1', max='100'}"/>
+        <sly data-sly-call="${textField @ fieldName='lastName', questionLabel=properties.lastNameLabel, 
+            questionHelperText=properties.LastNamePh, uuid=uuid, messages=messages, validation='name', min='1', max='100'}"/>
+    </div>
+</template>
+<!--/* Just Country Select */-->
+<template data-sly-template.countrySelect="${@ dropdownTemplates, uuid, messages, countries}">
+    <div data-form-field="companyCountry" class="form-group country ${wcmmode.disabled ? 'hide' : 'show'}" data-usa-code="USA" data-can-code="CAN">
+        <sly data-sly-call="${dropdownTemplates.dropdown @ name='companyCountry', uuid=uuid, label=properties.companyCountryLabel,
+            placeholder=properties.companyCountryPh, required=true, nourl=true,
+            requirederror=messages.required, invaliderror=messages.required,
+            options=countries}"/>
+    </div>
+</template>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+    getEmailAdressFieldId="1716"
+    getExternalIDAEMPathFieldId="1569"
+    getExternalIDFieldId="1502"
+    getAEMpathFieldId="1505"
+    getCounterFieldId="1568"
+    getEloquaTrafficSourceFieldId="1754"
+    getParnersTCFieldId="1755"
+    getParnersCASLFieldId="1756"
+    getTimestampFieldId="1504"
+    getWitFieldId="1875"/>

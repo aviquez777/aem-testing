@@ -1,0 +1,12 @@
+.disclaimer p {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    line-height: 2.4; 
+}
+  
+.disclaimer.webinar-spacing p {
+    line-height: 16px; 
+}

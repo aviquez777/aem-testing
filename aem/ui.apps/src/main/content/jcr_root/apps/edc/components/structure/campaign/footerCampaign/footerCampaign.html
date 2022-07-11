@@ -1,0 +1,16 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.model="com.edc.edcweb.core.models.Footer"/>
+<sly data-sly-use.footerTemplate="/apps/edc/components/common/footer.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !model.edcLogoPath}"/>
+
+<sly data-sly-test.darklogos="${pageProperties.themecolor == 'sandstone-theme' || pageProperties.themecolor == 'saffron-theme'}" />
+<sly data-sly-test.edclogo="${darklogos ? model.edcLogoPathBlack : model.edcLogoPath}" />
+<sly data-sly-test.canadalogo="${darklogos ? model.canadaLogoPathBlack : model.canadaLogoPath}" />
+<sly data-sly-test.edclogo2x="${darklogos ? model.edcLogoPath2xBlack : model.edcLogoPath2x}" />
+<sly data-sly-test.canadalogo2x="${darklogos ? model.canadaLogoPath2xBlack : model.canadaLogoPath2x}" />
+
+<footer id="footer" class="full-width campaign-footer" data-sly-test="${model.edcLogoPath}">
+    <sly data-sly-call="${footerTemplate.footerbottomsection @ canadaLogoUrl=model.canadaLogoUrl, canadaLogoTarget=model.canadaLogoTarget, canadaLogoPath=canadalogo, canadaLogoPath2x=canadalogo2x, canadaImgAlt=model.canadaImgAlt,
+        edcLogoUrl=model.edcLogoUrl, edcLogoTarget=model.edcLogoTarget, edcLogoPath=edclogo, edcLogoPath2x=edclogo2x, edcImgAlt=model.edcImgAlt,
+        bottomLinks=model.bottomLinks, companyName=model.companyName, edcAddress=model.edcAddress, contactTitle=model.socialTitle, contactLinks=model.socialLinks, type='campaign'}" />
+</footer>

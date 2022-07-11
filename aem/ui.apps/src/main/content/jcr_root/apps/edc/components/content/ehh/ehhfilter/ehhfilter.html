@@ -1,0 +1,62 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-use.ehhfilter="${'com.edc.edcweb.core.models.EhhFilter'}"/>
+
+<!-- Uncomment next line when servlet URL is generated and change validation from  ehhfilter.mrhFields && !ehhfilter.categories to check for ehhfilter.mrhFields and the servlet URL is present-->
+<!-- <sly data-sly-call="${templates.placeholder @ isEmpty = ehhfilter.mrhFields && !ehhfilter.categories, emptyTextAppend='No questions for categories'}"/> -->
+
+<sly data-sly-call="${templates.placeholder @ isEmpty = !ehhfilter.mrhFields}"/>
+
+<sly data-sly-use.dropdownTemplates="${'/apps/edc/components/common/dropdown.html'}" />
+<sly data-sly-use.messages="com.edc.edcweb.core.models.FormCommonMessages"/>
+<sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+<sly data-sly-use.ibTemplageObj="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+
+<!-- Add data-sly-test to check if servlet URL is present -->
+<!-- data-search-url should be the same URL used on the EHH Search Component -->
+<!-- data-action should be the servlet URL -->
+<!-- data-default-market should have the value of the default market when the page loads united states -->
+<div class="c-ehh-filter" data-search-url="${ehhfilter.searchPagePath}" data-action="/bin/ehhFilterSearchServlet" data-default-market="united states" data-link-target="${properties.categoryctatarget}" data-link-text="${properties.categoryctatext}" data-show-more="${properties.showmoretext}" data-show-less="${properties.showlesstext}" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'EHH category filter'}" data-event-type="category filter" data-event-name="category filter - help hub" data-event-engagement="1"  data-event-action="main body">
+    <div class="main-title">
+        <div class="title-content">
+            <h2>${properties.maintitle @ context='html'}</h2>
+        </div>
+    </div>
+    <div class="filter">
+        <h3 class="filter-title">${properties.filtertitle}</h3>
+        <div class="markets-dropdown hidden-text">
+            <div class="c-dropdown">
+                <div class="dropdown-overlay">
+                    <label for="markets">${properties.marketsubtitle}</label>
+                    <div class="dropdown-container">
+                        <div class="dropdown-title">
+                            <span class="label-text">${properties.marketsubtitle}</span>
+                            <span class="close-btn"></span>
+                        </div>
+                        <select name="markets" id="markets" class="form-control ui selection dropdown" data-limit="">
+                            <option data-sly-repeat.item="${ehhfilter.markets}" value="${item}">${ehhfilter.markets[item]}</option>
+                        </select>
+                        <span class="error dropdown-error" data-req-message="${messages.formErrorMessages.required}" data-select-one-message="${messages.formErrorMessages.format}"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="categories-dropdown" data-placeholder="${properties.filterplaceholder}">
+            <sly data-sly-call="${dropdownTemplates.dropdown @ name='categories', label=properties.filtersubtitle,
+                placeholder=properties.filterplaceholder, required=true, nourl=true,
+                requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format}">
+            </sly>
+        </div>
+        <h4 class="categories-title" id="categories-title">${properties.filtersubtitle}</h4>
+        <div class="clear-filter hide">
+            <div data-sly-test="${properties.clearfiltertext}" data-sly-call="${ibTemplageObj.ibTemplate @ buttonbehavior='button', isUsedForModal='nomodal', buttonstate='enabled', buttontext=properties.clearfiltertext, buttoncssclasses='edc-btn-unstyled'}"  data-sly-unwrap></div>
+        </div>
+        <ul class="categories-list-menu"></ul>
+    </div>
+    <div class="categories">
+        <div class="sr-only notifications" aria-live="polite" data-text-start="${ehhfilter.startText}" data-text-middle="${ehhfilter.middleText}" data-text-end="${ehhfilter.endText}"></div>
+    </div>
+    <div class="other-market hide">
+        <div data-sly-unwrap="${!wcmmode.edit || !wcmmode.design}" data-sly-resource="${'container-layout' @ resourceType='wcm/foundation/components/responsivegrid'}"></div>
+    </div>
+</div>

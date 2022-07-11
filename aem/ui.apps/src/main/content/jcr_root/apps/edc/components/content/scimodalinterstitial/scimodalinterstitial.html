@@ -1,0 +1,34 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = properties.title, emptyTextAppend='Click the Preview button (next to edit) and Use the button below to see the modal'}"/>
+
+<div style="width:500px;margin:10px auto;" data-sly-test="${properties.title && !wcmmode.disabled}">
+    <button type="button" class="edc-primary-btn modal-trigger" onClick="EDC.utils.showModal('c-sci-interstitial', true)">
+        <span>Author Click Me to See the Modal</span>
+    </button>
+</div>
+<section data-sly-test="${properties.title}" class="c-sci-interstitial hide" role="dialog" aria-modal="true" data-event-component="sci interstitial" data-event-type="interstitial" data-event-name="Interstitial view" data-event-action="main body" data-engagement-type="1" data-event-text="" data-event-value="" data-destination-page="">
+    <div class="modal-section">
+        <div class="modal-shade"></div>
+        <div class="modal-container">
+            <button type="button" class="modal-close" aria-label="${properties.ariaLabel}"></button>
+            <div class="modal-title">
+                <h2>${properties.title}</h2>
+            </div>
+            <div class="modal-image">
+                <img src=${properties.modalImg} alt=${properties.imgAlt} />
+            </div>
+            <div class="modal-text">
+                <h2>${properties.secondTitle}</h2>
+                <p>${properties.text}</p>
+            </div>
+            <div class="modal-actions">
+                <sly data-sly-use.model="${'com.edc.edcweb.core.models.SCImodalInterstitial' @ btnLink=properties.btnLink,dataAnchorForScroll=properties.dataAnchorForScroll}">
+        
+                <a class="button edc-primary-btn" href="${model.link}">
+                    <span>${properties.btnText}</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

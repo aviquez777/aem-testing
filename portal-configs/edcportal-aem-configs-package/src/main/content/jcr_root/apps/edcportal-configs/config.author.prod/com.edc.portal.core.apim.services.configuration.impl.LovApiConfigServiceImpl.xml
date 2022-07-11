@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+  xmlns:jcr="http://www.jcp.org/jcr/1.0"
+  jcr:primaryType="sling:OsgiConfig"
+
+  getResource="https://EDCanada.onmicrosoft.com/e2f25839-84ee-45e3-8755-24e75998bd92"
+  getOCPLovApisubscriptionKey="fc5ab37d908047ec8868443b0feeee06"
+
+  getBaseEndpoint="/lov/api/v1"
+  getGenericEndpoint="/codes"/> 

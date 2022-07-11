@@ -1,0 +1,85 @@
+{
+  "jcr:primaryType": "cq:Page",
+  "jcr:createdBy": "admin",
+  "jcr:created": "Wed May 24 2017 10:47:14 GMT-0700",
+  "jcr:content": {
+	  "policy_1503509965268": {
+	    "jcr:primaryType": "nt:unstructured",
+	    "jcr:title": "EDC-EN-Header",
+	    "logintext": "Login",
+	    "logoimage": "/content/dam/edc/logo_EDC_Black.png",
+	    "jcr:lastModifiedBy": "admin",
+	    "languagetoggletext": "Français",
+	    "menutargetbehaviour": "_self",
+	    "phonenumber": "1-800-229-0575",
+	    "logintargetbehaviour": "_self",
+	    "maxlevels": "-1",
+	    "startingpage": "/content/edc/en/start-of-header-pages",
+	    "logoalt": "Export Development Canada",
+	    "logotargetbehaviour": "_self",
+	    "jcr:lastModified": "Wed Aug 30 2017 13:06:42 GMT-0400",
+	    "sling:resourceType": "wcm/core/components/policy/policy",
+	    "languagetoggleurl": "/content/edc/fr/landing",
+	    "loginurl": "http://www.edc.ca/EN/Our-Solutions/Pages/edc-direct-login.aspx",
+	    "logolink": "/content/edc/en",
+	    "jcr:content": {
+	      "jcr:primaryType": "nt:unstructured",
+	      "jcr:mixinTypes": ["cq:ReplicationStatus"],
+	      "cq:lastReplicationAction": "Activate",
+	      "cq:lastReplicatedBy": "admin",
+	      "cq:lastReplicated": "Mon Aug 28 2017 16:18:05 GMT-0400"
+	      },
+	    "links": {
+	      "jcr:primaryType": "nt:unstructured",
+	      "item0": {
+	        "jcr:primaryType": "nt:unstructured",
+	        "targetbehaviour": "_self",
+	        "url": "http://www.edc.ca/EN/About-Us/Careers/Pages/default.aspx",
+	        "text": "Careers"
+	        },
+	      "item1": {
+	        "jcr:primaryType": "nt:unstructured",
+	        "targetbehaviour": "_self",
+	        "url": "http://www.edc.ca/EN/About-Us/Contact-Us/Pages/default.aspx",
+	        "text": "Contact Us"
+	        }
+	      }
+	    },
+	  "policy_1503943710149": {
+	    "jcr:primaryType": "nt:unstructured",
+	    "jcr:title": "EDC-FR-Header",
+	    "logintext": "Connexion",
+	    "logoimage": "/content/dam/edc/logo_EDC_Black.png",
+	    "jcr:lastModifiedBy": "admin",
+	    "languagetoggletext": "Français",
+	    "menutargetbehaviour": "_self",
+	    "phonenumber": "1-800-229-0575",
+	    "logintargetbehaviour": "_self",
+	    "maxlevels": "-1",
+	    "startingpage": "/content/edc/fr/start-of-header-pages",
+	    "logoalt": "Exportation et développement Canada",
+	    "logotargetbehaviour": "_self",
+	    "jcr:lastModified": "Wed Aug 30 2017 13:06:35 GMT-0400",
+	    "sling:resourceType": "wcm/core/components/policy/policy",
+	    "languagetoggleurl": "/content/edc/fr/landing",
+	    "loginurl": "http://www.edc.ca/FR/Our-Solutions/Pages/edc-direct-login.aspx",
+	    "logolink": "/content/edc/fr",
+	    "jcr:content": {"jcr:primaryType": "nt:unstructured"},
+	    "links": {
+	      "jcr:primaryType": "nt:unstructured",
+	      "item0": {
+	        "jcr:primaryType": "nt:unstructured",
+	        "targetbehaviour": "_self",
+	        "url": "http://www.edc.ca/FR/About-Us/Careers/Pages/default.aspx",
+	        "text": "Carrières"
+	        },
+	      "item1": {
+	        "jcr:primaryType": "nt:unstructured",
+	        "targetbehaviour": "_self",
+	        "url": "http://www.edc.ca/FR/About-Us/Contact-Us/Pages/default.aspx",
+	        "text": "Contactez-nous"
+	        }
+	      }
+	    }
+	}
+}

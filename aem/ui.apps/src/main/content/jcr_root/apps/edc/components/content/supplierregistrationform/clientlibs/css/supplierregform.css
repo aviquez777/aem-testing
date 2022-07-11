@@ -1,0 +1,487 @@
+.c-supplier-registration-form {
+    box-sizing: border-box;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.c-supplier-registration-form * {
+    box-sizing: border-box;
+}
+
+.c-supplier-registration-form .cta {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.c-supplier-registration-form hr {
+    border: 0.5px solid #ccc;
+    margin: 0 0 2rem;
+}
+
+.c-supplier-registration-form p.or-section {
+    color: #2f78c6;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.7142;
+    font-weight: 600;
+}
+
+.c-supplier-registration-form .hide,
+.c-supplier-registration-form span.error {
+    display: none;
+}
+
+.c-supplier-registration-form input[type='checkbox'] {
+    cursor: pointer;
+    float: left;
+}
+
+.c-supplier-registration-form .levels {
+    clear: both;
+}
+
+.c-supplier-registration-form .levels .bottom-ctas {
+    clear: both;
+}
+
+.c-supplier-registration-form .levels .form-ctas .back,
+.c-supplier-registration-form .levels .form-ctas .cancel {
+    font-weight: 600;
+}
+
+.c-supplier-registration-form .levels .form-ctas .cancel {
+    margin-bottom: 3rem;
+}
+
+.c-supplier-registration-form .levels .form-ctas .privacy-policy {
+    flex: 1;
+    width: 100%;
+}
+
+.c-supplier-registration-form .levels .form-ctas .privacy-policy p {
+    font-size: 12px;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.c-supplier-registration-form .levels .form-ctas.show-flex {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.c-supplier-registration-form .levels .form-ctas.show-flex a {
+    margin-right: 1rem;
+}
+
+.c-supplier-registration-form .levels .form-group,
+.c-supplier-registration-form .levels .form-row {
+    float: left;
+    width: 100%;
+}
+
+.c-supplier-registration-form .levels .form-group.grey-bg,
+.c-supplier-registration-form .levels .form-row.grey-bg {
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    padding: 1rem;
+}
+
+.c-supplier-registration-form .levels .form-group.company-address2 label,
+.c-supplier-registration-form .levels .form-row.company-address2 label {
+    display: none;
+}
+
+.c-supplier-registration-form .levels .form-group label + p {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.c-supplier-registration-form .levels .level {
+    min-height: 1px;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    width: 100%;
+}
+
+@media (min-width: 720px) {
+    .c-supplier-registration-form .levels .level {
+        width: 100%;
+        float: left;
+    }
+}
+
+.c-supplier-registration-form .levels .checkbox-item {
+    padding: 15px;
+    background: #ebebeb;
+    margin-top: 20px;
+    margin-bottom: 3rem;
+    border-radius: 5px;
+}
+
+.c-supplier-registration-form .levels .checkbox-item .input-description {
+    display: inline-block;
+    width: calc(90% - 1rem);
+}
+
+.c-supplier-registration-form .levels .checkbox-item .input-description label {
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+.c-supplier-registration-form .levels .checkbox-item .input-description label p {
+    margin-bottom: 0;
+}
+
+.c-supplier-registration-form .same-address {
+    display: flex;
+    align-items: center;
+}
+
+.c-supplier-registration-form .same-address label,
+.c-supplier-registration-form .same-address input {
+    margin: 0;
+}
+
+.c-supplier-registration-form .same-address input {
+    margin-right: 1rem;
+}
+
+.c-supplier-registration-form .same-address label {
+    font-weight: normal;
+}
+
+.c-supplier-registration-form .form-disclaimer {
+    margin-bottom: 2rem;
+}
+
+.c-supplier-registration-form .form-disclaimer p {
+    margin: 0;
+    font-weight: normal;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    color: #404041;
+    line-height: 16px;
+}
+
+.c-supplier-registration-form .success-message {
+    padding: 4rem 0;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+}
+
+.c-supplier-registration-form .success-message h2 {
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.c-supplier-registration-form .success-message .tracking-number {
+    color: #2f78c6;
+    font-size: 24px;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+}
+
+.c-supplier-registration-form .status {
+    border-top: 1px solid rgba(51, 51, 51, 0.3);
+    clear: both;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+}
+
+.c-supplier-registration-form .status .status-bar {
+    min-height: 1px;
+    padding-left: 0;
+    padding-right: 15px;
+    position: relative;
+    width: 33.33333333%;
+    float: left;
+    border-top: 4px solid #007C03;
+}
+
+.c-supplier-registration-form .show {
+    display: inline-block;
+}
+
+.c-supplier-registration-form .title-color {
+    color: #4386ac;
+}
+
+.c-supplier-registration-form .radio-group label,
+.c-supplier-registration-form .checkbox-group label {
+    font-weight: normal;
+}
+
+.c-supplier-registration-form .radio-group.error + span.error,
+.c-supplier-registration-form .checkbox-group.error + span.error {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: block;
+}
+
+.c-supplier-registration-form .checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.c-supplier-registration-form .checkbox-group label {
+    margin: 0;
+}
+
+.c-supplier-registration-form .checkbox-group input {
+    margin-top: 0;
+}
+
+.c-supplier-registration-form .goods-and-services {
+    position: relative;
+}
+
+.c-supplier-registration-form .goods-and-services input {
+    padding-right: 7rem;
+}
+
+.c-supplier-registration-form .goods-and-services .input-inner-text {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+}
+
+@media (min-width: 720px) {
+    .c-supplier-registration-form .status {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 66.66666667%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-supplier-registration-form .status {
+        width: 66.66666667%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-supplier-registration-form .levels {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 66.66666667%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-supplier-registration-form .levels {
+        width: 66.66666667%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-supplier-registration-form .levels .form-ctas .cancel {
+        margin-bottom: 0;
+    }
+    .c-supplier-registration-form .levels .form-ctas .privacy-policy {
+        padding-right: 15%;
+    }
+    .c-supplier-registration-form .levels .form-ctas.show-flex {
+        display: flex;
+        display: -webkit-flex;
+        flex-direction: row;
+        align-items: start;
+    }
+    .c-supplier-registration-form .levels .form-ctas.show-flex a {
+        margin-right: 1rem;
+    }
+    .c-supplier-registration-form .levels .form-group {
+        margin-bottom: 1rem;
+    }
+    .c-supplier-registration-form .levels .input-group {
+        display: flex;
+        display: -webkit-flex;
+    }
+    .c-supplier-registration-form .levels .input-group .first {
+        padding-right: 1rem;
+    }
+    .c-supplier-registration-form .levels .input-group .last {
+        padding-left: 1rem;
+        padding-right: 0;
+    }
+    .c-supplier-registration-form .levels .form-row > div:first-child {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-supplier-registration-form .levels .form-row > div:first-child {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-supplier-registration-form .levels .form-row:not(.alone-on-row) > div:last-child {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 0;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-supplier-registration-form .levels .form-row:not(.alone-on-row) > div:last-child {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-supplier-registration-form .goods-and-services .input-group input {
+        flex: 1 0 70%;
+    }
+    .c-supplier-registration-form .goods-and-services .input-group span {
+        flex: 1 0 30%;
+    }
+    .c-supplier-registration-form .success-message {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 66.66666667%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-supplier-registration-form .success-message {
+        width: 66.66666667%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-supplier-registration-form .col-half {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-supplier-registration-form .col-half {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-supplier-registration-form .form-row:not(.radio-group) {
+        display: flex;
+        align-items: flex-start;
+    }
+    .c-supplier-registration-form .form-row .company-city {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-supplier-registration-form .form-row .company-city {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-supplier-registration-form .form-row .province {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 0;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-supplier-registration-form .form-row .province {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-supplier-registration-form .form-row .company-address,
+    .c-supplier-registration-form .form-row .country {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 15px;
+        position: relative;
+        width: 66.66666667%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-supplier-registration-form .form-row .company-address,
+    .c-supplier-registration-form .form-row .country {
+        width: 66.66666667%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-supplier-registration-form .form-row .company-address2,
+    .c-supplier-registration-form .form-row .company-postal {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 0;
+        position: relative;
+        width: 33.33333333%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-supplier-registration-form .form-row .company-address2,
+    .c-supplier-registration-form .form-row .company-postal {
+        width: 33.33333333%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-supplier-registration-form .success-message {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-supplier-registration-form .success-message {
+        width: 50%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

@@ -1,0 +1,17 @@
+<sly data-sly-use.ctrlUse="com.edc.edcweb.core.components.OnPageNavigation"/>
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !ctrlUse.introText && ctrlUse.links.size == 0}"/>
+
+<section data-sly-test="${ctrlUse.introText || ctrlUse.links.size > 0}" class="on-page-navigation" data-event-component="on-page navigation" data-event-type="link" data-event-engagement="1">
+    <div data-sly-test="${ctrlUse.introText}" class="intro-text">
+        ${ctrlUse.introText @ context = 'html'}
+    </div>
+    <h4 data-sly-test="${ctrlUse.linksSectionTitle && ctrlUse.links.size > 0}" class="links-title">
+        ${ctrlUse.linksSectionTitle}
+    </h4>
+    <ul data-sly-test="${ctrlUse.links.size > 0}" class="${properties.linkIcon ? properties.linkIcon : 'links-list'}">
+        <sly data-sly-list="${ctrlUse.links}">
+            <li data-index="${itemList.count}"><a data-sly-test="${item.target}" class="link" href="#${item.target}" data-target="${item.target}">${item.text}</a></li>
+        </sly>
+    </ul>
+</section>

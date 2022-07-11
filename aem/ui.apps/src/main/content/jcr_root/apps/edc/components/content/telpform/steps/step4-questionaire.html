@@ -1,0 +1,31 @@
+<template data-sly-template.level4="${@  uuid, properties, formLabels, formType, preScreen}">
+    <div class="level level-${formType == 'TLP' ? 4 : 1} ${(wcmmode.disabled && formType == 'TLP') ? 'hide' : 'show'}">
+        <h2>
+            <span class="title-color">${formLabels.step4Of4}</span> ${properties.step4Title}
+        </h2>
+        ${properties.step4Description @ context='html'}
+        <!--/* Questionnaire Non Edit */-->
+        <sly data-sly-test="${wcmmode.disabled}" data-sly-resource="${'questionnaire-res' @ resourceType='edc/components/content/questionnaire'}"/>
+         <!--/* Questionnaire Edit mode */-->
+        <sly data-sly-test="${!wcmmode.disabled}">
+            <div style="min-height:640px;margin-top:220px">
+                <strong data-sly-test="${preScreen}">Main Questionnaire:</strong>
+                <sly data-sly-resource="${'questionnaire-res' @ resourceType='edc/components/content/questionnaire'}"/>
+            </div>
+            <sly data-sly-test="${preScreen}">
+                <!--/* MMG Questionnaire only if not Pre-Screen and only for edit mode*/-->
+                <div style="min-height:640px;margin-top:220px">
+               <strong>Dynamic Loaded Questionnaire:</strong>
+                    <sly data-sly-resource="${'questionnaire-dyna' @ resourceType='edc/components/content/questionnaire'}"/>
+                </div>
+            </sly>
+        </sly>
+        <!--/* Questionnaire Edit mode */-->
+        <div class="form-row checkbox-item grey-bg ineligible-checkbox ${wcmmode.disabled ? 'hide' : 'show'}">
+            <input type="checkbox" class="form-control" id="ineligibilityAgreement-${uuid}" name="ineligibilityAgreement" data-no-url="true" />
+            <div class="input-description">
+                <label for="ineligibilityAgreement-${uuid}">${properties.inelegibleCheckbox @ context='html'}</label>
+            </div>
+        </div>
+    </div>
+</template>

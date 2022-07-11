@@ -1,0 +1,38 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.list="com.adobe.cq.wcm.core.components.models.List"/>
+<sly data-sly-use.model="com.edc.edcweb.core.models.FeatureGrid"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = (list.items.size == 0 && !properties.title)}"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+
+<sly data-sly-test="${list.items.size != 0 || properties.title}">
+    <section class="c-feature-grid" data-event-component="feature grid" data-event-type="link" data-event-engagement="1" data-event-level="secondary">
+        <h2 data-sly-test="${properties.title}" class="title-feature">${properties.title}</h2>
+        <div data-sly-test="${list.items.size > 0}" class="content-videos-grid">
+            <sly data-sly-list="${list.items}">
+                <div class="content-video ${wcmmode.edit ? '' : 'hide'}" data-event-action="${itemList.count}">
+                    <a data-sly-use.urlRes="${'com.edc.edcweb.core.models.PageModelHelper' @ path = item.path}" href="${urlRes.url}" class="video-img" data-event-name="link click - video thumbnail">
+                        <span class="sr-only">${model.policy_videoplaybtn}</span>
+                        <img data-sly-attribute.src="" data-lazy-src="${item.properties['tabletFileReference']}" data-lazy-load-delayed="" alt="${item.properties['imagealttext']}">
+                        <span class="start-video">
+                            <img src="/etc.clientlibs/edc/clientlibs/clientlib-base/resources/images/video-play.svg" alt="${model.policy_videoplaybtn}">
+                        </span>
+                    </a>
+                    <div class="video-content">
+                        <p data-sly-test="${item.properties['productService']}" class="product-service">${item.properties['productService']}</p>
+                        <h4 data-sly-test="${item.pageTitle || item.title || item.name}" class="title">
+                            <sly data-sly-use.urlres="${'com.edc.edcweb.core.models.PageModelHelper' @ path = item.path}"/>
+                            <sly data-sly-test.title="${item.pageTitle || item.title || item.name}"/>
+                            <sly data-sly-call="${commonTemplates.link @ link=urlres.url, ctatext=title, target='_self', type='link', linkchecker='valid'}"/>
+                        </h4>
+                        <p data-sly-test="${item.properties['articlesynopsis']}" class="synopsis">${item.properties['articlesynopsis']}</p>
+                    </div>
+                </div>
+            </sly>
+        </div>
+        <div data-sly-test="${properties.viewMoreText}" class="view-more ${wcmmode.edit ? '' : 'hide'}" data-itemstoshow="${properties.numItems || 4}">
+            <a href="#">${properties.viewMoreText}</a>
+        </div>
+        <span data-sly-test="${properties.keyline == 'bottom'}" class="key-line"></span>
+    </section>
+</sly>

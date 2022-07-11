@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Hero Banner"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+        margin="{Boolean}false">
+        <items jcr:primaryType="nt:unstructured">
+            <image
+                jcr:primaryType="nt:unstructured"
+                sling:hideResource="{Boolean}true"/>
+            <accessibility
+                jcr:primaryType="nt:unstructured"
+                sling:hideResource="{Boolean}true"/>
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items
+                    jcr:primaryType="nt:unstructured"
+                    sling:hideChildren="[title,linkURL,description,size]">
+                    <notice
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/text"
+                        class="coral-Form-fieldlabel"
+                        text="* NOTE:  IF 'Desktop breakpoint image' OR 'Title' IS EMPTY, COMPONENT POLICY SETTINGS WILL BE APPLIED."/>
+                    <heading
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/text"
+                        class="coral-Form-fieldlabel"
+                        text="Image"/>
+                    <image
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/include"
+                        path="/apps/edc/components/common/dialogs/cq:dialog/content/items/column/items/image"/>
+                    <dateHeading
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/text"
+                        class="coral-Form-fieldlabel"
+                        text="Last Updated Date"/>
+                    <well
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                        <items jcr:primaryType="nt:unstructured">
+                          <showdate
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                defaultChecked="{Boolean}false"
+                                fieldLabel="Display the update date on top of the title"
+                                ignoreData="{Boolean}false"
+                                name="./showdate"
+                                required="{Boolean}false"
+                                text="Display the update date"
+                                uncheckedValue="{Boolean}false"
+                                value="{Boolean}true"/>
+                            <text
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Text next to the date"
+                                fieldDescriptionl="Optional text next to the date i.e. 'Last Updated'"
+                                name="./lastUpdatedText"/>
+                        </items>
+                    </well>
+                    <background
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <heading
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/text"
+                                class="coral-Form-fieldlabel"
+                                text="Background"/>
+                            <well
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <layout
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <backgroundIcon
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldDescription="Determines the background icon."
+                                        fieldLabel="Icon"
+                                        name="./backgroundIcon">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <none
+                                                jcr:primaryType="nt:unstructured"
+                                                text="None"
+                                                value=""/>
+                                            <chevrons
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Chevrons"
+                                                value="chevrons"/>
+                                            <backslashes
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Backslashes"
+                                                value="backslashes"/>
+                                            <pyramids
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Pyramids"
+                                                value="pyramids"/>
+                                            <waves
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Waves"
+                                                value="waves"/>
+                                        </items>
+                                    </backgroundIcon>
+                                </items>
+                            </well>
+                        </items>
+                    </background>
+                    <headingtext
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <heading
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/text"
+                                class="coral-Form-fieldlabel"
+                                text="Title / Subtitle"/>
+                            <well
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <layout
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <heading
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Title"
+                                        name="./heading"/>
+                                    <text
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                        fieldLabel="Subtitle"
+                                        name="./text"/>
+                                    <tagline
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Tagline"
+                                        name="./tagline"/>
+                                </items>
+                            </well>
+                        </items>
+                    </headingtext>
+                    <cta
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <heading
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/text"
+                                class="coral-Form-fieldlabel"
+                                text="CTA"/>
+                            <well
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <layout
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <linktext
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="CTA button text"
+                                        name="./linktext"/>
+                                    <linkurl
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldLabel="CTA link url"
+                                        name="./linkurl"
+                                        required="{Boolean}false"
+                                        rootPath="/content/edc"/>
+                                    <linktarget
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldLabel="CTA link target"
+                                        name="./linktarget">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <new
+                                                jcr:primaryType="nt:unstructured"
+                                                text="New window"
+                                                value="_blank"/>
+                                            <existing
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Existing window"
+                                                selected="{Boolean}true"
+                                                value="_self"/>
+                                        </items>
+                                    </linktarget>
+                                </items>
+                            </well>
+                        </items>
+                    </cta>
+                </items>
+            </column>
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:hideResource="{Boolean}true"/>
+        </items>
+    </content>
+</jcr:root>

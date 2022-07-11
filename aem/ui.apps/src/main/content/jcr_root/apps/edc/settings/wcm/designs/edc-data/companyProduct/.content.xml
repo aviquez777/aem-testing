@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <option1
+        jcr:primaryType="nt:unstructured"
+        enName="Manufacturing"
+        frName="Fabrication/construction"
+        value="Manufacturing"/>
+    <option2
+        jcr:primaryType="nt:unstructured"
+        enName="Assembly/Fabrication/Warehousing"
+        frName="Montage/fabrication partielle/entreposage"
+        value="Assembly/Fabrication/Warehousing"/>
+    <option3
+        jcr:primaryType="nt:unstructured"
+        enName="Distribution/Logistics"
+        frName="Distribution/logistique"
+        value="Distribution/Logistics"/>
+    <option4
+        jcr:primaryType="nt:unstructured"
+        enName="Packaging/Printing"
+        frName="Conditionnement/impression"
+        value="Packaging/Printing"/>
+    <option5
+        jcr:primaryType="nt:unstructured"
+        enName="Wholesale/Retail"
+        frName="Vente en gros/détail"
+        value="Wholesale/Retail"/>
+    <option6
+        jcr:primaryType="nt:unstructured"
+        enName="Other/None"
+        frName="Autre/aucun"
+        value="Other/None"/>
+</jcr:root>

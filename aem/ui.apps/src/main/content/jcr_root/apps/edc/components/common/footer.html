@@ -1,0 +1,106 @@
+<!--/*~~~~~~~~~~~~~~~~~~~~~  FOOTER SECTION TITLE  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Footer section title - display a title for a section of the footer
+
+  Parameters:
+    title           - the title of the section
+    classes         - css classes for the title
+    id              - the ID of the title
+    ariaControls    - aria-controls of the title
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+<template data-sly-template.footersectiontitle="${@ title, classes, id, ariaControls}">
+    <h4 class="${classes}" data-sly-test="${title != null}" aria-controls="${ariaControls}" id="${id}">
+        ${title}
+    </h4>
+    <button data-sly-test="${classes=='header-title'}" type="button" aria-controls="${ariaControls}" class="expand header-expandable-button">${title}</button>
+</template>
+
+<!--/*~~~~~~~~~~~~~~~~~~~~~  FOOTER SECTION  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Footer section - display a section of the footer with a title and a list of links.
+
+  Parameters:
+    sectionTitle            - the title of the section
+    sectionLinks            - the list of links
+    sectionID               - the ID of the section
+    ariaControlsParam       - aria-controls of the title
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+<template data-sly-template.footersection="${@ sectionTitle, sectionLinks, sectionID, ariaControlsParam}">
+    <sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+
+    <div class="footer-nav-section" aria-expanded="false">
+        <sly data-sly-test="${sectionTitle != null && sectionLinks.size > 0 && sectionID != null && ariaControlsParam != null}">
+            <sly data-sly-call="${footersectiontitle @ title=sectionTitle, classes='header-title', id = sectionID, ariaControls = ariaControlsParam}" />
+
+            <ul class="nav-links" id = "${ariaControlsParam}" role="region" aria-labelledby="${sectionID}" aria-hidden="true" data-sly-list="${sectionLinks}">
+                <li><sly data-sly-call="${commonTemplates.link @ type = 'link', link=item.linkUrl, ctatext=item.linkText, target=item.linkTarget, linkchecker='valid'}" /></li>
+            </ul>
+        </sly>
+    </div>
+</template>
+
+
+<!--/*~~~~~~~~~~~~~~~~~~~~~  FOOTER BOTTOM SECTION  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Footer section - display a section of the footer with a title and a list of links.
+
+  Parameters:
+    canadaLogoUrl       - URL to go to, when clicking on the logo
+    canadaLogoTarget    - target of the Canada Logo, possible values are:
+                            _blank    - URL is loaded into a new window
+                            _parent   - URL is loaded into the parent frame
+                            _self     - URL replaces the current page
+                            _top      - URL replaces any framesets that may be loaded
+    canadaLogoPath      - Logo image path
+    canadaLogoPath2x    - Retina display logo image path
+    canadaImgAlt        - Alternate text for the image
+    edcLogoUrl          - URL to go to, when clicking on the logo
+    edcLogoTarget       - target of the Canada Logo, possible values are:
+                            _blank    - URL is loaded into a new window
+                            _parent   - URL is loaded into the parent frame
+                            _self     - URL replaces the current page
+                            _top      - URL replaces any framesets that may be loaded
+    edcLogoPath         - Logo image path
+    edcLogoPath2x       - Retina display logo image path
+    edcImgAlt           - Alternate text for the image
+    bottomLinks         - List of links
+    companyName         - Company name
+    edcAddress          - Company physical address
+    contactTitle        - The title of contact us section
+    contactLinks        - List of links for contact us section
+    type                - Footer type. Options: normal and campaign
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+<template data-sly-template.footerbottomsection="${@ canadaLogoUrl, canadaLogoTarget, canadaLogoPath, canadaLogoPath2x, canadaImgAlt, edcLogoUrl, edcLogoTarget, edcLogoPath, edcLogoPath2x, edcImgAlt, bottomLinks, companyName, edcAddress, contactTitle, contactLinks, type}">
+    <section class="footer-bottom">
+        <div class="container">
+            <section class="footer-bottom-info">
+                <div class="brands">
+                    <a x-cq-linkchecker="valid" href="${canadaLogoUrl}" class="canada-logo" target="${canadaLogoTarget}" data-sly-test="${canadaLogoPath}">
+                        <img src="${canadaLogoPath}" srcset="${canadaLogoPath2x || canadaLogoPath}" alt='${canadaImgAlt}' />
+                    </a>
+                    <a x-cq-linkchecker="valid" href="${edcLogoUrl}" class="edc-logo" target="${edcLogoTarget}" data-sly-test="${edcLogoPath}">
+                        <img src="${edcLogoPath}" srcset="${edcLogoPath2x || edcLogoPath}" alt='${edcImgAlt}' />
+                    </a>
+                </div>
+                <div class="footer-info" data-sly-unwrap="${type != 'campaign'}">
+                    <div class="links">
+                        <ul data-sly-list="${bottomLinks}">
+                            <li><a x-cq-linkchecker="valid" href="${item.linkUrl}" target="${item.linkTarget}">${item.linkText}</a></li>
+                        </ul>
+                    </div>
+                    <div class="info">
+                        <span class="company" data-sly-test="${companyName}">${companyName}</span>
+                        <span class="address" data-sly-test="${edcAddress}">${edcAddress}</span>
+                    </div>
+                </div>
+                <div class="social-icons" data-sly-test="${type == 'campaign' && contactLinks}">
+                    <p data-sly-test="${contactTitle}">${contactTitle}</p>
+                    <ul data-sly-list="${contactLinks}">
+                        <li>
+                            <a href="${item.linkUrl}" target="${item.linkTarget}">
+                                <span aria-label="${item.linkText}" class="iconfont ${item.linkText}"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </section>
+</template>

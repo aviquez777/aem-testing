@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Step 2 (Canadian flow)"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <idtypecantitle
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Identifier type fields Canadian main label"
+                name="./idtypecantitle"
+                required="{Boolean}true"/>
+            <idtypegsthstlabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Identifier type GST/HST field label"
+                name="./idtypegsthstlabel"
+                required="{Boolean}true"/>
+            <idtypegsthstplaceholder
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Identifier type GST/HST field +rX-0000N text"
+                name="./idtypegsthstplaceholder"
+                value="+rX-0000N"
+                required="{Boolean}false"/>
+            <idtypesinlabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Identifier type Social Insurance Number field label"
+                name="./idtypesinlabel"
+                required="{Boolean}true"/>
+        </items>
+    </content>
+</jcr:root>

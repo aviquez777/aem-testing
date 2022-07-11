@@ -1,0 +1,31 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-use.model="com.edc.edcweb.core.models.WebinarCta" />
+<sly data-sly-test.webinarshowkey="${model.webinarshowkey}"/>
+<sly data-sly-test.webinaroverride="${model.webinaroverride}"/>
+<sly data-sly-test.policy="${model.hasPolicy}" />
+<sly data-sly-call="${template.placeholder @ isEmpty = !policy, emptyTextAppend='No Policy defined'}" />
+<sly data-sly-call="${template.placeholder @ isEmpty = (webinaroverride && !webinarshowkey)}" />
+<sly data-sly-use.ibTemplateObj="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+
+<div data-sly-test="${policy && !webinaroverride && webinarshowkey}" class="c-webinar-ctas ${wcmmode.disabled ? 'hide' : ''}" data-event-type="button" data-event-name="button click - webinar CTA" data-event-level="1">
+    <div class="webinar-cta not-logged-in">
+            <sly data-sly-test.attrs1="${['data-upcoming-text',model.loggedinupcomingbtntext,'data-live-text',model.loggedoutlivebtntext,'data-ondemand-text',model.loggedinondemandbtntext] @ join = '='}"/>
+            <div data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='link', buttoncssclasses='ibtn-lg', isUsedForModal='nomodal', buttonstate='enabled', link=model.loginbtnurl,customattribs=attrs1, buttontext=model.loggedoutupcomingbtntext, linkchecker='skip'}"  data-sly-unwrap></div>
+        <div>
+            <p>${model.donthaveanaccounttext}</p>
+            <div data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='link', buttoncssclasses='unstyled', isUsedForModal='nomodal', buttonstate='enabled', link=model.registerbtnurl, buttontext=model.createaccountlinktext, linkchecker='skip'}"  data-sly-unwrap></div>
+        </div>
+    </div>
+    <div class="webinar-cta logged-in-not-registered hide">
+        <sly data-sly-test.attrs2="${['data-upcoming-text',model.loggedinupcomingbtntext,'data-live-text',model.loggedinlivebtntext,'data-ondemand-text',model.loggedinondemandbtntext] @ join = '='}"/>
+        <div data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='button', isUsedForModal='nomodal', buttonstate='enabled', buttontext=model.loggedinupcomingbtntext, btntype='button', customattribs=attrs2}"  data-sly-unwrap></div>
+    </div>
+    <div class="webinar-cta logged-in-registered hide">
+        <p class="hide">${model.registeredtoupcomingtext}</p>
+        <a href="#" target="_blank"
+            class="button edc-primary-btn-video"
+            data-live-text="${model.loggedinlivebtntext}"
+            data-ondemand-text="${model.loggedinondemandbtntext}"><span></span></a>
+    </div>
+    <span class="webinar-ctas-error hide" data-event-type="error" data-event-name="error � webinar">${model.defaulterrortext}</span>
+</div>

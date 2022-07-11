@@ -1,0 +1,67 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.question}"/>
+<sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+<sly data-sly-test.displayFollowUp="${properties.showFollowUpQuestion == 'yes'}"/>
+
+<div data-sly-test="${properties.question}" class="c-binary-cta ${displayFollowUp ? 'feedback' : ''}" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'EHH Was this Helpful'}" data-event-type="button" data-event-name="button click" data-event-action="main body" data-engagement-type="1" data-section-title="${properties.trackvalue}">
+    <div class="wrapper">
+        <div class="cta-wrap">
+            <h4 data-sly-test="${properties.question}" class="prompt">${properties.question}</h4>
+            <div class="options" data-sly-test="${properties.optionone || properties.optiontwo}">
+                <button data-sly-test="${properties.optionone}" type="button" class="${displayFollowUp ? 'edc-tertiary-btn button yes' : 'edc-tertiary-btn button'}" data-answer="${properties.optionone}">
+                    <span>${properties.optionone}</span>
+                </button>
+                <button data-sly-test="${properties.optiontwo}" type="button" class="${displayFollowUp ? 'edc-tertiary-btn button no' : 'edc-tertiary-btn button'}" data-answer="${properties.optiontwo}">
+                    <span>${properties.optiontwo}</span>
+                </button>
+            </div>
+        </div>
+        <!--/* Follow up questions */-->
+        <form data-sly-test="${displayFollowUp}" class="feedback-content hide" name="EDC-FEEDBACK-LOOP-FORM" novalidate="" action="/bin/yesnoquestionformservlet" data-charset="UTF-8">
+            <h4 class="feedback-title" data-yes="${properties.questionOne}" data-no="${properties.questionTwo}"></h4>
+
+            <sly data-sly-use.multifieldOne="${'com.edc.edcweb.core.helpers.MultifieldReaderHelper' @ multifield='optionOneItems'}"></sly>
+            <sly data-sly-use.multifieldTwo="${'com.edc.edcweb.core.helpers.MultifieldReaderHelper' @ multifield='optionTwoItems'}"></sly>
+
+            <ul class="feedback-answers">
+                <div class="answer-yes hide">
+                    <ul data-sly-list.optionOne="${multifieldOne.fields}" data-sly-unwrap>
+                        <li class="feedback-answer">
+                            <input type="checkbox" id="answer-yes-${uuid}-${optionOneList.index}" class="answer-option" name="feedback-answer" data-english-value="${optionOne.optionOneItemValue ? optionOne.optionOneItemValue : optionOne.optionOneItem}" value="${optionOne.optionOneItemValue ? optionOne.optionOneItemValue : optionOne.optionOneItem}" />
+                            <label for="answer-yes-${uuid}-${optionOneList.index}">${optionOne.optionOneItem}</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="answer-no hide">
+                    <ul data-sly-list.optionTwo="${multifieldTwo.fields}" data-sly-unwrap>
+                        <li class="feedback-answer">
+                            <input type="checkbox" id="answer-no-${uuid}-${optionTwoList.index}" class="answer-option" name="feedback-answer" data-english-value="${optionTwo.optionTwoItemValue ? optionTwo.optionTwoItemValue : optionTwo.optionTwoItem}" value="${optionTwo.optionTwoItemValue ? optionTwo.optionTwoItemValue : optionTwo.optionTwoItem}" />
+                            <label for="answer-no-${uuid}-${optionTwoList.index}">${optionTwo.optionTwoItem}</label>
+                        </li>
+                    </ul>
+                </div>
+                <li class="feedback-answer other hide">
+                    <input type="checkbox" id="answer-other-${uuid}" class="answer-option" name="feedback-answer" data-english-value="${properties.otherTextValue ? properties.otherTextValue : properties.otherText}" value="${properties.otherTextValue ? properties.otherTextValue : properties.otherText}" />
+                    <label for="answer-other-${uuid}">${properties.otherText}</label>
+                </li>
+            </ul>
+            <div data-form-field="other" class="form-group hide">
+                <label class="hide" for="other-${uuid}">${properties.otherText}</label>
+                <input type="text" id="other-${uuid}" class="form-control" name="other" placeholder="${properties.otherPlaceholder}" data-no-url="true" data-english-value="${properties.otherTextValue ? properties.otherTextValue : properties.otherText}" />
+            </div>
+            <div class="options">
+                <button type="submit" class="edc-tertiary-btn button submit-btn" data-english-text="${properties.submitText}">
+                    <span>${properties.submitText}</span>
+                </button>
+            </div>
+        </form>
+        <div data-sly-test="${displayFollowUp}" class="submit-failed-message hide">${properties.submitError @ context='html'}</div>
+        <!--/* Confirmation message for feedback Loop*/-->
+        <div data-sly-test="${displayFollowUp}" class="return hide">${properties.submitConfirmation @ context='html'}</div>
+        <!--/* Confirmation message for regular feedback */-->
+        <div data-sly-test="${!displayFollowUp}" class="return hide">${properties.confirmation @ context='html'}</div>
+    </div>
+</div>

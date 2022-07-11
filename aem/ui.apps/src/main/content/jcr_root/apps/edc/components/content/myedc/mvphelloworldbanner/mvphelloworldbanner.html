@@ -1,0 +1,10 @@
+<sly data-sly-use.loginHeaders="com.edc.edcweb.core.models.LoginRequestHeaders"/>
+<h2> Hello  ${loginHeaders.firstName} !!! Welcome to My EDC Portal World </h2>
+
+<h3> Here is what I know about you from IAM</h3>
+
+</br>External Id : ${loginHeaders.externalId}
+</br>First Name : ${loginHeaders.firstName}
+</br>Last Name : ${loginHeaders.lastName}
+</br>Email Id : ${loginHeaders.emailId}
+</br>Mobile Number : ${loginHeaders.mobileNumber}

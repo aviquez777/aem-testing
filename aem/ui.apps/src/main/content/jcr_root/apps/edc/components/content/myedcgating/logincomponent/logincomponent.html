@@ -1,0 +1,31 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-test.configured="${properties.premiumUrl && properties.registerCtaText && properties.loginCtaText && properties.loggedInCtaText}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !configured, emptyTextAppend = 'Not properly configured'}" />
+<sly data-sly-call="${templates.placeholder @ isEmpty = configured, emptyTextAppend = 'Component will display properly once it is published'}" />
+<sly data-sly-use.buttonTemplate="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+
+<sly data-sly-test="${configured}">
+    <sly data-sly-use.model="${'com.edc.edcweb.core.myedcgating.helpers.LoginLinksHelper' @ premiumUrl=properties.premiumUrl, noRedirectBack=properties.noRedirectBack, productDescFromPremium = properties.productDescFromPremium}"/>
+    <sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+    <section class="c-business-connections-login-button">
+        <div class="default-content">
+            <div class="btn-area">
+                <h2>${properties.registerTitle}</h2>
+                <p>${properties.registerDescription}</p>
+                <div data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='link', isUsedForModal='nomodal', buttonstate='enabled', link=model.registerUrl, buttontext=properties.registerCtaText, target='_self', linkchecker='skip'}"  data-sly-unwrap></div>
+            </div>
+            <div class="myedc-container">
+                <h3>${properties.loginTitle}</h3>
+                <p>${properties.loginDescription}</p>
+                <div data-sly-call="${buttonTemplate.ibTemplate @ buttoncssclasses='secondary-outline', buttonbehavior='link', isUsedForModal='nomodal', buttonstate='enabled', link=model.loginUrl, buttontext=properties.loginCtaText, target='_self', linkchecker='skip'}"  data-sly-unwrap></div>
+            </div>
+        </div>
+        <div class="loggedin-content ${wcmmode.disabled ? 'hide' : 'show'}" data-sly-test="${!properties.noRedirectBack}">
+            <h2>${properties.loggedInTitle}</h2>
+            <div class="btn-container">
+                <p>${properties.loggedInDescription}</p>
+                <div data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='link', isUsedForModal='nomodal', buttonstate='enabled', link=model.loginUrl, buttontext=properties.loggedInCtaText, target='_self', linkchecker='skip'}"  data-sly-unwrap></div>
+            </div>
+        </div>
+    </section>
+</sly>

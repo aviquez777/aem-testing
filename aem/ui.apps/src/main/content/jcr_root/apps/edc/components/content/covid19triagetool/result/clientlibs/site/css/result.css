@@ -1,0 +1,87 @@
+.c-triage-result-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    text-align: center;
+    box-sizing: border-box;
+    transition: left .5s;
+    left: 0;
+}
+
+.c-triage-result-card * {
+    box-sizing: border-box;
+}
+
+.c-triage-result-card.hide {
+    display: none;
+}
+
+.c-triage-result-card.no-desc .card-content .card-action {
+    margin-top: 0;
+}
+
+.c-triage-result-card .card-header .title {
+    text-align: center;
+    color: #404041;
+    margin-top: .5rem;
+}
+
+.c-triage-result-card .card-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    justify-content: space-between;
+}
+
+.c-triage-result-card .card-content .card-description p {
+    color: #333;
+    font-family: "Georgia", "Times New Roman", Times, serif;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.7142;
+    letter-spacing: 0;
+}
+
+@media (min-width: 720px) {
+    .c-triage-result-card .card-content .card-description p {
+        font-size: 1rem;
+        line-height: 1.5;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-triage-result-card .card-content .card-description p {
+        font-size: 1rem;
+        line-height: 1.5;
+        letter-spacing: 0;
+    }
+}
+
+.c-triage-result-card .card-content .card-action {
+    margin-top: 1rem;
+}
+
+.c-triage-result-card .card-content .card-action a {
+    background-color: #404041;
+}
+
+@media (min-width: 720px) {
+    .c-triage-result-card {
+        flex: 0 0 auto;
+        width: 33%;
+        text-align: left;
+        padding: 2.25rem 1rem 2.5rem;
+    }
+    .c-triage-result-card .card-header .title {
+        text-align: left;
+        color: #2f78c6;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-triage-result-card {
+        width: 25%;
+    }
+}

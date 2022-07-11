@@ -1,0 +1,17 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.cta="com.edc.edcweb.core.models.TextUrlLinks"/>
+<sly data-sly-use.link="/apps/edc/components/common/templates.html"/>
+<sly data-sly-test.hasvalues="${properties.text || properties.title}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !hasvalues}"/>
+
+<sly data-sly-test="${hasvalues}">
+    <div class="c-webinar-summary keyline-bottom ${properties.showtopkeyline == 'false' ? '' : 'keyline-top'}">
+        <div class="content">
+            <h3 class="title">${properties.title}</h3>
+            <div class="text-content xsmall">${properties.text  @ context='html'}</div>
+            <p class="link-text" data-sly-test="${properties.linktext}">
+                <sly data-sly-call="${link.link @ link=cta.linkUrl, ctatext=cta.linkText, target=cta.linkTarget, classes='', type='link'}"/>
+            </p>
+        </div>
+    </div>
+</sly>

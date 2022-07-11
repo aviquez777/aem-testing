@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <option1
+        jcr:primaryType="nt:unstructured"
+        enName="Air"
+        frName="Aérien"
+        value="Air"/>
+    <option2
+        jcr:primaryType="nt:unstructured"
+        enName="Road"
+        frName="Terrestre"
+        value="Road"/>
+    <option3
+        jcr:primaryType="nt:unstructured"
+        enName="Ocean"
+        frName="Maritime"
+        value="Ocean"/>
+    <option4
+        jcr:primaryType="nt:unstructured"
+        enName="Rail"
+        frName="Ferroviaire"
+        value="Rail"/>
+</jcr:root>

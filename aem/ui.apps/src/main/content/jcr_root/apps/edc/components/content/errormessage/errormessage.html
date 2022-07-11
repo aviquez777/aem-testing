@@ -1,0 +1,20 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.errormessage}"/>
+<sly data-sly-use.backlink="${'com.edc.edcweb.core.models.ParamTextUrlLinks' @ linkText=properties.linktext, linkUrl=properties.linkurl, linkTarget=properties.linktarget}"/>
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-test.uuid="ERRORMESSAGE-${genuuid.generateUuid}"/>
+<section class="error-section aem-Grid aem-Grid--12" role="complementary" aria-labelledby="${uuid}" data-sly-test="${properties.errormessage}">
+    <div class="content aem-GridColumn aem-GridColumn--default--12 aem-GridColumn--phone--10">
+      <h2 class="fade-in-slide-up" id="${uuid}">${properties.errormessage}</h2>
+        <p class="fade-in-slide-up" data-sly-test="${backlink.linkText}">
+          <sly data-sly-test="${backlink.linkText}"
+            data-sly-use.templates="${'/apps/edc/components/common/templates.html'}"
+            data-sly-call="${templates.link @ link=backlink.linkUrl, ctatext=backlink.linkText, target=backlink.linkTarget, classes='', type='link', modaltext='', modaltrigger='', linkchecker='valid'}" />
+        </p>
+        <p class="logo" data-sly-test="${properties.fileReference}">
+          <a x-cq-linkchecker="valid" href="${backlink.linkUrl}">
+            <img alt="${properties.imagealttext}" src="${properties.fileReference}" class="logo-brand" alt="${backlink.linkText}">
+          </a>
+        </p>
+    </div>
+</section>

@@ -1,0 +1,75 @@
+<!--/*~~~~~~~~~~~~~~~~~~~~~  D R O P D O W N  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Dropdown - display a custom dropdown
+
+  Parameters:
+    dropdowntype    - Type of dropdown, possible values are:
+                       single   - single choose
+                       multiple - multiple choose
+    variation       - Specific dropdown variations
+                       time - Time dropdown inside Schedule a Call form.
+                       nav - Navigation dropdown inside Left-hand navigation.
+    name            - Label attributes: name and for. Select attribute: id.
+    uuid            - (Optional) Add to label attributes for. Add to select id attribute.
+    label           - Text to be shown in the label tag
+    secondarylabel  - Text to be shown below the label
+    placeholder     - Text to be shown like placeholder in the dropdown
+    required        - Validates dropdown as required, possible values are:
+                       true  - Dropdown value is required.
+                       false - Dropdown value is NOT required.
+    nourl           - Validates dropdown value is not an URL, possible values are:
+                       true  - Dropdown value must to be not an URL.
+                       false - Dropdown value can be an URL.
+    disabled        - Disables the dropdown
+    buttontext      - Mobile button text for confirm the selection.
+    clearalltext    - Clear selection label
+    singulartext    - Dropdown Singular Selection Text
+    pluraltext      - Dropdown Plural Selection Text
+    requirederror   - Dropdown required validation error message
+    invaliderror    - Dropdown invalid validation error message
+    options         - Dropdown Options
+    optionvalue     - Name of the property for value when options is a list, like inquiry, and not a map
+    optiontext      - Name of the property for text when options is a list, like inquiry, and not a map
+    optiondatalayer - Name of the property for data layer when options is a list, like states, and not a map
+    currentpagepath - Select item in navigation dropdown inside Left-hand navigation.
+    id              - Force Use this string as the dropdwon's id property
+
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+<template data-sly-template.dropdown="${@ dropdowntype='single', variation, name, uuid, label, secondarylabel, placeholder, required=false, nourl=false, disabled=false, buttontext, clearalltext, singulartext, pluraltext, limit, requirederror, invaliderror, options, optionvalue, optiontext, optiondatalayer, additionalclasses, currentpagepath, id}">
+    <sly data-sly-test.isTime="${variation == 'time'}" />
+    <sly data-sly-test.isNav="${variation == 'nav'}" />
+    <sly data-sly-test.uid="${(uuid ? '{0}-{1}' : '{0}') @ format=[name,uuid]}" />
+    <div class="c-dropdown ${additionalclasses}">
+        <div class="dropdown-overlay">
+            <label for="${uid}">${label}</label>
+            <p data-sly-test="${secondarylabel}" class="help-text">${secondarylabel}</p>
+            <div class="dropdown-container ${dropdowntype == 'multiple' ? 'ui-multiple' : ''}">
+                <div class="dropdown-title">
+                    <span class="label-text">${label}</span>
+                    <span class="close-btn"></span>
+                </div>
+                <select class="form-control ui selection dropdown ${dropdowntype == 'multiple' ? dropdowntype : ''} ${disabled ? 'disabled' : ''}" name="${name}" id="${id ? id : uid}" data-sly-attribute.multiple="${dropdowntype == 'multiple'}" data-sly-attribute.required="${required}" data-sly-attribute.data-no-url="${nourl}" data-default-value="${placeholder}" data-sly-attribute.data-limit="${limit}" validation-rule="none">
+                    <option value="" hidden="">${placeholder}</option>
+                    <option value="clear-all" data-sly-test="${dropdowntype == 'multiple'}">${clearalltext}</option>
+                    <option data-sly-test.isOptionsList="${optionvalue && optiontext}" data-sly-repeat.item="${options}" value="${item[optionvalue]}" data-sly-attribute.data-english-name="${item[optiondatalayer]}">${item[optiontext]}</option>
+                    <option data-sly-test="${isTime && !isOptionsList}" data-sly-repeat.item="${options}" data-begin="${item.fromtime}" value="${item.fromtime}-${item.totime}">${item.timetext}</option>
+
+                    <sly data-sly-test="${isNav && !isOptionsList}" data-sly-list.item="${options}">
+                        <option data-sly-use.modelItemPath="${'com.edc.edcweb.core.models.ResolverPath' @ refpage=item.page.path}" class="link ${(currentpagepath == item.page.path) ? 'active selected' : ''}" data-sly-test="${isNav && !isOptionsList}" value="${item.page.properties['substitutepath'] ? item.page.properties['substitutepath'] : modelItemPath.resolvedPath}">${item.page.navigationTitle ? item.page.navigationTitle : item.page.title}</option>
+                        <sly data-sly-list.subitem="${item.children}">
+                            <option data-sly-use.modelSubItemPath="${'com.edc.edcweb.core.models.ResolverPath' @ refpage=subitem.page.path}" class="sublink ${(currentpagepath == subitem.page.path) ? 'active selected' : ''}" value="${subitem.page.properties['substitutepath'] ? subitem.page.properties['substitutepath'] : modelSubItemPath.resolvedPath}">${subitem.page.navigationTitle ? subitem.page.navigationTitle : subitem.page.title}</option>
+                        </sly>
+                    </sly>
+
+                    <option data-sly-test="${!isTime && !isOptionsList && !isNav}" data-sly-repeat.item="${options}" value="${item}">${options[item]}</option>
+                </select>
+                <span class="error dropdown-error" data-req-message="${requirederror}" data-select-multiple-message="${dropdowntype == 'multiple' ? invaliderror : ''}" data-select-one-message="${dropdowntype != 'multiple' ? invaliderror : ''}"></span>
+                <div class="selection-container" data-sly-test="${dropdowntype == 'multiple'}">
+                    <p class="selection" data-singular-text="${singulartext}" data-plural-text="${pluraltext}">(0) ${pluraltext}</p>
+                    <button class="edc-primary-btn" disabled="">
+                        <span>${buttontext}</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

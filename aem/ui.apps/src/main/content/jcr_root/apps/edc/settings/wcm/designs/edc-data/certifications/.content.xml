@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <option1
+        jcr:primaryType="nt:unstructured"
+        enName="C-TPAT"
+        frName="C-TPAT"
+        value="C-TPAT"/>
+    <option2
+        jcr:primaryType="nt:unstructured"
+        enName="FAST/EXPRES"
+        frName="FAST/EXPRES"
+        value="FAST/EXPRES"/>
+    <option3
+        jcr:primaryType="nt:unstructured"
+        enName="The SmartWay Transport Partnership"
+        frName="Partenariat de transport SmartWay"
+        value="The SmartWay Transport Partnership"/>
+    <option4
+        jcr:primaryType="nt:unstructured"
+        enName="PIP"
+        frName="PEP"
+        value="PIP"/>
+    <option5
+        jcr:primaryType="nt:unstructured"
+        enName="Participant in Transport Canada Air Cargo Security"
+        frName="Programme de sûreté du fret aérien de Transports Canada"
+        value="Participant in Transport Canada Air Cargo Security"/>
+</jcr:root>
+

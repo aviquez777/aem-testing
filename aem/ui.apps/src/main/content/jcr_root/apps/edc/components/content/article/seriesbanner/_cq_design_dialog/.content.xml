@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" 
+    xmlns:granite="http://www.adobe.com/jcr/granite/1.0" 
+    xmlns:cq="http://www.day.com/jcr/cq/1.0" 
+    xmlns:jcr="http://www.jcp.org/jcr/1.0" 
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Series Banner"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <header
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Series Banner"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                    margin="{Boolean}false"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <ctatext
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Text for the CTA button"
+                                fieldLabel="Text for the CTA button"
+                                name="./ctatext"/>
+                            <partlabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Text for the first part of Part X of Y series"
+                                fieldLabel="first part"
+                                name="./partlabel"/>
+                            <oflabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Text for the first part of Part X of Y series"
+                                fieldLabel="second part"
+                                name="./oflabel"/>
+                            <serieslabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Text for the third part of Part X of Y series"
+                                fieldLabel="third part"
+                                name="./serieslabel"/>
+                            <seriesbannerversion jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldLabel="Select if Legacy or Enhanced version"
+                                fieldDescription="Used to select the version, Legacy (Default), Enhanced (new)"
+                                name="./seriesbannerversion"
+                                granite:class="cq-dialog-dropdown-showhide">
+                                <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    cq-dialog-dropdown-showhide-target=".enhanced-showhide-target"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <variant1 jcr:primaryType="nt:unstructured"
+                                        text="Enhanced"
+                                        selected="{Boolean}true"
+                                        value="enhanced"/>
+                                    <variant2 jcr:primaryType="nt:unstructured"
+                                        text="Legacy"
+                                        value="legacy"/>
+                                </items>
+                            </seriesbannerversion>
+                            <sbfields jcr:primaryType="nt:unstructured"
+                                granite:class="hide enhanced-showhide-target"
+                                sling:resourceType="granite/ui/components/coral/foundation/well">
+                                <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    showhidetargetvalue="enhanced"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <sbmaintitle
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Main Title"
+                                        required="{Boolean}true"
+                                        name="./sbmaintitle"
+                                        value="Continue this series"/>
+                                </items>
+                            </sbfields>
+                        </items>
+                    </column>
+                </items>
+            </header>
+        </items>
+    </content>
+</jcr:root>

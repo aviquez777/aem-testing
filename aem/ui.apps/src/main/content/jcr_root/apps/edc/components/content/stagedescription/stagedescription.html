@@ -1,0 +1,19 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.multifield="${'com.edc.edcweb.core.helpers.MultifieldReaderHelper' @ multifield='items'}"/>
+<sly data-sly-test.summaryPoints="${multifield.fields}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"/>
+<sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+
+<section data-sly-test="${properties.title}" class="c-stage">
+    <div class="description">
+        <h2>${properties.title}</h2>
+        <p>${properties.description}</p>
+        <sly data-sly-test="${properties.buttontext}" data-sly-call="${commonTemplates.simplebutton @ btntext=properties.buttontext, btnclasses='edc-tertiary-btn content-button'}"/>
+    </div>
+    <div class="steps" data-sly-test="${properties.summarytitle || summaryPoints}">
+        <h3 data-sly-test="${properties.summarytitle}">${properties.summarytitle}</h3>
+        <ul data-sly-test="${summaryPoints}" data-sly-list="${summaryPoints}">
+            <li>${item.summarypoint}</li>
+        </ul>
+    </div>
+</section>

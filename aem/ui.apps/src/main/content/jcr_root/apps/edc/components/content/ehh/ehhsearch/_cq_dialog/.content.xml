@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="EHH Search"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+        margin="{Boolean}false">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <placeholder
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Placeholder"
+                        fieldDescription="Help text for the search text input"
+                        name="./placeholder"/>
+
+                    <searchtarget
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldDescription="Determines if the search results page will open in the current or new window."
+                        fieldLabel="Search results page target"
+                        name="./searchtarget">
+                        <items jcr:primaryType="nt:unstructured">
+                            <new
+                                jcr:primaryType="nt:unstructured"
+                                text="New window"
+                                value="_blank"/>
+                        <existing
+                                jcr:primaryType="nt:unstructured"
+                                text="Existing window"
+                                value="_self"/>
+                        </items>
+                    </searchtarget>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

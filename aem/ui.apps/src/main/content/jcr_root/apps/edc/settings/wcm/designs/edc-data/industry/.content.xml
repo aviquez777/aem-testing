@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <option1
+        jcr:primaryType="nt:unstructured"
+        enName="Mining &amp; Metals"
+        frName="Mines et métaux"
+        value="Mining &amp; Metals"/>
+    <option2
+        jcr:primaryType="nt:unstructured"
+        enName="Oil &amp; Gas"
+        frName="Pétrole et gaz naturel"
+        value="Oil &amp; Gas"/>
+    <option3
+        jcr:primaryType="nt:unstructured"
+        enName="Advanced Security"
+        frName="Dispositifs de sécurité avancés"
+        value="Advanced Security"/>
+    <option4
+        jcr:primaryType="nt:unstructured"
+        enName="Knowledge Based Industries"
+        frName="Industries du savoir"
+        value="Knowledge Based Industries"/>
+    <option5
+        jcr:primaryType="nt:unstructured"
+        enName="Media and Entertainment"
+        frName="Média et diverstissement"
+        value="Media and Entertainment"/>
+    <option6
+        jcr:primaryType="nt:unstructured"
+        enName="Satellite"
+        frName="Satellites"
+        value="Satellite"/>
+    <option7
+        jcr:primaryType="nt:unstructured"
+        enName="Services - Non-Industrial"
+        frName="Services - Non-industriels"
+        value="Services - Non-Industrial"/>
+    <option8
+        jcr:primaryType="nt:unstructured"
+        enName="Telecom"
+        frName="Télécommunications"
+        value="Telecom"/>
+    <option9
+        jcr:primaryType="nt:unstructured"
+        enName="Air &amp; Remediation"
+        frName="Traitement et assainissement de l'air"
+        value="Air &amp; Remediation"/>
+    <option10
+        jcr:primaryType="nt:unstructured"
+        enName="Bio-Refinery Products"
+        frName="Produits bioraffinés"
+        value="Bio-Refinery Products"/>
+    <option11
+        jcr:primaryType="nt:unstructured"
+        enName="Construction &amp; Infrastructure"
+        frName="Construction et infrastructure"
+        value="Construction &amp; Infrastructure"/>
+    <option12
+        jcr:primaryType="nt:unstructured"
+        enName="Financial Services"
+        frName="Services financiers"
+        value="Financial Services"/>
+    <option13
+        jcr:primaryType="nt:unstructured"
+        enName="Government Services"
+        frName="Services gouvernementaux"
+        value="Government Services"/>
+    <option14
+        jcr:primaryType="nt:unstructured"
+        enName="Power"
+        frName="Électricité"
+        value="Power"/>
+    <option15
+        jcr:primaryType="nt:unstructured"
+        enName="Water &amp; Waste Water"
+        frName="Aqueducs et égoûts"
+        value="Water &amp; Waste Water"/>
+    <option16
+        jcr:primaryType="nt:unstructured"
+        enName="Biotechnology"
+        frName="Biotechnologie"
+        value="Biotechnology"/>
+    <option17
+        jcr:primaryType="nt:unstructured"
+        enName="Chemicals &amp; Biorenewable Chemicals"
+        frName="Produits chimiques et produits chimiques biorenouvelables"
+        value="Chemicals &amp; Biorenewable Chemicals"/>
+    <option18
+        jcr:primaryType="nt:unstructured"
+        enName="Clothing &amp; Textiles"
+        frName="Vêtements et textiles"
+        value="Clothing &amp; Textiles"/>
+    <option19
+        jcr:primaryType="nt:unstructured"
+        enName="Consumer Goods"
+        frName="Biens de consommation"
+        value="Consumer Goods"/>
+    <option20
+        jcr:primaryType="nt:unstructured"
+        enName="Food &amp; Beverage"
+        frName="Aliments et boissons"
+        value="Food &amp; Beverage"/>
+    <option21
+        jcr:primaryType="nt:unstructured"
+        enName="Furniture"
+        frName="Meubles"
+        value="Furniture"/>
+    <option22
+        jcr:primaryType="nt:unstructured"
+        enName="Machinery for Light Manufacturing"
+        frName="Machinerie pour la fabrication légère"
+        value="Machinery for Light Manufacturing"/>
+    <option23
+        jcr:primaryType="nt:unstructured"
+        enName="Medical Technology and Devices"
+        frName="Technologies et dispositifs médicaux"
+        value="Medical Technology and Devices"/>
+    <option24
+        jcr:primaryType="nt:unstructured"
+        enName="Packaging"
+        frName="Emballages"
+        value="Packaging"/>
+    <option25
+        jcr:primaryType="nt:unstructured"
+        enName="Pharmaceuticals"
+        frName="Produits pharmaceutiques"
+        value="Pharmaceuticals"/>
+    <option26
+        jcr:primaryType="nt:unstructured"
+        enName="Plastics"
+        frName="Plastiques"
+        value="Plastics"/>
+    <option27
+        jcr:primaryType="nt:unstructured"
+        enName="Supply Chain &amp; Logistics Services"
+        frName="Chaînes d'approvisionnement et services logistiques"
+        value="Supply Chain &amp; Logistics Services"/>
+    <option28
+        jcr:primaryType="nt:unstructured"
+        enName="Agriculture"
+        frName="Agriculture"
+        value="Agriculture"/>
+    <option29
+        jcr:primaryType="nt:unstructured"
+        enName="Fisheries"
+        frName="Pêches"
+        value="Fisheries"/>
+    <option30
+        jcr:primaryType="nt:unstructured"
+        enName="Forestry (Lumber, Pulp &amp; Paper)"
+        frName="Foresterie (bois d'œuvre, pâtes et papiers)"
+        value="Forestry (Lumber, Pulp &amp; Paper)"/>
+    <option31
+        jcr:primaryType="nt:unstructured"
+        enName="Aerospace"
+        frName="Aéronautique"
+        value="Aerospace"/>
+    <option32
+        jcr:primaryType="nt:unstructured"
+        enName="Automotive and Heavy Truck"
+        frName="Automobiles et camions lourds"
+        value="Automotive and Heavy Truck"/>
+    <option33
+        jcr:primaryType="nt:unstructured"
+        enName="Defence"
+        frName="Secteur de la défense"
+        value="Defence"/>
+    <option34
+        jcr:primaryType="nt:unstructured"
+        enName="Marine"
+        frName="Secteur maritime"
+        value="Marine"/>
+    <option35
+        jcr:primaryType="nt:unstructured"
+        enName="Rail"
+        frName="Secteur ferroviaire"
+        value="Rail"/>
+    <option36
+        jcr:primaryType="nt:unstructured"
+        enName="Specialty Vehicle"
+        frName="Véhicules spéciaux"
+        value="Specialty Vehicle"/>
+</jcr:root>

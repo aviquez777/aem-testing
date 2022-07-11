@@ -1,0 +1,47 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.multifield="${'com.edc.edcweb.core.helpers.MultifieldReaderHelper' @ multifield='tabs'}"/>
+<sly data-sly-test.tabs="${multifield.fields}"/>
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+
+<sly data-sly-call="${templates.placeholder @ isEmpty = wcmmode.edit}"/>
+
+<section data-sly-test="${tabs}" class="c-blue-background-tabs full-width" data-component-target="GRC" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'Global Risk Check Tabs'}" data-event-type="interaction" data-event-name="click" data-event-engagement="1" data-event-action="main body">
+    <div class="tablist-header">
+        <div class="container">
+            <div class="header-content">
+                <div data-sly-unwrap="${!wcmmode.edit || !wcmmode.design}" data-sly-resource="${'breadcrumb' @ resourceType='edc/components/content/breadcrumb'}"></div>
+                <h1 id="title-${uuid}" class="title">${properties.title}</h1>
+                <div class="tablist" role="tablist" aria-labelledby="title-${uuid}">
+                    <div data-sly-list="${tabs}" class="tablist-buttons start">
+                        <button data-sly-test="${itemList.first}" type="button" class="edc-btn-unstyled cta-tab back" aria-label="${'Previous' @ i18n}" aria-hidden="true" data-action="right">
+                            <span></span>
+                        </button>
+                        <button type="button" class="edc-btn-unstyled tab-button" role="tab" aria-label="${item.tablabel}" aria-selected="${itemList.first ? 'true' : 'false'}" aria-controls="${item.tabtarget}" id="GRC-Tab-${item.tabtarget}" data-link-target="Tab-${itemList.count}" data-mobile-text="${item.tablabelmobile || item.tablabel}" data-text="${item.tablabel}">
+                            <span></span>
+                        </button>
+                        <button data-sly-test="${itemList.last}" type="button" class="edc-btn-unstyled cta-tab next" aria-label="${'Next' @ i18n}" data-action="left">
+                            <span></span>
+                        </button>
+                    </div>
+                    <div data-sly-list="${tabs}" class="tablist-description start" aria-live="polite">
+                        <div class="tab-description" data-tab="GRC-Tab-${item.tabtarget}" aria-hidden="${itemList.first ? 'false' : 'true'}">
+                            <h2 class="subtitle" aria-labelledby="GRC-Tab-${item.tabtarget}">${item.tabtitle}</h2>
+                            <p class="description-text" aria-describedby="GRC-Tab-${item.tabtarget}">${item.tabdescription}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tablist-content">
+        <div class="container">
+            <div class="tabs-content">
+                <div class="tabs">
+                    <div data-sly-unwrap="${!wcmmode.edit || !wcmmode.design}" data-sly-resource="${'container-layout' @ resourceType='wcm/foundation/components/responsivegrid'}"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

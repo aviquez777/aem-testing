@@ -1,0 +1,60 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.contentrec="com.edc.edcweb.core.components.ContentRecommendations"/>
+<sly data-sly-use.list="com.adobe.cq.wcm.core.components.models.List" data-sly-test.count="${list.items.size}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = (count == 0 && !(properties.externalTitle || properties.externalImageReference))}"/>
+<sly data-sly-test.ispremium="${properties.premiumornot == 'premium' || properties.premiumornot == 'premium-external'}"/>
+<sly data-sly-test.isexportjourney="${properties.insideexportjourney == 'yes'}"/>
+<div data-sly-test="${count != 0 || properties.externalTitle || properties.externalImageReference}">
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+
+  <!--/**   N O N - P R E M I U M   L I S T **/-->
+  <sly data-sly-test="${!ispremium}">
+    <div class="c-recommended-articles ${isexportjourney ? 'recommended-grid-wrapper single-row' : ''}">
+      <div class="recommended-articles">
+        <!--/** Headline comes from the template policy but can be overridden at the page level.     **/-->
+        <!--/** If it is provided at the page level, use it. Otherwise, look for it at the template. **/-->
+        <h2 class="title" data-sly-test.haveheadlinefrompage="${properties.headline}">${properties.headline}</h2>
+        <h2 class="title" data-sly-test="${!haveheadlinefrompage && contentrec.headlineFromPolicy}">${contentrec.headlineFromPolicy}</h2>
+        <p class="sub-heading" data-sly-test="${properties.description}">${properties.description}</p>
+        <ul data-sly-list.item="${list.items}"
+          data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'Non Premium Content Recommendation'}" data-event-name="link click" data-event-type="link" data-event-engagement="1" data-event-level="secondary" 
+          data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+          data-sly-use.itemTemplate="/apps/edc/components/common/article.html">
+          <sly data-sly-use.articlepage="${'com.edc.edcweb.core.models.ArticlePage' @ page = item}"/>
+          <sly data-sly-use.pagedate="${'com.edc.edcweb.core.models.PageModelHelper' @ page = item}" data-sly-test.itemdate="${pagedate.date}"/>
+          <!--/**  use template with provided variables **/-->
+          <li class="article" data-event-action=${itemList.index} data-sly-call="${itemTemplate.item @ list = list, item = item, contenttypeclass = articlepage.contentTypeClassName, contenttypetitle = articlepage.contentTypeTitle, itemdate = itemdate}"></li>
+         </ul>
+      </div>
+    </div>
+  </sly>
+
+  <!--/**       P R E M I U M  -   D Y N A M I C      **/-->
+  <section role="complementary" class="recommended-articles-premium-wrapper" data-sly-test="${ispremium && properties.premiumornot == 'premium'}" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'Premium Content Recommendation'}" data-event-engagement="1.5" data-event-value="content" data-event-action="main body" >
+    <sly data-sly-list.premiumitem="${list.items}">
+        <sly data-sly-use.articleitem="${'com.edc.edcweb.core.models.ArticlePage' @ page = premiumitem}"/>
+        <sly data-sly-use.urlres="${'com.edc.edcweb.core.models.PageModelHelper' @ path = premiumitem.path}"/>
+        <sly data-sly-test.itemurl="${urlres.url}"/>
+        <sly data-sly-test.itemtitle = "${premiumitem.pageTitle || premiumitem.title || premiumitem.name}" />
+        <sly data-sly-use.pagedate="${'com.edc.edcweb.core.models.PageModelHelper' @ page = premiumitem}" data-sly-test.itemdate="${pagedate.date}"/>
+        <!--/**  use template with provided variables **/-->
+        <sly data-sly-use.pt="/apps/edc/components/common/premium.html" data-sly-call="${pt.premiumitem @ itemclassname = articleitem.contentTypeClassName,
+            itemtypetitle = articleitem.contentTypeTitle, itemurl = urlres.url, itemtarget = '_self', itemdate = itemdate,
+            itemimagealign = premiumitem.properties['imagealignment'], itemimageref = premiumitem.properties['tabletFileReference'],
+            itemimagealt = premiumitem.properties['imagealttext'], itemtitle = itemtitle, itemsynopsis = premiumitem.properties['articlesynopsis']}" />
+    </sly>
+  </section>
+
+  <!--/**       P R E M I U M  -  E X T E R N A L      **/-->
+  <section role="complementary" class="recommended-articles-premium-wrapper" data-sly-test="${ispremium && properties.premiumornot == 'premium-external'}" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'Premium Content Recommendation'}" data-event-engagement="1.5" data-event-value="content" data-event-action="main body" >
+    <sly data-sly-use.urlres="${'com.edc.edcweb.core.models.PageModelHelper' @ path = properties.externalUrl}"/>
+    <sly data-sly-test="${properties.externalTagId}" data-sly-use.tagres="${'com.edc.edcweb.core.models.Tags' @ tagId = properties.externalTagId}" />
+    <sly data-sly-test.itemdate="${properties.externalDate}"/>
+    <!--/**  use template with provided variables **/-->
+    <sly data-sly-use.pt="/apps/edc/components/common/premium.html" data-sly-call="${pt.premiumitem @ itemclassname = tagres.tagClassName,
+      itemtypetitle = tagres.titleByTagId, itemurl = urlres.url, itemtarget = properties.externalLinkTarget, itemdate = itemdate,
+      itemimagealign = properties.externalImageAlignment, itemimageref = properties.externalImageReference,
+      itemimagealt = properties.externalImageAl, itemtitle = properties.externalTitle, itemsynopsis = properties.externalSynopsis}" />
+  </section>
+
+</div>

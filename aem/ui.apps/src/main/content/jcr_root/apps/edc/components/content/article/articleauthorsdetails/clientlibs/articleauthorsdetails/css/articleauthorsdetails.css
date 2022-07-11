@@ -1,0 +1,48 @@
+.c-article-authors-details-top-component {
+    width: 100%;
+}
+
+.c-article-authors-details-top-component .show {
+    display: inline-block;
+}
+
+.c-article-authors-details-top-component .hide {
+    display: none;
+}
+
+.c-article-authors-details-top-component .main-title,
+.c-article-authors-details-top-component .authors-list a,
+.c-article-authors-details-top-component .authors-list .author-info h4,
+.c-article-authors-details-top-component .authors-list .author-info p {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: .025rem;
+}
+
+.c-article-authors-details-top-component .main-title,
+.c-article-authors-details-top-component .authors-list .author-info h4 {
+    font-size: .875rem;
+    font-weight: 600;
+    line-height: 1.113rem;
+    margin-top: 0;
+}
+
+.c-article-authors-details-top-component .main-title,
+.c-article-authors-details-top-component .authors-list .author-info p {
+    color: #333;
+    margin-bottom: .625rem;
+}
+
+.c-article-authors-details-top-component .authors-list .author-info a {
+    text-decoration: none;
+}
+
+.c-article-authors-details-top-component .authors-list .author-info h4 {
+    color: #2f78c6;
+    margin-bottom: .5rem;
+}
+
+.c-article-authors-details-top-component .authors-list a,
+.c-article-authors-details-top-component .authors-list .author-info p {
+    font-size: .75rem;
+    line-height: .938rem;
+}

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <canadian-company jcr:primaryType="nt:unstructured">
+        <companyName
+            jcr:primaryType="nt:unstructured"
+            enTitle="Let’s start with the basics"
+            frTitle="Commençons par les renseignements de base"
+            enLabel="Your company’s name"
+            frLabel="Nom de votre entreprise"
+            enPlaceholder="Legal name of company"
+            frPlaceholder="Dénomination sociale de l’entreprise"/>
+        <title
+            jcr:primaryType="nt:unstructured"
+            enLabel="Your job title"
+            frLabel="L’intitulé de votre poste"
+            enPlaceholder="Your job or role"
+            frPlaceholder="Votre poste ou rôle"/>
+        <companyCountry
+            jcr:primaryType="nt:unstructured"
+            enLabel="Country"
+            frLabel="Pays"
+            enPlaceholder="Select one"
+            frPlaceholder="Veuillez sélectionner"
+            enTitle="Provide your company’s address"
+            frTitle="Veuillez saisir l’adresse de votre entreprise"/>
+        <companyAddress1
+            jcr:primaryType="nt:unstructured"
+            enLabel="Address"
+            frLabel="Adresse"
+            enPlaceholder="Street address"
+            frPlaceholder="Adresse municipale"/>
+        <mainPhone
+            jcr:primaryType="nt:unstructured"
+            enLabel="Company phone number"
+            frLabel="Numéro de téléphone de l’entreprise"
+            enPlaceholder="Company phone number"
+            frPlaceholder="Numéro de téléphone de l’entreprise"/>
+        <phoneExt
+            jcr:primaryType="nt:unstructured"
+            enPlaceholder="Your extension (optional)"
+            frPlaceholder="Votre numéro de poste (facultatif)"/>
+        <employees
+            jcr:primaryType="nt:unstructured"
+            enLabel="How many people does your company employ?"
+            frLabel="Combien d’employés votre entreprise compte-t-elle?"
+            enTitle="Tell us about your company"
+            frTitle="Parlez-nous de votre entreprise"
+            enSubtitle="By answering the questions below, you can help us understand your company’s size and stage of growth. This allows us to provide you with the right content, resources, and support to grow your business."
+            frSubtitle="Les réponses que vous entrerez ci-dessous nous permettront de connaître la taille et le stade de croissance de votre entreprise, et donc de vous fournir le contenu, les ressources et le soutien appropriés pour la développer."
+            enTooltip="Understanding your company’s size will allow us to tailor resources to support your company’s growth and help you make informed decisions, so you can grow with confidence"
+            frTooltip="Avec ce renseignement en main, nous pourrons adapter les ressources en fonction du stade de croissance de votre entreprise et vous aider à prendre des décisions éclairées pour prendre de l’expansion en toute confiance."/>
+        <annualSales
+            jcr:primaryType="nt:unstructured"
+            enLabel="What are your company’s total annual sales?"
+            frLabel="À combien s’élève le chiffre d’affaires annuel total de votre entreprise?"
+            enTooltip="We use this information to connect you to tools and services that would best support your company’s stage of growth."
+            frTooltip="Ce renseignement nous permettra de vous fournir les outils et services qui vous seront les plus utiles au stade de développement actuel de votre entreprise."/>
+        <tradeStatus
+            jcr:primaryType="nt:unstructured"
+            enLabel="What is your company’s export status?"
+            frLabel="Quel est le statut d’exportateur de votre entreprise?"
+            enTooltip="Knowing where you are in your export journey helps us understand the types of information you might need to move forward and achieve your goals."
+            frTooltip="C’est en sachant où vous en êtes dans votre parcours d’exportation que nous pourrons déterminer le type d’information dont vous avez besoin pour progresser et atteindre vos objectifs."/>
+        <painPoint
+            jcr:primaryType="nt:unstructured"
+            enLabel="What are your export challenges?"
+            frLabel="Quels sont vos défis en matière d’exportation?"
+            enTooltip="We offer a wide range of services and support, including trade knowledge, expert advice and financing solutions, to help Canadian businesses, like yours, overcome challenges. Understanding your current needs allows us to provide you with the right tools when you need them the most."
+            frTooltip="Nous proposons un vaste éventail de services et de mesures de soutien – savoir commercial, expertise, solutions de financement, etc. – pour aider des entreprises canadiennes comme la vôtre à surmonter les difficultés. Si nous connaissons vos besoins actuels, nous pourrons vous donner les bons outils au moment où vous en aurez le plus besoin."/>
+        <industry
+            jcr:primaryType="nt:unstructured"
+            enLabel="What is your company’s primary industry?"
+            frLabel="Quel est le secteur d’activités de votre entreprise?"
+            enTooltip="By choosing the sector that best represents your business activities, we can offer valuable content that’s timely and relevant to you and your industry."
+            frTooltip="Nous sélectionnerons le secteur qui représente le mieux les activités de votre entreprise afin de vous fournir, en temps voulu, du précieux contenu pertinent pour vous et votre industrie."/>
+        <marketsInt
+            jcr:primaryType="nt:unstructured"
+            enLabel="Which countries are you planning to sell to in the next two years?"
+            frLabel="Vers quels pays prévoyez-vous d’exporter dans les deux prochaines années?"
+            enTooltip="Tell us about the markets you’re interested in today and considering for the future. That way, we can provide insights and recommendations to help you plan your growth."
+            frTooltip="Indiquez-nous les marchés que vous visez actuellement et ceux que vous envisagez de conquérir dans l’avenir. Ainsi, nous pourrons vous fournir de l’information et des recommandations pour vous aider à planifier votre croissance."
+            enPlaceholder="Search Country or region"
+            frPlaceholder="Rechercher un pays ou une région"/>
+    </canadian-company>
+
+    <non-canadian jcr:primaryType="nt:unstructured">
+        <marketsInt
+            jcr:primaryType="nt:unstructured"
+            enLabel="What countries are you planning to buy from in the next 2 years?"
+            frLabel="Quels pays aimeriez-vous vendre au cours des deux prochaines années?"
+            value="marketsInt-non-canadian"/>
+    </non-canadian>
+
+    <fi jcr:primaryType="nt:unstructured">
+        <companyCountry
+            jcr:primaryType="nt:unstructured"
+            enPlaceHolder="--Please Select--"
+            frPlaceHolder="--Veuillez sélectionner--"
+            validationRule="none"/>
+        <companyName
+            jcr:primaryType="nt:unstructured"
+            formGroupClass="institution-text"
+            enLabel="Institution"
+            frLabel="Institution"
+            validationRule="companyName"
+            enPlaceholder="Please enter your financial institution  "
+            frPlaceholder="Veuillez entrer votre institution financière"/>
+        <companyNameOther
+            jcr:primaryType="nt:unstructured"
+            enSubtitle="If you can't find your institution enter below:"
+            frSubtitle="Si vous ne trouvez pas votre institution financière, entrez ci-dessous :"/>
+<!--  make sure all render in a separate group -->
+        <companyProvince
+            jcr:primaryType="nt:unstructured" 
+            formGroupClass="province myedc-province hide"
+            startFormRow="skip"/>
+    </fi>
+
+    <gov jcr:primaryType="nt:unstructured">
+        <companyName
+            jcr:primaryType="nt:unstructured"
+            enLabel="What department do you work in?"
+            frLabel="Dans quel service travaillez-vous?"
+            value="companyName-gov"/>
+    </gov>
+
+    <broker jcr:primaryType="nt:unstructured">
+        <companyName
+            jcr:primaryType="nt:unstructured"
+            enLabel="Brokerage firm"
+            frLabel="Firme de courtage"/>
+        <mainPhone
+            jcr:primaryType="nt:unstructured"
+            enLabel="Company phone number"
+            frLabel="Numéro de téléphone de l'entreprise"/>
+    </broker>
+</jcr:root>

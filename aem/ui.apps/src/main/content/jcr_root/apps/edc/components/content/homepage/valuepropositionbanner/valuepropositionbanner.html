@@ -1,0 +1,212 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.model="com.edc.edcweb.core.models.PageHeroBanner" />
+<sly data-sly-use.multifield="${'com.edc.edcweb.core.helpers.MultifieldReaderHelper' @ multifield='slides'}"/>
+<sly data-sly-test.slides="${multifield.fields}"/>
+<sly data-sly-test.isVideoHero="${model.videoid || model.videowebm || model.videomp4 || model.videoogg}"/>
+<sly data-sly-test.isHeroBanner="${model.fileReference || model.tabletFileReference || model.teaserimage}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !isVideoHero && !isHeroBanner}"/>
+<sly data-sly-use.commonTemplates="${'/apps/edc/components/common/templates.html'}" />
+<sly data-sly-use.ibtemplate="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+
+<section role="banner" data-edit-mode="${wcmmode.disabled ? '' : 'true'}" class="c-value-proposition-banner full-width ${model.bannerType} ${model.colorBlock ? 'color-block' : ''} ${model.bannerType != 'home' && model.backgroundicon ? model.backgroundicon : ''}" data-event-engagement="1" data-event-action="hero banner"  data-event-level="primary">
+    <section class="carousel" id="carousel-container" aria-roledescription="${properties.carouselRoleDescription}" aria-label="${properties.carouselSectionAriaLabel}" aria-live="polite">
+        <div role="group" aria-roledescription="${properties.slideRoleDescription}" data-slide-position="0" class="slide active ${model.bannerType == 'campaign' && !model.colorBlock ? model.textalignment : ''}">
+            <sly data-sly-test.showloop="${model.videowebm || model.videomp4 || model.videoogg}"/>
+            <sly data-sly-test.videobutton="${model.videoid && model.linktext}" />
+            <sly data-sly-test.linkbutton="${!model.videoid && model.linktext && model.linkurl}" />
+            <sly data-sly-test.targetbutton="${!model.videoid && !model.linkurl && model.linkdatatarget && model.linktext}" />  
+            <div class="container ${model.bannerType == 'home' && model.backgroundicon ? model.backgroundicon : ''}">
+                <div class="content">
+                    <p data-sly-test="${properties.showhidetagline}" class="tagline">${properties.taglinetext}</p>
+                    <div data-sly-attribute.class="${videobutton? 'align-video-button' : ''}">
+                        <h2 class="title">${properties.rtetitle ? properties.rtetitle : model.pageTitle @ context="html"}</h2>
+                        <h2 class="titleMobile" data-sly-test="${properties.pageTitleMobile}">${properties.pageTitleMobile}</h2>
+                        <h2 class="titleMobile" data-sly-test="${!properties.pageTitleMobile}">${properties.rtetitlemobile ? properties.rtetitlemobile : model.pageTitle @ context="html"}</h2>
+                        <p class="bodyText" >${properties.rtedescription ? properties.rtedescription : model.articlesynopsis @ context="html"}</p>
+                        <p class="bodyTextMobile" data-sly-test.articlesynopsismobile="${properties.articlesynopsismobile}">${articlesynopsismobile}</p>
+                        <p class="bodyTextMobile" data-sly-test.articlesynopsismobile="${!properties.articlesynopsismobile}">${properties.rtemobiledescription ? properties.rtemobiledescription : model.articlesynopsis @ context="html"}</p>
+                        <div class="${model.colorBlock && model.bannerType == 'campaign' ? 'btn-color-container' : 'btn-container'}" data-sly-test="${videobutton || (targetbutton && model.bannerType == 'campaign') || linkbutton || (targetbutton && model.bannerType == 'home')}">
+                            <sly data-sly-test.buttonType="${model.colorBlock && model.bannerType == 'campaign' ? 'primary-outline' : ''}" />
+                            <div data-sly-test="${videobutton}"
+                                data-sly-call="${ibtemplate.ibTemplate @ buttonbehavior='button', buttontype=buttonType, buttonicon='video', buttonstate='enabled', buttontext=model.linktext, buttoncssclasses='ibtn-lg'}"
+                                data-sly-unwrap>
+                            </div>
+                            <div data-sly-test="${targetbutton && model.bannerType == 'campaign'}"
+                                data-sly-unwrap>
+                                <div data-sly-call="${ibtemplate.ibTemplate @ buttonbehavior='link', buttontype=buttonType, buttonstate='enabled', buttonanchor=model.linkdatatarget, buttontext=model.linktext, buttoncssclasses='ibtn-lg'}" 
+                                    data-sly-unwrap></div>
+                            </div>
+                            <div data-sly-test="${linkbutton}"
+                                data-sly-unwrap>
+                                <div data-sly-call="${ibtemplate.ibTemplate @ buttonbehavior='link', buttontype=buttonType, buttonstate='enabled', link=model.linkurl, buttontext=model.linktext, target=model.linktarget, buttoncssclasses='ibtn-lg', linkchecker='valid'}"
+                                    data-sly-unwrap>
+                                </div>
+                            </div>
+                            <div data-sly-test="${targetbutton && model.bannerType == 'home'}"
+                                data-sly-call="${ibtemplate.ibTemplate @ buttonbehavior='link', buttonstate='enabled', buttontext=model.linktext, buttoncssclasses='ibtn-lg', buttonanchor=model.linkdatatarget}"
+                                data-sly-unwrap>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-color-container" data-sly-test="${model.colorBlock && model.bannerType == 'campaign' && (videobutton || targetbutton && model.bannerType == 'campaign' || linkbutton || (targetbutton && model.bannerType == 'home'))}">
+                <div data-sly-test="${videobutton}"
+                    data-sly-call="${ibtemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled', buttontype='primary-outline', buttonicon='video', buttontext=model.linktext, buttoncssclasses='ibtn-lg'}"
+                    data-sly-unwrap>
+                </div>
+                <div data-sly-test="${targetbutton && model.bannerType == 'campaign'}"
+                    data-sly-unwrap>
+                    <div data-sly-call="${ibtemplate.ibTemplate @ buttonbehavior='link', buttonstate='enabled', buttontype='primary-outline', buttonanchor=model.linkdatatarget, buttontext=model.linktext, buttoncssclasses='ibtn-lg'}" 
+                        data-sly-unwrap></div>
+                </div>
+                <div data-sly-test="${linkbutton}"
+                    data-sly-unwrap>
+                    <div data-sly-call="${ibtemplate.ibTemplate @ buttonbehavior='link', buttonstate='enabled', buttontype='primary-outline', link=model.linkurl, buttontext=model.linktext, target=model.linktarget, buttoncssclasses='ibtn-lg', linkchecker='valid'}"
+                        data-sly-unwrap>
+                    </div>
+                </div>
+                <div data-sly-test="${targetbutton && model.bannerType == 'home'}"
+                    data-sly-call="${ibtemplate.ibTemplate @ buttonbehavior='link', buttonstate='enabled', buttontype='primary-outline', buttontext=model.linktext, buttoncssclasses='ibtn-lg', buttonanchor=model.linkdatatarget}"
+                    data-sly-unwrap>
+                </div>
+            </div>
+            <div class="${showloop ? 'video-wrapper' : 'img-wrapper' }">
+                <div class="${model.bannerType == 'campaign' ? 'media-section' : '' }">
+                    <sly data-sly-test="${model.bannerType == 'campaign'}">
+                        <div class="campaign-header-overlay"></div>
+                        <div class="campaign-banner-overlay"></div>
+                    </sly>
+                    <sly data-sly-test.desktop="${model.fileReference}"/>
+                    <sly data-sly-test.tablet="${model.tabletFileReference ? model.tabletFileReference : model.fileReference}"/>
+                    <sly data-sly-test.phone="${model.teaserimage ? model.teaserimage : model.fileReference}" />
+                    <sly data-sly-call="${commonTemplates.picture @ desktop=desktop, tablet=tablet, phone=phone, imageAlt=model.imagealttext, widthDesktop='375', heightDesktop='210'}"/>
+                    <video data-sly-test="${showloop}" data-sly-attribute.autoplay="${wcmmode.edit ? '' : 'autoplay'}" loop="" muted=""><!-- //NOSONAR -->
+                        <source data-sly-test="${model.videomp4}" src="${model.videomp4}" type="video/mp4" media="all and (max-width:480px)" />
+                        <source data-sly-test="${model.videomp4}" src="${model.videomp4}" type="video/mp4" />
+                        <source data-sly-test="${model.videowebm}" src="${model.videowebm}" type="video/webm" media="all and (max-width:480px)" />
+                        <source data-sly-test="${model.videowebm}" src="${model.videowebm}" type="video/webm" />
+                        <source data-sly-test="${model.videoogg}" src="${model.videoogg}" type="video/ogg" media="all and (max-width:480px)" />
+                        <source data-sly-test="${model.videoogg}" src="${model.videoogg}" type="video/ogg" />
+                        <img src="${model.fileReference}" title="${model.policy_videonotsupport}" alt="${model.policy_videonotsupport}" width="375" height="210" />
+                    </video>
+                </div>
+            </div>
+            <div class="video-modal">
+                <div class="video-close">
+                    <button type="button">
+                        <span class="close-text">${model.videoclose}</span>
+                        <span class="iconfont close"></span>
+                    </button>
+                </div>
+                <sly data-sly-call="${commonTemplates.youtube @ videoId=model.videoid, playtext=model.policy_videoplaybtn}"/>
+            </div>
+        </div>
+        <sly data-sly-list="${slides}">
+            <div role="group" aria-roledescription="${properties.slideRoleDescription}" data-slide-position="${itemList.count}" class="slide ${model.bannerType == 'campaign' && !model.colorBlock ? item.textalignment : ''}">
+                <sly data-sly-test.showloop="${item.videowebm || item.videomp4 || item.videoogg}"/>
+                <sly data-sly-test.videobutton="${item.videoid && item.videoctatext}" />
+                <sly data-sly-test.linkbutton="${!item.videoid && item.videoctatext && item.linkurl}" />
+                <sly data-sly-test.targetbutton="${!item.videoid && !item.linkurl && item.ctadatatarget && item.videoctatext}" />
+                <div class="container ${model.bannerType == 'home' && model.backgroundicon ? model.backgroundicon : ''}">
+                    <div class="content">
+                        <p data-sly-test="${item.showhidetagline}" class="tagline">${item.taglinetext}</p>
+                        <div data-sly-attribute.class="${videobutton ? 'align-video-button' : ''}">
+                            <h1 class="title">${item.pageTitle @ context="html"}</h1>
+                            <h1 class="titleMobile">${item.pageTitleMobile || item.pageTitle @ context="html"}</h1>
+                            <p class="bodyText" data-sly-test.articlesynopsis="${item.articlesynopsis}">${articlesynopsis @ context="html"}</p>
+                            <p class="bodyTextMobile" data-sly-test.articlesynopsismobile="${item.articlesynopsismobile || item.articlesynopsis}">${articlesynopsismobile @ context="html"}</p>
+                            <div class="${model.colorBlock && model.bannerType == 'campaign' ? 'btn-color-container' : 'btn-container'}" data-sly-test="${videobutton || targetbutton && model.bannerType == 'campaign' || linkbutton || (targetbutton && model.bannerType == 'home')}">
+                                <sly data-sly-test.buttonType="${model.colorBlock ? 'primary-outline' : ''}" />
+                                <div data-sly-test="${videobutton}"
+                                    data-sly-call="${ibtemplate.ibTemplate @ buttonbehavior='button', buttontype=buttonType, buttonicon='video', buttonstate='enabled', buttontext=item.videoctatext, buttoncssclasses='ibtn-lg'}"
+                                    data-sly-unwrap>
+                                </div>
+                                <div data-sly-test="${targetbutton && model.bannerType == 'campaign'}"
+                                    data-sly-unwrap>
+                                    <sly data-sly-test.buttonType="${model.colorBlock ? 'primary-outline' : ''}" />
+                                    <div data-sly-call="${ibtemplate.ibTemplate @ buttonbehavior='link', buttontype=buttonType, buttonstate='enabled', buttonanchor=item.ctadatatarget, buttontext=item.videoctatext, buttoncssclasses='ibtn-lg'}" 
+                                        data-sly-unwrap></div>
+                                </div>
+                                <div data-sly-test="${linkbutton}"
+                                    data-sly-unwrap>
+                                    <sly data-sly-test.buttonType="${model.colorBlock && model.bannerType == 'campaign'? 'primary-outline' : ''}" />
+                                    <div data-sly-call="${ibtemplate.ibTemplate @ buttonbehavior='link', buttontype=buttonType, buttonstate='enabled', link=item.linkurl, buttontext=item.videoctatext, target=item.linktarget, buttoncssclasses='ibtn-lg', linkchecker='valid'}"
+                                        data-sly-unwrap>
+                                    </div>
+                                </div>
+                                <div data-sly-test="${targetbutton && model.bannerType == 'home'}"
+                                    data-sly-call="${ibtemplate.ibTemplate @ buttonbehavior='link', buttonstate='enabled', buttontext=item.videoctatext, buttoncssclasses='ibtn-lg', buttonanchor=item.ctadatatarget}"
+                                    data-sly-unwrap>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-color-container" data-sly-test="${model.colorBlock && model.bannerType == 'campaign' && (videobutton || targetbutton && model.bannerType == 'campaign' || linkbutton || (targetbutton && model.bannerType == 'home'))}">
+                    <sly data-sly-test.buttonType="${model.colorBlock ? 'primary-outline' : ''}" />
+                    <div data-sly-test="${videobutton}"
+                        data-sly-call="${ibtemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled', buttontype=buttonType, buttonicon='video', buttontext=item.videoctatext, buttoncssclasses='ibtn-lg'}"
+                        data-sly-unwrap>
+                    </div>
+                    <div data-sly-test="${targetbutton && model.bannerType == 'campaign'}"
+                        data-sly-unwrap>
+                        <div data-sly-call="${ibtemplate.ibTemplate @ buttonbehavior='link', buttonstate='enabled', buttontype=buttonType, buttonanchor=item.ctadatatarget, buttontext=item.videoctatext, buttoncssclasses='ibtn-lg'}" 
+                            data-sly-unwrap></div>
+                    </div>
+                    <div data-sly-test="${linkbutton}"
+                        data-sly-unwrap>
+                        <div data-sly-call="${ibtemplate.ibTemplate @ buttonbehavior='link', buttonstate='enabled', buttontype=buttonType, link=item.linkurl, buttontext=item.videoctatext, target=item.linktarget, buttoncssclasses='ibtn-lg', linkchecker='valid'}"
+                            data-sly-unwrap>
+                        </div>
+                    </div>
+                    <div data-sly-test="${targetbutton && model.bannerType == 'home'}"
+                        data-sly-call="${ibtemplate.ibTemplate @ buttonbehavior='link', buttonstate='enabled', buttontype=buttonType, buttontext=item.videoctatext, buttoncssclasses='ibtn-lg', buttonanchor=item.ctadatatarget}"
+                        data-sly-unwrap>
+                    </div>
+                </div>
+                <div class="${showloop ? 'video-wrapper' : 'img-wrapper' }">
+                    <div class="${model.bannerType == 'campaign' ? 'media-section' : '' }">
+                        <sly data-sly-test="${model.bannerType == 'campaign'}">
+                            <div class="campaign-header-overlay"></div>
+                            <div class="campaign-banner-overlay"></div>
+                        </sly>
+                        <sly data-sly-test.desktop="${item.fileReference}"/>
+                        <sly data-sly-test.tablet="${item.tabletFileReference ? item.tabletFileReference : item.fileReference}"/>
+                        <sly data-sly-test.phone="${item.teaserimage ? item.teaserimage : item.fileReference}" />
+                        <sly data-sly-call="${commonTemplates.picture @ desktop=desktop, tablet=tablet, phone=phone, imageAlt=item.imagealttext, widthDesktop='375', heightDesktop='210'}"/>
+                        <video data-sly-test="${showloop}" data-sly-attribute.autoplay="${wcmmode.edit ? '' : 'autoplay'}" loop="" muted=""><!-- //NOSONAR -->
+                            <source data-sly-test="${item.videomp4}" src="${item.videomp4}" type="video/mp4" media="all and (max-width:480px)" />
+                            <source data-sly-test="${item.videomp4}" src="${item.videomp4}" type="video/mp4" />
+                            <source data-sly-test="${item.videowebm}" src="${item.videowebm}" type="video/webm" media="all and (max-width:480px)" />
+                            <source data-sly-test="${item.videowebm}" src="${item.videowebm}" type="video/webm" />
+                            <source data-sly-test="${item.videoogg}" src="${item.videoogg}" type="video/ogg" media="all and (max-width:480px)" />
+                            <source data-sly-test="${item.videoogg}" src="${item.videoogg}" type="video/ogg" />
+                            <img src="${item.fileReference}" title="${item.policy_videonotsupport}" alt="${model.policy_videonotsupport}" width="375" height="210" />
+                        </video>
+                    </div>
+                </div>
+                <div class="video-modal">
+                    <div class="video-close">
+                        <button type="button">
+                            <span class="close-text">${model.videoclose}</span>
+                            <span class="iconfont close"></span>
+                        </button>
+                    </div>
+                    <sly data-sly-call="${commonTemplates.youtube @ videoId=item.videoid, playtext=item.policy_videoplaybtn}"/>
+                </div>
+            </div>
+        </sly>
+        <div class="carousel-actions hide keep-hidden">
+            <button type="button" aria-controls="carousel-container-items" aria-label="${properties.previousSlideAriaLabel}" class="carousel-button disabled" disabled="" data-action="left"></button>
+            <button type="button" aria-controls="carousel-container-items" aria-label="${properties.nextSlideAriaLabel}" class="carousel-button" data-action="right"></button>
+        </div>
+        <div class="carousel-ballons hide">
+            <ul class="ballons-container" data-slide-number-text="${properties.slideNumberText}" data-current-slide-text="${properties.currentSlideAriaLabel}"></ul>
+        </div>
+    </section>
+    <div class="anchor-container" data-sly-test="${model.bannerType == 'campaign' && !model.hideAnchor}">
+        <span class="text" data-sly-test=${properties.textabovechevron}>${properties.textabovechevron}</span>
+        <span class="circle-button" data-target="go-to-content" role="button" aria-label="${model.linktext}"></span>
+    </div>
+</section>

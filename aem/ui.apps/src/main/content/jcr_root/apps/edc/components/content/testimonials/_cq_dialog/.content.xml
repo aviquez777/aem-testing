@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Testimonials"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+        margin="{Boolean}false">
+        <items jcr:primaryType="nt:unstructured">
+            <image
+                jcr:primaryType="nt:unstructured"
+                sling:hideResource="{Boolean}true"/>
+            <accessibility
+                jcr:primaryType="nt:unstructured"
+                sling:hideResource="{Boolean}true"/>
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items
+                    jcr:primaryType="nt:unstructured"
+                    sling:hideChildren="[title,linkURL,description,size]">
+                    <slides
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <multi
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                composite="{Boolean}true"
+                                fieldLabel="Add the slide"
+                                name="slides">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                    name="./slides">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <column
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/well">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <quote
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                    fieldLabel="Quote"
+                                                    name="./quote"
+                                                    required="{Boolean}true"/>
+                                                <quoteby
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldLabel="Quote by"
+                                                    name="./quoteby"
+                                                    required="{Boolean}true"/>
+                                                <companyrole
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldLabel="Company and role"
+                                                    name="./companyrole"/>
+                                                <firstattributiontitle
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldLabel="First attribution title"
+                                                    name="./firstattributiontitle"
+                                                    required="{Boolean}true"/>
+                                                <firstattributiontext
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                    fieldLabel="First attribution text"
+                                                    name="./firstattributiontext"
+                                                    required="{Boolean}true"/>
+                                                <secondattributiontitle
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldLabel="Second attribution title"
+                                                    name="./secondattributiontitle"
+                                                    required="{Boolean}true"/>
+                                                <secondattributiontext
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                    fieldLabel="Second attribution text"
+                                                    name="./secondattributiontext"
+                                                    required="{Boolean}true"/>
+                                                <thirdattributiontitle
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldLabel="Third attribution title"
+                                                    name="./thirdattributiontitle"
+                                                    required="{Boolean}true"/>
+                                                <thirdattributiontext
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                    fieldLabel="Third attribution text"
+                                                    name="./thirdattributiontext"
+                                                    required="{Boolean}true"/>
+                                                <desktop
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                                    fieldLabel="Desktop Breakpoint Image"
+                                                    mimeTypes="[image]"
+                                                    multiple="{Boolean}false"
+                                                    name="./fileReference"
+                                                    rootPath="/content/dam/edc"
+                                                    required="{Boolean}true"/>
+                                                <tablet
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                                    fieldLabel="Tablet Breakpoint Image"
+                                                    mimeTypes="[image]"
+                                                    multiple="{Boolean}false"
+                                                    name="./tabletFileReference"
+                                                    rootPath="/content/dam/edc"/>
+                                                <teaserimage
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                    fieldLabel="Mobile Breakpoint Image"
+                                                    name="./teaserimage"
+                                                    rootPath="/content/dam/edc"/>
+                                                <imageAlt
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldLabel="Image alternate text"
+                                                    name="./imageAlt"
+                                                    required="{Boolean}true" />
+                                            </items>
+                                        </column>
+                                    </items>
+                                </field>
+                            </multi>
+                        </items>
+                    </slides>
+                </items>
+            </column>
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:hideResource="{Boolean}true"/>
+        </items>
+    </content>
+</jcr:root>

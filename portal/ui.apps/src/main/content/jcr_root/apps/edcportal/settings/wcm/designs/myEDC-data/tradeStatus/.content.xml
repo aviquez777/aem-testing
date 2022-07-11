@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <option1
+        jcr:primaryType="nt:unstructured"
+        enName="Sell goods or services in Canada only"
+        frName="Vend des biens ou des services au Canada seulement"
+        value="Currently not exporting"/>
+    <option2
+        jcr:primaryType="nt:unstructured"
+        enName="Sell goods or services to Canadian companies who then sell outside of Canada"
+        frName="Vend des biens ou des services à des entreprises canadiennes qui vendent ensuite à l’étranger"
+        value="Exporting indirectly"/>
+    <option3
+        jcr:primaryType="nt:unstructured"
+        enName="Sell goods or services or make investments outside of Canada"
+        frName="Vend des biens ou des services ou investit à l’étranger"
+        value="Currently Exporting"/>
+    <option4
+        jcr:primaryType="nt:unstructured"
+        enName="Planning to sell goods or services outside of Canada in the next 2 years"
+        frName="Envisage de vendre des biens ou des services à l’étranger dans les deux prochaines années"
+        value="Planning within 2 Years"/>
+    <option5
+        jcr:primaryType="nt:unstructured"
+        enName="Planning to sell goods or services outside of Canada without a specific timeframe"
+        frName="Envisage de vendre des biens ou des services à l’étranger, sans délai précis"
+        value="Planning no date"/>
+</jcr:root>

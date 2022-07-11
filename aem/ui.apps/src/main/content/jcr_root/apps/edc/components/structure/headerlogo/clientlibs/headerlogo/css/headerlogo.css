@@ -1,0 +1,14 @@
+.c-logo-header {
+    position: relative;
+    height: 65px;
+}
+
+.c-logo-header .logo {
+    margin: 1.25rem 0 1.25rem 1.25rem;
+    display: inline-block;
+}
+
+.c-logo-header .logo img {
+    line-height: 1;
+    width: 65px;
+}

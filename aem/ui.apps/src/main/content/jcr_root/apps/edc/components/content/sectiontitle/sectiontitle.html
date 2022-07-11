@@ -1,0 +1,10 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.title && !properties.target}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.title && properties.target, emptyTextAppend='Anchor link activated'}"/>
+
+<section data-sly-test="${properties.title || properties.target}" class="section-title align-${properties.textalignment ? properties.textalignment : 'left'}">
+    <a data-sly-test="${properties.target}" class="anchor" id="${properties.target}" data-target="${properties.target}" aria-hidden="true"></a>
+    <h2 data-sly-test="${properties.title}" class="title">
+        ${properties.title}
+    </h2>
+</section>

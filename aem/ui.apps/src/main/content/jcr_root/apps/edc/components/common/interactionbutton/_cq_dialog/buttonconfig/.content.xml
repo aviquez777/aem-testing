@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="iButton | Configuration."
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <ibconfig jcr:primaryType="nt:unstructured"
+                jcr:title="iButton | Configuration."
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <ibText jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Button Text"
+                        fieldDescription="Provide the button text."
+                        emptyText="Please Edit Text"
+                        name="./ibText"/>
+                    <ariaLabel jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Insert the aria label"
+                        fieldDescription="Provide the aria label for accessibility."
+                        emptyText="Please Edit Text"
+                        name="./ariaLabel"/>
+                    <ibBehavior
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldDescription="Button Behavior may be Link or Button, for link another fields will be activated."
+                        fieldLabel="Select the Button Behavior"
+                        name="./ibBehavior"
+                        granite:class="cq-dialog-dropdown-showhide">
+                        <granite:data
+                            jcr:primaryType="nt:unstructured"
+                            cq-dialog-dropdown-showhide-target=".link-showhide-target"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <button jcr:primaryType="nt:unstructured"
+                                text="Button"
+                                selected="{Boolean}true"
+                                value="button" />
+                            <link jcr:primaryType="nt:unstructured"
+                                text="Link"
+                                value="link" />
+                        </items>
+                    </ibBehavior>
+                    <linkurl
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        name="./linkUrl"
+                        rootPath="/content/edc"
+                        granite:class="hide link-showhide-target">
+                        <granite:data
+                            jcr:primaryType="nt:unstructured"
+                            showhidetargetvalue="link"/>
+                    </linkurl>
+                    <target
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldDescription="Specify target."
+                        name="./target"
+                        granite:class="hide link-showhide-target">
+                        <granite:data
+                            jcr:primaryType="nt:unstructured"
+                            showhidetargetvalue="link"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <button jcr:primaryType="nt:unstructured"
+                                text="Open in New Tab (Blank)"
+                                selected="{Boolean}true"
+                                value="_blank"/>
+                            <link jcr:primaryType="nt:unstructured"
+                                text="Open in current Tab (Self)"
+                                value="_self"/>
+                        </items>
+                    </target>
+                    <linkchecker
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldDescription="optional, value given to x-cq-linkchecker attribute to allow for 'invalid' (non-AEM) links to be specified"
+                        name="./linkchecker"
+                        granite:class="hide link-showhide-target">
+                        <granite:data
+                            jcr:primaryType="nt:unstructured"
+                            showhidetargetvalue="link"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <valid jcr:primaryType="nt:unstructured"
+                                text="Valid"
+                                selected="{Boolean}true"
+                                value="valid"/>
+                            <link jcr:primaryType="nt:unstructured"
+                                text="Skip"
+                                value="skip"/>
+                        </items>
+                    </linkchecker>
+                    <buttonSize
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldDescription="Button size can be XS, SM or LG."
+                        fieldLabel="Select the Button Size"
+                        name="./buttonSize">
+                        <items jcr:primaryType="nt:unstructured">
+                            <default jcr:primaryType="nt:unstructured"
+                                text="Default"
+                                selected="{Boolean}true"
+                                value=""/>
+                            <xs jcr:primaryType="nt:unstructured"
+                                text="XS"
+                                value="ibtn-xs"/>
+                            <sm jcr:primaryType="nt:unstructured"
+                                text="SM"
+                                value="ibtn-sm"/>
+                            <lg jcr:primaryType="nt:unstructured"
+                                text="LG"
+                                value="ibtn-lg"/>
+                        </items>
+                    </buttonSize>
+                    <buttonType
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldDescription="Button type will be rendered depending on selection."
+                        fieldLabel="Select the Button Type"
+                        name="./buttonType">
+                        <items jcr:primaryType="nt:unstructured">
+                            <default jcr:primaryType="nt:unstructured"
+                                text="Default / Primary"
+                                selected="{Boolean}true"
+                                value=""/>
+                            <primaryoutline jcr:primaryType="nt:unstructured"
+                                text="Primary Outline"
+                                value="primary-outline"/>
+                            <secondaryoutline jcr:primaryType="nt:unstructured"
+                                text="Secondary Outline"
+                                value="secondary-outline"/>
+                            <tertiary jcr:primaryType="nt:unstructured"
+                                text="Tertiary"
+                                value="tertiary"/>
+                            <danger jcr:primaryType="nt:unstructured"
+                                text="Danger"
+                                value="danger"/>
+                            <dangeroutline jcr:primaryType="nt:unstructured"
+                                text="Danger Outline"
+                                value="danger-outline"/>
+                            <warning jcr:primaryType="nt:unstructured"
+                                text="Warning"
+                                value="warning"/>
+                            <warningoutline jcr:primaryType="nt:unstructured"
+                                text="Warning Outline"
+                                value="warning-outline"/>
+                            <success jcr:primaryType="nt:unstructured"
+                                text="Success"
+                                value="success"/>
+                            <successoutline jcr:primaryType="nt:unstructured"
+                                text="Success Outline"
+                                value="success-outline"/>
+                        </items>
+                    </buttonType>
+                    <enableDisableButton
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldDescription="Render enable disable state."
+                        fieldLabel="Is button enabled or disabled?"
+                        name="./enableDisableButton">
+                        <items jcr:primaryType="nt:unstructured">
+                            <enabled jcr:primaryType="nt:unstructured"
+                                text="Enabled"
+                                selected="{Boolean}true"
+                                value="enabled"/>
+                            <disabled jcr:primaryType="nt:unstructured"
+                                text="Disabled"
+                                value="disabled"/>
+                        </items>
+                    </enableDisableButton>
+                    <buttonicon
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldDescription="Select the icon to include in the button."
+                        fieldLabel="Select button icon"
+                        name="./buttonicon">
+                        <items jcr:primaryType="nt:unstructured">
+                            <none jcr:primaryType="nt:unstructured"
+                                text="None"
+                                selected="{Boolean}true"
+                                value="none"/>
+                            <search jcr:primaryType="nt:unstructured"
+                                text="Search"
+                                value="search"/>
+                            <video jcr:primaryType="nt:unstructured"
+                                text="Video"
+                                value="video"/>
+                        </items>
+                    </buttonicon>
+                    <isUsedForModal
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldLabel="Is used to trigger a modal?"
+                        name="./isUsedForModal"
+                        granite:class="cq-dialog-dropdown-showhide">
+                        <granite:data
+                            jcr:primaryType="nt:unstructured"
+                            cq-dialog-dropdown-showhide-target=".modal-showhide-target"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <nomodal jcr:primaryType="nt:unstructured"
+                                text="No"
+                                selected="{Boolean}true"
+                                value="nomodal"/>
+                            <modal jcr:primaryType="nt:unstructured"
+                                text="Yes"
+                                value="modal"/>
+                        </items>
+                    </isUsedForModal>
+                    <modalName jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldDescription="optional, used by models identifies the name of the element containing the model content"
+                        emptyText="Please Edit Text"
+                        name="./modalName" 
+                        granite:class="hide modal-showhide-target">
+                        <granite:data
+                            jcr:primaryType="nt:unstructured"
+                            showhidetargetvalue="modal"/>
+                    </modalName>
+                    <cssID sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Insert the CSS ID"
+                                fieldDescription="Insert the CSS ID you want to apply, only one ID should be entered"
+                                jcr:primaryType="nt:unstructured"
+                                name="./cssID" />
+                    <cssClasses sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Insert the CSS classes separated by spaces"
+                        fieldDescription="Insert the CSS classes you want to apply separated by spaces i.e. 'class-one class-two' "
+                        jcr:primaryType="nt:unstructured"
+                        name="./cssClasses" />
+                    <btType sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Specify the type attribute i.e. submit, just if required."
+                        fieldDescription="Field used to specify the type attribute for the button i.e. submit"
+                        jcr:primaryType="nt:unstructured"
+                        name="./btType" />
+                    <buttonanchor sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Specify the internal anchor value."
+                        fieldDescription="Field used to specify the internal anchor value"
+                        jcr:primaryType="nt:unstructured"
+                        name="./buttonanchor" />
+                </items>
+            </ibconfig>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,354 @@
+.c-inlist-supplier-intake-form {
+    box-sizing: border-box;
+    margin-bottom: 6rem;
+    margin-top: 1.5rem;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.c-inlist-supplier-intake-form * {
+    box-sizing: border-box;
+}
+
+.c-inlist-supplier-intake-form .cta {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.c-inlist-supplier-intake-form .hide,
+.c-inlist-supplier-intake-form span.error {
+    display: none;
+}
+
+.c-inlist-supplier-intake-form .title-color {
+    color: #26a2b5;
+}
+
+.c-inlist-supplier-intake-form input[type='checkbox'] {
+    cursor: pointer;
+    float: left;
+}
+
+.c-inlist-supplier-intake-form .levels {
+    clear: both;
+}
+
+.c-inlist-supplier-intake-form .levels .form-description .description-title {
+    margin-bottom: 1.5rem;
+    margin-top: 0;
+}
+
+.c-inlist-supplier-intake-form .levels .form-description .description-content {
+    margin-bottom: 3.5rem;
+}
+
+.c-inlist-supplier-intake-form .levels .form-description .description-content ul {
+    font-family: "Georgia", "Times New Roman", Times, serif;
+    list-style: disc;
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+}
+
+.c-inlist-supplier-intake-form .levels .form-description .description-content ul li {
+    margin-bottom: 2rem;
+}
+
+.c-inlist-supplier-intake-form .levels .form-description .description-content ul li:last-child {
+    margin-bottom: 0;
+}
+
+.c-inlist-supplier-intake-form .levels .form-description .description-content > :last-child {
+    margin-bottom: 0;
+}
+
+.c-inlist-supplier-intake-form .levels .status {
+    border-top: 1px solid rgba(51, 51, 51, 0.3);
+    clear: both;
+    margin-bottom: 2.25rem;
+}
+
+.c-inlist-supplier-intake-form .levels .status .status-bar {
+    min-height: 1px;
+    padding-left: 0;
+    padding-right: 15px;
+    position: relative;
+    width: 12.5%;
+    float: left;
+    border-top: 4px solid #007C03;
+}
+
+.c-inlist-supplier-intake-form .levels .level {
+    min-height: 1px;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    width: 100%;
+}
+
+@media (min-width: 720px) {
+    .c-inlist-supplier-intake-form .levels .level {
+        width: 100%;
+        float: left;
+    }
+}
+
+.c-inlist-supplier-intake-form .levels .level .title {
+    margin-bottom: 1.5rem;
+    margin-top: 0;
+}
+
+.c-inlist-supplier-intake-form .levels .level .subtitle {
+    color: #191919;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 3.5rem;
+}
+
+.c-inlist-supplier-intake-form .levels .level .subsection {
+    margin-bottom: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+.c-inlist-supplier-intake-form .levels .level .description {
+    margin-bottom: 3.5rem;
+}
+
+.c-inlist-supplier-intake-form .levels .level .subsection-description {
+    margin-bottom: 1rem;
+}
+
+.c-inlist-supplier-intake-form .levels .level .form-group {
+    margin-bottom: 1rem;
+}
+
+.c-inlist-supplier-intake-form .levels .level .radio-group {
+    margin-bottom: 1.5rem;
+}
+
+.c-inlist-supplier-intake-form .levels .level .radio-group :last-child {
+    margin-bottom: 0;
+}
+
+.c-inlist-supplier-intake-form .levels .level .radio-group h3 {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: 0;
+    margin-bottom: 1.5rem;
+    margin-top: 0;
+}
+
+@media (min-width: 720px) {
+    .c-inlist-supplier-intake-form .levels .level .radio-group h3 {
+        font-size: .9375rem;
+        line-height: 1.6;
+        letter-spacing: -0.2px;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-inlist-supplier-intake-form .levels .level .radio-group h3 {
+        font-size: .9375rem;
+        line-height: 1.6;
+        letter-spacing: -0.2px;
+    }
+}
+
+.c-inlist-supplier-intake-form .levels .level .radio-group .radio-option {
+    margin-bottom: .625rem;
+}
+
+.c-inlist-supplier-intake-form .levels .level .radio-group .radio-option label {
+    font-weight: normal;
+}
+
+.c-inlist-supplier-intake-form .levels .level .form-disclaimers {
+    background-color: #f5f5f5;
+    padding: 1rem 1.25rem 1.5rem;
+}
+
+.c-inlist-supplier-intake-form .levels .level .form-disclaimers .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.c-inlist-supplier-intake-form .levels .level .form-disclaimers .form-group label {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.7142;
+    display: table-cell;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+@media (min-width: 720px) {
+    .c-inlist-supplier-intake-form .levels .level .form-disclaimers .form-group label {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-inlist-supplier-intake-form .levels .level .form-disclaimers .form-group label {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+.c-inlist-supplier-intake-form .levels .level .form-disclaimers .form-group label p {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.7142;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+}
+
+@media (min-width: 720px) {
+    .c-inlist-supplier-intake-form .levels .level .form-disclaimers .form-group label p {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-inlist-supplier-intake-form .levels .level .form-disclaimers .form-group label p {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+.c-inlist-supplier-intake-form .levels .level .form-disclaimers :last-child {
+    margin-bottom: 0;
+}
+
+.c-inlist-supplier-intake-form .levels .bottom-ctas {
+    align-items: center;
+    clear: both;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: .625rem;
+}
+
+.c-inlist-supplier-intake-form .levels .form-ctas .back {
+    font-weight: 600;
+    margin-right: 30px;
+}
+
+.c-inlist-supplier-intake-form .success-message {
+    text-align: center;
+    margin-bottom: 2.25rem;
+    border-top: 1px solid rgba(51, 51, 51, 0.3);
+}
+
+.c-inlist-supplier-intake-form .success-message h2 {
+    margin: 2.25rem 0 1.5rem;
+}
+
+.c-inlist-supplier-intake-form .success-message div {
+    margin-bottom: 2.25rem;
+}
+
+@media (min-width: 720px) {
+    .c-inlist-supplier-intake-form {
+        margin-top: 2.549375rem;
+    }
+    .c-inlist-supplier-intake-form .levels {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 66.66666667%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-inlist-supplier-intake-form .levels {
+        width: 66.66666667%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-inlist-supplier-intake-form .levels .level .description {
+        margin-bottom: 2rem;
+    }
+    .c-inlist-supplier-intake-form .levels .level .subsection {
+        margin-top: 2rem;
+    }
+    .c-inlist-supplier-intake-form .levels .form-description .description-content {
+        margin-bottom: 4rem;
+    }
+    .c-inlist-supplier-intake-form .success-message {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 66.66666667%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-inlist-supplier-intake-form .success-message {
+        width: 66.66666667%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-inlist-supplier-intake-form {
+        margin-top: 4rem;
+    }
+    .c-inlist-supplier-intake-form .levels {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-inlist-supplier-intake-form .levels {
+        width: 50%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-inlist-supplier-intake-form .levels .status {
+        margin-bottom: 2rem;
+    }
+    .c-inlist-supplier-intake-form .success-message {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 720px) {
+    .c-inlist-supplier-intake-form .success-message {
+        width: 50%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

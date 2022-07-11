@@ -1,0 +1,44 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-test.configured="${properties.loginCtaText && properties.loginCtaText}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !configured}" />
+<sly data-sly-use.buttonTemplate="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+
+
+<sly data-sly-test="${configured}">
+    <sly data-sly-use.model="${'com.edc.edcweb.core.myedcgating.helpers.LoginLinksHelper' @ productDescFromPremium = properties.productDescFromPremium}"/>
+    <sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+    <sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+    <sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+
+    <section role="banner" class="c-business-connections-banner full-width" data-event-engagement="1" data-event-action="business connections banner" data-event-level="primary" aria-labelledby="BusinessConnectionsBanner-${uuid}">
+        <div class="container pyramids">
+            <div class="content">
+                <h3 class="tagline">${properties.eventTag}</h3>
+                <h1 id="BusinessConnectionsBanner-${uuid}" class="title">${properties.eventTitle}</h1>
+                <p>${properties.eventDescription}</p>
+                <div class="btn-container">
+                    <div data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='link',  buttoncssclasses='ibtn-lg', isUsedForModal='nomodal', buttonstate='enabled', link=model.loginUrl, buttontext=properties.loginCtaText, target='_self', linkchecker='skip'}"  data-sly-unwrap></div>
+                    <div class="register-section">
+                        <p>${properties.registerText}</p>
+                        <div data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='link', buttoncssclasses='unstyled', isUsedForModal='nomodal', buttonstate='enabled', link=model.registerUrl, buttontext=properties.registerLinkText, target='_self', linkchecker='skip'}"  data-sly-unwrap></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="img-wrapper">
+        <sly data-sly-test.desktop="${properties.fileReference ? properties.fileReference : pageProperties['fileReference']}"/>
+        <sly data-sly-test.tablet="${properties.tabletFileReference ? properties.tabletFileReference : pageProperties['tabletFileReference']}"/>
+        <sly data-sly-test.phone="${properties.phoneFileReference ? properties.phoneFileReference : pageProperties['teaserimage']}"/>
+        <sly data-sly-test.altText="${properties.alt ? properties.alt : pageProperties['imagealttext']}"/>
+            <div>
+                <picture>
+                    <source media="(min-width: 960px)" srcSet="${desktop}" sizes="100vw" />
+                    <source media="(min-width: 720px)" srcSet="${tablet}" sizes="100vw" />
+                    <source media="(min-width: 320px)" srcSet="${phone}" sizes="100vw" />
+                    <img src="${phone}" alt="${altText}" class="" data-speed="" />
+                </picture>
+            </div>
+        </div>
+        <div class="white-space"></div>
+    </section>
+</sly>

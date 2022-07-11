@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastReplicationAction="Activate"
+        cq:template="/conf/edcportal/settings/wcm/templates/content-page"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:language="fr"
+        jcr:title="Profil"
+        sling:alias="profil"
+        sling:resourceType="edcportal/components/structure/page"
+        firstpublished="{Date}2018-10-25T15:28:29.803-04:00">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <myedcbanner
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="edcportal/components/content/myedcbanner"
+                headline="Compte MonEDC"/>
+            <leftcolumn
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid">
+                <myedcnavigation
+                    jcr:primaryType="nt:unstructured"
+                    ctaurl="/content/edc/fr/exportactions"
+                    webinarsurl="/content/edc/fr/evenements"
+                    sling:resourceType="edcportal/components/content/myedcnavigation">
+                </myedcnavigation>
+            </leftcolumn>
+            <rightcolumn jcr:primaryType="nt:unstructured">
+                <managemyaccount
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="edcportal/components/content/managemyaccount"
+                    basicInformationTitle="Renseignements de base"
+                    deactivateAccountText="&lt;p>Pour désactiver ou effacer le compte, communiquez avec les Services au client d’EDC à &lt;a href=&quot;mailto:support@edc.ca&quot;>support@edc.ca&lt;/a> ou au 1-866-716-7201, en semaine entre 7 h et 20 h (HE).&lt;/p>&#xd;&#xa;"
+                    deactivateAccountTitle="Désactiver ou effacer le compte"
+                    detailedInformationTitle="Renseignements détaillés"
+                    textIsRich="[true,true]">
+                    <needassistance
+                            fragmentPath="/content/experience-fragments/myedc/needAssistance/need-assistance-fr"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="cq/experience-fragments/editor/components/experiencefragment"/>
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <default
+                                jcr:primaryType="nt:unstructured"
+                                width="12"/>
+                    </cq:responsive>
+                </managemyaccount>
+            </rightcolumn>
+        </root>
+    </jcr:content>
+</jcr:root>

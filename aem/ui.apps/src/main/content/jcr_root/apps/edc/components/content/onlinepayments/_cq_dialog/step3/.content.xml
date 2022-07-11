@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <stepLabel jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Label for Step 3 of 3"
+                fieldLabel="Label for Step 3 of 3"
+                required="{Boolean}true"
+                name="./step3Of3"/>
+            <step3Title
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Title after Step 3 of 3"
+                fieldDescription="i.e. Payment Confirmation"
+                name="./step3Title"
+                required="{Boolean}true"/>
+            <statusLabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Status Label"
+                fieldDescription="Status Label"
+                name="./statusLabel"
+                required="{Boolean}true"/>
+            <approved
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/text"
+                        class="coral-Form-fieldlabel"
+                        text="Approved"/>
+                    <well
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <approvedTitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Success Title"
+                                fieldDescription="We received your payment. Thanks!"
+                                name="./approvedTitle"
+                                required="{Boolean}true"/>
+                            <approvedDesc
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                fieldLabel="Success SubTitle"
+                                fieldDescription="A confirmation email will be sent to you shortly."
+                                name="./approvedDesc"
+                                useFixedInlineToolbar="{Boolean}true"
+                                required="{Boolean}true">
+                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                    <format
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <links
+                                        jcr:primaryType="nt:unstructured"
+                                        features="[modifylink,unlink]"/>
+                                </rtePlugins>
+                                <uiSettings jcr:primaryType="nt:unstructured">
+                                    <cui jcr:primaryType="nt:unstructured">
+                                        <inline
+                                            jcr:primaryType="nt:unstructured"
+                                            toolbar="[format#bold,format#italic,format#underline,#lists,links#modifylink,links#unlink,links#anchor]">
+                                        </inline>
+                                    </cui>
+                                </uiSettings>
+                            </approvedDesc>
+                            <transactionApproved
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Transaction Approved Message"
+                                fieldDescription="i.e. Transaction Approved"
+                                name="./transactionApproved"
+                                required="{Boolean}true"/>
+                            <confNumber
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Payment confirmation number Text"
+                                fieldDescription="i.e. Payment confirmation number"
+                                name="./confNumber"
+                                required="{Boolean}true"/>
+                        </items>
+                    </well>
+                </items>
+            </approved>
+            <declined
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/text"
+                        class="coral-Form-fieldlabel"
+                        text="Declined"/>
+                    <well
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <declinedTitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Declined Title"
+                                fieldDescription="Sorry, your payment didn’t go through. Would you like to try again?"
+                                name="./declinedTitle"
+                                required="{Boolean}true"/>
+                            <declinedDesc
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                fieldLabel="Declinded Text"
+                                fieldDescription="If you need assistance..."
+                                name="./declinedDesc"
+                                useFixedInlineToolbar="{Boolean}true"
+                                required="{Boolean}true">
+                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                    <format
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <links
+                                        jcr:primaryType="nt:unstructured"
+                                        features="[modifylink,unlink]"/>
+                                </rtePlugins>
+                                <uiSettings jcr:primaryType="nt:unstructured">
+                                    <cui jcr:primaryType="nt:unstructured">
+                                        <inline
+                                            jcr:primaryType="nt:unstructured"
+                                            toolbar="[format#bold,format#italic,format#underline,#lists,links#modifylink,links#unlink,links#anchor]">
+                                        </inline>
+                                    </cui>
+                                </uiSettings>
+                            </declinedDesc>
+                            <transactionDeclined
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Transaction Declined Messsaage"
+                                fieldDescription="i.e. Transaction Declined"
+                                name="./transactionDeclined"
+                                required="{Boolean}true"/>
+                            <backBtnText
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Back Button Label Text"
+                                fieldDescription="i.e. Go Back"
+                                name="./backBtnText"
+                                required="{Boolean}true"/>
+                        </items>
+                    </well>
+                </items>
+            </declined>
+        </items>
+    </content>
+</jcr:root>

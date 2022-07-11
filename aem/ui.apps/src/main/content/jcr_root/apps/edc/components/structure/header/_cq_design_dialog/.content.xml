@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Header"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <logo
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Logo Details"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <login
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <heading
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/text"
+                                        text="EDC logo"/>
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <logoimage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="Logo image file"
+                                                name="./logoimage"
+                                                rootPath="/content/dam/edc"/>
+                                            <logotarget
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldDescription="Specify whether to open this link in a new or existing window"
+                                                fieldLabel="Link target"
+                                                name="./logotarget">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <existing
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Existing window"
+                                                        value="_self"/>
+                                                    <new
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="New window"
+                                                        value="_blank"/>
+                                                </items>
+                                            </logotarget>
+                                            <logoalttext
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Alternate text"
+                                                name="./logoalttext"
+                                                wrapperClass="core-image-alt"/>
+                                            <logourl
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="Link url"
+                                                name="./logourl"
+                                                required="{Boolean}false"
+                                                rootPath="/content/edc"/>
+                                        </items>
+                                    </well>
+                                </items>
+                            </login>
+                        </items>
+                    </logo>
+                    <staticlinks
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Static Links"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <phonenumber
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="Appears on the desktop view and is also used for the &quot;tel&quot; link on mobile devices."
+                                fieldLabel="Toll free number (1-XXX-XXX-XXXX)"
+                                name="./phonenumber"
+                                required="{Boolean}true"/>
+                        </items>
+                    </staticlinks>
+                    <usermenu
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="MyEDC CTA"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <heading
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/text"
+                                text="MyEDC CTA"/>
+                            <well
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <layout
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <loggedouttext
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="MyEDC &amp; accounts' CTA text" 
+                                        fieldDescription="CTA must remain as 'MyEDC &amp; accounts' in both logged out an logged in view"
+                                        name="./loggedouttext"
+                                        required="{Boolean}true"/>
+                                    <url
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldLabel="'MyEDC &amp; accounts' CTA Link" 
+                                        fieldDescription="User must be brought to MyEDC registration tab"
+                                        name="./loginurl"
+                                        required="{Boolean}true"
+                                        rootPath="/content/edc"/>
+                                    <target
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldDescription="Specify whether to open this link in a new or existing window"
+                                        fieldLabel="Link target"
+                                        name="./logintarget">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <existing
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Existing window"
+                                                value="_self"/>
+                                            <new
+                                                jcr:primaryType="nt:unstructured"
+                                                text="New window"
+                                                value="_blank"/>
+                                        </items>
+                                    </target>
+                                </items>
+                            </well>
+                        </items>
+                    </usermenu>
+                    <linksMenu
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="MyEDC Logged Out Menu"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <leftpaneltitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="'Sign up or register for' title"
+                                fieldDescription="'Sign up or register for' title"
+                                name="./lefttitle"
+                                required="{Boolean}true"/>
+                            <leftmulti
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                composite="{Boolean}true"
+                                fieldLabel="Always visible links (first one must be 'MyEDC')"
+                                fieldDescription="First link must be 'MyEDC' will be bold and dissapear when loged in"
+                                validation="multifield-limit-min:0-max:10">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                                    name="./leftlinks">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <column
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/well">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <text
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldLabel="Link text"
+                                                    fieldDescription="Link Text"
+                                                    name="./linktext"
+                                                    required="{Boolean}false"/>
+                                                <url
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                    fieldLabel="Link url"
+                                                    fieldDescription="If external link, check if the autocomplete did not override your changes"
+                                                    name="./linkurl"
+                                                    required="{Boolean}false"
+                                                    rootPath="/content/edc"/>
+                                                <target
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                    fieldDescription="Specify whether to open this link in a new or existing window"
+                                                    fieldLabel="Link target"
+                                                    name="./linktarget">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <existing
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Existing window"
+                                                            value="_self"/>
+                                                        <new
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="New window"
+                                                            value="_blank"/>
+                                                    </items>
+                                                </target>
+                                            </items>
+                                        </column>
+                                    </items>
+                                </field>
+                            </leftmulti>
+                        </items>
+                    </linksMenu>
+                    <loggedInManu
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="MyEDC Logged In Menu"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <rightpaneltitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Logged In Title"
+                                fieldDescription="Logged In Title"
+                                name="./righttitle"
+                                required="{Boolean}true"/>
+                            <leftpaneltitleIn
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="'Other EDC accounts' title will replace 'Sign up or register for' title"
+                                fieldDescription="'Other EDC accounts' title will replace 'Sign up or register for' title"
+                                name="./lefttitlein"
+                                required="{Boolean}true"/>
+                            <rightmulti
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                composite="{Boolean}true"
+                                fieldLabel="Logged In Only links"
+                                fieldDescription="Links visible only when user is logged in"
+                                validation="multifield-limit-min:0-max:10">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                                    name="./rightlinks">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <column
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/well">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <text
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldLabel="Link text"
+                                                    fieldDescription="Link Text"
+                                                    name="./linktext"
+                                                    required="{Boolean}false"/>
+                                                <url
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                    fieldLabel="Link url"
+                                                    fieldDescription="If external link, check if the autocomplete did not override your changes"
+                                                    name="./linkurl"
+                                                    required="{Boolean}false"
+                                                    rootPath="/content/edc"/>
+                                                <target
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                    fieldDescription="Specify whether to open this link in a new or existing window"
+                                                    fieldLabel="Link target"
+                                                    name="./linktarget">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <existing
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Existing window"
+                                                            value="_self"/>
+                                                        <new
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="New window"
+                                                            value="_blank"/>
+                                                    </items>
+                                                </target>
+                                            </items>
+                                        </column>
+                                    </items>
+                                </field>
+                            </rightmulti>
+                        </items>
+                    </loggedInManu>
+                    <search
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Search"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <showSearch
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                defaultChecked="{Boolean}false"
+                                fieldLabel="Show Search component"
+                                name="./showSearch"
+                                required="{Boolean}false"
+                                text="Show search component"
+                                value="{Boolean}true"/>
+                            <msearchlabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Mobile search label"
+                                fieldDescription="Mobile search label"
+                                name="./msearchlabel"
+                                required="{Boolean}false"/>
+                        </items>
+                    </search>
+                    <navigation
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Navigation"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <startingpage
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                fieldLabel="Starting page for navigation"
+                                name="./startingpage"
+                                required="{Boolean}false"
+                                rootPath="/content/edc"/>
+                            <maxlevels
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Maximum navigation levels (-1 for unlimited)"
+                                min="{Long}-1"
+                                name="./maxlevels"/>
+                            <target
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldDescription="Specify whether to open menu links in a new or existing window"
+                                fieldLabel="Menu item target"
+                                name="./menutarget">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <existing
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Existing window"
+                                        value="_self"/>
+                                    <new
+                                        jcr:primaryType="nt:unstructured"
+                                        text="New window"
+                                        value="_blank"/>
+                                </items>
+                            </target>
+                        </items>
+                    </navigation>
+                    <accessibility
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Accessibility"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <skip
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Skip navigation message"
+                                name="./skip"
+                                required="{Boolean}true"/>
+                            <well
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/container">
+                                <layout
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <showSearchAccessibility
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Toggle EDC search"
+                                            fieldDescription="Toggle EDC search Accessibility"
+                                            name="./showSearchAccessibility"
+                                            required="{Boolean}true"/>
+                                    <languageToggleAccessibility
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Switch Language"
+                                            fieldDescription="Switch Language Accessibility"
+                                            name="./languageToggleAccessibility"
+                                            required="{Boolean}true"/>
+                                    <secondaryNavigationBarAccessibility
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Secondary Navigation Bar"
+                                            fieldDescription="Secondary Navigation Bar Accessibility"
+                                            name="./secondaryNavigationBarAccessibility"
+                                            required="{Boolean}true"/>
+                                    <closeMenuAccessibility
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Close Menu"
+                                            fieldDescription="Close Menu Accessibility"
+                                            name="./closeMenuAccessibility"
+                                            required="{Boolean}true"/>
+                                </items>
+                            </well>
+                        </items>
+                    </accessibility>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

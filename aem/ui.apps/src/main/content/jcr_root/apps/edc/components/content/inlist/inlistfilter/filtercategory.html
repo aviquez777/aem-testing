@@ -1,0 +1,45 @@
+<template data-sly-template.categoryFields="${@ title, matchAll, modalId, modalLinkText, modalTitle, modalDescription, mapValues, typeCategory, indexOrder, showMore, showLess}">
+    <sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+    <sly data-sly-use.ibButtonTemplate="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+    <sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+    <sly data-sly-test.isExpanded="${indexOrder <=2? '': 'collapsed'}"></sly>
+    <section data-sly-test="${mapValues}" class="${['supplier-filter', typeCategory, isExpanded] @ join=' '}" aria-expanded="true" data-match-all="${'{0}' @ format=[matchAll]}" >
+        <div class="filter-title">
+            <h3 class="title" tabindex="0">${title}</h3>
+            <div data-sly-test="${modalTitle && modalDescription}" class="c-modal modal-example" role="dialog" aria-modal="true">
+                <div data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled', btntype='button', buttontext=modalLinkText, modaltrigger=modalId, buttoncssclasses='edc-btn-unstyled modal-trigger anchor'}"  data-sly-unwrap></div>
+                <div class="modal-dialog generic-modal" id="${modalId}">
+                    <div class="modal-shade"></div>
+                    <div class="modal-container">
+                        <div data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled',arialabelledby='Back', btntype='button', buttoncssclasses='edc-btn-icon modal-close'}"  data-sly-unwrap></div>
+                        <div class="modal-content" role="region" aria-labelledby="${[uuid,'label'] @ join='-'}" aria-describedby="${[uuid,'desc'] @ join='-'}">
+                            <div class="modal-title">
+                                <h3 id="${[uuid,'label'] @ join='-'}" class="title">${modalTitle}</h3>
+                            </div>
+                            <div id="${[uuid,'desc'] @ join='-'}" class="modal-richtext">
+                                ${modalDescription @ context = 'html'}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-sly-test="${indexOrder != 0}" data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled',arialabelledby='Expand Sub Options', btntype='button', buttoncssclasses='edc-btn-icon chevron'}"  data-sly-unwrap></div>
+        </div>
+        <ul data-sly-list="${mapValues}">
+            <li class="${itemList.index > 3 ? 'hide' : ''}">
+                <sly data-sly-test.buttonShow="${itemList.index > 3}"></sly>
+                <input id="${[typeCategory, itemList.index] @ join='-'}" type="checkbox" class="filter-option" name="${typeCategory}" data-value="${mapValues[item]}" value="${[typeCategory, item] @ join='-'}" data-filter="${typeCategory}"/>
+                <label for="${[typeCategory, itemList.index] @ join='-'}">${mapValues[item]}</label>
+            </li>
+        </ul>
+        <sly data-sly-test="${buttonShow}">
+            <div class="show-buttons">
+                <button class="edc-btn-unstyled show-more" data-more="${showMore}" data-less="${showLess}">
+                    <span>${showMore}</span>
+                </button>
+                <sly data-sly-test.attrs="${['data-more',showMore,'data-less',showLess] @ join = '='}"/>
+                <div data-sly-test="${indexOrder != 0}" data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled', btntype='button', buttontext=showMore, buttoncssclasses='edc-btn-unstyled show-more', customattribs=attrs}"  data-sly-unwrap></div>
+            </div>
+        </sly>
+    </section>
+</template>

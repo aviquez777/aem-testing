@@ -1,0 +1,1749 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <afg
+        jcr:primaryType="nt:unstructured"
+        enName="Afghanistan"
+        frName="Afghanistan"
+        value="AFG"
+        isoCode3="AFG"
+        isoCode2="AF" />
+    <ala
+        jcr:primaryType="nt:unstructured"
+        enName="Åland Islands"
+        frName="Åland, Îles"
+        value="ALA"
+        isoCode3="ALA"
+        isoCode2="AX" />
+    <alb
+        jcr:primaryType="nt:unstructured"
+        enName="Albania"
+        frName="Albanie"
+        value="ALB"
+        isoCode3="ALB"
+        isoCode2="AL" />
+    <alg
+        jcr:primaryType="nt:unstructured"
+        enName="Algeria"
+        frName="Algérie"
+        value="ALG"
+        isoCode3="DZA"
+        isoCode2="DZ" />
+    <sam
+        jcr:primaryType="nt:unstructured"
+        enName="American Samoa"
+        frName="Samoa américaines"
+        value="SAM"
+        isoCode3="ASM"
+        isoCode2="AS" />
+    <and
+        jcr:primaryType="nt:unstructured"
+        enName="Andorra"
+        frName="Andorre"
+        value="AND"
+        isoCode3="AND"
+        isoCode2="AD" />
+    <ang
+        jcr:primaryType="nt:unstructured"
+        enName="Angola"
+        frName="Angola"
+        value="ANG"
+        isoCode3="AGO"
+        isoCode2="AO" />
+    <agl
+        jcr:primaryType="nt:unstructured"
+        enName="Anguilla"
+        frName="Anguilla"
+        value="AGL"
+        isoCode3="AIA"
+        isoCode2="AI" />
+    <ant
+        jcr:primaryType="nt:unstructured"
+        enName="Antigua and Barbuda"
+        frName="Antigua-et-Barbuda"
+        value="ANT"
+        isoCode3="ATG"
+        isoCode2="AG" />
+    <arg
+        jcr:primaryType="nt:unstructured"
+        enName="Argentina"
+        frName="Argentine"
+        value="ARG"
+        isoCode3="ARG"
+        isoCode2="AR" />
+    <arm
+        jcr:primaryType="nt:unstructured"
+        enName="Armenia"
+        frName="Arménie"
+        value="ARM"
+        isoCode3="ARM"
+        isoCode2="AM" />
+    <aru
+        jcr:primaryType="nt:unstructured"
+        enName="Aruba"
+        frName="Aruba"
+        value="ARU"
+        isoCode3="ABW"
+        isoCode2="AW" />
+    <aust
+        jcr:primaryType="nt:unstructured"
+        enName="Australia"
+        frName="Australie"
+        value="AUST"
+        isoCode3="AUS"
+        isoCode2="AU" />
+    <astr
+        jcr:primaryType="nt:unstructured"
+        enName="Austria"
+        frName="Autriche"
+        value="ASTR"
+        isoCode3="AUT"
+        isoCode2="AT" />
+    <aze
+        jcr:primaryType="nt:unstructured"
+        enName="Azerbaijan"
+        frName="Azerbaïdjan"
+        value="AZE"
+        isoCode3="AZE"
+        isoCode2="AZ" />
+    <baha
+        jcr:primaryType="nt:unstructured"
+        enName="Bahamas"
+        frName="Bahamas"
+        value="BAHA"
+        isoCode3="BHS"
+        isoCode2="BS" />
+    <bhr
+        jcr:primaryType="nt:unstructured"
+        enName="Bahrain"
+        frName="Bahreïn"
+        value="BHR"
+        isoCode3="BHR"
+        isoCode2="BH" />
+    <ban
+        jcr:primaryType="nt:unstructured"
+        enName="Bangladesh"
+        frName="Bangladesh"
+        value="BAN"
+        isoCode3="BGD"
+        isoCode2="BD" />
+    <bar
+        jcr:primaryType="nt:unstructured"
+        enName="Barbados"
+        frName="Barbade"
+        value="BAR"
+        isoCode3="BRB"
+        isoCode2="BB" />
+    <bye
+        jcr:primaryType="nt:unstructured"
+        enName="Belarus"
+        frName="Bélarus"
+        value="BYE"
+        isoCode3="BLR"
+        isoCode2="BY" />
+    <bel
+        jcr:primaryType="nt:unstructured"
+        enName="Belgium"
+        frName="Belgique"
+        value="BEL"
+        isoCode3="BEL"
+        isoCode2="BE" />
+    <beli
+        jcr:primaryType="nt:unstructured"
+        enName="Belize"
+        frName="Belize"
+        value="BELI"
+        isoCode3="BLZ"
+        isoCode2="BZ" />
+    <ben
+        jcr:primaryType="nt:unstructured"
+        enName="Benin"
+        frName="Bénin"
+        value="BEN"
+        isoCode3="BEN"
+        isoCode2="BJ" />
+    <ber
+        jcr:primaryType="nt:unstructured"
+        enName="Bermuda"
+        frName="Bermudes"
+        value="BER"
+        isoCode3="BMU"
+        isoCode2="BM" />
+    <bhu
+        jcr:primaryType="nt:unstructured"
+        enName="Bhutan"
+        frName="Bhoutan"
+        value="BHU"
+        isoCode3="BTN"
+        isoCode2="BT" />
+    <bol
+        jcr:primaryType="nt:unstructured"
+        enName="Bolivia"
+        frName="Bolivie"
+        value="BOL"
+        isoCode3="BOL"
+        isoCode2="BO" />
+    <bes
+        jcr:primaryType="nt:unstructured"
+        enName="Bonaire, Sint Eustatius, Saba"
+        frName="Bonaire, Saint-Eustache, Saba"
+        value="BES"
+        isoCode3="BES"
+        isoCode2="BQ" />
+    <bos
+        jcr:primaryType="nt:unstructured"
+        enName="Bosnia and Herzegovina"
+        frName="Bosnie-Herzégovine"
+        value="BOS"
+        isoCode3="BIH"
+        isoCode2="BA" />
+    <bot
+        jcr:primaryType="nt:unstructured"
+        enName="Botswana"
+        frName="Botswana"
+        value="BOT"
+        isoCode3="BWA"
+        isoCode2="BW" />
+    <bvt
+        jcr:primaryType="nt:unstructured"
+        enName="Bouvet Island"
+        frName="Bouvet, Île"
+        value="BVT"
+        isoCode3="BVT"
+        isoCode2="BV" />
+    <bra
+        jcr:primaryType="nt:unstructured"
+        enName="Brazil"
+        frName="Brésil"
+        value="BRA"
+        isoCode3="BRA"
+        isoCode2="BR" />
+    <boc
+        jcr:primaryType="nt:unstructured"
+        enName="British Indian Ocean Territory"
+        frName="Océan Indien (R.-U.)"
+        value="BOC"
+        isoCode3="IOT"
+        isoCode2="IO" />
+    <bru
+        jcr:primaryType="nt:unstructured"
+        enName="Brunei Darussalam"
+        frName="Brunéi Darussalam"
+        value="BRU"
+        isoCode3="BRN"
+        isoCode2="BN" />
+    <bul
+        jcr:primaryType="nt:unstructured"
+        enName="Bulgaria"
+        frName="Bulgarie"
+        value="BUL"
+        isoCode3="BGR"
+        isoCode2="BG" />
+    <uva
+        jcr:primaryType="nt:unstructured"
+        enName="Burkina Faso"
+        frName="Burkina Faso"
+        value="UVA"
+        isoCode3="BFA"
+        isoCode2="BF" />
+    <bur
+        jcr:primaryType="nt:unstructured"
+        enName="Burundi"
+        frName="Burundi"
+        value="BUR"
+        isoCode3="BDI"
+        isoCode2="BI" />
+    <cvi
+        jcr:primaryType="nt:unstructured"
+        enName="Cabo Verde"
+        frName="Cabo Verde"
+        value="CVI"
+        isoCode3="CPV"
+        isoCode2="CV" />
+    <kam
+        jcr:primaryType="nt:unstructured"
+        enName="Cambodia"
+        frName="Cambodge"
+        value="KAM"
+        isoCode3="KHM"
+        isoCode2="KH" />
+    <cam
+        jcr:primaryType="nt:unstructured"
+        enName="Cameroon"
+        frName="Cameroun"
+        value="CAM"
+        isoCode3="CMR"
+        isoCode2="CM" />
+    <can
+        jcr:primaryType="nt:unstructured"
+        enName="Canada"
+        frName="Canada"
+        value="CAN"
+        isoCode3="CAN"
+        isoCode2="CA" />
+    <cay
+        jcr:primaryType="nt:unstructured"
+        enName="Cayman Islands"
+        frName="Caïmans, Îles"
+        value="CAY"
+        isoCode3="CYM"
+        isoCode2="KY" />
+    <car
+        jcr:primaryType="nt:unstructured"
+        enName="Central African Republic"
+        frName="République centrafricaine"
+        value="CAR"
+        isoCode3="CAF"
+        isoCode2="CF" />
+    <chad
+        jcr:primaryType="nt:unstructured"
+        enName="Chad"
+        frName="Tchad"
+        value="CHAD"
+        isoCode3="TCD"
+        isoCode2="TD" />
+    <chil
+        jcr:primaryType="nt:unstructured"
+        enName="Chile"
+        frName="Chili"
+        value="CHIL"
+        isoCode3="CHL"
+        isoCode2="CL" />
+    <chin
+        jcr:primaryType="nt:unstructured"
+        enName="China"
+        frName="Chine"
+        value="CHIN"
+        isoCode3="CHN"
+        isoCode2="CN" />
+    <cxr
+        jcr:primaryType="nt:unstructured"
+        enName="Christmas Island"
+        frName="Christmas, Île"
+        value="CXR"
+        isoCode3="CXR"
+        isoCode2="CX" />
+    <cck
+        jcr:primaryType="nt:unstructured"
+        enName="Cocos (Keeling) Islands"
+        frName="Cocos/Keeling, Îles"
+        value="CCK"
+        isoCode3="CCK"
+        isoCode2="CC" />
+    <col
+        jcr:primaryType="nt:unstructured"
+        enName="Colombia"
+        frName="Colombie"
+        value="COL"
+        isoCode3="COL"
+        isoCode2="CO" />
+    <com
+        jcr:primaryType="nt:unstructured"
+        enName="Comoros"
+        frName="Comores"
+        value="COM"
+        isoCode3="COM"
+        isoCode2="KM" />
+    <zai
+        jcr:primaryType="nt:unstructured"
+        enName="Congo, DRC"
+        frName="Congo, RDC"
+        value="ZAI"
+        isoCode3="COD"
+        isoCode2="CD" />
+    <con
+        jcr:primaryType="nt:unstructured"
+        enName="Congo, Republic of"
+        frName="Congo, République du"
+        value="CON"
+        isoCode3="COG"
+        isoCode2="CG" />
+    <coo
+        jcr:primaryType="nt:unstructured"
+        enName="Cook Islands"
+        frName="Cook, Îles"
+        value="COO"
+        isoCode3="COK"
+        isoCode2="CK" />
+    <cos
+        jcr:primaryType="nt:unstructured"
+        enName="Costa Rica"
+        frName="Costa Rica"
+        value="COS"
+        isoCode3="CRI"
+        isoCode2="CR" />
+    <ivo
+        jcr:primaryType="nt:unstructured"
+        enName="Côte d'Ivoire"
+        frName="Côte d'Ivoire"
+        value="IVO"
+        isoCode3="CIV"
+        isoCode2="CI" />
+    <cro
+        jcr:primaryType="nt:unstructured"
+        enName="Croatia"
+        frName="Croatie"
+        value="CRO"
+        isoCode3="HRV"
+        isoCode2="HR" />
+    <cub
+        jcr:primaryType="nt:unstructured"
+        enName="Cuba"
+        frName="Cuba"
+        value="CUB"
+        isoCode3="CUB"
+        isoCode2="CU" />
+    <cw
+        jcr:primaryType="nt:unstructured"
+        enName="Curaçao"
+        frName="Curaçao"
+        value="CW"
+        isoCode3="CUW"
+        isoCode2="CW" />
+    <cyp
+        jcr:primaryType="nt:unstructured"
+        enName="Cyprus"
+        frName="Chypre"
+        value="CYP"
+        isoCode3="CYP"
+        isoCode2="CY" />
+    <czr
+        jcr:primaryType="nt:unstructured"
+        enName="Czech Republic"
+        frName="tchèque, République"
+        value="CZR"
+        isoCode3="CZE"
+        isoCode2="CZ" />
+    <den
+        jcr:primaryType="nt:unstructured"
+        enName="Denmark"
+        frName="Danemark"
+        value="DEN"
+        isoCode3="DNK"
+        isoCode2="DK" />
+    <dji
+        jcr:primaryType="nt:unstructured"
+        enName="Djibouti"
+        frName="Djibouti"
+        value="DJI"
+        isoCode3="DJI"
+        isoCode2="DJ" />
+    <dom
+        jcr:primaryType="nt:unstructured"
+        enName="Dominica"
+        frName="Dominique"
+        value="DOM"
+        isoCode3="DMA"
+        isoCode2="DM" />
+    <domr
+        jcr:primaryType="nt:unstructured"
+        enName="Dominican Republic"
+        frName="dominicaine, République"
+        value="DOMR"
+        isoCode3="DOM"
+        isoCode2="DO" />
+    <ecu
+        jcr:primaryType="nt:unstructured"
+        enName="Ecuador"
+        frName="Équateur"
+        value="ECU"
+        isoCode3="ECU"
+        isoCode2="EC" />
+    <egy
+        jcr:primaryType="nt:unstructured"
+        enName="Egypt"
+        frName="Égypte"
+        value="EGY"
+        isoCode3="EGY"
+        isoCode2="EG" />
+    <sal
+        jcr:primaryType="nt:unstructured"
+        enName="El Salvador"
+        frName="Salvador"
+        value="SAL"
+        isoCode3="SLV"
+        isoCode2="SV" />
+    <etg
+        jcr:primaryType="nt:unstructured"
+        enName="Equatorial Guinea"
+        frName="Guinée équatoriale"
+        value="ETG"
+        isoCode3="GNQ"
+        isoCode2="GQ" />
+    <erit
+        jcr:primaryType="nt:unstructured"
+        enName="Eritrea"
+        frName="Érythrée"
+        value="ERIT"
+        isoCode3="ERI"
+        isoCode2="ER" />
+    <est
+        jcr:primaryType="nt:unstructured"
+        enName="Estonia"
+        frName="Estonie"
+        value="EST"
+        isoCode3="EST"
+        isoCode2="EE" />
+    <eth
+        jcr:primaryType="nt:unstructured"
+        enName="Ethiopia"
+        frName="Éthiopie"
+        value="ETH"
+        isoCode3="ETH"
+        isoCode2="ET" />
+    <fal
+        jcr:primaryType="nt:unstructured"
+        enName="Falkland Islands (Malvinas)"
+        frName="Falkland/Malouines, Îles"
+        value="FAL"
+        isoCode3="FLK"
+        isoCode2="FK" />
+    <far
+        jcr:primaryType="nt:unstructured"
+        enName="Faroe Islands"
+        frName="Féroé, Îles"
+        value="FAR"
+        isoCode3="FRO"
+        isoCode2="FO" />
+    <fiji
+        jcr:primaryType="nt:unstructured"
+        enName="Fiji"
+        frName="Fidji"
+        value="FIJI"
+        isoCode3="FJI"
+        isoCode2="FJ" />
+    <fin
+        jcr:primaryType="nt:unstructured"
+        enName="Finland"
+        frName="Finlande"
+        value="FIN"
+        isoCode3="FIN"
+        isoCode2="FI" />
+    <fra
+        jcr:primaryType="nt:unstructured"
+        enName="France"
+        frName="France"
+        value="FRA"
+        isoCode3="FRA"
+        isoCode2="FR" />
+    <fgu
+        jcr:primaryType="nt:unstructured"
+        enName="French Guiana"
+        frName="Guyane française"
+        value="FGU"
+        isoCode3="GUF"
+        isoCode2="GF" />
+    <frp
+        jcr:primaryType="nt:unstructured"
+        enName="French Polynesia"
+        frName="Polynésie française"
+        value="FRP"
+        isoCode3="PYF"
+        isoCode2="PF" />
+    <atf
+        jcr:primaryType="nt:unstructured"
+        enName="French Southern Territories"
+        frName="Terres australes françaises"
+        value="ATF"
+        isoCode3="ATF"
+        isoCode2="TF" />
+    <gab
+        jcr:primaryType="nt:unstructured"
+        enName="Gabon"
+        frName="Gabon"
+        value="GAB"
+        isoCode3="GAB"
+        isoCode2="GA" />
+    <gam
+        jcr:primaryType="nt:unstructured"
+        enName="Gambia"
+        frName="Gambie"
+        value="GAM"
+        isoCode3="GMB"
+        isoCode2="GM" />
+    <geo
+        jcr:primaryType="nt:unstructured"
+        enName="Georgia"
+        frName="Géorgie"
+        value="GEO"
+        isoCode3="GEO"
+        isoCode2="GE" />
+    <ger
+        jcr:primaryType="nt:unstructured"
+        enName="Germany"
+        frName="Allemagne"
+        value="GER"
+        isoCode3="DEU"
+        isoCode2="DE" />
+    <gha
+        jcr:primaryType="nt:unstructured"
+        enName="Ghana"
+        frName="Ghana"
+        value="GHA"
+        isoCode3="GHA"
+        isoCode2="GH" />
+    <gib
+        jcr:primaryType="nt:unstructured"
+        enName="Gibraltar"
+        frName="Gibraltar"
+        value="GIB"
+        isoCode3="GIB"
+        isoCode2="GI" />
+    <gre
+        jcr:primaryType="nt:unstructured"
+        enName="Greece"
+        frName="Grèce"
+        value="GRE"
+        isoCode3="GRC"
+        isoCode2="GR" />
+    <grl
+        jcr:primaryType="nt:unstructured"
+        enName="Greenland"
+        frName="Groenland"
+        value="GRL"
+        isoCode3="GRL"
+        isoCode2="GL" />
+    <grn
+        jcr:primaryType="nt:unstructured"
+        enName="Grenada"
+        frName="Grenade"
+        value="GRN"
+        isoCode3="GRD"
+        isoCode2="GD" />
+    <gua
+        jcr:primaryType="nt:unstructured"
+        enName="Guadeloupe"
+        frName="Guadeloupe"
+        value="GUA"
+        isoCode3="GLP"
+        isoCode2="GP" />
+    <guam
+        jcr:primaryType="nt:unstructured"
+        enName="Guam"
+        frName="Guam"
+        value="GUAM"
+        isoCode3="GUM"
+        isoCode2="GU" />
+    <guat
+        jcr:primaryType="nt:unstructured"
+        enName="Guatemala"
+        frName="Guatemala"
+        value="GUAT"
+        isoCode3="GTM"
+        isoCode2="GT" />
+    <ggy
+        jcr:primaryType="nt:unstructured"
+        enName="Guernsey"
+        frName="Guernesey"
+        value="GGY"
+        isoCode3="GGY"
+        isoCode2="GG" />
+    <gui
+        jcr:primaryType="nt:unstructured"
+        enName="Guinea"
+        frName="Guinée"
+        value="GUI"
+        isoCode3="GIN"
+        isoCode2="GN" />
+    <guib
+        jcr:primaryType="nt:unstructured"
+        enName="Guinea-Bissau"
+        frName="Guinée-Bissau"
+        value="GUIB"
+        isoCode3="GNB"
+        isoCode2="GW" />
+    <guy
+        jcr:primaryType="nt:unstructured"
+        enName="Guyana"
+        frName="Guyana"
+        value="GUY"
+        isoCode3="GUY"
+        isoCode2="GY" />
+    <hai
+        jcr:primaryType="nt:unstructured"
+        enName="Haiti"
+        frName="Haïti"
+        value="HAI"
+        isoCode3="HTI"
+        isoCode2="HT" />
+    <hmd
+        jcr:primaryType="nt:unstructured"
+        enName="Heard Island, Mcdonald Islands"
+        frName="Heard-et-Îles Macdonald, Île"
+        value="HMD"
+        isoCode3="HMD"
+        isoCode2="HM" />
+    <hol
+        jcr:primaryType="nt:unstructured"
+        enName="Holy See"
+        frName="Saint-Siège"
+        value="HOL"
+        isoCode3="VAT"
+        isoCode2="VA" />
+    <hond
+        jcr:primaryType="nt:unstructured"
+        enName="Honduras"
+        frName="Honduras"
+        value="HOND"
+        isoCode3="HND"
+        isoCode2="HN" />
+    <hong
+        jcr:primaryType="nt:unstructured"
+        enName="Hong Kong"
+        frName="Hong Kong"
+        value="HONG"
+        isoCode3="HKG"
+        isoCode2="HK" />
+    <hun
+        jcr:primaryType="nt:unstructured"
+        enName="Hungary"
+        frName="Hongrie"
+        value="HUN"
+        isoCode3="HUN"
+        isoCode2="HU" />
+    <ice
+        jcr:primaryType="nt:unstructured"
+        enName="Iceland"
+        frName="Islande"
+        value="ICE"
+        isoCode3="ISL"
+        isoCode2="IS" />
+    <indi
+        jcr:primaryType="nt:unstructured"
+        enName="India"
+        frName="Inde"
+        value="INDI"
+        isoCode3="IND"
+        isoCode2="IN" />
+    <indo
+        jcr:primaryType="nt:unstructured"
+        enName="Indonesia"
+        frName="Indonésie"
+        value="INDO"
+        isoCode3="IDN"
+        isoCode2="ID" />
+    <iran
+        jcr:primaryType="nt:unstructured"
+        enName="Iran"
+        frName="Iran"
+        value="IRAN"
+        isoCode3="IRN"
+        isoCode2="IR" />
+    <iraq
+        jcr:primaryType="nt:unstructured"
+        enName="Iraq"
+        frName="Iraq"
+        value="IRAQ"
+        isoCode3="IRQ"
+        isoCode2="IQ" />
+    <ire
+        jcr:primaryType="nt:unstructured"
+        enName="Ireland"
+        frName="Irlande"
+        value="IRE"
+        isoCode3="IRL"
+        isoCode2="IE" />
+    <ism
+        jcr:primaryType="nt:unstructured"
+        enName="Isle of Man"
+        frName="Île De Man"
+        value="ISM"
+        isoCode3="IMN"
+        isoCode2="IM" />
+    <isr
+        jcr:primaryType="nt:unstructured"
+        enName="Israel"
+        frName="Israël"
+        value="ISR"
+        isoCode3="ISR"
+        isoCode2="IL" />
+    <ita
+        jcr:primaryType="nt:unstructured"
+        enName="Italy"
+        frName="Italie"
+        value="ITA"
+        isoCode3="ITA"
+        isoCode2="IT" />
+    <jam
+        jcr:primaryType="nt:unstructured"
+        enName="Jamaica"
+        frName="Jamaïque"
+        value="JAM"
+        isoCode3="JAM"
+        isoCode2="JM" />
+    <jap
+        jcr:primaryType="nt:unstructured"
+        enName="Japan"
+        frName="Japon"
+        value="JAP"
+        isoCode3="JPN"
+        isoCode2="JP" />
+    <jey
+        jcr:primaryType="nt:unstructured"
+        enName="Jersey"
+        frName="Jersey"
+        value="JEY"
+        isoCode3="JEY"
+        isoCode2="JE" />
+    <jor
+        jcr:primaryType="nt:unstructured"
+        enName="Jordan"
+        frName="Jordanie"
+        value="JOR"
+        isoCode3="JOR"
+        isoCode2="JO" />
+    <kaz
+        jcr:primaryType="nt:unstructured"
+        enName="Kazakhstan"
+        frName="Kazakhstan"
+        value="KAZ"
+        isoCode3="KAZ"
+        isoCode2="KZ" />
+    <ken
+        jcr:primaryType="nt:unstructured"
+        enName="Kenya"
+        frName="Kenya"
+        value="KEN"
+        isoCode3="KEN"
+        isoCode2="KE" />
+    <kir
+        jcr:primaryType="nt:unstructured"
+        enName="Kiribati"
+        frName="Kiribati"
+        value="KIR"
+        isoCode3="KIR"
+        isoCode2="KI" />
+    <kos
+        jcr:primaryType="nt:unstructured"
+        enName="Kosovo"
+        frName="Kosovo"
+        value="KOS"
+        isoCode3="N/A"
+        isoCode2="XK" />
+    <kuw
+        jcr:primaryType="nt:unstructured"
+        enName="Kuwait"
+        frName="Koweït"
+        value="KUW"
+        isoCode3="KWT"
+        isoCode2="KW" />
+    <kirg
+        jcr:primaryType="nt:unstructured"
+        enName="Kyrgyz Republic"
+        frName="Kirghizistan"
+        value="KIRG"
+        isoCode3="KGZ"
+        isoCode2="KG" />
+    <lao
+        jcr:primaryType="nt:unstructured"
+        enName="Laos"
+        frName="Laos"
+        value="LAO"
+        isoCode3="LAO"
+        isoCode2="LA" />
+    <lat
+        jcr:primaryType="nt:unstructured"
+        enName="Latvia"
+        frName="Lettonie"
+        value="LAT"
+        isoCode3="LVA"
+        isoCode2="LV" />
+    <leb
+        jcr:primaryType="nt:unstructured"
+        enName="Lebanon"
+        frName="Liban"
+        value="LEB"
+        isoCode3="LBN"
+        isoCode2="LB" />
+    <les
+        jcr:primaryType="nt:unstructured"
+        enName="Lesotho"
+        frName="Lesotho"
+        value="LES"
+        isoCode3="LSO"
+        isoCode2="LS" />
+    <libe
+        jcr:primaryType="nt:unstructured"
+        enName="Liberia"
+        frName="Libéria"
+        value="LIBE"
+        isoCode3="LBR"
+        isoCode2="LR" />
+    <liby
+        jcr:primaryType="nt:unstructured"
+        enName="Libya"
+        frName="Libye"
+        value="LIBY"
+        isoCode3="LBY"
+        isoCode2="LY" />
+    <lie
+        jcr:primaryType="nt:unstructured"
+        enName="Liechtenstein"
+        frName="Liechtenstein"
+        value="LIE"
+        isoCode3="LIE"
+        isoCode2="LI" />
+    <lit
+        jcr:primaryType="nt:unstructured"
+        enName="Lithuania"
+        frName="Lituanie"
+        value="LIT"
+        isoCode3="LTU"
+        isoCode2="LT" />
+    <lux
+        jcr:primaryType="nt:unstructured"
+        enName="Luxembourg"
+        frName="Luxembourg"
+        value="LUX"
+        isoCode3="LUX"
+        isoCode2="LU" />
+    <mac
+        jcr:primaryType="nt:unstructured"
+        enName="Macao"
+        frName="Macao"
+        value="MAC"
+        isoCode3="MAC"
+        isoCode2="MO" />
+    <mace
+        jcr:primaryType="nt:unstructured"
+        enName="Macedonia"
+        frName="Macédoine"
+        value="MACE"
+        isoCode3="MKD"
+        isoCode2="MK" />
+    <mad
+        jcr:primaryType="nt:unstructured"
+        enName="Madagascar"
+        frName="Madagascar"
+        value="MAD"
+        isoCode3="MDG"
+        isoCode2="MG" />
+    <mala
+        jcr:primaryType="nt:unstructured"
+        enName="Malawi"
+        frName="Malawi"
+        value="MALA"
+        isoCode3="MWI"
+        isoCode2="MW" />
+    <mal
+        jcr:primaryType="nt:unstructured"
+        enName="Malaysia"
+        frName="Malaisie"
+        value="MAL"
+        isoCode3="MYS"
+        isoCode2="MY" />
+    <mld
+        jcr:primaryType="nt:unstructured"
+        enName="Maldives"
+        frName="Maldives"
+        value="MLD"
+        isoCode3="MDV"
+        isoCode2="MV" />
+    <mali
+        jcr:primaryType="nt:unstructured"
+        enName="Mali"
+        frName="Mali"
+        value="MALI"
+        isoCode3="MLI"
+        isoCode2="ML" />
+    <malt
+        jcr:primaryType="nt:unstructured"
+        enName="Malta"
+        frName="Malte"
+        value="MALT"
+        isoCode3="MLT"
+        isoCode2="MT" />
+    <mas
+        jcr:primaryType="nt:unstructured"
+        enName="Marshall Islands"
+        frName="Marshall, Îles"
+        value="MAS"
+        isoCode3="MHL"
+        isoCode2="MH" />
+    <mar
+        jcr:primaryType="nt:unstructured"
+        enName="Martinique"
+        frName="Martinique"
+        value="MAR"
+        isoCode3="MTQ"
+        isoCode2="MQ" />
+    <mau
+        jcr:primaryType="nt:unstructured"
+        enName="Mauritania"
+        frName="Mauritanie"
+        value="MAU"
+        isoCode3="MRT"
+        isoCode2="MR" />
+    <maur
+        jcr:primaryType="nt:unstructured"
+        enName="Mauritius"
+        frName="Maurice"
+        value="MAUR"
+        isoCode3="MUS"
+        isoCode2="MU" />
+    <myt
+        jcr:primaryType="nt:unstructured"
+        enName="Mayotte"
+        frName="Mayotte"
+        value="MYT"
+        isoCode3="MYT"
+        isoCode2="YT" />
+    <mex
+        jcr:primaryType="nt:unstructured"
+        enName="Mexico"
+        frName="Mexique"
+        value="MEX"
+        isoCode3="MEX"
+        isoCode2="MX" />
+    <mic
+        jcr:primaryType="nt:unstructured"
+        enName="Micronesia"
+        frName="Micronésie"
+        value="MIC"
+        isoCode3="FSM"
+        isoCode2="FM" />
+    <mol
+        jcr:primaryType="nt:unstructured"
+        enName="Moldova"
+        frName="Moldova"
+        value="MOL"
+        isoCode3="MDA"
+        isoCode2="MD" />
+    <mnc
+        jcr:primaryType="nt:unstructured"
+        enName="Monaco"
+        frName="Monaco"
+        value="MNC"
+        isoCode3="MCO"
+        isoCode2="MC" />
+    <mon
+        jcr:primaryType="nt:unstructured"
+        enName="Mongolia"
+        frName="Mongolie"
+        value="MON"
+        isoCode3="MNG"
+        isoCode2="MN" />
+    <mne
+        jcr:primaryType="nt:unstructured"
+        enName="Montenegro"
+        frName="Monténégro"
+        value="MNE"
+        isoCode3="MNE"
+        isoCode2="ME" />
+    <mont
+        jcr:primaryType="nt:unstructured"
+        enName="Montserrat"
+        frName="Montserrat"
+        value="MONT"
+        isoCode3="MSR"
+        isoCode2="MS" />
+    <mor
+        jcr:primaryType="nt:unstructured"
+        enName="Morocco"
+        frName="Maroc"
+        value="MOR"
+        isoCode3="MAR"
+        isoCode2="MA" />
+    <moz
+        jcr:primaryType="nt:unstructured"
+        enName="Mozambique"
+        frName="Mozambique"
+        value="MOZ"
+        isoCode3="MOZ"
+        isoCode2="MZ" />
+    <burm
+        jcr:primaryType="nt:unstructured"
+        enName="Myanmar"
+        frName="Myanmar"
+        value="BURM"
+        isoCode3="MMR"
+        isoCode2="MM" />
+    <nam
+        jcr:primaryType="nt:unstructured"
+        enName="Namibia"
+        frName="Namibie"
+        value="NAM"
+        isoCode3="NAM"
+        isoCode2="NA" />
+    <nau
+        jcr:primaryType="nt:unstructured"
+        enName="Nauru"
+        frName="Nauru"
+        value="NAU"
+        isoCode3="NRU"
+        isoCode2="NR" />
+    <nep
+        jcr:primaryType="nt:unstructured"
+        enName="Nepal"
+        frName="Népal"
+        value="NEP"
+        isoCode3="NPL"
+        isoCode2="NP" />
+    <net
+        jcr:primaryType="nt:unstructured"
+        enName="Netherlands"
+        frName="Pays-Bas"
+        value="NET"
+        isoCode3="NLD"
+        isoCode2="NL" />
+    <nca
+        jcr:primaryType="nt:unstructured"
+        enName="New Caledonia"
+        frName="Nouvelle-Calédonie"
+        value="NCA"
+        isoCode3="NCL"
+        isoCode2="NC" />
+    <nzea
+        jcr:primaryType="nt:unstructured"
+        enName="New Zealand"
+        frName="Nouvelle-Zélande"
+        value="NZEA"
+        isoCode3="NZL"
+        isoCode2="NZ" />
+    <nic
+        jcr:primaryType="nt:unstructured"
+        enName="Nicaragua"
+        frName="Nicaragua"
+        value="NIC"
+        isoCode3="NIC"
+        isoCode2="NI" />
+    <nig
+        jcr:primaryType="nt:unstructured"
+        enName="Niger"
+        frName="Niger"
+        value="NIG"
+        isoCode3="NER"
+        isoCode2="NE" />
+    <nige
+        jcr:primaryType="nt:unstructured"
+        enName="Nigeria"
+        frName="Nigéria"
+        value="NIGE"
+        isoCode3="NGA"
+        isoCode2="NG" />
+    <niu
+        jcr:primaryType="nt:unstructured"
+        enName="Niue"
+        frName="Niue"
+        value="NIU"
+        isoCode3="NIU"
+        isoCode2="NU" />
+    <nfk
+        jcr:primaryType="nt:unstructured"
+        enName="Norfolk Island"
+        frName="Norfolk, Île"
+        value="NFK"
+        isoCode3="NFK"
+        isoCode2="NF" />
+    <korn
+        jcr:primaryType="nt:unstructured"
+        enName="North Korea"
+        frName="Corée du Nord"
+        value="KORN"
+        isoCode3="PRK"
+        isoCode2="KP" />
+    <nma
+        jcr:primaryType="nt:unstructured"
+        enName="Northern Mariana Islands"
+        frName="Mariannes Du Nord, Îles"
+        value="NMA"
+        isoCode3="MNP"
+        isoCode2="MP" />
+    <nor
+        jcr:primaryType="nt:unstructured"
+        enName="Norway"
+        frName="Norvège"
+        value="NOR"
+        isoCode3="NOR"
+        isoCode2="NO" />
+    <oma
+        jcr:primaryType="nt:unstructured"
+        enName="Oman"
+        frName="Oman"
+        value="OMA"
+        isoCode3="OMN"
+        isoCode2="OM" />
+    <pak
+        jcr:primaryType="nt:unstructured"
+        enName="Pakistan"
+        frName="Pakistan"
+        value="PAK"
+        isoCode3="PAK"
+        isoCode2="PK" />
+    <pal
+        jcr:primaryType="nt:unstructured"
+        enName="Palau"
+        frName="Palaos"
+        value="PAL"
+        isoCode3="PLW"
+        isoCode2="PW" />
+    <pan
+        jcr:primaryType="nt:unstructured"
+        enName="Panama"
+        frName="Panama"
+        value="PAN"
+        isoCode3="PAN"
+        isoCode2="PA" />
+    <png
+        jcr:primaryType="nt:unstructured"
+        enName="Papua New Guinea"
+        frName="Papouasie-Nouvelle-Guinée"
+        value="PNG"
+        isoCode3="PNG"
+        isoCode2="PG" />
+    <par
+        jcr:primaryType="nt:unstructured"
+        enName="Paraguay"
+        frName="Paraguay"
+        value="PAR"
+        isoCode3="PRY"
+        isoCode2="PY" />
+    <per
+        jcr:primaryType="nt:unstructured"
+        enName="Peru"
+        frName="Pérou"
+        value="PER"
+        isoCode3="PER"
+        isoCode2="PE" />
+    <phi
+        jcr:primaryType="nt:unstructured"
+        enName="Philippines"
+        frName="Philippines"
+        value="PHI"
+        isoCode3="PHL"
+        isoCode2="PH" />
+    <pcn
+        jcr:primaryType="nt:unstructured"
+        enName="Pitcairn"
+        frName="Pitcairn"
+        value="PCN"
+        isoCode3="PCN"
+        isoCode2="PN" />
+    <pol
+        jcr:primaryType="nt:unstructured"
+        enName="Poland"
+        frName="Pologne"
+        value="POL"
+        isoCode3="POL"
+        isoCode2="PL" />
+    <por
+        jcr:primaryType="nt:unstructured"
+        enName="Portugal"
+        frName="Portugal"
+        value="POR"
+        isoCode3="PRT"
+        isoCode2="PT" />
+    <pue
+        jcr:primaryType="nt:unstructured"
+        enName="Puerto Rico"
+        frName="Porto Rico"
+        value="PUE"
+        isoCode3="PRI"
+        isoCode2="PR" />
+    <qat
+        jcr:primaryType="nt:unstructured"
+        enName="Qatar"
+        frName="Qatar"
+        value="QAT"
+        isoCode3="QAT"
+        isoCode2="QA" />
+    <reu
+        jcr:primaryType="nt:unstructured"
+        enName="Réunion"
+        frName="Réunion"
+        value="REU"
+        isoCode3="REU"
+        isoCode2="RE" />
+    <rom
+        jcr:primaryType="nt:unstructured"
+        enName="Romania"
+        frName="Roumanie"
+        value="ROM"
+        isoCode3="ROU"
+        isoCode2="RO" />
+    <russ
+        jcr:primaryType="nt:unstructured"
+        enName="Russia"
+        frName="Russie"
+        value="RUSS"
+        isoCode3="RUS"
+        isoCode2="RU" />
+    <rwa
+        jcr:primaryType="nt:unstructured"
+        enName="Rwanda"
+        frName="Rwanda"
+        value="RWA"
+        isoCode3="RWA"
+        isoCode2="RW" />
+    <stb
+        jcr:primaryType="nt:unstructured"
+        enName="Saint Barthélemy"
+        frName="Saint-Barthélemy"
+        value="STB"
+        isoCode3="BLM"
+        isoCode2="BL" />
+    <stk
+        jcr:primaryType="nt:unstructured"
+        enName="Saint Kitts and Nevis"
+        frName="Saint-Kitts-et-Nevis"
+        value="STK"
+        isoCode3="KNA"
+        isoCode2="KN" />
+    <stl
+        jcr:primaryType="nt:unstructured"
+        enName="Saint Lucia"
+        frName="Sainte-Lucie"
+        value="STL"
+        isoCode3="LCA"
+        isoCode2="LC" />
+    <stm
+        jcr:primaryType="nt:unstructured"
+        enName="Saint Martin (French part)"
+        frName="Saint-Martin (française)"
+        value="STM"
+        isoCode3="MAF"
+        isoCode2="MF" />
+    <spie
+        jcr:primaryType="nt:unstructured"
+        enName="Saint Pierre and Miquelon"
+        frName="Saint-Pierre-et-Miquelon"
+        value="SPIE"
+        isoCode3="SPM"
+        isoCode2="PM" />
+    <stv
+        jcr:primaryType="nt:unstructured"
+        enName="Saint Vincent and Grenadines"
+        frName="St-Vincent et Grenadines"
+        value="STV"
+        isoCode3="VCT"
+        isoCode2="VC" />
+    <samw
+        jcr:primaryType="nt:unstructured"
+        enName="Samoa"
+        frName="Samoa"
+        value="SAMW"
+        isoCode3="WSM"
+        isoCode2="WS" />
+    <sma
+        jcr:primaryType="nt:unstructured"
+        enName="San Marino"
+        frName="Saint-Marin"
+        value="SMA"
+        isoCode3="SMR"
+        isoCode2="SM" />
+    <sao
+        jcr:primaryType="nt:unstructured"
+        enName="Sao Tome and Principe"
+        frName="Sao Tomé-et-Principe"
+        value="SAO"
+        isoCode3="STP"
+        isoCode2="ST" />
+    <sau
+        jcr:primaryType="nt:unstructured"
+        enName="Saudi Arabia"
+        frName="Arabie saoudite"
+        value="SAU"
+        isoCode3="SAU"
+        isoCode2="SA" />
+    <sen
+        jcr:primaryType="nt:unstructured"
+        enName="Senegal"
+        frName="Sénégal"
+        value="SEN"
+        isoCode3="SEN"
+        isoCode2="SN" />
+    <ser
+        jcr:primaryType="nt:unstructured"
+        enName="Serbia"
+        frName="Serbie"
+        value="SER"
+        isoCode3="SRB"
+        isoCode2="RS" />
+    <sey
+        jcr:primaryType="nt:unstructured"
+        enName="Seychelles"
+        frName="Seychelles"
+        value="SEY"
+        isoCode3="SYC"
+        isoCode2="SC" />
+    <sie
+        jcr:primaryType="nt:unstructured"
+        enName="Sierra Leone"
+        frName="Sierra Leone"
+        value="SIE"
+        isoCode3="SLE"
+        isoCode2="SL" />
+    <sin
+        jcr:primaryType="nt:unstructured"
+        enName="Singapore"
+        frName="Singapour"
+        value="SIN"
+        isoCode3="SGP"
+        isoCode2="SG" />
+    <sx
+        jcr:primaryType="nt:unstructured"
+        enName="Sint Maarten (Dutch part)"
+        frName="Saint-Martin (néerlandaise)"
+        value="SX"
+        isoCode3="SXM"
+        isoCode2="SX" />
+    <slk
+        jcr:primaryType="nt:unstructured"
+        enName="Slovakia"
+        frName="Slovaquie"
+        value="SLK"
+        isoCode3="SVK"
+        isoCode2="SK" />
+    <slo
+        jcr:primaryType="nt:unstructured"
+        enName="Slovenia"
+        frName="Slovénie"
+        value="SLO"
+        isoCode3="SVN"
+        isoCode2="SI" />
+    <sol
+        jcr:primaryType="nt:unstructured"
+        enName="Solomon Islands"
+        frName="Salomon, Îles"
+        value="SOL"
+        isoCode3="SLB"
+        isoCode2="SB" />
+    <som
+        jcr:primaryType="nt:unstructured"
+        enName="Somalia"
+        frName="Somalie"
+        value="SOM"
+        isoCode3="SOM"
+        isoCode2="SO" />
+    <safr
+        jcr:primaryType="nt:unstructured"
+        enName="South Africa"
+        frName="Afrique du Sud"
+        value="SAFR"
+        isoCode3="ZAF"
+        isoCode2="ZA" />
+    <sgs
+        jcr:primaryType="nt:unstructured"
+        enName="South Georgia, S. Sandwich Is"
+        frName="Géor. Sud, Îles Sand. du Sud"
+        value="SGS"
+        isoCode3="SGS"
+        isoCode2="GS" />
+    <kors
+        jcr:primaryType="nt:unstructured"
+        enName="South Korea"
+        frName="Corée du Sud"
+        value="KORS"
+        isoCode3="KOR"
+        isoCode2="KR" />
+    <ss
+        jcr:primaryType="nt:unstructured"
+        enName="South Sudan"
+        frName="Soudan du Sud"
+        value="SS"
+        isoCode3="SSD"
+        isoCode2="SS" />
+    <spa
+        jcr:primaryType="nt:unstructured"
+        enName="Spain"
+        frName="Espagne"
+        value="SPA"
+        isoCode3="ESP"
+        isoCode2="ES" />
+    <sri
+        jcr:primaryType="nt:unstructured"
+        enName="Sri Lanka"
+        frName="Sri Lanka"
+        value="SRI"
+        isoCode3="LKA"
+        isoCode2="LK" />
+    <sth
+        jcr:primaryType="nt:unstructured"
+        enName="St Helena, Ascension, Tristan"
+        frName="St-Hélène, Ascension, Tristan"
+        value="STH"
+        isoCode3="SHN"
+        isoCode2="SH" />
+    <sud
+        jcr:primaryType="nt:unstructured"
+        enName="Sudan"
+        frName="Soudan"
+        value="SUD"
+        isoCode3="SDN"
+        isoCode2="SD" />
+    <sur
+        jcr:primaryType="nt:unstructured"
+        enName="Suriname"
+        frName="Suriname"
+        value="SUR"
+        isoCode3="SUR"
+        isoCode2="SR" />
+    <sjm
+        jcr:primaryType="nt:unstructured"
+        enName="Svalbard and Jan Mayen"
+        frName="Svalbard et l'Île Jan Mayen"
+        value="SJM"
+        isoCode3="SJM"
+        isoCode2="SJ" />
+    <swa
+        jcr:primaryType="nt:unstructured"
+        enName="Eswatini (Swaziland)"
+        frName="Eswatini (Swaziland)"
+        value="SWA"
+        isoCode3="SWZ"
+        isoCode2="SZ" />
+    <swe
+        jcr:primaryType="nt:unstructured"
+        enName="Sweden"
+        frName="Suède"
+        value="SWE"
+        isoCode3="SWE"
+        isoCode2="SE" />
+    <swi
+        jcr:primaryType="nt:unstructured"
+        enName="Switzerland"
+        frName="Suisse"
+        value="SWI"
+        isoCode3="CHE"
+        isoCode2="CH" />
+    <syr
+        jcr:primaryType="nt:unstructured"
+        enName="Syria"
+        frName="Syrie"
+        value="SYR"
+        isoCode3="SYR"
+        isoCode2="SY" />
+    <tai
+        jcr:primaryType="nt:unstructured"
+        enName="Taiwan"
+        frName="Taïwan"
+        value="TAI"
+        isoCode3="TWN"
+        isoCode2="TW" />
+    <tad
+        jcr:primaryType="nt:unstructured"
+        enName="Tajikistan"
+        frName="Tadjikistan"
+        value="TAD"
+        isoCode3="TJK"
+        isoCode2="TJ" />
+    <tan
+        jcr:primaryType="nt:unstructured"
+        enName="Tanzania"
+        frName="Tanzanie"
+        value="TAN"
+        isoCode3="TZA"
+        isoCode2="TZ" />
+    <tha
+        jcr:primaryType="nt:unstructured"
+        enName="Thailand"
+        frName="Thaïlande"
+        value="THA"
+        isoCode3="THA"
+        isoCode2="TH" />
+    <etim
+        jcr:primaryType="nt:unstructured"
+        enName="Timor-Leste"
+        frName="Timor-Leste"
+        value="ETIM"
+        isoCode3="TLS"
+        isoCode2="TL" />
+    <togo
+        jcr:primaryType="nt:unstructured"
+        enName="Togo"
+        frName="Togo"
+        value="TOGO"
+        isoCode3="TGO"
+        isoCode2="TG" />
+    <tok
+        jcr:primaryType="nt:unstructured"
+        enName="Tokelau"
+        frName="Tokelau"
+        value="TOK"
+        isoCode3="TKL"
+        isoCode2="TK" />
+    <ton
+        jcr:primaryType="nt:unstructured"
+        enName="Tonga"
+        frName="Tonga"
+        value="TON"
+        isoCode3="TON"
+        isoCode2="TO" />
+    <tri
+        jcr:primaryType="nt:unstructured"
+        enName="Trinidad and Tobago"
+        frName="Trinité-et-Tobago"
+        value="TRI"
+        isoCode3="TTO"
+        isoCode2="TT" />
+    <tun
+        jcr:primaryType="nt:unstructured"
+        enName="Tunisia"
+        frName="Tunisie"
+        value="TUN"
+        isoCode3="TUN"
+        isoCode2="TN" />
+    <tur
+        jcr:primaryType="nt:unstructured"
+        enName="Turkey"
+        frName="Turquie"
+        value="TUR"
+        isoCode3="TUR"
+        isoCode2="TR" />
+    <turk
+        jcr:primaryType="nt:unstructured"
+        enName="Turkmenistan"
+        frName="Turkménistan"
+        value="TURK"
+        isoCode3="TKM"
+        isoCode2="TM" />
+    <tuc
+        jcr:primaryType="nt:unstructured"
+        enName="Turks and Caicos Islands"
+        frName="Turks-et-Caïcos, (les Îles)"
+        value="TUC"
+        isoCode3="TCA"
+        isoCode2="TC" />
+    <tuv
+        jcr:primaryType="nt:unstructured"
+        enName="Tuvalu"
+        frName="Tuvalu"
+        value="TUV"
+        isoCode3="TUV"
+        isoCode2="TV" />
+    <uga
+        jcr:primaryType="nt:unstructured"
+        enName="Uganda"
+        frName="Ouganda"
+        value="UGA"
+        isoCode3="UGA"
+        isoCode2="UG" />
+    <uka
+        jcr:primaryType="nt:unstructured"
+        enName="Ukraine"
+        frName="Ukraine"
+        value="UKA"
+        isoCode3="UKR"
+        isoCode2="UA" />
+    <uae
+        jcr:primaryType="nt:unstructured"
+        enName="United Arab Emirates"
+        frName="Émirats arabes unis"
+        value="UAE"
+        isoCode3="ARE"
+        isoCode2="AE" />
+    <uk
+        jcr:primaryType="nt:unstructured"
+        enName="United Kingdom"
+        frName="Royaume-Uni"
+        value="UK"
+        isoCode3="GBR"
+        isoCode2="GB" />
+    <usa
+        jcr:primaryType="nt:unstructured"
+        enName="United States"
+        frName="États-Unis"
+        value="USA"
+        isoCode3="USA"
+        isoCode2="US" />
+    <uru
+        jcr:primaryType="nt:unstructured"
+        enName="Uruguay"
+        frName="Uruguay"
+        value="URU"
+        isoCode3="URY"
+        isoCode2="UY" />
+    <umi
+        jcr:primaryType="nt:unstructured"
+        enName="US Minor Outlying Islands"
+        frName="Îles mineures éloign. , É.-U."
+        value="UMI"
+        isoCode3="UMI"
+        isoCode2="UM" />
+    <uzb
+        jcr:primaryType="nt:unstructured"
+        enName="Uzbekistan"
+        frName="Ouzbékistan"
+        value="UZB"
+        isoCode3="UZB"
+        isoCode2="UZ" />
+    <van
+        jcr:primaryType="nt:unstructured"
+        enName="Vanuatu"
+        frName="Vanuatu"
+        value="VAN"
+        isoCode3="VUT"
+        isoCode2="VU" />
+    <ven
+        jcr:primaryType="nt:unstructured"
+        enName="Venezuela"
+        frName="Venezuela"
+        value="VEN"
+        isoCode3="VEN"
+        isoCode2="VE" />
+    <vie
+        jcr:primaryType="nt:unstructured"
+        enName="Vietnam"
+        frName="Vietnam"
+        value="VIE"
+        isoCode3="VNM"
+        isoCode2="VN" />
+    <bvi
+        jcr:primaryType="nt:unstructured"
+        enName="Virgin Islands (British)"
+        frName="Îles Vierges Britanniques"
+        value="BVI"
+        isoCode3="VGB"
+        isoCode2="VG" />
+    <uvi
+        jcr:primaryType="nt:unstructured"
+        enName="Virgin Islands (U.S.)"
+        frName="Îles Vierges Des États-Unis"
+        value="UVI"
+        isoCode3="VIR"
+        isoCode2="VI" />
+    <wlf
+        jcr:primaryType="nt:unstructured"
+        enName="Wallis and Futuna"
+        frName="Wallis et Futuna"
+        value="WLF"
+        isoCode3="WLF"
+        isoCode2="WF" />
+    <pale
+        jcr:primaryType="nt:unstructured"
+        enName="West Bank and Gaza"
+        frName="Cisjordanie et bande de Gaza"
+        value="PALE"
+        isoCode3="PSE"
+        isoCode2="PS" />
+    <esh
+        jcr:primaryType="nt:unstructured"
+        enName="Western Sahara"
+        frName="Sahara occidental"
+        value="ESH"
+        isoCode3="ESH"
+        isoCode2="EH" />
+    <yem
+        jcr:primaryType="nt:unstructured"
+        enName="Yemen"
+        frName="Yémen"
+        value="YEM"
+        isoCode3="YEM"
+        isoCode2="YE" />
+    <zam
+        jcr:primaryType="nt:unstructured"
+        enName="Zambia"
+        frName="Zambie"
+        value="ZAM"
+        isoCode3="ZMB"
+        isoCode2="ZM" />
+    <zim
+        jcr:primaryType="nt:unstructured"
+        enName="Zimbabwe"
+        frName="Zimbabwe"
+        value="ZIM"
+        isoCode3="ZWE"
+        isoCode2="ZW" />
+</jcr:root>

@@ -1,0 +1,23 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.cta="com.edc.edcweb.core.models.TextUrlLinks"/>
+<sly data-sly-test.hasvalues="${properties.text || properties.title || properties.linktext}"/>
+<sly data-sly-test.displayType="${cta.displaytype != null ? cta.displaytype : 'edc-primary-btn'}" />
+<sly data-sly-test.classes="${'{0} {1}' @ format=['dtm-analytics button', displaytype]}" />
+<sly data-sly-call="${templates.placeholder @ isEmpty = !hasvalues}"/>
+<sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+<sly data-sly-test.anchor="${(properties.linkAnchor ? '#{0}' : '') @ format=[properties.linkAnchor]}"/>
+<sly data-sly-test.urlAnchor="${'{0}{1}' @ format=[cta.linkUrl,anchor]}"/>
+<sly data-sly-test.theLink="${((cta.linkUrl && anchor) ? urlAnchor : (cta.linkUrl ? cta.linkUrl : anchor))}"/>
+<sly data-sly-use.ibButtonTemplate="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+
+<sly data-sly-test="${hasvalues}">
+    <div class="container premiumcta-wrapper ${properties.keyline} ${properties.removemargins}">
+        <div class="premiumcta">
+            <h2 data-sly-test.title="${properties.title}" class="${properties.titleAlignment}">${title}</h2>
+            <p data-sly-test.text="${properties.text}" class="${properties.textAlignment}">${text}</p>
+            <div class="button-container ${properties.btnposition ? properties.btnposition : 'center'}">
+                <div data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='link', isUsedForModal='nomodal', buttonstate='enabled', link=theLink, buttontext=cta.linkText, target=cta.linkTarget, linkchecker='valid'}"  data-sly-unwrap></div>
+            </div>
+        </div>
+    </div>
+</sly>

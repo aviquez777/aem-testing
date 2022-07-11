@@ -1,0 +1,29 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+<sly data-sly-use.policyReader="com.edc.edcweb.core.models.PolicyReader" />
+<sly data-sly-use.model="com.edc.edcweb.core.models.PremiumAccessButtons" />
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+
+<sly data-sly-call="${templates.placeholder @ isEmpty = !policyReader.labels['title'], emptyTextAppend='No policy configured'}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.productpath, emptyTextAppend='Please select the product path on the components dialog'}"/>
+
+<sly data-sly-test.title="${properties.title ? properties.title : policyReader.labels['title']}" />
+<sly data-sly-test.description="${properties.description ? properties.description : policyReader.labels['description']}" />
+<sly data-sly-test.register="${properties.register ? properties.register : policyReader.labels['register']}" />
+<sly data-sly-test.login="${properties.login ? properties.login : policyReader.labels['login']}" />
+<sly data-sly-test.loginLink="${properties.loginLink ? properties.loginLink : policyReader.labels['loginLink']}" />
+<sly data-sly-use.ibButtonTemplate="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+
+<div data-sly-test="${policyReader.labels['title'] && properties.productpath}" class="c-partner-login" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'Premium Access Buttons'}" data-event-type="button" data-event-name="button click" data-event-engagement="3" data-event-action="main body" data-event-level="primary">
+    <div class="title">
+        <h2>${title @ context='html'}</h2>
+    </div>
+    <div class="description">${description @ context='html'}</div>
+    <sly data-sly-test.attrs="${['data-english-text',register] @ join = '='}"/>
+    <div data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled', buttontext=register, btntype='submit', customattribs=attrs, buttoncssclasses='consent-url', dataUrlQs=model.registerLinkUrl}"  data-sly-unwrap></div>
+    <div class="log-in">
+        <span>${login}</span>
+        <sly data-sly-test.attrs2="${['data-english-text',loginLink] @ join = '='}"/>
+        <div data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled', buttontext=loginLink, btntype='submit', customattribs=attrs2, buttoncssclasses='unstyled consent-url', dataUrlQs=model.loginLinkUrl}"  data-sly-unwrap></div>
+    </div>
+</div>

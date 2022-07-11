@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <loggedout
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/text"
+                class="coral-Form-fieldlabel"
+                text="Logged Out Buttons"/>
+            <wellout
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <loggedoutlivebtntext
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="''Log in to watch live' button text"
+                        fieldDescription="Webinar button text when user is not logged in, for live webinar"
+                        required="{Boolean}true"
+                        name="./loggedoutlivebtntext" />
+               </items>
+            </wellout>
+            <loggedin
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/text"
+                class="coral-Form-fieldlabel"
+                text="Logged In Buttons"/>
+            <wellin
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <loggedinlivebtntext
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="'Watch Live' button text"
+                        fieldDescription="Webinar button text when user is logged in, for live webinar"
+                        required="{Boolean}true"
+                        name="./loggedinlivebtntext" />
+                </items>
+           </wellin>
+        </items>
+    </content>
+</jcr:root>

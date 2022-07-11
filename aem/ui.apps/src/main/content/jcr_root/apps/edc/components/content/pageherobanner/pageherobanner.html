@@ -1,0 +1,166 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.model="com.edc.edcweb.core.models.PageHeroBanner" />
+<sly data-sly-test.isHeroBanner="${model.fileReference || model.tabletFileReference || model.teaserimage}"/>
+<sly data-sly-test.isVideoHero="${model.videoid}"/>
+<sly data-sly-test.isLoopVideo="${model.videowebm || model.videomp4 || model.videoogg}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !isVideoHero && !isHeroBanner}"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+
+<sly data-sly-test.alignment="${model.imagealignment}"/>
+<sly data-sly-test.tagline="${model.tagline}"/>
+<sly data-sly-test.pageTitle="${model.pageTitle}"/>
+<sly data-sly-test.synopsis="${model.articlesynopsis}"/>
+<sly data-sly-test.desktop="${model.fileReference}"/>
+<sly data-sly-test.tablet="${model.tabletFileReference}"/>
+<sly data-sly-test.phone="${model.teaserimage}" />
+<sly data-sly-test.alt="${model.imagealttext}"/>
+<sly data-sly-test.backgroundicon="${model.backgroundicon}"/>
+<sly data-sly-test.videoid="${model.videoid}"/>
+<sly data-sly-test.webm="${model.videowebm}"/>
+<sly data-sly-test.mp4="${model.videomp4}"/>
+<sly data-sly-test.ogg="${model.videoogg}"/>
+<sly data-sly-test.btntext="${model.linktext}"/>
+<sly data-sly-test.btnlink="${model.linkurl}"/>
+<sly data-sly-test.btntarget="${model.linktarget}"/>
+<sly data-sly-test.anchortarget="${model.anchortarget}"/>
+<sly data-sly-test.videonotsupport="${model.policyVdeonotsupport}"/>
+<sly data-sly-test.videoplaybtn="${model.policyVideoplaybtn}"/>
+<sly data-sly-test.videoclose="${model.policyVideoclosebtn}"/>
+<!--/* Webinar variables */-->
+<sly data-sly-test.webinarshowkey="${model.webinarshowkey}"/>
+<sly data-sly-test.webinaroverride="${model.webinaroverride}"/>
+<sly data-sly-test.iswebinarpage="${model.iswebinarpage}"/>
+<sly data-sly-test.webinarshowkey="${model.webinarshowkey}"/>
+<sly data-sly-test.webinarstatusurl="${model.webinarstatusurl}"/>
+<sly data-sly-test.webinarregisterurl="${model.webinarregisterurl}"/>
+<sly data-sly-test.webinarupcomingtagtext="${model.webinarupcomingtagtext}"/>
+<sly data-sly-test.webinarlivetagtext="${model.webinarlivetagtext}"/>
+<sly data-sly-test.webinarondemandtagtext="${model.webinarondemandtagtext}"/>
+<sly data-sly-test.arkadinmodaltitle="${model.arkadinmodaltitle}"/>
+<sly data-sly-test.arkadinmodaltext="${model.arkadinmodaltext}"/>
+<sly data-sly-test.specialmodaltext="${model.specialmodaltext}"/>
+<sly data-sly-test.specialarkadinmodaltext="${model.specialarkadinmodaltext}"/>
+<sly data-sly-test.arkadinagreebuttontext="${model.arkadinagreebuttontext}"/>
+<sly data-sly-test.arkadincancelbuttontext="${model.arkadincancelbuttontext}"/>
+<sly data-sly-test.arkadinmodalariaclose="${model.arkadinmodalariaclose}"/>
+<sly data-sly-test.arkadinmodalariascroll="${model.arkadinmodalariascroll}"/>
+<!--/* Partners data  */-->
+<sly data-sly-test.partners="${model.partners}"/>
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+<!--/* WIT Radios  */-->
+<sly data-sly-test.witradios="${model.witRadios}"/>
+<sly data-sly-test.selfidmodaltext="${model.selfidmodaltext}"/>
+<sly data-sly-use.ibTemplateObj="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+
+
+<sly data-sly-test="${isHeroBanner || isVideoHero || isLoopVideo}">
+    <section role="banner" class="c-page-hero-banner full-width ${backgroundicon} ${webinarshowkey && !webinaroverride ? 'webinar' : ''}" data-webinar-id="${webinarshowkey}" data-webinar-status-url="${webinarstatusurl ? webinarstatusurl : ''}" data-webinar-register-url="${webinarshowkey && webinarregisterurl ? webinarregisterurl : ''}" data-event-component="page hero banner" data-event-engagement="1" data-event-action="hero banner" data-event-level="primary" data-webinar-override="${webinaroverride}" data-is-webinar-page="${iswebinarpage}">
+        <div class="container ${backgroundicon}">
+            <div class="content">
+                <p data-sly-test="${webinarupcomingtagtext && webinarlivetagtext && webinarondemandtagtext}" class="status-text hidden" data-upcoming-text="${webinarupcomingtagtext}" data-live-text="${webinarlivetagtext}" data-ondemand-text="${webinarondemandtagtext}"></p>
+                <h3 class="tagline">${properties.rtetagline ? properties.rtetagline : tagline @ context="html"}</h3>
+                <h1 data-sly-test="${pageTitle}" class="title">${properties.rtetitle ? properties.rtetitle : pageTitle @ context="html"}</h1>
+                <p data-sly-test="${synopsis}">${properties.rtedescription ? properties.rtedescription : synopsis @ context="html"}</p>
+                <div data-sly-test="${videoid && btntext}"
+                     data-sly-call="${commonTemplates.button @ buttontype='video', buttontext=btntext, buttonclasses='edc-primary-btn-video'}"
+                     class="btn-container">
+                </div>
+                <div data-sly-test="${!videoid && !anchortarget && btntext && btnlink && btntarget && webinaroverride}"
+                     data-sly-call="${commonTemplates.link @ type = 'link', link=btnlink, ctatext=btntext, target=btntarget, classes='button edc-primary-btn', linkchecker='valid'}"
+                     class="btn-container">
+                </div>
+                <div data-sly-test="${!videoid && btntext && anchortarget && webinaroverride}"
+                     data-sly-call="${commonTemplates.button @ buttontype='anchor', buttontext=btntext, buttonclasses='edc-primary-btn', buttonanchor=anchortarget}"
+                     class="btn-container">
+                </div>
+                 <!--/* Webinar CTAs */-->
+                <sly data-sly-test="${!webinaroverride && webinarshowkey}" data-sly-resource="${'webinar-cta' @ resourceType='edc/components/content/event/webinarcta'}"/>
+            </div>
+        </div>
+        <div data-sly-test="${!isLoopVideo}" class="img-wrapper ${alignment}">
+            <sly data-sly-call="${commonTemplates.picture @ desktop=desktop, tablet=tablet, phone=phone, imageAlt=alt}"/>
+        </div>
+        <div data-sly-test="${isLoopVideo}" class="video-wrapper ${alignment}">
+            <video data-sly-attribute.autoplay="${wcmmode.edit ? '' : 'autoplay'}" loop="" muted=""><!-- //NOSONAR -->
+                <source data-sly-test="${mp4}" src="${mp4}" type="video/mp4" media="all and (max-width:480px)" />
+                <source data-sly-test="${mp4}" src="${mp4}" type="video/mp4" />
+                <source data-sly-test="${webm}" src="${webm}" type="video/webm" media="all and (max-width:480px)" />
+                <source data-sly-test="${webm}" src="${webm}" type="video/webm" />
+                <source data-sly-test="${ogg}" src="${ogg}" type="video/ogg" media="all and (max-width:480px)" />
+                <source data-sly-test="${ogg}" src="${ogg}" type="video/ogg" />
+                <img src="${desktop}" title="${videonotsupport}" alt="${videonotsupport}"/>
+            </video>
+            <sly data-sly-call="${commonTemplates.picture @ desktop=desktop, tablet=tablet, phone=phone, imageAlt=alt}"/>
+        </div>
+        <div class="video-modal" data-sly-test="${isVideoHero}">
+            <div class="video-close">
+                <button type="button">
+                    <span class="close-text">${videoclose}</span>
+                    <span class="iconfont close"></span>
+                </button>
+            </div>
+            <sly data-sly-call="${commonTemplates.youtube @ videoId=videoid, playtext=videoplaybtn}"/>
+        </div>
+        <div class="arkadin-modal hide" role="dialog" aria-modal="true">
+            <div class="modal-shade"></div>
+            <div class="modal-container">
+                <button type="button" class="modal-close" aria-label="${arkadinmodalariaclose}"></button>
+                <div class="modal-title">
+                    <h2>${arkadinmodaltitle}</h2>
+                </div>
+                <form name="webinar-modal-form" action="#" noValidate >
+                    <div class="modal-text shadow-after">
+                        <div class="text-section">
+                            <div class="full-section">
+                                <div class="terms-and-conditions-section">
+                                     <div class="arkadin-text">
+                                        ${arkadinmodaltext @context='html'}
+                                    </div>
+                                    <div class="special-text hide" show-special-text="${specialmodaltext ? 'true' : ''}">
+                                        ${specialmodaltext @context='html'}
+                                    </div>
+                                    <div class="total-text hide" show-total-text="${specialarkadinmodaltext ? 'true' : ''}">
+                                        ${specialarkadinmodaltext @context='html'}
+                                    </div>
+                                </div>
+                                <div class="casl-section" data-sly-list="${partners}">
+                                    <div class="form-row checkbox-item" data-sly-test.casl="${item.casltext}">
+                                        <sly data-sly-test.counter="${itemList.count}" />
+                                        <input type="checkbox" class="form-control" id="caslConsent${counter}-${uuid}" name="p${counter}" data-no-url="true" value="true" />
+                                         <div class="input-description">
+                                            <label for="caslConsent${counter}-${uuid}">${casl @ context = 'html'}</label>
+                                         </div>
+                                    </div>
+                                </div>
+                                <div class="wit-section">
+                                    <sly data-sly-test="${selfidmodaltext}">
+                                        ${selfidmodaltext @context='html'}
+                                    </sly>
+                                    <sly data-sly-list="${witradios}">
+                                        <div class="form-row radio-item">                                            
+                                            <sly data-sly-test.counter="${itemList.count}" />
+                                            <sly data-sly-test.radiotext="${item.radiotext}" />
+                                            <input type="radio" class="form-control" id="wit${counter}-${uuid}" name="wit" data-no-url="true" value="${item.witvalue}" />
+                                            <div class="input-description">
+                                                <label for="witradio${counter}-${uuid}">${radiotext @ context = 'html'}</label>
+                                            </div>
+                                        </div>
+                                    </sly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="anchor-container hide">
+                            <span class="circle-button" role="button" aria-label="${arkadinmodalariascroll}"></span>
+                        </div>
+                    </div>
+                    <div class="modal-ctas">
+                        <div data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='button', isUsedForModal='nomodal', buttonstate='enabled', buttontext=arkadinagreebuttontext, btntype='button', buttoncssclasses='no-btn'}"  data-sly-unwrap></div>
+                        <div data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='button', isUsedForModal='nomodal', buttonstate='enabled', buttontext=arkadincancelbuttontext, btntype='button', buttoncssclasses='no-btn'}"  data-sly-unwrap></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</sly>

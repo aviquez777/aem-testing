@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Optional Fields"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <specialRemarks
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Label text for Special remarks field (Optional on from)"
+                fieldLabel="Special remarks label"
+                name="./specialRemarksLabel"
+                required="{Boolean}true"/>
+            <dueDate
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Label text for Request Due Date (Optional on form)"
+                fieldLabel="Request Due date label"
+                name="./dueDateLabel"
+                required="{Boolean}true"/>
+            <addParty
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Would you like to send confirmation of submission to another party? (Optional on form)"
+                fieldLabel="Send to another party label"
+                name="./addPartyLabel"
+                required="{Boolean}true"/>
+            <addPartyDisclaimer
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                fieldDescription="If you do not receive confirmation via email, please contact email address (Optional on form)"
+                fieldLabel="Send to another party disclaimer"
+                name="./addPartyDisclaimer"
+                required="{Boolean}true"
+                useFixedInlineToolbar="{Boolean}true" />
+        </items>
+    </content>
+</jcr:root>

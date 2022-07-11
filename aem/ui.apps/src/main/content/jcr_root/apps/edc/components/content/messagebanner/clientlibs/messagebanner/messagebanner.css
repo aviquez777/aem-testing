@@ -1,0 +1,370 @@
+@charset "UTF-8";
+.c-message-banner {
+    -moz-transition: max-height 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+    -o-transition: max-height 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+    -webkit-transition: max-height 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+    transition: max-height 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    max-height: 100px;
+}
+
+.c-message-banner * {
+    box-sizing: border-box;
+}
+
+.c-message-banner .content-info {
+    padding: .875rem 3.25rem 1.125rem .9375rem;
+}
+
+.c-message-banner .content-info p {
+    display: flex;
+    font-size: 14px;
+    line-height: 24px;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    margin: 0;
+}
+
+.c-message-banner .content-info p button {
+    font-size: 14px;
+    line-height: 24px;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    background-color: transparent;
+    font-style: normal;
+    border-radius: 0;
+    text-decoration: underline;
+    cursor: pointer;
+    display: inline-block;
+    transition: none;
+    padding: 0;
+    margin: 0;
+}
+
+.c-message-banner .content-info p.hide {
+    display: none;
+}
+
+.c-message-banner.error {
+    background-color: #ffdde2;
+}
+
+.c-message-banner.error .content-info p:not(.hide) {
+    color: #c8102e;
+    display: inline;
+}
+
+.c-message-banner.error .content-info p:not(.hide) button {
+    color: #c8102e;
+}
+
+.c-message-banner.error .content-accept .close-button::after {
+    color: #c8102e;
+}
+
+.c-message-banner.success {
+    background-color: #2f78c6;
+}
+
+.c-message-banner.success .content-info p:not(.hide) {
+    color: #fff;
+}
+
+.c-message-banner.success .content-info p:not(.hide) button {
+    color: #fff;
+}
+
+.c-message-banner.success .content-accept .close-button::after {
+    color: #fff;
+}
+
+.c-message-banner .content-accept .close-button {
+    cursor: pointer;
+    color: #fff;
+    position: absolute;
+    text-decoration: none;
+    background-color: transparent;
+    font-style: normal;
+    border-radius: 0;
+    font-weight: normal;
+    display: inline-block;
+    padding: 0;
+    transition: none;
+    right: 1rem;
+    top: 1.25rem;
+}
+
+.c-message-banner .content-accept .close-button span::after {
+    margin: 0;
+    right: 0;
+}
+
+.c-message-banner .content-accept .close-button:hover span, .c-message-banner .content-accept .close-button:active span, .c-message-banner .content-accept .close-button:focus span {
+    padding: 0;
+}
+
+.c-message-banner .content-accept .close-button::after {
+    content: "";
+    font-family: "iconfonts";
+    font-size: 16px;
+    font-weight: normal;
+    color: #c8102e;
+}
+
+.c-message-banner.hide {
+    max-height: 0;
+}
+
+.c-message-banner.bring-front {
+    z-index: 100020312;
+    overflow: initial;
+}
+
+.c-message-banner .error-modal {
+    position: fixed;
+}
+
+.c-message-banner .error-modal.hide {
+    display: none;
+}
+
+.c-message-banner .error-modal .modal-shade {
+    background-color: #fff;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.c-message-banner .error-modal .modal-container {
+    background-color: #fff;
+    position: fixed;
+    transform: translate(-50%, 0);
+    top: 0;
+    left: 50%;
+    width: 100%;
+    z-index: 2;
+}
+
+.c-message-banner .error-modal .modal-container .modal-close {
+    position: absolute;
+    right: 0;
+    text-decoration: none;
+    top: 0;
+    z-index: 10;
+    padding: 0;
+    width: 48px;
+    height: 48px;
+    background-color: transparent;
+    color: #000;
+}
+
+.c-message-banner .error-modal .modal-container .modal-close::after {
+    font-family: "iconfonts";
+    color: #000;
+    content: "";
+    font-size: 2.5rem;
+}
+
+.c-message-banner .error-modal .modal-container .modal-title,
+.c-message-banner .error-modal .modal-container .modal-text {
+    color: #333;
+    font-family: "Georgia", "Times New Roman", Times, serif;
+    font-size: 17px;
+    line-height: 27px;
+    margin: 0;
+}
+
+.c-message-banner .error-modal .modal-container .modal-title {
+    background-color: #f4f8fc;
+    padding: 1.6875rem 3.3125rem 1.6875rem 2.125rem;
+}
+
+.c-message-banner .error-modal .modal-container .modal-title h2 {
+    margin: 0;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.c-message-banner .error-modal .modal-container .modal-text {
+    position: relative;
+}
+
+.c-message-banner .error-modal .modal-container .modal-text.section-fixed.shadow-after::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 2.5rem;
+    left: 0;
+    z-index: 1;
+    background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8), #fff);
+    bottom: 0;
+}
+
+.c-message-banner .error-modal .modal-container .modal-text .text-section {
+    /* Track */
+    /* Handle */
+    /* Handle on hover */
+    padding: 1.5rem;
+}
+
+.c-message-banner .error-modal .modal-container .modal-text .text-section::-webkit-scrollbar {
+    width: 10px;
+}
+
+.c-message-banner .error-modal .modal-container .modal-text .text-section::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.c-message-banner .error-modal .modal-container .modal-text .text-section::-webkit-scrollbar-thumb {
+    background: #ebebeb;
+    background: -moz-linear-gradient(left, #ebebeb 0%, #ebebeb 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #ebebeb), color-stop(50%, #ebebeb), color-stop(51%, rgba(255, 255, 255, 0)), color-stop(71%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(255, 255, 255, 0)));
+    background: -webkit-linear-gradient(left, #ebebeb 0%, #ebebeb 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: -o-linear-gradient(left, #ebebeb 0%, #ebebeb 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: -ms-linear-gradient(left, #ebebeb 0%, #ebebeb 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to right, #ebebeb 0%, #ebebeb 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebebeb', endColorstr='#ffffff', GradientType=1 );
+}
+
+.c-message-banner .error-modal .modal-container .modal-text .text-section::-webkit-scrollbar-thumb:hover {
+    background: #ebebeb;
+    background: -moz-linear-gradient(left, #cccccc 0%, #cccccc 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #cccccc), color-stop(50%, #cccccc), color-stop(51%, rgba(255, 255, 255, 0)), color-stop(71%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(255, 255, 255, 0)));
+    background: -webkit-linear-gradient(left, #cccccc 0%, #cccccc 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: -o-linear-gradient(left, #cccccc 0%, #cccccc 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: -ms-linear-gradient(left, #cccccc 0%, #cccccc 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to right, #cccccc 0%, #cccccc 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebebeb', endColorstr='#ffffff', GradientType=1 );
+}
+
+.c-message-banner .error-modal .modal-container .modal-text .text-section p {
+    margin: 0;
+    padding-bottom: 1rem;
+}
+
+.c-message-banner .error-modal .modal-container .anchor-container {
+    position: absolute;
+    bottom: .5rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+    width: 40px;
+    z-index: 2;
+}
+
+.c-message-banner .error-modal .modal-container .anchor-container.hide {
+    display: none;
+}
+
+.c-message-banner .error-modal .modal-container .anchor-container .circle-button {
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(25, 25, 25, 0.1);
+    background: #2f78c6;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    position: relative;
+}
+
+.c-message-banner .error-modal .modal-container .anchor-container .circle-button::before {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 6px;
+    color: #fff;
+    content: "";
+    font-family: "iconfonts";
+    font-size: 16px;
+}
+
+.c-message-banner .error-modal .modal-container .modal-ctas {
+    margin: 0 .25rem;
+    padding: 2.5rem 1.5625rem;
+    border-top: 1px solid #ccc;
+    text-align: center;
+}
+
+.c-message-banner .error-modal .modal-container .modal-ctas button {
+    display: block;
+}
+
+.c-message-banner .error-modal .modal-container .modal-ctas button.edc-primary-btn {
+    width: 100%;
+    padding: .75rem 1.875rem;
+}
+
+.c-message-banner .error-modal .modal-container .modal-ctas button.no-btn {
+    background-color: transparent;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    border-radius: 0;
+    text-decoration: underline;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0;
+    transition: none;
+    color: #2f78c6;
+    margin-top: 1rem;
+}
+
+@media (min-width: 720px) {
+    .c-message-banner {
+        justify-content: center;
+    }
+    .c-message-banner .content-info {
+        padding: .875rem 0 1.125rem;
+    }
+    .c-message-banner .content-info p {
+        text-align: center;
+        align-items: center;
+    }
+    .c-message-banner .error-modal .modal-shade {
+        background-color: rgba(25, 25, 25, 0.8);
+    }
+    .c-message-banner .error-modal .modal-container {
+        width: 590px;
+        box-shadow: 0 0 1.5em rgba(0, 0, 0, 0.35);
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+    }
+    .c-message-banner .error-modal .modal-container .modal-title {
+        background-color: #f4f8fc;
+        padding: 2rem 4rem;
+    }
+    .c-message-banner .error-modal .modal-container .modal-title h2 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+    .c-message-banner .error-modal .modal-container .modal-text .text-section {
+        padding: 2rem 4rem;
+    }
+    .c-message-banner .error-modal .modal-container .modal-ctas button.edc-primary-btn {
+        margin: auto;
+        width: 330px;
+        padding: 1.25rem 1.875rem;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-message-banner .error-modal .modal-title h2 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+}

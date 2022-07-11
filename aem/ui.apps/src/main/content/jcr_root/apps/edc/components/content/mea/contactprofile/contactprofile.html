@@ -1,0 +1,49 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.repimage}"/>
+<sly data-sly-use.labels="com.edc.edcweb.core.models.MEAContactProfile" />
+<sly data-sly-test.hasPolicy="${labels.est && labels.hour}" />
+<sly data-sly-call="${templates.placeholder @ isEmpty = !hasPolicy, emptyTextAppend='No Labels defined for component'}"/>
+
+<section role="complementary" class="c-contact-profiles full-width" data-sly-test="${hasPolicy && properties.repimage}">
+    <div class="contact-profiles-container">
+        <span class="key-line"></span>
+        <h2 class="main-title" data-sly-test="${properties.title}">${properties.title}</h2>
+        <div class="container">
+            <div class="author-info" itemscope="" itemtype="http://schema.org/Person">
+                <img src="${properties.repimage}" alt="${properties.imagealttext}" itemprop="image" data-sly-test="${properties.repimage}">
+                <div class="personal-info">
+                    <h4 class="fullname" itemprop="name" data-sly-test="${properties.repfullname}">${properties.repfullname}</h4>
+                    <span class="position" itemprop="jobTitle" data-sly-test="${properties.reptitle}">${properties.reptitle}</span>
+                    <span class="company" itemprop="companyName"data-sly-test="${properties.repcompany}">${properties.repcompany}</span>
+                    <span class="time-zone" itemprop="timeZone" data-sly-test="${properties.timezone && properties.timezone != '0'}">
+                        ${labels.est}<sly data-sly-test="${properties.timezone != '0'}">${properties.timezone}${
+                        !properties.timezoneminute ? ":00" : [':', properties.timezoneminute] @ join=''}
+                        ${labels.hour}<sly data-sly-test="${properties.timezone != '-1' && properties.timezone != '+1'}">s</sly></sly>
+                    </span>
+                </div>
+                <div class="contact-info">
+                    <a href="mailto:${properties.repemail}" class="email" itemprop="email" data-sly-test="${properties.repemail}">${properties.repemail}</a>
+                    <div class="phone-info" data-sly-test="${properties.phonelocation1 && properties.phonenumber1}">
+                        <span class="phone-location" itemprop="location">${properties.phonelocation1}</span>
+                        <span class="phone-number" itemprop="phone">
+                          <span class="desktop-phone">${properties.phonenumber1}</span>
+                          <a x-cq-linkchecker="valid" class="moble-phone" href="tel:${properties.phonenumber1 @ context='html'}">${properties.phonenumber1}</a>
+                        </span>
+                    </div>
+                    <div class="phone-info" data-sly-test="${properties.phonelocation2 && properties.phonenumber2}">
+                        <span class="phone-location" itemprop="location">${properties.phonelocation2}</span>
+                        <span class="phone-number" itemprop="phone">
+                          <span class="desktop-phone">${properties.phonenumber2}</span> 
+                          <a x-cq-linkchecker="valid" class="moble-phone" href="tel:${properties.phonenumber2 @ context='html'}">${properties.phonenumber2}</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!--/* Use Same resources defined on model */-->
+            <sly data-sly-test.resources="${labels.resources}"/>
+            <div class="text-area" data-sly-list.resource="${resources}">
+              <div data-sly-resource="${@path=resource, resourceType=resources[resource]}"></div>
+            </div>
+        </div>
+    </div>
+</section>

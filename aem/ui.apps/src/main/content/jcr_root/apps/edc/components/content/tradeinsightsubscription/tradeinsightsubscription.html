@@ -1,0 +1,22 @@
+<sly data-sly-use.pageinfo="com.edc.edcweb.core.models.Page"> 
+  <sly data-sly-test.refpath="${pageinfo.referenceURL}"/>        
+</sly>
+<sly data-sly-use.subscription="com.edc.edcweb.core.models.TradeInsightSubscription"> 
+         
+</sly>
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.elqsiteid}"/>
+
+<h3 class="title">Properties from Trade Insight Component policies</h3>
+<ul>
+	<li><p>title: ${subscription.title}</p></li>
+	<li><p>logoimage: ${subscription.logoImage}</p></li>
+	<li><p>emailemptylabel: ${subscription.emailEmptyLabel}</p></li>
+	<li><p>cookielabel: ${subscription.cookieLabel}</p></li>
+	<li><p>cookiepath: ${subscription.cookiePath}</p></li>
+	<li><p>cookiedisclaimer: ${subscription.cookieDisclaimer}</p></li>
+	<li><p>successMessage: ${subscription.successMessage}</p></li>
+</ul>
+<div data-sly-test.elqsiteid="${properties.elqsiteid}"  >    
+           
+</div>

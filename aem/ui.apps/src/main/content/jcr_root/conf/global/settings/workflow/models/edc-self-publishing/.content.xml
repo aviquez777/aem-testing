@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:designPath="/libs/settings/wcm/designs/default"
+        cq:lastModified="{Date}2021-07-28T11:16:19.956-06:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/libs/cq/workflow/templates/model"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="EDC Self Publishing"
+        sling:resourceType="cq/workflow/components/pages/model"
+        workflowStages="[Workflow Start,On Proofread,Proofread Denied,On Review,Reviewer Denied,Approve to Publish,Publisher Denied,Waiting for Publishing,Publishing]">
+        <flow
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="foundation/components/parsys">
+            <initiatorparticipant
+                jcr:created="{Date}2021-02-24T14:40:13.287-06:00"
+                jcr:createdBy="admin"
+                jcr:description="A sample participant chooser that chooses the workflow initiator as participant."
+                jcr:lastModified="{Date}2021-03-11T18:04:16.895-06:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Workflow Initiator Participant Chooser"
+                sling:resourceType="cq/workflow/components/workflow/initiatorparticipantchooser">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    DYNAMIC_PARTICIPANT="/libs/workflow/scripts/initiator-participant-chooser.ecma"
+                    PROCESS_AUTO_ADVANCE="true"
+                    workflowStage="Workflow Start"/>
+            </initiatorparticipant>
+            <or
+                jcr:created="{Date}2021-02-19T16:54:06.471-06:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2021-02-19T17:33:04.591-06:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Proofreader vs Reviewer"
+                sling:resourceType="cq/workflow/components/model/or"
+                branches="2"
+                branchName1="Branch 1"
+                branchName2="Branch 2"
+                branchOrder="[0,1]"
+                default1="true"
+                orSplit="true">
+                <_x0031_
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="cq/flow/components/parsys">
+                    <dynamicparticipant1
+                        jcr:created="{Date}2021-03-11T15:31:26.533-06:00"
+                        jcr:createdBy="admin"
+                        jcr:description="Assign to proofreaders"
+                        jcr:lastModified="{Date}2021-03-15T10:33:25.105-06:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Assign Page For Proof-read"
+                        sling:resourceType="cq/workflow/components/model/dynamic_participant">
+                        <metaData
+                            jcr:primaryType="nt:unstructured"
+                            DYNAMIC_PARTICIPANT="com.edc.edcweb.core.workflow.SelectParticipantStep"
+                            PROCESS_ARGS="userGroupId=edc-self-publishing-proofreaders,subject=PROOF-READ: -title-of-page- ,template=/conf/global/settings/workflow/notification/email/edc/ready-for-proofread/en.txt,emailType=notification"
+                            timeoutMillis=" "
+                            workflowStage="On Proofread"/>
+                    </dynamicparticipant1>
+                    <dynamicparticipant2
+                        jcr:created="{Date}2021-03-11T15:32:42.891-06:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2021-03-11T17:25:12.439-06:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Proofreader Takes Ownership"
+                        sling:resourceType="cq/workflow/components/model/dynamic_participant">
+                        <metaData
+                            jcr:primaryType="nt:unstructured"
+                            DYNAMIC_PARTICIPANT="com.edc.edcweb.core.workflow.SelectParticipantStep"
+                            workflowStage="On Proofread"/>
+                    </dynamicparticipant2>
+                    <dynamicparticipant3
+                        jcr:created="{Date}2021-03-11T15:31:26.533-06:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2021-03-15T15:56:59.748-06:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Edits have been made"
+                        sling:resourceType="cq/workflow/components/model/dynamic_participant">
+                        <metaData
+                            jcr:primaryType="nt:unstructured"
+                            DYNAMIC_PARTICIPANT="com.edc.edcweb.core.workflow.SelectParticipantStep"
+                            PROCESS_ARGS="userGroupId=edc-self-publishing-reviewers,subject=FYI: Edits have been made on  -title-of-page- ,template=/conf/global/settings/workflow/notification/email/edc/edits-have-been-made/en.txt,emailType=fyi"
+                            timeoutMillis=" "
+                            workflowStage="On Proofread"/>
+                    </dynamicparticipant3>
+                </_x0031_>
+                <_x0032_
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="cq/flow/components/parsys">
+                    <goto
+                        jcr:created="{Date}2021-02-19T16:57:20.778-06:00"
+                        jcr:createdBy="admin"
+                        jcr:description="Goto Step"
+                        jcr:lastModified="{Date}2021-03-11T17:10:29.802-06:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Assign Page For Review"
+                        sling:resourceType="cq/workflow/components/model/goto">
+                        <metaData
+                            jcr:primaryType="nt:unstructured"
+                            PROCESS="com.adobe.granite.workflow.core.process.GotoProcess"
+                            PROCESS_AUTO_ADVANCE="false"
+                            script="function check() {&#xd;&#xa;&#x9;return true;&#xd;&#xa;}"
+                            TARGET_NODE_PATH="/conf/global/settings/workflow/models/edc-self-publishing/jcr:content/flow/dynamicparticipant1"
+                            workflowStage="On Review"/>
+                    </goto>
+                </_x0032_>
+            </or>
+            <dynamicparticipant1
+                jcr:created="{Date}2021-03-11T15:31:26.533-06:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2021-03-12T16:01:42.608-06:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Assign Page For Review"
+                sling:resourceType="cq/workflow/components/model/dynamic_participant">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    DYNAMIC_PARTICIPANT="com.edc.edcweb.core.workflow.SelectParticipantStep"
+                    PROCESS_ARGS="userGroupId=edc-self-publishing-reviewers,subject=REVIEW: -title-of-page- ,template=/conf/global/settings/workflow/notification/email/edc/ready-for-review/en.txt,emailType=notification"
+                    timeoutMillis=" "
+                    workflowStage="On Review"/>
+            </dynamicparticipant1>
+            <dynamicparticipant2
+                jcr:created="{Date}2021-03-11T15:32:42.891-06:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2021-03-11T16:00:53.542-06:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Reviewer Takes Ownership"
+                sling:resourceType="cq/workflow/components/model/dynamic_participant">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    DYNAMIC_PARTICIPANT="com.edc.edcweb.core.workflow.SelectParticipantStep"
+                    workflowStage="On Proofread"/>
+            </dynamicparticipant2>
+            <or2
+                jcr:created="{Date}2021-02-19T10:51:39.157-06:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2021-02-19T17:34:43.751-06:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Reviewer Approves or Denies"
+                sling:resourceType="cq/workflow/components/model/or"
+                branches="2"
+                branchName1="Branch 1"
+                branchName2="Branch 2"
+                branchOrder="[0,1]"
+                default1="true"
+                orSplit="true">
+                <_x0031_
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="cq/flow/components/parsys">
+                    <dynamicparticipant1
+                        jcr:created="{Date}2021-03-11T15:31:26.533-06:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2021-03-12T15:30:52.125-06:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Reviewer Denies"
+                        sling:resourceType="cq/workflow/components/model/dynamic_participant">
+                        <metaData
+                            jcr:primaryType="nt:unstructured"
+                            DYNAMIC_PARTICIPANT="com.edc.edcweb.core.workflow.SelectParticipantStep"
+                            PROCESS_ARGS="userGroupId=edc-self-publishing-authors,subject=EDIT : -title-of-page- ,template=/conf/global/settings/workflow/notification/email/edc/needs-to-be-edited/en.txt,emailType=notification"
+                            timeoutMillis=" "
+                            workflowStage="On Proofread"/>
+                    </dynamicparticipant1>
+                    <dynamicparticipant2
+                        jcr:created="{Date}2021-03-11T15:32:42.891-06:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2021-03-15T09:57:14.784-06:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Author Takes Ownership"
+                        sling:resourceType="cq/workflow/components/model/dynamic_participant">
+                        <metaData
+                            jcr:primaryType="nt:unstructured"
+                            DYNAMIC_PARTICIPANT="com.edc.edcweb.core.workflow.SelectParticipantStep"
+                            workflowStage="Proofread Denied"/>
+                    </dynamicparticipant2>
+                    <goto
+                        jcr:created="{Date}2021-02-19T17:50:37.239-06:00"
+                        jcr:createdBy="admin"
+                        jcr:description="Goto Step"
+                        jcr:lastModified="{Date}2021-03-15T09:57:55.534-06:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Assign Page For Review"
+                        sling:resourceType="cq/workflow/components/model/goto">
+                        <metaData
+                            jcr:primaryType="nt:unstructured"
+                            PROCESS="com.adobe.granite.workflow.core.process.GotoProcess"
+                            PROCESS_AUTO_ADVANCE="false"
+                            script="function check() {&#xd;&#xa;&#x9;return true;&#xd;&#xa;}"
+                            TARGET_NODE_PATH="/conf/global/settings/workflow/models/edc-self-publishing/jcr:content/flow/dynamicparticipant1"
+                            workflowStage="Reviewer Denied"/>
+                    </goto>
+                </_x0031_>
+                <_x0032_
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="cq/flow/components/parsys">
+                    <dynamicparticipant1
+                        jcr:created="{Date}2021-03-11T15:31:26.533-06:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2021-03-15T11:35:10.028-06:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Assign Page For Publish"
+                        sling:resourceType="cq/workflow/components/model/dynamic_participant">
+                        <metaData
+                            jcr:primaryType="nt:unstructured"
+                            DYNAMIC_PARTICIPANT="com.edc.edcweb.core.workflow.SelectParticipantStep"
+                            PROCESS_ARGS="userGroupId=edc-self-publishing-publishers,subject=PUBLISH: -title-of-page- ,template=/conf/global/settings/workflow/notification/email/edc/ready-for-qa-publish/en.txt,emailType=notification"
+                            timeoutMillis=" "
+                            workflowStage="On Proofread"/>
+                    </dynamicparticipant1>
+                    <dynamicparticipant2
+                        jcr:created="{Date}2021-03-11T15:32:42.891-06:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2021-03-11T16:04:01.010-06:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Publisher Takes Ownership"
+                        sling:resourceType="cq/workflow/components/model/dynamic_participant">
+                        <metaData
+                            jcr:primaryType="nt:unstructured"
+                            DYNAMIC_PARTICIPANT="com.edc.edcweb.core.workflow.SelectParticipantStep"
+                            workflowStage="On Proofread"/>
+                    </dynamicparticipant2>
+                    <or
+                        jcr:created="{Date}2021-02-19T11:01:42.855-06:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2021-02-19T17:34:56.316-06:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Publisher Approves or Denies"
+                        sling:resourceType="cq/workflow/components/model/or"
+                        branches="2"
+                        branchName1="Branch 1"
+                        branchName2="Branch 2"
+                        branchOrder="[0,1]"
+                        default1="true"
+                        orSplit="true">
+                        <_x0031_
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="cq/flow/components/parsys">
+                            <dynamicparticipant1
+                                jcr:created="{Date}2021-03-11T15:31:26.533-06:00"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2021-03-12T15:38:01.533-06:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Publisher Denies"
+                                sling:resourceType="cq/workflow/components/model/dynamic_participant">
+                                <metaData
+                                    jcr:primaryType="nt:unstructured"
+                                    DYNAMIC_PARTICIPANT="com.edc.edcweb.core.workflow.SelectParticipantStep"
+                                    PROCESS_ARGS="userGroupId=edc-self-publishing-authors,subject=EDIT : -title-of-page- ,template=/conf/global/settings/workflow/notification/email/edc/needs-to-be-edited/en.txt,emailType=notification"
+                                    timeoutMillis=" "
+                                    workflowStage="On Proofread"/>
+                            </dynamicparticipant1>
+                            <dynamicparticipant2
+                                jcr:created="{Date}2021-03-11T15:32:42.891-06:00"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2021-03-15T09:57:14.784-06:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Author Takes Ownership"
+                                sling:resourceType="cq/workflow/components/model/dynamic_participant">
+                                <metaData
+                                    jcr:primaryType="nt:unstructured"
+                                    DYNAMIC_PARTICIPANT="com.edc.edcweb.core.workflow.SelectParticipantStep"
+                                    workflowStage="Proofread Denied"/>
+                            </dynamicparticipant2>
+                            <goto
+                                jcr:created="{Date}2021-02-19T17:50:37.239-06:00"
+                                jcr:createdBy="admin"
+                                jcr:description="Goto Step"
+                                jcr:lastModified="{Date}2021-07-28T11:16:19.946-06:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Assign Page For Publish"
+                                sling:resourceType="cq/workflow/components/model/goto">
+                                <metaData
+                                    jcr:primaryType="nt:unstructured"
+                                    PROCESS="com.adobe.granite.workflow.core.process.GotoProcess"
+                                    PROCESS_AUTO_ADVANCE="false"
+                                    script="function check() {&#xd;&#xa;&#x9;return true;&#xd;&#xa;}"
+                                    TARGET_NODE_PATH="/conf/global/settings/workflow/models/edc-self-publishing/jcr:content/flow/or2/2/dynamicparticipant1"
+                                    workflowStage="Publisher Denied"/>
+                            </goto>
+                        </_x0031_>
+                        <_x0032_
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="cq/flow/components/parsys">
+                            <dynamicparticipant1
+                                jcr:lastModified="{Date}2021-03-15T12:56:22.524-06:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Schedule Publish Date"
+                                sling:resourceType="cq/workflow/components/model/dynamic_participant">
+                                <metaData
+                                    jcr:primaryType="nt:unstructured"
+                                    DIALOG_PATH="/apps/edc/components/workflow/publishTime/cq:dialog"
+                                    DYNAMIC_PARTICIPANT="com.edc.edcweb.core.workflow.SelectParticipantStep"
+                                    workflowStage="Publishing"/>
+                            </dynamicparticipant1>
+                            <process1
+                                jcr:created="{Date}2021-02-19T11:05:38.877-06:00"
+                                jcr:createdBy="admin"
+                                jcr:description="Select a date to publish at later time&#xd;&#xa;Leave date blank to publish innmediatelly"
+                                jcr:lastModified="{Date}2021-03-15T12:56:38.222-06:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Publish Page and Assets"
+                                sling:resourceType="cq/workflow/components/model/process">
+                                <metaData
+                                    jcr:primaryType="nt:unstructured"
+                                    PROCESS="com.edc.edcweb.core.workflow.PublishPageDate"
+                                    PROCESS_ARGS="userGroupId=edc-self-publishing-publishers,subject=FYI: -title-of-page- has been Published/Scheduled for Publishing,template=/conf/global/settings/workflow/notification/email/edc/published-scheduled-for-publishing/en.txt,emailType=fyi"
+                                    PROCESS_AUTO_ADVANCE="true"
+                                    workflowStage="Waiting for Publishing"/>
+                            </process1>
+                            <dynamicparticipant2
+                                jcr:lastModified="{Date}2021-03-15T15:24:24.124-06:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Waiting For Activation"
+                                sling:resourceType="cq/workflow/components/model/dynamic_participant">
+                                <metaData
+                                    jcr:primaryType="nt:unstructured"
+                                    DYNAMIC_PARTICIPANT="com.edc.edcweb.core.workflow.SelectParticipantStep"
+                                    timeoutHandler="com.adobe.granite.workflow.console.timeout.autoadvance.AbsoluteTimeAutoAdvancer"
+                                    workflowStage="Publishing"/>
+                            </dynamicparticipant2>
+                            <createversionprocess
+                                jcr:created="{Date}2021-02-19T11:07:07.398-06:00"
+                                jcr:createdBy="admin"
+                                jcr:description="A process to create a version for either a page or an asset."
+                                jcr:lastModified="{Date}2021-02-24T11:48:18.946-06:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Create Version"
+                                sling:resourceType="wcm/workflow/components/workflow/createversionprocess">
+                                <metaData
+                                    jcr:primaryType="nt:unstructured"
+                                    PROCESS="com.day.cq.wcm.workflow.process.CreateVersionProcess"
+                                    PROCESS_AUTO_ADVANCE="true"/>
+                            </createversionprocess>
+                            <process2
+                                jcr:created="{Date}2021-02-19T11:07:46.134-06:00"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2021-03-15T15:19:22.811-06:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Do the Publish Page and Assets"
+                                sling:resourceType="cq/workflow/components/model/process">
+                                <metaData
+                                    jcr:primaryType="nt:unstructured"
+                                    PROCESS="com.edc.edcweb.core.workflow.PublishPageAndAssets"
+                                    PROCESS_ARGS="userGroupId=edc-self-publishing-publishers,subject=FYI: -title-of-page- has been Published!,template=/conf/global/settings/workflow/notification/email/edc/published-scheduled-for-publishing/en.txt,emailType=fyi"
+                                    PROCESS_AUTO_ADVANCE="true"
+                                    workflowStage="Publishing"/>
+                            </process2>
+                        </_x0032_>
+                    </or>
+                </_x0032_>
+            </or2>
+        </flow>
+    </jcr:content>
+    <rep:policy/>
+</jcr:root>

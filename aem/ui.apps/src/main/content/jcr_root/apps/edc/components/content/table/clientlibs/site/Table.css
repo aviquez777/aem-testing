@@ -1,0 +1,183 @@
+.show-separator,
+.keyline,
+.separator {
+    border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+}
+
+/**paddings for content heading **/
+.spacing-content-headings {
+    margin: 16px 0;
+}
+
+@media (min-width: 960px) {
+    .spacing-content-headings {
+        margin: 32px 0;
+    }
+}
+
+.table {
+    position: relative;
+}
+
+.table .key-line {
+    border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+    margin: 32px 0;
+    display: block;
+}
+
+.table .headings {
+    margin-top: 32px;
+}
+
+.table .headings h2 {
+    color: #333;
+}
+
+.table .headings h2,
+.table .headings p {
+    margin: 0;
+}
+
+.table .headings p + p {
+    margin-top: 16px;
+}
+
+.table .headings,
+.table .footnote,
+.table .key-line {
+    background: #fff;
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.table .fade-shadow::after {
+    content: '';
+    height: 100%;
+    width: 50px;
+    position: absolute;
+    top: -1px;
+    right: 0;
+    -webkit-box-shadow: inset -50px 0 50px -24px white;
+    -moz-box-shadow: inset -50px 0 50px -24px white;
+    box-shadow: inset -50px 0 50px -24px white;
+    background: linear-gradient(270deg, #fff, rgba(255, 255, 255, 0) 100%);
+}
+
+.table .footnotes {
+    position: relative;
+    margin: 32px 0;
+    padding-top: 16px;
+}
+
+.table .footnotes::before {
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    width: 16.66666667%;
+    content: '';
+    border-top: 1px solid #ebebeb;
+    position: absolute;
+    top: 0;
+}
+
+@media (min-width: 720px) {
+    .table .footnotes::before {
+        width: 16.66666667%;
+        float: left;
+    }
+}
+
+.table .footnotes p {
+    color: #191919;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 2;
+    position: relative;
+    margin-top: 0;
+    padding-left: 16px;
+    font-weight: normal;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+}
+
+@media (min-width: 720px) {
+    .table .footnotes p {
+        font-size: .75rem;
+        line-height: 2;
+    }
+}
+
+@media (min-width: 960px) {
+    .table .footnotes p {
+        font-size: .75rem;
+        line-height: 2;
+    }
+}
+
+.table .footnotes p::before {
+    content: '*';
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.table .table-container {
+    overflow: auto;
+    margin-top: 15px;
+}
+
+.article-body .table {
+    position: relative;
+}
+
+article.article .table .headings h2 {
+    margin: 0;
+}
+
+article.article .table .headings p {
+    color: #333;
+}
+
+@media (min-width: 720px) {
+    .table.table-large .headings {
+        text-align: center;
+    }
+}
+
+@media (min-width: 960px) {
+    .article-body .table .headings h2 {
+        margin: 0;
+    }
+    .article-body .table.table-large {
+        margin-left: calc(-55% - (30px / 2));
+        margin-right: calc(-55% - (30px / 2));
+    }
+    .article-body .table.table-large .headings,
+    .article-body .table.table-large .footnotes {
+        min-height: 1px;
+        padding-left: 24px;
+        padding-right: 24px;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .article-body .table.table-large .headings,
+    .article-body .table.table-large .footnotes {
+        width: 50%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .article-body .table.table-large .headings,
+    .article-body .table.table-large .footnotes {
+        margin-left: 25%;
+    }
+}

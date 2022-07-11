@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items
+            jcr:primaryType="nt:unstructured">
+            <step1navtitle
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Step 1 title on steps nav"
+                name="./step1navtitle"
+                required="{Boolean}true"/>
+            <step1navsubtitle
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Step 1 subtitle on steps nav"
+                name="./step1navsubtitle"
+                required="{Boolean}true"/>
+           <businessneeds
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Business needs text area label"
+                name="./businessneeds"
+                required="{Boolean}true"/>
+            <businessneedsph
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Business needs text area placeholder"
+                name="./businessneedsph"
+                required="{Boolean}false"/>
+            <painpoint
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Export challenges field label"
+                name="./painpoint"
+                required="{Boolean}true"/>
+            <painpointddph
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Export challenges field placeholder"
+                name="./painpointddph"
+                required="{Boolean}true"/>
+            <annualsales
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Annual sales field label"
+                name="./annualsales"
+                required="{Boolean}true"/>
+            <annualsalesddph
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Annual sales field placeholder"
+                name="./annualsalesddph"
+                required="{Boolean}true"/>
+            <years
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Years of operation field label"
+                name="./years"
+                required="{Boolean}true"/>
+            <product
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Product that company sells field label"
+                name="./product"
+                required="{Boolean}true"/>
+            <marketsint
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Markets of interest field label"
+                name="./marketsint"
+                required="{Boolean}true"/>
+            <marketsintph
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Markets of interest field placeholder"
+                name="./marketsintph"
+                required="{Boolean}false"/>
+            <marketsintreset
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Text for reset button in markets of interest field"
+                name="./marketsintreset"
+                required="{Boolean}true"/>
+        </items>
+    </content>
+</jcr:root>

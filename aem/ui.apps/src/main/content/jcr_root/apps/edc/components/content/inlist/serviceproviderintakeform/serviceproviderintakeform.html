@@ -1,0 +1,81 @@
+<sly data-sly-use.form="com.edc.edcweb.core.models.inlist.InListServiceProviderIntakeForm"/>
+<sly data-sly-use.messages="com.edc.edcweb.core.models.FormCommonMessages"/>
+<sly data-sly-use.eloquaService="com.edc.edcweb.core.service.EloquaService"/>
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-use.ibButtonTemplate="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+<sly data-sly-use.formsTemplates="${'/apps/edc/components/common/forms.html'}" />
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"/>
+
+<div data-sly-test="${properties.title}" class="c-inlist-supplier-intake-form">
+    <!--/* AddressComplete */-->
+    <sly data-sly-test.addressService="${form.addressCompleteService}" />
+    <sly data-sly-test.addressCompleteKey="${form.addressCompleteKey @ context='text'}"/>
+    <link data-sly-test="${addressCompleteKey}" rel="stylesheet" type="text/css" href="${form.addressCompleteCSSUrl @ context='text'}${addressService == 'CandaPost' ? addressCompleteKey : '' @ context='text'}" />
+    <script data-sly-test="${addressCompleteKey}" type="text/javascript" src="${form.addressCompleteJSUrl @ context='text'}${addressService == 'CandaPost' ? addressCompleteKey : '' @ context='text'}"></script>
+    <!--/* AddressComplete */-->
+    <form name="${eloquaService.inListServiceProviderIntakeFormName}" novalidate="" action="${eloquaService.formSubmitURL}" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'TAP form'}" data-event-type="button" data-event-name="button click" data-event-engagement="3" data-event-action="main body" data-event-level="primary">
+        <sly data-sly-call="${formsTemplates.formhiddenfields @ elqFormName=eloquaService.inListServiceProviderIntakeFormName, elqSiteId=eloquaService.siteId,
+            inquiryID=properties.inquiryID, formID=eloquaService.inListServiceProviderIntakeFormId}">
+        </sly>
+        <input type="hidden" name="assetTier" class="form-control" data-no-url="" value="" />
+        <input type="hidden" name="eventID" class="form-control" data-no-url="" value="" />
+        <input type="hidden" name="termsConditions" class="form-control" data-no-url="" value="yes" />
+        <input type="hidden" name="consentPartner" class="form-control" data-no-url="" value="yes" />
+
+        <div class="levels">
+            <div class="form-description">
+                <h2 class="description-title">${properties.title}</h2>
+                <div class="description-content">
+                    ${properties.description @ context='html'}
+                </div>
+            </div>
+            <div class="status">
+                <span class="status-bar"></span>
+            </div>
+
+            <sly data-sly-use.stepone="${'/apps/edc/components/content/inlist/serviceproviderintakeform/steps/stepone.html'}" ></sly>
+            <sly data-sly-call="${stepone.spifone @ properties=properties, uuid=uuid, messages=messages}"></sly>
+
+            <sly data-sly-use.steptwo="${'/apps/edc/components/content/inlist/serviceproviderintakeform/steps/steptwo.html'}" ></sly>
+            <sly data-sly-call="${steptwo.spiftwo @ form=form, properties=properties, uuid=uuid, messages=messages}"></sly>
+
+            <sly data-sly-use.stepthree="${'/apps/edc/components/content/inlist/serviceproviderintakeform/steps/stepthree.html'}" ></sly>
+            <sly data-sly-call="${stepthree.spifthree @ properties=properties, uuid=uuid, messages=messages}"></sly>
+
+            <sly data-sly-use.stepfour="${'/apps/edc/components/content/inlist/serviceproviderintakeform/steps/stepfour.html'}" ></sly>
+            <sly data-sly-call="${stepfour.spiffour @ form=form, properties=properties, uuid=uuid, messages=messages}"></sly>
+
+            <sly data-sly-use.stepfive="${'/apps/edc/components/content/inlist/serviceproviderintakeform/steps/stepfive.html'}" ></sly>
+            <sly data-sly-call="${stepfive.spiffive @ form=form, properties=properties, uuid=uuid, messages=messages}"></sly>
+
+            <sly data-sly-use.stepsix="${'/apps/edc/components/content/inlist/serviceproviderintakeform/steps/stepsix.html'}" ></sly>
+            <sly data-sly-call="${stepsix.spifsix @ properties=properties, uuid=uuid, messages=messages}"></sly>
+
+            <sly data-sly-use.stepseven="${'/apps/edc/components/content/inlist/serviceproviderintakeform/steps/stepseven.html'}" ></sly>
+            <sly data-sly-call="${stepseven.spifseven @ form=form, properties=properties, uuid=uuid, messages=messages}"></sly>
+
+            <sly data-sly-use.stepeight="${'/apps/edc/components/content/inlist/serviceproviderintakeform/steps/stepeight.html'}" ></sly>
+            <sly data-sly-call="${stepeight.spifeight @ form=form, properties=properties, uuid=uuid, messages=messages}"></sly>
+
+            <div class="form-ctas bottom-ctas">
+                <a class="back cta hide" href="#" data-action="back">${properties.ctaprevious}</a>
+                <div data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled', buttontext=properties.ctanext, action='next', btntype='submit', buttoncssclasses='show next-btn'}"  data-sly-unwrap></div>
+                <div data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled', buttontext=properties.ctasubmit, action='done', btntype='submit', buttoncssclasses='hide done-btn'}"  data-sly-unwrap></div>
+            </div>
+            <div class="submit-failed-message hide">
+                <p>${messages.formErrorMessages.elqerror}</p>
+            </div>
+        </div>
+    </form>
+    <div class="success-message hide">
+        <h2>${properties.successTitle}</h2>
+        <div>${properties.successPrimaryText @ context='html'}</div>
+    </div>
+    <sly data-sly-use.scriptsTemplate="/apps/edc/components/common/autocompletescripts.html"/>
+    <sly data-sly-test="${addressService == 'CandaPost'}" data-sly-call="${scriptsTemplate.canadPost @ apiKey=addressCompleteKey}"/>
+    <sly data-sly-test="${addressService == 'Loqate'}" data-sly-call="${scriptsTemplate.loqate @ apiKey=addressCompleteKey, uuid=uuid}"/>
+</div>

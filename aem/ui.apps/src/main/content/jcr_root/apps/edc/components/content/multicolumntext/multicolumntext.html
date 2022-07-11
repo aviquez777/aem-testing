@@ -1,0 +1,33 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.multicoltext="com.edc.edcweb.core.components.MultiColumnText"/>
+<sly data-sly-use.model="com.edc.edcweb.core.models.MultiColumnTextModel"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !model.multiColumnTextModels}"/>
+<sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+
+<sly data-sly-test="${model.multiColumnTextModels}">
+    <sly data-sly-test.layout="layout-${model.multiColumnTextModels.size}"/>
+    <sly data-sly-test.background="${model.enableBackground == 'yes' ? 'blue-version' : ''}"/>
+    <sly data-sly-test.keyline="${model.enableBackground == 'no' && model.enableLine == 'yes' ? 'key-line' : ''}"/>
+    <sly data-sly-test.type="${model.multiColumnTextModels.size > 3 && (model.titleGeneral || model.description) ? 'grid' : 'sections'}"/>
+    <sly data-sly-test.alignment="${model.multiColumnTextModels.size < 4 ? model.alignment : 'left'}"/>
+
+    <section class="multi-column-text full-width ${background}" role="complementary">
+        <div class="container ${layout} ${alignment} ${keyline}">
+            <div data-sly-test="${model.titleGeneral || model.description}" class="content">
+                <h2 data-sly-test="${model.titleGeneral}" class="main-title">${model.titleGeneral}</h2>
+                <div data-sly-test="${model.description}" class="description">
+                    <p data-sly-test="${!model.linkurl}">${model.description}</p>
+                    <sly data-sly-test="${model.linkurl}"
+                         data-sly-call="${commonTemplates.link @ type = 'link', link=model.linkurl, ctatext=model.description, target=model.linktarget, linkchecker='valid'}"/>
+                </div>
+            </div>
+            <div class="${type}" data-sly-list="${model.multiColumnTextModels}"><div class="section">
+                <div data-sly-test="${item.linkEnable}" class="sub-title">
+                    <sly data-sly-call="${commonTemplates.link @ type = 'link', link=item.linkValue, ctatext=item.title, target=item.linktarget, linkchecker='valid'}"/>
+                </div>
+                <h3 data-sly-test="${!item.linkEnable}" class="sub-title">${item.title}</h3>
+                ${item.text @ context='html'}
+            </div></div>
+        </div>
+    </section>
+</sly>

@@ -1,0 +1,70 @@
+<template data-sly-template.multiselect="${@ lovPath, fieldName, selectedvalues, label, placeholder, isRequired, isRequiredError}">
+    <sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+    <sly data-sly-use.model="${'com.edc.edcweb.core.models.MultiSelect' @ lovPath = lovPath}"/>
+    <sly data-sly-test.listOfValues="${model.listOfValues}" />
+    <!--/* inject clientlib */-->
+    <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="${clientLib.all @ categories='edc.multiselect'}" />
+
+    <section  data-sly-test="${listOfValues.size > 0}" class="c-multi-select form-control" data-sly-attribute.required="${isRequired}" data-prepopulate-values="${selectedvalues}" data-event-component="multi select" data-event-type="Form" data-event-name="MyEDC Step" data-event-engagement="1" data-event-action="main body" data-event-level="1">
+        <label for="search-input">${label}</label>
+        <div class="multi-select-content">
+            <div class="search-bar">
+                <div class="search-input-section">
+                    <input type="text" class="search-input" autoComplete="chrome-off" id="search-input" placeholder="${placeholder}" />
+                    <button type="button"></button>
+                </div>
+                <span class="error">${isRequiredError}</span>
+               <!--/** Hidden List **/-->
+                <div class="search-results hide">
+                <hr />
+                    <ul>
+                        <sly data-sly-list.category="${listOfValues}">
+                            <li data-sly-test="${!properties.hideSelectRegion}" class="hide" data-category="${category}" data-value="category">
+                                <button type="button">${category} (${'multifield-regionWord' @ i18n})</button>
+                            </li>
+                            <sly data-sly-test.options="${listOfValues[category]}"/>
+                            <sly data-sly-list.option="${options}">
+                                <li class="hide" data-category="${category}" data-value="${option}">
+                                    <button type="button">${options[option]}</button>
+                                </li>
+                            </sly>
+                        </sly>
+                        <li class="no-results hide">${'multifield-noResults' @ i18n}</li>
+                    </ul>
+                </div>
+                <div class="results-tags no-border"></div>
+            </div>
+            <!--/** Display List **/-->
+            <div class="options-by-categories">
+                <div class="options-by-categories-content" data-sly-list.category="${listOfValues}">
+                    <div class="category" data-section-category="${category}">
+                        <div class="count-section">
+                            <span class="count hide"></span>
+                        </div>
+                        <div class="content-section">
+                            <div class="title-section">
+                                <h3 class="category-title">${category}</h3>
+                                <div class="title-options">
+                                    <button data-sly-test="${!properties.hideSelectAll}" type="button" class="select-all" data-select-text="${'multifield-selectAll' @ i18n}" data-deselect-text="${'multifield-deselectAll' @ i18n}">${'multifield-selectAll' @ i18n}</button>
+                                    <button type="button" class="display-options"></button>
+                                </div>
+                            </div>
+                            <sly data-sly-test.options="${listOfValues[category]}"/>
+                            <div class="options-section two-columns" data-sly-list.option="${options}">
+                                <div class="checkbox-group">
+                                    <input type="checkbox" value="${option}" name="${fieldName}" data-category="${category}" />
+                                    <label for="${option}">${options[option]}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="reset-options">
+            <button type="button">
+                <span>${'multifield-resetButtonText' @ i18n}</span>
+            </button>
+        </div>
+        </div>
+    </section>
+</template>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" 
+    xmlns:granite="http://www.adobe.com/jcr/granite/1.0" 
+    xmlns:cq="http://www.day.com/jcr/cq/1.0" 
+    xmlns:jcr="http://www.jcp.org/jcr/1.0" 
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Series Banner Configuration"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+         <seriesbannerconfiguration jcr:primaryType="nt:unstructured"
+            jcr:title="Series Banner Configuration"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <seriesbannerversion jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldLabel="Select if Legacy or Enhanced version"
+                        fieldDescription="Used to select the version, Legacy (Default), Enhanced (new)"
+                        name="./seriesbannerversion"
+                        granite:class="cq-dialog-dropdown-showhide">
+                        <granite:data
+                            jcr:primaryType="nt:unstructured"
+                            cq-dialog-dropdown-showhide-target=".enhanced-showhide-target"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <variant1 jcr:primaryType="nt:unstructured"
+                                text="Enhanced"
+                                value="enhanced"/>
+                            <variant2 jcr:primaryType="nt:unstructured"
+                                text="Legacy"
+                                value="legacy"/>
+                        </items>
+                    </seriesbannerversion>
+                    <sbfields jcr:primaryType="nt:unstructured"
+                        granite:class="hide enhanced-showhide-target"
+                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                        <granite:data
+                            jcr:primaryType="nt:unstructured"
+                            showhidetargetvalue="enhanced"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <sbmaintitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Main Title"
+                                name="./sbmaintitle"/>
+                        </items>
+                    </sbfields>
+                </items>
+            </seriesbannerconfiguration>
+        </items>
+    </content>
+</jcr:root>

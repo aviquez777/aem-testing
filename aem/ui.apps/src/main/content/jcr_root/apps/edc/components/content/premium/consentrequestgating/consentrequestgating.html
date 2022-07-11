@@ -1,0 +1,50 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.requiredTitle}" />
+<sly data-sly-use.modalTemplate="/apps/edc/components/common/modals.html"/>
+<sly data-sly-test.servletUrl="/bin/myedc/crgservlet"/>
+<sly data-sly-use.ibTemplateObj="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+<sly data-sly-test.reqAttr="${['data-english-text',properties.providedCtaEnglishText] @ join = '='}"/>
+<sly data-sly-test.provAttr="${['data-english-text',properties.prequiredCtaEnglishText] @ join = '='}"/>
+
+<a class="anchor" id="consent" data-target="consent"></a>
+<section data-sly-test="${properties.requiredTitle}" class="c-consent-request-gating ${wcmmode.disabled ? 'hide' : ''}" data-edit-mode="${wcmmode.disabled ? '' : 'true'}" data-json-url="${servletUrl}" data-page-path="${currentPage.path}" data-event-component="consent request gating" data-event-type="category filter" data-event-name="Fitt Skill Pop up" data-engagement-type="1" data-event-action="main body" data-event-level="1" data-destination-page="#">
+    <h2 class="title" data-consent-provided-title="${properties.providedTitle}">${properties.requiredTitle}</h2>
+    <div class="content-section">
+        <div class="actions-section">
+            <div class="consent-btn consent-required ${wcmmode.disabled ? 'hide' : 'show'}">
+                <div data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='button', buttoncssclasses='ibtn-lg', isUsedForModal='modal', buttonstate='enabled', buttontext=properties.requiredCtaText, customattribs=reqAttr}"  data-sly-unwrap></div>
+            </div>
+            <div class="consent-btn consent-provided hide">
+                <div data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='link', link='#', buttoncssclasses='ibtn-lg', buttonstate='enabled', buttontext=properties.providedCtaText, customattribs=provAttr}"  data-sly-unwrap></div>
+            </div>
+        </div>
+        <div class="description" data-consent-provided-text="${properties.providedDescription @ context='html'}">
+            ${properties.requiredDescription @ context='html'}
+        </div>
+    </div>
+    <!--/* Show only for Author */-->
+    <sly data-sly-test="${!wcmmode.disabled}">
+        <hr>
+        <h2 class="title">${properties.providedTitle}</h2>
+        <div class="content-section">
+            <div class="actions-section">
+                <div class="consent-btn consent-provided">
+                    <div data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='link', link='#', buttoncssclasses='ibtn-lg', buttonstate='enabled', buttontext=properties.providedCtaText, customattribs=provAttr}"  data-sly-unwrap></div>
+                </div>
+            </div>
+            <div class="description">
+                <p>${properties.providedDescription @ context='html'}</p>
+            </div>
+        </div>
+    </sly>
+    <!--/* Modal */-->
+    <sly data-sly-call="${modalTemplate.consentmodal @ modalTitle=properties.modalTitle, modalTopText=properties.modalTopDescription, 
+    modalBottomText=properties.modalBottomDescription, modalMultifieldName='checkboxes', modalMultifieldValue='checkboxValue', 
+    modalMultifieldDesc='checkboxText', mulacceptCtaText=properties.acceptCtaText, acceptEnglishText=properties.acceptEnglishText, cancelText=properties.cancelText,
+    cancelEnglishText=properties.cancelEnglishText, modalFormActionUrl=servletUrl, acceptCtaText=properties.acceptCtaText, mmodalAriaOpen=properties.modalAriaOpen, 
+    modalAriaClose=properties.modalAriaClose, modalAriaScrollText=properties.modalAriaScrollText, errorText=properties.errorText}"/>
+    <!--/* Error */-->
+    <div class="error-message ${wcmmode.disabled ? 'hide' : 'show'}" data-default-message="${properties.errorText}">
+        <p>${properties.errorText}</p>
+    </div>
+</section>

@@ -1,0 +1,23 @@
+<template data-sly-template.item="${@ list, item, contenttypeclass, contenttypetitle, itemdate, itemtype, linktarget}">
+ <sly data-sly-use.gentemplates="/apps/edc/components/common/templates.html"/>
+    <!--/** If there is no value set for image alignment, default is 'center' **/-->
+    <div class="metainfo">
+        <div class="taglabel" data-sly-test="${itemtype != 'insightssearch' && itemtype != 'tradeinsights'}">
+            <span class="category-tag ${contenttypeclass} inline"></span>
+            <span>${contenttypetitle}</span>
+        </div>
+        <span class="category-tag ${contenttypeclass} inline" data-sly-test="${itemtype == 'insightssearch' || itemtype == 'tradeinsights'}">${contenttypetitle}</span>
+        <span class="date" data-sly-test="${contenttypeclass != 'success-story' || itemtype == 'insightssearch' || itemtype == 'tradeinsights'}">
+            <sly data-sly-call="${gentemplates.date @ date = itemdate}"/>
+        </span>
+    </div>
+    <a class="card-img-anchor" target="${linktarget || '_self'}" data-sly-use.urlRes="${'com.edc.edcweb.core.models.PageModelHelper' @ path = item.path}" href="${urlRes.url}" data-sly-test="${item.properties['teaserimage']}">
+        <div class="card-img ${(itemtype == 'insightssearch' || itemtype == 'tradeinsights') && item.properties['imagealignment'] ? item.properties['imagealignment'] : 'center'}">
+            <img src="${item.properties['teaserimage']}" alt="${item.properties['imagealttext']}">
+        </div>
+    </a>
+    <div class="description">
+        <h3><a href="${urlRes.url}" class="title" target="${linktarget || '_self'}">${item.pageTitle || item.title || item.name}</a></h3>
+        <p>${item.properties['articlesynopsis']}</p>
+    </div>
+</template>

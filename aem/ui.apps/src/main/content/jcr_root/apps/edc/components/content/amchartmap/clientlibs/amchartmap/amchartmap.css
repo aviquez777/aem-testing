@@ -1,0 +1,184 @@
+.c-ammap .c-ammap-list {
+    background-color: #ebebeb;
+    display: none;
+    float: right;
+    height: 500px;
+    overflow: auto;
+    width: 200px;
+}
+
+.c-ammap .c-ammap-list .ammapObjectList ul {
+    color: #757575;
+    font-size: 12px;
+    list-style: square outside;
+    padding-left: 20px;
+}
+
+.c-ammap .c-ammap-list .ammapObjectList ul ul {
+    padding-left: 14px;
+}
+
+.c-ammap .c-ammap-list .ammapObjectList a {
+    color: #000;
+    display: block;
+    padding: 2px;
+    text-decoration: none;
+}
+
+.c-ammap .c-ammap-list .ammapObjectList a:hover {
+    background: #fff;
+    color: #2f78c6;
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+}
+
+.c-ammap .c-ammap-map {
+    background-color: #fff;
+    display: none;
+    height: 500px;
+    margin-right: 200px;
+}
+
+.c-ammap .c-ammap-map .ammapAlert {
+    color: #c81414;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.c-ammap .c-ammap-map .ammapDescriptionWindow {
+    box-sizing: border-box;
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(25, 25, 25, 0.1);
+    background-color: #fff;
+    border-color: #ccc;
+    border-style: solid;
+    border-width: 1px;
+    color: #000;
+}
+
+.c-ammap .c-ammap-map .ammapDescriptionWindow * {
+    box-sizing: border-box;
+}
+
+.c-ammap .c-ammap-map .ammapDescriptionWindow .ammapDescriptionTitle {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0;
+    border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+    padding: 1rem 30px;
+}
+
+@media (min-width: 720px) {
+    .c-ammap .c-ammap-map .ammapDescriptionWindow .ammapDescriptionTitle {
+        font-size: 1.25rem;
+        line-height: 1.2;
+        letter-spacing: -0.1px;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-ammap .c-ammap-map .ammapDescriptionWindow .ammapDescriptionTitle {
+        font-size: 1.375rem;
+        line-height: 1.4545;
+        letter-spacing: -0.2px;
+    }
+}
+
+.c-ammap .c-ammap-map .ammapDescriptionWindow .ammapDescriptionWindowCloseButton {
+    margin: .25rem 0;
+    padding: 1.2619rem 15px;
+}
+
+.c-ammap .c-ammap-map .ammapDescriptionWindow .ammapDescriptionText {
+    overflow: auto;
+    padding: 2rem 30px;
+    width: 100%;
+}
+
+.c-ammap .c-ammap-map .ammapDescriptionWindow .ammapDescriptionText p {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.7142;
+    font-family: "Georgia", "Times New Roman", Times, serif;
+    font-weight: normal;
+}
+
+@media (min-width: 720px) {
+    .c-ammap .c-ammap-map .ammapDescriptionWindow .ammapDescriptionText p {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-ammap .c-ammap-map .ammapDescriptionWindow .ammapDescriptionText p {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+.c-ammap .c-ammap-map .ammapDescriptionWindow .ammapDescriptionText p:last-child {
+    margin-bottom: 0;
+}
+
+.c-ammap .c-ammap-map .amChartsLegend {
+    background-color: #fff;
+    box-shadow: 0 1.25px 4px 1.5px rgba(25, 25, 25, 0.1), 0 1px 5.5px 3px rgba(25, 25, 25, 0.07);
+}
+
+.c-ammap .c-ammap-map .amChartsLegend .amcharts-legend-label {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.7142;
+    font-weight: normal;
+}
+
+@media (min-width: 720px) {
+    .c-ammap .c-ammap-map .amChartsLegend .amcharts-legend-label {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-ammap .c-ammap-map .amChartsLegend .amcharts-legend-label {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+.c-ammap .c-ammap-accordion {
+    display: block;
+}
+
+.globe .c-ammap-map {
+    height: 750px;
+    width: 100%;
+}
+
+@media (min-width: 720px) {
+    .c-ammap .c-ammap-accordion {
+        display: none;
+    }
+    .c-ammap .c-ammap-list,
+    .c-ammap .c-ammap-map {
+        display: block;
+    }
+}

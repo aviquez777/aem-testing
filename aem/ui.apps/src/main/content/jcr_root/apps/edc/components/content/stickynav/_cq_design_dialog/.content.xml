@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Sticky Navigation"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+        margin="{Boolean}false">
+        <granite:data
+            jcr:primaryType="nt:unstructured"
+            dialog-id="dialog-stickynav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <image
+                jcr:primaryType="nt:unstructured"
+                sling:hideResource="{Boolean}true"/>
+            <accessibility
+                jcr:primaryType="nt:unstructured"
+                sling:hideResource="{Boolean}true"/>
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items
+                    jcr:primaryType="nt:unstructured"
+                    sling:hideChildren="[title,linkURL,description,size]">
+                    <fiNavigation
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                        composite="{Boolean}true"
+                        fieldLabel="Financial institutions navigation"
+                        fieldDescription="A maximum character length of 11 is recommended for the Link text.">
+                        <field
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                            name="./items">
+                            <items jcr:primaryType="nt:unstructured">
+                                <fiLinkText
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Link text"                                    
+                                    required="{Boolean}true"
+                                    name="./linktext" />
+                                <fiLinkUrl
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                    fieldDescription="External link url, leave blank for anchor link"
+                                    fieldLabel="Link url"
+                                    multiple="{Boolean}false"
+                                    required="{Boolean}false"
+                                    name="./linkurl"
+                                    rootPath="/content/edc"/>
+                                <fiLinkTarget
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldDescription="For external/internal link write '_blank' or '_self', for anchor write anchor name"
+                                    fieldLabel="Link or Anchor target"
+                                    required="{Boolean}false"
+                                    name="./linktarget"
+                                    validation="field.target"/>
+                            </items>
+                        </field>
+                    </fiNavigation>
+                </items>
+            </column>
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:hideResource="{Boolean}true"/>
+        </items>
+    </content>
+</jcr:root>

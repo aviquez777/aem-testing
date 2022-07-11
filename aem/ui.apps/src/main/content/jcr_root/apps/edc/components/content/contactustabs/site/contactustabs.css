@@ -1,0 +1,164 @@
+.c-contact-us-tabs {
+    box-sizing: border-box;
+    margin-bottom: 48px;
+    margin-top: 48px;
+    overflow: hidden;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.c-contact-us-tabs * {
+    box-sizing: border-box;
+}
+
+.c-contact-us-tabs .title {
+    margin-bottom: 48px;
+    text-align: center;
+}
+
+.c-contact-us-tabs nav {
+    border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+    height: 57px;
+    overflow: hidden;
+}
+
+.c-contact-us-tabs nav .tab-labels-container {
+    height: 100px;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+.c-contact-us-tabs nav ul {
+    display: flex;
+    height: auto;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    white-space: nowrap;
+}
+
+.c-contact-us-tabs nav ul li {
+    float: left;
+}
+
+.c-contact-us-tabs nav ul li a {
+    color: #838383;
+    display: block;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    line-height: 1.375rem;
+    padding: 16px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.c-contact-us-tabs nav ul li a.selected {
+    color: #4386ac;
+    border-bottom: 2px solid #4386ac;
+    height: 100%;
+    max-height: 56px;
+}
+
+.c-contact-us-tabs section .tab-panel {
+    display: none;
+    color: #333;
+    margin-top: -165px;
+    padding-top: 165px;
+}
+
+.c-contact-us-tabs section .tab-panel.show {
+    display: block;
+}
+
+.c-contact-us-tabs .region {
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+    padding-bottom: 48px;
+}
+
+@media (min-width: 720px) {
+    .c-contact-us-tabs .region {
+        width: 100%;
+        float: left;
+    }
+}
+
+.c-contact-us-tabs .region .region-title {
+    color: #4386ac;
+    margin-top: 48px;
+}
+
+.c-contact-us-tabs .region .office {
+    margin-top: 32px;
+}
+
+.c-contact-us-tabs .region .office .office-address {
+    white-space: pre-line;
+}
+
+.c-contact-us-tabs .region .office .office-address > p {
+    line-height: 1.6875rem;
+    margin: 0;
+}
+
+.c-contact-us-tabs .region .office .office-location {
+    margin-top: 0;
+    font-weight: 600;
+}
+
+@media (min-width: 720px) {
+    .c-contact-us-tabs .region .office {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 33.33333333%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-contact-us-tabs .region .office {
+        width: 33.33333333%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-contact-us-tabs .region .office:nth-child(3n + 2) {
+        clear: left;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-contact-us-tabs nav ul {
+        display: block;
+    }
+    .c-contact-us-tabs .region .office {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 25%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 720px) {
+    .c-contact-us-tabs .region .office {
+        width: 25%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-contact-us-tabs .region .office:nth-child(3n + 2) {
+        clear: none;
+    }
+    .c-contact-us-tabs .region .office:nth-child(4n + 2) {
+        clear: left;
+    }
+}

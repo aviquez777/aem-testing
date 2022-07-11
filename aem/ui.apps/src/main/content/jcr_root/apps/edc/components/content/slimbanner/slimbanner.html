@@ -1,0 +1,12 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+
+
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.heroTitle, emptyTextAppend='No Title defined'}"/>
+
+<section class="c-slim-banner full-width ${properties.bottomMargin ? 'bottom-margin' : ''}" data-event-component="" data-event-type="" data-event-name="Slim Banner" data-event-engagement="1" data-event-action="" data-event-level="1">
+    <div class="container">
+        <h3 data-sly-test="${properties.heroOverline}" class="hero-overline">${properties.heroOverline @ context="html"}</h3>
+        <h2 class="hero-title">${properties.heroTitle}</h2>
+    </div>
+</section>

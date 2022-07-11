@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Pull Quote"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+        margin="{Boolean}false">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items
+                    jcr:primaryType="nt:unstructured"
+                    sling:hideChildren="[orderBy,sortOrder]">
+                   <premiumornot
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                        fieldLabel="Quote Type"
+                        fieldDescription="Select between Pull Quote and Excerpt for Premium Teasers quote mode"
+                        name="./premiumornot"
+                        required="{Boolean}false">
+                        <items jcr:primaryType="nt:unstructured">
+                            <pull
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/radio"
+                                checked="true"
+                                selected="{Boolean}true"
+                                text="Pull Quote"
+                                value="pull"/>
+                            <premium
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/radio"
+                                text="Excerpt for Premium Teasers"
+                                value="premium"/>
+                        </items>
+                    </premiumornot>
+                    <quotetext
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textarea"
+                        fieldLabel="Quote *"
+                        fieldDescription="Required Quote Text"
+                        name="./quotetext"
+                        required="{Boolean}true"/>
+                    <quoteby
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Quote by"
+                        fieldDescription="Not used on MEA Contact Profile or Excerpt for Premium Teasers"
+                        name="./quoteby"
+                        required="{Boolean}false"/>
+                    <company
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Company"
+                        fieldDescription="Not used on MEA Contact Profile or Excerpt for Premium Teasers"
+                        name="./company"
+                        required="{Boolean}false"/>
+                    <position
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Position"
+                        fieldDescription="Not used on MEA Contact Profile or Excerpt for Premium Teasers"
+                        name="./position"
+                        required="{Boolean}false"/>
+                    <quotemarks
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                        fieldDescription="Uncheck for MEA Contact Profil not used for Excerpt for Premium Teasers"
+                        defaultChecked="{Boolean}true"
+                        fieldLabel="Quote marks"
+                        ignoreData="{Boolean}false"
+                        name="./quotemarks"
+                        required="{Boolean}false"
+                        text="Quote marks"
+                        uncheckedValue="false"
+                        value="true"/>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

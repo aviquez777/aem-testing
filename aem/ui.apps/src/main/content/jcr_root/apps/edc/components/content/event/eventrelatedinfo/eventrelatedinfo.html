@@ -1,0 +1,31 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.policyReader="com.edc.edcweb.core.models.PolicyReader" />
+<sly data-sly-test.whoAttend="${pageProperties['whoattends']}"/>
+<sly data-sly-test.webinar="${pageProperties['relatedWebinar']}"/>
+<sly data-sly-test.webinarLink="${pageProperties['webinarLink']}"/>
+<sly data-sly-test.webinarLinkTarget="${pageProperties['webinarLinkTarget']}"/>
+<sly data-sly-test.relatedWebinarLabel="${policyReader.labels['relatedWebinarLabel']}"/>
+<sly data-sly-test.whoAttendsLabel="${policyReader.labels['whoAttendsLabel']}"/>
+<sly data-sly-test.relatedWebinarLinkLabel="${policyReader.labels['relatedWebinarLinkLabel']}"/>
+
+<sly data-sly-test.policy="${policyReader.policy}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !webinar && !whoAttend, emptyTextAppend='Properties not defined'}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !policy, emptyTextAppend='No Policy defined'}"/>
+
+<sly data-sly-test ="${whoAttend || webinar}" >
+<section class="c-event-related-info">
+    <div data-sly-test ="${whoAttend}" class="event-audience" role="region" aria-labelledby="EVENTRELATEDINFO-event-audience">
+        <h4 id="EVENTRELATEDINFO-event-audience" class="title">${whoAttendsLabel}</h4>
+        <p>${whoAttend}</p>
+    </div>
+    <div data-sly-test ="${webinar}" class="event-webinar" role="region" aria-labelledby="EVENTRELATEDINFO-event-webinar">
+        <h4 id="EVENTRELATEDINFO-event-webinar" class="title">${relatedWebinarLabel}</h4>
+        <p>${webinar}</p>
+        <sly data-sly-use.linkresolver="${'com.edc.edcweb.core.helpers.LinkExternalizer' @srcPath=webinarLink, scheme=request.scheme}"/>
+        <a data-sly-test ="${webinarLink}" class="cta" href="${linkresolver.LinkWithHtmlExtension}" target="${webinarLinkTarget}">${relatedWebinarLinkLabel}</a>
+    </div>
+</section>
+</sly>
+
+
+

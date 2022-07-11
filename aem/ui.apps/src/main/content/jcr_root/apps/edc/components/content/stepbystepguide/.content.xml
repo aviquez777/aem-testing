@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:description="Component that shows overview of the steps need to begin export journey"
+    jcr:primaryType="cq:Component"
+    jcr:title="Step by step exporting guide"
+    componentGroup="EDC"/>

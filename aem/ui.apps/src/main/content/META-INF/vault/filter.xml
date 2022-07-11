@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/edc"/>
+    <filter root="/apps/sling" />
+<!-- Tags -->
+    <filter root="/content/cq:tags/edc">
+        <exclude pattern="/content/cq:tags/edc/[^/]+(/.*)?"/>
+    </filter>
+<!--  Designs -->
+    <filter root="/apps/edc/settings/wcm/designs/edc"/>
+<!--  force all -edc-data for now -->
+
+<!-- No need to override anymore -->
+<!-- <filter root="/apps/edc/settings/wcm/designs/edc-data"/> -->
+<!-- <filter root="/apps/edc/settings/wcm/designs/edc-data/mmEntryCountryOfOperation" mode="replace"/> -->
+<!-- <filter root="/apps/edc/settings/wcm/designs/edc-data/mmEmpolyees" mode="replace"/> -->
+<!-- <filter root="/apps/edc/settings/wcm/designs/edc-data/mmEntrySector" mode="replace"/>  -->
+<!-- <filter root="/apps/edc/settings/wcm/designs/edc-data/formErrors"/> -->
+<!-- <filter root="/apps/edc/settings/wcm/designs/edc-data/usStates"/> -->
+<!-- <filter root="/apps/edc/settings/wcm/designs/edc-data/province"/> -->
+<!-- <filter root="/apps/edc/settings/wcm/designs/edc-data/preferredContact"/> -->
+<!-- <filter root="/apps/edc/settings/wcm/designs/edc-data/euCountries"/> -->
+<!-- <filter root="/apps/edc/settings/wcm/designs/edc-data/countries"/> -->
+<!-- US 238154  merge mode as we do not want to override configured questions -->
+     <filter root="/apps/edc/settings/wcm/designs/edc-data/cglgfQuestionType" mode="merge"/>
+     <filter root="/conf/edc/settings/wcm/policies/edc/components/content/gatedleadgenform" mode="merge"/>
+
+<!--  Email templates -->
+    <filter root="/apps/edc/settings/notification/email/edc"/>
+<!-- Workflows -->
+    <filter root="/apps/settings/workflow/notification/email/edc"/>
+    <filter root="/apps/settings/workflow/models/dam/update_asset"/>
+    <filter root="/apps/settings/workflow/models/StraightPublish"/>
+    <filter root="/apps/settings/workflow/launcher/config/edc_countryinfo_update_fr"/>
+    <filter root="/apps/settings/workflow/launcher/config/edc_countryinfo_update_en"/>
+<!-- Self Publishing -->
+    <filter root="/var/workflow/models/edc-self-publishing"/>
+    <filter root="/conf/global/settings/workflow/models/edc-self-publishing"/>
+    <filter root="/conf/global/settings/workflow/notification/email/edc"/>
+<!-- Unchanged for Task 174245 -->
+    <filter root="/conf/global/settings/dam/adminui-extension/metadataschema/edc-premium-schema"/>
+    <filter root="/conf/global/settings/dam/adminui-extension/metadataschema/edc-pdf-seo-exclude-schema"/>
+    <filter root="/conf/edc/settings/wcm/template-types"/>
+</workspaceFilter>

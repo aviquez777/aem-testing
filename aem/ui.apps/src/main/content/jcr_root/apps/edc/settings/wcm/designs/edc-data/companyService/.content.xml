@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <option1
+        jcr:primaryType="nt:unstructured"
+        enName="IT Consulting/Web"
+        frName="Informatique"
+        value="IT Consulting/Web"/>
+    <option2
+        jcr:primaryType="nt:unstructured"
+        enName="Marketing/Sales"
+        frName="Marketing/vente"
+        value="Marketing/Sales"/>
+    <option3
+        jcr:primaryType="nt:unstructured"
+        enName="HR Consultation/Recruitment"
+        frName="Ressources Humaines"
+        value="HR Consultation/Recruitment"/>
+    <option4
+        jcr:primaryType="nt:unstructured"
+        enName="Accounting/Tax Advisory"
+        frName="Comptabilité/taxes"
+        value="Accounting/Tax Advisory"/>
+    <option5
+        jcr:primaryType="nt:unstructured"
+        enName="Legal Advisory"
+        frName="Juridique"
+        value="Legal Advisory"/>
+    <option6
+        jcr:primaryType="nt:unstructured"
+        enName="Engineering"
+        frName="Ingénierie"
+        value="Engineering"/>
+    <option7
+        jcr:primaryType="nt:unstructured"
+        enName="Research &amp; Development"
+        frName="Recherche &amp; Développement"
+        value="Research &amp; Development"/>
+    <option8
+        jcr:primaryType="nt:unstructured"
+        enName="Other/None"
+        frName="Autre/aucun"
+        value="Other/None"/>
+</jcr:root>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Step 2 (International flow)"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <idtypeinttitle
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Identifier type fields International main label"
+                name="./idtypeinttitle"
+                required="{Boolean}true"/>
+            <idtypebinlabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Identifier type Business Identification Number field label"
+                name="./idtypebinlabel"
+                required="{Boolean}true"/>
+            <idtypebinplaceholder
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Identifier type Business Identification Number field placeholder"
+                name="./idtypebinplaceholder"
+                required="{Boolean}false"/>
+            <idtypevatlabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Identifier type Value Added Tax Number field label"
+                name="./idtypevatlabel"
+                required="{Boolean}true"/>
+            <idtypevatplaceholder
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Identifier type Value Added Tax Number field placeholder"
+                name="./idtypevatplaceholder"
+                required="{Boolean}false"/>
+            <idtypeninlabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Identifier type National Identification Number field label"
+                name="./idtypeninlabel"
+                required="{Boolean}true"/> 
+            <idtypeninplaceholder
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Identifier type National Identification Number field placeholder"
+                name="./idtypeninplaceholder"
+                required="{Boolean}false"/> 
+        </items>
+    </content>
+</jcr:root>

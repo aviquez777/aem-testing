@@ -1,0 +1,172 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.countrysearch="com.edc.edcweb.core.models.CountrySearch"/>
+<sly data-sly-test.countriesdata="${countrysearch.CountriesData}"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !countrysearch.PropertiesMap['filtertitle']}"/>
+
+<sly data-sly-test="${countrysearch.PropertiesMap['filtertitle'] }">
+    <section class="c-filter-countries" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'Country Search'}" data-event-type="link"  data-event-engagement="1">
+        <section class="country-filters" role="search">
+            <div class="close-filters">
+                <span class="clear-text"><a href="#">${countrysearch.PropertiesMap['clearallmsg']}</a></span>
+                <span class="close-button"></span>
+            </div>
+            <h2>${countrysearch.PropertiesMap['filtertitle']}</h2>
+            <section class="country-filter">
+                <div class="filter-title">
+                    <h3>${countrysearch.PropertiesMap['regiontitle']}</h3>
+                </div>
+                <ul data-sly-list.key="${countrysearch.MapRegions}">
+                    <li class="region">
+                        <input id="region-filter-${keyList.index}" type="checkbox" class="filter-criteria" data-filter="region" data-value="${countrysearch.MapRegions[key]}" value="${key}">
+                        <label for="region-filter-${keyList.index}">${countrysearch.MapRegions[key]}</label>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="country-filter">
+                <div class="filter-title">
+                    <h3>${countrysearch.PropertiesMap['positiontitle']}</h3>
+                    <!-- /* Help popup window*/ -->
+                    <sly data-sly-test.posLinkText = "${countrysearch.PropertiesMap['posHelpLinkText']}" />
+                    <button type="button" class="edc-btn-unstyled modal-trigger anchor" data-modal-to-trigger="modal-countryfilter-pos">
+                        ${posLinkText}
+                    </button>
+                    <div class="c-modal modal-example" role="dialog" aria-modal="true">
+                        <div class="modal-dialog position-rating" id="modal-countryfilter-pos" data-sly-test=${posLinkText}>
+                            <div class="modal-shade"></div>
+                            <div class="modal-container">
+                                <button class="edc-btn-icon modal-close" aria-label="${countrysearch.PropertiesMap['exitText']}">
+                                    <span></span>
+                                </button>
+                                <div class="modal-content" role="region" aria-labelledby="modal-countryfilter-pos-label" aria-describedby="modal-countryfilter-pos-desc">
+                                    <div class="modal-title">
+                                        <h3 id="modal-countryfilter-pos-label" class="title" data-sly-test.posHelpTitle="${countrysearch.PropertiesMap['positionHelpTitle']}">
+                                            ${posHelpTitle}
+                                        </h3>
+                                    </div>
+                                    <div id="modal-countryfilter-pos-desc" class="modal-richtext" data-sly-test.posHelpText="${countrysearch.PropertiesMap['positionHelpText']}">
+                                        ${posHelpText  @ context='html'}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <ul data-sly-list.key="${countrysearch.MapPositions}">
+                    <li class="position" >
+                        <input id="position-filter-${keyList.index}" type="checkbox" class="filter-criteria" data-filter="position" data-value="${countrysearch.MapPositions[key]}" value="${key}">
+                        <label for="position-filter-${keyList.index}">${countrysearch.MapPositions[key]}</label>
+                    </li>
+                </ul>
+            </section>
+            <!--/* <section class="country-filter">
+                <div class="filter-title">
+                    <h3>${countrysearch.PropertiesMap['ratingtitle']}</h3> -->
+
+                    <!-- /* Help popup window*/ -->
+                    <!-- <sly data-sly-test.cccLinkText = "${countrysearch.PropertiesMap['cccHelpLinkText']}" />
+                    <button type="button" class="edc-btn-unstyled modal-trigger anchor" data-modal-to-trigger="modal-countryfilter-ccc">
+                        ${cccLinkText}
+                    </button>
+                    <div class="c-modal modal-example" role="dialog" aria-modal="true">
+                        <div class="modal-dialog position-rating" id="modal-countryfilter-ccc" data-sly-test=${cccLinkText}>
+                            <div class="modal-shade"></div>
+                            <div class="modal-container">
+                                <button class="edc-btn-icon modal-close" aria-label="${countrysearch.PropertiesMap['exitText']}">
+                                    <span></span>
+                                </button>
+                                <div class="modal-content" role="region" aria-labelledby="modal-countryfilter-ccc-label" aria-describedby="modal-countryfilter-ccc-desc">
+                                    <div class="modal-title">
+                                        <h3 id="modal-countryfilter-ccc-label" class="title" data-sly-test.cccHelpTitle="${countrysearch.PropertiesMap['cccHelpTitle']}">
+                                            ${cccHelpTitle}
+                                        </h3>
+                                    </div>
+                                    <div id="modal-countryfilter-ccc-desc" class="modal-richtext" data-sly-test.cccHelpText="${countrysearch.PropertiesMap['cccHelpText']}">
+                                        ${cccHelpText  @ context='html'}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <ul data-sly-list.key="${countrysearch.MapRatings}">
+                    <li class="rating" >
+                        <input id="rating-filter-${keyList.index}" type="checkbox" class="filter-criteria" data-filter="rating" data-value="${countrysearch.MapRatings[key]}" value="${key}">
+                        <label for="rating-filter-${keyList.index}">${countrysearch.MapRatings[key]}</label>
+                    </li>
+                </ul>
+            </section> */-->
+            <section class="country-filter">
+                <div class="filter-title">
+                    <h3>${countrysearch.PropertiesMap['ftatitle']}</h3>
+
+                    <!-- /* Help popup window*/ -->
+                    <sly data-sly-test.ftaLinkText = "${countrysearch.PropertiesMap['ftaHelpLinkText']}" />
+                    <button type="button" class="edc-btn-unstyled modal-trigger anchor" data-modal-to-trigger="modal-countryfilter-fta">
+                        ${ftaLinkText}
+                    </button>
+                    <div class="c-modal modal-example" role="dialog" aria-modal="true">
+                        <div class="modal-dialog position-rating" id="modal-countryfilter-fta" data-sly-test=${ftaLinkText}>
+                            <div class="modal-shade"></div>
+                            <div class="modal-container">
+                                <button class="edc-btn-icon modal-close" aria-label="${countrysearch.PropertiesMap['exitText']}">
+                                    <span></span>
+                                </button>
+                                <div class="modal-content" role="region" aria-labelledby="modal-countryfilter-fta-label" aria-describedby="modal-countryfilter-fta-desc">
+                                    <div class="modal-title">
+                                        <h3 id="modal-countryfilter-fta-label" class="title" data-sly-test.ftaHelpTitle="${countrysearch.PropertiesMap['ftaHelpTitle']}">
+                                            ${ftaHelpTitle}
+                                        </h3>
+                                    </div>
+                                    <div id="modal-countryfilter-fta-desc" class="modal-richtext" data-sly-test.ftaHelpText="${countrysearch.PropertiesMap['ftaHelpText']}">
+                                        ${ftaHelpText  @ context='html'}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <sly data-sly-test="${countrysearch.MapFTA}">
+                    <ul data-sly-list.key="${countrysearch.MapFTA}">
+                        <li class="fta" >
+                            <input id="fta-filter-${keyList.index}" type="checkbox" class="filter-criteria" data-filter="fta" data-value="${countrysearch.MapFTA[key]}" value="${key}">
+                            <label for="fta-filter-${keyList.index}">${countrysearch.MapFTA[key]}</label>
+                        </li>
+                    </ul>
+                </sly>
+            </section>
+        </section>
+        <section class="filter-data">
+            <button class="show-filters edc-tertiary-btn"><span>${countrysearch.PropertiesMap['filtermsg']}</span></button>
+            <div class="filters hide">
+                <ul>
+                    <li class="clear"><span class="clear-tag"><a href="#">${countrysearch.PropertiesMap['clearallmsg']}</a></span></li>
+                </ul>
+            </div>
+        </section>
+        <section class="country-info" aria-live="polite" role="region" aria-label="${'Country' @ i18n} ${'Search Results' @ i18n}">
+            <section class="country-data">
+                <section class="country-list">
+                    <ul data-sly-list.item="${countriesdata}">
+                        <sly data-sly-test="${item.IsLetter}">
+                            <li class="country-initial" data-initial="${item.LetterName}">
+                                <h2 class="country-name">${item.LetterName}</h2>
+                                <p class="filter-column-title position-title">${countrysearch.PropertiesMap['positioncolname']}</p>
+                                <!--/* <p class="filter-column-title rating-title">${countrysearch.PropertiesMap['ratingcolname']}</p> */-->
+                            </li>
+                        </sly>
+                        <sly data-sly-test="${!item.IsLetter}">
+                            <li class="country" data-region="${item.Region}" data-rating="${item.Rating}" data-position="${item.Position}" data-fta="${item.FTA}" >
+                                <h3 class="country-name"><a href="${item.CountryPageUrl}" target="${countrysearch.PropertiesMap['linktarget']}">${item.CountryName}</a></h3>
+                                <p class="edc-position ${item.position}"><label class="mobile-title">${countrysearch.PropertiesMap['positioncolname']}</label> <span class="mobile-value">${item.PositionLabel}</span></p>
+                                <!--/* <p class="risk-rating ${item.rating}"><label class="mobile-title">${countrysearch.PropertiesMap['ratingcolname']}</label> <span class="mobile-value">${item.RatingLabel}</span></p> */-->
+                            </li>
+                        </sly>
+                    </ul>
+                    <div class="no-match hide"><span>${countrysearch.PropertiesMap['nodatamsg']}</span></div>
+                </section>
+            </section>
+        </section>
+    </section>
+</sly>

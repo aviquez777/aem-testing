@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Yes/No Question"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container"
+        granite:class="cq-dialog-yesno">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <general
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="General Configuration"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <showFollowUpQuestion
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                        defaultChecked="{Boolean}false"
+                                        fieldLabel="Show follow up questions"
+                                        ignoreData="{Boolean}false"
+                                        name="./showFollowUpQuestion"
+                                        required="{Boolean}false"
+                                        text="Show follow up questions"
+                                        uncheckedValue="no"
+                                        value="yes"
+                                        class="cq-dialog-checkbox-showhide" />
+                                    <question
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Question"
+                                        fieldDescription="Text to display a question to the user"
+                                        name="./question"
+                                        required="{Boolean}true"/>
+                                    <trackvalue
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Analitycs tracking value"
+                                        name="./trackvalue"/>
+                                    <optionone
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Option 1"
+                                        fieldDescription="Text for the first option for the user to answer the question"
+                                        name="./optionone"
+                                        required="{Boolean}true"/>
+                                    <optiontwo
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Option 2"
+                                        fieldDescription="Text for the second option for the user to answer the question"
+                                        name="./optiontwo"
+                                        required="{Boolean}true"/>
+                                    <confirmation
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                        fieldLabel="Confirmation message"
+                                        name="./confirmation"
+                                        validation="yesnoquestion.field.uncheckedRTE"
+                                        useFixedInlineToolbar="{Boolean}true"/>
+                                </items>
+                            </column>
+                        </items>
+                    </general>
+                    <followUp
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Follow Up"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <submitText
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Submit button text *"
+                                        name="./submitText"
+                                        validation="yesnoquestion.field.checked"/>
+                                    <headingWell
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/text"
+                                        text="Option 'Other'"/>
+                                    <wellOther
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/container"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <otherText
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Text (this is displayed to the user) *"
+                                                name="./otherText"
+                                                validation="yesnoquestion.field.checked"/>
+                                            <otherTextValue
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Value (this is for the email data)"
+                                                fieldDescription="If not authored, the display text is used"
+                                                name="./otherTextValue"/>
+                                            <otherPlaceholder
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Placeholder *"
+                                                name="./otherPlaceholder"
+                                                validation="yesnoquestion.field.checked"/>
+                                        </items>
+                                    </wellOther>
+                                    <headingSubmissionWell
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/text"
+                                        text="Submission messages"/>
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <confirmation
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                                fieldLabel="Confirmation "
+                                                name="./submitConfirmation"
+                                                validation="yesnoquestion.field.checkedRTE"
+                                                useFixedInlineToolbar="{Boolean}true"/>
+                                            <submitError
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                                fieldLabel="Error"
+                                                name="./submitError"
+                                                validation="yesnoquestion.field.checkedRTE"
+                                                useFixedInlineToolbar="{Boolean}true"/>
+                                        </items>
+                                    </well>
+                                </items>
+                            </column>
+                        </items>
+                    </followUp>
+                    <feedbackOne
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Feedback option one"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <questionOne
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Question *"
+                                        name="./questionOne"
+                                        validation="yesnoquestion.field.checked"/>
+                                    <multiOne
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                        composite="{Boolean}true"
+                                        fieldLabel="Options"
+                                        name="./multiOne">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                            name="./optionOneItems">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <column
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <bulletitem
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Option text (this is displayed to the user) *"
+                                                            name="./optionOneItem"
+                                                            validation="yesnoquestion.field.checked"/>
+                                                        <bulletitemValue
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Option value (this is for the email data)"
+                                                            fieldDescription="If not authored, the option text is used"
+                                                            name="./optionOneItemValue"/>
+                                                    </items>
+                                                </column>
+                                            </items>
+                                        </field>
+                                    </multiOne>
+                                </items>
+                            </column>
+                        </items>
+                    </feedbackOne>
+                    <feedbackTwo
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Feedback option two"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <questionTwo
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Question *"
+                                        name="./questionTwo"
+                                        validation="yesnoquestion.field.checked"/>
+                                    <multiTwo
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                        composite="{Boolean}true"
+                                        fieldLabel="Options"
+                                        name="./multiTwo">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                            name="./optionTwoItems">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <column
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <bulletitem
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Option text (this is displayed to the user) *"
+                                                            name="./optionTwoItem"
+                                                            validation="yesnoquestion.field.checked"/>
+                                                        <bulletitemValue
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Option value (this is for the email data)"
+                                                            fieldDescription="If not authored, the option text is used"
+                                                            name="./optionTwoItemValue"/>
+                                                    </items>
+                                                </column>
+                                            </items>
+                                        </field>
+                                    </multiTwo>
+                                </items>
+                            </column>
+                        </items>
+                    </feedbackTwo>
+                    <email
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Email settings"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <email
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Recipient email address *"
+                                        fieldDescription="For multiple recipients add email addresses separated by commas"
+                                        name="./email"
+                                        validation="yesnoquestion.field.checked"/>
+                                    <subject
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Subject *"
+                                        name="./subject"
+                                        validation="yesnoquestion.field.checked"/>
+                                    <headingSecondaryMessage
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/text"
+                                        class="coral-Form-fieldlabel"
+                                        text="Email body"/>
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <emailTitle
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Title *"
+                                                name="./emailTitle"
+                                                validation="yesnoquestion.field.checked"/>
+                                            <emailDescription
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                                fieldLabel="Text *"
+                                                name="./emailDescription"
+                                                useFixedInlineToolbar="{Boolean}true"
+                                                validation="yesnoquestion.field.checkedRTE">
+                                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                                    <format
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="*"/>
+                                                    <links
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="[modifylink,unlink]"/>
+                                                </rtePlugins>
+                                                <uiSettings jcr:primaryType="nt:unstructured">
+                                                    <cui jcr:primaryType="nt:unstructured">
+                                                        <inline
+                                                            jcr:primaryType="nt:unstructured"
+                                                            toolbar="[format#bold,format#italic,format#underline,#lists,links#modifylink,links#unlink,links#anchor]">
+                                                        </inline>
+                                                    </cui>
+                                                </uiSettings>
+                                            </emailDescription>
+                                            <emailRequestDateLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Date of Request Label *"
+                                                name="./emailRequestDateLabel"
+                                                validation="yesnoquestion.field.checked"/>
+                                            <emailLanguageLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Language Label *"
+                                                name="./emailLanguageLabel"
+                                                validation="yesnoquestion.field.checked"/>
+                                            <emailFullNameLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Full Name Label *"
+                                                name="./emailFullNameLabel"
+                                                validation="yesnoquestion.field.checked"/>
+                                            <emailEmailLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Email Label *"
+                                                name="./emailEmailLabel"
+                                                validation="yesnoquestion.field.checked"/>
+                                            <emailCompanyNameLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Company Label *"
+                                                name="./emailCompanyNameLabel"
+                                                validation="yesnoquestion.field.checked"/>
+                                            <emailIndustryLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Industry Label *"
+                                                name="./emailIndustryLabel"
+                                                validation="yesnoquestion.field.checked"/>
+                                            <emailMarketsLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Markets Label *"
+                                                name="./emailMarketsLabel"
+                                                validation="yesnoquestion.field.checked"/>
+                                            <emailPainPointLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Pain point Label *"
+                                                name="./emailPainPointLabel"
+                                                validation="yesnoquestion.field.checked"/>
+                                            <emailQuestionLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="EHH Question Label *"
+                                                name="./emailQuestionLabel"
+                                                validation="yesnoquestion.field.checked"/>
+                                        </items>
+                                    </well>
+                                </items>
+                            </column>
+                        </items>
+                    </email>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

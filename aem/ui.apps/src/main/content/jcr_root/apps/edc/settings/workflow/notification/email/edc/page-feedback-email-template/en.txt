@@ -1,0 +1,15 @@
+subject=${subject}
+
+<html>
+<head>
+<title>${subject}</title>
+</head>
+<body>
+<p>Message left in comment box by user from the previous step:</p>
+<p>${message}</p>
+<p>User: ${user}</p>
+<p>Instructions/CTA: Please modify page according to annotations left on page and/or comments left by the reviewer in the comment box.</p>
+<p>URL: ${pageUrl}</p>
+<p>This is an automatically generated message. Please do not reply.</p>
+</body>
+</html>

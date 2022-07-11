@@ -1,0 +1,102 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"/>
+<sly data-sly-use.dropdownTemplates="${'/apps/edc/components/common/dropdown.html'}" />
+<sly data-sly-use.messages="com.edc.edcweb.core.models.FormCommonMessages"/>
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+
+<div data-sly-test="${properties.title}" class="c-calculator-insurance full-width" id="c-calculator-insurance-${uuid}" data-uuid="${uuid}" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'Calculator Insurance'}" data-event-action="main body" data-max-limit="${properties.maxsalesvalue ? properties.maxsalesvalue : '500000'}">
+    <div class="container">
+        <div class="calculator">
+            <section role="complementary">
+                <h2 class="title">${properties.title}</h2>
+                <p class="sub-head" data-sly-test.subhead="${properties.description}">${subhead}</p>
+                <div class="amount row">
+                    <div class="field">
+                        <label for="calculator-amount-1-${uuid}">${properties.totalsalelabel}</label>
+                        <div class="input-container">
+                            <input type="text" id="calculator-amount-1-${uuid}" placeholder="${properties.totalsaleplaceholder}" aria-label="${properties.totalsaleplaceholder}" class="calculator-amount-1 numeric" inputMode="numeric" maxLength="9"/>
+                            <div class="symbol"></div>
+                        </div>
+                        <div id="amount-1-errors-${uuid}" class="error error-message">
+                            <span class="zero">${properties.erroramount}</span>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="calculator-amount-2-${uuid}">${properties.totalprofitlabel}</label>
+                        <div class="input-container">
+                            <input type="text" id="calculator-amount-2-${uuid}" placeholder="${properties.totalprofitplaceholder}" aria-label="${properties.totalprofitplaceholder}" class="calculator-amount-2 numeric" inputMode="numeric" maxLength="9"/>
+                            <div class="symbol"></div>
+                        </div>
+                        <div id="amount-2-errors-${uuid}" class="error error-message">
+                            <span class="zero">${properties.erroramount}</span>
+                            <span class="invalid">${properties.errorcomparative}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="field duration">
+                        <sly data-sly-use.multifield="${'com.edc.edcweb.core.helpers.MultifieldReaderHelper' @ multifield='coverageitems'}"/>
+                        <sly data-sly-test.coveragedurationname="${'coverage-duration-{0}' @ format=[uuid]}"/>
+                        <sly data-sly-call="${dropdownTemplates.dropdown @ name=coveragedurationname, label=properties.coveragelabel,
+                            placeholder=properties.coverageplaceholder, required=true, nourl=true, optionvalue='coveragevalue', optiontext='coveragetext',
+                            requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=multifield.fields}" />
+                    </div>
+                    <div class="field payment">
+                        <sly data-sly-use.multifield="${'com.edc.edcweb.core.helpers.MultifieldReaderHelper' @ multifield='customerpayitems'}"/>
+                        <sly data-sly-test.coveragepayname="${'coverage-payment-time-{0}' @ format=[uuid]}"/>
+                        <sly data-sly-call="${dropdownTemplates.dropdown @ name=coveragepayname, label=properties.customerpaylabel,
+                            placeholder=properties.customerpayplaceholder, required=true, nourl=true, optionvalue='customerpayvalue', optiontext='customerpaytext',
+                            requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=multifield.fields}" />
+                    </div>
+                </div>
+                <div id="coverage-error-${uuid}" class="notifications amount invalid">
+                    ${properties.notifications @ context='html'}
+                </div>
+                <div id="coverage-success-${uuid}" class="notifications valid">
+                    <section class="table table-small">
+                        <div class="border-table table-container table-small">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>${properties.titlecolumn1}</th>
+                                        <th>${properties.titlecolumn2}</th>
+                                        <th>${properties.titlecolumn3}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>${properties.labelrow1}</td>
+                                        <td class="sales-wo"></td>
+                                        <td class="sales-with"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>${properties.labelrow2}</td>
+                                        <td class="profit-wo"></td>
+                                        <td class="profit-with"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>${properties.labelrow3}</td>
+                                        <td></td>
+                                        <td class="insurance-cost"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>${properties.labelrow4}</td>
+                                        <td></td>
+                                        <td class="insurance-recovery"></td>
+                                    </tr>
+                                    <tr class="insurance-results">
+                                        <td>${properties.labelrow5}</td>
+                                        <td class="net-wo neg"></td>
+                                        <td class="net-with pos"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

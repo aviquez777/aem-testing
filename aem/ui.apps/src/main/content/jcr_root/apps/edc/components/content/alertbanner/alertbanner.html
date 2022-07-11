@@ -1,0 +1,24 @@
+<sly data-sly-use.model="com.edc.edcweb.core.models.PolicyReader" />
+<sly data-sly-test.policyProps="${model.labels}"/>
+
+<sly data-sly-test="${!policyProps.hideBanner}"> 
+    <sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+    <sly data-sly-test.bannerColor="${properties.bannerColor ? properties.bannerColor : policyProps.bannerColor}"/>
+    <sly data-sly-test.iconType="${properties.iconType ? properties.iconType : policyProps.iconType}"/>
+    <sly data-sly-test.bodyText="${properties.bodyText ? properties.bodyText : policyProps.bodyText}"/>
+    <sly data-sly-test.bannerLink="${properties.bannerLink ? properties.bannerLink : policyProps.bannerLink}"/>
+    <sly data-sly-call="${templates.placeholder @ isEmpty = !bodyText}"/>
+
+    <sly data-sly-test="${bodyText}">
+        <sly data-sly-test="${bannerLink}">
+            <a data-sly-use.urlBannerAlert="${'com.edc.edcweb.core.models.PageModelHelper' @ path = bannerLink}" href="${urlBannerAlert.url}" class="${'c-alert-banner full-width {0}' @ format=[bannerColor]}" data-event-component="Alert Banner" data-event-type="Alert Banner" data-event-name=${bannerColor} data-event-engagement="1" data-event-action="Alert Banner" data-event-level="1">
+                <p class="container ${iconType}">${bodyText}</p>
+            </a>
+        </sly>
+        <sly data-sly-test="${!bannerLink}">
+            <div class="c-alert-banner full-width ${bannerColor}" data-event-component="Alert Banner" data-event-type="Alert Banner" data-event-name=${bannerColor} data-event-engagement="1" data-event-action="Alert Banner" data-event-level="1">
+                <p class="container ${iconType}">${bodyText}</p>
+            </div>
+        </sly>
+    </sly>
+</sly>

@@ -1,0 +1,144 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.model="com.edc.edcweb.core.models.PolicyReader" />
+<sly data-sly-test.policy="${model.policy}"/>
+<sly data-sly-use.apsg="com.edc.edcweb.core.models.APSGForm"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !policy, emptyTextAppend='No Labels defined'}"/>
+<sly data-sly-test.labels="${model.labels}"/>
+<sly data-sly-use.formsTemplates="${'/apps/edc/components/common/forms.html'}"/>
+<sly data-sly-use.dropdownTemplates="${'/apps/edc/components/common/dropdown.html'}" />
+<sly data-sly-use.buttonTemplate="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<!--/* inlclide lib to handle csrf token for us*/-->
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html" data-sly-test.clientlibCategories="granite.csrf.standalone" data-sly-call="${clientLib.js @ categories=clientlibCategories}" />
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+
+<form data-sly-test="${policy}" method="post" enctype="multipart/form-data" name="${apsg.eloquaFormName}" id="${apsg.eloquaFormID}" class="c-apsg-form elq-form" action="/bin/apsgFormServlet" data-lang="${apsg.languageAbbreviation}" novalidate data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'APSG form'}" data-event-type="form" data-event-name="form submit - apsg" data-event-action="main body" data-event-engagement="3" data-event-level="primary">
+    <sly data-sly-use.messages="com.edc.edcweb.core.models.FormCommonMessages"/>
+    <sly data-sly-use.ds="${'com.edc.edcweb.core.models.FormCommonObjects' @ path ='/apps/edc/settings/wcm/designs/edc-data/apsgFormBanks'}"/>
+    <sly data-sly-test.banks="${ds.optionsFromDataSourcePath}" />
+    <sly data-sly-call="${formsTemplates.formhiddenfields @ elqFormName = apsg.eloquaFormName, lang = apsg.language, formID = apsg.eloquaFormID}"/>
+    <sly data-sly-use.dropdownTemplates="${'/apps/edc/components/common/dropdown.html'}" />
+    <input type="hidden" name="resourcePath" class="form-control" value="${currentPage.getPath}" />
+    <input type="hidden" name="_charset_" id="_charset_" class="form-control" data-no-url="true" value="UTF-8" />
+    
+    <div class="content">
+        <h2 class="title">${labels['formTitle']}</h2>
+        ${labels['formDescription'] @ context='html'}
+        <div class="form-row bank-section">
+            <div class="bank">
+                <sly data-sly-call="${dropdownTemplates.dropdown @ name = 'bank', uuid = uuid, label = labels['banklabel'],
+                    placeholder = labels['selectYourBank'], required= true, nourl = true,
+                    requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format,
+                    options=banks}" />
+            </div>
+            <div class="other-bank">
+                <input class="form-control" type="text" name="otherBank" id="otherBank-${uuid}" aria-label="${labels['otherbanklabel']}" />
+                <span class="error" data-req-message="${messages.formErrorMessages.required}" data-cap-message="${messages.formErrorMessages.firstCapitalized}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="firstName-${uuid}">${labels['firstNameLabel']}</label>              
+            <input class="form-control" type="text" name="firstName" id="firstName-${uuid}" required data-no-url="true" validation-rule="name" />
+            <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}" data-no-url-message="${messages.messages.formErrorMessages.nourl}"></span>
+        </div>
+        <div class="form-group">
+            <label for="lastName-${uuid}">${labels['lastNameLabel']}</label>
+            <input class="form-control" type="text" name="lastName" id="lastName-${uuid}" required data-no-url="true" validation-rule="name" />
+            <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}" data-no-url-message="${messages.formErrorMessages.nourl}"></span>
+        </div>
+        <div class="form-group">
+            <label for="emailAddress-${uuid}">${labels['emailAddressLabel']}</label>
+            <input type="email" class="form-control" name="emailAddress" id="emailAddress-${uuid}" required />
+            <span class="error" data-req-message="${messages.formErrorMessages.required}" data-email-message="${messages.formErrorMessages.email}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}" data-no-url-message="${messages.formErrorMessages.nourl}"></span>
+        </div>
+        <div class="form-group">
+            <label for="customerName-${uuid}">${labels['customerNameLabel']}</label>
+            <input type="text" class="form-control" name="customerName" id="customerName-${uuid}" data-no-url="true" capitalize="true" required validation-rule="none" />
+            <span class="error" data-req-message="${messages.formErrorMessages.required}" data-cap-message="${messages.formErrorMessages.firstCapitalized}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}" data-no-url-message="${messages.formErrorMessages.nourl}"></span>
+        </div>
+        <div class="form-group">
+            <label for="accountPSGnumber-${uuid}">${labels['accountPsgNumberLabel']}</label>
+            <input type="text" class="form-control" name="accountPSGnumber" id="accountPSGnumber-${uuid}" data-no-url="true" required validation-rule="none" />
+            <span class="error" data-req-message="${messages.formErrorMessages.required}" data-tel-message="${messages.formErrorMessages.phone}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}" data-no-url-message="${messages.formErrorMessages.nourl}"></span>
+        </div>
+        <div class="form-group">
+            <label id="requestforCover-${uuid}">${labels['requestingCoverLabel']}</label>
+            <div class="form-row radio-group" role="radiogroup" aria-labelledby="requestforCover-${uuid}">
+                <div class="radio-option">
+                    <input type="radio" class="form-control" id="requestforCoverYes-${uuid}" name="requestforCover" data-show-value="edc-reference-number" value="yes" data-no-url="true" required/>
+                    <label for="requestforCoverYes-${uuid}">${labels['requestingCoverYesLabel']}</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" class="form-control" id="requestforCoverNo-${uuid}" name="requestforCover" data-show-value="edc-reference-number" value="no" checked data-no-url="true" required/>
+                    <label for="requestforCoverNo-${uuid}">${labels['requestingCoverNoLabel']}</label>
+                </div>
+            </div>
+            <span class="error" data-req-message="${messages.formErrorMessages.required}"></span>
+        </div>
+        <div class="form-group edc-reference-number">
+            <label for="edcReferenceNumber-${uuid}">${labels['edcRefNumber']}</label>
+            <input type="text" class="form-control" name="edcReferenceNumber" id="edcReferenceNumber-${uuid}" placeholder="PSG-05-0XXXXXE-000" data-no-url="true" validation-rule="none"/>
+            <span class="error" data-req-message="${messages.formErrorMessages.required}" data-no-url-message="${messages.formErrorMessages.nourl}"></span>
+        </div>
+        <div class="form-group">
+            <sly data-sly-use.fileUploadTemplate="${'/apps/edc/components/common/fileupload.html'}" />
+            <sly data-sly-call="${fileUploadTemplate.fileUpload @ name='BankInstrument', 
+                title=labels['uploadTitle'],
+                text=labels['uploadDescription'],
+                btnText=labels['uploadCtaButton'],
+                filesQty=labels['filesQuantityLimit'],
+                filesQuantityLimitTxt=labels['filesQuantityLimitTxt'],
+                fileSizeLimit=labels['fileSizeLimit'],
+                fileSizeLimitUpToTxt=labels['uploadMaxFileSize'],
+                fileSizeLimitTotalTxt=labels['fileSizeLimitTotalTxt'], 
+                formErrorMessages=messages.formErrorMessages}"/>
+        </div>
+        <div class="form-group">
+            <label for="specialRemarks-${uuid}">${labels['specialRemarksLabel']}</label>
+            <textarea class="form-control" name="specialRemarks" id="specialRemarks-${uuid}" rows="8" validation-rule="none"></textarea>
+        </div>
+
+        <div class="form-group preferredDate">
+            <label for="requestedDueDate-${uuid}">${labels['dueDateLabel']}</label>
+            <div class="input-group input-append">
+                <input type="text" name="requestedDueDate" id="requestedDueDate-${uuid}" placeholder="${'Select a date' @ i18n}" data-no-url="true" validation-rule="none" />
+                <div class="input-group-icon">
+                    <span class="calendar"></span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <sly data-sly-use.miTemplate="${'/apps/edc/components/common/multiinput.html'}" />
+            <sly data-sly-call="${miTemplate.multiInput @ label=labels['addPartyLabel'],
+                name='additionalEmailAddresses',
+                id='anotherParty',
+                uuid=uuid, 
+                maxItems='10',
+                placeholder='example@edc.ca', 
+                formErrorMessages=messages.formErrorMessages,
+                disclaimer=labels['addPartyDisclaimer'],
+                inputType='email'}"/>
+        </div>
+        <div class="form-row checkbox-item">
+            <input type="checkbox" class="receive-newsletters form-control" id="caslConsent-${uuid}" name="caslConsent" value="yes" data-no-url/>
+            <input type="hidden" name="_ie11fix" value=""/>
+            <div class="input-description">
+                <label for="caslConsent-${uuid}">${labels['consentLabel']}</label>
+            </div>
+        </div>
+        <div class="form-row submit-disclaimer">
+            ${labels['caslText']  @ context='html'}
+        </div>
+        <div class="actions">
+            <div data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled', buttontext=labels['submitButton'], btntype='submit'}"  data-sly-unwrap></div>
+       </div>
+        <div class="submit-failed-message hide">
+            <p>${messages.formErrorMessages.elqerror}</p>
+        </div>
+    </div>
+
+    <div data-sly-resource="${'processingScreen' @ resourceType='edc/components/content/processingscreen'}"></div>
+
+
+</form>

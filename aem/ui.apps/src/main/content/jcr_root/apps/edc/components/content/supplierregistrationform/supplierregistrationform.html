@@ -1,0 +1,57 @@
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+<sly data-sly-use.messages="com.edc.edcweb.core.models.FormCommonMessages"/>
+<sly data-sly-test.formErrorMessages="${messages.formErrorMessages}"/>
+<sly data-sly-use.formsTemplates="${'/apps/edc/components/common/forms.html'}" />
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.policyReader="com.edc.edcweb.core.models.PolicyReader" />
+<sly data-sly-test.policy="${policyReader.policy}"/>
+<sly data-sly-call="${template.placeholder @ isEmpty = !policy, emptyTextAppend='No Policy defined'}"/>
+<sly data-sly-test.formLabels="${policyReader.labels}"/>
+<sly data-sly-call="${template.placeholder @ isEmpty = policy && !formLabels, emptyTextAppend='No Labels defined'}"/>
+<sly data-sly-call="${template.placeholder @ isEmpty = formLabels && !properties.step1title, emptyTextAppend='Form not defined'}"/>
+<sly data-sly-call="${template.placeholder @ isEmpty = formLabels && properties.step1title, emptyTextAppend='Form will display properly on published mode'}"/>
+<sly data-sly-use.model="${'com.edc.edcweb.core.models.SupplierRegForm'}"/>
+<sly data-sly-use.ibButtonTemplate="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+
+<div class="c-supplier-registration-form" data-event-component="Supplier Registration Form" data-event-type="button" data-event-action="main body" data-engagement-type="1" data-event-level="1" data-destination-page="#">
+    <sly data-sly-use.fileTypes="${'com.edc.edcweb.core.models.lovapi.FindByCodeLov' @ lovQuery = 'AllowedFileExtensions/findcode/SupplierRegistration'}" data-sly-test.validExtensions="${fileTypes.result.lovName}"/>
+    <sly data-sly-use.helper="${'com.edc.edcweb.core.helpers.HTLHelper' @ toApply=validExtensions, toLowerCase=true, replace='|~, .', prepend='.'}" data-sly-test.acceptedExt="${helper.applied}" />
+
+    <!--/* inlclude lib to handle csrf token for us*/-->
+    <sly data-sly-include="/apps/edc/components/common/csrf-token.html"/>
+    <form method="post" enctype="multipart/form-data"  name="" novalidate="" action="/bin/gps" data-file-uploader-valid-extensions="${validExtensions}">
+        <input type="hidden" name="caslConsent" class="form-control" data-no-url="true" value="yes" />
+        <div class="status">
+            <span class="status-bar"></span>
+        </div>
+        <div class="levels">
+            <sly data-sly-use.template="steps/step1.html"/>
+            <sly data-sly-call="${template.step1 @ uuid = uuid, properties = properties, formLabels = formLabels, formErrorMessages=formErrorMessages}"/>  
+            <sly data-sly-use.template="steps/step2.html"/>
+            <sly data-sly-call="${template.step2 @ uuid = uuid, properties = properties, formLabels = formLabels, formErrorMessages=formErrorMessages, acceptedExt=acceptedExt}"/>
+            <sly data-sly-use.template="steps/step3.html"/>
+            <sly data-sly-call="${template.step3 @ uuid = uuid, properties = properties, formLabels = formLabels, formErrorMessages=formErrorMessages, model=model, acceptedExt=acceptedExt}"/>
+            <div class="form-ctas bottom-ctas show-flex">
+                <div class="privacy-policy">
+                    ${properties.privacypolicy @ context='html'}
+                </div>
+                <div class="bottom-ctas-cont">
+                    <div data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='link', isUsedForModal='nomodal', buttonstate='enabled', link='#', action='back', buttontext=formLabels.back, buttoncssclasses='back cta hide'}"  data-sly-unwrap></div>
+                    <div data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled',action='next', buttontext=formLabels.next, btntype='submit', buttoncssclasses='next-btn show'}"  data-sly-unwrap></div>
+                    <div data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled',action='done', buttontext=formLabels.submit, btntype='submit', buttoncssclasses='done-btn hide'}"  data-sly-unwrap></div>
+                </div>
+            </div>
+            <div class="submit-failed-message ${wcmmode.edit ? '' : 'hide'}">
+                ${properties.submitfailed @ context='html'}
+            </div>
+        </div>
+    </form>
+    <div class="success-message ${wcmmode.edit ? '' : 'hide'}">
+        <img src="${properties.successimage}" alt="${properties.successimagealt}" />
+        <h2>${properties.successmaintitle}</h2>
+        ${properties.trackingtoptext @ context='html'}
+        <p class="tracking-number"></p>
+        ${properties.successdescription @ context='html'}
+    </div>
+</div>

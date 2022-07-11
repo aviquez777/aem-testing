@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0"
+  xmlns:jcr="http://www.jcp.org/jcr/1.0" jcr:primaryType="cq:Dialog"
+  title="Publish Later" xtype="dialog"
+  touchUiDialogPath="/apps/edc/components/workflow/publishTime/cq:dialog">
+  <items jcr:primaryType="cq:WidgetCollection">
+    <dateTime jcr:primaryType="cq:Widget"
+      allowBlank="{Boolean}false"
+      fieldLabel="Please schedule the item for publishing or leave blank to publish now"
+      name="./jcr:content/publishDate" 
+      xtype="datetime" />
+  </items>
+</jcr:root>

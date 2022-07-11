@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+  jcr:primaryType="nt:unstructured" 
+  jcr:title="News Release - Newsroom Filter"
+  sling:resourceType="cq/gui/components/authoring/dialog">
+  <content jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+    margin="{Boolean}false">
+    <items jcr:primaryType="nt:unstructured">
+      <column
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items
+          jcr:primaryType="nt:unstructured">
+            <basePage
+              jcr:primaryType="nt:unstructured"
+              sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+              name="./basePage"
+              fieldLabel="Base page (Will use current page if empty)"
+              fieldDescription="Select base page to get the listng from."
+              required="{Boolean}false"
+              rootPath="/content/edc"/>
+            <helptext
+              jcr:primaryType="nt:unstructured"
+              sling:resourceType="granite/ui/components/coral/foundation/text"
+              text="Important: In order to appear on the list, the child pages below this 'base page', must be tagged with 'edc:format-type/news-release'."/>
+        </items>
+      </column>
+    </items>
+  </content>
+</jcr:root>

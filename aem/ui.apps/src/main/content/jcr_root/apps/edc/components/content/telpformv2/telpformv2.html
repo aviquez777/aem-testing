@@ -1,0 +1,79 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.policyReader="com.edc.edcweb.core.models.PolicyReader" />
+<sly data-sly-use.model="com.edc.edcweb.core.models.TelpForm"/>
+<sly data-sly-test.policy="${policyReader.policy}"/>
+<sly data-sly-call="${template.placeholder @ isEmpty = !policy, emptyTextAppend='No Policy defined'}"/>
+<sly data-sly-test.formLabels="${policyReader.labels}"/>
+<sly data-sly-call="${template.placeholder @ isEmpty = policy && !formLabels, emptyTextAppend='No Labels defined'}"/>
+<sly data-sly-call="${template.placeholder @ isEmpty = formLabels && !properties.step1Title, emptyTextAppend='Form not Defned'}"/>
+<sly data-sly-call="${template.placeholder @ isEmpty = policy && !formLabels, emptyTextAppend='No Labels defined'}"/>
+<sly data-sly-call="${template.placeholder @ isEmpty = formLabels && properties.step1Title, emptyTextAppend='Form will display properly on published mode'}"/>
+<sly data-sly-test.formType="${properties.formType ? properties.formType : 'TLP'}"/>
+<sly data-sly-test.preScreen="${properties.preScreen}"/>
+<sly data-sly-test.tagName="${wcmmode.disabled ? '' : 'div'}"/>
+<sly data-sly-resource="${'messagebanner' @ resourceType='edc/components/content/messagebanner', decorationTagName=tagName}"/>
+
+<div class="c-telp-form-2" data-sly-test="${formLabels && properties.step1Title}" data-event-component='telp form' data-event-type="form" data-event-name="form submit" data-event-action="main body" data-engagement-type="3" data-event-level="1" data-destination-page="">
+    <sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+    <sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+    <sly data-sly-use.messages="com.edc.edcweb.core.models.FormCommonMessages"/>
+    <sly data-sly-test.formErrorMessages="${messages.formErrorMessages}"/>
+    <!--/* inlclude lib to handle csrf token for us*/-->
+    <sly data-sly-include="/apps/edc/components/common/csrf-token.html"/>
+    <!--/* AddressComplete */-->
+    <sly data-sly-test.addressService="${model.addressCompleteService}" />
+    <sly data-sly-test.addressCompleteKey="${model.addressCompleteKey @ context='text'}"/>
+    <link data-sly-test="${addressCompleteKey}" rel="stylesheet" type="text/css" href="${model.addressCompleteCSSUrl @ context='text'}${addressService == 'CandaPost' ? addressCompleteKey : '' @ context='text'}" />
+    <script data-sly-test="${addressCompleteKey}" type="text/javascript" src="${model.addressCompleteJSUrl @ context='text'}${addressService == 'CandaPost' ? addressCompleteKey : '' @ context='text'}"></script>
+    <!--/* End AddressComplete */-->
+
+    <form name="telp-form" novalidate="" action="/bin/gps" data-event-component="telp form" data-event-type="form" data-event-name="form submit" data-event-action="main body" data-engagement-type="3" data-event-level="1" data-destination-page="">
+        <div class="levels">
+            <div data-sly-test="${properties.descriptionTitle || properties.descriptionContent}" class="form-description">
+                <h2 data-sly-test="${properties.descriptionTitle}" class="description-title">${properties.descriptionTitle}</h2>
+                <div data-sly-test="${properties.descriptionContent}" class="description-content">${properties.descriptionContent @ context='html'}</div>
+            </div>
+
+            <sly data-sly-resource="${'segmentedprogressbar' @ resourceType='edc/components/content/segmentedprogressbar', decorationTagName=tagName}"/>
+
+            <sly data-sly-use.template="steps/step1-applicant.html"/>
+            <sly data-sly-call="${template.level1 @ uuid = uuid, properties = properties, formLabels = formLabels, formErrorMessages = formErrorMessages, formType = formType}"/>
+
+            <sly data-sly-use.template="steps/step2-financial.html"/>
+            <sly data-sly-call="${template.level2 @ uuid = uuid, properties = properties, formLabels = formLabels, formErrorMessages = formErrorMessages, formType = formType}"/>
+
+            <sly data-sly-use.template="steps/step3-itm.html"/>
+            <sly data-sly-call="${template.level3 @ uuid = uuid, properties = properties, formLabels = formLabels, formErrorMessages = formErrorMessages, formType = formType}"/>
+
+            <sly data-sly-use.template="steps/step4-questionaire.html"/>
+            <sly data-sly-call="${template.level4 @ uuid = uuid, properties = properties, formLabels = formLabels, formErrorMessages = formErrorMessages, formType = formType}"/>
+
+             <sly data-sly-use.template="steps/step5-final.html"/>
+             <sly data-sly-call="${template.step5 @ uuid = uuid, properties = properties, formLabels = formLabels, formErrorMessages = formErrorMessages, formType = formType}"/>
+
+             <sly data-sly-use.template="steps/step6-errors.html"/>
+             <sly data-sly-call="${template.step6 @ uuid = uuid, properties = properties, formLabels = formLabels, formErrorMessages = formErrorMessages, formType = formType}"/>
+
+        </div>
+    </form>
+    <div class="questionnaire-footer ${wcmmode.disabled ? 'hide' : 'show'}">
+     <sly data-sly-use.lov="${'com.edc.edcweb.core.models.MultiFieldPolicyReader' @ multifieldName = 'definitionsSection', fieldKeyName = 'defintionItem', fieldValueName = 'defintionText'}"/>
+        <div data-sly-test.definitions="${lov.valueMap}" class="questionnaire-footer ${wcmmode.disabled ? 'hide' : 'show'}">
+            <div class="key-line key-line--top-margin key-line--bottom-padding"></div>
+            <div class="questionnaire-definitions">
+                <h4>${formLabels.defintitionTitle}</h4>
+                <sly data-sly-list="${definitions}">
+                    <p>
+                        <strong>${item}</strong>
+                        ${definitions[item] @context ='html'}
+                    </p>
+                </sly>
+            </div>
+        </div>
+    </div>
+<!--/* AddressComplete */-->
+    <sly data-sly-use.scriptsTemplate="/apps/edc/components/common/autocompletescripts.html"/>
+    <sly data-sly-test="${addressService == 'CandaPost'}" data-sly-call="${scriptsTemplate.canadPost @ apiKey=addressCompleteKey}"/>
+    <sly data-sly-test="${addressService == 'Loqate'}" data-sly-call="${scriptsTemplate.loqate @ apiKey=addressCompleteKey, uuid=uuid, useDefaultCountry='true'}"/>
+<!--/* AddressComplete */-->
+</div>

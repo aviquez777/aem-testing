@@ -1,0 +1,477 @@
+.quote-calculator {
+    background-color: #f4f8fc;
+    border-color: rgba(0, 74, 107, 0.15);
+    border-style: solid;
+    border-width: 1px 0;
+    display: inline-block;
+    padding: 64px 0;
+}
+
+.quote-calculator .container {
+    box-sizing: border-box;
+}
+
+.quote-calculator .title {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    float: left;
+    box-sizing: border-box;
+    color: #4386ac;
+    margin-top: 0;
+    text-align: left;
+}
+
+.quote-calculator .content {
+    box-sizing: border-box;
+    padding: 0 15px;
+}
+
+.quote-calculator .content > div {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 0;
+    padding-right: 0;
+    float: left;
+    box-sizing: border-box;
+}
+
+.quote-calculator .content > div label {
+    font-family: "Georgia", "Times New Roman", Times, serif;
+    font-weight: normal;
+    line-height: 1.5;
+    margin: 0 0 1.5rem;
+}
+
+.quote-calculator .input-container {
+    position: relative;
+}
+
+.quote-calculator .input-container + .error {
+    display: none;
+    font-size: 14px;
+}
+
+.quote-calculator .input-container + .error.show {
+    display: block;
+}
+
+.quote-calculator .input-container input {
+    padding-left: 40px;
+}
+
+.quote-calculator .input-container input:lang(fr) {
+    padding-left: 20px;
+}
+
+.quote-calculator .input-container input.error + .symbol::after {
+    color: #dd3034;
+}
+
+.quote-calculator .input-container .symbol::after {
+    content: '$';
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    height: 20px;
+    left: 20px;
+    position: absolute;
+    top: 14px;
+    width: 20px;
+}
+
+.quote-calculator .input-container .symbol:lang(en)::after {
+    left: 20px;
+}
+
+.quote-calculator .input-container .symbol:lang(fr)::after {
+    left: auto;
+    right: 20px;
+}
+
+.quote-calculator .notifications {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    float: left;
+    box-sizing: border-box;
+    display: none;
+}
+
+.quote-calculator .notifications:before, .quote-calculator .notifications:after {
+    content: " ";
+    display: table;
+}
+
+.quote-calculator .notifications:after {
+    clear: both;
+}
+
+.quote-calculator .notifications.valid p {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 0;
+    padding-right: 0;
+    float: left;
+    text-align: center;
+}
+
+.quote-calculator .notifications.valid h2 {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 0;
+    padding-right: 0;
+    float: left;
+    color: #4386ac;
+    margin-top: 0;
+    text-align: center;
+}
+
+.quote-calculator .notifications.show {
+    display: block;
+}
+
+.quote-calculator .notifications.amount p {
+    margin-bottom: 0;
+}
+
+.quote-calculator .notifications.amount p + p {
+    margin-top: 0;
+}
+
+.quote-calculator-disclaimer {
+    display: none;
+    margin-bottom: 80px;
+    margin-top: 50px;
+}
+
+.quote-calculator-disclaimer.show {
+    display: block;
+}
+
+.quote-calculator-disclaimer .container {
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column;
+    padding-bottom: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.quote-calculator-disclaimer .back {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    line-height: 57px;
+    order: 2;
+    text-align: center;
+}
+
+.quote-calculator-disclaimer .back button {
+    background-color: transparent;
+    color: #37769a;
+    text-decoration: underline;
+    padding: 0;
+}
+
+.quote-calculator-disclaimer .hide-mobile {
+    display: none;
+}
+
+.quote-calculator-disclaimer .right {
+    order: 1;
+}
+
+.quote-calculator-disclaimer .right a {
+    font-weight: 600;
+    line-height: 57px;
+    order: 4;
+}
+
+.quote-calculator-disclaimer .right a.btn-tel {
+    line-height: 1;
+    margin-top: 20px;
+}
+
+.quote-calculator-disclaimer .right a.submit {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-top: 2em;
+    order: 6;
+    text-align: center;
+}
+
+.quote-calculator-disclaimer .right .btn-cta {
+    line-height: 1;
+    float: right;
+    order: 2;
+}
+
+.quote-calculator-disclaimer .right .note {
+    color: #333;
+    display: inline-block;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    margin-top: 2em;
+    order: 3;
+    text-align: center;
+}
+
+.quote-calculator-disclaimer .right .note.disclaimer {
+    font-size: 12px;
+    font-weight: normal;
+    order: 7;
+    text-align: left;
+}
+
+.quote-calculator-disclaimer .right .back {
+    order: 6;
+    text-align: center;
+}
+
+.quote-calculator-disclaimer .right .back button {
+    float: none;
+}
+
+.quote-calculator-disclaimer .right > div {
+    display: flex;
+    flex-flow: column;
+}
+
+@media (min-width: 720px) {
+    .quote-calculator-disclaimer .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .quote-calculator {
+        padding: 80px 0;
+    }
+    .quote-calculator .title {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        text-align: center;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 960px) {
+    .quote-calculator .title {
+        width: 50%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 720px) {
+    .quote-calculator .content {
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+        width: 100%;
+    }
+    .quote-calculator .content > div {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        float: left;
+        justify-content: space-between;
+        width: 33.3333333333%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 960px) {
+    .quote-calculator .content > div {
+        width: 33.33333333%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .quote-calculator .content > div:nth-child(1) {
+        padding-left: 0;
+    }
+    .quote-calculator .content > div:last-child {
+        padding-right: 0;
+    }
+    .quote-calculator .content > div label {
+        padding: 0 40px 0 0;
+    }
+    .quote-calculator .amount {
+        position: relative;
+    }
+    .quote-calculator .amount #zero-amount {
+        bottom: -40px;
+        position: absolute;
+    }
+    .quote-calculator .input-container input {
+        /* Removes the x button in IE */
+    }
+    .quote-calculator .input-container input::-ms-clear {
+        display: none;
+    }
+    .quote-calculator .input-container .symbol::after {
+        top: 16px;
+    }
+    .quote-calculator .notifications.valid p {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 960px) {
+    .quote-calculator .notifications.valid p {
+        width: 41.66666667%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 720px) {
+    .quote-calculator .notifications.amount p {
+        text-align: center;
+    }
+    .quote-calculator-disclaimer .container {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .quote-calculator-disclaimer .container > div:nth-child(1) {
+        width: 50%;
+    }
+    .quote-calculator-disclaimer .hide-mobile {
+        display: block;
+    }
+    .quote-calculator-disclaimer .back {
+        order: 1;
+        text-align: left;
+    }
+    .quote-calculator-disclaimer .right {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        order: 2;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 960px) {
+    .quote-calculator-disclaimer .right {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .quote-calculator-disclaimer .right a.btn-tel {
+        display: none;
+    }
+    .quote-calculator-disclaimer .right .note {
+        font-size: 12px;
+        font-weight: normal;
+        margin-top: 1em;
+        text-align: left;
+    }
+    .quote-calculator-disclaimer .right .note.disclaimer {
+        margin-top: 1em;
+        text-align: left;
+    }
+    .quote-calculator-disclaimer .right > div {
+        display: block;
+    }
+    .quote-calculator-disclaimer .right .back {
+        display: none;
+    }
+}
+
+@media (min-width: 1140px) {
+    .quote-calculator .content {
+        padding: 0 15px;
+    }
+    .quote-calculator .content > div:nth-child(1) {
+        padding-left: 0;
+    }
+    .quote-calculator .content > div:last-child {
+        padding-right: 0;
+    }
+    .quote-calculator .content > div p {
+        padding: 0;
+    }
+    .quote-calculator .content .amount #zero-amount {
+        bottom: -20px;
+    }
+    .quote-calculator .notifications {
+        text-align: center;
+    }
+    .quote-calculator .notifications.valid p {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 1140px) and (min-width: 1140px) {
+    .quote-calculator .notifications.valid p {
+        width: 33.33333333%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 1140px) {
+    .quote-calculator-disclaimer .container > div:nth-child(1) {
+        width: 60%;
+    }
+    .quote-calculator-disclaimer .right {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+    }
+}
+
+@media (min-width: 1140px) and (min-width: 1140px) {
+    .quote-calculator-disclaimer .right {
+        width: 37.5%;
+        float: left;
+    }
+}
+
+@media (min-width: 1140px) {
+    .quote-calculator-disclaimer .right .wrong-amount .note {
+        margin-top: 2em;
+    }
+    .quote-calculator-disclaimer .right .valid .note.disclaimer {
+        margin-top: 2em;
+    }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .quote-calculator .input-container {
+        top: 6px;
+    }
+}

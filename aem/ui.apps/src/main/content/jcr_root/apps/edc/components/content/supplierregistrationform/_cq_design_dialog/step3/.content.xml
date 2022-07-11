@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Step 3"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <step jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Step 3 of 3 label"
+                required="{Boolean}true"
+                name="./step3Of3"/>
+            <legalnamelabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Company legal name field label"
+                name="./legalnamelabel"
+                required="{Boolean}true"/>
+            <legalnameplaceholder
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Company legal name placeholder"
+                name="./legalnameplaceholder"
+                required="{Boolean}false"/>
+            <knownaslabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Company Known as field label"
+                name="./knownaslabel"
+                required="{Boolean}true"/>
+            <knownasplaceholder
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Company Known as placeholder"
+                name="./knownasplaceholder"
+                required="{Boolean}false"/>
+            <companyparentlabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Parent company field label"
+                name="./companyparentlabel"
+                required="{Boolean}true"/>
+            <companyparentplaceholder
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Parent company placeholder"
+                name="./companyparentplaceholder"
+                required="{Boolean}false"/>
+            <websitelabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Company website field label"
+                name="./websitelabel"
+                required="{Boolean}true"/>
+            <websiteplaceholder
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Company website placeholder"
+                name="./websiteplaceholder"
+                required="{Boolean}false"/>
+            <companycountrylabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Company country dropdown label"
+                name="./companycountrylabel"
+                required="{Boolean}true"/>
+            <companyaddresslabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Company address field label"
+                name="./companyaddresslabel"
+                required="{Boolean}true"/>
+            <companyaddressplaceholder
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Company address placeholder"
+                name="./companyaddressplaceholder"
+                required="{Boolean}false"/>
+            <companyaddress2label
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Company address 2 field label"
+                name="./companyaddress2label"
+                required="{Boolean}true"/>
+            <companyaddress2placeholder
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Company address 2 placeholder"
+                name="./companyaddress2placeholder"
+                required="{Boolean}false"/>
+            <companycitylabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Company city field label"
+                name="./companycitylabel"
+                required="{Boolean}true"/>
+            <companycityplaceholder
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Company city placeholder"
+                name="./companycityplaceholder"
+                required="{Boolean}false"/>
+            <companyprovincelabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Company province dropdown label (Canada)"
+                name="./companyprovincelabel"
+                required="{Boolean}true"/>
+            <companyprovincealtlabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Company state dropdown label (USA)"
+                name="./companyprovincealtlabel"
+                required="{Boolean}true"/>
+            <companyprovinceInputlabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Compaany address International Province / City label"
+                name="./companyProvinceInputlabel"
+                required="{Boolean}true"/>
+            <companypostalcanlabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Company Canada postal code field label"
+                name="./companypostalcanlabel"
+                required="{Boolean}true"/>
+            <companypostalusalabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Company USA zip code field label"
+                name="./companypostalusalabel"
+                required="{Boolean}true"/>
+            <companypostalintlabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Company International postal code field label"
+                name="./companypostalintlabel"
+                required="{Boolean}true"/>
+            <supplierdivbcorplabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Supplier diversity B Corp label"
+                name="./supplierdivbcorplabel"
+                required="{Boolean}true"/>
+            <supplierdivcertifiedlabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Supplier diversity Certified diverse label"
+                name="./supplierdivcertifiedlabel"
+                required="{Boolean}true"/>
+            <supplierdivcertbylabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Supplier diversity Certified By label"
+                name="./supplierdivcertbylabel"
+                required="{Boolean}true"/> 
+            <supplierdivcertotherplaceholder
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Supplier diversity certified Other field placeholder"
+                name="./supplierdivcertotherplaceholder"
+                required="{Boolean}false"/>
+            <supplierdivitselflabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Supplier diversity Itself diverse label"
+                name="./supplierdivitselflabel"
+                required="{Boolean}true"/>
+            <remitsameaslabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Remit address Same As checkbox label"
+                name="./remitsameaslabel"
+                required="{Boolean}true"/>
+            <remitcountrylabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Remit address country dropdown label"
+                name="./remitcountrylabel"
+                required="{Boolean}true"/>
+            <remitaddresslabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Remit address address field label"
+                name="./remitaddresslabel"
+                required="{Boolean}true"/>
+            <remitaddressplaceholder
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Remit address address placeholder"
+                name="./remitaddressplaceholder"
+                required="{Boolean}false"/>
+            <remitaddress2label
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Remit address address 2 field label"
+                name="./remitaddress2label"
+                required="{Boolean}true"/>
+            <remitaddress2placeholder
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Remit address address 2 placeholder"
+                name="./remitaddress2placeholder"
+                required="{Boolean}false"/>
+            <remitcitylabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Remit address city field label"
+                name="./remitcitylabel"
+                required="{Boolean}true"/>
+            <remitcityplaceholder
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Remit address city placeholder"
+                name="./remitcityplaceholder"
+                required="{Boolean}false"/>
+            <remitprovincelabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Remit address Canada province dropdown label"
+                name="./remitprovincelabel"
+                required="{Boolean}true"/>
+            <remitprovincealtlabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Remit address USA state dropdown label"
+                name="./remitprovincealtlabel"
+                required="{Boolean}true"/>
+            <remitprovinceInputlabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Remit address International Province / City label"
+                name="./remitprovinceInputlabel"
+                required="{Boolean}true"/>
+            <remitpostalcanlabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Remit address Canada postal code field label"
+                name="./remitpostalcanlabel"
+                required="{Boolean}true"/>
+            <remitpostalusalabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Remit address USA zip code field label"
+                name="./remitpostalusalabel"
+                required="{Boolean}true"/>
+            <remitpostalintlabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Remit address International postal code field label"
+                name="./remitpostalintlabel"
+                required="{Boolean}true"/>
+            <remitemaillabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Remit address email field label"
+                name="./remitemaillabel"
+                required="{Boolean}true"/>
+            <remitemailplaceholder
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Remit address email placeholder"
+                name="./remitemailplaceholder"
+                required="{Boolean}false"/>
+            <remitcommentslabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Remit address comments field label"
+                name="./remitcommentslabel"
+                required="{Boolean}true"/>
+            <remitcommentsplaceholder
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Remit address comments placeholder"
+                name="./remitcommentsplaceholder"
+                required="{Boolean}false"/>
+        </items>
+    </content>
+</jcr:root>

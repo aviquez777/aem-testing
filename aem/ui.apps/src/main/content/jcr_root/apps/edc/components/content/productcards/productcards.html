@@ -1,0 +1,78 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.link="/apps/edc/components/common/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.firsttitle}"/>
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-use.buttonTemplate="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+
+<section class="product-matrix-list ${!properties.singlecard ? 'full-width' : 'single-card'}" data-sly-test="${properties.firsttitle}">
+    <div data-sly-unwrap="${properties.singlecard}" class="container">
+        <header data-sly-test="${properties.headline || properties.headlinetext}">
+            <h2 data-sly-test.headline="${properties.headline}">${headline}</h2>
+            <p data-sly-test.headlinetext="${properties.headlinetext}">${headlinetext}</p>
+        </header>
+
+        <div class="product-list" data-sly-use.bulletItems="com.edc.edcweb.core.components.ProductCardsCollection">
+            <!--/***    F I R S T    P R O D U C T   C A R D     ****/-->
+            <article class="product-card" role="complementary" aria-labelledby="product-card-unique-id-1-${uuid}" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'Product Cards'}" data-event-engagement="1" data-event-type="link">
+                <header class="text-center">
+                    <h3 id="product-card-unique-id-1-${uuid}" class="title">
+                        <sly data-sly-call="${link.link @ link=bulletItems.firstCtaUrl1, ctatext=properties.firsttitle, target=properties.firstctatarget1, classes='', type=properties.firstcta1type, modaltext=properties.firsttitle, modaltrigger=properties.firstmodalname1}"/>
+                    </h3>
+                    <p data-sly-test="${properties.firsttext}" class="description">${properties.firsttext}</p>
+                    <h4 data-sly-test="${properties.firstsubtitle}">${properties.firstsubtitle}</h4>
+                </header>
+
+                <ul data-sly-list="${bulletItems.firstBulletItems}">
+                    <li>${item.bulletItem}</li>
+                </ul>
+
+                <footer data-sly-test="${(properties.firstctatext1   && properties.firstcta1type == 'cta')   ||  (properties.firstctatext2 && properties.firstcta2type == 'link') ||
+                        (properties.firstmodaltext1 && properties.firstcta1type == 'modal')  ||  (properties.firstmodaltext2 && properties.firstcta2type == 'modal')}">
+                    <sly data-sly-test="${(properties.firstctatext1 && properties.firstcta1type == 'cta')   ||  (properties.firstmodaltext1 && properties.firstcta1type == 'modal')}"
+                         data-sly-call="${link.link @ link=bulletItems.firstCtaUrl1, ctatext=properties.firstctatext1, target=properties.firstctatarget1, classes='button btn-small edc-primary-btn', type=properties.firstcta1type, modaltext=properties.firstmodaltext1, modaltrigger=properties.firstmodalname1, eventname='link click - product card', eventlevel='primary'}"/>
+
+                    <div data-sly-test="${(properties.firstctatext2 && properties.firstcta2type == 'link')  ||  (properties.firstmodaltext2 && properties.firstcta2type == 'modal')}"
+                         class="view-more">
+                        <sly data-sly-call="${link.link @ link=bulletItems.firstCtaUrl2, ctatext=properties.firstctatext2, target=properties.firstctatarget2, classes='', type=properties.firstcta2type, modaltext=properties.firstmodaltext2, modaltrigger=properties.firstmodalname2, eventname='link click - product card', eventlevel='secondary'}"/>
+                        <sly data-sly-test="${properties.firstcta2type == 'modal'}">
+                            <sly data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='link', isUsedForModal='modal', buttonstate='enabled', link=bulletItems.firstCtaUrl2, action='', buttontext=properties.firstmodaltext2, modaltext=properties.firstmodaltext2, modaltrigger=properties.firstmodalname2, eventname='link click - product card', eventlevel='secondary',linkchecker='valid', buttoncssclasses=' modal-trigger unstyled'}" />
+                        </sly>
+                        <sly data-sly-test="${properties.firstcta2type == 'link'}">
+                            <sly data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='link', isUsedForModal='nomodal', buttonstate='enabled', link=bulletItems.firstCtaUrl2, action='', buttontext=properties.firstctatext2, target='_blank', linkchecker='valid', buttoncssclasses='unstyled'}" />
+                        </sly>
+
+
+                    </div>
+                </footer>
+            </article> 
+
+            <!--/***    S E C O N D    P R O D U C T   C A R D     ****/-->
+            <article class="product-card" data-sly-test="${properties.secondtitle}" aria-labelledby="product-card-unique-id-2-${uuid}" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'Product Cards'}" data-event-engagement="1" data-event-type="link">
+                <header class="text-center">
+                    <h3 id="product-card-unique-id-2-${uuid}" class="title">
+                        <sly data-sly-call="${link.link @ link=bulletItems.secondCtaUrl1, ctatext=properties.secondtitle, target=properties.secondctatarget1, classes='', type=properties.secondcta1type, modaltext=properties.secondtitle, modaltrigger=properties.secondmodalname1}"/>
+                    </h3>
+                    <p data-sly-test="${properties.secondtext}" class="description">${properties.secondtext}</p>
+                    <h4 data-sly-test="${properties.secondsubtitle}">${properties.secondsubtitle}</h4>
+                </header>
+
+                <ul data-sly-list="${bulletItems.secondBulletItems}">
+                    <li>${item.bulletItem}</li>
+                </ul>
+
+                <footer data-sly-test="${(properties.secondctatext1   && properties.secondcta1type == 'cta')   ||  (properties.secondctatext2 && properties.secondcta2type == 'link') ||
+                        (properties.secondmodaltext1 && properties.secondcta1type == 'modal')  ||  (properties.secondmodaltext2 && properties.secondcta2type == 'modal')}">
+                    <sly data-sly-test="${(properties.secondctatext1   && properties.secondcta1type == 'cta')   ||  (properties.secondmodaltext1 && properties.secondcta1type == 'modal')}"
+                         data-sly-call="${link.link @ link=bulletItems.secondCtaUrl1, ctatext=properties.secondctatext1, target=properties.secondctatarget1, classes='button btn-small edc-primary-btn', type=properties.secondcta1type, modaltext=properties.secondmodaltext1, modaltrigger=properties.secondmodalname1, eventname='link click - product card', eventlevel='primary'}"/>
+
+                    <div data-sly-test="${(properties.secondctatext2 && properties.secondcta2type == 'link')  ||  (properties.secondmodaltext2 && properties.secondcta2type == 'modal')}"
+                         class="view-more">
+                        <sly data-sly-call="${link.link @ link=bulletItems.secondCtaUrl2, ctatext=properties.secondctatext2, target=properties.secondctatarget2, classes='', type=properties.secondcta2type, modaltext=properties.secondmodaltext2, modaltrigger=properties.secondmodalname2, eventname='link click - product card', eventlevel='secondary'}"/>
+                    </div>
+                </footer>
+            </article> 
+        </div>
+    </div>
+</section>

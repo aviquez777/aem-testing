@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Video Hero"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+        margin="{Boolean}false">
+        <items jcr:primaryType="nt:unstructured">
+            <image
+                jcr:primaryType="nt:unstructured"
+                sling:hideResource="{Boolean}true"/>
+            <accessibility
+                jcr:primaryType="nt:unstructured"
+                sling:hideResource="{Boolean}true"/>
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items
+                    jcr:primaryType="nt:unstructured"
+                    sling:hideChildren="[linkURL,description,size]">
+                    <heading
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/text"
+                        class="coral-Form-fieldlabel"
+                        text="Video placeholder images are configured as page properties."/>
+                    <videoid
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldDescription="YouTube video ID's look similar to eh9Szuw-7X4"
+                        fieldLabel="Video ID"
+                        name="./videoid"
+                        required="{Boolean}true"
+                        wrapperClass="core-image-alt"/>
+                    <primarytagselection
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <heading
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/text"
+                                class="coral-Form-fieldlabel"
+                                text="Article primary tag"/>
+                            <well
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <layout
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <primarytag
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/libs/granite/ui/components/foundation/form/select"
+                                        fieldLabel="Primary tag"
+                                        name="./primarytag"
+                                        required="{Boolean}false">
+                                        <datasource
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="/apps/edc/components/common/datasource/tagslist.html"/>
+                                    </primarytag>
+                                </items>
+                            </well>
+                        </items>
+                    </primarytagselection>
+                </items>
+            </column>
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:hideResource="{Boolean}true"/>
+        </items>
+    </content>
+</jcr:root>

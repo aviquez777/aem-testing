@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <fyem jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Label for Fiscal year-end month"
+                fieldLabel="Label for Fiscal year-end month"
+                required="{Boolean}true"
+                name="./fyem"/>
+            <fyemPh jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Text for Please select on Month Dropdown Placeholder"
+                required="{Boolean}true"
+                fieldLabel="Month Dropdown Placeholder"
+                name="./fyemPh"/>
+            <months jcr:primaryType="nt:unstructured"
+                 sling:resourceType="granite/ui/components/coral/foundation/form/multifield" 
+                 fieldDescription="Click '+' to add a new month" 
+                 fieldLabel="Months" 
+                 composite="{Boolean}true"
+                 required="{Boolean}true"> 
+                 <field jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container" 
+                         name="./fyems"> 
+                     <items jcr:primaryType="nt:unstructured">
+                         <monthValue jcr:primaryType="nt:unstructured"
+                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield" 
+                             fieldDescription="Month's Name, Language dependent"
+                             fieldLabel="Months's Name, Language dependent"
+                             required="{Boolean}true"
+                             name="./monthValue" /> 
+                         <monthName jcr:primaryType="nt:unstructured"
+                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield" 
+                             fieldLabel="Month's Value in English"
+                             fieldDescription="Value Send to AEM when submitting the form. Ussually the Month's English Name"
+                             required="{Boolean}true"
+                             name="./monthName" />
+                     </items> 
+                 </field> 
+            </months>
+        </items>
+    </content>
+</jcr:root>

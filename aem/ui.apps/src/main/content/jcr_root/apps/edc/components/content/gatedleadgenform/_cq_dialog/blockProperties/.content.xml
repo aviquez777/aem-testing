@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <block
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Form Properties"
+                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                <items jcr:primaryType="nt:unstructured">
+                    <headingNB
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/text"
+                        class="coral-Form-fieldlabel"
+                        text="Name Block Labels (required if used on form)"/>
+                    <nameBlock
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                        <items jcr:primaryType="nt:unstructured">
+                            <firstNameLabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="First Name Label"
+                                fieldDescription="First Name Label"
+                                name="./firstNameLabel"
+                                required="{Boolean}false"/>
+                            <firstNamePh
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="First Name Helper Text"
+                                fieldDescription="First Name Block Helper Text"
+                                name="./firstNamePh"
+                                required="{Boolean}false"/>
+                            <lastNameLabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Last Name Label"
+                                fieldDescription="Last Name Label"
+                                name="./lastNameLabel"
+                                required="{Boolean}false"/>
+                            <LastNamePh
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Last Name Helper Text"
+                                fieldDescription="Last Name Block Helper Text"
+                                name="./LastNamePh"
+                                required="{Boolean}false"/>
+                            </items>
+                    </nameBlock>
+                    <headingPB
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/text"
+                        class="coral-Form-fieldlabel"
+                        text="Phone Block Labels"/>
+                    <phoneBlock
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                        <items jcr:primaryType="nt:unstructured">
+                            <mainPhone
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Main Phone Label"
+                                fieldDescription="Main Phone Label"
+                                name="./mainPhoneLabel"
+                                required="{Boolean}false"/>
+                            <mainPhonenPh
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Main Phone Helper Text"
+                                fieldDescription="Main Phone Block Helper Text"
+                                name="./mainPhonePh"
+                                required="{Boolean}false"/>
+                            <coMainPhoneExt
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Ext. Label"
+                                fieldDescription="Ext. Label"
+                                name="./coMainPhoneExtLabel"
+                                required="{Boolean}false"/>
+                            <coMainPhoneExtPh
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Ext. Helper Text"
+                                fieldDescription="Ext. Helper Text"
+                                name="./coMainPhoneExtPh"
+                                required="{Boolean}false"/>
+                            </items>
+                    </phoneBlock>
+                    <headingAdd
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/text"
+                        class="coral-Form-fieldlabel"
+                        text="Address and Country / City / Address Block (required if used on form)"/>
+                   <addressBlock
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                        <items jcr:primaryType="nt:unstructured">
+                           <companyCountry
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Company Country Label"
+                                fieldDescription="Company Country Label"
+                                name="./companyCountryLabel"
+                                required="{Boolean}false"/>
+                           <companyCountryPh
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Company Country Helper Text"
+                                fieldDescription="Company Country Helper Text"
+                                name="./companyCountryPh"
+                                required="{Boolean}false"/>
+                           <companyAddress1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Company Address1 Label"
+                                fieldDescription="Company Address1 Label"
+                                name="./companyAddress1Label"
+                                required="{Boolean}false"/>
+                           <companyAddress1Ph
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Company Address1 Helper Text"
+                                fieldDescription="Company Address1 Helper Text"
+                                name="./companyAddress1Ph"
+                                required="{Boolean}false"/>
+                           <companyAddress2
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Company Address2 Label (usually left blank)"
+                                fieldDescription="Company Address2 Label (usually left blank)"
+                                name="./companyAddress2Label"
+                                required="{Boolean}false"/>
+                           <companyAddress2Ph
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Company Address2 Helper Text"
+                                fieldDescription="Company Address2 Helper Text"
+                                name="./companyAddress2Ph"
+                                required="{Boolean}false"/>
+                           <companyCity
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Company City Label"
+                                fieldDescription="Company City Label"
+                                name="./companyCityLabel"
+                                required="{Boolean}false"/>
+                           <companyCityPh
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Company City Helper Text"
+                                fieldDescription="Company City Helper Text"
+                                name="./companyCityPh"
+                                required="{Boolean}false"/>
+                           <province
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="CAN Province Dropdown Label"
+                                fieldDescription="CAN Province Dropdown Label"
+                                name="./provinceLabel"
+                                required="{Boolean}false"/>
+                           <provincePh
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="CAN Province Dropdown Helper Text"
+                                fieldDescription="UCAN Province Dropdown Helper Text"
+                                name="./provincePh"
+                                required="{Boolean}false"/>
+                           <state
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="USA State Dropdown Label"
+                                fieldDescription="USA State Dropdown Label"
+                                name="./stateLabel"
+                                required="{Boolean}false"/>
+                           <statePh
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="USA State Dropdown Helper Text"
+                                fieldDescription="USA State Dropdown Helper Text"
+                                name="./statePh"
+                                required="{Boolean}false"/>
+                           <companyProvince
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Company Province Label"
+                                fieldDescription="Company Province Label"
+                                name="./companyProvinceLabel"
+                                required="{Boolean}false"/>
+                           <companyProvincePh
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Company Province Helper Text"
+                                fieldDescription="Company Province Helper Text"
+                                name="./companyProvincePh"
+                                required="{Boolean}false"/>
+                           <companyPostal
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="CompanyPostal Label"
+                                fieldDescription="Company Postal Label"
+                                name="./companyPostalLabel"
+                                required="{Boolean}false"/>
+                           <companyPostalph
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Company Postal Helper Text"
+                                fieldDescription="Company Postal Helper Text"
+                                name="./companyPostalPh"
+                                required="{Boolean}false"/>
+                        </items>
+                    </addressBlock>
+                    <headingYN
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/text"
+                        class="coral-Form-fieldlabel"
+                        text="Yes No Labels for radio buttons (required if used on form)"/>
+                   <yesNoLabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                        <items jcr:primaryType="nt:unstructured">
+                           <yesLabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Yes Label"
+                                fieldDescription="Yes Label"
+                                name="./yesLabel"
+                                required="{Boolean}false"/>
+                           <noLabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="No Label"
+                                fieldDescription="No Label"
+                                name="./noLabel"
+                                required="{Boolean}false"/>
+                        </items>
+                    </yesNoLabel>
+                    <headingMS
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/text"
+                        class="coral-Form-fieldlabel"
+                        text="Multiselect helper texts (required if used on form)"/>
+                    <multiSelectLabels
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                        <items jcr:primaryType="nt:unstructured">
+                            <confirm
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Confirm button"
+                                fieldDescription="Multiselect Confirm button text"
+                                name="./optionConfirm"
+                                required="{Boolean}false"/>
+                            <clear
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Clear all"
+                                fieldDescription="Multiselect Clear all text"
+                                name="./optionClear"
+                                required="{Boolean}false"/>
+                            <singularoption
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Singular option selected"
+                                fieldDescription="Multiselect Singular option selected"
+                                name="./optionSingular"
+                                required="{Boolean}false"/>
+                            <pluraloptions
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Plural option selected"
+                                fieldDescription="Multiselect Plural option selected"
+                                name="./optionPlural"
+                                required="{Boolean}false"/>
+                            <buttonText
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Mobile Button Text"
+                                fieldDescription="Mobile button text"
+                                name="./buttonText"
+                                required="{Boolean}false"/>
+                            </items>
+                    </multiSelectLabels>
+                </items>
+            </block>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,41 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.policyReader="com.edc.edcweb.core.models.PolicyReader" />
+
+<sly data-sly-test.hasDisplayType="${properties.displaytype != null}" />
+<sly data-sly-test.isOverviewText="${(properties.displaytype == 'overviewtext' && (properties.title  ||  properties.text)) || (!hasDisplayType && (properties.title  ||  properties.text) && !properties.rtftext)}" />
+<sly data-sly-test.isTravelBrief="${(properties.displaytype == 'travelbrief' && properties.rtftext) || (!hasDisplayType && (properties.title  ||  properties.text) && properties.rtftext)}" />
+<sly data-sly-test.isAboutEDC="${properties.displaytype == 'aboutedc' && (policyReader.labels['title'] || policyReader.labels['text'] || properties.title  ||  properties.text)}" />
+
+<sly data-sly-call="${templates.placeholder @ isEmpty = (!isOverviewText && !isTravelBrief && !isAboutEDC)}"/>
+
+<sly data-sly-test.showpagebreak="${properties.showpagebreak == 'on'}" />
+<sly data-sly-test.showtitleafter="${properties.showtitleafter == 'on'}" />
+<!--/* Renders Overview Text component */-->
+<div data-sly-test="${isOverviewText}" class="section-blurb ${properties.showseparator == 'off' ? '' : 'show-separator'} ${showtitleafter ? 'reverse' : 'normal'}">
+    <div data-sly-test="${showpagebreak}" class="${showpagebreak ? 'show-icon' : ''}"></div>
+    <h2 data-sly-test="${properties.title && !showtitleafter}" class="fade-in-slide-up">${properties.title}</h2>
+    <div  data-sly-test="${properties.text}"  class="fade-in-slide-up">${properties.text @ context='html'}</div>
+    <h2 data-sly-test="${properties.title && showtitleafter}" class="fade-in-slide-up">${properties.title}</h2>
+</div>
+
+<!--/* Renders Travel Brief component */-->
+<section data-sly-test="${isTravelBrief}" class="travel-brief full-width">
+    <div class="container">
+        <div data-sly-test="${showpagebreak}" class="${showpagebreak ? 'show-icon' : ''}"></div>
+        <h2 data-sly-test="${properties.title}" class="title">${properties.title}</h2>
+        <div  data-sly-test="${properties.text}" class="detail">${properties.text @ context='html'}</div>
+        <p  data-sly-test="${properties.rtftext}" class="more-tips">${properties.rtftext @ context='html'}</p>
+    </div>
+</section>
+
+<!--/* Renders About EDC component */-->
+<div data-sly-test="${isAboutEDC}" class="section-blurb normal bg-edc-dark-blue full-width">
+    <div class="container">
+        <sly data-sly-test.title="${properties.title ? properties.title : policyReader.labels['title']}"/>
+        <sly data-sly-test.text="${properties.text ? properties.text : policyReader.labels['text']}"/>
+
+        <div data-sly-test="${showpagebreak}" class="${showpagebreak ? 'show-icon' : ''}"></div>
+        <h2 data-sly-test="${title}" class="fade-in-slide-up">${title}</h2>
+        <div data-sly-test="${text}" class="fade-in-slide-up">${text @ context='html'}</div>
+    </div>
+</div>

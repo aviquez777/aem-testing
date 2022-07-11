@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <option1
+        jcr:primaryType="nt:unstructured"
+        enName="Aerospace : Fixed Wing"
+        frName="Aéronautique : Voilure fixe"
+        value="FW"/>
+    <option2
+        jcr:primaryType="nt:unstructured"
+        enName="Aerospace : Other"
+        frName="Aéronautique : Autre"
+        value="OTAE"/>
+    <option3
+        jcr:primaryType="nt:unstructured"
+        enName="Aerospace : Rotary Wing"
+        frName="Aéronautique : Voilure tournante"
+        value="RW"/>
+    <option4
+        jcr:primaryType="nt:unstructured"
+        enName="Aerospace : Space"
+        frName="Aéronautique : Espace"
+        value="SPACE"/>
+    <option5
+        jcr:primaryType="nt:unstructured"
+        enName="Agrifood : Beverage"
+        frName="Agroalimentaire : Boissons"
+        value="BEV"/>
+    <option6
+        jcr:primaryType="nt:unstructured"
+        enName="Agrifood : Crops"
+        frName="Agroalimentaire : Plantes cultivées"
+        value="CROP"/>
+    <option7
+        jcr:primaryType="nt:unstructured"
+        enName="Agrifood : Fish and Seafood"
+        frName="Agroalimentaire : Poissons et fruits de mer"
+        value="FSF"/>
+    <option8
+        jcr:primaryType="nt:unstructured"
+        enName="Agrifood : Food"
+        frName="Agroalimentaire : Aliments"
+        value="FOOD"/>
+    <option9
+        jcr:primaryType="nt:unstructured"
+        enName="Agrifood : Horticulture"
+        frName="Agroalimentaire : Horticulture"
+        value="HTC"/>
+    <option10
+        jcr:primaryType="nt:unstructured"
+        enName="Agrifood : Livestock"
+        frName="Agroalimentaire : Bétail"
+        value="LIVES"/>
+    <option11
+        jcr:primaryType="nt:unstructured"
+        enName="Buildings : Commercial, Industrial, Institutional"
+        frName="Immeubles : commerciaux, industriels, institutionnels"
+        value="CII"/>
+    <option12
+        jcr:primaryType="nt:unstructured"
+        enName="Buildings : Low Rise Residential (Wood and light steel frame)"
+        frName="Immeubles : résidentiels de faible hauteur (bois et acier léger)"
+        value="RESL"/>
+    <option13
+        jcr:primaryType="nt:unstructured"
+        enName="Consumer Goods / Services : Retailers"
+        frName="Biens / Services de consommation : Détaillants"
+        value="CGRE"/>
+    <option14
+        jcr:primaryType="nt:unstructured"
+        enName="Consumer Goods / Services : Wholesalers / Distributors"
+        frName="Biens / Services de consommation : Grossistes / Distributeurs"
+        value="CGWD"/>
+    <option15
+        jcr:primaryType="nt:unstructured"
+        enName="Consumer Goods / Services : E-commerce"
+        frName="Biens / Services de consommation : Cybercommerce"
+        value="EC"/>
+    <option16
+        jcr:primaryType="nt:unstructured"
+        enName="Consumer Goods / Services : Manufacturers"
+        frName="Biens / Services de consommation : Fabricants"
+        value="CGM"/>
+    <option17
+        jcr:primaryType="nt:unstructured"
+        enName="Forestry : Forestry Management"
+        frName="Foresterie : Gestion forestière"
+        value="FMGT"/>
+    <option18
+        jcr:primaryType="nt:unstructured"
+        enName="Forestry : Hardwood"
+        frName="Foresterie : Bois franc"
+        value="HARD"/>
+    <option19
+        jcr:primaryType="nt:unstructured"
+        enName="Forestry : Softwood"
+        frName="Foresterie : Bois d'œuvre"
+        value="SOFT"/>
+    <option20
+        jcr:primaryType="nt:unstructured"
+        enName="Forestry : Sawmills"
+        frName="Foresterie : Scieries"
+        value="SAW"/>
+    <option21
+        jcr:primaryType="nt:unstructured"
+        enName="Forestry : Panels &amp; Boards"
+        frName="Foresterie :  Panneaux et planches"
+        value="PAN"/>
+    <option22
+        jcr:primaryType="nt:unstructured"
+        enName="Forestry : Logging"
+        frName="Foresterie : Exploitation forestière"
+        value="LOGG"/>
+    <option23
+        jcr:primaryType="nt:unstructured"
+        enName="Forestry : Lumber"
+        frName="Foresterie : Bois d’œuvre résineux"
+        value="LIMB"/>
+    <option24
+        jcr:primaryType="nt:unstructured"
+        enName="Forestry : Other (i.e. biomass)"
+        frName="Foresterie : Autres (ex. biomasse)"
+        value="OBIOM"/>
+    <option25
+        jcr:primaryType="nt:unstructured"
+        enName="Forestry : Pulp and paper"
+        frName="Foresterie : Pâtes et papiers"
+        value="PULP"/>
+    <option26
+        jcr:primaryType="nt:unstructured"
+        enName="General Manufacturing : Electrical"
+        frName="Fabrication générale : Électrique"
+        value="ELEC "/>
+    <option27
+        jcr:primaryType="nt:unstructured"
+        enName="General Manufacturing : Metal"
+        frName="Fabrication générale : Métal"
+        value="MET"/>
+    <option28
+        jcr:primaryType="nt:unstructured"
+        enName="General Manufacturing : Other (includes manufacturing of other / combined materials not elsewhere specified)"
+        frName="Fabrication générale : Autres (comprend la fabrication d’autres matériaux/matériaux combinés non mentionnés ailleurs)"
+        value="OTGM "/>
+    <option29
+        jcr:primaryType="nt:unstructured"
+        enName="General Manufacturing : Plastic"
+        frName="Fabrication générale : Plastique"
+        value="PLAS "/>
+    <option30
+        jcr:primaryType="nt:unstructured"
+        enName="General Manufacturing : Textile"
+        frName="Fabrication générale : Textile"
+        value="TEXT"/>
+    <option31
+        jcr:primaryType="nt:unstructured"
+        enName="General Manufacturing : Wood"
+        frName="Fabrication générale : Bois"
+        value="WOOD"/>
+    <option32
+        jcr:primaryType="nt:unstructured"
+        enName="Healthcare : Hospitals  Clinics"
+        frName="Soins de la santé : Hôpitaux et cliniques"
+        value="HC"/>
+    <option33
+        jcr:primaryType="nt:unstructured"
+        enName="Healthcare : Nursing and Residential Care Facilities"
+        frName="Soins de la santé : Établissements de soins infirmiers et pour bénéficiaires internes"
+        value="NRCF"/>
+    <option34
+        jcr:primaryType="nt:unstructured"
+        enName="Healthcare : Pharmacies &amp; Retailers"
+        frName="Soins de la santé : Pharmacies et détaillants"
+        value="PRE"/>
+    <option35
+        jcr:primaryType="nt:unstructured"
+        enName="Healthcare : GPOs/Distributors"
+        frName="Soins de la santé : Organismes de groupement d’achats/Distributeurs"
+        value="GPOD"/>
+    <option36
+        jcr:primaryType="nt:unstructured"
+        enName="Healthcare : Medical Sector Manufacturers"
+        frName="Soins de la santé : Fabricants du secteur médical"
+        value="MDMFG"/>
+    <option37
+        jcr:primaryType="nt:unstructured"
+        enName="Healthcare : Pharmaceutical Manufacturers"
+        frName="Soins de la santé : Fabricants de produits pharmaceutiques"
+        value="PHMFG"/>
+    <option38
+        jcr:primaryType="nt:unstructured"
+        enName="ICT (Information and Communications Technology) : Data Centres and Hosted Solutions"
+        frName="TIC (Technologies de l’information et des communications) : Centres de données et  solutions hébergées"
+        value="DCHS"/>
+    <option39
+        jcr:primaryType="nt:unstructured"
+        enName="ICT (Information and Communications Technology) : Integrated Electronics (hardware and software)"
+        frName="TIC (Technologies de l’information et des communications) : Électronique intégrée (matériels et logiciels)"
+        value="IEHS"/>
+    <option40
+        jcr:primaryType="nt:unstructured"
+        enName="ICT (Information and Communications Technology) : Satellite"
+        frName="TIC (Technologies de l’information et des communications) : Satellite"
+        value="SAT"/>
+    <option41
+        jcr:primaryType="nt:unstructured"
+        enName="ICT (Information and Communications Technology) : Software - Applications"
+        frName="TIC (Technologies de l’information et des communications) : Logiciels - Applications"
+        value="SA"/>
+    <option42
+        jcr:primaryType="nt:unstructured"
+        enName="ICT (Information and Communications Technology) : Telecom"
+        frName="TIC (Technologies de l’information et des communications) : Télécommunications"
+        value="TELCM"/>
+    <option43
+        jcr:primaryType="nt:unstructured"
+        enName="Industrial / Commercial Services : Construction"
+        frName="Services industriels / commerciaux : Construction"
+        value="CONST"/>
+    <option44
+        jcr:primaryType="nt:unstructured"
+        enName="Industrial / Commercial Services : Logistics"
+        frName="Services industriels / commerciaux : Logistique"
+        value="LOG"/>
+    <option45
+        jcr:primaryType="nt:unstructured"
+        enName="Industrial / Commercial Services : Operation and Maintenance"
+        frName="Services industriels / commerciaux : Fonctionnement et entretien"
+        value="OM"/>
+    <option46
+        jcr:primaryType="nt:unstructured"
+        enName="Industrial / Commercial Services : Other"
+        frName="Services industriels / commerciaux : Autres"
+        value="OTAE"/>
+    <option47
+        jcr:primaryType="nt:unstructured"
+        enName="Life Sciences : Hospitals"
+        frName="Sciences de la vie : Hôpitaux"
+        value="HOSP"/>
+    <option48
+        jcr:primaryType="nt:unstructured"
+        enName="Marine Vessel : Commercial / Industrial"
+        frName="Bâtiments maritimes : Commerciaux / industriels"
+        value="COMIND"/>
+    <option49
+        jcr:primaryType="nt:unstructured"
+        enName="Marine Vessel : Recreational"
+        frName="Bâtiments maritimes : Récréatifs"
+        value="REMV"/>
+    <option50
+        jcr:primaryType="nt:unstructured"
+        enName="Mining and Metals : Exploration and Development"
+        frName="Mines et métaux : Prospection et mise en valeur"
+        value="ED"/>
+    <option51
+        jcr:primaryType="nt:unstructured"
+        enName="Mining and Metals : Metal Processing"
+        frName="Mines et métaux : Traitement des métaux"
+        value="MEP"/>
+    <option52
+        jcr:primaryType="nt:unstructured"
+        enName="Mining and Metals : Mineral Processing"
+        frName="Mines et métaux : Traitement des minéraux"
+        value="MIP"/>
+    <option53
+        jcr:primaryType="nt:unstructured"
+        enName="Mining and Metals : Smelting and  Refining"
+        frName="Mines et métaux : Fusion et affinage"
+        value="SR"/>
+    <option54
+        jcr:primaryType="nt:unstructured"
+        enName="Mining and Metals : Surface Mining"
+        frName="Mines et métaux : Mines à ciel ouvert"
+        value="SM"/>
+    <option55
+        jcr:primaryType="nt:unstructured"
+        enName="Mining and Metals : Underground Mining"
+        frName="Mines et métaux : Mines souterraines"
+        value="UM"/>
+    <option56
+        jcr:primaryType="nt:unstructured"
+        enName="Oil and Gas : Downstream"
+        frName="Pétrole et du gaz naturel : En aval"
+        value="DS"/>
+    <option57
+        jcr:primaryType="nt:unstructured"
+        enName="Oil and Gas : Midstream"
+        frName="Pétrole et du gaz naturel : Intermédiaire"
+        value="MS"/>
+    <option58
+        jcr:primaryType="nt:unstructured"
+        enName="Oil and Gas : Upstream"
+        frName="Pétrole et du gaz naturel : En amont"
+        value="US"/>
+    <option59
+        jcr:primaryType="nt:unstructured"
+        enName="Power : Generation - Hydro"
+        frName="Électricité : Production - Hydro"
+        value="GH"/>
+    <option60
+        jcr:primaryType="nt:unstructured"
+        enName="Power : Generation - Nuclear"
+        frName="Électricité : Production - Nucléaire"
+        value="GN"/>
+    <option61
+        jcr:primaryType="nt:unstructured"
+        enName="Power : Generation - Solar"
+        frName="Électricité : Production - Solaire"
+        value="GS"/>
+    <option62
+        jcr:primaryType="nt:unstructured"
+        enName="Power : Generation - Wind"
+        frName="Électricité : Production - Éolienne"
+        value="GW"/>
+    <option63
+        jcr:primaryType="nt:unstructured"
+        enName="Power : Transmission &amp; Distribution"
+        frName="Électricité : Transport et distribution"
+        value="TD"/>
+    <option64
+        jcr:primaryType="nt:unstructured"
+        enName="Power : Generation - Geothermal"
+        frName="Électricité : Production - Géothermique"
+        value="GG"/>
+    <option65
+        jcr:primaryType="nt:unstructured"
+        enName="Power: Generation - Thermal"
+        frName="Électricité : Production - Thermique"
+        value="GT"/>
+    <option66
+        jcr:primaryType="nt:unstructured"
+        enName="Power : Generation - Waste-to-Energy"
+        frName="Électricité : Production - Production d’énergie à partir de déchets"
+        value="GWE"/>
+    <option67
+        jcr:primaryType="nt:unstructured"
+        enName="Power : Generation - Tidal"
+        frName="Électricité : Production - Marémotrice"
+        value="GTID"/>
+    <option68
+        jcr:primaryType="nt:unstructured"
+        enName="Power : Generation - Run of River"
+        frName="Électricité : Production - Au fil d’eau"
+        value="GR"/>
+    <option69
+        jcr:primaryType="nt:unstructured"
+        enName="Professional Services : Legal"
+        frName="Services de membres de professions libérales : Juridique"
+        value="LGL"/>
+    <option70
+        jcr:primaryType="nt:unstructured"
+        enName="Professional Services : Tax / Accounting"
+        frName="Services de membres de professions libérales : Impôt/ comptabilité"
+        value="TAXAC"/>
+    <option71
+        jcr:primaryType="nt:unstructured"
+        enName="Professional Services : Other (PS)"
+        frName="Services de membres de professions libérales : Autres (SP)"
+        value="OTPS"/>
+    <option72
+        jcr:primaryType="nt:unstructured"
+        enName="Professional Services : Technical"
+        frName="Services de membres de professions libérales : Technique"
+        value="TECH"/>
+    <option73
+        jcr:primaryType="nt:unstructured"
+        enName="Rail Vehicles : Freight Rail"
+        frName="Véhicules ferroviaires : Transport de marchandises"
+        value="FR"/>
+    <option74
+        jcr:primaryType="nt:unstructured"
+        enName="Rail Vehicles : Passenger Rail"
+        frName="Véhicules ferroviaires : Transport de voyageurs"
+        value="PR"/>
+    <option75
+        jcr:primaryType="nt:unstructured"
+        enName="Road Vehicles : Automotive"
+        frName="Véhicules routiers : Automobiles"
+        value="AUTO"/>
+    <option76
+        jcr:primaryType="nt:unstructured"
+        enName="Road Vehicles : Heavy Truck, Buses"
+        frName="Véhicules routiers : Camions lourds, autobus"
+        value="HTB"/>
+    <option77
+        jcr:primaryType="nt:unstructured"
+        enName="Road Vehicles : Specialty Vehicles"
+        frName="Véhicules routiers : Véhicules spécialisés"
+        value="SV"/>
+    <option78
+        jcr:primaryType="nt:unstructured"
+        enName="Solid Waste : Recycling"
+        frName="Déchets solides : Recyclage"
+        value="RECY"/>
+    <option79
+        jcr:primaryType="nt:unstructured"
+        enName="Solid Waste : Waste Disposal"
+        frName="Déchets solides : Élimination des déchets"
+        value="WD"/>
+    <option80
+        jcr:primaryType="nt:unstructured"
+        enName="Transportation Infrastructure : Airport"
+        frName="Infrastructure de transport : Aéroportuaire"
+        value="AIRP"/>
+    <option81
+        jcr:primaryType="nt:unstructured"
+        enName="Transportation Infrastructure : Marine"
+        frName="Infrastructure de transport : Maritime"
+        value="MAR"/>
+    <option82
+        jcr:primaryType="nt:unstructured"
+        enName="Transportation Infrastructure : Rail"
+        frName="Infrastructure de transport : Ferroviaire"
+        value="RAIL"/>
+    <option83
+        jcr:primaryType="nt:unstructured"
+        enName="Transportation Infrastructure : Road"
+        frName="Infrastructure de transport : Routier"
+        value="ROSD"/>
+    <option84
+        jcr:primaryType="nt:unstructured"
+        enName="Water and Wastewater : Industrial"
+        frName="Eaux et eaux usées : Industrielles"
+        value="IND"/>
+    <option85
+        jcr:primaryType="nt:unstructured"
+        enName="Water and Wastewater : Municipal and  Regional"
+        frName="Eaux et eaux usées : Municipales et régionales"
+        value="MR"/>
+    <option86
+        jcr:primaryType="nt:unstructured"
+        enName="ICT (Information and Communications Technology) : Software - Content (includes Gaming)"
+        frName="TIC (Technologies de l’information et des communications) : Logiciels - Contenu (comprend le jeu)"
+        value="SC"/>
+    <option87
+        jcr:primaryType="nt:unstructured"
+        enName="Life Sciences: Laboratories and Research Institutions"
+        frName="Sciences de la vie : Laboratoires et établissements de recherche"
+        value="LSRI"/>
+</jcr:root>

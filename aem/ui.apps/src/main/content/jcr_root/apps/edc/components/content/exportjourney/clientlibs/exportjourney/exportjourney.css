@@ -1,0 +1,372 @@
+@charset "UTF-8";
+.c-export-journey {
+    padding: 0 0 2.5rem;
+    position: relative;
+    overflow: visible;
+}
+
+.c-export-journey * {
+    box-sizing: border-box;
+}
+
+.c-export-journey .headlines {
+    margin-top: 3.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.c-export-journey .headlines h2 {
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    width: 66.66666667%;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: .75rem;
+    text-align: center;
+}
+
+.c-export-journey .headlines p {
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    width: 83.33333333%;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+}
+
+.c-export-journey.journey-stick .tabs.fade-shadow-right .actions-nav::after,
+.c-export-journey.journey-stick .tabs.fade-shadow-left .actions-nav::before {
+    top: 15px;
+}
+
+.c-export-journey.journey-stick .tabs .nav-bar {
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding: 15px 32px;
+    margin: 0;
+    max-width: 100%;
+    box-shadow: 0 1px 3px 0 rgba(51, 51, 51, 0.08), 0 0.5px 5px 2px rgba(51, 51, 51, 0.05);
+    overflow: hidden;
+}
+
+.c-export-journey.journey-stick .tabs .nav-bar.stick-nav-displayed {
+    top: 65px;
+}
+
+.c-export-journey.journey-stick .tabs .nav-bar .actions-nav .icon {
+    top: 10px;
+    z-index: 12;
+}
+
+.c-export-journey .tabs.fade-shadow-left::before, .c-export-journey .tabs.fade-shadow-right::after {
+    display: none;
+}
+
+.c-export-journey .tabs.fade-shadow-right .actions-nav::after,
+.c-export-journey .tabs.fade-shadow-left .actions-nav::before {
+    content: '';
+    height: 100px;
+    width: 60px;
+    position: absolute;
+    top: 35px;
+    right: 15px;
+    -webkit-box-shadow: inset -60px 0 50px -44px white;
+    -moz-box-shadow: inset -60px 0 50px -44px white;
+    box-shadow: inset -60px 0 50px -44px white;
+    background: linear-gradient(270deg, #fff 15%, rgba(255, 255, 255, 0) 100%);
+    z-index: 1;
+}
+
+.c-export-journey .tabs.fade-shadow-left .actions-nav::before {
+    left: 15px;
+    -webkit-box-shadow: inset 60px 0 50px -44px white;
+    -moz-box-shadow: inset 60px 0 50px -44px white;
+    box-shadow: inset 60px 0 50px -44px white;
+    background: linear-gradient(90deg, #fff 15%, rgba(255, 255, 255, 0) 100%);
+}
+
+.c-export-journey .tabs .nav-bar {
+    position: relative;
+    height: auto;
+    overflow: auto;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    border: 0;
+    padding: 35px 32px;
+}
+
+.c-export-journey .tabs .nav-bar .tab-labels-container {
+    position: relative;
+    height: auto;
+    overflow: auto;
+    background-image: linear-gradient(to right, #dedede 65%, rgba(255, 255, 255, 0) 0%);
+    background-position: center 12px;
+    background-size: 7px 1px;
+    background-repeat: repeat-x;
+    z-index: 1;
+    background-color: #fff;
+}
+
+.c-export-journey .tabs .nav-bar .tab-labels-container ul {
+    height: auto;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    scrollbar-width: none;
+}
+
+.c-export-journey .tabs .nav-bar .tab-labels-container ul::-webkit-scrollbar {
+    display: none;
+}
+
+.c-export-journey .tabs .nav-bar .tab-labels-container ul li {
+    white-space: normal;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    flex: 1 1 auto;
+}
+
+.c-export-journey .tabs .nav-bar .tab-labels-container ul li button::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #1a65b2;
+    top: 11px;
+    left: 0;
+    border: 0;
+}
+
+.c-export-journey .tabs .nav-bar .tab-labels-container ul li.active button::after {
+    width: 50%;
+}
+
+.c-export-journey .tabs .nav-bar .tab-labels-container ul li.active ~ li button::after {
+    display: none;
+}
+
+.c-export-journey .tabs .nav-bar .tab-labels-container ul li button {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    line-height: 2.4;
+    line-height: 1.6;
+    padding: 5px 10px;
+    background: none;
+    color: #2f78c6;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.c-export-journey .tabs .nav-bar .tab-labels-container ul li button.selected {
+    padding-bottom: 5px;
+    border: 0;
+    font-weight: 600;
+}
+
+.c-export-journey .tabs .nav-bar .tab-labels-container ul li button.selected::before {
+    width: 14px;
+    height: 14px;
+    margin-top: -.2rem;
+    margin-bottom: .55rem;
+}
+
+.c-export-journey .tabs .nav-bar .tab-labels-container ul li button span {
+    width: 80px;
+    padding: 0;
+}
+
+.c-export-journey .tabs .nav-bar .tab-labels-container ul li button span::after {
+    display: none;
+}
+
+.c-export-journey .tabs .nav-bar .tab-labels-container ul li button::before {
+    position: relative;
+    z-index: 2;
+    content: '';
+    display: block;
+    background-color: #fff;
+    border: 3px solid #1a65b2;
+    height: 10px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    width: 10px;
+    margin: 0 auto .625rem;
+}
+
+.c-export-journey .tabs .nav-bar .tab-labels-container ul li.active ~ li button {
+    color: #333;
+}
+
+.c-export-journey .tabs .nav-bar .tab-labels-container ul li.active ~ li button::before {
+    width: 12px;
+    height: 12px;
+    border-width: 2px;
+    border-color: #dedede;
+}
+
+.c-export-journey .tabs .nav-bar .actions-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    min-height: 100px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.c-export-journey .tabs .nav-bar .actions-nav .icon {
+    top: 30px;
+    background-color: #fff;
+    width: 34px;
+    height: 34px;
+    border: 1px solid #ebebeb;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    font-size: 22px;
+}
+
+.c-export-journey .tabs .nav-bar .actions-nav .icon::before {
+    color: #ebebeb;
+    content: "";
+}
+
+.c-export-journey .tabs .nav-bar .actions-nav .icon.icon-arrow-right {
+    right: 15px;
+    display: block;
+}
+
+.c-export-journey .tabs .nav-bar .actions-nav .icon.icon-arrow-left {
+    left: 15px;
+    display: block;
+}
+
+.c-export-journey .tabs .nav-bar .actions-nav .icon.show::before {
+    color: #1a65b2;
+}
+
+.c-export-journey .tabs .tab-panel {
+    margin-top: 0;
+    padding-top: 0;
+    overflow: hidden;
+}
+
+.c-export-journey .tabs .tab-panel .steps ul {
+    margin: 0;
+}
+
+@media (min-width: 720px) {
+    .c-export-journey .headlines {
+        margin-top: 4.5rem;
+        margin-bottom: 2rem;
+    }
+    .c-export-journey .headlines h2 {
+        margin-bottom: 1.5rem;
+    }
+    .c-export-journey.journey-stick .tabs .nav-bar {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .c-export-journey .tabs .nav-bar {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .c-export-journey .tabs .nav-bar .tab-labels-container ul li button::before {
+        margin-bottom: 1rem;
+    }
+    .c-export-journey .tabs .nav-bar .tab-labels-container ul li button.selected::before {
+        margin-top: -.14rem;
+        margin-bottom: .86rem;
+    }
+    .c-export-journey .tabs .nav-bar .actions-nav .icon.icon-arrow-right {
+        right: 0;
+    }
+    .c-export-journey .tabs .nav-bar .actions-nav .icon.icon-arrow-left {
+        left: 0;
+    }
+    .c-export-journey .tabs.fade-shadow-right .actions-nav::after {
+        right: 0;
+    }
+    .c-export-journey .tabs.fade-shadow-left .actions-nav::before {
+        left: 0;
+    }
+    .c-export-journey .tabs .tab-panel .steps ul {
+        overflow: auto;
+    }
+    .c-export-journey .tabs .tab-panel .steps ul li {
+        width: 100%;
+        float: none;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-export-journey .headlines {
+        margin-top: 6.5rem;
+        margin-bottom: 2.5rem;
+    }
+    .c-export-journey .headlines h2 {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-export-journey .headlines h2 {
+        width: 50%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-export-journey .headlines p {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 66.66666667%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-export-journey .headlines p {
+        width: 66.66666667%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-export-journey .tabs .tab-panel h2,
+    .c-export-journey .tabs .tab-panel ul {
+        overflow: auto;
+        float: none;
+    }
+}

@@ -1,0 +1,269 @@
+<template data-sly-template.step5="${@  uuid, properties, formLabels, formErrorMessages}">
+    <div class="final-step ${wcmmode.disabled ? 'hide' : 'show'}">
+        <h3 class="final-step-title">${properties.step5Title}</h3>
+        <h3>${properties.step1Title}</h3>
+        <div class="field-row">
+            <div class="c-form-field-info half">
+                <div class="info">
+                    <p class="field-title">${formLabels.contactFirstName}</p>
+                    <p class="field-value" data-field-value="contactFirstName"></p>
+                </div>
+            </div>
+            <div class="c-form-field-info half">
+                <div class="info">
+                    <p class="field-title">${formLabels.contactLastName}</p>
+                    <p class="field-value" data-field-value="contactLastName"></p>
+                </div>
+            </div>
+        </div>
+        <div class="c-form-field-info">
+            <div class="info">
+                <p class="field-title">${formLabels.contactEmailAddress}</p>
+                <p class="field-value" data-field-value="contactEmailAddress"></p>
+            </div>
+        </div>
+        <div class="c-form-field-info">
+            <div class="info">
+                <p class="field-title">${formLabels.businessPhoneNumber}</p>
+                <p class="field-value" data-field-value="phoneNumber"></p>
+            </div>
+        </div>
+        <h3>${properties.companyTitle}</h3>
+        <div class="c-form-field-info">
+            <div class="info">
+                <p class="field-title">${formLabels.legalName}</p>
+                <p class="field-value" data-field-value="legalName"></p>
+            </div>
+        </div>
+        <div class="c-form-field-info">
+            <div class="info">
+                <p class="field-title">${formLabels.tradeName}</p>
+                <p class="field-value" data-field-value="tradeName"></p>
+            </div>
+        </div>
+        <div class="c-form-field-info">
+            <div class="info">
+                <p class="field-title">${formLabels.brn}</p>
+                <p class="field-value" data-field-value="businessNumber"></p>
+            </div>
+        </div>
+        <div class="c-form-field-info">
+            <div class="info">
+                <p class="field-title">${formLabels.employees}</p>
+                <p class="field-value" data-field-value="employees"></p>
+            </div>
+        </div>
+        <div class="c-form-field-info">
+            <div class="info">
+                <p class="field-title">${formLabels.lastAnnualSales}</p>
+                <p class="field-value" data-field-value="lastAnnualSales"></p>
+            </div>
+        </div>
+        <div class="c-form-field-info">
+            <div class="info">
+                <p class="field-title">${formLabels.fyem}</p>
+                <p class="field-value" data-field-value="financialYearEndMonth"></p>
+            </div>
+        </div>
+        <div class="c-form-field-info">
+            <div class="info">
+                <p class="field-title">${formLabels.cdia}</p>
+                <p class="field-value" data-field-value="cdia"></p>
+            </div>
+        </div>
+        <h3>${properties.hqTitle}</h3>
+        <div class="c-form-field-info">
+            <div class="info">
+                <p class="field-title">${formLabels.companyAddress1}</p>
+                <p class="field-value" data-field-value="companyAddress1"></p>
+            </div>
+        </div>
+        <div class="c-form-field-info">
+            <div class="info">
+                <p class="field-title">${formLabels.companyAddress2}</p>
+                <p class="field-value" data-field-value="companyAddress2"></p>
+            </div>
+        </div>
+        <div class="c-form-field-info">
+            <div class="info">
+                <p class="field-title">${formLabels.companyCountry}</p>
+                <p class="field-value" data-field-value="companyCountry"></p>
+            </div>
+        </div>
+        <div class="c-form-field-info">
+            <div class="info">
+                <p class="field-title">${formLabels.companyProvince}</p>
+                <p class="field-value" data-field-value="companyProvince"></p>
+            </div>
+        </div>
+        <div class="field-row">
+            <div class="c-form-field-info half">
+                <div class="info">
+                    <p class="field-title">${formLabels.companyCity}</p>
+                    <p class="field-value" data-field-value="companyCity"></p>
+                </div>
+            </div>
+            <div class="c-form-field-info half">
+                <div class="info">
+                    <p class="field-title">${formLabels.companyPostal}</p>
+                    <p class="field-value" data-field-value="companyPostal"></p>
+                </div>
+            </div>
+        </div>
+        <h3>${properties.step2Title}</h3>
+        <div class="c-form-field-info">
+            <div class="info">
+                <p class="field-title">${formLabels.bankLabel}</p>
+                <p class="field-value" data-field-value="bank"></p>
+            </div>
+        </div>
+        <div class="field-row">
+            <div class="c-form-field-info half">
+                <div class="info">
+                    <p class="field-title">${formLabels.managerFirstName}</p>
+                    <p class="field-value" data-field-value="managerFirstName"></p>
+                </div>
+            </div>
+            <div class="c-form-field-info half">
+                <div class="info">
+                    <p class="field-title">${formLabels.managerLastName}</p>
+                    <p class="field-value" data-field-value="managerLastName"></p>
+                </div>
+            </div>
+        </div>
+        <div class="c-form-field-info">
+            <div class="info">
+                <p class="field-title">${formLabels.managerEmailAddress}</p>
+                <p class="field-value" data-field-value="managerEmailAddress"></p>
+            </div>
+        </div>
+        <div class="c-form-field-info" data-forced-layout="true">
+            <div class="info">
+                <p class="field-value" data-field-value="caslConsent"></p>
+            </div>
+        </div>
+
+        <sly data-sly-use.itmTemplate="/apps/edc/components/common/inclusivetrade/telp-itm-review.html"/>
+        <sly data-sly-call="${itmTemplate.review}"/>
+
+        <div class="declarations">
+            <h2>${properties.declarationstitle}</h2>
+            <div class="declaration-text ${wcmmode.disabled ? 'hide' : 'show'}" data-user-status="Direct Exporter">
+                <p>${formLabels.detext}</p>
+                <sly data-sly-use.de1="${'com.edc.edcweb.core.models.MultiFieldPolicyReader' @ multifieldName = 'delist', fieldKeyName = 'delistitem', fieldValueName = 'delistitem'}"/>
+                <sly data-sly-test.delist="${de1.valueMap}"/>
+                <ol data-sly-list="${delist}">
+                    <li>${item}</li>
+                </ol>
+                <p>${formLabels.detext2}</p>
+                <sly data-sly-use.de2="${'com.edc.edcweb.core.models.MultiFieldPolicyReader' @ multifieldName = 'delist2', fieldKeyName = 'delist2item', fieldValueName = 'delist2item'}"/>
+                <sly data-sly-test.delist2="${de2.valueMap}"/>
+                <ol data-sly-list="${delist2}">
+                    <li>${item} <span data-sly-test="${itemList.last}" class="country-declaration"></span>
+                    </li>
+                </ol>
+            </div>
+            <div class="declaration-text ${wcmmode.disabled ? 'hide' : 'show'}" data-user-status="Indirect Exporter">
+                <p>${formLabels.ietext}</p>
+                <sly data-sly-use.ie1="${'com.edc.edcweb.core.models.MultiFieldPolicyReader' @ multifieldName = 'ielist', fieldKeyName = 'ielistitem', fieldValueName = 'ielistitem'}"/>
+                <sly data-sly-test.ielist="${ie1.valueMap}"/>
+                <ol data-sly-list="${ielist}">
+                    <li>${item}</li>
+                </ol>
+                <p>${formLabels.ietext2}</p>
+                <sly data-sly-use.ie2="${'com.edc.edcweb.core.models.MultiFieldPolicyReader' @ multifieldName = 'ielist2', fieldKeyName = 'ielist2item', fieldValueName = 'ielist2item'}"/>
+                <sly data-sly-test.ielist2="${ie2.valueMap}"/>
+                <ol data-sly-list="${ielist2}">
+                    <li>${item} <span data-sly-test="${itemList.last}" class="country-declaration"></span></li>
+                </ol>
+            </div>
+            <div class="declaration-text ${wcmmode.disabled ? 'hide' : 'show'}" data-user-status="Future Direct Exporter">
+                <p>${formLabels.fetext}</p>
+                <sly data-sly-use.fe1="${'com.edc.edcweb.core.models.MultiFieldPolicyReader' @ multifieldName = 'felist', fieldKeyName = 'felistitem', fieldValueName = 'felistitem'}"/>
+                <sly data-sly-test.felist="${fe1.valueMap}"/>
+                <ol data-sly-list="${felist}">
+                    <li>${item}</li>
+                </ol>
+                <p>${formLabels.fetext2}</p>
+                <sly data-sly-use.fe2="${'com.edc.edcweb.core.models.MultiFieldPolicyReader' @ multifieldName = 'felist2', fieldKeyName = 'felist2item', fieldValueName = 'felist2item'}"/>
+                <sly data-sly-test.felist2="${fe2.valueMap}"/>
+                <ol data-sly-list="${felist2}">
+                    <li>${item} <span data-sly-test="${itemList.last}" class="country-declaration"></span></li>
+                </ol>
+            </div>
+            <div class="declaration-text ${wcmmode.disabled ? 'hide' : 'show'}" data-user-status="Indirect Exporter" data-special-declaration="true">
+                <p>${formLabels.diindetext}</p>
+                <sly data-sly-use.diinie1="${'com.edc.edcweb.core.models.MultiFieldPolicyReader' @ multifieldName = 'diindelist', fieldKeyName = 'diindelistitem', fieldValueName = 'diindelistitem'}"/>
+                <sly data-sly-test.diinielist="${diinie1.valueMap}"/>
+                <ol data-sly-list="${diinielist}">
+                    <li>${item}</li>
+                </ol>
+                <p>${formLabels.diindetext2}</p>
+                <sly data-sly-use.diinie2="${'com.edc.edcweb.core.models.MultiFieldPolicyReader' @ multifieldName = 'diindelist2', fieldKeyName = 'diindelist2item', fieldValueName = 'diindelist2item'}"/>
+                <sly data-sly-test.diinielist2="${diinie2.valueMap}"/>
+                <ol data-sly-list="${diinielist2}">
+                    <li>${item} <span data-sly-test="${itemList.last}" class="country-declaration"></span></li>
+                </ol>
+            </div>
+            <div class="declaration-text ${wcmmode.disabled ? 'hide' : 'show'}" data-sly-test="${formLabels.domtext || formLabels.domtext2}" data-user-status="Domestic">
+                <p>${formLabels.domtext}</p>
+                <sly data-sly-use.dom1="${'com.edc.edcweb.core.models.MultiFieldPolicyReader' @ multifieldName = 'domlist', fieldKeyName = 'domlistitem', fieldValueName = 'domlistitem'}"/>
+                <sly data-sly-test.domlist="${dom1.valueMap}"/>
+                <ol data-sly-list="${domlist}">
+                    <li>${item}</li>
+                </ol>
+                <p>${formLabels.domtext2}</p>
+                <sly data-sly-use.dom2="${'com.edc.edcweb.core.models.MultiFieldPolicyReader' @ multifieldName = 'domlist2', fieldKeyName = 'domlist2item', fieldValueName = 'domlist2item'}"/>
+                <sly data-sly-test.domlist2="${dom2.valueMap}"/>
+                <ol data-sly-list="${domlist2}">
+                    <li>${item} <span data-sly-test="${itemList.last}" class="country-declaration"></span></li>
+                </ol>
+            </div>
+        </div>
+        <div data-form-field="authorityName" class="form-group">
+            <label for="authorityName-${uuid}">${formLabels.authorityName}</label>
+            <input type="text" id="authorityName-${uuid}" class="form-control" name="authorityName" placeholder="${formLabels.authorityNamePh}" data-no-url="true" required="" validation-rule="name" data-max-length="100" data-min-length="2"/>
+            <span class="error" data-req-message="${formErrorMessages.required}" data-text-message="${formErrorMessages.format}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}" data-no-url-message="${formErrorMessages.nourl}"></span>
+        </div>
+        <div data-form-field="authorityTitle" class="form-group">
+            <label for="authorityTitle-${uuid}">${formLabels.authorityTitle}</label>
+            <input type="text" id="authorityTitle-${uuid}" class="form-control" name="authorityTitle" placeholder="${formLabels.authorityTitlePh}" data-no-url="true" required="" validation-rule="name" data-max-length="100"/>
+            <span class="error" data-req-message="${formErrorMessages.required}" data-text-message="${formErrorMessages.format}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}" data-no-url-message="${formErrorMessages.nourl}"></span>
+        </div>
+        <div class="form-group checkbox-item" data-sly-test="${formLabels.optcheckbox1}">
+            <input type="checkbox" class="form-control" id="optcheckbox1-${uuid}" name="optcheckbox1" data-no-url="true" required="" />
+            <div class="input-description">
+                <label for="optcheckbox1-${uuid}">${formLabels.optcheckbox1 @ context='html'}</label>
+            </div>
+            <span class="error" data-req-message="${formErrorMessages.required}"></span>
+        </div>
+        <div class="form-group checkbox-item">
+            <input type="checkbox" class="form-control" id="declaration-${uuid}" name="declaration" data-no-url="true" required="" />
+            <div class="input-description">
+                <label for="declaration-${uuid}">${formLabels.declaration}</label>
+            </div>
+            <span class="error" data-req-message="${formErrorMessages.required}"></span>
+        </div>
+        <div class="form-group checkbox-item">
+            <input type="checkbox" class="form-control" id="authorization-${uuid}" name="authorization" data-no-url="true" required="" />
+            <div class="input-description">
+                <label for="authorization-${uuid}">${formLabels.authorization}</label>
+            </div>
+            <span class="error" data-req-message="${formErrorMessages.required}"></span>
+        </div>
+        <div class="form-group checkbox-item" data-sly-test="${formLabels.caslLinkText && formLabels.caslLinkUrl}">
+            <div class="input-description">
+                <sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+                <sly data-sly-use.linkresolver="${'com.edc.edcweb.core.helpers.LinkExternalizer' @srcPath=formLabels.caslLinkUrl, scheme=request.scheme}"/>
+                <sly data-sly-call="${commonTemplates.link @ type = 'link', link=linkresolver.LinkWithHtmlExtension, ctatext=formLabels.caslLinkText, target=formLabels.caslLinkTarget, linkchecker='valid', classes='casl-link'}"/>
+            </div>
+        </div>
+        <div class="form-group checkbox-item" data-sly-test="${formLabels.optcheckbox2}">
+            <input type="checkbox" class="form-control" id="optcheckbox2-${uuid}" name="optcheckbox2" data-no-url="true" required="" />
+            <div class="input-description">
+                <label for="optcheckbox2-${uuid}">${formLabels.optcheckbox2 @ context='html'}</label>
+            </div>
+            <span class="error" data-req-message="${formErrorMessages.required}"></span>
+        </div>
+    </div>
+</template>

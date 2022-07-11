@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+  xmlns:jcr="http://www.jcp.org/jcr/1.0"
+  jcr:primaryType="sling:OsgiConfig"
+  getTokenUrl="https://login.microsoftonline.com/d4167d58-713e-4e8f-8ba2-869b5491fb80/oauth2/token"
+  getClientId="53c620d8-9de4-43b3-9315-87bbff743d1e"
+  getClientSecret ="nX7_s05RSM5G2hS2_-YR3NkYl8Z.MiURiQ"
+  getResource="https://EDCanada.onmicrosoft.com/76817f58-8806-46fd-a699-1c4411dbd679"
+  getGpsProxyUrl="https://proxyqac.api.edc.ca"
+  getGpsBaseEndpoint="/gps/ppr/api/gps/v1/gpsrequest"
+  getOCPGpsSubKey="5b246707c6d54208be8cf98971270e6e"/> 

@@ -1,0 +1,23 @@
+Include conf.d/rewrites/edc_campaign_mapping.rules
+Include conf.d/rewrites/edc_form_mapping.rules
+
+# 1) CR : 301 redirects for migrated pages
+
+Include conf.d/rewrites/edc_301_rewrite.rules
+
+# 2) CR: for AEM absolute URL
+
+RewriteCond %{REQUEST_URI} (\.html|\.articlesbytagid\.json|\.amchartmap\.json|\.covidtrigetool\.json|\.countrylist\.json|\.edcsearchresults\.json)$
+RewriteCond %{REQUEST_URI} !^/apps
+RewriteCond %{REQUEST_URI} !^/bin
+RewriteCond %{REQUEST_URI} !^/content
+RewriteCond %{REQUEST_URI} !^/etc
+RewriteCond %{REQUEST_URI} !^/home
+RewriteCond %{REQUEST_URI} !^/libs
+RewriteCond %{REQUEST_URI} !^/tmp
+RewriteCond %{REQUEST_URI} !^/var
+RewriteRule (.*)  /content/edc$1 [L,PT]
+
+
+RewriteCond %{REQUEST_URI} ^.*.aspx[0-9a-zA-Z\;\+\=\?\%\&]*
+RewriteRule ^(.*)$ https://${DISPATCHER_SERVER_NAME_SIMPLE} [R=301,L]

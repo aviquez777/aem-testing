@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Content Recommendations"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    helpPath="https://www.adobe.com/go/aem_cmp_list_v2"
+    trackingFeature="core-components:list:v2">
+    <content
+        granite:class="cmp-list__editor"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items
+                    jcr:primaryType="nt:unstructured"
+                    sling:hideChildren="[itemSettings]">
+                    <listSettings
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="List Settings"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:hideChildren="[orderBy,sortOrder]">
+                                            <headline
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:orderBefore="listFrom"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Headline (overrides Headline set at the template/policy level)"
+                                                name="./headline"
+                                                required="{Boolean}false"/>
+                                            <description
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:orderBefore="listFrom"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                fieldLabel="Description"
+                                                name="./description"/>
+                                            <tagBehaviourOverrride
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:orderBefore="tagBehaviourOverrride"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                text="Do not use premium / non premium (override current behaviour)"
+                                                value="true"
+                                                name="./tagBehaviourOverrride"/>
+                                            <listFrom
+                                                granite:class="cq-dialog-dropdown-showhide"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Build list using"
+                                                name="./listFrom">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cq-dialog-dropdown-showhide-target=".list-option-listfrom-showhide-target"/>
+                                                <items
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:hideChildren="[search,children]"/>
+                                            </listFrom>
+                                            <setStatic
+                                                granite:class="hide list-option-listfrom-showhide-target foundation-layout-util-vmargin"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    showhidetargetvalue="static"/>
+                                            </setStatic>
+                                            <setTags
+                                                granite:class="hide list-option-listfrom-showhide-target foundation-layout-util-vmargin"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    showhidetargetvalue="tags"/>
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <heading
+                                                        granite:class="coral-Heading coral-Heading--4"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                        level="{Long}4"
+                                                        text="Options for Tags"/>
+                                                    <well
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <match
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                                fieldLabel="Match"
+                                                                name="./tagsMatch">
+                                                                <items
+                                                                    jcr:primaryType="nt:unstructured">
+                                                                    <all
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:orderBefore="any"
+                                                                        text="all tags"
+                                                                        selected="{Boolean}true"
+                                                                        value="all"/>
+                                                                    <any
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        text="any tag"
+                                                                        value="any"/>
+                                                                </items>
+                                                            </match>
+                                                        </items>
+                                                    </well>
+                                                </items>
+                                            </setTags>
+                                            <maxItems
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                fieldDescription="Maximum number of items displayed in list. Default value is 5. Zero (0) for no limit."
+                                                fieldLabel="Max Items (only used for non-premium article searches)"
+                                                min="{Long}0"
+                                                name="./maxItems"/>
+                                            <premiumornot
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                fieldLabel="Select article access type to be included in the results"
+                                                name="./premiumornot"
+                                                required="{Boolean}false"
+                                                granite:class="premiumornot-tab-showhide">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <all
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/radio"
+                                                        text="Premium article (returns only one article)"
+                                                        value="premium"/>
+                                                    <any
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/radio"
+                                                        checked="true"
+                                                        selected="{Boolean}true"
+                                                        text="Non-premium article"
+                                                        value="non-premium"/>
+                                                    <external
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/radio"
+                                                        text="External Premium article"
+                                                        value="premium-external"/>
+                                                </items>
+                                            </premiumornot>
+                                            <exportjourneySettings
+                                            granite:class="hide export-journey-settings"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <heading
+                                                granite:class="coral-Heading coral-Heading--4"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                level="{Long}4"
+                                                text="Options for Export Journey"/>
+                                                <well
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <exportjourney
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                            name="./insideexportjourney"
+                                                            text="Export Journey version"
+                                                            value="yes" />
+                                                        <heading
+                                                            granite:class="coral-Heading coral-Heading--6"
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                            level="{Long}6"
+                                                            text="This applies only with fixed list and only shows 3 articles"/>
+                                                    </items>
+                                                </well>
+                                            </items>
+                                            </exportjourneySettings>
+                                            <premiumSettings
+                                            granite:class="hide premium-settings"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                            <items jcr:primaryType="nt:unstructured">
+                                            <heading
+                                                granite:class="coral-Heading coral-Heading--4"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                level="{Long}4"
+                                                text="Options for Premium Article"/>
+                                                <well
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <ctatext
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="CTA text"
+                                                        fieldDescription="CTA text"
+                                                        name="./ctatext"
+                                                        required="{Boolean}true"/>
+                                                    <ctaurl
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                                        fieldLabel="CTA Url (Required for External Premiun Article)"
+                                                        fieldDescription="On Internal Premium, If no url is entered the article's link will be used"
+                                                        multiple="{Boolean}false"
+                                                        name="./ctaurl"
+                                                        required="{Boolean}true"
+                                                        rootPath="/content/edc"/>
+                                                    <externaldate
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                                                        fieldLabel="Article Date"
+                                                        fieldDescription="Optional article date, if blank no date will be displayed."
+                                                        name="./externalDate"/>
+                                                    </items>
+                                                </well>
+                                                </items>
+                                        </premiumSettings>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </listSettings>
+                    <externalPremiumSettings
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="External Premium Article"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true"
+                        granite:class="premiumornot-tab-showhide-target premium-external">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items
+                                            jcr:primaryType="nt:unstructured">
+                                            <externaltagid
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                                            autocreateTag="{Boolean}false"
+                                            fieldDescription=""
+                                            fieldLabel="Content Type Level"
+                                            multiple="{Boolean}false"
+                                            name="./externalTagId"
+                                            required="{Boolean}false"
+                                            rootPath="/content/cq:tags/edc/format-type" />
+                                            <image
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                allowUpload="{Boolean}false"
+                                                autoStart="{Boolean}true"
+                                                class="cq-droptarget"
+                                                fieldDescription="Image to show."
+                                                fieldLabel="Image"
+                                                fileNameParameter="./externalImageName"
+                                                fileReferenceParameter="./externalImageReference"
+                                                mimeTypes="[image]"
+                                                multiple="{Boolean}false"
+                                                name="./externalImage"
+                                                title="Upload Image Asset"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true"
+                                                required="{Boolean}false"/>
+                                            <alt
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Image alternate text"
+                                                fieldDescription="Image alternate text."
+                                                name="./externalImageAlt"
+                                                required="{Boolean}true"/>
+                                            <alignment
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Image alignment"
+                                                fieldDescription="Image alignment."
+                                                name="./externalImageAlignment">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <left
+                                                        jcr:primaryType="nt:unstructured"
+                                                        selected="{Boolean}false"
+                                                        text="Left align"
+                                                        value="left"/>
+                                                    <center
+                                                        jcr:primaryType="nt:unstructured"
+                                                        selected="{Boolean}true"
+                                                        text="Center align"
+                                                        value="center"/>
+                                                    <right
+                                                        jcr:primaryType="nt:unstructured"
+                                                        selected="{Boolean}false"
+                                                        text="Right align"
+                                                        value="right"/>
+                                                </items>
+                                            </alignment>
+                                            <title
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Title"
+                                                fieldDescription="Title of the article."
+                                                name="./externalTitle"
+                                                required="{Boolean}true"/>
+                                            <synopsis
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                fieldLabel="Synopsis"
+                                                fieldDescription="Synopsis of the article."
+                                                name="./externalSynopsis"
+                                                required="{Boolean}true"/>
+                                            <url
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="Link url"
+                                                fieldDescription="Select page or type external url"
+                                                rootPath="/content/edc"
+                                                name="./externalUrl"
+                                                required="{Boolean}true"/>
+                                            <target
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldDescription="Determines if the link will open in the current or new window."
+                                                fieldLabel="Link target"
+                                                name="./externalLinkTarget">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <existing
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Existing window"
+                                                        value="_self"/>
+                                                    <new
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="New window"
+                                                        value="_blank"/>
+                                                </items>
+                                            </target>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </externalPremiumSettings>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

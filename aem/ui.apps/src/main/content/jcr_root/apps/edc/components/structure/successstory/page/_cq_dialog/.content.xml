@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="EDC Page"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        granite:class="cq-dialog-content-page"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs jcr:primaryType="nt:unstructured">
+                <items jcr:primaryType="nt:unstructured">
+                    <basic
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Basic"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured"
+                                    sling:hideChildren="[series]">
+                                    <moretitles
+                                        cq:showOnCreate="{Boolean}true"
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="More Titles and Description"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <tagline
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Tagline"
+                                                name="./tagline">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    allowBulkEdit="{Boolean}true"
+                                                    cq-msm-lockable="tagline"/>
+                                            </tagline>
+                                            <productService
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Product / Service"
+                                                name="./productService">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    allowBulkEdit="{Boolean}true"
+                                                    cq-msm-lockable="productService"/>
+                                            </productService>
+                                        </items>
+                                    </moretitles>
+                                    <costum
+                                        cq:showOnCreate="{Boolean}true"
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Additional EDC Properties"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <backgroundicon
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:orderBefore="redirect"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldDescription="Determines the background icon."
+                                                fieldLabel="Background icon"
+                                                name="./backgroundIcon">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <none
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="None"
+                                                        value=""/>
+                                                    <chevrons
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Chevrons"
+                                                        value="chevrons"/>
+                                                    <backslashes
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Backslashes"
+                                                        value="backslashes"/>
+                                                    <pyramids
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Pyramids"
+                                                        value="pyramids"/>
+                                                    <waves
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Waves"
+                                                        value="waves"/>
+                                                </items>
+                                            </backgroundicon>
+                                            <docid
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:orderBefore="redirect"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Each success story created must be tied to a docID"
+                                                fieldLabel="Document ID"
+                                                name="./eloquaDocId" />
+                                        </items>
+                                    </costum>
+                                    <storyvideo
+                                        cq:showOnCreate="{Boolean}true"
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Video Information"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                             <videoid
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:orderBefore="redirect"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Video Youtube ID"
+                                                fieldLabel="Video Youtube ID"
+                                                name="./videoid" />
+                                            <heading
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/text"
+                                                class="coral-Form-fieldlabel"
+                                                text="* NOTE: Before uploading your video file, remember that it is recommended to use a 16:9 aspect ratio for the videos. The best resolution is 1440px x 553px. If possible, keep the video size small, less than 800kb. Use compression tools if necessary."/>
+                                            <webmVideo
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:orderBefore="redirect"
+                                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldDescription="Video banner dimension: 1,440 x 553"
+                                                fieldLabel="Webm Video"
+                                                mimeTypes="[.webm]"
+                                                multiple="{Boolean}false"
+                                                name="./videowebm"
+                                                rootPath="/content/dam/edc"/>
+                                            <mp4Video
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:orderBefore="redirect"
+                                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldDescription="Video banner dimension: 1,440 x 553"
+                                                fieldLabel="Mp4 Video"
+                                                mimeTypes="[.mp4]"
+                                                multiple="{Boolean}false"
+                                                name="./videomp4"
+                                                rootPath="/content/dam/edc"/>
+                                            <oggVideo
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:orderBefore="redirect"
+                                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldDescription="Video banner dimension: 1,440 x 553"
+                                                fieldLabel="Ogg Video"
+                                                mimeTypes="[.ogg]"
+                                                multiple="{Boolean}false"
+                                                name="./videoogg"
+                                                rootPath="/content/dam/edc"/>
+                                            <videoctatext
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:orderBefore="redirect"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="CTA button text"
+                                                name="./videoctatext" />
+                                            <videoctaurl
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:orderBefore="redirect"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="CTA link url (Only if a Video Youtube ID is not defined"
+                                                name="./linkurl"
+                                                rootPath="/content/edc"/>
+                                            <videoctatarget
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:orderBefore="redirect"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="CTA link target (Only if a Video Youtube ID is not defined)"
+                                                name="./linktarget">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <new
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="New window"
+                                                        value="_blank"/>
+                                                    <existing
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Existing window"
+                                                        value="_self"/>
+                                                </items>
+                                            </videoctatarget>
+                                            <anchortarget
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:orderBefore="redirect"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="This field must only contain lowercase letters, numbers, dashes, and underscores."
+                                                fieldLabel="Anchor Link Target"
+                                                name="./anchortarget"/>
+                                        </items>
+                                    </storyvideo>
+                                </items>
+                            </column>
+                        </items>
+                    </basic>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

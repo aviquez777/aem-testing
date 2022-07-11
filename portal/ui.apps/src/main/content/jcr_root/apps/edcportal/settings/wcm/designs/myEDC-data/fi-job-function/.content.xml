@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <manager
+        jcr:primaryType="nt:unstructured"
+        enName="Sales or Relationship/Account Manager/Director"
+        frName="Gestionnaire/directeur (directrice) de comptes – Ventes ou Relations"
+        value="Sales or Relationship/Account Manager/Director"/>
+    <leadership
+        jcr:primaryType="nt:unstructured"
+        enName="Regional/National/Senior Leadership"
+        frName="Leader régional/national/cadre supérieur"
+        value="Regional/National/Senior Leadership"/>
+    <executive
+        jcr:primaryType="nt:unstructured"
+        enName="Executive"
+        frName="Membre de la haute direction"
+        value="Executive"/>
+    <other
+        jcr:primaryType="nt:unstructured"
+        enName="Other (Please specify)"
+        frName="Autre : veuillez préciser "
+        value="Other"/>
+</jcr:root>

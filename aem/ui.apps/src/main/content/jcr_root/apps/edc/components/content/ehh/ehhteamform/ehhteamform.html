@@ -1,0 +1,134 @@
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+<sly data-sly-use.messages="com.edc.edcweb.core.models.FormCommonMessages"/>
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-use.model="${'com.edc.edcweb.core.models.EhhTeamForm'}"/>
+<sly data-sly-use.ibTemplateObj="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+<!--/* MODAL */-->
+<sly data-sly-test.modalTitle="${properties.modalTitle}"/>
+<sly data-sly-test.alreadyShareButtonText="${properties.alreadyShareButtonText}"/>
+<sly data-sly-test.wouldShareButtonText="${properties.wouldShareButtonText}"/>
+<sly data-sly-test.hasModalTexts="${modalTitle && alreadyShareButtonText && wouldShareButtonText}"/>
+<sly data-sly-test.hasModal="${(hasModalTexts && properties.displayModal ==  'yes') ? 'true' : 'false'}"/>
+
+<div class="c-ehh-team-form ${properties.displayType == 'isdefault' ? 'default' : ''}" data-url="/bin/myedc/userprofiletype" data-sly-test="${properties.title}" show-modal="${hasModal}" data-event-form="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'EEHH Team Form'}" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'EEHH Team Form CTA'}" data-event-action="main body" data-event-type="button" data-event-name="button click" data-event-level="primary">
+    <form class="cp-content ${wcmmode.edit ? '' : 'hide'}" name="EDC-EHH-TEAM-FORM" novalidate="" action="/bin/ehhTeamRequestForm" method="post">
+        <input type="hidden" class="form-control" data-no-url="true" name="userName" value=""/>
+        <input type="hidden" class="form-control" name="userEmail" value=""/>
+        <input type="hidden" class="form-control" data-no-url="true" name="externalId" value=""/>
+        <input type="hidden" class="form-control" data-no-url="true" name="formURL" value=""/>
+        <input type="hidden" name="_charset_" id="_charset_" class="form-control" data-no-url="" value="UTF-8" />
+        <div class="form-info">
+            <h2 class="form-title">${properties.title}</h2>
+            <div class="form-description">
+                <p>${properties.description @ context='html'}</p>
+            </div>
+        </div>
+        <div class="form-fields">
+            <div class="form-group" >
+                <label for="comment-${uuid}">${properties.howCanWeHelpYouLabel}</label>
+                <textarea id="comment-${uuid}" class="form-control" name="comment" rows="5" placeholder="${properties.questionCommentPlaceholder}" required="" validation-rule="none"></textarea>
+                <span class="error" data-req-message="${messages.formErrorMessages.required}"></span>
+            </div>
+            <div class="c-dropdown">
+                <div class="dropdown-overlay">
+                    <label for="market-${uuid}">${properties.marketLabel}</label>
+                    <div class="dropdown-container">
+                        <div class="dropdown-title">
+                            <span class="label-text">${properties.marketLabel}</span>
+                            <span class="close-btn"></span>
+                        </div>
+                        <select name="market" id="market-${uuid}" class="form-control ui selection dropdown" data-default-value="${properties.marketPlaceholder}" data-limit="">
+                            <option value="" hidden="">${properties.marketPlaceholder}</option>
+                            <option data-sly-repeat.item="${model.markets}" value="${item}">${model.markets[item]}</option>
+                        </select>
+                        <span class="error dropdown-error" data-req-message="${messages.formErrorMessages.required}" data-select-one-message="This is a required field.${messages.formErrorMessages.required}"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-submit">
+                <div data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='button', btntype='submit', buttonstate='enabled', buttontext=properties.submitLabel}"  data-sly-unwrap></div>
+            </div>
+            <div class="submit-failed-message ${wcmmode.edit ? '' : 'hide'}">
+                <p>${messages.formErrorMessages.elqerror}</p>
+            </div>
+        </div>
+        <div class="form-success ${wcmmode.edit ? '' : 'hide'}">
+            <img data-sly-test="${properties.displayType == 'isreferal'}" src="${properties.successIcon}" alt="${properties.successTitle}" data-special-alt="${properties.successTitleEH}" class="success" />
+            <h3 class="success-title" data-special-title="${properties.successTitleEH}">${properties.successTitle}</h3>
+            <div class="success-description" data-special-text="${properties.successTextEH @ context='html'}">
+                ${properties.successText @ context='html'}
+            </div>
+            <sly data-sly-use.linkresolverLink="${'com.edc.edcweb.core.helpers.LinkExternalizer' @srcPath=properties.linkurl, scheme=request.scheme}"/>
+            <sly data-sly-test="${properties.displayType == 'isreferal'}">
+                <div data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='link', buttontext=properties.ctatext, link=linkresolverLink.LinkWithHtmlExtension, target=properties.linktarget, buttoncssclasses='ibtn-lg', buttonstate='enabled'}"  data-sly-unwrap></div>
+            </sly>
+        </div>
+          <!--/* Modal texts preview author mode only */-->
+        <div data-sly-test="${wcmmode.edit && hasModal}" class="form-success">
+            <p>&nbsp;</p>
+            <p class="error">EH Success Message Preview (author only)</p>
+            <h3 class="success-title">${properties.successTitleEH}</h3>
+            <div class="success-description">
+                ${properties.successTextEH @ context='html'}
+            </div>
+            <sly data-sly-use.linkresolverLink="${'com.edc.edcweb.core.helpers.LinkExternalizer' @srcPath=properties.linkurl, scheme=request.scheme}"/>
+            <sly data-sly-test="${properties.displayType == 'isreferal'}">
+                <div data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='link', buttontext=properties.ctatextEH, link=linkresolverLink.LinkWithHtmlExtension, target=properties.linktarget, buttoncssclasses='ibtn-lg', buttonstate='enabled'}"  data-sly-unwrap></div>
+            </sly>
+        </div>
+        <!--/** Processing Screen **/-->
+        <sly data-sly-test.tagName="${wcmmode.disabled ? '' : 'div'}"/>
+        <sly data-sly-resource="${'processingScreen' @ resourceType='edc/components/content/processingscreen', decorationTagName=tagName}'}"/>
+    </form>
+    <div class="fi-content ${wcmmode.edit ? '' : 'hide'}">
+        <div data-sly-test="${properties.displayType == 'isreferal'}" class="ehh-info">
+            <h2 class="info-title">${properties.referalInfoTitle}</h2>
+            <div class="info-description">
+                <p>${properties.referalDescriptionTitle}</p>
+            </div>
+            <sly data-sly-use.linkresolverRef="${'com.edc.edcweb.core.helpers.LinkExternalizer' @srcPath=properties.referalurl, scheme=request.scheme}"/>
+            <div data-sly-test="${properties.referalurl}" data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='link', buttontext=properties.referalButtonLabel, link=linkresolverRef.LinkWithHtmlExtension, target=properties.referaltarget, buttoncssclasses='ibtn-lg primary-outline', buttonstate='enabled', linkchecker='valid'}"  data-sly-unwrap></div>
+        </div>
+        <div class="resource-info">
+            <h2 class="info-title">${properties.resourceInfoTitle}</h2>
+            <div class="info-description">
+                <p>${properties.resourceInfoDescription}</p>
+            </div>
+            <sly data-sly-use.linkresolverRes="${'com.edc.edcweb.core.helpers.LinkExternalizer' @srcPath=properties.resourceurl, scheme=request.scheme}"/>
+            <div data-sly-test="${properties.resourceurl}" data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='link', buttontext=properties.resourceButtonLabel, link=linkresolverRes.LinkWithHtmlExtension, target=properties.resourcetarget, buttoncssclasses='ibtn-lg primary-outline', buttonstate='enabled', linkchecker='valid'}"  data-sly-unwrap></div>
+        </div>
+        <!--/* Modal texts preview author mode only */-->
+        <div class="resource-info" data-sly-test="${wcmmode.edit && hasModal}">
+            <p>&nbsp;</p>
+            <p class="error">EH Modal Preview (author only)<br>Will display properly when published</p>
+            <div class="modal-title">
+                <h2>${modalTitle}</h2>
+            </div>
+            <form name="modal-form" action="#" novalidate="">
+                <div class="modal-ctas">
+                    <div data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='button', buttoncssclasses='share-question', buttonstate='enabled', buttontext=wouldShareButtonText}"  data-sly-unwrap></div>
+                    <div data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='button', buttoncssclasses='already-shared', buttonstate='enabled', buttontext=alreadyShareButtonText}"  data-sly-unwrap></div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div data-sly-test="${!wcmmode.edit && hasModal == 'true'}" class="form-modal hide" role="dialog" aria-modal="true">
+        <div class="modal-shade"></div>
+        <div class="modal-container">
+            <button type="button" class="modal-close" aria-label="${properties.closedescriptionEH}"></button>
+            <div class="modal-title">
+                <h2>${modalTitle}</h2>
+            </div>
+            <form name="modal-form" action="#" novalidate="">
+                <div class="modal-ctas">
+                    <div data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='button', buttoncssclasses='share-question', buttonstate='enabled', buttontext=wouldShareButtonText}"  data-sly-unwrap></div>
+                    <div data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='button', buttoncssclasses='already-shared', buttonstate='enabled', buttontext=alreadyShareButtonText}"  data-sly-unwrap></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

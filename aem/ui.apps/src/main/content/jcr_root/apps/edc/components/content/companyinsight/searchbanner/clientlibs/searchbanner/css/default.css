@@ -1,0 +1,72 @@
+.c-company-insight-search-default-banner {
+    margin-bottom: 7rem;
+}
+
+.c-company-insight-search-default-banner.full-width {
+    width: auto;
+}
+
+.c-company-insight-search-default-banner.blue-section {
+    background-color: #f4f8fc;
+    padding: 0 1rem;
+}
+
+.c-company-insight-search-default-banner.blue-section .container {
+    top: 5rem;
+    position: relative;
+}
+
+.c-company-insight-search-default-banner.blue-section .title {
+    color: #2f78c6;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.c-company-insight-search-default-banner.blue-section .search-bar {
+    display: flex;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 1rem;
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(25, 25, 25, 0.1);
+    -webkit-transition: box-shadow .5s ease;
+    -moz-transition: box-shadow .5s ease;
+    transition: box-shadow .5s ease;
+}
+
+.c-company-insight-search-default-banner.blue-section .search-bar:hover {
+    -webkit-box-shadow: 0 0 20px 10px rgba(51, 51, 51, 0.1);
+    -moz-box-shadow: 0 0 20px 10px rgba(51, 51, 51, 0.1);
+    box-shadow: 0 0 20px 10px rgba(51, 51, 51, 0.1);
+}
+
+.c-company-insight-search-default-banner.blue-section .search-bar .search-image {
+    display: none;
+}
+
+@media (min-width: 720px) {
+    .c-company-insight-search-default-banner.full-width {
+        width: 100vw;
+    }
+    .c-company-insight-search-default-banner.blue-section {
+        padding: 0;
+    }
+    .c-company-insight-search-default-banner.blue-section .search-bar {
+        padding: 2rem 2rem 4rem;
+    }
+    .c-company-insight-search-default-banner.blue-section .search-bar .search-image {
+        display: flex;
+        flex: 1;
+        margin: 0 2rem;
+    }
+    .c-company-insight-search-default-banner.blue-section .search-bar .search-image img {
+        width: 100%;
+        align-self: flex-start;
+        margin-top: 5rem;
+    }
+    .c-company-insight-search-default-banner.blue-section .search-bar .search-content {
+        flex: 5;
+    }
+}

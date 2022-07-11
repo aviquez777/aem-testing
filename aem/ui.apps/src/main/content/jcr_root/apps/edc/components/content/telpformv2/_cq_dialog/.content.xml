@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="TELP 2.0 Form"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <formdescription jcr:primaryType="nt:unstructured"
+                jcr:title="Form Description"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <step1fields
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/include"
+                        path="edc/components/content/telpformv2/cq:dialog/form-description/content"/>
+                </items>
+            </formdescription>
+            <step1 jcr:primaryType="nt:unstructured"
+                jcr:title="Step 1"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <step1fields
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/include"
+                        path="edc/components/content/telpformv2/cq:dialog/step1/content"/>
+                </items>
+            </step1>
+            <step1modals jcr:primaryType="nt:unstructured"
+                jcr:title="Step 1 Modals"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <step2fields
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/include"
+                        path="edc/components/content/telpformv2/cq:dialog/step1-modals/content"/>
+                </items>
+            </step1modals>
+            <step2 jcr:primaryType="nt:unstructured"
+                jcr:title="Step 2"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <step2fields
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/include"
+                        path="edc/components/content/telpformv2/cq:dialog/step2/content"/>
+                </items>
+            </step2>
+            <step3 jcr:primaryType="nt:unstructured"
+                jcr:title="Step 3"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <step3fields
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/include"
+                        path="edc/components/common/inclusivetrade/cq:dialog/content"/>
+                </items>
+            </step3>
+            <step4 jcr:primaryType="nt:unstructured"
+                jcr:title="Step 4"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <step2fields
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/include"
+                        path="edc/components/content/telpformv2/cq:dialog/step4/content"/>
+                </items>
+            </step4>
+            <step5 jcr:primaryType="nt:unstructured"
+                jcr:title="Step 5 Confirmation Screen"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <step2fields
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/include"
+                        path="edc/components/content/telpformv2/cq:dialog/step5/content"/>
+                </items>
+            </step5>
+            <exitsucess jcr:primaryType="nt:unstructured"
+                jcr:title="Exit Elegible"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <step2fields
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/include"
+                        path="edc/components/content/telpformv2/cq:dialog/exit-elegible/content"/>
+                </items>
+            </exitsucess>
+            <exitfail jcr:primaryType="nt:unstructured"
+                jcr:title="Exit Ineligible"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <step2fields
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/include"
+                        path="edc/components/content/telpformv2/cq:dialog/exit-ineligible/content"/>
+                </items>
+            </exitfail>
+        </items>
+    </content>
+</jcr:root>

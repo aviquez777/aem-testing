@@ -1,0 +1,73 @@
+<template data-sly-template.spiffour="${@ form, properties, uuid, messages}">
+    <sly data-sly-use.dropdownTemplates="${'/apps/edc/components/common/dropdown.html'}" />
+
+    <!--/* Annual sales LOVs */-->
+    <sly data-sly-use.ds="${'com.edc.edcweb.core.models.FormCommonObjects' @ path ='/apps/edc/settings/wcm/designs/edc-data/annualSales'}"> </sly>
+    <sly data-sly-test.annualSales="${ds.optionsFromDataSourcePath}" > </sly>
+
+    <!--/* Shipment ranges LOVs */-->
+    <sly data-sly-use.ds="${'com.edc.edcweb.core.models.FormCommonObjects' @ path ='/apps/edc/settings/wcm/designs/edc-data/shipmentRange'}"> </sly>
+    <sly data-sly-test.shipmentRange="${ds.optionsFromDataSourcePath}" > </sly>
+
+    <div class="level level-4 hide">
+        <h2 class="title">
+            <span class="title-color">${properties.step4bluetitle}</span> ${properties.step4title}
+        </h2>
+        <p data-sly-test="${properties.step4description}" class="description">${properties.step4description}</p>
+        <h3 data-sly-test="${properties.sectiontitleclient}" class="subtitle">${properties.sectiontitleclient}</h3>
+        <p data-sly-test="${properties.sectiondescriptionclient}" class="description">${properties.sectiondescriptionclient}</p>
+        <div data-form-field="customerSize" class="form-group">
+            <sly data-sly-call="${dropdownTemplates.dropdown @ name='customerSize', uuid=uuid, label=properties.clientannualsalesLabel,
+                 secondarylabel=properties.clientannualsalesSecondaryLabel, placeholder=properties.clientannualsalesHelp,
+                 required=true, nourl=true, requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=annualSales}">
+            </sly>
+        </div>
+        <div data-form-field="customerIndustry" class="form-group">
+            <sly data-sly-call="${dropdownTemplates.dropdown @ dropdowntype='multiple', name='customerIndustry', uuid=uuid, label=properties.clientindustriesLabel,
+                 placeholder=properties.clientindustriesHelp,
+                 required=true, nourl=true, buttontext=properties.clientindustriesConfirm, clearalltext=properties.clientindustriesClear,
+                 singulartext=properties.clientindustriesSingular, pluraltext=properties.clientindustriesPlural,
+                 requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=form.industryitems}">
+            </sly>
+        </div>
+        <div data-form-field="customerShipments" class="form-group">
+            <sly data-sly-call="${dropdownTemplates.dropdown @ name='customerShipments', uuid=uuid, label=properties.clientshipmentLabel,
+                placeholder=properties.clientshipmentHelp, required=true, nourl=true,
+                requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=shipmentRange}">
+            </sly>
+        </div>
+        <div data-form-field="customerOther" class="form-group">
+            <label for="customerOther-${uuid}">${properties.clientotherLabel}</label>
+            <input type="text" id="customerOther-${uuid}" class="form-control" name="customerOther" data-no-url="true" placeholder="${properties.clientotherHelp}" validation-rule="none" />
+            <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+        </div>
+
+        <h3 data-sly-test="${properties.sectiontitletargetclient}" class="subtitle">${properties.sectiontitletargetclient}</h3>
+        <p data-sly-test="${properties.sectiondescriptiontargetclient}" class="description">${properties.sectiondescriptiontargetclient}</p>
+        <div data-form-field="targetSize" class="form-group">
+            <sly data-sly-call="${dropdownTemplates.dropdown @ name='targetSize', uuid=uuid, label=properties.targetclientannualsalesLabel,
+                 secondarylabel=properties.targetclientannualsalesSecondaryLabel, placeholder=properties.targetclientannualsalesHelp,
+                 required=true, nourl=true, requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=annualSales}">
+            </sly>
+        </div>
+        <div data-form-field="targetIndustry" class="form-group">
+            <sly data-sly-call="${dropdownTemplates.dropdown @ dropdowntype='multiple', name='targetIndustry', uuid=uuid, label=properties.targetclientindustriesLabel,
+                 placeholder=properties.targetclientindustriesHelp,
+                 required=true, nourl=true, buttontext=properties.targetclientindustriesConfirm, clearalltext=properties.targetclientindustriesClear,
+                 singulartext=properties.targetclientindustriesSingular, pluraltext=properties.targetclientindustriesPlural,
+                 requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=form.industryitems}">
+            </sly>
+        </div>
+        <div data-form-field="targetShipments" class="form-group">
+            <sly data-sly-call="${dropdownTemplates.dropdown @ name='targetShipments', uuid=uuid, label=properties.targetclientshipmentLabel,
+                placeholder=properties.targetclientshipmentHelp, required=true, nourl=true,
+                requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=shipmentRange}">
+            </sly>
+        </div>
+        <div data-form-field="targetOther" class="form-group">
+            <label for="targetOther-${uuid}">${properties.targetclientotherLabel}</label>
+            <input type="text" id="targetOther-${uuid}" class="form-control" name="targetOther" data-no-url="true" placeholder="${properties.targetclientotherHelp}" validation-rule="none" />
+            <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+        </div>
+    </div>
+</template>

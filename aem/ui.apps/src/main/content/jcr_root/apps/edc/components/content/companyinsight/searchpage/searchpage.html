@@ -1,0 +1,16 @@
+    
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty=wcmmode.edit}"/>
+<section class="c-company-insight-search-default full-width">
+    <div class="search-info container">
+        <div class="disclaimer">
+            <p>${properties.disclaimer}</p>
+        </div>
+        <div class="section-blurb normal show-icon">
+            <!--/* content fragment */-->
+            <sly data-sly-resource="${'content-fragment' @ resourceType='cq/experience-fragments/editor/components/experiencefragment'}"/>
+            <h2 class="fade-in-slide-up">Can&#x27;t find what you are looking for?</h2>
+            <div class="fade-in-slide-up">To broaden your search, try a different company name or variations of the name (less specific or alternate names) or try our additional tools and guides to discover more about the company.</div>
+        </div>
+    </div>
+</section>

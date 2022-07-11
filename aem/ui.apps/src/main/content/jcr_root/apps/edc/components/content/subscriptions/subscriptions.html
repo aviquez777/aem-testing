@@ -1,0 +1,79 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.subscriptions="com.edc.edcweb.core.models.Subscriptions"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-use.eloqua="com.edc.edcweb.core.models.EloquaData"/>
+<sly data-sly-use.messages="com.edc.edcweb.core.models.FormCommonMessages"/>
+<sly data-sly-use.formsTemplates="${'/apps/edc/components/common/forms.html'}" />
+<sly data-sly-test.hasvalues="${properties.title}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !hasvalues}"/>
+
+<div data-sly-test="${hasvalues}">
+    <sly data-sly-test="${subscriptions.eloquaFormName || subscriptions.eloquaFormSubmitURL || subscriptions.eloquaFormId || subscriptions.eloquaSiteId}" >
+        <form name="${subscriptions.eloquaFormName}" class="c-subscriptions-form" id="${subscriptions.eloquaFormId}" novalidate="" action="${subscriptions.eloquaFormSubmitURL}" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'Subscriptions Form'}" data-event-type="button" data-event-name="button click" data-event-engagement="2" data-event-action="main body" data-event-level="primary">
+            <sly data-sly-call="${formsTemplates.formhiddenfields @ elqFormName=subscriptions.eloquaFormName, elqSiteId=subscriptions.eloquaSiteId,
+                lang=subscriptions.pageLanguage, inquiryID=properties.inquiryID,
+                formID='SubLevel1'}">
+            </sly>
+            <input type="text" name="middleName" className="form-control" placeholder="middlename" tabIndex="-1" autoComplete="false"/>
+            <input type="hidden" name="assetTier" class="form-control" data-no-url="" value="${eloqua.assetTier}" />
+            <input type="hidden" name="caslConsent" id="caslhidden" class="form-control" data-no-url="" value="yes" />
+            <input type="hidden" name="eventID" class="form-control" data-no-url="" value="" />
+            <div class="content">
+                <div class="column-left">
+                    <h2 class="title">${properties.title}</h2>
+                    <p>${properties.description @ context='html'}</p>
+                </div>
+                <div class="column-right">
+                    <div class="group-validation" aria-labelledby="checkboxes-error">
+                        <legend class="checkboxes-legend">${properties.titleSubscriptionOption}</legend>
+                        <div class="trade-insights checkbox-item" aria-describedby="checkboxes-error">
+                            <input type="checkbox" class="check-subscription" id="trade-insights-subscription"  value="checked" name="tradeInsightsCheckBox" data-value="Tradeinsights" data-no-url aria-invalid="true" />
+                            <div class="input-description">
+                                <label for="trade-insights-subscription">${properties.tilabel}</label>
+                                <div>${properties.tidescription @ context='html'}</div>
+                            </div>
+                            <span class="error" data-checkbox-message="${messages.formErrorMessages.checkbox}"></span>
+                        </div>
+                        <div class="economic-insights checkbox-item" aria-describedby="checkboxes-error">    
+                            <input type="checkbox" className="check-subscription" id="economic-insights-subscription" value="checked" name="economicInsightsCheckBox" data-value="Economic Insights" data-no-url aria-invalid="true" />
+                            <div class="input-description">
+                                <label for="economic-insights-subscription">${properties.eilabel}</label>
+                                <div>${properties.eidescription @ context='html'}</div>
+                            </div>
+                            <span class="error" data-checkbox-message="${messages.formErrorMessages.checkbox}"></span>
+                        </div>
+                        <div class="news-releases checkbox-item" aria-describedby="checkboxes-error">
+                            <input type="checkbox" class="check-subscription" id="news-releases-subscription" value="checked" name="newsReleasesCheckBox" data-value="News Releases" data-no-url aria-invalid="true" />
+                            <div class="input-description">
+                                <label for="news-releases-subscription">${properties.nrlabel}</label>
+                                <div>${properties.nrdescription @ context='html'}</div>
+                            </div>
+                            <span class="error" data-checkbox-message="${messages.formErrorMessages.checkbox}"></span>
+                        </div>
+                        <span id="checkboxes-error" class="error subscription-error">${messages.formErrorMessages.checkboxRequired}</span>
+                    </div>
+                    <div class="emailAddress">
+                        <label for="emailAddress">${properties.emaillabel}</label>
+                        <input type="email" id="emailAddress" name="emailAddress" required="" placeholder="${properties.emailplaceholder}" aria-required="true" >
+                        <span class="error" data-req-message="${messages.formErrorMessages.required}" data-email-message="${messages.formErrorMessages.email}"></span>
+                    </div>
+                    <div class="subscription-disclaimer">
+                        <div class="actions">
+                            <button type="submit"><span>${properties.ctaText}</span></button>
+                        </div><div class="text">
+                            ${properties.caslconsent @ context='html'}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="success">
+                <h2 class="success-title">${properties.successTitle}</h2>
+                <div class="large">
+                    ${properties.successPrimaryText @ context='html'}
+                </div>
+            </div>
+        </form> 
+    </sly>
+</div>
+
+

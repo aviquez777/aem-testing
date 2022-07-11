@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <option1
+        jcr:primaryType="nt:unstructured"
+        enName="Yes, I currently have such contracts"
+        frName="Oui, j’ai ce type de contrats actuellement."
+        value="Yes, currently"/>
+    <option2
+        jcr:primaryType="nt:unstructured"
+        enName="Yes, I expect to in the future (within one year)"
+        frName="Oui, je prévois avoir ce type de contrats dans l’avenir (d’ici un an)."
+        value="Yes, in the future (within 1 year)"/>
+    <option3
+        jcr:primaryType="nt:unstructured"
+        enName="No, my business doesn't have FX hedging contracts"
+        frName="Non, mon entreprise n’a pas de contrats de change."
+        value="No FX contracts"/>
+    <option4
+        jcr:primaryType="nt:unstructured"
+        enName="No, my FX contract provider doesn't require collateral"
+        frName="Non, mon fournisseur de contrats de change n’exige pas de nantissement."
+        value="No, FX contract provider doesn't require collateral"/>
+    <option5
+        jcr:primaryType="nt:unstructured"
+        enName="No, and I'm not familiar with FX hedging contracts"
+        frName="Non, et je ne connais pas bien les contrats de change."
+        value="No, not familiar with FX hedging contracts"/>
+</jcr:root>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+            jcr:primaryType="sling:OsgiConfig"
+            kbHost="https://edcogprd1.azurewebsites.net/qnamaker"
+            kbServiceRoute="/knowledgebases/b230b64c-c02e-4ff3-bd78-b7188bd86151/generateAnswer"
+            kbEndPointKey="1ac58f8a-3b46-47af-adb8-616a9b84effc"
+            ehhStaticSvrBaseURLWithKey="https://edcogprd1-asdssoxkllaw6sq.search.windows.net/indexes/b230b64c-c02e-4ff3-bd78-b7188bd86151/docs?"
+            ehhStaticSvrParamVersion="api-version=2019-05-06"
+            ehhStaticSvrParamAPIKey="api-key=AB0298099B9BDE004EFA5D1EA04CF7EE"
+            ehhStaticSvrParamTop="%24top=1000"
+            />

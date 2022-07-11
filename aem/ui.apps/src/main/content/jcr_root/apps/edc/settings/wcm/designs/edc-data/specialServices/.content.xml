@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <option1
+        jcr:primaryType="nt:unstructured"
+        enName="Handling CARNET / Tradeshow/ Temporary Export &amp; Return"
+        frName="Traitement des carnets ATA, organisation des salons commerciaux et gestion des restitutions temporaires à l’exportation"
+        value="CARNET / Tradeshow/ Temporary Export &amp; Return"/>
+    <option2
+        jcr:primaryType="nt:unstructured"
+        enName="Permits and Licenses"
+        frName="Permis et licences"
+        value="Permits and Licenses"/>
+    <option3
+        jcr:primaryType="nt:unstructured"
+        enName="Cargo Insurance"
+        frName="Assurance des marchandises"
+        value="Cargo Insurance"/>
+    <option4
+        jcr:primaryType="nt:unstructured"
+        enName="Document Compliance"
+        frName="Conformité de la documentation"
+        value="Document Compliance"/>
+    <option5
+        jcr:primaryType="nt:unstructured"
+        enName="Dangerous Goods"
+        frName="Marchandises dangereuses"
+        value="Dangerous Goods"/>
+    <option6
+        jcr:primaryType="nt:unstructured"
+        enName="Warehousing &amp; Distribution"
+        frName="Entreposage et distribution"
+        value="Warehousing &amp; Distribution"/>
+    <option7
+        jcr:primaryType="nt:unstructured"
+        enName="Consulting Services"
+        frName="Consultation"
+        value="Consulting Services"/>
+    <option8
+        jcr:primaryType="nt:unstructured"
+        enName="Special Handling (consistent movement, fragile material, etc.)"
+        frName="Manutention spéciale (mouvement constant, matières fragiles, etc.)"
+        value="Special Handling (consistent movement, fragile material, etc.)"/>
+    <option9
+        jcr:primaryType="nt:unstructured"
+        enName="Temperature controlled shipping"
+        frName="Transport à température contrôlée"
+        value="Temperature controlled shipping"/>
+</jcr:root>

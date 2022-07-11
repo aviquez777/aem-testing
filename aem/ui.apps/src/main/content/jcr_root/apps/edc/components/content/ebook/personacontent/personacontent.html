@@ -1,0 +1,8 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-test.containerId="${properties.containerId}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = wcmmode.edit}"/>
+
+<section data-tab-content="${containerId}" class="c-persona-content tab-panel ${wcmmode.edit ? 'show' : ''}" id="${containerId}" role="tabpanel" aria-labelledby="${properties.grc == 'true' ? 'GRC-Tab-' : ''}${containerId}" data-sly-test="${containerId}" data-sly-attribute.tabindex="${properties.grc == 'true' ? '0' : ''}" data-sly-attribute.aria-hidden="${properties.grc == 'true' ? 'true' : ''}">
+    <div data-sly-unwrap="${!wcmmode.edit || !wcmmode.design}" data-sly-resource="${'container-layout' @ resourceType='wcm/foundation/components/responsivegrid'}"></div>
+</section>

@@ -1,0 +1,40 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.filtertags}"/>
+<sly data-sly-use.model="com.edc.edcweb.core.models.covidresponse.CovidCard"/>
+<sly data-sly-test.mainLink="${properties.mainctalink && properties.mainctatext}"/>
+<sly data-sly-test.bottomLink="${properties.bottomctalink && properties.bottomctatext}"/>
+<sly data-sly-test.bottomLinkTwo="${properties.bottomtwoctalink && properties.bottomtwoctatext}"/>
+<sly data-sly-use.buttonTemplate="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+
+<div data-sly-test="${properties.filtertags}" class="c-covid-response-page-card ${!properties.description ? 'no-desc' : ''}" data-tags="${model.tags}">
+    <div class="card-header">
+        <div class="card-tags">
+            <div class="card-dept">${model.firstTagValue}</div>
+            <div class="card-type" data-sly-test="${model.cardType}">${model.cardType}</div>
+        </div>
+    </div>
+    <sly data-sly-test.hasImage="${properties.fileReference && properties.imgAlt}"/>
+    <div class="card-content ${mainLink ? '' : ' no-actions'} ${hasImage ? 'has-image' : ''}">
+        <div class="card-img" data-sly-test="${hasImage}">
+            <img src="${properties.fileReference}" alt="${properties.imgAlt}" />
+        </div>
+        <div class="card-texts">
+            <h3 class="title">${properties.title}</h3>
+            <div class="card-description" data-sly-test="${properties.description || properties.bottomctatext}">
+                <div data-sly-test="${properties.description}" class="description">${properties.description @ context='html'}</div>
+                <div data-sly-test="${bottomLink}" class="secondary-cta">
+                    <div data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='link', buttoncssclasses='unstyled', isUsedForModal='nomodal', buttonstate='enabled', link=properties.bottomctalink, target=properties.bottomCtaTarget, buttontext=properties.bottomctatext, linkchecker='skip'}"  data-sly-unwrap></div>
+                </div>
+                <div data-sly-test="${bottomLinkTwo}" class="secondary-cta">
+                    <div data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='link', buttoncssclasses='unstyled', isUsedForModal='nomodal', buttonstate='enabled', link=properties.bottomtwoctalink, target=properties.bottomTwoCtaTarget, buttontext=properties.bottomtwoctatext, linkchecker='skip'}"  data-sly-unwrap></div>
+                </div>
+                <div  class="pdf-cta" data-sly-test="${properties.pdfLinkText && properties.pdfLinkUrl}">
+                    <div data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='link', buttoncssclasses='unstyled', isUsedForModal='nomodal', buttonstate='enabled', link=properties.pdfLinkUrl, target='_self', buttontext=properties.pdfLinkText, linkchecker='skip'}"  data-sly-unwrap></div>
+                </div>
+            </div>
+        </div>
+        <div data-sly-test="${mainLink}" class="card-action">
+            <div data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='link', isUsedForModal='nomodal', buttonstate='enabled', link=properties.mainctalink, buttontext=properties.mainctatext, target=properties.mainCtaTarget, buttoncssclasses='c-interaction-button'}"  data-sly-unwrap></div>
+         </div>
+    </div>
+</div>

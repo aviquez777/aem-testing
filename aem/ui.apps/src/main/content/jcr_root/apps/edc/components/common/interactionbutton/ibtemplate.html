@@ -1,0 +1,65 @@
+<!--/*~~~~~~~~~~~~~~~~~~~~~  INTERACTION B U T T O N  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Button - display a button link
+
+  Parameters:
+    buttonbehavior  - link or button.
+
+    buttonsize      - It defines the size of the button it can be xs, sm and lg
+        buttontype  - It offer the option to render the button in different
+                    flavours as follows:
+                        - Default / Primary.
+                        - Primary Outline.
+                        - Secondary Outline.
+                        - Tertiary.
+                        - Danger.
+                        - Danger Outline.
+                        - Warning.
+                        - Warning Outline.
+                        - Success.
+                        - Success Outline.
+
+    buttonstate     - enabled or disabled.
+    buttonicon      - none or search.
+    buttontext      - text to be rendered.
+    action          - optional, value given to data-event-name attribute with the event's name for analytics
+    eventname       - optional, value given to data-event-name attribute with the event's name for analytics
+    eventlevel      - optional, value given to data-event-level attribute with the event's name for analytics
+    eventtype       - optional, value given to data-event-type attribute with the event's type for analytics
+    analytics       - optional, value given to data-analytics attribute for analytics
+    
+    =============================================================================
+    If behavior choosen is link type.
+    ==============================================================================
+    link        - the url of the link
+    target      - the target attribute for the link (_self, _blank)
+    linkchecker   - optional, value given to x-cq-linkchecker attribute to allow for "invalid" (non-AEM) links to be specified
+                    Valid values are:
+                        - 'valid', 'skip'
+
+    modaltext     - the text displayed as part of the link if the type is 'modal'.  CTA types render an additional span used to show chevrons.
+    modaltrigger  - optional, used by models identifies the name of the element containing the model content
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+<template data-sly-template.ibTemplate="${@ buttontext, arialabelledby, buttonbehavior, link, target, isUsedForModal, modalTrigger, linkchecker, buttonsize, buttontype, buttonanchor, buttonstate, buttonicon, action, btntype, backText, editText, eventname, eventlevel, eventtype, analytics, buttoncssclasses, buttoncssid, customattribs, dataUrlQs}">
+    <sly data-sly-test.ibModelRef="com.edc.edcweb.core.components.interactionbutton.IBAttributesHandler"/>
+    <sly data-sly-test="${customattribs}" data-sly-use.ibModel="${ibModelRef @ attributes=customattribs, dataUrlQs=dataUrlQs}"/>
+    <section data-sly-test="${buttonbehavior == 'button'}" data-sly-unwrap>
+            <button data-sly-test="${buttonstate == 'enabled' && (!isUsedForModal || isUsedForModal=='nomodal')}" id="${buttoncssid}" class="c-interaction-button ${buttonsize} ${buttontype} ${buttonicon} ${buttoncssclasses}" type="${btntype ? btntype : 'button'}"  data-sly-attribute="${ibModel.getAttributeMap}" aria-labelledby="${arialabelledby @ i18n}" data-sly-attribute.data-action="${action}" data-sly-attribute.data-back-text="${backText}" data-sly-attribute.data-edit-text="${editText}" data-sly-attribute.data-event-name="${eventname}" data-sly-attribute.data-event-level="${eventlevel}" data-sly-attribute.data-event-type="${eventtype}" data-sly-attribute.data-analytics="${analytics}">${buttontext}</button>
+            <button data-sly-test="${buttonstate == 'enabled' && isUsedForModal == 'modal'}" class="c-interaction-button ${buttonsize} ${buttontype} ${buttonicon} ${buttoncssclasses}" type="${btntype ? btntype : 'button'}"  data-sly-attribute="${ibModel.getAttributeMap}" aria-labelledby="${arialabelledby @i18n}" data-sly-attribute.data-modal-to-trigger="${modaltrigger}" data-sly-attribute.data-action="${action}" data-sly-attribute.data-back-text="${backText}" data-sly-attribute.data-edit-text="${editText}" data-sly-attribute.data-event-name="${eventname}" data-sly-attribute.data-event-level="${eventlevel}" data-sly-attribute.data-event-type="${eventtype}" data-sly-attribute.data-analytics="${analytics}">${buttontext}</button>
+            <button data-sly-test="${buttonstate == 'disabled'}" class="c-interaction-button ${buttonsize} ${buttontype} ${buttonicon} ${buttoncssclasses}" type="${btntype ? btntype : 'button'}" data-sly-attribute="${ibModel.getAttributeMap}" disabled>${buttontext}</button>
+    </section>
+    <section data-sly-test="${buttonbehavior == 'link'}" data-sly-unwrap>
+        <a id="${buttoncssid}" data-sly-test="${buttonstate == 'enabled' && buttonanchor}" x-cq-linkchecker="${linkchecker}" data-sly-attribute="${ibModel.getAttributeMap}" data-sly-attribute.data-target="${buttonanchor}" data-sly-attribute.class="c-interaction-button ${buttonsize} ${buttontype} ${buttonicon} ${buttoncssclasses}" data-sly-attribute.data-modal-to-trigger="${modaltrigger}" aria-labelledby="${arialabelledby @ i18n}" data-sly-attribute.data-action="${action}" data-sly-attribute.data-back-text="${backText}" data-sly-attribute.data-edit-text="${editText}" data-sly-attribute.data-event-name="${eventname}" data-sly-attribute.data-event-level="${eventlevel}" data-sly-attribute.data-event-type="${eventtype}" data-sly-attribute.data-analytics="${analytics}">
+            <sly data-sly-test="${isUsedForModal == 'modal'}"><span>${buttontext}</span></sly>
+            <sly data-sly-test="${!isUsedForModal || isUsedForModal == 'nomodal'}">${buttontext}</sly>
+        </a>
+        <a id="${buttoncssid}" data-sly-test="${buttonstate == 'enabled' && !buttonanchor}" x-cq-linkchecker="${linkchecker}" data-sly-attribute="${ibModel.getAttributeMap}" data-sly-attribute.href="${link}" data-sly-attribute.target="${target}" data-sly-attribute.class="c-interaction-button ${buttonsize} ${buttontype} ${buttonicon} ${buttoncssclasses}" data-sly-attribute.data-modal-to-trigger="${modaltrigger}" aria-labelledby="${arialabelledby @ i18n}" data-sly-attribute.data-action="${action}" data-sly-attribute.data-back-text="${backText}" data-sly-attribute.data-edit-text="${editText}" data-sly-attribute.data-event-name="${eventname}" data-sly-attribute.data-event-level="${eventlevel}" data-sly-attribute.data-event-type="${eventtype}" data-sly-attribute.data-analytics="${analytics}">
+            <sly data-sly-test="${isUsedForModal == 'modal'}"><span>${buttontext}</span></sly>
+            <sly data-sly-test="${!isUsedForModal || isUsedForModal == 'nomodal'}">${buttontext}</sly>
+        </a>
+        <a data-sly-test="${buttonstate == 'disabled'}" data-sly-attribute.href="" data-sly-attribute.target="" data-sly-attribute="${ibModel.getAttributeMap}" data-sly-attribute.class="c-interaction-button ${buttonsize} ${buttontype} ${buttonicon} ${buttoncssclasses}" disabled>
+            <sly data-sly-test="${isUsedForModal == 'modal'}"><span>${buttontext}</span></sly>
+            <sly data-sly-test="${!isUsedForModal || isUsedForModal == 'nomodal'}">${buttontext}</sly>
+        </a>
+    </section>
+</template>

@@ -1,0 +1,30 @@
+<template data-sly-template.fileUpload="${@ name, fieldId, title, text, btnText, filesQty, filesQuantityLimitTxt, fileSizeLimit, fileSizeLimitUpToTxt, fileSizeLimitTotalTxt, formErrorMessages, required, acceptedExt}">
+    <!--/* inject clientlib */-->
+    <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="${clientLib.all @ categories='edc.fileupload'}" />
+    <!--/* Array for files */-->
+    <sly data-sly-use.helper="${'com.edc.edcweb.core.helpers.HTLHelper' @ listQty=filesQty}" data-sly-test.hList="${helper.list}"/>
+    <sly data-sly-test.fileArr="${hList ? hList : [1,2,3]}"/>
+    <sly data-sly-test.qtyLimit="${fileArr.length}"/>
+    <sly data-sly-test.id="${fieldId ? fieldId : name}"/>
+    <sly data-sly-test.sizeLimit="${fileSizeLimit ? fileSizeLimit : '5'}"/>
+    <sly data-sly-test.fileTypes="${acceptedExt ? acceptedExt : '.pdf, .doc, .docx, .txt, .jpg, .jpeg, .png'}"/>
+    <sly data-sly-use.buttonTemplate="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+
+    <div class="form-group">
+        <div class="c-file-uploader form-control" data-file-size-limit="${sizeLimit}" data-file-quantity-limit="${qtyLimit}" data-sly-attribute.required="${required}">
+            <h3>${title}</h3>
+            <p id="${id}">${text @ context='html'}</p>
+            <div class="text">
+                <div class="options">
+                    <div data-sly-call="${buttonTemplate.ibTemplate @ buttoncssclasses='btn btn-primary discard-input', buttonbehavior='button', buttonstate='enabled', buttontext=btnText, btntype='button'}"  data-sly-unwrap></div>
+                    <p>
+                        <span>0/${qtyLimit} ${filesQuantityLimitTxt} </span>(${fileSizeLimitUpToTxt} ${sizeLimit} ${'MB' @ i18n} ${fileSizeLimitTotalTxt})
+                    </p>
+                </div>
+                <ul data-button-image="/etc.clientlibs/edc/clientlibs/clientlib-base/resources/images/add-button.svg"></ul>
+            </div>
+            <span class="error" data-req-message="${formErrorMessages.required}" data-already-added-message="${formErrorMessages.fileAlready}" data-big-size-file="${formErrorMessages.fileExceedsLimit}${sizeLimit}${formErrorMessages.fileExceedsMb}" data-file-type="${formErrorMessages.validTypesMsg} ${fileTypes}" data-file-name="${formErrorMessages.invalidFileName}"></span>
+            <input data-sly-repeat="${fileArr}" type="file" class="hide discard-input" name="${name}-${item}" id="${id}-${item}" data-file-number="${item}" aria-labelledby="${id}" validation-rule="none" />
+        </div>
+    </div>
+</template>

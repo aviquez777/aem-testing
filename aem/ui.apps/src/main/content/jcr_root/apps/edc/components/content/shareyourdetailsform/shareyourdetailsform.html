@@ -1,0 +1,79 @@
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-use.messages="com.edc.edcweb.core.models.FormCommonMessages"/>
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = true, emptyTextAppend='Form will display properly on published mode'}"/>
+
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+<sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+<sly data-sly-use.hiddenFieldTemplate="/apps/edc/components/common/forms.html"/>
+<sly data-sly-use.fieldTemplate="fieldstemplate.html"/>
+<sly data-sly-use.dropdownTemplates="${'/apps/edc/components/common/dropdown.html'}"/>
+<sly data-sly-use.encoderPath="${'com.edc.edcweb.core.helpers.Base64EnconderHelper' @ toEncode=currentPage.path}"/>
+<sly data-sly-use.encoderResource="${'com.edc.edcweb.core.helpers.Base64EnconderHelper' @ toEncode=properties['sling:resourceType']}"/>
+
+<div data-sly-test="${properties.formID}">
+    <sly data-sly-test.componentName="${datalayer.componentTitle ? datalayer.componentTitle : 'Share Your Details Form'}" />
+    <!--/* inlclide lib to handle csrf token for us*/-->
+    <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html" data-sly-test.clientlibCategories="granite.csrf.standalone" data-sly-call="${clientLib.js @ categories=clientlibCategories}" />
+
+    <section class="c-share-your-details-form">
+        <div class="form-header">
+            <h3>${properties.emailFormTitle}</h3>
+            ${properties.emailForDescription @ context='html'}
+        </div>
+        
+        <form class="email-section" noValidate action="/bin/shareDetailsServlet" data-event-name="button click – Quote Email Subscription">
+            <div class="email-section-row">
+                <div class="form-group">
+                    <label for="email-address">${properties.emailLabel}</label>
+                    <input type="email" class="form-control email-submit" placeholder="${properties.emailHelperText}" name="emailAddress" id="emailAddress-${uuid}" required="">
+                    <span class="error" data-req-message="${messages.formErrorMessages.required}" data-email-message="${messages.formErrorMessages.email}"></span>
+                </div>
+                <div class="actions">
+                    <button type="submit" data-english-text="${properties.submitEmailButtonEnTxt ? properties.submitEmailButtonEnTxt : 'access content'}">
+                        <span>${properties.submiEmailButton}</span>
+                    </button>
+                </div>
+            </div>
+            <div class="form-disclaimer">
+                <div class="text">
+                    ${properties.caslText @ context='html'}
+                </div>
+            </div>
+            <input type="hidden" class="form-control" name="emailAddress" value="" />
+            <input type="hidden"class="form-control" validation-rule="none" name="ovpa" value="${encoderPath.encoded}"/>
+            <input type="hidden"class="form-control" validation-rule="none" name="rtype" value="${encoderResource.encoded}"/>    
+        </form>
+
+        <form class="form-section hide" novalidate="" action="/bin/shareDetailsServlet" data-event-name="button click – Submit" data-inquiryid-version-a="${properties.inquiryIDversionA}" data-inquiryid-version-b="${properties.inquiryIDversionB}" >
+            <input type="hidden" class="form-control" name="emailAddress" value="" />
+            <sly data-sly-call="${hiddenFieldTemplate.formhiddenfields @  elqFormName = properties.formID, formID = properties.formID, docID = properties.docID}"/>
+            <h3>${properties.formTitle}</h3>
+            <h2>${properties.aboutYourself}</h2>
+            ${properties.formDescription @ context='html'}
+            <p>${properties.allFieldsAre} <strong>${properties.required}</strong>.</p>
+            <sly data-sly-use.multifield="${'com.edc.edcweb.core.helpers.MultifieldReaderHelper' @ multifield='questions'}"/>
+                <sly data-sly-list.question="${multifield.fields}">
+                    <sly data-sly-call="${fieldTemplate.fields @  fieldName=question.questionType, fieldLabel=question.questionLabel, fieldHelperText=question.questionHelperText, uuid=uuid, commonTemplates=commonTemplates, dropdownTemplates=dropdownTemplates, messages=messages}"/>
+                </sly>
+            <div class="actions">
+                <button class="edc-secondary-btn" type="button" data-english-text="${properties.resetFormButtonEnTxt ? properties.resetFormButtonEnTxt : 'reset step'}"><span>${properties.resetFormButton}</span></button>
+                <button type="submit" data-english-text="${properties.submitFormButtonEnTxt ? properties.submitFormButtonEnTxt : 'submit step'}">
+                    <span>${properties.submitFormButton}</span>
+                </button>
+            </div>
+            <!--/** Bug 159966 form not found in a vanity url **/-->
+            <input type="hidden"class="form-control" validation-rule="none" name="ovpa" value="${encoderPath.encoded}"/>
+            <input type="hidden"class="form-control" validation-rule="none" name="rtype" value="${encoderResource.encoded}"/>
+        </form>
+        <div class="submit-failed-message hide">
+            <p  data-default-text="${properties.submitErrorText}">${properties.submitErrorText}</p>
+        </div>
+        <div class="submit-success-message hide">
+            <h3>${properties.successTitle}</h3>
+            <p  data-default-text="${properties.successText}">${properties.successText}</p>
+        </div>
+        <div data-sly-resource="${'processingScreen' @ resourceType='edc/components/content/processingscreen'}"></div>
+    </section>
+</div>

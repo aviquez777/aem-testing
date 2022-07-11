@@ -1,0 +1,45 @@
+/0001 {
+    /glob "*.pdf"
+    /type "allow"
+}
+/0002 {
+    /glob "*/premium/*"
+    /type "deny"
+}
+/0003 {
+    /glob "/content/myedc/*"
+    /type "deny"
+}
+/0004   {
+    /glob "/bin/myedc/countrylist.json"
+    /type "allow"
+}
+/0005 {
+    /glob "*/premium/tool/company-insight/company-profile.*html"
+    /type "allow"
+}
+/0006 {
+    /glob "/bin/triagetool-*.json"
+    /type "allow"
+}
+/0007 {
+    /glob "*/gated/*"
+    /type "deny"
+}
+/0008 {
+    /glob "*/premium/*.pdf"
+    /type "deny"
+}
+/0009 {
+    /glob "*/pro/*"
+    /type "deny"
+}
+/0010 {
+    /extension '(pdf|docx?|xlsx?)'
+    /type "allow"
+}
+/0011 {
+    /path "*/premium/*"
+    /extension '(pdf|docx?|xlsx?)'
+    /type "deny"
+}

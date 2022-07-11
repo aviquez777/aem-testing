@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <questions
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Questions"
+                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items
+                            jcr:primaryType="nt:unstructured">
+                            <questions
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                fieldDescription="Click '+' to add a new question type"
+                                fieldLabel="Questions"
+                                jcr:primaryType="nt:unstructured"
+                                composite="{Boolean}true" 
+                                required="{Boolean}true">
+                                <field
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    jcr:primaryType="nt:unstructured"
+                                    name="./questions">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <questiontype
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/include"
+                                            path="edc/components/content/gatedcontentaccess/gatedcontentaccessform/cq:dialog/questionType/content"/>
+                                        <questionLabel
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Question Label"
+                                            fieldDescription="Question Label"
+                                            name="./questionLabel"
+                                            required="{Boolean}true"/>
+                                        <questionHelperText
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Question Helper Text"
+                                            fieldDescription="Question Helper Text"
+                                            name="./questionHelperText"
+                                            required="{Boolean}false"/>
+                                        <questionOverride
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                            defaultChecked="{Boolean}false"
+                                            name="./questionOverride"
+                                            required="{Boolean}false"
+                                            text="Always ask this question even if it has already been answered"
+                                            value="{Boolean}true"/>
+                                        <dependsOn
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                            fieldDescription="Question will be asked if any the selected question types below have not been answered"
+                                            fieldLabel="Depends On"
+                                            jcr:primaryType="nt:unstructured"
+                                            composite="{Boolean}true" 
+                                            required="{Boolean}false">
+                                            <field
+                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                jcr:primaryType="nt:unstructured"
+                                                name="./dependsOn">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                <questiontype
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/include"
+                                                    path="edc/components/content/gatedcontentaccess/gatedcontentaccessform/cq:dialog/questionType/content"/>
+                                                </items>
+                                            </field>
+                                        </dependsOn>
+                                    </items>
+                                </field>
+                            </questions>
+                        </items>
+                    </column>
+                </items>
+            </questions>
+        </items>
+    </content>
+</jcr:root>

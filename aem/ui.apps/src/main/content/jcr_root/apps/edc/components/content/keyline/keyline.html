@@ -1,0 +1,4 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !hasvalues}"/>
+
+<div class="key-line ${properties.topMargin ? 'key-line--top-margin': ''} ${properties.bottomPadding? 'key-line--bottom-padding': ''}"></div>

@@ -1,0 +1,45 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-use.header="com.edc.edcweb.core.models.Header" />
+<sly data-sly-call="${templates.placeholder @ isEmpty = !header.logoImage}" />
+<sly data-sly-use.menuTemplates="templates.html" />
+
+<div class="header-container">
+    <div id="skip">
+        <a href="#maincontent">${header.skipText}</a>
+    </div>
+    <header class="main-header" data-sly-test="${header.logoImage}">
+        <div class="top-nav full-width">
+            <div class="container">
+                <div class="header-nav">
+                    <button type="button" class="nav-toggle" aria-label="${'open' @ i18n}"  aria-haspopup="true" aria-expanded="false">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a x-cq-linkchecker="valid" href="${header.logoUrl}" class="logo" target="${header.logoTarget}">
+                        <img src="${header.logoImage}" alt="${header.logoAltText}" />
+                    </a>
+                    <nav>
+                        <ul>
+                            <li class="phone" role="none">${header.phoneNumber}</li>
+                            <li class="login" role="none">
+                                <sly data-sly-call="${menuTemplates.userMenu @ header = header}" />
+                            </li>
+                            <li class="language" role="none">
+                                <sly data-sly-call="${menuTemplates.languageToggle @ header = header}" />
+                            </li>
+                            <li data-sly-test="${header.showSearch}" role="none">
+                                <button type="button" class="trigger-modal-search" data-modal-to-trigger="modal-search" aria-label="${header.showSearchAccessibility}"></button>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-nav full-width">
+           <sly data-sly-call="${menuTemplates.bottomNav @ header = header}" />
+        </div>
+    </header>
+    <div id="maincontent"></div>
+    <sly data-sly-test="${header.showSearch}" data-sly-resource="${'quick-search' @ resourceType='edc/components/structure/quick-search', decorationTagName='div'}"/>
+</div>

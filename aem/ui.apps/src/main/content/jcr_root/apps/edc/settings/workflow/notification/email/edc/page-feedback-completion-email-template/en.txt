@@ -1,0 +1,15 @@
+subject=${subject}
+
+<html>
+<head>
+<title>${subject}</title>
+</head>
+<body>
+<p>Message left in comment box by user from the previous step:</p>
+<p>${message}</p>
+<p>User: ${user}</p>
+<p>Instructions/CTA: No action required. This is to notify that further edits are being made on the page you approved. See comments above.</p>
+<p>URL: ${pageUrl}</p>
+<p>This is an automatically generated message. Please do not reply.</p>
+</body>
+</html>

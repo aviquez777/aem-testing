@@ -1,0 +1,12 @@
+<sly data-sly-use.model="${'com.edc.edcweb.core.models.MyEdcInfoBanner'}"/>
+<sly data-sly-test.displayContainer="${model.displayContainer}"/>
+
+<section data-sly-test="${displayContainer}" class="with-description tag-results-banner full-width">
+  <div class="container">
+    <sly data-sly-list.resource="${model.resources}">
+      <div class="${resource == 'signintext' ? 'main with-secondary': 'secondary'}">
+        <div data-sly-resource="${@path=resource, resourceType=resources[resource]}"></div>
+      </div>
+    </sly>
+  </div>
+</section>

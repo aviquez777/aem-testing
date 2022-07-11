@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Series Banner"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    helpPath="https://www.adobe.com/go/aem_cmp_image_v2">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container"
+        granite:class="cmp-image__editor">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <header
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Article Hero - Series Content"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        sling:orderBefore="styletab"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <content
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                margin="{Boolean}false">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <partlabel
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldDescription="Text for the first part of Part X of Y series"
+                                        fieldLabel="first part"
+                                        name="./partlabel"/>
+                                    <oflabel
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldDescription="Text for the first part of Part X of Y series"
+                                        fieldLabel="second part"
+                                        name="./oflabel"/>
+                                    <serieslabel
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldDescription="Text for the third part of Part X of Y series"
+                                        fieldLabel="third part"
+                                        name="./serieslabel"/>
+                                </items>
+                            </content>
+                        </items>
+                    </header>
+                    <customBread
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Custom BreadCrumb"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        sling:orderBefore="styletab"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <content
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                margin="{Boolean}false">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <customBcLink
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldDescription="Label text for custom breadcrumb link"
+                                        fieldLabel="Custom breadcrumb link label"
+                                        name="./customBcLink"
+                                        required="{Boolean}false"/>
+                                    <customBcUrl
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldDescription="Url for custom breadcrumb link"
+                                        fieldLabel="Custom breadcrumb link url"
+                                        name="./customBcUrl"
+                                        required="{Boolean}false"
+                                        rootPath="/content/edc"/>
+                                </items>
+                            </content>
+                        </items>
+                    </customBread>
+                </items>    
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <questions
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Gated Properties"
+                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items
+                            jcr:primaryType="nt:unstructured">
+                            <gatedContentPath
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                fieldLabel="Gated Content Path"
+                                name="./gatedContentPath"
+                                required="{Boolean}true"
+                                forceSelection="{Boolean}true"
+                                rootPath="/content/edc"/>
+                            <assetGroupName
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Asset Group Name"
+                                fieldDescription="Provdided by Dec or Content team, check Wiki for more info."
+                                validation="checkvarname"
+                                name="./assetGroupName"
+                                required="{Boolean}true"/>
+                            <formID
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Eloqua Form ID"
+                                fieldDescription="Eloqua Form ID Provided by EloquaTeam (i.e MIP9_BCAP_304)"
+                                name="./formID"
+                                required="{Boolean}true"/>
+                            <docID
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Eloqua docID"
+                                fieldDescription="Enter the Eloqua docID"
+                                name="./docID"/>
+                            <inquiryID
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Eloqua inquiryID"
+                                fieldDescription="Enter the Eloqua inquiryID"
+                                name="./inquiryID"/>
+                            </items>
+                    </column>
+                </items>
+            </questions>
+        </items>
+    </content>
+</jcr:root>

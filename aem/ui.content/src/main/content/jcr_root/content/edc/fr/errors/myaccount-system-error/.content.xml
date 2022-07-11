@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:template="/conf/edc/settings/wcm/templates/content-page"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Erreur"
+        sling:resourceType="edc/components/structure/page"
+        firstpublished="{Date}2017-09-05T09:31:19.483-04:00">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <responsivegrid
+                jcr:created="{Date}2017-07-19T10:05:42.455-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-19T13:09:48.682-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid">
+                <errormessage
+                    jcr:created="{Date}2017-08-29T14:58:00.401-04:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2017-08-29T14:59:38.026-04:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="edc/components/content/errormessage"
+                    errormessage="Désolé, mais une erreur s'est produite."
+                    fileReference="/content/dam/edc/logo_EDC_Black.png"
+                    linktext="Retourner à la page d'accueil d'EDC.ca."
+                    linkurl="/content/edc/fr"/>
+            </responsivegrid>
+        </root>
+    </jcr:content>
+</jcr:root>

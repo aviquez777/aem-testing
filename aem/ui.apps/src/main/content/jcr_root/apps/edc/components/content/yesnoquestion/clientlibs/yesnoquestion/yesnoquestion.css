@@ -1,0 +1,198 @@
+.c-binary-cta .hide {
+    display: none;
+}
+
+.c-binary-cta .wrapper {
+    background-color: #f4f8fc;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    margin: 2.5rem 0 3.5rem;
+    padding: 2rem 30px;
+}
+
+.c-binary-cta .wrapper .options,
+.c-binary-cta .wrapper .prompt,
+.c-binary-cta .wrapper .return,
+.c-binary-cta .wrapper .feedback-title {
+    text-align: center;
+}
+
+.c-binary-cta .wrapper .options .button {
+    color: #1a65b2;
+    min-width: 5rem;
+    padding: 1rem 1.25rem;
+}
+
+.c-binary-cta .wrapper .options .button:last-child {
+    margin-left: .5rem;
+}
+
+.c-binary-cta .wrapper .prompt,
+.c-binary-cta .wrapper .return {
+    margin-top: 0;
+}
+
+.c-binary-cta .wrapper .return {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: 0;
+}
+
+@media (min-width: 720px) {
+    .c-binary-cta .wrapper .return {
+        font-size: .9375rem;
+        line-height: 1.6;
+        letter-spacing: -0.2px;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-binary-cta .wrapper .return {
+        font-size: .9375rem;
+        line-height: 1.6;
+        letter-spacing: -0.2px;
+    }
+}
+
+.c-binary-cta .wrapper .return ol {
+    list-style-position: inside;
+    list-style-type: decimal;
+}
+
+.c-binary-cta .wrapper .return ul {
+    list-style-position: inside;
+    list-style-type: initial;
+}
+
+.c-binary-cta .wrapper .return ul li {
+    font-family: "Georgia", "Times New Roman", Times, serif;
+}
+
+.c-binary-cta .wrapper .return :last-child {
+    margin-bottom: 0;
+}
+
+.c-binary-cta .wrapper .return p {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: 0;
+    margin-bottom: 0;
+}
+
+@media (min-width: 720px) {
+    .c-binary-cta .wrapper .return p {
+        font-size: .9375rem;
+        line-height: 1.6;
+        letter-spacing: -0.2px;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-binary-cta .wrapper .return p {
+        font-size: .9375rem;
+        line-height: 1.6;
+        letter-spacing: -0.2px;
+    }
+}
+
+.c-binary-cta .feedback-content .feedback-title {
+    margin: 0 0 1.125rem;
+}
+
+.c-binary-cta .feedback-content .feedback-answers {
+    margin: 0 0 1.5rem;
+    padding: 0;
+}
+
+.c-binary-cta .feedback-content .feedback-answer {
+    margin-bottom: 1rem;
+}
+
+.c-binary-cta .feedback-content .answer-option {
+    cursor: pointer;
+    float: left;
+    margin-right: 1rem;
+}
+
+.c-binary-cta .feedback-content label:not(.hide) {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.7142;
+    display: table-cell;
+    font-weight: normal;
+}
+
+@media (min-width: 720px) {
+    .c-binary-cta .feedback-content label:not(.hide) {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-binary-cta .feedback-content label:not(.hide) {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+.c-binary-cta .feedback-content .form-group {
+    padding-left: 2rem;
+}
+
+.c-binary-cta .feedback-content .form-group input {
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 720px) {
+    .c-binary-cta .wrapper {
+        text-align: left;
+    }
+    .c-binary-cta .prompt {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 50%;
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-binary-cta .prompt {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-binary-cta.feedback .return {
+        text-align: left;
+    }
+    .c-binary-cta .cta-wrap {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+    .c-binary-cta .cta-wrap.hide {
+        display: none;
+    }
+    .c-binary-cta .feedback-content .feedback-title {
+        margin-bottom: 2.5rem;
+        text-align: left;
+    }
+    .c-binary-cta .feedback-content .feedback-answers {
+        margin-bottom: 2rem;
+    }
+}

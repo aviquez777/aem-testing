@@ -1,0 +1,6 @@
+<template data-sly-template.hiddenFields="">
+    <sly data-sly-use.model="${'com.edc.edcportal.core.models.RenewalUtmFields'}"/>
+    <sly data-sly-list="${model.utmFields}">
+        <input type="hidden" value="${item.valueFrom =='cookie'? model.TrafficSourceCookie : request.parameterMap[item.valueFrom]}" name="${item.fieldName}" class="discard-input">
+    </sly>
+</template>

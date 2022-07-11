@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:tags="[edc:format-type/webinar]"
+        cq:template="/conf/edc/settings/wcm/templates/webinar-summary-premium-page"
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="edc/components/structure/premium/page"
+        assetTier="1"
+        enableperformancetest="off"
+        imagealignment="center"
+        isfirst="false"
+        publishdate="first">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <responsivegrid
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid">
+                <articlecontainer
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="edc/components/structure/article/articlecontainer">
+                    <articlebodycontainer
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="edc/components/structure/article/articlebodycontainer"/>
+                    <articlerightcontaine
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="edc/components/structure/article/articlerightcontainer"/>
+                    <articlehero
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="edc/components/content/article/articlehero"/>
+                </articlecontainer>
+                <responsivegrid
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/foundation/components/responsivegrid"/>
+            </responsivegrid>
+        </root>
+    </jcr:content>
+</jcr:root>

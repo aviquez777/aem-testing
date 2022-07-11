@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+      jcr:primaryType="nt:unstructured">
+    <option1
+        jcr:primaryType="nt:unstructured"
+        enName="Company/Corporation"
+        frName="Entreprise"
+        value="Company/Corporation"/>
+    <option2
+        jcr:primaryType="nt:unstructured"
+        enName="Partnership"
+        frName="Société de personnes"
+        value="Partnership"/>
+    <option3
+        jcr:primaryType="nt:unstructured"
+        enName="Sole Proprietorship"
+        frName="Entreprise individuelle"
+        value="Sole Proprietorship"/>
+    <option4
+        jcr:primaryType="nt:unstructured"
+        enName="Deemed Group"
+        frName="Groupe présumé"
+        value="Deemed Group"/>
+    <option5
+        jcr:primaryType="nt:unstructured"
+        enName="Foreign Branch"
+        frName="Succursale étrangère"
+        value="Foreign Branch"/>
+    <option6
+        jcr:primaryType="nt:unstructured"
+        enName="Joint Venture"
+        frName="Copropriété"
+        value="Joint Venture"/>
+    <option7
+        jcr:primaryType="nt:unstructured"
+        enName="Trust"
+        frName="Fiducie"
+        value="Trust"/>
+    <option8
+        jcr:primaryType="nt:unstructured"
+        enName="Government"
+        frName="Gouvernement"
+        value="Government"/>
+    <option9
+        jcr:primaryType="nt:unstructured"
+        enName="Governmental Agency/Authority"
+        frName="Organisme gouvernemental ou autorité publique"
+        value="Governmental Agency/Authority"/>
+    <option10
+        jcr:primaryType="nt:unstructured"
+        enName="Multilateral Agency"
+        frName="Organisme multilatéral"
+        value="Multilateral Agency"/>
+</jcr:root>

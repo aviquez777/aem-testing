@@ -1,0 +1,17 @@
+<template data-sly-template.moreinfomodal="${@ modalTitle, modalText, modalAriaOpen, modalAriaClose}">
+    <div class="c-more-information-modal hide" role="dialog" aria-modal="true">
+        <button type="button" class="modal-triggerer" aria-label="${modalAriaOpen}">?</button>
+        <div class="modal-section hide">
+            <div class="modal-shade"></div>
+            <div class="modal-container">
+                <div class="modal-title">
+                    <h2>${modalTitle}</h2>
+                    <button type="button" class="modal-close" aria-label="${modalAriaClose}"></button>
+                </div>
+                <div class="modal-text">
+                    <p>${modalText @ context='html'}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

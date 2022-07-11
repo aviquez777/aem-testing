@@ -1,0 +1,45 @@
+ <sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+ <sly data-sly-call="${templates.placeholder @ isEmpty = true, emptyTextAppend='This component should be tested and used on the public url only'}"/>
+
+<sly data-sly-test="${wcmmode.disabled}" data-sly-use.model="${'com.edc.edcportal.core.models.SelectProfile'}"/>
+
+<sly data-sly-use.ds="${'com.edc.edcportal.core.models.FormCommonObjects' @ path ='/apps/edcportal/settings/wcm/designs/myEDC-data/formErrors'}"/>
+<sly data-sly-test.errors="${ds.optionsFromDataSourcePath}"/>
+
+<sly data-sly-use.ds="${'com.edc.edcportal.core.models.FormCommonObjects' @ path ='/apps/edcportal/settings/wcm/designs/myEDC-data/profileType'}"/>
+<sly data-sly-test.profiles="${ds.optionsFromDataSourcePath}"/>
+
+<sly data-sly-use.uuidmodel="${'com.edc.edcportal.core.helpers.GenerateUuid'}"/>
+<sly data-sly-test.uuid="${uuidmodel.uuid}"/>
+<sly data-sly-test.arialabelledby="account-registration-label-${uuid}"/>
+<sly data-sly-test.otherTypeId="other-Type-${uuid}"/>
+
+<form name="c-select-profile" class="c-select-profile extended-form" novalidate action="${model.postUrl}" id="form200" method="post" data-currentpage="1" data-event-component="Account Registration Form" data-event-type="form" data-event-value="doc ID" data-event-action="main body" data-event-engagement="3">
+  <input type="hidden" value="${request.parameterMap.redirectUrl}" name="redirectUrl" class="discard-input">
+  <input type="hidden" value="${request.queryString}" name="qstext" class="discard-input">
+  <input type="hidden" value="${request.parameterMap.webinarRegPending}" name="webinarRegPending" class="discard-input">
+  <input type="hidden" value="" name="guid" />
+  <div class="content registration page-1"  data-event-name="form submit - myedc profile step 1">
+    <sly data-sly-use.stepbar="/apps/edcportal/components/content/common/segmentedprogressbar/segmentedprogressbar.html"/>
+    <sly data-sly-call="${stepbar.spb}"/>
+
+   <sly data-sly-list="${profiles}">
+      <div class="form-row input-radio-group">
+        <input name="profileType" id="${item}-${uuid}" type="radio" data-form="${item}" value="${item}" aria-labelledby="${arialabelledby}">
+        <label for="${item}-${uuid}">${profiles[item]}</label>
+      </div>
+    </sly>
+    <div class="submit-failed-message ${interceptor.profileTypeError ? '' : 'hide'}">
+      <p class="error">${'form-select-profile-no-select-error' @ i18n}</p>
+    </div>
+    <div class="actions">
+      <button class="btn-small edc-primary-btn" type="submit" data-action="next">
+        <span>${'button-text-next' @ i18n}</span>
+      </button>
+    </div>
+  </div>
+</form>
+ <div class="keyline"></div>
+ <sly data-sly-test="${wcmmode.disabled}">
+   <sly data-sly-resource="${'needassistance' @ resourceType='cq/experience-fragments/editor/components/experiencefragment'}"/>
+ </sly>

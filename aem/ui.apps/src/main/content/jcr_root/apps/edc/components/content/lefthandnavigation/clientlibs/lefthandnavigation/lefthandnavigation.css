@@ -1,0 +1,158 @@
+@charset "UTF-8";
+.c-left-hand-nav {
+    box-sizing: border-box;
+    margin-bottom: 3.5rem;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.c-left-hand-nav * {
+    box-sizing: border-box;
+}
+
+.c-left-hand-nav .main-nav {
+    display: none;
+}
+
+.c-left-hand-nav .c-dropdown .ui.selection.dropdown .menu .item.link {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.c-left-hand-nav .c-dropdown .ui.selection.dropdown .menu .item.sublink {
+    padding-left: 50px;
+}
+
+.c-left-hand-nav.no-b-margin {
+    margin-bottom: 0;
+}
+
+@media (min-width: 960px) {
+    .c-left-hand-nav .c-dropdown {
+        display: none;
+    }
+    .c-left-hand-nav .main-nav {
+        display: block;
+    }
+    .c-left-hand-nav .main-nav ul {
+        margin: 0;
+        padding-left: 0;
+        margin-right: .5rem;
+        padding-top: .1875rem;
+    }
+    .c-left-hand-nav .main-nav ul li {
+        position: relative;
+        padding: 2px;
+    }
+    .c-left-hand-nav .main-nav ul li a {
+        color: #333;
+        font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0;
+        line-height: 1.7142;
+        color: #1a65b2;
+        display: block;
+        font-weight: 600;
+        padding: 1rem 3.5rem 1rem 1rem;
+        text-align: left;
+        text-decoration: none;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 720px) {
+    .c-left-hand-nav .main-nav ul li a {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-left-hand-nav .main-nav ul li a {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-left-hand-nav .main-nav ul li a + .chevron::after {
+        content: "";
+        color: #1a65b2;
+        cursor: pointer;
+        font-family: 'iconfonts';
+        font-size: 12px;
+        font-weight: 600;
+        padding: 20px;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .c-left-hand-nav .main-nav ul li a ~ ul {
+        max-height: 0;
+        margin-right: 0;
+        margin-left: 1rem;
+        overflow: hidden;
+        transition: max-height .25s ease-out;
+        padding-top: 0;
+    }
+    .c-left-hand-nav .main-nav ul li a ~ ul li a {
+        color: #333;
+        font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0;
+        line-height: 1.7142;
+        color: #1a65b2;
+        font-weight: normal;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 720px) {
+    .c-left-hand-nav .main-nav ul li a ~ ul li a {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-left-hand-nav .main-nav ul li a ~ ul li a {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-left-hand-nav .main-nav ul li a.selected {
+        background: rgba(67, 134, 172, 0.05);
+        border-radius: 3px;
+        font-weight: 600;
+    }
+    .c-left-hand-nav .main-nav ul li a.expanded + .chevron::after {
+        content: "";
+    }
+    .c-left-hand-nav .main-nav ul li a.expanded ~ ul {
+        max-height: 1000px;
+        transition: max-height .25s ease-in;
+    }
+    .c-left-hand-nav .main-nav ul li a.expanded ~ ul a {
+        border-radius: 0;
+    }
+    .c-left-hand-nav .main-nav ul li a:hover, .c-left-hand-nav .main-nav ul li a:focus {
+        text-decoration: underline;
+    }
+    .c-left-hand-nav .main-nav ul li.selected a {
+        border-radius: 0;
+        font-weight: normal;
+    }
+    .c-left-hand-nav .main-nav .parent-link .blue-light {
+        background-color: rgba(67, 134, 172, 0.05);
+        font-weight: 600;
+    }
+    .c-left-hand-nav.no-b-margin {
+        margin-bottom: 3.5rem;
+    }
+}

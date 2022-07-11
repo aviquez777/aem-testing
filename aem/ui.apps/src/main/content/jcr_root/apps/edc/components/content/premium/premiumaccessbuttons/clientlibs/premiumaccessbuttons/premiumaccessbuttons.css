@@ -1,0 +1,141 @@
+.c-partner-login {
+    box-sizing: border-box;
+    margin-bottom: 3rem;
+    padding: 0 15px;
+    position: relative;
+}
+
+.c-partner-login * {
+    box-sizing: border-box;
+}
+
+.c-partner-login .login-btn {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: 0;
+    color: #1a65b2;
+}
+
+@media (min-width: 720px) {
+    .c-partner-login .login-btn {
+        font-size: .9375rem;
+        line-height: 1.6;
+        letter-spacing: -0.2px;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-partner-login .login-btn {
+        font-size: .9375rem;
+        line-height: 1.6;
+        letter-spacing: -0.2px;
+    }
+}
+
+.c-partner-login .login-btn span {
+    text-decoration: underline;
+}
+
+.c-partner-login .title {
+    margin-bottom: 1.5rem;
+}
+
+.c-partner-login .title h2 {
+    margin-top: 0;
+}
+
+.c-partner-login .title p {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: 0;
+    margin-bottom: 0;
+}
+
+@media (min-width: 720px) {
+    .c-partner-login .title p {
+        font-size: 1.5rem;
+        line-height: 1.6666;
+        letter-spacing: -0.1px;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-partner-login .title p {
+        font-size: 1.875rem;
+        line-height: 1.3333;
+        letter-spacing: -0.2px;
+    }
+}
+
+.c-partner-login .title :last-child {
+    margin-bottom: 0;
+}
+
+.c-partner-login .description {
+    margin-bottom: 1.5rem;
+}
+
+.c-partner-login .description ol {
+    list-style-position: inside;
+    list-style-type: decimal;
+}
+
+.c-partner-login .description ul {
+    list-style-position: inside;
+    list-style-type: initial;
+}
+
+.c-partner-login .description ul li {
+    font-family: "Georgia", "Times New Roman", Times, serif;
+}
+
+.c-partner-login .description :last-child {
+    margin-bottom: 0;
+}
+
+.c-partner-login .log-in {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: 0;
+    display: flex;
+    margin-top: 1rem;
+}
+
+@media (min-width: 720px) {
+    .c-partner-login .log-in {
+        font-size: .9375rem;
+        line-height: 1.6;
+        letter-spacing: -0.2px;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-partner-login .log-in {
+        font-size: .9375rem;
+        line-height: 1.6;
+        letter-spacing: -0.2px;
+    }
+}
+
+.c-partner-login .log-in span {
+    margin-right: .5rem;
+}
+
+@media (min-width: 720px) {
+    .c-partner-login {
+        margin-bottom: 4rem;
+        padding: 0;
+    }
+    .c-partner-login .log-in {
+        margin-top: 1.5rem;
+    }
+}

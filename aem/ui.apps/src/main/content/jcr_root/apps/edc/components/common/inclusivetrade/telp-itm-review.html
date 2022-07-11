@@ -1,0 +1,54 @@
+<!--/* Items better be hidden for authors as looks confusing and all is authored on step 3 */-->
+<template data-sly-template.review="">
+    <sly data-sly-use.modalTemplate="/apps/edc/components/common/modals.html"/>
+    <div class="measure-questions-review section-to-toggle ${wcmmode.disabled ? 'hide' : 'show'}">
+        <h3>${properties.itmtitle}</h3>
+        ${properties.itmbeforelist @context='html'}
+        <sly data-sly-list.groupsMultifield="${resource.getChildren}">
+            <ul data-sly-test="${groupsMultifield.name == 'grouplist'}" data-sly-list.group="${groupsMultifield.getChildren}">
+                <li>
+                    <span>${group.group}</span>
+                    <sly data-sly-test="${group.hastooltip}" data-sly-call="${modalTemplate.moreinfomodal @ modalTitle = group.tooltiptitle, modalText = group.tooltipdescription, modalAriaOpen = properties.modalariaopen, modalAriaClose = properties.modalariaclose}"/>
+                </li>
+            </ul>
+        </sly>
+        <label>${properties.itmcheckboxestitle}</label>
+        <sly data-sly-list.checkboxesMultifield="${resource.getChildren}">
+            <sly data-sly-test="${checkboxesMultifield.name == 'checkboxlist'}" data-sly-list.checkbox="${checkboxesMultifield.getChildren}">
+                <div class="c-form-field-info hide">
+                    <div class="info">
+                        <p class="field-value" data-field-value="${checkbox.checkboxtype}"></p>
+                    </div>
+                </div>
+            </sly>
+        </sly>
+    </div>
+    <sly data-sly-list.checkboxesMultifield="${resource.getChildren}">
+            <sly data-sly-test="${checkboxesMultifield.name == 'checkboxlist'}" data-sly-list.checkbox="${checkboxesMultifield.getChildren}">
+                        <div class="extra-measure-questions-review section-to-toggle hide">
+                <sly data-sly-test="${checkbox.questiontitle}">
+                <label>${checkbox.questiontitle}</label>
+                <sly data-sly-list.groupsMultifield="${resource.getChildren}">
+                    <sly data-sly-test="${groupsMultifield.name == 'grouplist'}" data-sly-list.group="${groupsMultifield.getChildren}">
+                        <div class="c-form-field-info hide">
+                            <div class="info">
+                                <p class="field-value" data-field-value="${checkbox.checkboxtype}${group.grouptype}"></p>
+                            </div>
+                        </div>
+                    </sly>
+                </sly>
+                <div class="c-form-field-info hide">
+                    <div class="info">
+                        <p class="field-value" data-field-value="o${checkbox.checkboxtype}"></p>
+                    </div>
+                </div>
+                <div class="c-form-field-info hide">
+                    <div class="info">
+                        <p class="field-value" data-field-value="o${checkbox.checkboxtype}Text"></p>
+                    </div>
+                </div>
+                </sly>
+                        </div>
+            </sly>
+    </sly>
+</template>

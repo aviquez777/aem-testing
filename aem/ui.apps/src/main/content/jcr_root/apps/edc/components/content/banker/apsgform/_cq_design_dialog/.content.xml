@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="APSG Form"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <formIntro
+                jcr:primaryType="nt:unstructured"
+                jcr:title="From Intro"
+                sling:resourceType="granite/ui/components/foundation/section">
+             <layout
+                  jcr:primaryType="nt:unstructured"
+                  sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                  margin="{Boolean}false"/>
+                 <items jcr:primaryType="nt:unstructured">
+                     <formIntro
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/include"
+                        path="edc/components/content/banker/apsgform/cq:design_dialog/formintro/content"/>
+                </items>
+             </formIntro>
+            <required
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Required Fields"
+                sling:resourceType="granite/ui/components/foundation/section">
+             <layout
+                  jcr:primaryType="nt:unstructured"
+                  sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                  margin="{Boolean}false"/>
+                 <items jcr:primaryType="nt:unstructured">
+                     <formlabels
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/include"
+                        path="edc/components/content/banker/apsgform/cq:design_dialog/required/content"/>
+                </items>
+             </required>
+             <uplaodModule
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Upload Section"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                    margin="{Boolean}false"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <uploadSection
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/include"
+                        path="edc/components/content/banker/apsgform/cq:design_dialog/upload/content"/>
+                 </items>
+            </uplaodModule>
+            <optionaFields
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Optional fields"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                    margin="{Boolean}false"/>
+                    <items jcr:primaryType="nt:unstructured">
+                        <optionalFieldsSection
+                          jcr:primaryType="nt:unstructured"
+                          sling:resourceType="granite/ui/components/foundation/include"
+                          path="edc/components/content/banker/apsgform/cq:design_dialog/optional/content"/>
+                     </items>
+            </optionaFields>
+            <caslConsent
+                jcr:primaryType="nt:unstructured"
+                jcr:title="CASL consent"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                    margin="{Boolean}false"/>
+                    <items jcr:primaryType="nt:unstructured">
+                        <caslSection
+                          jcr:primaryType="nt:unstructured"
+                          sling:resourceType="granite/ui/components/foundation/include"
+                          path="edc/components/content/banker/apsgform/cq:design_dialog/casl/content"/>
+                     </items>
+            </caslConsent>
+        </items>
+    </content>
+</jcr:root>

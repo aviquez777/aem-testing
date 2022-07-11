@@ -1,0 +1,39 @@
+<sly data-sly-use.testimonials="com.edc.edcweb.core.components.Testimonials"/>
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty=testimonials.slides.size == 0}"/>
+<sly data-sly-test.pageLang="${currentPage.language.language}"/>
+<sly data-sly-test.quoteLang="${pageLang == 'fr' ? 'blockquote-fr' : 'blockquote-en'}"/>
+
+<section data-sly-test="${testimonials.slides.size > 0}" class="c-testimonial" role="complementary">
+    <div class="testimonial-slider">
+        <div class="testimonial-slide">
+            <div class="img-wrapper">
+                <sly data-sly-test.desktop="${testimonials.slide.fileReference}"/>
+                <sly data-sly-test.tablet="${testimonials.slide.tabletFileReference ? testimonial.tabletFileReference : testimonial.fileReference}"/>
+                <sly data-sly-test.phone="${testimonials.slide.teaserimage ? testimonial.teaserimage : testimonial.fileReference}" />
+                <sly data-sly-call="${commonTemplates.picture @ desktop=desktop, tablet=tablet, phone=phone, imageAlt=testimonials.slide.imageAlt}"/>
+            </div>
+            <div class="info-wrapper">
+                <div class="blockquote ${quoteLang}">
+                    <blockquote>${testimonials.slide.quote}</blockquote>
+                    <p class="author-info">${testimonials.slide.quoteBy} <span class="author-position">${testimonials.slide.companyRole}</span></p>
+                </div>
+                <div class="solutions">
+                    <div class="provided-sln">
+                        <p class="column-title"><strong>${testimonials.slide.firstAttributionTitle}</strong></p>
+                        <p>${testimonials.slide.firstAttributionText}</p>
+                    </div>
+                    <div class="provided-sln">
+                        <p class="column-title"><strong>${testimonials.slide.secondAttributionTitle}</strong></p>
+                        <p>${testimonials.slide.secondAttributionText}</p>
+                    </div>
+                    <div class="provided-sln">
+                        <p class="column-title"><strong>${testimonials.slide.thirdAttributionTitle}</strong></p>
+                        <p>${testimonials.slide.thirdAttributionText}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

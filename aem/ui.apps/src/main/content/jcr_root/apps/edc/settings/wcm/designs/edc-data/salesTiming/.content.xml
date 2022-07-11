@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <option1
+        jcr:primaryType="nt:unstructured"
+        enName="Yes, I have one right now"
+        frName="Oui, j’en ai une à protéger actuellement"
+        value="Yes, right now"/>
+    <option2
+        jcr:primaryType="nt:unstructured"
+        enName="Yes, I'll have one within 1-3 months"
+        frName="Oui, j’en aurai une à protéger dans 1 à 3 mois"
+        value="Yes, 1-3 months"/>
+    <option3
+        jcr:primaryType="nt:unstructured"
+        enName="Yes, I'll have one within 4-6 months"
+        frName="Oui, j’en aurai une à protéger dans 4 à 6 mois"
+        value="Yes, 4-6 months"/>
+    <option4
+        jcr:primaryType="nt:unstructured"
+        enName="No, but I might in the future"
+        frName="Non, mais je pourrais en avoir une à protéger dans l’avenir"
+        value="No, maybe in future"/>
+    <option5
+        jcr:primaryType="nt:unstructured"
+        enName="Unsure"
+        frName="Je ne sais pas"
+        value="Unsure"/>
+</jcr:root>

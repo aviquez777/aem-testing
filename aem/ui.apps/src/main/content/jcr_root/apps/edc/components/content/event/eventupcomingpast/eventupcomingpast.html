@@ -1,0 +1,92 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-use.events="com.edc.edcweb.core.models.EventUpcomingPast"/>
+<sly data-sly-use.ibButtonTemplate="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+
+
+<sly data-sly-call="${templates.placeholder @ isEmpty = wcmmode.edit}"/>
+
+<div id="EVENTUPCOMINGPAST" data-component-target="EVENTUPCOMINGPAST" class="c-upcoming-past-events" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'Upcoming and past events'}" data-event-type="interaction" data-event-engagement="1" data-event-action="main body">
+    <div class="tabs">
+        <nav role="tablist">
+            <div class="tab-labels-container">
+                <ul class="tab-labels">
+                    <li>
+                        <sly data-sly-test.upcomingLabel="${properties.upcomingLabel}">
+                            <a href="#" data-link-target="tab-1" class="tab-label selected" id="EVENTUPCOMINGPAST-tab-1" aria-controls="EVENTUPCOMINGPAST-panel-1" role="tab" aria-selected="true">${upcomingLabel}</a>
+                        </sly>
+                    </li>
+                    <li>
+                        <sly data-sly-test.pastLabel="${properties.pastLabel}">
+                            <a href="#" data-link-target="tab-2"  class="tab-label" id="EVENTUPCOMINGPAST-tab-2" aria-controls="EVENTUPCOMINGPAST-panel-2" role="tab" aria-selected="false">${pastLabel}</a>
+                        </sly>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <article class="tab-panel show" id="EVENTUPCOMINGPAST-panel-1" role="tabpanel" aria-labelledby="EVENTUPCOMINGPAST-tab-1">
+            <sly data-sly-list.groupKey="${events.UpcomingEventGroup}">
+            <div class="date-event-group">
+                <h2>${groupKey}</h2>
+                <sly data-sly-list.pageEvent="${events.UpcomingEventGroup[groupKey]}">
+                  <sly data-sly-test.key="${pageEvent.path}"/>
+                  <sly data-sly-test.isWebinar="${events.WebinarTag[key]}"/>
+                  <div class="event">
+                    <div class="headline small">
+                        <sly data-sly-use.startDate="${'com.edc.edcweb.core.helpers.DateFormater' @date=pageEvent.properties['startDate'], formatEN='EEE, MMMMM d, yyyy', formatFR='EEE, d MMMMM, yyyy'}"/>
+                        <span class="event-date">${startDate.DateConvertedLocale}</span>
+                        <sly data-sly-test.onlineLabel="${properties.onlineLabel}">
+                            <span data-sly-test="${isWebinar}" class="event-location">${onlineLabel}</span>
+                        </sly>
+                        <span data-sly-test="${!isWebinar && pageEvent.properties['city']}" class="event-location">${pageEvent.properties['city']}, ${pageEvent.properties['province']}</span>
+                        <sly data-sly-test.webinarLabel="${properties.webinarLabel}">
+                            <span data-sly-test="${isWebinar}" class="tag xsmall">${webinarLabel}</span>
+                        </sly>
+
+                    </div>
+                    <div class="description">
+                        <sly data-sly-use.linkresolver="${'com.edc.edcweb.core.helpers.LinkExternalizer' @srcPath=pageEvent.path, scheme=request.scheme}"/>
+                        <sly data-sly-test.linkTarget="${properties.linkTarget}">
+                            <h3 class="blue-light"><a href="${linkresolver.LinkWithHtmlExtension}" target="${linkTarget}">${pageEvent.pageTitle}</a></h3>
+                        </sly>
+                        <p data-sly-test="${pageEvent.properties['articlesynopsis']}">${pageEvent.properties['articlesynopsis']}</p>
+                    </div>
+                    <div class="action" data-sly-test="${pageEvent.properties['eventRegLink']}">
+                        <sly data-sly-use.linkresolverRegister="${'com.edc.edcweb.core.helpers.LinkExternalizer' @srcPath=pageEvent.properties['eventRegLink'], scheme=request.scheme}"/>
+                        <sly data-sly-test.registerTarget="${properties.registerTarget}">
+                            <div data-sly-test.registerLabel="${properties.registerLabel}" data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='link', isUsedForModal='nomodal', buttonstate='enabled', link=linkresolverRegister.LinkWithHtmlExtension, buttontext=registerLabel, target=properties.registerTarget, buttoncssclasses='edc-tertiary-btn'}"  data-sly-unwrap></div>
+                        </sly>
+                    </div>
+                 </div>
+              </sly>
+           </div>
+          </sly>
+        </article>
+        <article class="tab-panel" id="EVENTUPCOMINGPAST-panel-2" role="tabpanel" aria-labelledby="EVENTUPCOMINGPAST-tab-2">
+          <sly data-sly-list.groupKey="${events.PastEventGroup}">
+            <div class="date-event-group">
+                <h2>${groupKey}</h2>
+                <sly data-sly-list.pageEvent="${events.PastEventGroup[groupKey]}">
+                  <sly data-sly-test.key="${pageEvent.path}"/>
+                  <sly data-sly-test.isWebinar="${events.WebinarTag[key]}"/>
+                  <div class="event">
+                    <div class="headline small">
+                        <sly data-sly-use.startDate="${'com.edc.edcweb.core.helpers.DateFormater' @date=pageEvent.properties['startDate'], formatEN='EEE, MMMMM d, yyyy', formatFR='EEE, d MMMMM, yyyy'}"/>
+                        <span class="event-date">${startDate.DateConvertedLocale}</span>
+                        <span data-sly-test="${isWebinar}" class="event-location">${properties.onlineLabel}</span>
+                        <span data-sly-test="${!isWebinar && pageEvent.properties['city']}" class="event-location">${pageEvent.properties['city']}, ${pageEvent.properties['province']}</span>
+                        <span data-sly-test="${isWebinar}" class="tag xsmall">${properties.webinarLabel}</span>
+                    </div>
+                    <div class="description">
+                        <sly data-sly-use.linkresolver="${'com.edc.edcweb.core.helpers.LinkExternalizer' @srcPath=pageEvent.path, scheme=request.scheme}"/>
+                        <h3 class="blue-light"><a href="${linkresolver.LinkWithHtmlExtension}" target="${properties.linkTarget}">${pageEvent.pageTitle}</a></h3>
+                        <p data-sly-test="${pageEvent.properties['articlesynopsis']}">${pageEvent.properties['articlesynopsis']}</p>
+                    </div>
+                 </div>
+              </sly>
+            </div>
+          </sly>
+        </article>
+    </div>
+</div>

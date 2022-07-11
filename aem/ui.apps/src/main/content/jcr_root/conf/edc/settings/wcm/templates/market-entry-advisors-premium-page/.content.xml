@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Template">
+    <jcr:content
+        cq:lastModified="{Date}2018-05-28T17:29:17.481-04:00"
+        cq:lastModifiedBy="kenchanto"
+        cq:templateType="/conf/edc/settings/wcm/template-types/market-entry-advisors-page"
+        jcr:description="Market Entry Advisors Template (Unlocked Premium)"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Market Entry Advisors Page (Premium)"
+        status="enabled"/>
+</jcr:root>

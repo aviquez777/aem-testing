@@ -1,0 +1,102 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = true, emptyTextAppend='Component will render properly only on publish mode, and once profile is selected'}"/>
+<sly data-sly-use.uuidmodel="${'com.edc.edcportal.core.helpers.GenerateUuid'}"/>
+<sly data-sly-test.uuid="uniqueId"/>
+<sly data-sly-use.tabTemplates="templates.html"/>
+
+<section class="c-my-dashboard" data-event-component="myEDC Dashboard" data-event-type="button" data-event-name="click" data-event-engagement="1" data-event-action="main body" data-event-level="1">
+    <div class="tabs-section">
+        <section id="dashboard-content" role="region">
+            <div class="message-box">
+                <button type="button" class="no-btn message-close" aria-label="message-close">
+                    <span class="iconfont close"></span>
+                </button>
+                <h2>${'dashboard-welcome-message-box-title' @ i18n}</h2>
+                <p>${'dashboard-welcome-message-box-text' @ i18n}</p>
+                <p>${'dashboard-welcome-message-box-text-two' @ i18n}</p>
+            </div>
+            <section class="tab-set" data-event-component="multi-tab" data-event-type="interaction" id="${uuid}" data-event-engagement="1" data-event-action="main body" aria-labelledby="${uuid}-tab1">
+                <div class="tabs">
+                    <nav role="tablist">
+                        <div class="tab-labels-container">
+                            <ul class="tab-labels">
+                                  <li>
+                                    <button type="button" class="tab-label selected" id="${uuid}-tab1" aria-controls="${uuid}-panel1" role="tab" aria-selected="true">
+                                    ${'dashboard-products-tab-title' @ i18n}
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-label" id="${uuid}-tab2" aria-controls="${uuid}-panel2" role="tab" aria-selected="true">
+                                    ${'dashboard-my-resources-tab-title' @ i18n}
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-label" id="${uuid}-tab3" aria-controls="${uuid}-panel3" role="tab" aria-selected="true">
+                                    ${'dashboard-my-webinars-tab-title' @ i18n}
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="actions-nav">
+                            <button type="button" class="icon icon-arrow-right" aria-label="arrow-right">
+                                <span>${'dashboard-icon-arrow-right-button-text' @ i18n}</span>
+                            </button>
+                            <button type="button" class="icon icon-arrow-left" aria-label="arrow-left">
+                                <span>${'dashboard-icon-arrow-left-button-text' @ i18n}</span>
+                            </button>
+                        </div>
+                    </nav>
+                    <div class="loading-screen hide">${'my-dashboard-loading' @ i18n}</div>
+                    <div class="error-message hide">${'webinar-page-load-error' @ i18n}</div>
+                    <div id="tab-content" aria-live="polite">
+                        <div class="items-list">
+                            <!--/** Products Content Fragment **/-->
+                            <article class="tab-panel show" id="${uuid}-panel1" role="tabpanel" aria-labelledby="${uuid}-tab1">
+                                <sly data-sly-resource="${'producttab' @ resourceType='cq/experience-fragments/editor/components/experiencefragment', decorationTagName='div', cssClassName='cards-container'}"/>
+                                <div class="actions-section"></div>
+                            </article>
+                            <!--/** My Resources **/-->
+                            <article class="tab-panel hide" id="${uuid}-panel2" role="tabpanel" aria-labelledby="${uuid}-tab2">
+                                <div class="discover-more top">
+                                    <div class="discover-more-text">
+                                      <h3>${'dashboard-my-resources-empty-title' @ i18n}</h3>
+                                      <p>${'dashboard-my-resources-empty-text' @ i18n}</p>
+                                    </div>
+                                </div>
+                                <div class="cards-container" data-json-url="/bin/myedc/mydashboard-resources" data-type="resource" data-load-once="true">
+                                    <sly data-sly-call="${tabTemplates.emptyPageSection}"/>
+                                </div>
+                                <sly data-sly-call="${tabTemplates.actionSection}"/>
+                            </article>
+                             <!--/** My Webinars **/-->
+                            <article class="tab-panel hide" id="${uuid}-panel3" role="tabpanel" aria-labelledby="${uuid}-tab3">
+                                <div class="discover-more top">
+                                    <div class="discover-more-text">
+                                        <h3>${'dashboard-my-webinars-empty-title' @ i18n}</h3>
+                                        <p>${'dashboard-my-webinars-empty-text' @ i18n}</p>
+                                    </div>
+                                </div>
+                                <div class="cards-container" data-json-url="/bin/myedc/mydashboard-webinars" data-type="webinar" data-load-once="false">
+                                    <sly data-sly-call="${tabTemplates.emptyPageSection}"/>
+                                </div>
+                                <div class="discover-more bottom hide">
+                                    <div class="discover-more-text">
+                                        <h3>${'dashboard-my-webinars-empty-title' @ i18n}</h3>
+                                        <p>${'dashboard-my-webinars-empty-text' @ i18n}</p>
+                                        <!--/** Use same text as per Olivia's instructions
+                                        designed strings: dashboard-my-webinars-looking-more-title
+                                        dashboard-my-webinars-looking-more-text'
+                                        **/-->
+                                    </div>
+                                </div>
+                                <sly data-sly-call="${tabTemplates.actionSection}"/>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="keyline"></div>
+            <sly data-sly-resource="${'needassistance' @ resourceType='cq/experience-fragments/editor/components/experiencefragment', decorationTagName='div',cssClassName='needassistance'}"/>
+        </section>
+    </div>
+</section>

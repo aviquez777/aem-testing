@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/platform-configs"/>
+    <filter root="/apps/edcweb-configs"/>
+<!-- -Task 174245  -->
+    <filter root="/etc/dam/metadataeditor/mimetypemappings/msword"/>
+    <filter root="/etc/dam/metadataeditor/mimetypemappings/vnd.ms-excel"/>
+</workspaceFilter>

@@ -1,0 +1,21 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.policyReader="com.edc.edcweb.core.models.PolicyReader" />
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-use.ehhSearch="com.edc.edcweb.core.models.ehh.EHHSearch"/>
+
+<sly data-sly-test.isDisabled="${policyReader.labels['disablesearch'] == 'yes'}" />
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+
+<sly data-sly-call="${templates.placeholder @ isEmpty = isDisabled, emptyTextAppend='The component is disabled'}"/>
+
+<div class="c-ehh-search" data-sly-test="$!isDisabled}">
+    <sly data-sly-test.placeholder="${properties.placeholder ? properties.placeholder : policyReader.labels['placeholder']}"></sly>
+    <sly data-sly-test.searchtarget="${properties.searchtarget ? properties.searchtarget : policyReader.labels['searchtarget']}"></sly>
+    <form action="${ehhSearch.searchPagePath}.html" target="${searchtarget}">
+        <div class="search-box">
+            <input type="text" id="search-question-${uuid}" name="query" class="search-input" placeholder="${placeholder}" aria-label="${placeholder}" />
+            <button type="submit" class="search-btn" aria-label="${'Submit' @ i18n}" tabindex="-1"></button>
+        </div>
+    </form>
+</div>

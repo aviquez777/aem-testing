@@ -1,0 +1,49 @@
+<template data-sly-template.emailform="${@ encodedPath, encodedResource, messages}">
+    <form class="email-section" novalidate="" action="/bin/gatedContentServlet"  data-event-component="${componentName}" data-event-type="form" data-event-name="button click - ${properties.submitEmailButtonEnTxt}" data-event-action="main body">
+        <h2>${properties.emailFormTitle}</h2>
+        ${properties.emailForDescription @ context='html'}
+         <div class="form-group">
+            <label for="email-address">${properties.emailLabel}</label>
+            <input type="email" class="form-control email-submit" placeholder="${properties.emailHelperText}" name="emailAddress" id="emailAddress-${uuid}" required="">
+            <span class="error" data-req-message="${messages.formErrorMessages.required}" data-email-message="${messages.formErrorMessages.email}"></span>
+        </div>
+        <div class="form-disclaimer">
+            <div class="actions">
+                <button type="submit" data-english-text="${properties.submiEmailButtonEnTxt ? properties.submiEmailButtonEnTxt : 'access content'}">
+                    <span>${properties.submiEmailButton}</span>
+                </button>
+            </div>
+            <div class="text">
+              ${properties.caslText @ context='html'}
+            </div>
+        </div>
+        <input type="hidden"class="form-control" validation-rule="none" name="ovpa" value="${encodedPath}"/>
+        <input type="hidden"class="form-control" validation-rule="none" name="rtype" value="${encodedResource}"/>
+    </form>
+</template>
+
+<template data-sly-template.gatedform="${@ model, encodedPath, encodedResource, questionList, messages}">
+    <sly data-sly-use.hiddenFieldTemplate="/apps/edc/components/common/forms.html"/>
+    <sly data-sly-use.fieldTemplate="fieldstemplate.html"/>
+    <form class="form-section ${wcmmode.disabled ? 'hide' : 'show'}" novalidate="" action="/bin/gatedContentServlet" data-event-component="${componentName} step 2" data-event-type="form" data-event-name="form submit ${componentName}" data-event-action="main body" data-engagement-type="3" data-event-level="1">
+        <sly data-sly-call="${hiddenFieldTemplate.formhiddenfields @  elqFormName = properties.formID, formID = properties.formID, docID = properties.docID, inquiryID = properties.inquiryID}"/>
+        <input type="hidden" class="form-control" name="emailAddress" value="" />
+        <div class="form-header">
+            <h2>${properties.formTitle}</h2>
+             ${properties.formDescription @ context='html'}
+        </div>
+        <h3>${properties.aboutYourself}</h3>
+        <p>${properties.allFieldsAre} <strong>${properties.required}</strong>.</p>
+
+        <!--/* Magic happens here */-->
+        <sly data-sly-call="${fieldTemplate.fields @ model = model, questionList = questionList, messages = messages.formErrorMessages}"/>
+
+        <div class="actions">
+            <button type="submit" data-english-text="${properties.submitFormButtonEnTxt ? properties.submitFormButtonEnTxt : 'submit step'}">
+                <span>${properties.submitFormButton}</span>
+            </button>
+        </div>
+        <input type="hidden"class="form-control" validation-rule="none" name="ovpa" value="${encodedPath}"/>
+        <input type="hidden"class="form-control" validation-rule="none" name="rtype" value="${encodedResource}"/>
+    </form>
+</template>

@@ -1,0 +1,316 @@
+@charset "UTF-8";
+.c-dropdown {
+    box-sizing: border-box;
+    position: relative;
+}
+
+.c-dropdown * {
+    box-sizing: border-box;
+}
+
+.c-dropdown span.error {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: none;
+}
+
+.c-dropdown .dropdown-title {
+    display: none;
+}
+
+.c-dropdown .help-text {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.7142;
+    font-weight: normal;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 720px) {
+    .c-dropdown .help-text {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-dropdown .help-text {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+.c-dropdown .dropdown-description {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.7142;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-bottom: .5rem;
+}
+
+@media (min-width: 720px) {
+    .c-dropdown .dropdown-description {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-dropdown .dropdown-description {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+.c-dropdown .selection-container {
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    width: 100%;
+    float: left;
+    -webkit-box-shadow: 0 -3px 8px 0 rgba(51, 51, 51, 0.1);
+    box-shadow: 0 -3px 8px 0 rgba(51, 51, 51, 0.1);
+    display: none;
+    padding-bottom: 1.5rem;
+    padding-top: 1rem;
+    text-align: center;
+}
+
+.c-dropdown .selection-container .selection {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.7142;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 720px) {
+    .c-dropdown .selection-container .selection {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-dropdown .selection-container .selection {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+.c-dropdown .selection-container button {
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    width: 83.33333333%;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.c-dropdown .dropdown-overlay.active {
+    -moz-transition: background-color 0.5s ease-in-out;
+    -o-transition: background-color 0.5s ease-in-out;
+    -webkit-transition: background-color 0.5s ease-in-out;
+    transition: background-color 0.5s ease-in-out;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.25);
+    bottom: 0;
+    display: -webkit-flex;
+    display: flex;
+    height: 100%;
+    left: 0;
+    padding: 30px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100vw;
+    z-index: 1000201;
+    /* Overrides to default Semantic UI CSS*/
+}
+
+.c-dropdown .dropdown-overlay.active .dropdown-container {
+    -webkit-box-shadow: 0 2px 3px 0 rgba(51, 51, 51, 0.15);
+    background-color: #fff;
+    border: 1px solid rgba(51, 51, 51, 0.3);
+    border-radius: .28571429rem;
+    box-shadow: 0 2px 3px 0 rgba(51, 51, 51, 0.15);
+    opacity: 0;
+    position: relative;
+    width: 100%;
+}
+
+.c-dropdown .dropdown-overlay.active .dropdown-container.ready {
+    -moz-transition: opacity 0.1s ease-in-out;
+    -o-transition: opacity 0.1s ease-in-out;
+    -webkit-transition: opacity 0.1s ease-in-out;
+    transition: opacity 0.1s ease-in-out;
+    opacity: 1;
+}
+
+.c-dropdown .dropdown-overlay.active label,
+.c-dropdown .dropdown-overlay.active .dropdown-description,
+.c-dropdown .dropdown-overlay.active .help-text,
+.c-dropdown .dropdown-overlay.active .c-more-information-modal {
+    display: none;
+}
+
+.c-dropdown .dropdown-overlay.active .dropdown-title {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: 0;
+    border-bottom: 1px solid #ccc;
+    display: -webkit-flex;
+    display: flex;
+    margin: 0;
+    padding: 1rem 15px 1rem 30px;
+}
+
+@media (min-width: 720px) {
+    .c-dropdown .dropdown-overlay.active .dropdown-title {
+        font-size: 1.5rem;
+        line-height: 1.6666;
+        letter-spacing: -0.1px;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-dropdown .dropdown-overlay.active .dropdown-title {
+        font-size: 1.875rem;
+        line-height: 1.3333;
+        letter-spacing: -0.2px;
+    }
+}
+
+.c-dropdown .dropdown-overlay.active .dropdown-title .label-text {
+    width: 100%;
+}
+
+.c-dropdown .dropdown-overlay.active .dropdown-title .close-btn::after {
+    color: #2f78c6;
+    content: "";
+    float: right;
+    font-family: "iconfonts";
+    position: relative;
+}
+
+.c-dropdown .dropdown-overlay.active .selection-container {
+    display: block;
+}
+
+.c-dropdown .dropdown-overlay.active .selection-container button {
+    position: relative;
+    z-index: 1000201;
+}
+
+.c-dropdown .dropdown-overlay.active .ui.selection.dropdown.error + span.error,
+.c-dropdown .dropdown-overlay.active .ui.selection.dropdown.error ~ span.error,
+.c-dropdown .dropdown-overlay.active .ui.selection.dropdown.multiple.error + span.error,
+.c-dropdown .dropdown-overlay.active .ui.selection.dropdown.multiple.error ~ span.error {
+    display: none;
+}
+
+.c-dropdown .dropdown-overlay.active .ui.selection.dropdown .menu .selected.item,
+.c-dropdown .dropdown-overlay.active .ui.selection.dropdown.multiple .menu .selected.item {
+    background-color: transparent;
+    color: #2f78c6;
+}
+
+.c-dropdown .dropdown-overlay.active .ui.dropdown > .text,
+.c-dropdown .dropdown-overlay.active .ui.active.selection.dropdown > .dropdown.icon,
+.c-dropdown .dropdown-overlay.active .ui.visible.selection.dropdown > .dropdown.icon {
+    display: none;
+}
+
+.c-dropdown .dropdown-overlay.active .ui.selection.active.dropdown,
+.c-dropdown .dropdown-overlay.active .ui.selection.active.dropdown:hover {
+    border: 0;
+    padding: 0;
+}
+
+.c-dropdown .dropdown-overlay.active .ui.selection.active.dropdown .menu,
+.c-dropdown .dropdown-overlay.active .ui.selection.active.dropdown:hover .menu,
+.c-dropdown .dropdown-overlay.active .ui.dropdown .menu > .item:hover {
+    -webkit-box-shadow: none;
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+    position: relative;
+}
+
+.c-dropdown .dropdown-overlay.active .ui.selection.active.dropdown {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+@media (min-width: 720px) {
+    .c-dropdown .selection-container button {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 33.33333333%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-dropdown .selection-container button {
+        width: 33.33333333%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-dropdown .dropdown-container.open {
+        -webkit-box-shadow: 0 1px 5.5px 3px rgba(51, 51, 51, 0.07);
+        background-color: #fff;
+        border: 1px solid #4386ac;
+        border-radius: .28571429rem;
+        box-shadow: 0 1px 5.5px 3px rgba(51, 51, 51, 0.07);
+        height: 255px;
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+    }
+    .c-dropdown .dropdown-container.open .ui.selection.dropdown.visible,
+    .c-dropdown .dropdown-container.open .ui.selection.dropdown.multiple.visible {
+        border: 0;
+    }
+    .c-dropdown .dropdown-container.upward {
+        bottom: 100%;
+        top: -160px;
+    }
+    .c-dropdown .ui.dropdown .menu {
+        background-color: transparent;
+    }
+    .c-dropdown .ui.selection.active.dropdown .menu {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        max-height: 160px;
+        width: auto;
+    }
+    .c-dropdown .ui.selection.active.dropdown .menu.is-ie {
+        width: 100%;
+    }
+}

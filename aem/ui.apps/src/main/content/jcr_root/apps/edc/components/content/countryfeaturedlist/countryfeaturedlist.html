@@ -1,0 +1,44 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.countrytoplist="com.edc.edcweb.core.models.CountryFeaturedList"/>
+<sly data-sly-test.countriesdata="${countrytoplist.CountriesData}"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !countriesdata}"/>
+<sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+
+<section  data-sly-test="${countriesdata}"  class="featured-countries full-width" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'Featured Countries'}" data-event-type="link" data-event-engagement="1" data-event-action="main body" role="complementary" aria-labelledby="FEATUREDCOUNTRIES">
+    <div class="container">
+        <div class="default-view">
+            <h2 class="maintitle" id="FEATUREDCOUNTRIES">${countrytoplist.PropertiesMap['title']}</h2>
+            <p class="maintext">${countrytoplist.PropertiesMap['textopen']  @ context='html'}</p>
+            <sly data-sly-call="${commonTemplates.simplebutton @ btntext=countrytoplist.PropertiesMap['activatetext'], btnclasses='edc-tertiary-btn closetoggle'}"/>
+        </div>
+        <div class="active-view hide">
+            <div class="close">
+                <button class="closetoggle" aria-label="Close"><span class="iconfont close"></span></button>
+            </div>
+            <aside>
+                <h2 class="maintitle">${countrytoplist.PropertiesMap['title']}</h2>
+                <p class="maintext">${countrytoplist.PropertiesMap['textopen']  @ context='html'}</p>
+                <div class="closelink">
+                    <button class="closetoggle">${countrytoplist.PropertiesMap['closetext']}</button>
+                </div>
+            </aside>
+            <article>
+                <ul>
+                    <li class="content headings">
+                        <div class="countries"><h2>${countrytoplist.PropertiesMap['countrycolname']}</h2></div>
+                        <div class="edcposition"><h4>${countrytoplist.PropertiesMap['positioncolname']}</h4></div>
+                        <div class="riskrating"><h4>${countrytoplist.PropertiesMap['ratingcolname']}</h4></div>
+                    </li>
+
+                    <sly data-sly-test="${countriesdata}" data-sly-list.item="${countriesdata}"
+                         data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+                         data-sly-use.itemTemplate="/apps/edc/components/common/contentcountrysearch.html">
+                        <sly data-sly-call="${itemTemplate.item @ list = list, item = item, target = countrytoplist.PropertiesMap['linktarget'] }"/>
+                    </sly>
+
+                </ul>
+            </article>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,46 @@
+<sly data-sly-use.model="com.edc.edcweb.core.models.OnlinePayments"/>
+<sly data-sly-use.messages="com.edc.edcweb.core.models.FormCommonMessages"/>
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty=!model.javaScriptUrl, emptyTextAppend='Please Check Confguration Files'}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty=true, emptyTextAppend='Form will display properly on published mode'}"/>
+
+<sly data-sly-test.params="${model.getParams}"/>
+<sly data-sly-test.companyname="${params['companyname']}"/> 
+<sly data-sly-test.policynumber="${params['policynumber']}"/> 
+<sly data-sly-test.edc="${params['edc']}"/> 
+<sly data-sly-test.amount="${params['amount']}"/> 
+<sly data-sly-test.currency="${params['currency']}"/> 
+
+<sly data-sly-test.isPublish="${wcmmode.disabled}"/>
+<sly data-sly-test.hasParams="${!isPublish || (companyname && policynumber && edc && amount && currency)}"/>
+
+<sly data-sly-include="/apps/edc/components/common/csrf-token.html"/>
+
+
+<div class="c-online-payments" data-has-params="${hasParams ? 'true' : 'false'}"  data-error-banner-default-message="${properties.defaultErrorMessage}"  data-english-error-message="${properties.englishErrorMessage}" data-ticket-servlet="/bin/op/step1" data-receipt-servlet="/bin/op/step3"  data-moneris-mode="${model.environment}"  data-event-component="online payments" data-event-type="form" data-event-name="form response - moneris payment submit" data-event-action="main body">
+    <div class="levels" data-sly-test="${hasParams && properties.step1Of3}">
+        <!--/* Moneris JavaScript Library */-->
+        <script src="${model.javaScriptUrl @ context='text'}"></script>
+        <sly data-sly-use.optemplates="optemplates.html"/>
+        <div class="status">
+            <span class="status-bar"></span>
+        </div>
+        <div class="level level-1">
+            <sly data-sly-call="${optemplates.step1 @ isPublish=isPublish,companyname=companyname, policynumber=policynumber,edc=edc,amount=amount,currency=currency}"/>
+        </div>
+        <div class="level level-2 ${isPublish ? 'hide' : 'show'}">
+            <sly data-sly-call="${optemplates.step2}"/>
+        </div>
+        <div class="level level-3 ${isPublish ? 'hide' : 'show'}">
+            <sly data-sly-call="${optemplates.step3 @ isPublish=isPublish}"/>
+        </div>
+        <div class="help-message">
+            ${properties.helpMessage @ context='html'}
+        </div>
+        <div data-sly-resource="${'processingScreen' @ resourceType='edc/components/content/processingscreen'}"></div>
+    </div>
+    <div class="no-params ${hasParams ? 'hide' : 'show'}">
+        <h2>${properties.noqsTitle}</h2>
+        ${properties.noqsMessage@ context='html'}
+    </div>
+</div>

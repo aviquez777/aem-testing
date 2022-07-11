@@ -1,0 +1,49 @@
+.c-myedc-banner {
+    align-items: center;
+    background-color: #26a2b5;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    margin-bottom: 2rem;
+}
+
+.c-myedc-banner.no-margin-top .container {
+    margin-top: 0;
+}
+
+.c-myedc-banner .container {
+    margin-top: 4.0625rem;
+    height: 4.5rem;
+    padding: 0;
+}
+
+.c-myedc-banner .container h1 {
+    margin: 1.5rem 1rem;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+}
+
+@media (min-width: 720px) {
+    .c-myedc-banner .container {
+        height: 5.5rem;
+        /* This is required for AEM only */
+        margin-top: 4.125rem;
+    }
+    .c-myedc-banner .container h1 {
+        font-size: 1.875rem;
+        line-height: 2.5rem;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-myedc-banner {
+        margin-bottom: 3rem;
+    }
+    .c-myedc-banner .container {
+        margin-top: 0;
+    }
+}

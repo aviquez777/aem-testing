@@ -1,0 +1,35 @@
+<template data-sly-template.step6="${@  uuid, properties, formLabels}">
+    <div class="success-message ${wcmmode.disabled ? 'hide' : 'show'}">
+        <img data-sly-test="${properties.elegibleImg}" src="${properties.elegibleImg}" alt="${properties.elegibleAlt}"/>
+        <h3>${properties.elegibleTitle}</h3>
+        ${properties.elegibleMsg @ context='html'}
+        <a href="${properties.elegibleUrl}" class="button edc-primary-button">${properties.elegibleButtonText}</a>
+        <hr class="lg" />
+        <div class="special-msg">
+            <h4>${properties.elegibleNoteTitle}</h4>
+            ${properties.elegibleNoteMsg @ context='html'}
+        </div>
+    </div>
+    <div class="fail-message ${wcmmode.disabled ? 'hide' : 'show'}">
+        <img data-sly-test="${properties.inelegibleImg || properties.elegibleImg}" src="${properties.inelegibleImg ? properties.inelegibleImg : properties.elegibleImg}" alt="${properties.inelegibleAlt ? properties.inelegibleAlt : properties.elegibleAlt}"/>
+        <h3>${properties.inelegibleTitle}</h3>
+        ${properties.inelegibleMsg @ context='html'}
+        <a href="${properties.inelegibleUrl}" class="button edc-primary-button">${properties.inelegibleButtonText}</a>
+    </div>
+    <div class="form-ctas bottom-ctas">
+        <div class="ctas-container">
+            <a class="back back-btn cta hide" href="#" data-action="back" data-back-text="${formLabels.backButton}" data-edit-text="${formLabels.editButton}">
+                <span>${formLabels.backButton}</span>
+            </a>
+            <button class="button btn-small edc-primary-btn next-btn show" type="submit" data-english-text="${formLabels.nextButtonDET}" data-action="next">
+                <span>${formLabels.nextButton}</span>
+            </button>
+            <button class="button btn-small edc-primary-btn done-btn hide" type="submit" data-english-text="${formLabels.proceedButtonDET}"  data-action="q-done">
+                <span>${formLabels.proceedButton}</span>
+            </button>
+        </div>
+    </div>
+    <div class="submit-failed-message ${wcmmode.disabled ? 'hide' : 'show'}">
+        <p>${formLabels.formSubmitFail}</p>
+    </div>
+</template>>

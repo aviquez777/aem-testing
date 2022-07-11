@@ -1,0 +1,41 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.startTitle}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = properties.startTitle, emptyTextAppend='Form will display properly on published mode'}"/>
+<sly data-sly-test="${properties.startTitle}">
+<sly data-sly-use.model="com.edc.edcweb.core.models.Covid19TriageTool"/>
+<sly data-sly-use.ibButtonTemplate="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+
+<div class="c-triage-tool first-question" data-json-url="${model.jsonUrl}" data-event-component="triage tool" data-event-type="form" data-event-name="form submit – triage tool" data-event-action="triage tool" data-engagement-type="1" data-event-level="1" data-destination-page="#">
+    <div class="q-answers"></div>
+    <div class="q-header">
+        <p class="q-title" data-results-title="${properties.endTitle}">${properties.startTitle}</p>
+    </div>
+    <div class="q-body">
+        <div class="first-page">
+            ${properties.startDescription @ context='html'}
+        </div>
+         <!--/** Questionnaire Component **/-->
+         <sly data-sly-test.questCss="q-content ${wcmmode.disabled ? 'hide' : ''}"/>
+         <sly data-sly-resource="${'questionnaire' @ resourceType='edc/components/content/covid19triagetool/questionnaire', decorationTagName='div', cssClassName=questCss}"/>
+        
+        <div class="q-results ${wcmmode.disabled ? 'hide' : 'show'}" data-event-type="triage filter" data-event-name="steps completed">
+            <h3 class="title-for-desktop">${properties.endThankYou}</h3>
+            ${properties.endDescription @ context='html'}
+            <h3 class="title-for-mobile">${properties.endResults}</h3>
+            <!--/** Results Component **/-->
+            <sly data-sly-test.restCss="${wcmmode.disabled ? 'results-grid carousel' : ''}"/>
+            <sly data-sly-resource="${'result' @ resourceType='edc/components/content/covid19triagetool/result', decorationTagName='div', cssClassName=restCss}"/>
+
+            <div class="actions">
+                <div data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled', buttontext=properties.startOverLinkText, btntype='button', buttoncssclasses='reset'}"  data-sly-unwrap></div>
+            </div>
+        </div>
+        <div class="q-loading">
+             <h3>${properties.loadingtitle}</h3>
+        </div>
+    </div>
+    <div class="q-footer">
+        <div data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='disabled', buttontext=properties.nextbtntext, btntype='button', buttoncssclasses='btn-next'}" data-sly-unwrap></div>
+    </div>
+</div>
+</sly>

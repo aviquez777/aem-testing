@@ -1,0 +1,16 @@
+subject=${subject}
+
+<html>
+<head>
+<title>${subject}</title>
+</head>
+<body>
+<p>Workflow Title: ${workflowTitle}</p>
+<p>Message left in comment box by user from the previous step:</p>
+<blockquote>&ldquo;${message}&rdquo; - ${user}</blockquote>
+<p>Instructions/CTA: No action required. This is to notify that edits have been made on the page. See comments above</p>
+<p>Author URL: ${authorUrl}</p>
+<p>View as published URL: ${viewAsPublishedUrl}</p>
+<p>This is an automatically generated message. Please do not reply.</p>
+</body>
+</html>

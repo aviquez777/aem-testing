@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          jcr:primaryType="sling:OsgiConfig"
+          getB2CChangePassEntityId="https://authdev.edc.ca/ff3a86f5-a94e-4000-873d-8d4a0b1cb179/B2C_1A_AEM_ChangePassword_SAML"
+          getB2CChangePassStatusCode="urn:oasis:names:tc:SAML:2.0:status:Responder"
+          getB2CChangePassStatusMessage="The user has cancelled entering self-asserted information."
+          getB2CChangePassRedirectURL="https://wwwdev.edc.ca/en/my-account/profile.html"
+
+          getB2CEditProfileEntityId="https://authdev.edc.ca/ff3a86f5-a94e-4000-873d-8d4a0b1cb179/B2C_1A_AEM_ProfileEdit_SAML"
+          getB2CEditProfileStatusCode="urn:oasis:names:tc:SAML:2.0:status:Responder"
+          getB2CEditProfileStatusMessage="The user has cancelled entering self-asserted information."
+          getB2CEditProfileRedirectURL="https://wwwdev.edc.ca/en/my-account/profile.html"
+
+          getB2CForgetPassEntityId="https://authdev.edc.ca/ff3a86f5-a94e-4000-873d-8d4a0b1cb179/B2C_1A_AEM_SignUpOrSignIn_SAML"
+          getB2CForgetPassStatusCode="urn:oasis:names:tc:SAML:2.0:status:Responder"
+          getB2CForgetPassStatusMessage="The user has forgotten their password."
+          getB2CForgetPassRedirectURL="https://wwwdev.edc.ca/en/my-account/reset-password-b2c.html"
+
+          getB2CSignUpEntityId="https://authdev.edc.ca/ff3a86f5-a94e-4000-873d-8d4a0b1cb179/B2C_1A_AEM_SignUpOrSignIn_SAML"
+          getB2CSignUpStatusCode="urn:oasis:names:tc:SAML:2.0:status:Responder"
+          getB2CSignUpStatusMessage="The user has cancelled entering self-asserted information."
+          getB2CSignUpRedirectURL="https://wwwdev.edc.ca/en/my-account/login-b2c.html"
+
+          getB2CFRChangePassEntityId="https://authdev.edc.ca/ff3a86f5-a94e-4000-873d-8d4a0b1cb179/B2C_1A_AEM_ChangePassword_SAML_FR"
+          getB2CFRChangePassStatusCode="urn:oasis:names:tc:SAML:2.0:status:Responder"
+          getB2CFRChangePassStatusMessage="L'utilisateur a annulé la saisie d'informations auto-confirmées."
+          getB2CFRChangePassRedirectURL="https://wwwdev.edc.ca/fr/mon-compte/profil.html"
+
+          getB2CFREditProfileEntityId="https://authdev.edc.ca/ff3a86f5-a94e-4000-873d-8d4a0b1cb179/B2C_1A_AEM_ProfileEdit_SAML_FR"
+          getB2CFREditProfileStatusCode="urn:oasis:names:tc:SAML:2.0:status:Responder"
+          getB2CFREditProfileStatusMessage="L'utilisateur a annulé la saisie d'informations auto-confirmées."
+          getB2CFREditProfileRedirectURL="https://wwwdev.edc.ca/fr/mon-compte/profil.html"
+
+          getB2CFRForgetPassEntityId="https://authdev.edc.ca/ff3a86f5-a94e-4000-873d-8d4a0b1cb179/B2C_1A_AEM_SignUpOrSignIn_SAML_FR"
+          getB2CFRForgetPassStatusCode="urn:oasis:names:tc:SAML:2.0:status:Responder"
+          getB2CFRForgetPassStatusMessage="The user has forgotten their password."
+          getB2CFRForgetPassRedirectURL="https://wwwdev.edc.ca/fr/mon-compte/reinitialiser-mot-passe-b2c.html"
+
+          getB2CFRSignUpEntityId="https://authdev.edc.ca/ff3a86f5-a94e-4000-873d-8d4a0b1cb179/B2C_1A_AEM_SignUpOrSignIn_SAML_FR"
+          getB2CFRSignUpStatusCode="urn:oasis:names:tc:SAML:2.0:status:Responder"
+          getB2CFRSignUpStatusMessage="L'utilisateur a annulé la saisie d'informations auto-confirmées."
+          getB2CFRSignUpRedirectURL="https://wwwdev.edc.ca/fr/mon-compte/connexion-b2c.html"
+
+          getB2CResetPassEntityId="https://authdev.edc.ca/ff3a86f5-a94e-4000-873d-8d4a0b1cb179/B2C_1A_AEM_PasswordReset_SAML"
+          getB2CResetPassStatusCode="urn:oasis:names:tc:SAML:2.0:status:Responder"
+          getB2CResetPassStatusMessage="The user has cancelled entering self-asserted information."
+          getB2CResetPassRedirectURL="https://wwwdev.edc.ca/en/my-account/login-b2c.html"
+
+          getB2CFRResetPassEntityId="https://authdev.edc.ca/ff3a86f5-a94e-4000-873d-8d4a0b1cb179/B2C_1A_AEM_PasswordReset_SAML_FR"
+          getB2CFRResetPassStatusCode="urn:oasis:names:tc:SAML:2.0:status:Responder"
+          getB2CFRResetPassStatusMessage="L'utilisateur a annulé la saisie d'informations auto-confirmées."
+          getB2CFRResetPassRedirectURL="https://wwwdev.edc.ca/fr/mon-compte/connexion-b2c.html"
+
+          getB2CSignUpDirectEntityId="https://authdev.edc.ca/ff3a86f5-a94e-4000-873d-8d4a0b1cb179/B2C_1A_AEM_SignUp_SAML"
+          getB2CSignUpDirectStatusCode="urn:oasis:names:tc:SAML:2.0:status:Responder"
+          getB2CSignUpDirectStatusMessage="The user has cancelled entering self-asserted information."
+          getB2CSignUpDirectRedirectURL="https://wwwdev.edc.ca/en/my-account/login-b2c.html"
+
+
+          getB2CFRSignUpDirectEntityId="https://authdev.edc.ca/ff3a86f5-a94e-4000-873d-8d4a0b1cb179/B2C_1A_AEM_SignUp_SAML_FR"
+          getB2CFRSignUpDirectStatusCode="urn:oasis:names:tc:SAML:2.0:status:Responder"
+          getB2CFRSignUpDirectStatusMessage="L'utilisateur a annulé la saisie d'informations auto-confirmées."
+          getB2CFRSignUpDirectRedirectURL="https://wwwdev.edc.ca/fr/mon-compte/connexion-b2c.html"
+/>

@@ -1,0 +1,10 @@
+article.article > .responsivegrid {
+    min-height: 1px;
+    padding-top: 28px;
+}
+
+@media (min-width: 960px) {
+    article.article .article-body {
+        padding-left: 15px;
+    }
+}

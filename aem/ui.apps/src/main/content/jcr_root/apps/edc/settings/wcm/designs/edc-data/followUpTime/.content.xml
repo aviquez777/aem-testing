@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <option1
+        jcr:primaryType="nt:unstructured"
+        enName="1 day"
+        frName="Un jour"
+        value="1 day"/>
+    <option2
+        jcr:primaryType="nt:unstructured"
+        enName="2 days"
+        frName="Deux jours"
+        value="2 days"/>
+    <option3
+        jcr:primaryType="nt:unstructured"
+        enName="3 days"
+        frName="Trois jours"
+        value="3 days"/>
+    <option4
+        jcr:primaryType="nt:unstructured"
+        enName="More than 3 days"
+        frName="Plus de trois jours"
+        value="More than 3 days"/>
+</jcr:root>

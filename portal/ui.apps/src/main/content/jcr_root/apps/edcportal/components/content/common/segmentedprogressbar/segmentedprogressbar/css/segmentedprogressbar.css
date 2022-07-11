@@ -1,0 +1,44 @@
+.c-segmented-progress-bar {
+    clear: both;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+}
+
+.c-segmented-progress-bar .progress-container {
+    margin: 0 auto;
+}
+
+.c-segmented-progress-bar .progress-segment {
+    display: flex;
+}
+
+.c-segmented-progress-bar .multistep-title.hide {
+    display: none;
+}
+
+.c-segmented-progress-bar .multistep-title .title-color {
+    color: #26a2b5;
+}
+
+.c-segmented-progress-bar .multistep-title span::after {
+    content: ' ';
+}
+
+.c-segmented-progress-bar .item {
+    width: 100%;
+    background-color: #ebebeb;
+    margin: 0 4px;
+    height: 4px;
+}
+
+.c-segmented-progress-bar .item:first-child {
+    margin-left: 0;
+}
+
+.c-segmented-progress-bar .item:last-child {
+    margin-right: 0;
+}
+
+.c-segmented-progress-bar .item.selected {
+    background: #007C03;
+}

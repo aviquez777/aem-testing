@@ -1,0 +1,179 @@
+.show-separator,
+.keyline,
+.separator {
+    border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+}
+
+/**paddings for content heading **/
+.spacing-content-headings {
+    margin: 16px 0;
+}
+
+@media (min-width: 960px) {
+    .spacing-content-headings {
+        margin: 32px 0;
+    }
+}
+
+article.article .article-body .cmp-text {
+    padding: 0;
+    box-sizing: border-box;
+}
+
+article.article .article-body .cmp-text * {
+    box-sizing: border-box;
+}
+
+.homepage-flag .cmp-text {
+    padding: 0;
+}
+.homepage-flag .cmp-text .section-blurb {
+    padding: 1rem;
+}
+
+.cmp-text {
+    padding: 0 15px;
+    box-sizing: border-box;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.cmp-text * {
+    box-sizing: border-box;
+}
+
+.cmp-text ul,
+.cmp-text ol {
+    list-style-position: inside;
+    padding-left: 16px;
+}
+
+.cmp-text ul li,
+.cmp-text ol li {
+    text-indent: -1.4rem;
+    margin-left: 1.4rem;
+    font-family: "Georgia", "Times New Roman", Times, serif;
+}
+
+.cmp-text ul {
+    list-style-type: disc;
+}
+
+.cmp-text ol {
+    list-style-type: decimal;
+}
+
+.cmp-text.is-edited span.white {
+    background-color: #d2cece;
+}
+
+.cmp-text .blue-light {
+    color: #4386ac;
+}
+
+.cmp-text .white {
+    color: #fff;
+    background-color: #d2cece;
+}
+
+.cmp-text .dark-blue {
+    color: #1a65b2;
+}
+
+.c-bullet-styling ol li,
+.c-bullet-styling ul li {
+    text-indent: unset;
+}
+
+.c-bullet-styling ol {
+    list-style: decimal;
+}
+
+.c-bullet-styling ol li,
+.c-bullet-styling ol li ol li {
+    padding-left: .5rem;
+}
+
+.c-bullet-styling ul {
+    list-style: disc;
+}
+
+.c-bullet-styling ul li,
+.c-bullet-styling ul li ul li {
+    padding-left: .5rem;
+}
+
+.c-bullet-styling.first-level-blue > ol > li {
+    counter-increment: list;
+    list-style-type: none;
+    position: relative;
+}
+
+.c-bullet-styling.first-level-blue > ol > li::before {
+    color: #2f78c6;
+    content: counter(list);
+    left: -32px;
+    position: absolute;
+    text-align: right;
+    width: 26px;
+}
+
+.c-bullet-styling.first-level-blue > ul > li {
+    list-style-type: disc;
+}
+
+.c-bullet-styling.first-level-blue > ul > li::marker {
+    color: #2f78c6;
+}
+
+.c-bullet-styling.second-level-blue > ol > li > ol > li {
+    counter-increment: list;
+    list-style-type: none;
+    position: relative;
+    padding-left: .5rem;
+}
+
+.c-bullet-styling.second-level-blue > ol > li > ol > li::before {
+    color: #2f78c6;
+    content: counter(list);
+    left: -32px;
+    position: absolute;
+    text-align: right;
+    width: 26px;
+}
+
+.c-bullet-styling.second-level-blue > ul > li > ul > li {
+    list-style-type: disc;
+}
+
+.c-bullet-styling.second-level-blue > ul > li > ul > li::marker {
+    color: #2f78c6;
+}
+
+.c-bullet-styling.first-level-blue-checked > ul > li {
+    list-style-type: none;
+}
+
+.c-bullet-styling.first-level-blue-checked > ul > li::before {
+    margin-left: -2rem;
+    padding-right: 1rem;
+    font-family: "iconfonts";
+    list-style-type: none;
+    content: "";
+    color: #2f78c6;
+}
+
+.c-bullet-styling.second-level-blue-checked > ul > li > ul {
+    padding-left: .5rem;
+}
+
+.c-bullet-styling.second-level-blue-checked > ul > li > ul > li {
+    list-style-type: none;
+}
+
+.c-bullet-styling.second-level-blue-checked > ul > li > ul > li::before {
+    padding-right: 1rem;
+    font-family: "iconfonts";
+    list-style-type: none;
+    content: "";
+    color: #2f78c6;
+}

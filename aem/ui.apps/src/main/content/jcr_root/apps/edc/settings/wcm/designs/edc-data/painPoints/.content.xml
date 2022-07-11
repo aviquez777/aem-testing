@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <amm
+        jcr:primaryType="nt:unstructured"
+        enName="Accessing money in-market"
+        frName="Accéder à des fonds sur le marché"
+        value="AMM"/>
+    <cap
+        jcr:primaryType="nt:unstructured"
+        enName="Accessing more money"
+        frName="Des façons d'augmenter mes liquidités"
+        value="CAP"/>
+    <ard
+        jcr:primaryType="nt:unstructured"
+        enName="Accessing R&amp;D capital"
+        frName="Accéder au capital de R-D"
+        value="ARD"/>
+    <cor
+        jcr:primaryType="nt:unstructured"
+        enName="Anti-corruption"
+        frName="Lutte contre la corruption"
+        value="COR"/>
+    <cmp
+        jcr:primaryType="nt:unstructured"
+        enName="Being competitive"
+        frName="Des moyens d'être concurrentiel"
+        value="CMP"/>
+    <bcs
+        jcr:primaryType="nt:unstructured"
+        enName="Building commercialization structure"
+        frName="Bâtir une infrastr. de commercialisation"
+        value="BCS"/>
+    <cis
+        jcr:primaryType="nt:unstructured"
+        enName="Creating an international strategy"
+        frName="Développer une stratégie internationale"
+        value="CIS"/>
+    <cct
+        jcr:primaryType="nt:unstructured"
+        enName="Creating contracts"
+        frName="Établir des contrats"
+        value="CCT"/>
+    <lng
+        jcr:primaryType="nt:unstructured"
+        enName="Culture / Language differences"
+        frName="Différences de culture/langue"
+        value="LNG"/>
+    <cus
+        jcr:primaryType="nt:unstructured"
+        enName="Customs requirements"
+        frName="Prescriptions douanières"
+        value="CUS"/>
+    <far
+        jcr:primaryType="nt:unstructured"
+        enName="Delivering your goods"
+        frName="Expédier vos marchandises"
+        value="FAR"/>
+    <eci
+        jcr:primaryType="nt:unstructured"
+        enName="Economic insights"
+        frName="Portraits économiques"
+        value="ECI"/>
+    <pmt
+        jcr:primaryType="nt:unstructured"
+        enName="Ensuring customers pay"
+        frName="S'assurer d'être payé"
+        value="PMT"/>
+    <eoo
+        jcr:primaryType="nt:unstructured"
+        enName="Exporting 101"
+        frName="Exportation 101"
+        value="EOO"/>
+    <buy
+        jcr:primaryType="nt:unstructured"
+        enName="Finding customers"
+        frName="Trouver des clients"
+        value="BUY"/>
+    <agt
+        jcr:primaryType="nt:unstructured"
+        enName="Finding local agents / Legal reps"
+        frName="Trouver des agents locaux/rep. légaux"
+        value="AGT"/>
+    <fsk
+        jcr:primaryType="nt:unstructured"
+        enName="Finding skilled talent"
+        frName="Trouver des employés qualifiés"
+        value="FSK"/>
+    <con
+        jcr:primaryType="nt:unstructured"
+        enName="Finding suppliers / Partners"
+        frName="Trouver des fournisseurs/partenaires"
+        value="CON"/>
+    <fxr
+        jcr:primaryType="nt:unstructured"
+        enName="Fluctuating currency"
+        frName="Fluctuation de la devise"
+        value="FXR"/>
+    <itr
+        jcr:primaryType="nt:unstructured"
+        enName="Increasing time and resources"
+        frName="Disposer de plus de temps et de ressources"
+        value="ITR"/>
+    <idg
+        jcr:primaryType="nt:unstructured"
+        enName="Improving domestic growth"
+        frName="Comprendre l'essor au pays"
+        value="IDG"/>
+    <mkt
+        jcr:primaryType="nt:unstructured"
+        enName="Knowledge about markets"
+        frName="Connaissances sur les marchés"
+        value="MKT"/>
+    <kfr
+        jcr:primaryType="nt:unstructured"
+        enName="Knowledge of financing requirements"
+        frName="Connaissance des exigences de financement"
+        value="KFR"/>
+    <cfl
+        jcr:primaryType="nt:unstructured"
+        enName="Maintaining cash flow"
+        frName="Maintenir le fonds de roulement"
+        value="CFL"/>
+    <dbt
+        jcr:primaryType="nt:unstructured"
+        enName="Managing debt"
+        frName="Gérer la dette"
+        value="DBT"/>
+    <rsk
+        jcr:primaryType="nt:unstructured"
+        enName="Managing market risks"
+        frName="Gérer les risques de marché"
+        value="RSK"/>
+    <mrc
+        jcr:primaryType="nt:unstructured"
+        enName="Managing rising business costs"
+        frName="Gérer les frais généraux en hausse"
+        value="MRC"/>
+    <log
+        jcr:primaryType="nt:unstructured"
+        enName="Managing supply chains"
+        frName="Gérer les chaînes d'approvisionnement"
+        value="LOG"/>
+    <tax
+        jcr:primaryType="nt:unstructured"
+        enName="Paying taxes"
+        frName="Payer les impôts"
+        value="TAX"/>
+    <ipr
+        jcr:primaryType="nt:unstructured"
+        enName="Protecting my IP"
+        frName="Protéger mes RP"
+        value="IPR"/>
+    <sif
+        jcr:primaryType="nt:unstructured"
+        enName="Setting up international operations"
+        frName="S'implanter à l'étranger"
+        value="SIF"/>
+    <gov
+        jcr:primaryType="nt:unstructured"
+        enName="Trade regulations"
+        frName="Règlements commerciaux"
+        value="GOV"/>
+</jcr:root>

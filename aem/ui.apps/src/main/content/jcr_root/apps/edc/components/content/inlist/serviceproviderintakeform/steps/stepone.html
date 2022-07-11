@@ -1,0 +1,61 @@
+<template data-sly-template.spifone="${@ properties, uuid, messages}">
+    <sly data-sly-use.dropdownTemplates="${'/apps/edc/components/common/dropdown.html'}" />
+
+    <!--/* Preferred contact LOVs */-->
+    <sly data-sly-use.ds="${'com.edc.edcweb.core.models.FormCommonObjects' @ path ='/apps/edc/settings/wcm/designs/edc-data/preferredContact'}"> </sly>
+    <sly data-sly-test.preferredContact="${ds.optionsFromDataSourcePath}" > </sly>
+
+    <!--/* Follow up time LOVs */-->
+    <sly data-sly-use.ds="${'com.edc.edcweb.core.models.FormCommonObjects' @ path ='/apps/edc/settings/wcm/designs/edc-data/followUpTime'}"> </sly>
+    <sly data-sly-test.followUpTime="${ds.optionsFromDataSourcePath}" > </sly>
+
+    <div class="level level-1">
+        <h2 class="title">
+            <span class="title-color">${properties.step1bluetitle}</span> ${properties.step1title}
+        </h2>
+        <p data-sly-test="${properties.step1description}" class="description">${properties.step1description}</p>
+        <div data-form-field="firstName" class="form-group">
+            <label for="firstName-${uuid}">${properties.firstnameLabel}</label>
+            <input type="text" id="firstName-${uuid}" class="form-control" name="firstName" data-no-url="true" required="" validation-rule="name" placeholder="${properties.firstnameHelp}" />
+            <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+        </div>
+        <div data-form-field="lastName" class="form-group">
+            <label for="lastName-${uuid}">${properties.lastnameLabel}</label>
+            <input type="text" id="lastName-${uuid}" class="form-control" name="lastName" data-no-url="true" required="" validation-rule="name" placeholder="${properties.lastnameHelp}" />
+            <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+        </div>
+        <div data-form-field="title" class="form-group">
+            <label for="title-${uuid}">${properties.jobtitleLabel}</label>
+            <input type="text" id="title-${uuid}" class="form-control" name="title" data-no-url="true" required="" validation-rule="none" placeholder="${properties.jobtitleHelp}" />
+            <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+        </div>
+        <div data-form-field="emailAddress" class="form-group">
+            <label for="emailAddress-${uuid}">${properties.businessemailLabel}</label>
+            <input type="email" id="emailAddress-${uuid}" class="form-control email" placeholder="${properties.businessemailHelp}" name="emailAddress" required="" />
+            <span class="error" data-req-message="${messages.formErrorMessages.required}" data-email-message="${messages.formErrorMessages.email}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+        </div>
+        <div data-form-field="busPhone" class="form-group">
+            <label for="busPhone-${uuid}">${properties.businessphoneLabel}</label>
+            <input type="tel" id="busPhone-${uuid}" class="form-control" name="busPhone" placeholder="${properties.businessphoneHelp}" required="" />
+            <span class="error" data-req-message="${messages.formErrorMessages.required}" data-tel-message="${messages.formErrorMessages.phone}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+        </div>
+        <h2 data-sly-test="${properties.referralinfoheading}" class="subsection">${properties.referralinfoheading}</h2>
+        <p class="subsection-description">${properties.referralinfodescription}</p>
+        <div class="form-group" data-form-field="preferedContact">
+            <div class="radio-group" role="radiogroup" aria-labelledby="preferedContact-${uuid}">
+                <h3 id="preferedContact-${uuid}">${properties.preferredwayLabel}</h3>
+                <div data-sly-repeat.item="${preferredContact}" class="radio-option">
+                    <input type="radio" id="preferedContactEmail-${uuid}" class="form-control" name="preferedContact" value="${item}" required="" data-no-url="true" />
+                    <label for="preferedContactEmail-${uuid}">${preferredContact[item]}</label>
+                </div>
+                <span class="error" data-radio-message="${messages.formErrorMessages.required}"></span>
+            </div>
+        </div>
+        <div data-form-field="sla" class="form-group">
+            <sly data-sly-call="${dropdownTemplates.dropdown @ name='sla', uuid=uuid, label=properties.followuptimeLabel,
+            placeholder=properties.followuptimeHelp, required=true, nourl=true,
+            requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=followUpTime}">
+            </sly>
+        </div>
+    </div>
+</template>

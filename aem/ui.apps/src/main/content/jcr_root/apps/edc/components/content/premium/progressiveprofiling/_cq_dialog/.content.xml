@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Progressive Profiling"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+        margin="{Boolean}false">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items
+                    jcr:primaryType="nt:unstructured"
+                    sling:hideChildren="[orderBy,sortOrder]">
+                    <customInquiryId
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Inquiry Id"
+                        name="./customInquiryId"/>
+                    <anchortarget
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldDescription="This field must only contain lowercase letters, numbers, dashes, and underscores."
+                        fieldLabel="Anchor Link Target"
+                        name="./anchortarget"/>
+                    <heading
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Title"
+                        fieldDescription="Authorable title"
+                        name="./heading"
+                        required="{Boolean}true"/>
+                    <subtitle
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldDescription="Authorable description"
+                        fieldLabel="Description"
+                        name="./subtitle"/>
+                    <cancelbutton
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="'Cancel' button"
+                        name="./cancelButton"
+                        required="{Boolean}true"/>
+                    <submitbutton
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldDescription="Authorable CTA Button, e.g. Unlock Now"
+                        fieldLabel="CTA Button"
+                        name="./submitButton"/>
+                    <headingLoggedIn
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Title (Logged In)"
+                        fieldDescription="Authorable title"
+                        name="./headingLoggedIn"
+                        required="{Boolean}true"/>
+                    <subtitleLoggedIn
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldDescription="Authorable description"
+                        fieldLabel="Description (Logged In)"
+                        name="./subtitleLoggedIn"/>
+                    <submitButtonLoggedIn
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldDescription="Authorable CTA Button, e.g. Unlock Now"
+                        fieldLabel="CTA Button (Logged In)"
+                        name="./submitButtonLoggedIn"/>
+                   <noRedirectBack
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                        text="Do Not Redirect user back to referring page after login."
+                        fieldLabel="After login the user wil stay on my edc's dashboard."
+                        ignoreData="{Boolean}false"
+                        name="./noRedirectBack"
+                        required="{Boolean}false"
+                        uncheckedValue="{Boolean}false"
+                        value="{Boolean}true"/>
+                    <contenttype
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldDescription="Select the premium content type."
+                        fieldLabel="Premium Content Type."
+                        name="./contenttype">
+                        <items jcr:primaryType="nt:unstructured">
+                            <html
+                                jcr:primaryType="nt:unstructured"
+                                text="html"
+                                value=".html"/>
+                            <pdf
+                                jcr:primaryType="nt:unstructured"
+                                text="pdf"
+                                value=".pdf"/>
+                        </items>
+                    </contenttype>
+                    <mode
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldDescription="Select the progressive profiling mode."
+                        fieldLabel="Mode"
+                        name="./mode"
+                        defaultValue="normal">
+                        <items jcr:primaryType="nt:unstructured">
+                            <normal
+                                jcr:primaryType="nt:unstructured"
+                                text="Normal"
+                                value="mode_normal"/>
+                            <mea
+                                jcr:primaryType="nt:unstructured"
+                                text="MEA"
+                                value="mode_mea"/>
+                            <regularebook
+                                jcr:primaryType="nt:unstructured"
+                                text="Regular Ebook"
+                                value="mode_ebook_regular"/>
+                            <personaebook
+                                jcr:primaryType="nt:unstructured"
+                                text="Persona Ebook"
+                                value="mode_ebook_persona"/>
+                            <knowledge
+                                jcr:primaryType="nt:unstructured"
+                                text="Knowledge customer"
+                                value="mode_knowledge"/>
+                            <crg
+                                jcr:primaryType="nt:unstructured"
+                                text="Consent Request Gating"
+                                value="mode_crg"/>
+                        </items>
+                    </mode>
+                    <target
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldDescription="Determines if the link will open in the current or new window. "
+                        fieldLabel="Premium Content Link target"
+                        name="./linkTarget"
+                        required="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <existing
+                                jcr:primaryType="nt:unstructured"
+                                text="Existing window"
+                                value="_self"/>
+                            <new
+                                jcr:primaryType="nt:unstructured"
+                                selected="{Boolean}true"
+                                text="New window"
+                                value="_blank"/>
+                        </items>
+                    </target>
+                    <gated
+                        cq:showOnCreate="{Boolean}true"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Gated Premium Content"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                        <items jcr:primaryType="nt:unstructured">
+                             <targetURL
+                                 jcr:primaryType="nt:unstructured"
+                                 sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                 fieldLabel="Gated premium URL (override path behavior)"
+                                 multiple="{Boolean}false"
+                                 name="./premiumURL"
+                                 required="{Boolean}false"
+                                 rootPath="/content/edc"/>
+                        </items>
+                    </gated>
+                    <peaklabel
+                        cq:showOnCreate="{Boolean}true"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Sneak Peek"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                        <items jcr:primaryType="nt:unstructured">
+                             <peaklabel
+                                 jcr:primaryType="nt:unstructured"
+                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                 fieldLabel="data peak label"
+                                 fieldDescription="Place holder for the profiling dialog"
+                                 multiple="{Boolean}false"
+                                 name="./peakLabel"
+                                 required="{Boolean}false"/>
+                            <docID
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="Enter the docID for Regular Ebook Sneak Peek"
+                                fieldLabel="docID"
+                                name="./docID"
+                                validation="progressiveprofilig.field.docId"/>
+                            <assetTier
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldDescription="Asset tier for Regular Ebook Sneak Peek"
+                                fieldLabel="Asset Tier"
+                                name="./assetTier"
+                                validation="progressiveprofilig.field.assetTier">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <level1
+                                        jcr:primaryType="nt:unstructured"
+                                        text="1"
+                                        value="1"/>
+                                    <level2
+                                        jcr:primaryType="nt:unstructured"
+                                        text="2"
+                                        value="2"/>
+                                    <level3
+                                        jcr:primaryType="nt:unstructured"
+                                        text="3"
+                                        value="3"/>
+                                    <level4
+                                        jcr:primaryType="nt:unstructured"
+                                        text="4"
+                                        value="4"/>
+                                    <level5
+                                        jcr:primaryType="nt:unstructured"
+                                        text="5"
+                                        value="5"/>
+                                </items>
+                            </assetTier>
+                        </items>
+                    </peaklabel>
+                    <knowledgecustomer
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Knowledge customer form headings"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                        granite:class="progressiveProfilingFieldKnowledgeCustomer">
+                        <items jcr:primaryType="nt:unstructured">
+                            <heading
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Title"
+                                fieldDescription="This overrides the values from the component policy"
+                                name="./headingP2"/>
+                            <subtitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Description"
+                                fieldDescription="This overrides the values from the component policy"
+                                name="./subtitleP2"/>
+                            <headerPersonal
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Personal Info Header"
+                                fieldDescription="This overrides the values from the component policy"
+                                name="./headerPersonal"/>
+                            <headerCompany
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Company Header"
+                                fieldDescription="This overrides the values from the component policy"
+                                name="./headerCompany"/>
+                            <headerBusiness
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Business header"
+                                fieldDescription="This overrides the values from the component policy"
+                                name="./headerBusiness"/>
+                        </items>
+                    </knowledgecustomer>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

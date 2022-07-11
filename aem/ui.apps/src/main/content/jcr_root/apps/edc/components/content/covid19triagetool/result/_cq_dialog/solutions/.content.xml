@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" 
+          xmlns:granite="http://www.adobe.com/jcr/granite/1.0" 
+          xmlns:cq="http://www.day.com/jcr/cq/1.0" 
+          xmlns:jcr="http://www.jcp.org/jcr/1.0" 
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="COVID-19 Solutions Triage tool Solutions"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <solutions
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                        composite="{Boolean}true"
+                        required="{Boolean}true"
+                        fieldLabel="Solution Cards">
+                        <field
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            name="./solutions">
+                            <items jcr:primaryType="nt:unstructured">
+                                <column
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <heading
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/text"
+                                            class="coral-Heading--4"
+                                            text="Solution Card"/>
+                                        <solutionCode
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Unique Solution Code Internal Use ONLY"
+                                            fieldDescription="Soltution Code Internal Use ONLY **MUST BE UNIQUE**"
+                                            required="{Boolean}true"
+                                            name="./solutionCode" />
+                                        <title
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldDescription="Name of solution"
+                                            required="{Boolean}true"
+                                            fieldLabel="Name of solution"
+                                            name="./title" />
+                                        <description
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                            fieldDescription="What it can do for you"
+                                            required="{Boolean}true"
+                                            fieldLabel="What it can do for you"
+                                            name="./description"
+                                            useFixedInlineToolbar="{Boolean}true">
+                                            <rtePlugins jcr:primaryType="nt:unstructured">
+                                                <format
+                                                    jcr:primaryType="nt:unstructured"
+                                                    features="*" />
+                                                <justify
+                                                    jcr:primaryType="nt:unstructured"
+                                                    features="" />
+                                                <lists
+                                                    jcr:primaryType="nt:unstructured"
+                                                    features="*" />
+                                                <links
+                                                    jcr:primaryType="nt:unstructured"
+                                                    features="*" />
+                                                <subsuperscript
+                                                    jcr:primaryType="nt:unstructured"
+                                                    features="*" />
+                                            </rtePlugins>
+                                            <uiSettings jcr:primaryType="nt:unstructured">
+                                                <cui jcr:primaryType="nt:unstructured">
+                                                    <inline
+                                                        jcr:primaryType="nt:unstructured"
+                                                        toolbar="[format#bold,format#italic,format#underline,#lists,links#modifylink,links#unlink,links#anchor]">
+                                                        <popovers jcr:primaryType="nt:unstructured">
+                                                            <format
+                                                                jcr:primaryType="nt:unstructured"
+                                                                items="[format#bold,format#italic,format#underline,subsuperscript#subscript,subsuperscript#superscript]"
+                                                                ref="format" />
+                                                            <lists
+                                                                jcr:primaryType="nt:unstructured"
+                                                                items="[lists#unordered,lists#ordered]"
+                                                                ref="lists" />
+                                                        </popovers>
+                                                    </inline>
+                                                </cui>
+                                            </uiSettings>
+                                        </description>
+                                        <cta
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="More information"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <ctaText
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldDescription="Enter the text for the 'Learn More' CTA link"
+                                                    required="{Boolean}false"
+                                                    fieldLabel="'Learn More' Text Will Override the 'Default Learn More Button'"
+                                                    name="./ctaText" />
+                                                <ctaLink
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                    fieldDescription="Enter the url for the 'Learn More' CTA link"
+                                                    fieldLabel="'Learn More' CTA Url"
+                                                    name="./ctaLink"
+                                                    required="{Boolean}true"
+                                                    rootPath="/content/edc" />
+                                                <ctaTarget
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                    fieldDescription="Determines if the link will open in the current or new window. "
+                                                    fieldLabel="Target"
+                                                    name="./ctaTarget"
+                                                    required="{Boolean}true">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <new
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="New window"
+                                                            value="_blank"/>
+                                                        <existing
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Existing window"
+                                                            value="_self"/>
+                                                    </items>
+                                                </ctaTarget>
+                                            </items>
+                                        </cta>
+                                    </items>
+                                </column>
+                            </items>
+                        </field>
+                    </solutions>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

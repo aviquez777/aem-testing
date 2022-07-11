@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:description="Reference Accordion"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Reference Accordion"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <referencedurl
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                        fieldDescription="Accordion title and content will be pulled from this url. Must use the Left-hand Navigation Page PCI template"
+                        fieldLabel="Referenced page url (Left-hand Navigation Page PCI template)"
+                        multiple="{Boolean}false"
+                        required="{Boolean}true"
+                        name="./referencedurl"
+                        rootPath="/content/edc"/>
+                    <stayOpen
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                        defaultChecked="{Boolean}false"
+                        fieldLabel="Accordion will remain open when other tabs are clicked"
+                        name="./stayOpen"
+                        required="{Boolean}false"
+                        text="Accordion will remain open when other tabs are clicked)"
+                        value="{Boolean}true"/>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

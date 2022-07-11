@@ -1,0 +1,9 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-test.buttonText="${properties.buttontext}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !buttonText}"/>
+<div class="onetrustprivacybutton-container" data-sly-test="${buttonText}">
+  <a class="dtm-analytics button edc-primary-btn" href="javascript:void(0)" data-analytics="one-trust-privacy-button">
+      <span>${buttonText}</span>
+  </a>
+  <a href="#" class="optanon-show-settings">&nbsp;</a>
+</div>

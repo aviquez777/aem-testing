@@ -1,0 +1,120 @@
+## Collect any enviromental variables that are set in /etc/sysconfig/httpd
+## Collect the dispatchers number
+PassEnv DISP_ID
+
+Include /etc/httpd/conf.d/variables/edc.vars
+
+<IfModule disp_apache2.c>
+	DispatcherPassError 1
+</IfModule>
+
+<VirtualHost *:80>
+	ServerName ${DISPATCHER_SERVER_NAME}
+	ServerAlias ${SHAREPOINT_SERVER_NAME} ${PUBLISH_DEFAULT_HOSTNAME}
+	DocumentRoot ${DISPATCHER_DOC_ROOT}
+	UseCanonicalName On
+
+	AllowEncodedSlashes On
+	ProxyRequests Off
+
+	 <IfModule mod_headers.c>
+            Header always add X-Dispatcher ${DISP_ID}
+    </IfModule>
+
+    <Directory "/bin">
+        AllowOverride None
+        Options None
+        Require all granted
+    </Directory>
+	
+	<Directory "${DISPATCHER_DOC_ROOT}" >
+		AllowOverride None
+		Require all granted
+	</Directory>
+
+
+	<IfModule mod_rewrite.c>
+	RewriteEngine on
+	Include /etc/httpd/conf.d/rewrites/edc_dispatcher_rewrite_01.rules
+	Include /etc/httpd/conf.d/edc-portal-configs.txt
+	Include /etc/httpd/conf.d/rewrites/edc_dispatcher_rewrite_02.rules
+
+    </IfModule>
+
+	<Directory />
+		<IfModule disp_apache2.c>
+			ModMimeUsePathInfo On
+			SetHandler dispatcher-handler
+		</IfModule>
+
+		Options FollowSymLinks
+		AllowOverride None
+
+		# Insert filter
+		SetOutputFilter DEFLATE
+
+		# Don't compress images
+		SetEnvIfNoCase Request_URI \
+		\.(?:gif|jpe?g|png)$ no-gzip dont-vary
+
+		# Make sure proxies don't deliver the wrong content
+		#Header append Vary User-Agent env=!dont-vary
+		# BIGBEAR-1328 prevent clickjacking
+		Header always append X-Frame-Options SAMEORIGIN
+		Include conf.d/variables/edc_dispatcher_${RUN_MODE}.vars
+		#Guarantee HTTPS for 1 Year including Sub Domains. Max-age is measured in seconds.
+		SetEnvIf X-Forwarded-Proto "https" HTTPS=on
+		Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+		Header set X-XSS-Protection "1; mode=block"
+        Header edit Set-Cookie ^(.*)$ $1;HttpOnly;Secure
+		<IfModule mod_dir.c>
+		DirectorySlash Off
+		</IfModule>
+	</Directory>
+
+
+	<LocationMatch "/*">
+                ErrorDocument 401 /en/errors/401.html
+                ErrorDocument 403 /en/errors/403.html
+                ErrorDocument 404 /en/errors/404.html
+                ErrorDocument 500 /en/errors/500.html
+        </LocationMatch>
+
+        <LocationMatch "/(FR|fr|Fr|fR)/*">
+                ErrorDocument 401 /fr/errors/401.html
+                ErrorDocument 403 /fr/errors/403.html
+                ErrorDocument 404 /fr/errors/404.html
+                ErrorDocument 500 /fr/errors/500.html
+        </LocationMatch>
+
+	AddType 'application/json; charset=ISO-8859-1' .json
+	
+</VirtualHost>
+
+<VirtualHost *:80>
+        ServerName https://edc.trade:443
+
+        <IfModule mod_rewrite.c>
+        RewriteEngine on
+        RewriteCond %{HTTP:X-Forwarded-Proto} !https
+        RewriteRule !/eagle/check https://%{SERVER_NAME}%{REQUEST_URI} [L,R]
+
+        #RewriteRule ^(.*)$ https://${DISPATCHER_SERVER_NAME_SIMPLE}/$1 [R=301,L]
+        RewriteRule ^(.*)$ https://${DISPATCHER_SERVER_NAME_SIMPLE}/ [R=301,L]
+
+    </IfModule>
+
+</VirtualHost>
+<VirtualHost *:80>
+        ServerName https://exportation.edc.trade:443
+
+        <IfModule mod_rewrite.c>
+        RewriteEngine on
+        RewriteCond %{HTTP:X-Forwarded-Proto} !https
+        RewriteRule !/eagle/check https://%{SERVER_NAME}%{REQUEST_URI} [L,R]
+
+        Include /etc/httpd/conf.d/rewrites/edc_trade_mapping.rules
+    </IfModule>
+
+</VirtualHost>
+

@@ -1,0 +1,3 @@
+#base=js
+dashboard.js
+handleTabSetNavigation.js

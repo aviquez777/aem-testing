@@ -1,0 +1,2 @@
+#base=js
+quick-search.js

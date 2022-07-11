@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:template="/conf/edc/settings/wcm/templates/author-profile-page"
+        jcr:primaryType="cq:PageContent"
+        sling:redirect="{Boolean}true"
+        sling:resourceType="edc/components/structure/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <articlecontainer
+                jcr:created="{Date}2017-11-06T13:52:29.187-05:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-11-06T13:52:29.187-05:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="edc/components/structure/article/articlecontainer">
+                <authorprofile
+                    jcr:created="{Date}2017-11-06T13:52:42.892-05:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2017-11-06T13:54:01.161-05:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="edc/components/content/article/authorprofile"/>
+            </articlecontainer>
+            <list
+                jcr:created="{Date}2017-11-06T13:53:00.288-05:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-11-06T13:54:14.525-05:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="edc/components/content/article/list"/>
+        </root>
+    </jcr:content>
+</jcr:root>

@@ -1,0 +1,150 @@
+@charset "UTF-8";
+.c-company-insight-corporation-banner.full-width {
+    width: auto;
+}
+
+.c-company-insight-corporation-banner.dark-blue-section {
+    background-color: #185fa8;
+    padding: 0 1rem;
+}
+
+.c-company-insight-corporation-banner.dark-blue-section .container {
+    position: relative;
+}
+
+.c-company-insight-corporation-banner.dark-blue-section .title {
+    color: #2f78c6;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.c-company-insight-corporation-banner.dark-blue-section .search-bar {
+    display: flex;
+    border-radius: 4px;
+    padding: 1rem;
+    flex-wrap: wrap;
+}
+
+.c-company-insight-corporation-banner.dark-blue-section .search-bar .search-back {
+    width: 50%;
+}
+
+.c-company-insight-corporation-banner.dark-blue-section .search-bar .search-back a {
+    padding: .8rem;
+}
+
+.c-company-insight-corporation-banner.dark-blue-section .search-bar .search-back a::before {
+    content: "";
+    font-family: 'iconfonts';
+    font-weight: bold;
+    margin-right: 0;
+    font-size: 2rem;
+}
+
+.c-company-insight-corporation-banner.dark-blue-section .search-bar .show-search-mobile {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.c-company-insight-corporation-banner.dark-blue-section .search-bar .show-search-mobile .show-search {
+    padding: 1.2rem 1.4rem;
+}
+
+.c-company-insight-corporation-banner.dark-blue-section .search-bar .show-search-mobile .show-search::before {
+    content: "";
+    font-family: "iconfonts";
+    font-weight: normal;
+    margin-right: 0;
+}
+
+.c-company-insight-corporation-banner.dark-blue-section .search-bar .search-content {
+    display: flex;
+    width: 100%;
+    -moz-transition: max-height .5s ease-in-out;
+    -o-transition: max-height .5s ease-in-out;
+    -webkit-transition: max-height .5s ease-in-out;
+    transition: max-height .5s ease-in-out;
+    max-height: 290px;
+    overflow: hidden;
+}
+
+.c-company-insight-corporation-banner.dark-blue-section .search-bar .search-content.hide {
+    max-height: 0;
+}
+
+.c-company-insight-corporation-banner.dark-blue-section .search-bar .search-content.over-flow {
+    overflow: initial;
+}
+
+.c-company-insight-corporation-banner.dark-blue-section .search-bar .search-content .c-company-insight-search-bar {
+    flex: 1;
+    margin-top: 1rem;
+}
+
+.c-company-insight-corporation-banner.dark-blue-section .search-bar .search-content .c-company-insight-search-bar .search-box.open .search-container {
+    position: relative;
+}
+
+.c-company-insight-corporation-banner.dark-blue-section .search-bar .search-content .c-company-insight-search-bar .search-box.open .search-container .search-results {
+    position: absolute;
+}
+
+.c-company-insight-corporation-banner.dark-blue-section .search-bar .search-content .c-company-insight-search-bar label {
+    display: none;
+}
+
+.c-company-insight-corporation-banner.dark-blue-section .search-bar .search-content .c-company-insight-search-bar .search-criteria input.error {
+    margin-top: 0;
+    background-color: #fff;
+}
+
+.c-company-insight-corporation-banner.dark-blue-section .search-bar .search-content .c-company-insight-search-bar .search-criteria span.error {
+    margin-bottom: 0;
+    background-color: #f5f5f5;
+    padding: .5rem 1rem 1rem;
+    border-radius: 4px;
+}
+
+.c-company-insight-corporation-banner.dark-blue-section .search-bar .search-content .c-company-insight-search-bar .actions {
+    margin: 0;
+    margin-top: 1rem;
+}
+
+@media (min-width: 720px) {
+    .c-company-insight-corporation-banner.full-width {
+        width: 100vw;
+    }
+    .c-company-insight-corporation-banner.dark-blue-section {
+        padding: 0;
+    }
+    .c-company-insight-corporation-banner.dark-blue-section .search-bar {
+        padding: 1rem 0;
+        flex-wrap: nowrap;
+    }
+    .c-company-insight-corporation-banner.dark-blue-section .search-bar .search-back {
+        flex: 1;
+        margin-right: 1rem;
+    }
+    .c-company-insight-corporation-banner.dark-blue-section .search-bar .show-search-mobile {
+        display: none;
+    }
+    .c-company-insight-corporation-banner.dark-blue-section .search-bar .search-content {
+        flex: 1;
+        margin-top: 0;
+    }
+    .c-company-insight-corporation-banner.dark-blue-section .search-bar .search-content .c-company-insight-search-bar {
+        display: flex;
+        margin-top: 0;
+    }
+    .c-company-insight-corporation-banner.dark-blue-section .search-bar .search-content .c-company-insight-search-bar .search-box.open .search-container {
+        position: absolute;
+    }
+    .c-company-insight-corporation-banner.dark-blue-section .search-bar .search-content .c-company-insight-search-bar .search-box.open .search-container .search-results {
+        position: relative;
+    }
+    .c-company-insight-corporation-banner.dark-blue-section .search-bar .search-content .c-company-insight-search-bar .actions {
+        margin-top: 0;
+    }
+}

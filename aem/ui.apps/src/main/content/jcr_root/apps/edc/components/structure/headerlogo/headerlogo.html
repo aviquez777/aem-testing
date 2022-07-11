@@ -1,0 +1,25 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-use.model="com.edc.edcweb.core.models.PolicyReader" />
+<sly data-sly-test.policyProps="${model.labels}"/>
+<!--/* Set defaults just in case */-->
+<sly data-sly-test.logoAltText="${policyProps.logoAltText ? policyProps.logoAltText : 'Export Development Canada'}"/>
+<sly data-sly-test.logoImage="${policyProps.logoImage ? policyProps.logoImage : '/content/dam/edc/EDC-logo.svg'}"/>
+<sly data-sly-test.logoUrl="${policyProps.logoUrl ? policyProps.logoUrl : '/'}"/>
+<sly data-sly-test.skipText="${policyProps.skipText ? policyProps.skipText : 'Skip navigation'}"/>
+
+<div class="c-logo-header" data-sly-test="${logoImage}">
+    <div id="skip">
+        <a href="#maincontent">${skipText}</a>
+    </div>
+    <header class="main-header">
+        <div class="top-nav full-width">
+            <div class="container">
+                <sly data-sly-use.linkresolver="${'com.edc.edcweb.core.helpers.LinkExternalizer' @srcPath=logoUrl, scheme=request.scheme}"/> 
+                 <a x-cq-linkchecker="valid" href="${linkresolver.LinkWithHtmlExtension}" class="logo">
+                    <img src="${logoImage}" alt="${logoAltText}" />
+                </a>
+            </div>
+        </div>
+    </header>
+    <div id="maincontent"></div>
+</div>

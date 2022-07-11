@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+    debug.email="{Boolean}true"
+    smtp.starttls="{Boolean}true"
+    oauth.flow="{Boolean}false"
+    smtp.host="amsmail.adobecqms.net"
+    smtp.ssl="{Boolean}false"
+    from.address="edc-qa@amsmail.adobecqms.net"
+    smtp.port="{Long}8880"
+    smtp.password="{String}{34b5dc68a091dd76e12e0b0369d58218b9ae380d83ae169b3a13bcad868db081450516b1c05e24766130aed33ae5e089}"
+    smtp.user="edc"
+/>

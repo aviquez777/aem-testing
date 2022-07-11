@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+  xmlns:jcr="http://www.jcp.org/jcr/1.0"
+  jcr:primaryType="sling:OsgiConfig"
+  getResource="https://EDCanada.onmicrosoft.com/887049bc-18a3-4ec4-a536-e6c03df7e462"
+  getOCPLovApisubscriptionKey="feab6eb88fa54ac99bb47d8041c409d9"
+  getBaseEndpoint="/lov/ppr/api/v1"
+  getGenericEndpoint="/codes"
+  getFiEndpoint="/financialinstitutions"
+  getMmgFormFiEndPoint="/mm"
+  getBcapFormFiEndPoint="/bcap"
+  getTelpFormFiEndPont="/telp"
+  /> 

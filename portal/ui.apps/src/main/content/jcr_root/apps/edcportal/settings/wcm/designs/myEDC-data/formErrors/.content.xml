@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <required
+        jcr:primaryType="nt:unstructured"
+        enName="This is a required field"
+        frName="Il s’agit d’un champ obligatoire"
+        value="required"/>
+    <format
+        jcr:primaryType="nt:unstructured"
+        enName="Please enter valid characters: letters, dashes, commas, apostrophes, spaces, periods"
+        frName="Veuillez entrer des caractères valides : lettres, tirets, virgules, apostrophes, espaces, points"
+        value="format"/>
+    <format2
+        jcr:primaryType="nt:unstructured"
+        enName="Please enter valid characters: letters, numbers, dashes, commas, apostrophes, spaces, periods"
+        frName="Veuillez entrer des caractères valides : lettres, nombres, tirets, virgules, apostrophes, espaces, points"
+        value="format2"/>
+    <checkbox
+        jcr:primaryType="nt:unstructured"
+        enName="Please enter valid characters: letters, dashes, commas, apostrophes, spaces, periods"
+        frName="Veuillez entrer des caractères valides: lettres, tirets, virgules, apostrophes, espaces, périodes"
+        value="checkbox"/>
+    <email
+        jcr:primaryType="nt:unstructured"
+        enName="Please enter a valid email address. Example: email@example.com"
+        frName="Veuillez entrer une adresse courriel valide. Exemple : courriel@exemple.com"
+        value="email"/>
+    <elqerror
+        jcr:primaryType="nt:unstructured"
+        enName="Sorry, our system is temporarily unavailable. Please try again later"
+        frName="Nous sommes désolés, mais notre système est temporairement inaccessible. Veuillez tenter d’y accéder de nouveau plus tard"
+        value="elqerror"/>
+    <phone
+        jcr:primaryType="nt:unstructured"
+        enName="Please enter a valid phone number. Example: 123 456 7890"
+        frName="Veuillez entrer un numéro de téléphone valide. Exemple : 123 456 7890"
+        value="phone"/>
+    <phoneExt
+        jcr:primaryType="nt:unstructured"
+        enName="Not a valid phone extension number"
+        frName="Numéro d'extension invalide"
+        value="phoneExt"/>
+    <postalcode
+        jcr:primaryType="nt:unstructured"
+        enName="Please enter a valid postal code. Example: CAN: K1P 5M8. US: 11111"
+        frName="Veuillez entrer un code postal valide. Exemple: CAN: K1P 5M8. US: 11111"
+        value="postalcode"/>
+    <checkboxRequired
+        jcr:primaryType="nt:unstructured"
+        enName="At least one subscription option should be selected"
+        frName="FR -At least one subscription option should be selected"
+        value="checkboxRequired"/>
+    <emailalready
+        jcr:primaryType="nt:unstructured"
+        enName="The email address provided was already included"
+        frName="L'adresse email fournie était déjà incluse"
+        value="emailalready"/>
+    <oneoption
+        jcr:primaryType="nt:unstructured"
+        enName="At least one option should be selected"
+        frName="Au moins une option doit être sélectionnée"
+        value="oneoption"/>
+    <maxemails
+        jcr:primaryType="nt:unstructured"
+        enName="Maximum emails added"
+        frName="Nombre maximal de courriels ajoutés"
+        value="maxemails"/>
+    <firstCapitalized
+        jcr:primaryType="nt:unstructured"
+        enName="First letter must be capitalized"
+        frName="La première lettre doit être en majuscule"
+        value="firstCapitalized"/>
+    <fileAlready
+        jcr:primaryType="nt:unstructured"
+        enName="The file provided was already included"
+        frName="Le fichier fourni était déjà inclus"
+        value="fileAlready"/>
+    <fileTooBig
+        jcr:primaryType="nt:unstructured"
+        enName="The file size is too big"
+        frName="La taille du fichier est trop grande"
+        value="fileTooBig"/>
+    <maxfiles
+        jcr:primaryType="nt:unstructured"
+        enName="Maximum files added"
+        frName="Nombre maximal de fichiers ajoutés"
+        value="maxfiles"/>
+    <minlength
+        jcr:primaryType="nt:unstructured"
+        enName="Please try again: You have not met the minimum number of characters required."
+        frName="Veuillez réessayer : Vous n’avez pas entré le nombre minimum de caractères exigé."
+        value="minlength"/>
+    <maxlength
+        jcr:primaryType="nt:unstructured"
+        enName="Please try again: You have exceeded the maximum number of characters allowed."
+        frName="Veuillez réessayer : Vous avez dépassé le nombre maximum de caractères permis."
+        value="maxlength"/>
+    <alphadashesspaces
+        jcr:primaryType="nt:unstructured"
+        enName="Please enter valid characters: letters, numbers, dashes, and spaces"
+        frName="Veuillez utiliser des caractères valides: lettres, chiffres, tirets, espaces"
+        value="alphadashesspaces"/>
+    <nourl
+        jcr:primaryType="nt:unstructured"
+        enName="Please try again: This character combination is not permitted."
+        frName="Veuillez réessayer : cette combinaison de caractères n’est pas autorisée."
+        value="nourl"/>
+    <specialAddress
+        jcr:primaryType="nt:unstructured"
+        enName="Please enter a valid address. Example: 123 Canada Street (PO Box acceptable)."
+        frName="Veuillez saisir une adresse valide. Exemple : 123, rue du Canada (Boîte postale acceptable)."
+        value="specialAddress"/>
+</jcr:root>

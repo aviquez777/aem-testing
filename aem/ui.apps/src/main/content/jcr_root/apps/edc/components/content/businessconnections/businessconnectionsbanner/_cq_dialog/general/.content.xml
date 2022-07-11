@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <eventTag
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Event Tag"
+                fieldDescription="'Eventbrite' copy within the banner above the event title"
+                name="./eventTag"
+                required="{Boolean}true"/>
+            <eventTitle
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Event Title"
+                fieldDescription="'Eventbrite' copy within the banner above the event title"
+                name="./eventTitle"
+                required="{Boolean}true"/>
+            <eventDescription
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                fieldLabel="Event Description"
+                fieldDescription="Must have description copy below the event title"
+                name="./eventDescription"
+                required="{Boolean}true"/>
+            <loginCtaText
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Login CTA Text"
+                fieldDescription="Must have 'login to register"
+                name="./loginCtaText"/>
+            <registerText
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Don’t have a MyEDC Account? text"
+                fieldDescription="'Don’t have a MyEDC Account? text"
+                name="./registerText"/>
+            <registerLinkText
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Create one now link text"
+                fieldDescription="'Create one now' link text"
+                name="./registerLinkText"/>
+        </items>
+    </content>
+</jcr:root>

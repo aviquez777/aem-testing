@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="EDC Page"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        granite:class="cq-dialog-content-page"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs jcr:primaryType="nt:unstructured">
+                <items jcr:primaryType="nt:unstructured">
+                    <basic
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Basic"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <costum
+                                        cq:showOnCreate="{Boolean}false"
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Additional EDC Properties"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <disableaddthis
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                                defaultChecked="{Boolean}false"
+                                                fieldDescription="When selected, addthis social share will be disabled for this page"
+                                                ignoreData="{Boolean}false"
+                                                name="./disableaddthis"
+                                                text="Disable Addthis"
+                                                uncheckedValue="off"
+                                                value="on"/>
+                                        </items>
+                                    </costum>
+                                    <theme
+                                        cq:showOnCreate="{Boolean}true"
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Campaign theme"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <campaigntheme
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Theme color"
+                                                name="./themecolor">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <edcblue
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="EDC Blue"
+                                                        value="edc-blue-theme"/>
+                                                    <mulberry
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Mulberry"
+                                                        value="mulberry-theme"/>
+                                                    <pelorous
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Pelorous"
+                                                        value="pelorous-theme"/>
+                                                    <sea-green
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Sea Green"
+                                                        value="sea-green-theme"/>
+                                                    <sandstone
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Sandstone"
+                                                        value="sandstone-theme"/>
+                                                    <saffron
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Saffron"
+                                                        value="saffron-theme"/>
+                                                </items>
+                                            </campaigntheme>
+                                        </items>
+                                    </theme>
+                                </items>
+                            </column>
+                        </items>
+                    </basic>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

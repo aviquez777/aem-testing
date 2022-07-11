@@ -1,0 +1,49 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-test.hasvalues="${properties.title}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !hasvalues}"/>
+
+<section class="c-persona-button" data-sly-test="${hasvalues}" data-docid="${properties.docID}" data-asset-tier="${properties.assetTier}" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'Persona Buttons'}" data-event-type="button" data-event-name="click" data-event-engagement="1" data-event-action="main body" >
+    <span class="key-line"></span>
+    <div class="main-container">
+        <h2 class="title" data-sly-test="${hasvalues}">${properties.title}</h2>
+        <p class="info" data-sly-test.subtitle="${properties.subtitle}">${subtitle}</p>
+        <ul class="list-persona">
+            <!--/* Get first chapter path for myEDC */-->
+            <sly data-sly-use.multifield="${'com.edc.edcweb.core.helpers.MultifieldReaderHelper' @ multifield='chapterbtn1'}"/>
+            <sly data-sly-test.persona1="${multifield.fields}"/>
+            <sly data-sly-list="${persona1}">
+                <li data-persona="${properties.personabtn1}" data-sly-test="${itemList.first}" data-path="${item.chapter}">
+                    <a href="" data-tab-content="${properties.btn1Id}">${properties.labelbtn1}</a>
+                </li>
+            </sly>
+
+            <!--/* Get first chapter path for myEDC */-->
+            <sly data-sly-use.multifield="${'com.edc.edcweb.core.helpers.MultifieldReaderHelper' @ multifield='chapterbtn2'}"/>
+            <sly data-sly-test.persona2="${multifield.fields}"/>
+            <sly data-sly-list="${persona2}">
+                <li data-persona="${properties.personabtn2}" data-sly-test="${itemList.first}" data-path="${item.chapter}">
+                    <a href="" data-tab-content="${properties.btn2Id}">${properties.labelbtn2}</a>
+                </li>
+            </sly>
+
+            <!--/* Get first chapter path for myEDC */-->
+            <sly data-sly-use.multifield="${'com.edc.edcweb.core.helpers.MultifieldReaderHelper' @ multifield='chapterbtn3'}"/>
+            <sly data-sly-test.persona3="${multifield.fields}"/>
+            <sly data-sly-list="${persona3}">
+                <li data-persona="${properties.personabtn3}" data-sly-test="${itemList.first}" data-path="${item.chapter}">
+                    <a href="" data-tab-content="${properties.btn3Id}">${properties.labelbtn3}</a>
+                </li>
+            </sly>
+
+            <!--/* Get first chapter path for myEDC */-->
+            <sly data-sly-use.multifield="${'com.edc.edcweb.core.helpers.MultifieldReaderHelper' @ multifield='chapterbtn4'}"/>
+            <sly data-sly-test.persona4="${multifield.fields}"/>
+            <sly data-sly-list="${persona4}">
+                <li data-sly-test="${properties.btn4Id && properties.labelbtn4 && itemList.first}" data-persona="${properties.personabtn4}" data-path="${item.chapter}">
+                    <a href="" data-tab-content="${properties.btn4Id}">${properties.labelbtn4}</a>
+                </li>
+            </sly>
+        </ul>
+    </div>
+</section>

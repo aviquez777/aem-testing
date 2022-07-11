@@ -1,0 +1,285 @@
+@charset "UTF-8";
+.c-contact-profiles .contact-profiles-container {
+    position: relative;
+    padding: 0 15px;
+}
+
+.c-contact-profiles .contact-profiles-container .key-line {
+    border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+    margin: 32px 0;
+    display: block;
+}
+
+.c-contact-profiles .contact-profiles-container .main-title {
+    text-align: center;
+    margin: 80px auto 16px;
+}
+
+.c-contact-profiles .contact-profiles-container .container .author-info {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 0;
+    padding-right: 0;
+    float: left;
+    text-align: center;
+}
+
+.c-contact-profiles .contact-profiles-container .container .author-info img {
+    display: block;
+    margin: auto;
+    border: 1px solid rgba(51, 51, 51, 0.3);
+    border-radius: 100%;
+    height: 66px;
+    width: 66px;
+    margin-bottom: 8px;
+}
+
+.c-contact-profiles .contact-profiles-container .container .author-info .personal-info {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 16px;
+}
+
+.c-contact-profiles .contact-profiles-container .container .author-info .personal-info .fullname {
+    font-weight: 600;
+    margin: 0 0 8px 0;
+}
+
+.c-contact-profiles .contact-profiles-container .container .author-info .personal-info .position,
+.c-contact-profiles .contact-profiles-container .container .author-info .personal-info .company {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+}
+
+.c-contact-profiles .contact-profiles-container .container .author-info .personal-info .time-zone {
+    margin: 8px 0 0 0;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.c-contact-profiles .contact-profiles-container .container .author-info .personal-info .time-zone::before {
+    font-family: 'iconfonts';
+    content: "";
+    padding-right: 5px;
+}
+
+.c-contact-profiles .contact-profiles-container .container .author-info .personal-info::after {
+    background-color: #4386ac;
+    content: '';
+    display: block;
+    height: 2px;
+    width: 65px;
+    margin: 32px auto 0;
+}
+
+.c-contact-profiles .contact-profiles-container .container .author-info .contact-info {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: left;
+}
+
+.c-contact-profiles .contact-profiles-container .container .author-info .contact-info .email {
+    display: block;
+    font-weight: 600;
+    overflow: hidden;
+    padding-bottom: 16px;
+    position: relative;
+}
+
+.c-contact-profiles .contact-profiles-container .container .author-info .contact-info .email::before {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 50%, white 100%);
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.c-contact-profiles .contact-profiles-container .container .author-info .contact-info .phone-info {
+    padding-bottom: 16px;
+}
+
+.c-contact-profiles .contact-profiles-container .container .author-info .contact-info .phone-info .phone-location {
+    display: block;
+    font-size: 12px;
+    color: #757575;
+}
+
+.c-contact-profiles .contact-profiles-container .container .author-info .contact-info::after {
+    display: none;
+}
+
+.c-contact-profiles .contact-profiles-container .container .text-area {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 0;
+    padding-right: 0;
+    float: left;
+}
+
+.c-contact-profiles .contact-profiles-container .container .text-area > .sub-title {
+    font-weight: 600;
+}
+
+.c-contact-profiles .contact-profiles-container .container .text-area h4 {
+    font-weight: 600;
+}
+
+.c-contact-profiles .contact-profiles-container .container .text-area .question-area {
+    padding-bottom: 16px;
+}
+
+.c-contact-profiles .contact-profiles-container .container .text-area .blockquote {
+    margin-top: 0;
+    margin-bottom: 32px;
+}
+
+.c-contact-profiles .contact-profiles-container .container .text-area .blockquote h3 {
+    margin: 0;
+}
+
+.c-contact-profiles .contact-profiles-container .container .text-area::before {
+    display: block;
+    height: 2px;
+    width: 100%;
+    margin: 32px auto;
+    border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+    content: '';
+}
+
+.c-contact-profiles .contact-profiles-container .disclaimer {
+    text-align: center;
+}
+
+.c-contact-profiles .contact-profiles-container .disclaimer p {
+    font-size: 12px;
+}
+
+/** Hide text phone number **/
+.c-contact-profiles .container .contact-info .phone-info .desktop-phone {
+  display:  none;
+}
+/** Show link phone number **/
+.c-contact-profiles .container .contact-info .phone-info .moble-phone {
+  display:  block;
+}
+
+
+@media (min-width: 720px) {
+    .c-contact-profiles .contact-profiles-container .main-title {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-contact-profiles .contact-profiles-container .main-title {
+        width: 50%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-contact-profiles .contact-profiles-container .container {
+        display: flex;
+        padding-top: 64px;
+    }
+    .c-contact-profiles .contact-profiles-container .container .author-info {
+        text-align: left;
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-contact-profiles .contact-profiles-container .container .author-info {
+        width: 25%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-contact-profiles .contact-profiles-container .container .author-info {
+        margin-left: 8.33333333%;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-contact-profiles .contact-profiles-container .container .author-info img {
+        margin-left: 0;
+        width: 120px;
+        height: 120px;
+    }
+    .c-contact-profiles .contact-profiles-container .container .author-info .personal-info::after {
+        display: none;
+    }
+    .c-contact-profiles .contact-profiles-container .container .author-info .contact-info::after {
+        background-color: #4386ac;
+        content: '';
+        display: block;
+        height: 2px;
+        width: 65px;
+        margin: 0;
+    }
+    .c-contact-profiles .contact-profiles-container .container .text-area {
+        padding-bottom: 48px;
+        position: relative;
+        width: 58.33333333%;
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-contact-profiles .contact-profiles-container .container .text-area {
+        margin-left: 8.33333333%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-contact-profiles .contact-profiles-container .container .text-area .blockquote {
+        margin-left: -8.33333333%;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-contact-profiles .contact-profiles-container .container .text-area::before {
+        display: none;
+    }
+    .c-contact-profiles .contact-profiles-container .disclaimer {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+    }
+    /** Show text phone number **/
+    .c-contact-profiles .container .contact-info .phone-info .desktop-phone {
+      display:  block;
+    }
+    /** Hide Link phone number **/
+    .c-contact-profiles .container .contact-info .phone-info .moble-phone {
+      display:  none;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 960px) {
+    .c-contact-profiles .contact-profiles-container .disclaimer {
+        width: 50%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

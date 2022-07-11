@@ -1,0 +1,12 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.model="com.edc.edcportal.core.models.ErrorMessage"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !model.errorMessage}"/>
+
+<section class="error-section aem-Grid aem-Grid--12" data-sly-test="${model.errorMessage}">
+    <div class="content aem-GridColumn aem-GridColumn--default--12 aem-GridColumn--sm--10">
+        <h2 class="fade-in-slide-up">${model.errorMessage}</h2>
+        <p class="fade-in-slide-up" data-sly-test="${model.linkText}">
+            <a x-cq-linkchecker="valid" href="${model.linkUrl}" target="${model.linkTarget}">${model.linkText}</a>
+        </p>
+    </div>
+</section>

@@ -1,0 +1,25 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.headline}"/>
+<sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+<sly data-sly-use.ibButtonTemplate="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+
+<section class="c-two-column-tiles" role='tablist' data-sly-use.tilesUse="com.edc.edcweb.core.components.TilesCollection">
+    <h2 data-sly-test="${properties.headline}" >${properties.headline}</h2>
+    <sly data-sly-list="${tilesUse.tiles}">
+        <div class="panel">
+            <div  class='panel-inner'>
+                <div class="panel-image">
+                  <sly data-sly-test.rendition="/jcr:content/renditions/cq5dam.web.1280.1280.jpeg"/>
+                  <img src="${item.imagePath}${rendition}" alt="${item.imageAltText}"/>
+                </div>
+                <div class="panel-content">
+                    <div>
+                        <h3 data-sly-test="${item.title}" class="fade-in-slide-up ${item.titlecolors}">${item.title}</h3>
+                        <p data-sly-test="${item.text}" class="fade-in-slide-up">${item.text @ context="html"}</p>
+                        <div data-sly-test="${item.linkText && item.linkUrl}" data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='link', isUsedForModal='nomodal', buttonstate='enabled', link=item.linkUrl, buttontext=item.linkText, buttoncssclasses='edc-tertiary-btn content-button', target=item.linkTarget, linkchecker='valid'}"  data-sly-unwrap></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </sly>
+</section>

@@ -1,0 +1,65 @@
+<template data-sly-template.level3="${@  uuid, properties, formLabels, formErrorMessages, formType}">
+    <sly data-sly-use.modalTemplate="/apps/edc/components/common/modals.html"/>
+    <div class="level level-${formType == 'TLP' ? 3 : 4} ${wcmmode.disabled ? 'hide' : 'show'}">
+        <h2>
+            <span class="title-color">${formLabels.step3Of4}</span> ${properties.step3Title}
+        </h2>
+        ${properties.step3Description @ context='html'}
+         <!--/** start 126152 modified by 130318 **/-->
+        <sly data-sly-test.banksLbl="${formLabels.bankLabel}"/>
+        <sly data-sly-test.banksPh="${formLabels.bankPlaceholder}"/>
+        <!--/** end 126152 **/-->
+        <div class="form-group" data-form-field="bank">
+            <!--/** start 130318 **/-->
+            <sly data-sly-test="${formType == 'TLP'}" data-sly-use.banks="${'com.edc.edcweb.core.models.MultiFieldPolicyReader' @ multifieldName = 'banks'}"/>
+            <sly data-sly-test="${formType != 'TLP'}" data-sly-use.banks="${'com.edc.edcweb.core.models.lovapi.FinancialInstitutions' @ formType = formType}"/>
+            <!--/** start 130318 **/-->
+            <div class="form-group" data-form-field="bank">
+                <div class="c-dropdown">
+                    <div class="dropdown-overlay">
+                        <label for="bank-${uuid}">${banksLbl}</label>
+                        <!--/* Modal */-->
+                        <sly data-sly-test="${properties.fiModalTitle && properties.fiModalDescription}" data-sly-call="${modalTemplate.moreinfomodal @ modalTitle = properties.fiModalTitle, modalText = properties.fiModalDescription, modalAriaOpen = formLabels.step1modalsariaopen, modalAriaClose = formLabels.step1modalsariaclose}"/>
+                        <div class="dropdown-container">
+                            <div class="dropdown-title">
+                                <span class="label-text">${banksLbl}</span>
+                                <span class="close-btn"></span>
+                            </div>
+                            <select name="bank" id="bank-${uuid}" class="form-control ui selection dropdown" required="" data-no-url="true" data-default-value="${banksPh}" data-limit="" validation-rule="none">
+                                <option value="" hidden="">${banksPh}</option>
+                                <option data-sly-repeat="${banks.valueMapList}" value="${item.bankValue}" special-data="${item.bankDomain}">${item.bankName}</option>
+                            </select>
+                            <span class="error dropdown-error" data-req-message="${formErrorMessages.required}" data-select-one-message="${formErrorMessages.required}" data-no-url-message="${formErrorMessages.nourl}"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3>${properties.managerTitle}</h3>
+        <div data-sly-test="${properties.managerOptDesc}" class="description">${properties.managerOptDesc @context='html'}</div>
+        <div data-form-field="managerFirstName" class="form-group">
+            <label for="managerFirstName-${uuid}">${formLabels.managerFirstName}</label>
+            <input type="text" id="managerFirstName-${uuid}" class="form-control" name="managerFirstName" data-no-url="true" validation-rule="name" data-max-length="100" />
+            <span class="error" data-req-message="${formErrorMessages.required}" data-text-message="${formErrorMessages.format}"data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}" data-no-url-message="${formErrorMessages.nourl}"></span>
+        </div>
+        <div data-form-field="managerLastName" class="form-group">
+            <label for="managerLastName-${uuid}">${formLabels.managerLastName}</label>
+            <input type="text" id="managerLastName-${uuid}" class="form-control" name="managerLastName" data-no-url="true" validation-rule="name" data-max-length="100" />
+            <span class="error" data-req-message="${formErrorMessages.required}" data-text-message="${formErrorMessages.format}"data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}" data-no-url-message="${formErrorMessages.nourl}"></span>
+        </div>
+        <div data-form-field="managerEmailAddress" class="form-group">
+            <label for="managerEmailAddress-${uuid}">${formLabels.managerEmailAddress}</label>
+            <input type="email" id="managerEmailAddress-${uuid}" class="form-control email" name="managerEmailAddress" required="" />
+            <span class="error" data-req-message="${formErrorMessages.required}" data-email-message="${formErrorMessages.email}" data-bank-email-message="${formLabels.bankErrorMsg}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}"></span>
+            <!--/* TLP form Only */-->
+            <sly data-sly-test="${formType == 'TLP'}">
+                <sly data-sly-use.lov="${'com.edc.edcweb.core.models.MultiFieldPolicyReader' @ multifieldName = 'banks', fieldKeyName = 'bankSpecialMsgTitle', fieldValueName = 'bankSpecialMsg'}"/>
+                <sly data-sly-test.bankMessages="${lov.valueMap}"/>
+                <div  data-sly-list="${bankMessages}" class="special-msg national-bank-message hide">
+                    <h4>${item}</h4>
+                    <p>${bankMessages[item] @context='html'}</p>
+                </div>
+            </sly>
+        </div>
+    </div>
+</template>

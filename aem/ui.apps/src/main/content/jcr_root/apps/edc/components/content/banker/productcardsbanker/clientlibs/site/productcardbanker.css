@@ -1,0 +1,422 @@
+.c-product-card-banker {
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+    transition: box-shadow .5s ease;
+    box-sizing: border-box;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.c-product-card-banker * {
+    box-sizing: border-box;
+}
+
+.c-product-card-banker:hover {
+    box-shadow: 0 0 20px 10px rgba(51, 51, 51, 0.1);
+    transition: box-shadow .5s ease;
+}
+
+.c-product-card-banker header {
+    border-bottom: 0;
+    padding-bottom: 0;
+    height: auto;
+}
+
+.c-product-card-banker header .button {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.7142;
+    color: #2f78c6;
+    text-align: left;
+    margin-top: 1rem;
+}
+
+@media (min-width: 720px) {
+    .c-product-card-banker header .button {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-product-card-banker header .button {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+.c-product-card-banker .content,
+.c-product-card-banker .lead-copy,
+.c-product-card-banker ul {
+    display: none;
+}
+
+.c-product-card-banker footer {
+    padding: 1rem 20px;
+}
+
+.c-product-card-banker footer .button {
+    font-size: 14px;
+    padding: .5rem 0 0;
+    background: none;
+    color: #2f78c6;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.c-product-card-banker footer .button:focus span::after, .c-product-card-banker footer .button:hover span::after {
+    display: none;
+}
+
+.c-product-card-banker footer .button::before {
+    display: none;
+}
+
+.c-product-card-banker.closed header {
+    border-bottom: 0;
+    padding-bottom: 0;
+    height: auto;
+}
+
+.c-product-card-banker.closed header .button {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.7142;
+    color: #2f78c6;
+    text-align: left;
+    margin-top: 1rem;
+}
+
+@media (min-width: 720px) {
+    .c-product-card-banker.closed header .button {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-product-card-banker.closed header .button {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+.c-product-card-banker.closed .content,
+.c-product-card-banker.closed .lead-copy,
+.c-product-card-banker.closed ul {
+    display: none;
+}
+
+.c-product-card-banker.closed footer {
+    padding: 1rem 20px;
+}
+
+.c-product-card-banker.closed footer .button {
+    font-size: 14px;
+    padding: .5rem 0 0;
+    background: none;
+    color: #2f78c6;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.c-product-card-banker.closed footer .button:focus span::after, .c-product-card-banker.closed footer .button:hover span::after {
+    display: none;
+}
+
+.c-product-card-banker.closed footer .button::before {
+    display: none;
+}
+
+.c-product-card-banker header {
+    padding: 1.5rem 20px 1.6rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.c-product-card-banker header .headline {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.7142;
+    color: #707070;
+    text-align: left;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 720px) {
+    .c-product-card-banker header .headline {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-product-card-banker header .headline {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+.c-product-card-banker header .title {
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: .5rem;
+    flex-grow: 1;
+}
+
+.c-product-card-banker header .description {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.7142;
+    color: #404041;
+    font-weight: normal;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: left;
+    padding: 0;
+    margin-bottom: 0;
+    max-height: 2.875rem;
+    overflow: hidden;
+    flex-grow: 1;
+}
+
+@media (min-width: 720px) {
+    .c-product-card-banker header .description {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-product-card-banker header .description {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+.c-product-card-banker .content {
+    padding: 2rem 0;
+    flex-grow: 1;
+}
+
+.c-product-card-banker .content .lead-copy {
+    padding: 0 20px;
+    margin: 0 0 1rem;
+}
+
+.c-product-card-banker .content ul {
+    padding: 0 40px;
+    margin: 0;
+}
+
+.c-product-card-banker .content ul li {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding-top: 0;
+}
+
+.c-product-card-banker .content ul li::before {
+    top: 7px;
+}
+
+.c-product-card-banker .content ul li::after {
+    display: none;
+}
+
+.c-product-card-banker .content ul + .view-more {
+    padding: 0 0 0 60px;
+}
+
+.c-product-card-banker .content ul + .view-more a {
+    font-size: 14px;
+}
+
+.c-product-card-banker footer {
+    padding: 0 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.c-product-card-banker footer a {
+    margin: 0;
+    width: 100%;
+}
+
+.c-product-card-banker ul {
+    padding-left: 0;
+}
+
+.c-product-card-banker ul li {
+    color: #333;
+    font-family: "Georgia", "Times New Roman", Times, serif;
+    font-size: 14px;
+    line-height: 1.7142;
+    padding: 15px 20px;
+    position: relative;
+}
+
+.c-product-card-banker ul li::after {
+    background: #dedede;
+    bottom: 0;
+    content: '';
+    height: 1px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.c-product-card-banker ul li::before {
+    background: #333;
+    border-radius: 100%;
+    content: '';
+    display: inline-block;
+    height: 4px;
+    left: 0;
+    position: absolute;
+    top: 23px;
+    width: 4px;
+}
+
+@media (min-width: 720px) {
+    .c-product-card-banker {
+        box-sizing: border-box;
+        margin: 0;
+        max-width: 345px;
+    }
+    .c-product-card-banker header {
+        height: 208px;
+        border-bottom: 2px solid #26a2b5;
+    }
+    .c-product-card-banker .content,
+    .c-product-card-banker .lead-copy,
+    .c-product-card-banker ul {
+        display: block;
+    }
+    .c-product-card-banker.closed header {
+        border-bottom: 0;
+        padding-bottom: 0;
+        height: auto;
+    }
+    .c-product-card-banker.closed header .button {
+        color: #333;
+        font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0;
+        line-height: 1.7142;
+        color: #2f78c6;
+        text-align: left;
+        margin-top: 1rem;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-product-card-banker.closed header .button {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 960px) {
+    .c-product-card-banker.closed header .button {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-product-card-banker.closed .content,
+    .c-product-card-banker.closed .lead-copy,
+    .c-product-card-banker.closed ul {
+        display: none;
+    }
+    .c-product-card-banker.closed footer {
+        padding: 1rem 20px;
+    }
+    .c-product-card-banker.closed footer .button {
+        font-size: 14px;
+        padding: .5rem 0 0;
+        background: none;
+        color: #2f78c6;
+        margin-bottom: 1.5rem;
+        text-align: left;
+    }
+    .c-product-card-banker.closed footer .button:focus span::after, .c-product-card-banker.closed footer .button:hover span::after {
+        display: none;
+    }
+    .c-product-card-banker.closed footer .button::before {
+        display: none;
+    }
+    .c-product-card-banker .content {
+        min-height: 342px;
+    }
+    .c-product-card-banker footer {
+        padding: 2rem 20px;
+    }
+    .c-product-card-banker footer .button {
+        background: #2f78c6;
+        color: #fff;
+        width: 100%;
+        padding: 20px 30px;
+        text-align: center;
+        margin-bottom: 0;
+    }
+    .c-product-card-banker footer .button:hover span::after {
+        display: block;
+    }
+    .c-product-card-banker footer .button::before {
+        display: block;
+    }
+    .c-product-card-banker footer .button::before {
+        background: #dedede;
+        top: 0;
+        content: '';
+        height: 1px;
+        left: 20px;
+        position: absolute;
+        width: calc(100% - 40px);
+    }
+}
+
+@media (min-width: 960px) {
+    .c-product-card-banker {
+        margin-bottom: 0;
+        max-width: 350px;
+    }
+}
+
+@media (min-width: 1140px) {
+    .c-product-card-banker header .description {
+        overflow: visible;
+    }
+}

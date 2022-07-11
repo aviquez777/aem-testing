@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+             <step1modals
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/text"
+                class="coral-Form-fieldlabel"
+                text="Commmon"/>
+            <backButton jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Label for Back Button"
+                fieldLabel="Label for Back button"
+                required="{Boolean}true"
+                name="./backButton"/>
+            <nextButton jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Label for Next Button"
+                fieldLabel="Label for Next button"
+                required="{Boolean}true"
+                name="./nextButton"/>
+            <nextButtonDET jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Data English Text for Next Button i.e. Next"
+                fieldLabel="Data English Text for Next button"
+                required="{Boolean}true"
+                name="./nextButtonDET"/>
+            <proceedButton jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Label for Proceed Button"
+                fieldLabel="Label for Proceed button"
+                required="{Boolean}true"
+                name="./proceedButton"/>
+            <proceedButtonDET jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Data English Text for Proceed Button i.e. Confirm and Submit"
+                fieldLabel="Data English Text for Proceed button"
+                required="{Boolean}true"
+                name="./proceedButtonDET"/>
+            <editButton jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Label for Edit Button"
+                fieldLabel="Label for Edit button"
+                required="{Boolean}true"
+                name="./editButton"/>
+            <formSubmitFail jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="i.e Sorry, the form submission timed out. Please submit the form again. if the issue persist, please contact support."
+                fieldLabel="Form Submit Fail Error"
+                required="{Boolean}true"
+                name="./formSubmitFail"/>
+            <wellin
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+            <layout
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+            <items jcr:primaryType="nt:unstructured">
+                <ariaButtons
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/text"
+                    class="coral-Heading--4"
+                    text="Aria buttons"/>
+                <step1modalsariaopen
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    fieldLabel="Step 1 Modals Aria Open text"
+                    fieldDescription="Arkadin Modal Aria Scroll text i.e. 'Click to open the more information modal'"
+                    required="{Boolean}true"
+                    name="./step1modalsariaopen"/>
+                <step1modalsariaclose
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    fieldLabel="Step 1 Modals Aria Close text"
+                    fieldDescription="Step 1 Modal sAria CLose text i.e. 'Click to open the more information modal'"
+                    required="{Boolean}true"
+                    name="./step1modalsariaclose"/>
+                <mulipleSelectButtons
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/text"
+                    class="coral-Heading--4"
+                    text="Multiple Select buttons"/>
+                <multiconfirmtext
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    fieldLabel="Confirm button"
+                    name="./multiconfirmtext"
+                    required="{Boolean}true"/>
+                <multiclearalltext
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    fieldLabel="Clear All"
+                    name="./multiclearalltext"
+                    required="{Boolean}true"/>
+                <multisingulartext
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    fieldLabel="Singular option selected"
+                    name="./multisingulartext"
+                    required="{Boolean}true"/>
+                <multipluraltext
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    fieldLabel="Plural option selected"
+                    name="./multipluraltext"
+                    required="{Boolean}true"/>
+                </items>
+            </wellin>
+        </items>
+    </content>
+</jcr:root>

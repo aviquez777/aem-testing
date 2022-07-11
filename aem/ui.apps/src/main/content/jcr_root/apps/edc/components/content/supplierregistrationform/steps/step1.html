@@ -1,0 +1,121 @@
+<template data-sly-template.step1="${@  uuid, properties, formLabels, formErrorMessages}">
+    <div class="level level-1 show">
+        <h2>
+            <span class="title-color">${formLabels.step1Of3}</span> ${properties.step1title}
+        </h2>
+        <div class="form-group checkbox-item">
+            <input type="checkbox" required="" class="form-control" id="codeOfConductConsent-${uuid}" name="codeOfConductConsent" data-no-url="true" />
+            <div class="input-description">
+                <label for="codeOfConductConsent-${uuid}">${formLabels.conductchecklabel @ context='html'}</label>
+            </div>
+            <span class="error" data-req-message="${formErrorMessages.required}"></span>
+        </div>
+        <h3>${properties.contactinfotitle}</h3>
+        <div class="form-row">
+            <div data-form-field="firstName" class="form-group first-name">
+                <label for="firstName-${uuid}">${formLabels.firstnamelabel}</label>
+                <input type="text" id="firstName-${uuid}" class="form-control" name="firstName" placeholder="${formLabels.firstnameplaceholder}" data-no-url="true" required="" validation-rule="name" data-min-length="1" data-max-length="100" />
+                <span class="error" data-req-message="${formErrorMessages.required}" data-text-message="${formErrorMessages.format}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}"></span>
+            </div>
+            <div data-form-field="lastName" class="form-group last-name">
+                <label for="lastName-${uuid}">${formLabels.lastnamelabel}</label>
+                <input type="text" id="lastName-${uuid}" class="form-control" name="lastName" placeholder="${formLabels.lastnameplaceholder}" data-no-url="true" required="" validation-rule="name" data-min-length="2" data-max-length="100" />                
+                <span class="error" data-req-message="${formErrorMessages.required}" data-text-message="${formErrorMessages.format}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}"></span>
+            </div>
+        </div>
+        <div data-form-field="emailAddress" class="form-group">
+            <label for="emailAddress-${uuid}">${formLabels.emaillabel}</label>
+            <input type="email" id="emailAddress-${uuid}" class="form-control email" placeholder="${formLabels.emailplaceholder}" name="emailAddress" data-min-length="1" data-max-length="40" required="" />
+            <span class="error" data-req-message="${formErrorMessages.required}" data-email-message="${formErrorMessages.email}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}"></span>
+        </div>
+        <div class="form-row">
+            <div class="mainPhone">
+                <label for="mainPhone-${uuid}">${formLabels.phonelabel}</label>
+                <input type="tel" class="form-control" placeholder="${formLabels.phoneplaceholder}" name="mainPhone" id="mainPhone-${uuid}" validation-rule="mainPhone" data-min-length="0" data-max-length="30"/>
+                <span class="error" data-tel-message="${formErrorMessages.phone}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}"></span>
+            </div>
+            <div class="phoneExt">
+                <label for="ext-${uuid}">${formLabels.phoneextlabel}</label>
+                <input type="tel" id="ext-${uuid}" class="form-control" name="ext" placeholder="${formLabels.phoneextplaceholder}" data-max-length="10" validation-rule="numbersOnly" />
+                <span class="error" data-req-message="${formErrorMessages.required}" data-no-url-message=${formErrorMessages.nourl} data-tel-message="${formErrorMessages.phoneExt}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}"></span>
+            </div>
+        </div>
+        <div class="form-row alone-on-row">
+            <div class="fax">
+                <label for="fax-${uuid}">${formLabels.faxlabel}</label>
+                <input type="tel" class="form-control" placeholder="${formLabels.faxplaceholder}" name="fax" id="fax-${uuid}" data-max-length="30" validation-rule="mainPhone" />
+                <span class="error" data-req-message="${formErrorMessages.required}" data-tel-message="${formErrorMessages.phone}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}"></span>
+                <span class="error" data-req-message="${formErrorMessages.required}" data-tel-message="${formErrorMessages.phone}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}"></span>
+            </div>
+        </div>
+        <h3>${properties.supplierinfotitle}</h3>
+        <div data-form-field="supplierInformation" class="form-group supplier-information">
+            <sly data-sly-use.regtypeRadios="${'com.edc.edcweb.core.models.lovapi.GenericLov' @ lovType = 'SupplierType'}"/>
+            <label id="supplierInformation-${uuid}">${formLabels.typereglabel}</label>
+            <div data-sly-list="${regtypeRadios.valueMapList}" class="radio-group" role="radiogroup" aria-labelledby="supplierInformation-${uuid}">
+                <div class="radio-option">
+                    <input type="radio" class="form-control" id="${item.lovId}-${uuid}" name="supplierInformation" value="${item.lovValue}" required="" />
+                    <label for="${item.lovId}-${uuid}">${item.lovName}</label>
+                </div>
+            </div>
+            <span class="error" data-req-message="${formErrorMessages.required}"></span>
+        </div>
+        <h4>${properties.referraltitle}</h4>
+        <div class="form-row">
+            <div data-form-field="referredByFirstName" class="form-group first-name">
+                <label for="referredByFirstName-${uuid}">${formLabels.referralfirstnamelabel}</label>
+                <input type="text" id="referredByFirstName-${uuid}" class="form-control" name="referredByFirstName" placeholder="${formLabels.referralfirstnameplaceholder}" data-no-url="true" required="" validation-rule="name" data-min-length="1" data-max-length="100" />
+                <span class="error" data-req-message="${formErrorMessages.required}" data-text-message="${formErrorMessages.format}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}"></span>
+            </div>
+            <div data-form-field="referredByLastName" class="form-group last-name">
+                <label for="referredByLastName-${uuid}">${formLabels.referrallastnamelabel}</label>
+                <input type="text" id="referredByLastName-${uuid}" class="form-control" name="referredByLastName" placeholder="${formLabels.referrallastnameplaceholder}" data-no-url="true" required="" validation-rule="name" data-min-length="2" data-max-length="100" />
+                <span class="error" data-req-message="${formErrorMessages.required}" data-text-message="${formErrorMessages.format}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}"></span>
+            </div>
+        </div>
+        <div data-form-field="corporate-status" class="form-group">
+            <sly data-sly-use.corporateRadios="${'com.edc.edcweb.core.models.lovapi.GenericLov' @ lovType = 'CorporateStatus', otherLast = true}"/>
+            <label id="corporateStatus-${uuid}">${formLabels.corpstatuslabel}</label>
+            <div data-sly-list="${corporateRadios.valueMapList}" class="radio-group other-radio-section" role="radiogroup" aria-labelledby="corporateStatus-${uuid}">
+                <div class="radio-option">
+                    <input type="radio" class="form-control" id="${item.lovId}-${uuid}" name="corporateStatus" value="${item.lovValue}" required="" />
+                    <label for="${item.lovId}-${uuid}">${item.lovName}</label>
+                </div>
+            </div>
+            <span class="error" data-req-message="${formErrorMessages.required}"></span>
+        </div>
+        <div data-form-field="otherCorporateStatus" class="form-group">
+            <input type="text" id="otherCorporateStatus-${uuid}" class="form-control other-corporate-status-input" name="otherCorporateStatus" placeholder="${formLabels.corpstatusotherplaceholder}" aria-labelledby="otherCorporateStatus-${uuid}" data-no-url="true" disabled="" />
+            <span class="error" data-req-message="${formErrorMessages.required}" data-text-message="${formErrorMessages.format}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}"></span>
+        </div>
+        <div class="multi-input-section">
+            <div class="form-group" data-special-validation="oneCheckboxAtLeast" required="">
+                <sly data-sly-use.businessRadios="${'com.edc.edcweb.core.models.lovapi.GenericLov' @ lovType = 'BusinessServices', otherLast = true, splitList = true}"/>
+                <label id="businessServices-${uuid}">${formLabels.businesslabel}</label>
+                <div data-sly-list="${businessRadios.firstHalfList}" class="col-half">
+                    <div class="checkbox-group">
+                        <input type="checkbox" class="form-control" validation-rule="none" name="businessServices" id="${item.lovId}-${uuid}" data-no-url="true" value="${item.lovValue}" required="" />
+                        <label for="${item.lovId}-${uuid}">${item.lovName}</label>
+                    </div>
+                </div>
+                <div data-sly-list="${businessRadios.secondHalfList}" class="col-half">
+                    <div class="checkbox-group">
+                        <input type="checkbox" class="form-control" validation-rule="none" name="businessServices" id="${item.lovId}-${uuid}" data-no-url="true" value="${item.lovValue}" required="" />
+                        <label for="${item.lovId}-${uuid}">${item.lovName}</label>
+                    </div>
+                </div>
+                <span class="error" data-req-message="${formErrorMessages.required}"></span>
+            </div>
+            <div class="form-group">
+                <sly data-sly-use.miTemplate="${'/apps/edc/components/common/multiinput.html'}" />
+                <sly data-sly-call="${miTemplate.multiInput @ name='otherBusinessServices', 
+                    uuid=uuid, 
+                    maxItems='3',
+                    dataDelimiter='|',
+                    placeholder=formLabels.businessotherplaceholder, 
+                    formErrorMessages=formErrorMessages,
+                    disabled='disabled'}"/>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,15 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.AADModel="com.edc.edcweb.core.components.ArticleAuthorsDetails"/>
+<sly data-sly-test.authorsQuantity="${AADModel.isAuthorMoreThankMax}"/>
+
+<section data-sly-test="${AADModel.getBiographies}" class="c-article-authors-details-top-component">
+    <h4 class="main-title">${AADModel.getCompTitle}</h4>
+    <div class="authors-list">
+        <div data-sly-list="${AADModel.getBiographies}" class="author-info ${authorsQuantity? 'hide' : 'show'}">
+            <a data-sly-use.urlRes="${'com.edc.edcweb.core.models.PageModelHelper' @ path = item.getAuthorPagePath}" href="${urlRes.url}" target="_self"><h4>${item.authorname}</h4></a>
+            <p>${item.jobtitle}</p>
+        </div>
+        <a href="${AADModel.getCTAViewAllAuthorsLink}" target="_self" class="${authorsQuantity? 'show' : 'hide'}">${AADModel.getCTAViewAllAuthorsText}</a>
+    </div>
+</section>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !AADModel.getBiographies}"></sly>

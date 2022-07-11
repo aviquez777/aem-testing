@@ -1,0 +1,23 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.model="com.edc.edcweb.core.models.PictureWithTwoColumns" />
+<sly data-sly-call="${templates.placeholder @ isEmpty = (!model.image && !model.twoColumnTextElements)}"/>
+
+<section data-sly-test="${model.image && model.twoColumnTextElements}" class="picture-and-two-column-text ${model.showPictureRight == 'no' ? 'image-first' : 'image-last'}">
+    <div class="content">
+        <div data-sly-test="${model.title}" class="column-title">
+            <h2 class="title">${model.title}</h2>
+        </div>
+        <div data-sly-test="${model.image}" class="column-image">
+            <img src="${model.image}" alt="${model.altText}" />
+        </div>
+        <div class="column-text" data-sly-list.section="${model.twoColumnTextElements}">
+            <section class="column-content">
+                <div class="section-content">
+                  <sly data-sly-use.urlres="${'com.edc.edcweb.core.models.PageModelHelper' @ path = section.subheadingLink}"/>
+                    <h4><a x-cq-linkchecker="valid" href="${urlres.url}">${section.subheading}</a></h4>
+                    ${section.rtftext @ context='html'}
+                </div>
+            </section>
+        </div>
+    </div>
+</section>

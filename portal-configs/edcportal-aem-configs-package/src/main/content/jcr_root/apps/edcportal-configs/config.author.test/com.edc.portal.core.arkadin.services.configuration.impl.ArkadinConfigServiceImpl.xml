@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+    getAPIUrl="https://stage.onlinexperiences.com/scripts/Server.nxp?LASCmd=" 
+    getLASCmd="AI:4;F:APIUTILS!50500"
+    getStudioShowRegistrationLASCmd="AI:4;F:APIUTILS!50569"
+    getAPIUserAuthCode="swos69r6r0x5cuw6uthidocriswUka"
+    getAPIUserCredentials ="4pLvAFAp0b7lhLtuprOd61OthIf6Ac"
+    getShowBaseUrl="https://stage.onlinexperiences.com/Launch/Event.htm?ShowKey="/> 
+  <!-- 
+  Production Sandbox 2 Credentials 
+  getAPIUrl="https://api.onlinexperiences.com/scripts/Server.nxp?LASCmd=AI:4;F:APIUTILS!50500"
+  getAPIUserAuthCode="wr72wa3HAC6clxuspaQlstUhupiswu"
+  getAPIUserCredentials ="qOSwlg0Criwr9Quc3ITHetru7t2t8i"
+  getShowBaseUrl="https://onlinexperiences.com/Launch/Event/ShowKey="
+   -->

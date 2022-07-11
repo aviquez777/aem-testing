@@ -1,0 +1,189 @@
+@charset "UTF-8";
+.has-more-info-btn {
+    display: inline-block;
+    width: auto;
+    float: left;
+    clear: left;
+}
+
+.c-questionnaire .c-more-information-modal {
+    float: none;
+}
+
+.c-more-information-modal {
+    display: inline-flex;
+    float: left;
+    padding-left: .3125rem;
+    text-align: left;
+}
+
+.c-more-information-modal.hide {
+    display: none;
+}
+
+.c-more-information-modal.on-title {
+    margin-top: .375rem;
+}
+
+.c-more-information-modal button {
+    padding: 0;
+    border-radius: 0;
+    font-style: normal;
+    cursor: pointer;
+    display: inline-block;
+    transition: none;
+}
+
+.c-more-information-modal .modal-triggerer {
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: normal;
+    padding: .125rem .375rem;
+    border-radius: 50%;
+    color: #fff;
+}
+
+.c-more-information-modal .modal-section {
+    z-index: 1;
+}
+
+.c-more-information-modal .modal-section.hide {
+    display: none;
+}
+
+.c-more-information-modal .modal-section .modal-shade {
+    background-color: rgba(25, 25, 25, 0.8);
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.c-more-information-modal .modal-section .modal-container {
+    background-color: #fff;
+    position: fixed;
+    box-shadow: 0 0 1.5em rgba(0, 0, 0, 0.35);
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: calc(100% - 2rem);
+    z-index: 2;
+}
+
+.c-more-information-modal .modal-section .modal-container .modal-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    z-index: 10;
+    padding: 0;
+    width: 2rem;
+    height: 2rem;
+    background-color: transparent;
+    color: #000;
+    border: 0;
+}
+
+.c-more-information-modal .modal-section .modal-container .modal-close::after {
+    font-family: "iconfonts";
+    color: #333;
+    content: "";
+    font-size: 4rem;
+    font-weight: normal;
+    line-height: 1.5rem;
+}
+
+.c-more-information-modal .modal-section .modal-container .modal-title,
+.c-more-information-modal .modal-section .modal-container .modal-text {
+    color: #333;
+    font-size: 17px;
+    line-height: 27px;
+    margin: 0;
+    /* Track */
+    /* Handle */
+    /* Handle on hover */
+}
+
+.c-more-information-modal .modal-section .modal-container .modal-title::-webkit-scrollbar,
+.c-more-information-modal .modal-section .modal-container .modal-text::-webkit-scrollbar {
+    width: 10px;
+}
+
+.c-more-information-modal .modal-section .modal-container .modal-title::-webkit-scrollbar-track,
+.c-more-information-modal .modal-section .modal-container .modal-text::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.c-more-information-modal .modal-section .modal-container .modal-title::-webkit-scrollbar-thumb,
+.c-more-information-modal .modal-section .modal-container .modal-text::-webkit-scrollbar-thumb {
+    background: #ebebeb;
+    background: -moz-linear-gradient(left, #ebebeb 0%, #ebebeb 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #ebebeb), color-stop(50%, #ebebeb), color-stop(51%, rgba(255, 255, 255, 0)), color-stop(71%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(255, 255, 255, 0)));
+    background: -webkit-linear-gradient(left, #ebebeb 0%, #ebebeb 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: -o-linear-gradient(left, #ebebeb 0%, #ebebeb 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: -ms-linear-gradient(left, #ebebeb 0%, #ebebeb 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to right, #ebebeb 0%, #ebebeb 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebebeb', endColorstr='#ffffff', GradientType=1 );
+}
+
+.c-more-information-modal .modal-section .modal-container .modal-title::-webkit-scrollbar-thumb:hover,
+.c-more-information-modal .modal-section .modal-container .modal-text::-webkit-scrollbar-thumb:hover {
+    background: #ebebeb;
+    background: -moz-linear-gradient(left, #cccccc 0%, #cccccc 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #cccccc), color-stop(50%, #cccccc), color-stop(51%, rgba(255, 255, 255, 0)), color-stop(71%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(255, 255, 255, 0)));
+    background: -webkit-linear-gradient(left, #cccccc 0%, #cccccc 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: -o-linear-gradient(left, #cccccc 0%, #cccccc 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: -ms-linear-gradient(left, #cccccc 0%, #cccccc 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to right, #cccccc 0%, #cccccc 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebebeb', endColorstr='#ffffff', GradientType=1 );
+}
+
+.c-more-information-modal .modal-section .modal-container .modal-title {
+    display: flex;
+    background-color: #f4f8fc;
+    padding: 1.625rem 1.5rem;
+}
+
+.c-more-information-modal .modal-section .modal-container .modal-title h2 {
+    flex: 1;
+}
+
+.c-more-information-modal .modal-section .modal-container .modal-text {
+    padding: 1.5rem;
+}
+
+.c-more-information-modal .modal-section .modal-container .modal-text p {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.c-more-information-modal .modal-section .modal-container h2,
+.c-more-information-modal .modal-section .modal-container p {
+    margin: 0;
+}
+
+@media (min-width: 720px) and (min-width: 623px) {
+    .c-more-information-modal .modal-section .modal-container {
+        width: 570px;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-more-information-modal .modal-section .modal-container .modal-title {
+        background-color: #f4f8fc;
+        padding: 1.625rem 2rem 1.625rem 3rem;
+    }
+    .c-more-information-modal .modal-section .modal-container .modal-text {
+        padding: 1.5rem 3rem 4.125rem;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-more-information-modal .modal-section {
+        z-index: 1000201;
+    }
+    .c-more-information-modal.on-title {
+        margin-top: .625rem;
+    }
+}

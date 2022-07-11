@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Article Page"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <items
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+            <heading
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/heading"
+                class="coral-Heading coral-Heading--4"
+                level="{Long}4"
+                text="BreadCrumb"/>
+            <well
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <menuewlabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Export Wise label"
+                        name="./menuewlabel"
+                        required="{Boolean}true"/>
+                    <menuewlink
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Export Wise landing page"
+                        name="./menuewlink"
+                        required="{Boolean}true"
+                        rootPath="/content/edc"/>
+                    <menutilabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Trade Insight label"
+                        name="./menutilabel"
+                        required="{Boolean}true"/>
+                    <menutilink
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Trade Insight landing page"
+                        name="./menutilink"
+                        required="{Boolean}true"
+                        rootPath="/content/edc"/>
+                </items>
+            </well>
+        </items>
+    </content>
+</jcr:root>

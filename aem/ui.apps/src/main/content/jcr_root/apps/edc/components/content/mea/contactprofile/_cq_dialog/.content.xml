@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="MEA Contact Profile"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+                type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <contactinfo
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Contact Information"
+                    sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                        margin="{Boolean}false"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <title
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldDescription="Please enter Title"
+                                    fieldLabel="Title"
+                                    required="{Boolean}false"
+                                    name="./title"/>
+                            <repfullname
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Rep Full name"
+                                    fieldDescription="Please enter Rep Full Name"
+                                    name="./repfullname"
+                                    required="{Boolean}true"/>
+                            <reptitle
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Rep Title"
+                                    fieldDescription="Please enter Rep Title"
+                                    name="./reptitle"
+                                    required="{Boolean}true"/>
+                            <repcompany
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Rep Company"
+                                    fieldDescription="Please enter Rep Company"
+                                    name="./repcompany"
+                                    required="{Boolean}false"/>
+                            <timezone
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                    fieldLabel="Time Zone (offset from EST)"
+                                    fieldDescription="Local timezone offset from EST (-18 to +18)"
+                                    name="./timezone"
+                                    required="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <optionM18 jcr:primaryType="nt:unstructured"
+                                               text="-18"
+                                               value="-18"/>
+                                    <optionM17 jcr:primaryType="nt:unstructured"
+                                               text="-17"
+                                               value="-17"/>
+                                    <optionM16 jcr:primaryType="nt:unstructured"
+                                               text="-16"
+                                               value="-16"/>
+                                    <optionM15 jcr:primaryType="nt:unstructured"
+                                               text="-15"
+                                               value="-15"/>
+                                    <optionM14 jcr:primaryType="nt:unstructured"
+                                               text="-14"
+                                               value="-14"/>
+                                    <optionM13 jcr:primaryType="nt:unstructured"
+                                               text="-13"
+                                               value="-13"/>
+                                    <optionM12 jcr:primaryType="nt:unstructured"
+                                               text="-12"
+                                               value="-12"/>
+                                    <optionM11 jcr:primaryType="nt:unstructured"
+                                               text="-11"
+                                               value="-11"/>
+                                    <optionM10 jcr:primaryType="nt:unstructured"
+                                               text="-10"
+                                               value="-10"/>
+                                    <optionM09 jcr:primaryType="nt:unstructured"
+                                               text="-9"
+                                               value="-9"/>
+                                    <optionM08 jcr:primaryType="nt:unstructured"
+                                               text="-8"
+                                               value="-8"/>
+                                    <optionM07 jcr:primaryType="nt:unstructured"
+                                               text="-7"
+                                               value="-7"/>
+                                    <optionM06 jcr:primaryType="nt:unstructured"
+                                               text="-6"
+                                               value="-6"/>
+                                    <optionM05 jcr:primaryType="nt:unstructured"
+                                               text="-5"
+                                               value="-5"/>
+                                    <optionM04 jcr:primaryType="nt:unstructured"
+                                               text="-4"
+                                               value="-4"/>
+                                    <optionM03 jcr:primaryType="nt:unstructured"
+                                               text="-3"
+                                               value="-3"/>
+                                    <optionM02 jcr:primaryType="nt:unstructured"
+                                               text="-2"
+                                               value="-2"/>
+                                    <optionM01 jcr:primaryType="nt:unstructured"
+                                               text="-1"
+                                               value="-1"/>
+                                    <option0 jcr:primaryType="nt:unstructured"
+                                             text="0"
+                                             value="0"
+                                             selected="{Boolean}true"/>
+                                    <option1 jcr:primaryType="nt:unstructured"
+                                             text="+1"
+                                             value="+1"/>
+                                    <option2 jcr:primaryType="nt:unstructured"
+                                             text="+2"
+                                             value="+2"/>
+                                    <option3 jcr:primaryType="nt:unstructured"
+                                             text="+3"
+                                             value="+3"/>
+                                    <option4 jcr:primaryType="nt:unstructured"
+                                             text="+4"
+                                             value="+4"/>
+                                    <option5 jcr:primaryType="nt:unstructured"
+                                             text="+5"
+                                             value="+5"/>
+                                    <option6 jcr:primaryType="nt:unstructured"
+                                             text="+6"
+                                             value="+6"/>
+                                    <option7 jcr:primaryType="nt:unstructured"
+                                             text="+7"
+                                             value="+7"/>
+                                    <option8 jcr:primaryType="nt:unstructured"
+                                             text="+8"
+                                             value="+8"/>
+                                    <option9 jcr:primaryType="nt:unstructured"
+                                             text="+9"
+                                             value="+9"/>
+                                    <option10 jcr:primaryType="nt:unstructured"
+                                              text="+10"
+                                              value="+10"/>
+                                    <option11 jcr:primaryType="nt:unstructured"
+                                              text="+11"
+                                              value="+11"/>
+                                    <option12 jcr:primaryType="nt:unstructured"
+                                              text="+12"
+                                              value="+12"/>
+                                    <option13 jcr:primaryType="nt:unstructured"
+                                              text="+13"
+                                              value="+13"/>
+                                    <option14 jcr:primaryType="nt:unstructured"
+                                              text="+14"
+                                              value="+14"/>
+                                    <option15 jcr:primaryType="nt:unstructured"
+                                              text="+15"
+                                              value="+15"/>
+                                    <option16 jcr:primaryType="nt:unstructured"
+                                              text="+16"
+                                              value="+16"/>
+                                    <option17 jcr:primaryType="nt:unstructured"
+                                              text="+17"
+                                              value="+17"/>
+                                    <option18 jcr:primaryType="nt:unstructured"
+                                              text="+18"
+                                              value="+18"/>
+                                </items>
+                            </timezone>
+                            <timezoneminute
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                    fieldLabel="Time Zone Minutes (offset from EST)"
+                                    fieldDescription="Local timezone offset from EST (Minutes)"
+                                    name="./timezoneminute"
+                                    required="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <option00 jcr:primaryType="nt:unstructured"
+                                               text="00"
+                                               value="00"/>
+                                    <option30 jcr:primaryType="nt:unstructured"
+                                              text="30"
+                                              value="30"/>
+                                </items>
+                            </timezoneminute>
+                            <repemail
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Rep Email"
+                                    fieldDescription="Please enter Rep's email"
+                                    name="./repemail"
+                                    validation="email"
+                                    required="{Boolean}true"/>
+                            <phones
+                                    cq:showOnCreate="{Boolean}true"
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Phones"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <phonelocation1
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Phone Location 1"
+                                            fieldDescription="When there’s a phone number, there must also be a location entered"
+                                            name="./phonelocation1"
+                                            required="{Boolean}false"/>
+                                    <phonenumber1
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Phone Number 1"
+                                            fieldDescription="When there’s a phone number, there must also be a location entered"
+                                            name="./phonenumber1"
+                                            required="{Boolean}false"/>
+                                    <phonelocation2
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Phone Location 2"
+                                            fieldDescription="When there’s a phone number, there must also be a location entered"
+                                            name="./phonelocation2"
+                                            required="{Boolean}false"/>
+                                    <phonenumber2
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Phone Number 2"
+                                            fieldDescription="When there’s a phone number, there must also be a location entered"
+                                            name="./phonenumber2"
+                                            required="{Boolean}false"/>
+                                </items>
+                            </phones>
+                        </items>
+                    </column>
+                </items>
+            </contactinfo>
+            <contactimage
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Contact Image"
+                    sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                        margin="{Boolean}false"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <repimage
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                    allowUpload="{Boolean}false"
+                                    autoStart="{Boolean}false"
+                                    class="cq-droptarget"
+                                    fieldDescription="The Rep Image"
+                                    fieldLabel="Image *"
+                                    fileNameParameter="./fileName"
+                                    fileReferenceParameter="./repimage"
+                                    mimeTypes="[image]"
+                                    multiple="{Boolean}false"
+                                    name="./repimagename"
+                                    title="Upload Image Asset"
+                                    uploadUrl="${suffix.path}"
+                                    useHTML5="{Boolean}true"
+                                    validation="image"/>
+                            <imagealttext
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Image Alt Text"
+                                    name="./imagealttext"
+                                    required="{Boolean}true"
+                                    wrapperClass="core-image-alt"/>
+                        </items>
+                    </column>
+                </items>
+            </contactimage>
+        </items>
+    </content>
+</jcr:root>

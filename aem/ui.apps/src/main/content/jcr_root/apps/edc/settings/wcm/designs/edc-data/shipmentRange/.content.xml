@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <option1
+        jcr:primaryType="nt:unstructured"
+        enName="Less than 50"
+        frName="Moins de 50"
+        value="Less than 50"/>
+    <option2
+        jcr:primaryType="nt:unstructured"
+        enName="Between 50 and 200"
+        frName="Entre 50 et 200"
+        value="Between 50 and 200"/>
+    <option3
+        jcr:primaryType="nt:unstructured"
+        enName="Between 200 and 2000"
+        frName="Entre 200 et 2000"
+        value="Between 200 and 2000"/>
+    <option4
+        jcr:primaryType="nt:unstructured"
+        enName="More than 2000"
+        frName="Plus de 2000"
+        value="More than 2000"/>
+</jcr:root>

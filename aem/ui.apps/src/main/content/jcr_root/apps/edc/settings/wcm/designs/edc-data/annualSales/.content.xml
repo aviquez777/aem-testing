@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <option1
+        jcr:primaryType="nt:unstructured"
+        enName="No current sales / Start-up"
+        frName="Aucun chiffre d’affaires actuellement / nouvelle entreprise"
+        value="No current sales / Start-up"/>
+    <option2
+        jcr:primaryType="nt:unstructured"
+        enName="Less than $1,000,000"
+        frName="Moins de 1 000 000 $"
+        value="Less than $1,000,000"/>
+    <option3
+        jcr:primaryType="nt:unstructured"
+        enName="$1,000,000 - $9,999,999"
+        frName="1 000 000 $ - 9 999 999 $"
+        value="$1,000,000 - $9,999,999"/>
+    <option4
+        jcr:primaryType="nt:unstructured"
+        enName="$10,000,000 - $49,999,999"
+        frName="10 000 000 $ - 49 999 999 $"
+        value="$10,000,000 - $49,999,999"/>
+    <option5
+        jcr:primaryType="nt:unstructured"
+        enName="$50,000,000 - $299,999,999"
+        frName="50 000 000 $ - 299 999 999 $"
+        value="$50,000,000 - $299,999,999"/>
+    <option6
+        jcr:primaryType="nt:unstructured"
+        enName="$300,000,000 and above"
+        frName="300 000 000 $ et plus"
+        value="$300,000,000 and above"/>
+    <option7
+        jcr:primaryType="nt:unstructured"
+        enName="Don't know / Not applicable"
+        frName="Ne sait pas / Sans objet"
+        value="Don't know / Not applicable"/>
+</jcr:root>

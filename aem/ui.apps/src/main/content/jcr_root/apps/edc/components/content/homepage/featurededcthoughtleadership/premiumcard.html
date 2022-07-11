@@ -1,0 +1,46 @@
+<template data-sly-template.item="${ @ card, class, action, commonTemplates}">
+    <sly data-sly-test.imgTransform="${card.position == 1 ? 'ftl-card1' : 'ftl-card2-3'}">
+    <!--/*  pullfrommostrecent */-->
+    <sly data-sly-test="${card.cardType != 'customauthor'}">
+        <sly data-sly-use.cardPage="${'com.edc.edcweb.core.models.ArticlePage' @ page = card.page}"/>
+        <a data-sly-use.urlRes="${'com.edc.edcweb.core.models.PageModelHelper' @ path=card.page.path}" href="${urlRes.url}" class="${class}" data-event-action="${action}" data-event-type="link" data-event-level="secondary" data-event-name="link click" data-event-engagement="1">
+            <div class="card-img ${card.page.properties['imagealignment']}">
+                <sly data-sly-call="${commonTemplates.picture @ desktop=card.page.properties['tabletFileReference'], tablet=card.page.properties['tabletFileReference'], phone=card.page.properties['tabletFileReference'], imageAlt=card.page.properties['imagealttext'], transform=imgTransform}"/>
+            </div>
+            <div class="card-content">
+                <div class="tag-section">
+                    <div class="tag-text">
+                        <span class="tag-color ${cardPage.contentTypeClassName}"></span>
+                        <span class="tag-title">${cardPage.contentTypeTitle}</span>
+                    </div>
+                </div>
+                <h4 class="title">${card.page.pageTitle || card.page.title || card.page.name}</h4>
+                <div class="description" data-sly-test="${card.page.description && card.position == 1}">
+                    <p>${card.page.description}</p>
+               </div>
+            </div>
+        </a>
+    </sly>
+
+    <!--/*  customauthor */-->
+    <sly data-sly-test="${card.cardType == 'customauthor'}">
+        <a data-sly-use.urlRes="${'com.edc.edcweb.core.models.PageModelHelper' @ path=card.url}" target="${card.linkTarget}" href="${urlRes.url}" class="${class}" data-event-action="${action}" data-event-type="link" data-event-level="secondary" data-event-name="link click" data-event-engagement="1">
+            <div class="card-img ${card.imageAlign}">
+                <sly data-sly-call="${commonTemplates.picture @ desktop=card.image, tablet=card.image, phone=card.image, imageAlt=card.altText, transform=imgTransform}"/>
+            </div>
+            <div class="card-content">
+                <div class="tag-section">
+                    <sly data-sly-test="${card.formatType}" data-sly-use.tagres="${'com.edc.edcweb.core.models.Tags' @ tagId = card.formatType}" />
+                    <div class="tag-text">
+                        <span class="tag-color ${tagres.tagClassName}"></span>
+                        <span class="tag-title">${tagres.titleByTagId}</span>
+                    </div>
+                </div>
+                <h4 class="title">${card.title}</h4>
+                <div class="description" data-sly-test="${card.description && card.position == 1}">
+                    <p>${card.description}</p>
+                </div>
+            </div>
+        </a>
+    </sly>
+</template>

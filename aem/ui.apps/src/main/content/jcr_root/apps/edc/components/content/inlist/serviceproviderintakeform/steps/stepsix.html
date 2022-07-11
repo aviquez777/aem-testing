@@ -1,0 +1,66 @@
+<template data-sly-template.spifsix="${@ properties, uuid, messages}">
+    <sly data-sly-use.dropdownTemplates="${'/apps/edc/components/common/dropdown.html'}" />
+
+    <!--/* Certifications LOVs */-->
+    <sly data-sly-use.ds="${'com.edc.edcweb.core.models.FormCommonObjects' @ path ='/apps/edc/settings/wcm/designs/edc-data/certifications'}"> </sly>
+    <sly data-sly-test.certifications="${ds.optionsFromDataSourcePath}" > </sly>
+
+    <!--/* Transportation LOVs */-->
+    <sly data-sly-use.ds="${'com.edc.edcweb.core.models.FormCommonObjects' @ path ='/apps/edc/settings/wcm/designs/edc-data/transportation'}"> </sly>
+    <sly data-sly-test.transportation="${ds.optionsFromDataSourcePath}" > </sly>
+
+    <div class="level level-6 hide">
+        <h2 class="title">
+            <span class="title-color">${properties.step6bluetitle}</span> ${properties.step6title}
+        </h2>
+        <p data-sly-test="${properties.step6description}" class="description">${properties.step6description}</p>
+        <div class="form-group" data-form-field="ciffa">
+            <div class="radio-group" role="radiogroup" aria-labelledby="ciffa-{uuid}">
+                <h3 id="ciffa-{uuid}">${properties.cciffamemberLabel}</h3>
+                <div class="radio-option">
+                    <input type="radio" id="ciffaYes-{uuid}" class="form-control" name="ciffa" value="yes" required="" data-no-url="true" />
+                    <label for="ciffaYes-{uuid}">${properties.cciffamemberYes}</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="ciffaNo-{uuid}" class="form-control" name="ciffa" value="no" required="" data-no-url="true" />
+                    <label for="ciffaNo-{uuid}">${properties.cciffamemberNo}</label>
+                </div>
+                <span class="error" data-radio-message="${messages.formErrorMessages.required}"></span>
+            </div>
+        </div>
+        <div data-form-field="associations" class="form-group">
+            <label for="associations-{uuid}">${properties.companymembershipLabel}</label>
+            <input type="text" id="associations-{uuid}" class="form-control" name="associations" data-no-url="true" placeholder="${properties.companymembershipHelp}" validation-rule="none" />
+            <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+        </div>
+        <div data-form-field="certifications" class="form-group">
+            <sly data-sly-call="${dropdownTemplates.dropdown @ dropdowntype='multiple', name='certifications', uuid=uuid, label=properties.companycertificationsLabel,
+                 placeholder=properties.companycertificationsHelp,
+                 required=false, nourl=true, buttontext=properties.companycertificationsConfirm, clearalltext=properties.companycertificationsClear,
+                 singulartext=properties.companycertificationsSingular, pluraltext=properties.companycertificationsPlural,
+                 invaliderror=messages.formErrorMessages.format, options=certifications}">
+            </sly>
+        </div>
+        <div data-form-field="certificationsOther" class="form-group">
+            <label for="certificationsOther-{uuid}">${properties.othercompanycertificationsLabel}</label>
+            <input type="text" id="certificationsOther-{uuid}" class="form-control" name="certificationsOther" data-no-url="true" placeholder="${properties.othercompanycertificationsHelp}" validation-rule="none" />
+            <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+        </div>
+        <div data-form-field="modes" class="form-group">
+            <sly data-sly-call="${dropdownTemplates.dropdown @ dropdowntype='multiple', name='modes', uuid=uuid, label=properties.modesoftransportationLabel,
+                 placeholder=properties.modesoftransportationHelp,
+                 required=true, nourl=true, buttontext=properties.modesoftransportationConfirm, clearalltext=properties.modesoftransportationClear,
+                 singulartext=properties.modesoftransportationSingular, pluraltext=properties.modesoftransportationPlural,
+                 requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=transportation}">
+            </sly>
+        </div>
+        <div data-form-field="modesOwned" class="form-group">
+            <sly data-sly-call="${dropdownTemplates.dropdown @ dropdowntype='multiple', name='modesOwned', uuid=uuid, label=properties.transportationfleetLabel,
+                 placeholder=properties.transportationfleetHelp,
+                 required=false, nourl=true, buttontext=properties.transportationfleetConfirm, clearalltext=properties.transportationfleetClear,
+                 singulartext=properties.transportationfleetSingular, pluraltext=properties.transportationfleetPlural,
+                 invaliderror=messages.formErrorMessages.format, options=transportation}">
+            </sly>
+        </div>
+    </div>
+</template>

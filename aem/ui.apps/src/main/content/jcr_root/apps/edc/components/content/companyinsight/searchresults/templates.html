@@ -1,0 +1,24 @@
+<template data-sly-template.result="${@ item, pageCount, counter, basePageUrl}">
+    <li class="result ${(counter > pageCount) ? 'hide' : ''}" data-sly-list.result="${item}"><!-- //NOSONAR -->
+    <sly data-sly-test.basePageUrlC="${(!wcmmode.disabled ? '{0}{1}' : '{1}') @ format=['/content/edc',basePageUrl]}"/>
+        <a class="result-card" href="${basePageUrlC}.${result.companyId}.html" x-cq-linkchecker="skip">
+            <div class="result-card__main-info">
+                <h3 class="result-card__main-info--title">${result.companyName}</h3>
+                <p class="result-card__main-info--text">${result.streetAddress}</p>
+                <p class="result-card__main-info--text separate">${result.city}</p>
+                <p class="result-card__main-info--text">${result.postalCode}</p>
+            </div>
+            <div class="result-card__secondary-info">
+                <div class="result-card__secondary-info--specific">
+                    <h4>${properties.countryOfOrigin}</h4>
+                    <p>${result.countryName}</p>
+                </div>
+                <div class="result-card__secondary-info--specific">
+                    <h4>${properties.industry}</h4>
+                    <p>${result.industry ? result.industry : properties.displayIfNull}</p>
+                    <p data-sly-test="${!wcmmode.disabled && properties.displayIfNull}">If Null: ${properties.displayIfNull}</p>
+                </div>
+            </div>
+        </a>
+    </li>
+</template>

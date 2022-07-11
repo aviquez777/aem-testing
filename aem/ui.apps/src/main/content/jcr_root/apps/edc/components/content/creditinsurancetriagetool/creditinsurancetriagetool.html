@@ -1,0 +1,42 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.heading1}"/>
+<sly data-sly-use.page="com.adobe.cq.wcm.core.components.models.Page"/>
+<sly data-sly-use.jsonbuilder="./clientlibs/creditinsurancetriagetool/js/creditinsurancetriagetools-json.js"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-test.labels="${jsonbuilder.json}"/>
+<sly data-sly-test.labelsString="${jsonbuilder.jsonString}"/>
+
+<section data-sly-test="${labels.step1.heading}" class="insurance-product-selector" data-sly-attribute.id="${properties.linkid}"  data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'Credit Insurance Triage Tool'}" data-event-action="main body" >
+    <progress max="100" value="50"></progress>
+
+    <div class="step step1 show">
+        <h2>${labels.step1.heading}</h2>
+        <h3 class="question">${labels.step1.question}</h3>
+        <div class="response">
+            <div class="range-slider">
+                <input id="q1-range-slider" name="q1-responses" type="range" list="q1-tickmarks" min="0" max="2" step="1" />
+                <datalist id="q1-tickmarks">
+                    <option value="0">${labels.step1.responseA @ context='html'}</option>
+                    <option value="1">${labels.step1.responseB @ context='html'}</option>
+                    <option value="2">${labels.step1.responseC @ context='html'}</option>
+                </datalist>
+            </div>
+        </div>
+        <div class="cta">
+            <button class="edc-primary-btn btn-next">
+                <span>${labels.global.ctaNextQuestion}</span>
+            </button>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+
+        var insuranceProductSelectorLoadedEvent = document.createEvent('Event');
+        insuranceProductSelectorLoadedEvent.initEvent('insuranceProductSelectorLoaded', true, true);
+
+        document.addEventListener("insuranceProductSelectorLoaded", function(event) {
+            window.insuranceProductSelector = new InsuranceProductSelector("${labelsString @ context='scriptString'}");
+            document.dispatchEvent(insuranceProductSelectorInitializedEvent);
+        }, false);
+    </script>
+</section>

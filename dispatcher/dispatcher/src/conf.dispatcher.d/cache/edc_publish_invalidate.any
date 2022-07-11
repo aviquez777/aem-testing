@@ -1,0 +1,24 @@
+/0000 {
+    /glob "*"
+    /type "deny"
+}
+/0001 {
+    /glob "*.html"
+    /type "allow"
+}
+/0002 {
+  /glob "*.articlesbytagid.json"
+  /type "allow"
+}
+/0003 {
+  /glob "*.amchartmap.json"
+  /type "allow"
+}
+/0004 {
+  /glob "*.xml"
+  /type "allow"
+}
+/0005 {
+ /glob "*.json"
+ /type "allow"
+}

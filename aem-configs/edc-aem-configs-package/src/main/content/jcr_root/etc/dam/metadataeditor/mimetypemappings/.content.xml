@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="nt:unstructured">
+    <rep:policy/>
+    <jpeg/>
+    <tiff/>
+    <pdf/>
+    <carouselset/>
+    <imageset/>
+    <spinset/>
+    <mediaset/>
+    <mov/>
+    <mpeg4/>
+    <avi/>
+    <wmv/>
+    <flv/>
+    <dmvideo/>
+    <xls/>
+    <msword
+        jcr:primaryType="nt:unstructured"
+        exposedmimetype="application/msword"
+        mimetypes="[application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document]"/>
+    <vnd.ms-excel
+        jcr:primaryType="nt:unstructured"
+        exposedmimetype="application/vnd.ms-excel"
+        mimetypes="[application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet]"/>
+</jcr:root>

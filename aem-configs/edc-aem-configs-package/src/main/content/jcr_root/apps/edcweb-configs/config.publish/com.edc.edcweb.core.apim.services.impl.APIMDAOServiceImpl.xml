@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+            jcr:primaryType="sling:OsgiConfig"
+  			accessTokenURL="https://login.microsoftonline.com/d4167d58-713e-4e8f-8ba2-869b5491fb80/oauth2/token"
+			clientId="f6dfe945-7ef1-4365-b53b-90eff2172aaa"
+		    clientSecret="lKYJljgjD3bR1D2gNK/hxmiPmzQHmD8BaameDyVrQfc="
+		    grandType="client_credentials"
+		    resource="https://EDCanada.onmicrosoft.com/999f87c5-f2ea-4e52-b185-33a8a3b4eacb"
+		    proxyURL="https://proxyqac.api.edc.ca/"
+		    subscriptionKey="4a2b5c3c39de453a863db99dd4d40c38"
+		    servicePointInListSupplierFilter="inlist/dev/api/inlist/v1/suppliersOfflineClient/"
+		    servicePointInListSupplierProfile="inlist/dev/api/inlist/v1/suppliers/"
+            />

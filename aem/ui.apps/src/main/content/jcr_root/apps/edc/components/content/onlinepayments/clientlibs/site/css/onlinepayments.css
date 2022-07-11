@@ -1,0 +1,354 @@
+.c-online-payments {
+    box-sizing: border-box;
+    margin: 3rem 0;
+    padding: 0 1rem;
+}
+
+.c-online-payments * {
+    box-sizing: border-box;
+}
+
+.c-online-payments .hide,
+.c-online-payments span.error {
+    display: none;
+}
+
+.c-online-payments .form-group input.error ~ span.error,
+.c-online-payments span.error {
+    margin-bottom: 1rem;
+}
+
+.c-online-payments .form-section,
+.c-online-payments .form-group,
+.c-online-payments .form-row {
+    float: left;
+    width: 100%;
+}
+
+.c-online-payments .status {
+    border-top: 1px solid rgba(51, 51, 51, 0.3);
+    clear: both;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+}
+
+.c-online-payments .status .status-bar {
+    min-height: 1px;
+    padding-left: 0;
+    padding-right: 15px;
+    position: relative;
+    width: 33.33333333%;
+    float: left;
+    border-top: 4px solid #007C03;
+}
+
+.c-online-payments .status.hide {
+    display: none;
+}
+
+.c-online-payments .title-color {
+    color: #4386ac;
+}
+
+.c-online-payments .levels.hide,
+.c-online-payments .no-params.hide {
+    display: none;
+}
+
+.c-online-payments .no-params h2 {
+    color: #2f78c6;
+    font-size: 22px;
+}
+
+.c-online-payments .no-params p {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.c-online-payments .amount-alert {
+    float: left;
+    border-radius: 4px;
+    background-color: #ffeaad;
+    padding: 1rem;
+}
+
+.c-online-payments .amount-alert p {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+    margin: 0;
+}
+
+.c-online-payments .amount-alert.hide {
+    display: none;
+}
+
+.c-online-payments .transaction-results {
+    margin-bottom: 4rem;
+}
+
+.c-online-payments .transaction-results .transaction-context {
+    border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+}
+
+.c-online-payments .transaction-results .transaction-context .result-title,
+.c-online-payments .transaction-results .transaction-context .result-text {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0;
+}
+
+.c-online-payments .transaction-results .transaction-context .result-title {
+    color: #2f78c6;
+    margin-bottom: 1rem;
+}
+
+.c-online-payments .transaction-results .transaction-context .result-text p {
+    margin: 0;
+}
+
+.c-online-payments .transaction-results .transaction-context .result-text.hide {
+    display: none;
+}
+
+.c-online-payments .transaction-results .transaction-context .result-text-approved p {
+    margin: 0;
+    font-size: 20px;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+}
+
+.c-online-payments .transaction-results .transaction-status {
+    margin-bottom: 2rem;
+}
+
+.c-online-payments .transaction-results .transaction-status .status-title,
+.c-online-payments .transaction-results .transaction-status .status-text {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-bottom: 0;
+}
+
+.c-online-payments .transaction-results .transaction-status .status-title {
+    font-size: 14px;
+    color: #404041;
+}
+
+.c-online-payments .transaction-results .transaction-status .status-text {
+    margin: 0;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.c-online-payments .transaction-results .transaction-status .status-text.hide {
+    display: none;
+}
+
+.c-online-payments .transaction-results .confirmation-number .confirmation-number-title,
+.c-online-payments .transaction-results .confirmation-number .confirmation-number-text {
+    margin: 0;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.c-online-payments .transaction-results .confirmation-number .confirmation-number-title {
+    color: #404041;
+}
+
+.c-online-payments .transaction-results .confirmation-number .confirmation-number-text {
+    font-size: 20px;
+}
+
+.c-online-payments .transaction-results .confirmation-number.hide,
+.c-online-payments .transaction-results .result-actions.hide {
+    display: none;
+}
+
+.c-online-payments .transaction-results .result-actions {
+    text-align: right;
+}
+
+.c-online-payments .transaction-results.approved .transaction-status .status-text {
+    color: #007C03;
+}
+
+.c-online-payments .transaction-results.declined .transaction-status {
+    border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+    padding-bottom: 2rem;
+}
+
+.c-online-payments .transaction-results.declined .transaction-status .status-text {
+    color: #c81414;
+}
+
+.c-online-payments .form-section {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+}
+
+.c-online-payments .form-section .section-title {
+    margin: 0 0 2rem;
+}
+
+.c-online-payments .form-actions {
+    margin-bottom: 4rem;
+}
+
+.c-online-payments .form-actions button {
+    width: 100%;
+}
+
+.c-online-payments .help-message {
+    background-color: #f4f8fc;
+    padding: 1rem;
+}
+
+.c-online-payments .help-message p {
+    margin: 0;
+}
+
+.c-online-payments .help-message.hide {
+    display: none;
+}
+
+.c-online-payments .level-2 .level-message {
+    text-align: center;
+}
+
+.c-online-payments .input-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.c-online-payments .input-container input {
+    padding-left: 2.5rem;
+}
+
+.c-online-payments .input-container input.error + .symbol::after {
+    color: #dd3034;
+}
+
+.c-online-payments .input-container .symbol::after {
+    content: '$';
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    height: 20px;
+    left: 20px;
+    position: absolute;
+    top: 16px;
+    width: 20px;
+}
+
+.c-online-payments .moneris-wrapper {
+    width: 100%;
+    height: 725px;
+    margin: 2rem 0;
+}
+
+.c-online-payments .moneris-wrapper.hide {
+    display: none;
+}
+
+.c-online-payments .moneris-wrapper #monerisCheckout {
+    position: relative !important;
+    min-height: 100% !important;
+}
+
+@media (min-width: 720px) {
+    .c-online-payments {
+        padding: 0;
+    }
+    .c-online-payments .levels,
+    .c-online-payments .no-params,
+    .c-online-payments .c-processing-screen {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 66.66666667%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-online-payments .levels,
+    .c-online-payments .no-params,
+    .c-online-payments .c-processing-screen {
+        width: 66.66666667%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-online-payments .form-actions {
+        display: flex;
+        justify-content: flex-end;
+    }
+    .c-online-payments .form-actions button {
+        width: auto;
+    }
+    .c-online-payments .form.title {
+        margin-bottom: 2rem;
+    }
+    .c-online-payments .form-row .form-group.first-name, .c-online-payments .form-row .form-group.amount {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+        clear: both;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 960px) {
+    .c-online-payments .form-row .form-group.first-name, .c-online-payments .form-row .form-group.amount {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-online-payments .form-row .form-group.last-name, .c-online-payments .form-row .form-group.currency {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 0;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 960px) {
+    .c-online-payments .form-row .form-group.last-name, .c-online-payments .form-row .form-group.currency {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-online-payments .levels,
+    .c-online-payments .no-params,
+    .c-online-payments .c-processing-screen {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 720px) {
+    .c-online-payments .levels,
+    .c-online-payments .no-params,
+    .c-online-payments .c-processing-screen {
+        width: 50%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 1140px) {
+    .c-online-payments .moneris-wrapper {
+        height: 675px;
+    }
+}

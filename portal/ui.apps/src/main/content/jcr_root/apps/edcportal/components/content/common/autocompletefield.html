@@ -1,0 +1,37 @@
+<template data-sly-template.autocompletefield="${@ lovPath, lovApiName, fieldName, selectedvalue, label, placeholder, isRequired, isRequiredError, placeholder, tooltipText, uuid, properties, useEnValAsCode, otherLast, otherValue, dataNoUrl, validationRule}">
+    <sly data-sly-test="${lovApiName}">
+    <sly  data-sly-use.lovApi="${'com.edc.edcportal.core.models.lovapi.GenericLov' @ lovType = lovApiName, returnOptionsMap = true, useEnValAsCode = useEnValAsCode, otherLast = otherLast, otherValue = otherValue}"/>
+    <sly data-sly-test.options="${lovApi.options}"/>
+    </sly>
+    <sly data-sly-test="${!lovApiName}">
+      <sly data-sly-test.lovPath="${fieldDefinition['lovPath']}"/>
+      <sly data-sly-use.ds="${'com.edc.edcportal.core.models.FormCommonObjects' @ path = lovPath}"/>
+      <sly data-sly-test.options="${ds.optionsFromDataSourcePath}"/>
+    </sly>
+
+    <section class="c-autocomplete-field" data-directions-text="${properties.autoCompleteDirectionsText}">
+        <label for="search-item-${uuid}">${label}</label>
+        <div class="search-container">
+            <input type="text" id="search-item-${uuid}" name="itemLabel" class="search-input item" aria-owns="search-results" aria-controls="sr-announce"  placeholder="${placeholder}" data-sly-attribute.required="${isRequired}" autocomplete="off"  data-sly-attribute.data-no-url="${dataNoUrl}" data-sly-attribute.validation-rule="${validationRule}"/>
+            <input type="hidden" id="search-result-field" name="${fieldName}" value="${selectedvalue}"/>
+            <div class="close-btn"></div>
+            <div class="divider">
+                <span></span>
+            </div>
+            <div id="search-results" class="search-results" aria-hidden="true">
+                <ul role="listbox" aria-label="${properties.autoCompleteAriaSearchResult}" data-not-found-message="${properties.autoCompleteMatchNotFound}"  data-sly-list="${options}">
+                    <sly data-sly-use.helperModel="${'com.edc.edcportal.core.models.StringOperationsHelperModel' @ valuesToSearch = selectedvalue, valueToFind = item}" data-sly-test.isSelected="${helperModel.compareStrings ?  'true' : ''}"/>
+                    <li class="hidden" role="option" aria-selected="${isSelected}">
+                        <button class="item edc-btn-unstyled" type="button" data-name="${item}" data-selected="${isSelected}">${options[item]}</button>
+                    </li>
+                     <li data-sly-test="${itemList.last}" class="hidden" role="option" aria-selected="false">
+                        <button class="item edc-btn-unstyled" type="button" data-name="Other">${properties.autoCompleteOther}</button>
+                    </li>
+                    <li data-sly-test="${itemList.last}" class="hidden no-results" role="option" aria-selected="false">${properties.autoCompleteNoResults}</li>
+                </ul>
+            </div>
+            <div id="sr-announce" aria-live="polite" class="sr-only"></div>
+            <span class="error" data-req-message="${isRequiredError}." data-text-message="${isRequiredError}."></span>
+        </div>
+    </section>
+</template>

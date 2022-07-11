@@ -1,0 +1,89 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.scheduleacall="com.edc.edcweb.core.models.ScheduleACall"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-use.messages="com.edc.edcweb.core.models.FormCommonMessages"/>
+<sly data-sly-use.formsTemplates="${'/apps/edc/components/common/forms.html'}" />
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+<sly data-sly-test.hasvalues="${scheduleacall.title}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !hasvalues}"/>
+<sly data-sly-use.dropdownTemplates="${'/apps/edc/components/common/dropdown.html'}" />
+<sly data-sly-use.buttonTemplate="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+
+<sly data-sly-test="${hasvalues}" >
+    <sly data-sly-test="${scheduleacall.eloquaFormName || scheduleacall.eloquaFormSubmitURL || scheduleacall.eloquaFormId}" >
+        <form name="${scheduleacall.eloquaFormName}" class="schedule-call" novalidate="" action="${scheduleacall.eloquaFormSubmitURL}" id="${scheduleacall.eloquaFormId}" data-lang="${scheduleacall.languageAbbreviation}" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'Schedule a Call Form'}" data-event-type="form" data-event-name="form submission" data-event-engagement="3" data-event-action="main body"   data-event-level="primary">
+            <sly data-sly-call="${formsTemplates.formhiddenfields @ elqFormName=scheduleacall.eloquaFormName, elqSiteId=scheduleacall.eloquaSiteId,
+                lang=scheduleacall.pageLanguage, inquiryID=scheduleacall.inquiryID,
+                formID='CallLevel1'}">
+            </sly>
+            <input type="hidden" name="caslConsent" id="caslhidden" class="form-control" data-no-url="" value="yes" />
+            <div class="content">
+                <h2 class="title blue-light">${scheduleacall.title}</h2>
+                <div class="form-row">
+                    <div class="firstName">
+                        <label for="firstName-${uuid}">${scheduleacall.firstname}</label>
+                        <input type="text" name="firstName" id="firstName-${uuid}" data-no-url required="" validation-rule="name">
+                        <span class="error"  data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                    </div>
+                    <div class="companyName">
+                        <label for="companyName-${uuid}">${scheduleacall.companynamelabel}</label>
+                        <input type="text" name="companyName" id="companyName-${uuid}" placeholder="${scheduleacall.companynameplaceholder}" data-no-url required="" validation-rule="legalName">
+                        <span class="error"  data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="emailAddress">
+                        <label for="emailAddress-${uuid}">${scheduleacall.businessemail}</label>
+                        <input type="email" name="emailAddress" id="emailAddress-${uuid}" required="">
+                        <span class="error"  data-req-message="${messages.formErrorMessages.required}" data-email-message="${messages.formErrorMessages.email}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                    </div>
+                    <div class="busPhone">
+                        <label for="busPhone-${uuid}">${scheduleacall.businessphone}</label>
+                        <input type="tel" placeholder="${scheduleacall.phoneplaceholder}" name="busPhone" id="busPhone-${uuid}" required="">
+                        <span class="error"  data-req-message="${messages.formErrorMessages.required}" data-tel-message="${messages.formErrorMessages.phone}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="preferredDate">
+                        <label for="date-${uuid}">${scheduleacall.preferreddate}</label>
+                        <div class="input-group input-append">
+                            <input type="text" name="date" id="date-${uuid}" required validation-rule="none" />
+                            <div class="input-group-icon">
+                                <i class="calendar"></i><!-- //NOSONAR -->
+                            </div>
+                            <span class="error" data-req-message="${messages.formErrorMessages.required}"></span>
+                        </div>
+                    </div>
+                    <div class="preferredTime">
+                        <sly data-sly-call="${dropdownTemplates.dropdown @ name='time', uuid=uuid, variation='time', label=scheduleacall.preferredtime,
+                            placeholder=scheduleacall.preferredtimeplaceholder, required=true, nourl=true,
+                            requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=scheduleacall.timeitems}">
+                        </sly>
+                    </div>
+                </div>
+                <div class="painPoint">
+                    <sly data-sly-call="${dropdownTemplates.dropdown @ dropdowntype='multiple', name='painPoint', uuid=uuid, label=scheduleacall.painpointlabel,
+                         placeholder=scheduleacall.painpointplaceholder,
+                         nourl=true, buttontext=scheduleacall.painpointconfirm, clearalltext=scheduleacall.painpointclear,
+                         singulartext=scheduleacall.painpointsingular, pluraltext=scheduleacall.painpointplural,
+                         invaliderror=messages.formErrorMessages.format, options=scheduleacall.painpointitems}">
+                    </sly>
+                </div>
+                <div class="schedule-disclaimer">
+                    <div class="actions">
+                        <sly data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled', buttontext=scheduleacall.ctaText, btntype='submit', buttoncssclasses=''}"  />
+                    </div>
+                    <div class="text">
+                        <p class="xsmall">${scheduleacall.caslconsent @ context='html'}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="success" data-event-type="link" data-event-name="link click" data-event-engagement="2">
+                <h2>${scheduleacall.successTitle}</h2>
+                <p class="large">${scheduleacall.successPrimaryText @ context='html'}</p>
+                <p>${scheduleacall.successSecondaryText @ context='html'}</p>
+            </div>
+        </form>
+    </sly>
+</sly>

@@ -1,0 +1,83 @@
+.c-multi-input span.error {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: block;
+    margin-bottom: 1.25rem;
+}
+
+.c-multi-input.error .input-group input.discard-input {
+    border: 1px solid #c81414;
+}
+
+.c-multi-input ul {
+    display: none;
+    padding: 1rem 1.25rem;
+    margin: 0;
+    margin-bottom: 1rem;
+    border-radius: .25rem;
+    overflow: hidden;
+    background-color: #f4f8fc;
+}
+
+.c-multi-input ul.show {
+    display: block;
+}
+
+.c-multi-input ul li {
+    position: relative;
+    color: #404041;
+    display: flex;
+    align-items: center;
+    padding-right: 1.5rem;
+}
+
+.c-multi-input ul li:not(:first-child) {
+    padding-top: 1rem;
+}
+
+.c-multi-input ul li:not(:last-child) {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #caddf2;
+}
+
+.c-multi-input ul li button {
+    position: absolute;
+    right: -5px;
+}
+
+.c-multi-input button.no-btn {
+    background-color: transparent;
+    font-style: normal;
+    border-radius: 0;
+    color: #000;
+    font-weight: normal;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0;
+    transition: none;
+}
+
+.c-multi-input button.no-btn span::after {
+    display: none;
+    margin: 0;
+    right: 0;
+}
+
+.c-multi-input button.no-btn:hover span, .c-multi-input button.no-btn:active span, .c-multi-input button.no-btn:focus span {
+    padding: 0;
+}
+
+.c-multi-input button.no-btn .add-item::after {
+    display: none;
+}
+
+.c-multi-input button.no-btn .remove-item {
+    transform: rotate(45deg);
+}
+
+.c-multi-input button.no-btn .remove-item::after {
+    display: none;
+}
+
+.c-multi-input .multiinput-disclaimer {
+    margin-top: 1rem;
+}

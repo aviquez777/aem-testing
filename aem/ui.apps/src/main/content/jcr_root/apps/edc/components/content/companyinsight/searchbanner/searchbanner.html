@@ -1,0 +1,26 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty=!properties.displaytype}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty=properties.displaytype, emptyTextAppend='Component will display properly once published'}"/>
+<sly data-sly-test.lang="${currentPage.language.language}"/>
+<!--/* Processing takes place on com.edc.edcportal */-->
+<sly data-sly-use.model="com.edc.edcportal.core.models.ci.SearchBanner"/>
+<sly data-sly-test.responseStatus="${model.ciCompanySearchDO.responseStatus}"/>
+<sly data-sly-test.backPageUrl="/${lang}${model.searchPageNode}.html"/>
+<sly data-sly-use.template="templates.html"/>
+
+<sly data-sly-test="${properties.displaytype == 'default'}">
+    <sly data-sly-call="${template.default @ title=properties.title, subtitle=properties.subtitle, text=properties.text, iconpath=properties.iconpath, iconalt=properties.iconalt}" />
+</sly>
+
+<sly data-sly-test="${properties.displaytype == 'results'}">
+    <sly data-sly-use.errors="${'com.edc.edcweb.core.helpers.MultifieldReaderHelper' @ multifield='errorsMap'}"/>
+    <sly data-sly-list="${errors.fields}">
+        <sly data-sly-test="${item.errorKeyName == responseStatus || !wcmmode.disabled}">
+            <sly data-sly-call="${template.results @ title=item.errorTitle,iconpath=properties.resultsiconpath, iconalt=properties.resultsiconalt}"/>
+        </sly>
+    </sly>
+</sly>
+
+<sly data-sly-test="${properties.displaytype == 'profile'}">
+    <sly data-sly-call="${template.profile @ backpageurl=backPageUrl}" />
+</sly>

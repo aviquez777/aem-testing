@@ -1,0 +1,966 @@
+.c-telp-form {
+    box-sizing: border-box;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.c-telp-form * {
+    box-sizing: border-box;
+}
+
+.c-telp-form .cta {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.c-telp-form .hide,
+.c-telp-form span.error {
+    display: none;
+}
+
+.c-telp-form span.error {
+    float: left;
+}
+
+.c-telp-form .checkbox-item {
+    margin: 0;
+    padding-top: 1rem;
+}
+
+.c-telp-form .checkbox-item:last-child {
+    padding-bottom: 2rem;
+}
+
+.c-telp-form .checkbox-item.grey-bg {
+    float: left;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    margin-bottom: 4rem;
+    padding: 1.5rem 1rem;
+}
+
+.c-telp-form .checkbox-item input {
+    float: left;
+    width: 1rem;
+    margin: 0;
+    margin-top: 4px;
+}
+
+.c-telp-form .checkbox-item .input-description {
+    display: inline-block;
+    width: calc(100% - 1rem);
+    padding-left: 1rem;
+}
+
+.c-telp-form .checkbox-item .input-description label {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.c-telp-form .checkbox-item .input-description label p {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.c-telp-form .checkbox-item .input-description ul {
+    list-style: disc;
+}
+
+.c-telp-form .checkbox-item .input-description ol {
+    list-style: decimal;
+}
+
+.c-telp-form .checkbox-item .input-description a.casl-link {
+    margin-left: 1rem;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.c-telp-form .checkbox-item span.error {
+    margin-bottom: 0;
+}
+
+.c-telp-form .checkbox-item label,
+.c-telp-form .checkbox-item label p {
+    margin: 0;
+}
+
+.c-telp-form .special-msg {
+    border: 1px solid #2f78c6;
+    border-radius: 4px;
+    padding: 1.5625rem 1.5rem 2.125rem;
+    margin-top: 1rem;
+    position: relative;
+    text-align: left;
+}
+
+.c-telp-form .special-msg p {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    color: #404041;
+    margin: 0;
+}
+
+.c-telp-form .special-msg h4 {
+    font-size: 16px;
+    line-height: 20px;
+    color: #2f78c6;
+    font-weight: 600;
+    margin: 0 0 1rem;
+}
+
+.c-telp-form .special-msg::before {
+    display: block;
+    content: '';
+    background-image: url("/etc.clientlibs/edc/clientlibs/clientlib-base/resources/images/icon-more-info.svg");
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1.5rem 1.5rem 0 0;
+}
+
+.c-telp-form .form-description {
+    background: url("/etc.clientlibs/edc/clientlibs/clientlib-base/resources/images/squiggle.svg") no-repeat center top;
+    background-size: auto 44px;
+    padding-top: 4rem;
+    text-align: center;
+}
+
+.c-telp-form .form-description.hide {
+    display: none;
+}
+
+.c-telp-form .form-description .description-title {
+    color: #2f78c6;
+    margin-bottom: 1.5rem;
+    margin-top: 0;
+}
+
+.c-telp-form .form-description .description-content {
+    margin-bottom: 3.5rem;
+}
+
+.c-telp-form .form-description .description-content ul {
+    font-family: "Georgia", "Times New Roman", Times, serif;
+    list-style: disc;
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+}
+
+.c-telp-form .form-description .description-content ul li {
+    margin-bottom: 2rem;
+}
+
+.c-telp-form .form-description .description-content ul li:last-child {
+    margin-bottom: 0;
+}
+
+.c-telp-form .form-description .description-content > :last-child {
+    margin-bottom: 0;
+}
+
+.c-telp-form .bcap-pre-screen.hide {
+    display: none;
+}
+
+.c-telp-form .bcap-pre-screen .description-content ul {
+    list-style: disc;
+    padding-left: 1rem;
+}
+
+.c-telp-form .bcap-pre-screen .bcap-versions {
+    margin-bottom: 1rem;
+}
+
+.c-telp-form .bcap-pre-screen .bcap-versions button {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    background-color: #fff;
+    font-style: normal;
+    border-radius: 4px;
+    font-weight: normal;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    text-decoration: underline;
+    min-width: 220px;
+    width: 100%;
+    margin-bottom: .9375rem;
+    transition: none;
+    border: 1px solid #2f78c6;
+    color: #000;
+    -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.c-telp-form .bcap-pre-screen .bcap-versions button span {
+    transition: 0s;
+}
+
+.c-telp-form .bcap-pre-screen .bcap-versions button span::after {
+    display: none;
+    margin: 0;
+    right: 0;
+}
+
+.c-telp-form .bcap-pre-screen .bcap-versions button span.bcap-loan {
+    font-size: 16px;
+    color: #2f78c6;
+    font-weight: 600;
+    margin-top: .3rem;
+}
+
+.c-telp-form .bcap-pre-screen .bcap-versions button:hover span, .c-telp-form .bcap-pre-screen .bcap-versions button:active span, .c-telp-form .bcap-pre-screen .bcap-versions button:focus span {
+    padding: 0;
+}
+
+.c-telp-form .bcap-pre-screen .bcap-versions button.selected {
+    background-color: #2f78c6;
+    color: #fff;
+}
+
+.c-telp-form .bcap-pre-screen .bcap-versions button.selected span {
+    color: #fff;
+}
+
+.c-telp-form .bcap-pre-screen .bcap-disclaimer p {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    margin: 0;
+}
+
+.c-telp-form .bcap-pre-screen .bcap-actions {
+    margin-top: 4rem;
+    text-align: right;
+}
+
+.c-telp-form .levels {
+    clear: both;
+}
+
+.c-telp-form .levels.hide {
+    display: none;
+}
+
+.c-telp-form .levels .bottom-ctas {
+    clear: both;
+}
+
+.c-telp-form .levels .form-ctas .ctas-container {
+    justify-content: flex-end;
+    align-items: center;
+    display: flex;
+    padding-top: 1rem;
+}
+
+.c-telp-form .levels .form-ctas .ctas-container .back {
+    margin-right: 1.875rem;
+}
+
+.c-telp-form .levels .form-ctas.hide {
+    display: none;
+}
+
+.c-telp-form .levels .form-ctas.align-center .ctas-container {
+    justify-content: center;
+}
+
+.c-telp-form .levels .form-ctas.align-center .ctas-container button {
+    width: 169px;
+}
+
+.c-telp-form .levels .level {
+    min-height: 1px;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    width: 100%;
+}
+
+@media (min-width: 720px) {
+    .c-telp-form .levels .level {
+        width: 100%;
+        float: left;
+    }
+}
+
+.c-telp-form .levels .level .form-group {
+    float: left;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.c-telp-form .levels .level .form-group label p,
+.c-telp-form .levels .level .form-group p i {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.c-telp-form .levels .level .form-group label p {
+    font-weight: 600;
+}
+
+.c-telp-form .levels .level > p {
+    float: left;
+}
+
+.c-telp-form .levels .level .last-annual-sales-container {
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+.c-telp-form .levels .level .last-annual-sales-container + .error {
+    display: none;
+    font-size: 14px;
+}
+
+.c-telp-form .levels .level .last-annual-sales-container + .error.show {
+    display: block;
+}
+
+.c-telp-form .levels .level .last-annual-sales-container input {
+    padding-left: 73px;
+    /* Removes the x button in IE */
+}
+
+.c-telp-form .levels .level .last-annual-sales-container input::-ms-clear {
+    display: none;
+}
+
+.c-telp-form .levels .level .last-annual-sales-container input:lang(fr) {
+    padding-left: 20px;
+}
+
+.c-telp-form .levels .level .last-annual-sales-container input.error + .symbol::after {
+    color: #dd3034;
+}
+
+.c-telp-form .levels .level .last-annual-sales-container .symbol::after {
+    content: 'CAD $';
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    height: 20px;
+    left: 20px;
+    position: absolute;
+    top: 16px;
+    width: 53px;
+}
+
+.c-telp-form .levels .level .last-annual-sales-container .symbol:lang(en)::after {
+    left: 20px;
+}
+
+.c-telp-form .levels .level .last-annual-sales-container .symbol:lang(fr)::after {
+    content: ' $ CAD';
+    left: auto;
+    right: 20px;
+}
+
+.c-telp-form .levels .level input {
+    margin-bottom: 0;
+    float: left;
+}
+
+.c-telp-form .levels .level input.error {
+    margin-bottom: 1rem;
+}
+
+.c-telp-form .levels .level > h2 {
+    margin-top: 0;
+    float: left;
+}
+
+.c-telp-form .levels .level > h2.title-paddings {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.c-telp-form .levels .level > h3 {
+    margin-top: 2rem;
+    font-size: 22px;
+    line-height: 32px;
+}
+
+.c-telp-form .levels .level > h3.title-paddings {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.c-telp-form .levels .level .radio-group .radio-option.not-bold label {
+    font-weight: normal;
+}
+
+.c-telp-form .levels .level .radio-group .radio-option.not-bold label p {
+    margin: 0;
+}
+
+.c-telp-form .levels .level label {
+    line-height: 20px;
+}
+
+.c-telp-form .levels .level label:not(.radio-label) {
+    float: left;
+}
+
+.c-telp-form .levels .level .description {
+    width: 100%;
+    display: flex;
+}
+
+.c-telp-form .levels .ubo-fields h3 {
+    float: left;
+    width: 100%;
+    font-size: 16px;
+    line-height: 20px;
+    color: #191919;
+}
+
+.c-telp-form .levels .final-step {
+    width: 100%;
+}
+
+.c-telp-form .levels .final-step .c-form-field-info .info .field-value[data-field-value='cdia']::first-letter {
+    text-transform: uppercase;
+}
+
+.c-telp-form .levels .final-step .final-step-header {
+    text-align: center;
+}
+
+.c-telp-form .levels .final-step .description {
+    float: left;
+    text-align: center;
+}
+
+.c-telp-form .levels .final-step .ubo-review,
+.c-telp-form .levels .final-step .field-row {
+    min-height: 1px;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    width: 100%;
+}
+
+@media (min-width: 720px) {
+    .c-telp-form .levels .final-step .ubo-review,
+    .c-telp-form .levels .final-step .field-row {
+        width: 100%;
+        float: left;
+    }
+}
+
+.c-telp-form .levels .final-step .ubo-review,
+.c-telp-form .levels .final-step h3 {
+    width: 100%;
+    float: left;
+    text-align: center;
+}
+
+.c-telp-form .levels .final-step .ubo-review.hide,
+.c-telp-form .levels .final-step h3.hide {
+    display: hide;
+}
+
+.c-telp-form .levels .final-step [data-field-value='lastAnnualSales']::before {
+    content: '$ ';
+}
+
+.c-telp-form .levels .final-step [data-field-value='lastAnnualSales']::after {
+    content: ' CAD';
+}
+
+.c-telp-form .levels .final-step [data-field-value='lastAnnualSales']:lang(fr)::before {
+    content: '';
+}
+
+.c-telp-form .levels .final-step [data-field-value='lastAnnualSales']:lang(fr)::after {
+    content: ' $ CAD';
+}
+
+.c-telp-form .levels .final-step .measure-questions-review p {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.c-telp-form .levels .final-step .measure-questions-review ul {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.c-telp-form .levels .final-step .measure-questions-review ul li {
+    float: left;
+    width: 100%;
+    list-style-type: disc;
+}
+
+.c-telp-form .levels .final-step .measure-questions-review .c-more-information-modal, .c-telp-form .levels .final-step .measure-questions-review .c-more-information-modal.on-title {
+    margin-top: .3rem;
+    padding-left: .75rem;
+}
+
+.c-telp-form .levels .final-step .measure-questions-review .c-more-information-modal button.modal-triggerer {
+    padding: 0;
+    height: 13px;
+    width: 13px;
+}
+
+.c-telp-form .levels .final-step .declarations {
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(25, 25, 25, 0.1);
+    width: 100%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1.875rem;
+    margin: 4rem 0;
+}
+
+.c-telp-form .levels .final-step .declarations.hide {
+    display: none;
+}
+
+.c-telp-form .levels .final-step .declarations h2 {
+    margin: 0;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.c-telp-form .levels .final-step .declarations .declaration-text.hide {
+    display: none;
+}
+
+.c-telp-form .levels .final-step .declarations .declaration-text p,
+.c-telp-form .levels .final-step .declarations .declaration-text ol li {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    color: #404041;
+}
+
+.c-telp-form .levels .final-step .declarations .declaration-text p {
+    margin: .5rem 0;
+}
+
+.c-telp-form .levels .final-step .declarations .declaration-text ol li {
+    margin-bottom: 1rem;
+    list-style-type: decimal;
+    margin-left: -10px;
+    padding-left: 10px;
+}
+
+.c-telp-form .levels .final-step .declarations .declaration-text ol li .country-declaration {
+    font-weight: 600;
+}
+
+.c-telp-form .levels .final-step .declarations .checkbox-item:not(.grey-bg) {
+    border-top: 1px solid #979797;
+    padding: 1.4375rem 0 0;
+    margin: 0;
+}
+
+.c-telp-form .levels .final-step .form-group {
+    float: left;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.c-telp-form .levels .final-step .form-group label {
+    float: left;
+}
+
+.c-telp-form .levels .final-step .form-group input {
+    margin-bottom: 0;
+}
+
+.c-telp-form .levels .final-step .form-group input.error {
+    margin-bottom: 1rem;
+}
+
+.c-telp-form .levels .success-message,
+.c-telp-form .levels .fail-message {
+    text-align: center;
+}
+
+.c-telp-form .levels .success-message hr,
+.c-telp-form .levels .fail-message hr {
+    margin: 3.5rem 0;
+}
+
+.c-telp-form .form-disclaimer {
+    margin-bottom: 2rem;
+}
+
+.c-telp-form .form-disclaimer label {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.7142;
+    display: table-cell;
+}
+
+@media (min-width: 720px) {
+    .c-telp-form .form-disclaimer label {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-telp-form .form-disclaimer label {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+.c-telp-form .form-disclaimer p {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.7142;
+    margin-top: 2rem;
+}
+
+@media (min-width: 720px) {
+    .c-telp-form .form-disclaimer p {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-telp-form .form-disclaimer p {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+.c-telp-form .success-message {
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    width: 100%;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+}
+
+@media (min-width: 720px) {
+    .c-telp-form .success-message {
+        width: 100%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.c-telp-form .success-message h2 {
+    margin-bottom: 2rem;
+}
+
+.c-telp-form .status {
+    border-top: 1px solid rgba(51, 51, 51, 0.3);
+    clear: both;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+}
+
+.c-telp-form .status .status-bar {
+    min-height: 1px;
+    padding-left: 0;
+    padding-right: 15px;
+    position: relative;
+    width: 25%;
+    float: left;
+    border-top: 4px solid #007C03;
+}
+
+.c-telp-form .show {
+    display: inline-block;
+}
+
+.c-telp-form .show-block {
+    display: block;
+}
+
+.c-telp-form .title-color {
+    color: #4386ac;
+}
+
+.c-telp-form .c-questionnaire {
+    float: left;
+}
+
+.c-telp-form .questionnaire-definitions {
+    margin-bottom: 3.5rem;
+}
+
+.c-telp-form .questionnaire-definitions h4 {
+    margin-top: 0;
+}
+
+.c-telp-form .questionnaire-definitions li {
+    list-style-type: lower-alpha;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    line-height: 16px;
+    padding-left: 1rem;
+    margin-left: -1rem;
+    margin-bottom: 1.5rem;
+}
+
+.c-telp-form .questionnaire-definitions li > *,
+.c-telp-form .questionnaire-definitions li p {
+    font-weight: normal;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    line-height: 16px;
+}
+
+.c-telp-form .questionnaire-definitions li strong {
+    font-weight: 600;
+    float: left;
+    margin-right: 3px;
+}
+
+@media (min-width: 720px) {
+    .c-telp-form .form-description .description-content {
+        margin-bottom: 4rem;
+    }
+    .c-telp-form .bcap-pre-screen {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-telp-form .bcap-pre-screen {
+        width: 50%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-telp-form .levels {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 66.66666667%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-telp-form .levels {
+        width: 66.66666667%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-telp-form .levels .level > h3 {
+        margin-top: 3.5rem;
+    }
+    .c-telp-form .levels .form-ctas .cancel {
+        margin-bottom: 0;
+    }
+    .c-telp-form .levels .form-ctas.align-center .ctas-container button {
+        width: 172px;
+    }
+    .c-telp-form .levels .ubo-fields .c-dropdown {
+        display: inline-block;
+        width: 100%;
+    }
+    .c-telp-form .levels .input-group {
+        display: flex;
+    }
+    .c-telp-form .levels .input-group .first {
+        padding-right: 1rem;
+    }
+    .c-telp-form .levels .input-group .last {
+        padding-left: 1rem;
+        padding-right: 0;
+    }
+    .c-telp-form .levels .input-half {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-telp-form .levels .input-half {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-telp-form .levels .final-step .ubo-review,
+    .c-telp-form .levels .final-step h3,
+    .c-telp-form .levels .final-step .description {
+        text-align: left;
+    }
+    .c-telp-form .success,
+    .c-telp-form .questionnaire-definitions {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-telp-form .success,
+    .c-telp-form .questionnaire-definitions {
+        width: 50%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-telp-form .questionnaire-definitions {
+        margin-bottom: 4.5rem;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-telp-form .form-row .form-group.first-name, .c-telp-form .form-row .form-group.company-city {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+        clear: both;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-telp-form .form-row .form-group.first-name, .c-telp-form .form-row .form-group.company-city {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-telp-form .form-row .form-group.last-name, .c-telp-form .form-row .form-group.company-postal {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 0;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-telp-form .form-row .form-group.last-name, .c-telp-form .form-row .form-group.company-postal {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-telp-form .bcap-pre-screen {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 33.33333333%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-telp-form .bcap-pre-screen {
+        width: 33.33333333%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-telp-form .levels {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-telp-form .levels {
+        width: 50%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-telp-form .levels .form-ctas {
+        height: 100px;
+    }
+    .c-telp-form .levels .form-ctas.fix-ctas .ctas-container {
+        -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        -moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(25, 25, 25, 0.1);
+        position: fixed;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        background-color: #fff;
+        padding: 2.5rem;
+    }
+    .c-telp-form .questionnaire-definitions {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 50%;
+        margin-bottom: 6.5rem;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-telp-form .questionnaire-definitions {
+        width: 50%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

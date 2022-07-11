@@ -1,0 +1,44 @@
+<template data-sly-template.spifseven="${@ form, properties, uuid, messages}">
+    <sly data-sly-use.dropdownTemplates="${'/apps/edc/components/common/dropdown.html'}" />
+
+    <div class="level level-7 hide">
+        <h2 class="title">
+            <span class="title-color">${properties.step7bluetitle}</span> ${properties.step7title}
+        </h2>
+        <p data-sly-test="${properties.step7description}" class="description">${properties.step7description}</p>
+        <div data-form-field="destination1" class="form-group">
+            <sly data-sly-call="${dropdownTemplates.dropdown @ name='destination1', uuid=uuid, label=properties.destinationcountry1Label,
+                placeholder=properties.destinationcountry1Help, required=true, nourl=true,
+                requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=form.countriesitems}">
+            </sly>
+        </div>
+        <div data-form-field="destination2" class="form-group">
+            <sly data-sly-call="${dropdownTemplates.dropdown @ name='destination2', uuid=uuid, label=properties.destinationcountry2Label,
+                placeholder=properties.destinationcountry2Help, required=true, nourl=true,
+                requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=form.countriesitems}">
+            </sly>
+        </div>
+        <div data-form-field="destination3" class="form-group">
+            <sly data-sly-call="${dropdownTemplates.dropdown @ name='destination3', uuid=uuid, label=properties.destinationcountry3Label,
+                placeholder=properties.destinationcountry3Help, required=true, nourl=true,
+                requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=form.countriesitems}">
+            </sly>
+        </div>
+        <div data-form-field="destinationsOther" class="form-group">
+            <sly data-sly-call="${dropdownTemplates.dropdown @ dropdowntype='multiple', name='destinationsOther', uuid=uuid, label=properties.otherdestinationcountriesLabel,
+                 placeholder=properties.otherdestinationcountriesHelp,
+                 required=false, nourl=true, buttontext=properties.otherdestinationcountriesConfirm, clearalltext=properties.otherdestinationcountriesClear,
+                 singulartext=properties.otherdestinationcountriesSingular, pluraltext=properties.otherdestinationcountriesPlural,
+                 invaliderror=messages.formErrorMessages.format, options=form.countriesitems}">
+            </sly>
+        </div>
+        <div data-form-field="incoterms" class="form-group">
+            <sly data-sly-call="${dropdownTemplates.dropdown @ dropdowntype='multiple', name='incoterms', uuid=uuid, label=properties.countriesshipfreightchargescollectLabel,
+                 placeholder=properties.countriesshipfreightchargescollectHelp,
+                 required=false, nourl=true, buttontext=properties.countriesshipfreightchargescollectConfirm, clearalltext=properties.countriesshipfreightchargescollectClear,
+                 singulartext=properties.countriesshipfreightchargescollectSingular, pluraltext=properties.countriesshipfreightchargescollectPlural,
+                 invaliderror=messages.formErrorMessages.format, options=form.countriesitems}">
+            </sly>
+        </div>
+    </div>
+</template>

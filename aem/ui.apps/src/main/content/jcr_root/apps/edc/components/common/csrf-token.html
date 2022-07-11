@@ -1,0 +1,4 @@
+<!--/*  include lib to handle csrf token for us on author to allow form submission on author
+    use model so do not rely on wcmmode query string parameter */-->
+<sly data-sly-use.model="com.edc.edcweb.core.models.CheckRunModeHelper">
+<sly data-sly-test="${model.isAuthor}" data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html" data-sly-test.clientlibCategories="granite.csrf.standalone" data-sly-call="${clientLib.js @ categories=clientlibCategories}" />

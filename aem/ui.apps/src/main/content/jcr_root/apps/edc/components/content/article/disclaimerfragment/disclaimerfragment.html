@@ -1,0 +1,8 @@
+<sly data-sly-use.disclaimer="com.edc.edcweb.core.models.DisclaimerFragment" />
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-call="${templates.placeholder @ isEmpty = !disclaimer.IsValid}" />
+<div class="disclaimer" data-sly-test="${disclaimer.IsValid}">
+	<p>${disclaimer.Text}</p>
+</div>
+
+ 

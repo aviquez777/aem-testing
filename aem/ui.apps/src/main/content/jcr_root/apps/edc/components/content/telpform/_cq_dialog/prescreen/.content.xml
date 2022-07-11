@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <prescreen-bacp
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Pre-sceen Only if Selected"
+                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items
+                            jcr:primaryType="nt:unstructured">
+                            <preScreenTitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="There must be a optional, authorable title at the top of the page"
+                                required="{Boolean}false"
+                                fieldLabel="Pre Screen Title"
+                                name="./preScreenTitle" />
+                            <preScreenDesc
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                fieldDescription="There must be an optional, authorable description with RTE enabled below the title"
+                                required="{Boolean}false"
+                                fieldLabel="Pre Screen Description"
+                                name="./preScreenDesc"
+                                useFixedInlineToolbar="{Boolean}true">
+                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                    <format
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*" />
+                                    <justify
+                                        jcr:primaryType="nt:unstructured"
+                                        features="" />
+                                    <lists
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*" />
+                                    <links
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*" />
+                                    <subsuperscript
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*" />
+                                </rtePlugins>
+                                <uiSettings jcr:primaryType="nt:unstructured">
+                                    <cui jcr:primaryType="nt:unstructured">
+                                        <inline
+                                            jcr:primaryType="nt:unstructured"
+                                            toolbar="[format#bold,format#italic,format#underline,#lists,links#modifylink,links#unlink,links#anchor]">
+                                            <popovers jcr:primaryType="nt:unstructured">
+                                                <format
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[format#bold,format#italic,format#underline,subsuperscript#subscript,subsuperscript#superscript]"
+                                                    ref="format" />
+                                                <lists
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[lists#unordered,lists#ordered]"
+                                                    ref="lists" />
+                                            </popovers>
+                                        </inline>
+                                    </cui>
+                                </uiSettings>
+                            </preScreenDesc>
+                            <ctasHelpText
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Ctas Help Text"
+                                fieldDescription="Select which financial need applies"
+                                name="./ctasHelpText"
+                                required="{Boolean}false"/>
+                            <preScreenCtaButtons
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                fieldDescription="Click '+' to add a new CTA (add up to 2)"
+                                fieldLabel="Financial Need Buttton CTA (add up to 2)"
+                                jcr:primaryType="nt:unstructured"
+                                composite="{Boolean}true" 
+                                validation="multifield-limit-min:0-max:2">
+                                <field
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    jcr:primaryType="nt:unstructured"
+                                    name="./preScreenCtaButtons">
+                                    <items jcr:primaryType="nt:unstructured">
+                                   <headingNormal
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/text"
+                                        class="coral-Heading--4"
+                                        text="CTA Button:"/> 
+                                    <bcapVersion
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldDescription="Determines the Questionnaire to use if this option is selected"
+                                        fieldLabel="Questionnaire to use"
+                                        name="./bcapVersion"
+                                        required="{Boolean}false">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <bcap
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Small Market BCAP"
+                                                value="bcap"/>
+                                            <mmg
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Mid Market BCAP"
+                                                value="mmg"/>
+                                        </items>
+                                    </bcapVersion>
+                                        <buttonLeadText
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Button Lead Text"
+                                            fieldDescription="Button Lead Text (smalller black text)"
+                                            name="./buttonLeadText"
+                                            required="{Boolean}false"/>
+                                         <buttonAmoutText
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Button Amout Text"
+                                            fieldDescription="Button Amout Text Lager Blue text)"
+                                            name="./buttonAmoutText"
+                                            required="{Boolean}false"/>
+                                    </items>
+                                </field>
+                            </preScreenCtaButtons>
+                            <preScreenDesc2
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                fieldDescription="Below the CTAs, there must be an optional, authorable description with RTE enabled below the title"
+                                required="{Boolean}false"
+                                fieldLabel="Pre Screen Bottom Description"
+                                name="./preScreenDesc2"
+                                useFixedInlineToolbar="{Boolean}true">
+                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                    <format
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*" />
+                                    <justify
+                                        jcr:primaryType="nt:unstructured"
+                                        features="" />
+                                    <lists
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*" />
+                                    <links
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*" />
+                                    <subsuperscript
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*" />
+                                </rtePlugins>
+                                <uiSettings jcr:primaryType="nt:unstructured">
+                                    <cui jcr:primaryType="nt:unstructured">
+                                        <inline
+                                            jcr:primaryType="nt:unstructured"
+                                            toolbar="[format#bold,format#italic,format#underline,#lists,links#modifylink,links#unlink,links#anchor]">
+                                            <popovers jcr:primaryType="nt:unstructured">
+                                                <format
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[format#bold,format#italic,format#underline,subsuperscript#subscript,subsuperscript#superscript]"
+                                                    ref="format" />
+                                                <lists
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[lists#unordered,lists#ordered]"
+                                                    ref="lists" />
+                                            </popovers>
+                                        </inline>
+                                    </cui>
+                                </uiSettings>
+                            </preScreenDesc2>
+                            <nextButtonText
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Proceed Button Text (will use centrally managed 'Next' text if empty)"
+                                fieldDescription="Proceed Button Text (will use centrally managed 'Next' text if empty)"
+                                name="./nextButtonText"
+                                required="{Boolean}false"/>
+                        </items>
+                    </column>
+                </items>
+            </prescreen-bacp>
+        </items>
+    </content>
+</jcr:root>

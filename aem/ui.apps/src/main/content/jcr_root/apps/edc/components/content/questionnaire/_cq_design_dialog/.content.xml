@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Questionnaire Builder"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                    margin="{Boolean}false">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <nextbtntext
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Next button text"
+                                name="./nextbtntext"/>
+                            <resetbtntext
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Reset text"
+                                name="./resetbtntext">
+                            </resetbtntext>
+                            <dropdownlabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Select country dropdown label"
+                                name="./dropdownlabel">
+                            </dropdownlabel>
+                            <dropdownrequirederrormsg
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Dropdown required error message"
+                                name="./dropdownrequirederrormsg">
+                            </dropdownrequirederrormsg>
+                            <dropdownselectonemsg
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Dropdown select one message"
+                                name="./dropdownselectonemsg">
+                            </dropdownselectonemsg>
+                            <loadingtext
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Loading text"
+                                name="./loadingtext">
+                            </loadingtext>
+                            <submitbtntext
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Submit button text"
+                                name="./submitbtntext">
+                            </submitbtntext>
+                            <wellin
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                            <layout
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                            <items jcr:primaryType="nt:unstructured">
+                                <modalariaopen
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Modal Aria Open text"
+                                    fieldDescription="Arkadin Modal Aria Scroll text i.e. 'Click to open the more information modal'"
+                                    required="{Boolean}true"
+                                    name="./modalariaopen"/>
+                                <modalariaclose
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Step 1 Modals Aria Close text"
+                                    fieldDescription="Step 1 Modal sAria CLose text i.e. 'Click to open the more information modal'"
+                                    required="{Boolean}true"
+                                    name="./modalariaclose"/>
+                                <mulipleSelectButtons
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/text"
+                                    class="coral-Heading--4"
+                                    text="Multiple Select buttons"/>
+                                <multiconfirmtext
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Confirm button"
+                                    name="./multiconfirmtext"
+                                    required="{Boolean}true"/>
+                                <multiclearalltext
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Clear All"
+                                    name="./multiclearalltext"
+                                    required="{Boolean}true"/>
+                                <multisingulartext
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Singular option selected"
+                                    name="./multisingulartext"
+                                    required="{Boolean}true"/>
+                                <multipluraltext
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Plural option selected"
+                                    name="./multipluraltext"
+                                    required="{Boolean}true"/>
+                                </items>
+                            </wellin>
+                        </items>
+                    </column>
+                </items>
+            </layout>
+        </items>
+    </content>
+</jcr:root>

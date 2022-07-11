@@ -1,0 +1,117 @@
+.c-webinar-summary {
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 32px 0;
+}
+
+.c-webinar-summary.keyline-top {
+    border-top: 2px solid #4386ac;
+}
+
+.c-webinar-summary.keyline-bottom {
+    border-bottom: 2px solid #4386ac;
+}
+
+.c-webinar-summary .title {
+    color: #4386ac;
+    margin-top: 0 !important;
+}
+
+.c-webinar-summary a {
+    color: #37769a;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.c-webinar-summary .link-text {
+    color: #333;
+    font-family: "Georgia", "Times New Roman", Times, serif;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.7142;
+    letter-spacing: 0;
+    margin-top: 1.5rem;
+}
+
+@media (min-width: 720px) {
+    .c-webinar-summary .link-text {
+        font-size: 1rem;
+        line-height: 1.5;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-webinar-summary .link-text {
+        font-size: 1rem;
+        line-height: 1.5;
+        letter-spacing: 0;
+    }
+}
+
+.c-webinar-summary .text-content.xsmall h4 {
+    margin-bottom: 4px;
+}
+
+.c-webinar-summary .text-content.xsmall p {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 2;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+@media (min-width: 720px) {
+    .c-webinar-summary .text-content.xsmall p {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-webinar-summary .text-content.xsmall p {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+.c-webinar-summary .text-content.xsmall p b {
+    display: inline-block;
+    margin-top: 1.5rem;
+}
+
+.c-webinar-summary .text-content.xsmall p:first-child b {
+    margin-top: 0;
+}
+
+.c-webinar-summary .content {
+    float: none;
+    padding: 0;
+}
+
+.c-webinar-summary .content h3 {
+    /**paddings for content heading **/
+    margin: 16px 0;
+}
+
+@media (min-width: 960px) {
+    .c-webinar-summary .content h3 {
+        margin: 32px 0;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-webinar-summary {
+        padding: 48px 0;
+    }
+    .c-webinar-summary .content {
+        margin: 0;
+    }
+}

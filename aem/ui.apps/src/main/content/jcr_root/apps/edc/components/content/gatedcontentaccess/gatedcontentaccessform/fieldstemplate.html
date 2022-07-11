@@ -1,0 +1,109 @@
+<template data-sly-template.fields="${@ fieldName, fieldLabel, fieldHelperText, uuid, commonTemplates, dropdownTemplates, messages}"> 
+    <sly data-sly-test="${fieldName == 'firstName'}">
+        <div class="form-row"> <!--/* Open row div */-->
+            <div data-form-field="firstName" class="form-group first-name ${wcmmode.disabled ? 'hide' : 'show'}">
+                <label for="firstName-${uuid}">${fieldLabel}</label>
+                <input type="text" class="form-control" name="firstName" id="firstName-${uuid}" data-no-url="true"  required="" validation-rule="name" placeholder="${fieldHelperText}">
+                <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+            </div>
+    </sly>
+    <sly data-sly-test="${fieldName == 'lastName'}">
+            <div data-form-field="lastName" class="form-group last-name ${wcmmode.disabled ? 'hide' : 'show'}">
+                <label for="lastName-${uuid}">${fieldLabel}</label>
+                <input type="text" class="form-control" name="lastName" id="lastName-${uuid}" data-no-url="true" required="" validation-rule="name" placeholder="${fieldHelperText}">
+                <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+            </div>
+        </div><!--/* Close row div */-->
+    </sly>
+    <sly data-sly-test="${fieldName == 'companyName'}">
+        <div data-form-field="companyName" class="form-group first-name ${wcmmode.disabled ? 'hide' : 'show'}">
+            <label for="companyName-${uuid}">${fieldLabel}</label>
+            <input type="text" class="form-control" name="companyName" id="companyName-${uuid}" data-no-url="true"  required="" validation-rule="name" placeholder="${fieldHelperText}">
+            <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+        </div>
+    </sly>
+    <sly data-sly-test="${fieldName == 'tradeStatus'}">
+        <div data-form-field="tradeStatus" class="form-group ${wcmmode.disabled ? 'hide' : 'show'}">
+            <sly data-sly-use.ds="${'com.edc.edcweb.core.models.FormCommonObjects' @ path ='/apps/edc/settings/wcm/designs/edc-data/tradeStatus'}"/>
+            <sly data-sly-test.SelectMap="${ds.optionsFromDataSourcePath}" />
+            <sly data-sly-call="${dropdownTemplates.dropdown @ name='tradeStatus', uuid=uuid, label=fieldLabel,
+                placeholder=fieldHelperText, required=true, nourl=true,
+                requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, 
+                options=SelectMap}">
+            </sly>
+        </div>
+    </sly>
+    <sly data-sly-test="${fieldName == 'painPoint'}">
+        <div data-form-field="painPoint" class="form-group ${wcmmode.disabled ? 'hide' : 'show'}">
+            <sly data-sly-use.ds="${'com.edc.edcweb.core.models.FormCommonObjects' @ path ='/apps/edc/settings/wcm/designs/edc-data/painPoints'}"/>
+            <sly data-sly-test.SelectMap="${ds.optionsFromDataSourcePath}" />
+            <sly data-sly-call="${dropdownTemplates.dropdown @ dropdowntype='multiple', name='painPoint', uuid=uuid, label=fieldLabel,
+                 placeholder=fieldHelperText,
+                 required=true, nourl=true, buttontext=properties.optionConfirm, clearalltext=properties.optionClear,
+                 singulartext=properties.optionSingular, pluraltext=properties.optionPlural,
+                 requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, 
+                 options=SelectMap}">
+            </sly>
+        </div>
+    </sly>
+    <sly data-sly-test="${fieldName == 'annualSales'}">
+        <div data-form-field="annualSales" class="form-group ${wcmmode.disabled ? 'hide' : 'show'}">
+            <sly data-sly-use.ds="${'com.edc.edcweb.core.models.FormCommonObjects' @ path ='/apps/edc/settings/wcm/designs/edc-data/annualSalesBcap'}"/>
+            <sly data-sly-test.SelectMap="${ds.optionsFromDataSourcePath}" />
+            <sly data-sly-call="${dropdownTemplates.dropdown @ name='annualSales', uuid=uuid, label=fieldLabel,
+                placeholder=fieldHelperText, required=true, nourl=true,
+                requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, 
+                options=SelectMap}">
+            </sly>
+        </div>
+    </sly>
+    <sly data-sly-test="${fieldName == 'salesTiming'}">
+        <div data-form-field="salesTiming" class="form-group ${wcmmode.disabled ? 'hide' : 'show'}">
+            <sly data-sly-use.ds="${'com.edc.edcweb.core.models.FormCommonObjects' @ path ='/apps/edc/settings/wcm/designs/edc-data/salesTiming'}"/>
+            <sly data-sly-test.SelectMap="${ds.optionsFromDataSourcePath}" />
+            <sly data-sly-call="${dropdownTemplates.dropdown @ name='salesTiming', uuid=uuid, label=fieldLabel,
+                placeholder=fieldHelperText, required=true, nourl=true,
+                requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, 
+                options=SelectMap}">
+            </sly>
+        </div>
+    </sly>
+    <sly data-sly-test="${fieldName == 'fiLoan' || fieldName == 'covidWC'}">
+        <div data-form-field="${fieldName}" class="form-group ${wcmmode.disabled ? 'hide' : 'show'}">
+            <label id="${fieldName}-${uuid}">${fieldLabel}</label>
+            <div class="form-row radio-group" role="radiogroup" aria-labelledby="${fieldName}-${uuid}">
+                <div class="radio-option">
+                    <input type="radio" class="form-control" id="${fieldName}Yes-${uuid}" name="${fieldName}" value="yes" data-no-url="true" required/>
+                    <label for="${fieldName}Yes-${uuid}">${properties.yesLabel}</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" class="form-control" id="${fieldName}No-${uuid}" name="${fieldName}" value="no" data-no-url="true" required/>
+                    <label for="${fieldName}No-${uuid}">${properties.noLabel}</label>
+                </div>
+            </div>
+            <span class="error" data-req-message="${messages.formErrorMessages.required}"></span>
+        </div>
+    </sly>
+    <sly data-sly-test="${fieldName == 'nonCDNCurrencyExperience'}">
+        <div data-form-field="nonCDNCurrencyExperience" class="form-group ${wcmmode.disabled ? 'hide' : 'show'}">
+            <sly data-sly-use.ds="${'com.edc.edcweb.core.models.FormCommonObjects' @ path ='/apps/edc/settings/wcm/designs/edc-data/nonCDNCurrencyExperience'}"/>
+            <sly data-sly-test.SelectMap="${ds.optionsFromDataSourcePath}" />
+            <sly data-sly-call="${dropdownTemplates.dropdown @ name='nonCDNCurrencyExperience', uuid=uuid, label=fieldLabel,
+                placeholder=fieldHelperText, required=true, nourl=true,
+                requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, 
+                options=SelectMap}">
+            </sly>
+        </div>
+    </sly>
+    <sly data-sly-test="${fieldName == 'fxContractExperience'}">
+        <div data-form-field="fxContractExperience" class="form-group ${wcmmode.disabled ? 'hide' : 'show'}">
+            <sly data-sly-use.ds="${'com.edc.edcweb.core.models.FormCommonObjects' @ path ='/apps/edc/settings/wcm/designs/edc-data/fxContractExperience'}"/>
+            <sly data-sly-test.SelectMap="${ds.optionsFromDataSourcePath}" />
+            <sly data-sly-call="${dropdownTemplates.dropdown @ name='fxContractExperience', uuid=uuid, label=fieldLabel,
+                placeholder=fieldHelperText, required=true, nourl=true,
+                requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, 
+                options=SelectMap}">
+            </sly>
+        </div>
+    </sly>
+</template>

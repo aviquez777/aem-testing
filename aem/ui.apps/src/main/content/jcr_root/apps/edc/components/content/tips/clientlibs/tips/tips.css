@@ -1,0 +1,44 @@
+@charset "UTF-8";
+.c-tips {
+    border: 1px solid #2f78c6;
+    border-radius: 4px;
+    padding: .375rem 20px;
+    box-sizing: border-box;
+}
+
+.c-tips * {
+    box-sizing: border-box;
+}
+
+.c-tips .title {
+    color: #2f78c6;
+    font-size: 16px;
+    position: relative;
+    padding-right: 54px;
+}
+
+.c-tips .title.tip::after {
+    content: "";
+    font-family: "iconfonts";
+    font-size: 26px;
+    font-weight: normal;
+    position: absolute;
+    right: 0;
+    top: -6px;
+}
+
+.c-tips .description {
+    font-size: 14px;
+}
+
+.c-tips .description p {
+    font-size: 14px;
+}
+
+.c-tips .description ul {
+    list-style-type: disc;
+}
+
+.c-tips .description ol {
+    list-style-type: decimal;
+}

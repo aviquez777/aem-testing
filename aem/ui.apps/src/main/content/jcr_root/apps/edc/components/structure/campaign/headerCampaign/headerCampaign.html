@@ -1,0 +1,155 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.header="com.edc.edcweb.core.models.HeaderCampaign"/>
+<sly data-sly-test.pages="${header.pages}"/>
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+<sly data-sly-test.isTransparentHeader="${properties['newheader']}"/>
+<sly data-sly-test.isWhiteHeader="${properties['stickyvariant']}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !header.logoImage}"/>
+<sly data-sly-use.menuTemplates="/apps/edc/components/structure/header/templates.html" />
+<div class="${wcmmode.edit ? 'author-mode':'' } header-container ${!isTransparentHeader ? 'campaignheader' : ''}">
+    <div id="skip" data-sly-test="${header.skipText}"><a href="#maincontent">${header.skipText}</a></div>    
+    <header data-sly-test="${header.logoImage && !isWhiteHeader}" class="${isTransparentHeader ? 'campaign-sticky-nav': 'main-header campaign-header'}" id="${isTransparentHeader ? 'campaign-sticky-nav-':''}${isTransparentHeader ? uuid :''}">
+        <div class="top-nav full-width">
+            <div class="container">
+                <!--/** The header nav is the top top menu at the first line**/-->
+                <div class="header-nav">
+                    <button data-sly-test=${isTransparentHeader} type="button" class="nav-toggle" aria-label="${'open' @ i18n}">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="${header.logoUrl}" class="logo" target="${header.logoTarget}">
+                    <sly data-sly-test="${isTransparentHeader}">
+                        <img src="${header.logoImage}" alt="${header.logoAltText}" class="${wcmmode.edit ? 'white':'black' }"/>
+                        <img src="${properties.whitelogo}" alt="${header.logoAltText}" class="${wcmmode.edit ? 'black':'white' }"/>
+                    </sly>
+                    <img data-sly-test="${!isTransparentHeader}" src="${header.logoImage}" alt="${header.logoAltText}" />
+                    </a>
+                    
+                    <nav data-sly-test=${isTransparentHeader} aria-label="HeaderCampaign">
+                        <ul>
+                            <li class="link-list-wrapper">
+                                <ul class="link-list">
+                                    <li class="mobile-nav">
+                                        <button type="button" class="close" aria-label="close"></button> 
+                                    </li>
+                                    <sly data-sly-list.link="${header.links}">
+                                        <sly data-sly-test.isFirst="${linkList.index == 0}"/>
+                                            <li class="${isFirst ? 'active' : ''}">
+                                                <sly data-sly-use.linkresolver="${'com.edc.edcweb.core.helpers.LinkExternalizer' @srcPath=link.linkUrl, scheme=request.scheme}"/>
+                                                <sly data-sly-test.linkUrl="${linkresolver.LinkWithHtmlExtension}"/>
+                                                <a x-cq-linkchecker="valid" href="${linkUrl}" data-target="${link.linkTarget}" data-event-name="link click - ${link.linkText}">
+                                                    ${link.linkText}
+                                                </a>
+                                            </li>
+                                        </sly>
+                                    </sly>
+                                    <sly data-sly-test="${header.phoneNumber}">
+                                        <li class="vertical-separator"><div class="divider"></div></li>
+                                        <li class="phone">
+                                            <a href="tel:${header.phoneNumber}">${header.phoneNumber}</a>
+                                        </li>
+                                    </sly> 
+                                    <li class="horizontal-separator"></li>
+                                    <li class="language">
+                                        <sly data-sly-call="${menuTemplates.languageToggle}" />
+                                    </li>
+                                </ul>
+                            </li>
+                            <sly data-sly-test="${properties.ctatext}">
+                                <li class="cta"> <!-- //NOSONAR -->
+                                    <sly data-sly-use.linkresolver="${'com.edc.edcweb.core.helpers.LinkExternalizer' @srcPath=properties.ctaurl, scheme=request.scheme}"/>
+                                    <a x-cq-linkchecker="skip" data-target="${linkresolver.LinkWithHtmlExtension}" data-event-name="link click - ${properties.ctatext}" href="${linkresolver.LinkWithHtmlExtension}" target="${properties.ctatarget}">
+                                        <button class="edc-primary-btn">
+                                            <span>${properties.ctatext}</span>
+                                        </button>
+                                    </a>
+                                </li>
+                            </sly>
+                        </ul>
+                    </nav>
+                    <nav data-sly-test=${!isTransparentHeader} aria-label="HeaderCampaign">
+                        <ul>
+                            <li class="phone">${header.phoneNumber}</li>
+                            <sly data-sly-list.link="${header.links}">
+                                <li><a x-cq-linkchecker="valid" href="${link.linkUrl}" target="${link.linkTarget}">${link.linkText}</a></li>
+                            </sly>
+                            <li class="separator"></li>
+                            <li class="language">
+                                <sly data-sly-call="${menuTemplates.languageToggle}" />
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Additional White Sticky Rendering -->
+    <header data-sly-test="${header.logoImage && isWhiteHeader}" class="${isWhiteHeader ? 'campaign-sticky-nav home-campaign' : ' '}" id="${isWhiteHeader ? 'campaign-sticky-nav-':''}${isTransparentHeader ? uuid :''}">
+        <div class="top-nav full-width">
+            <div class="container">
+                <!--/** The header nav is the top top menu at the first line**/-->
+                <div class="header-nav">
+                    <button data-sly-test="${isWhiteHeader}" type="button" class="nav-toggle" aria-label="${'open' @ i18n}">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="${header.logoUrl}" class="logo" target="${header.logoTarget}">
+                    <sly data-sly-test="${isTransparentHeader}">
+                        <img src="${header.logoImage}" alt="${header.logoAltText}" class="${wcmmode.edit ? 'white':'black' }"/>
+                        <img src="${properties.whitelogo}" alt="${header.logoAltText}" class="${wcmmode.edit ? 'black':'white' }"/>
+                    </sly>
+                    <img data-sly-test="${!isTransparentHeader}" src="${header.logoImage}" alt="${header.logoAltText}" />
+                    </a>
+                    
+                    <nav data-sly-test="${isWhiteHeader}" aria-label="HeaderCampaign">
+                        <ul>
+                            <li class="link-list-wrapper">
+                                <ul class="link-list">
+                                    <li class="mobile-nav">
+                                        <button type="button" class="close" aria-label="close"></button> 
+                                    </li>
+                                    <sly data-sly-list.link="${header.links}">
+                                        <sly data-sly-test.isFirst="${linkList.index == 0}"/>
+                                            <li class="${isFirst ? 'active' : ''}">
+                                                <sly data-sly-use.linkresolver="${'com.edc.edcweb.core.helpers.LinkExternalizer' @srcPath=link.linkUrl, scheme=request.scheme}"/>
+                                                <sly data-sly-test.linkUrl="${linkresolver.LinkWithHtmlExtension}"/>
+                                                <a x-cq-linkchecker="valid" href="${linkUrl}" data-target="${link.linkTarget}" data-event-name="link click - ${link.linkText}">
+                                                    ${link.linkText}
+                                                </a>
+                                            </li>
+                                        </sly>
+                                    </sly>
+                                    <sly data-sly-test="${header.phoneNumber}">
+                                        <li class="vertical-separator"><div class="divider"></div></li>
+                                        <li class="phone">
+                                            <a href="tel:${header.phoneNumber}">${header.phoneNumber}</a>
+                                        </li>
+                                    </sly> 
+                                    <li class="horizontal-separator"></li>
+                                    <li class="language">
+                                        <sly data-sly-call="${menuTemplates.languageToggle}" />
+                                    </li>
+                                </ul>
+                            </li>
+                            <sly data-sly-test="${properties.ctatext}">
+                                <li class="cta">
+                                    <sly data-sly-use.linkresolver="${'com.edc.edcweb.core.helpers.LinkExternalizer' @srcPath=properties.ctaurl, scheme=request.scheme}"/>
+                                    <a x-cq-linkchecker="skip" data-target="${linkresolver.LinkWithHtmlExtension}" data-event-name="link click - ${properties.ctatext}" href="${linkresolver.LinkWithHtmlExtension}" target="${properties.ctatarget}">
+                                        <button class="edc-primary-btn">
+                                            <span>${properties.ctatext}</span>
+                                        </button>
+                                    </a>
+                                </li>
+                            </sly>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="maincontent"></div>
+</div>

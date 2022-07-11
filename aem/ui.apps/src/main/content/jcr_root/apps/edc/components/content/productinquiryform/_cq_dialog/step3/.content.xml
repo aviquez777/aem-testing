@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items
+            jcr:primaryType="nt:unstructured">
+            <personalinfotitle
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Personal info title"
+                fieldDescription="Black text part of the personal info title"
+                name="./personalinfotitle"
+                required="{Boolean}true"/>
+            <personalinfobluetitle
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Personal info blue title"
+                fieldDescription="Blue text part of the personal info title"
+                name="./personalinfobluetitle"
+                required="{Boolean}true"/>            
+            <personalinfodescription
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Personal info description"
+                fieldDescription="Text under personal info title"
+                name="./personalinfodescription"
+                required="{Boolean}true"/>
+           <companycontactinfotitle
+               jcr:primaryType="nt:unstructured"
+               sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+               fieldLabel="Company contact info title"
+               name="./companycontactinfotitle"
+               required="{Boolean}true"/>
+        </items>
+    </content>
+</jcr:root>

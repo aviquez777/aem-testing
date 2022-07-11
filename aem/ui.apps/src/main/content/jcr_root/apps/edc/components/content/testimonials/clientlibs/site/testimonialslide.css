@@ -1,0 +1,257 @@
+.testimonial-slide {
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+}
+
+.testimonial-slide * {
+    box-sizing: border-box;
+}
+
+.testimonial-slide .img-wrapper img {
+    width: 100%;
+    display: block;
+}
+
+.testimonial-slide .info-wrapper .blockquote.blockquote-en {
+    margin-top: 2rem;
+    padding-top: calc(1rem + 26px);
+    background: url("/etc.clientlibs/edc/clientlibs/clientlib-base/resources/images/quote-open.png"), url("/etc.clientlibs/edc/clientlibs/clientlib-base/resources/images/quote-close.png");
+    background-repeat: no-repeat;
+    background-position: top left, bottom right;
+    background-size: 26px 20px;
+}
+
+.testimonial-slide .info-wrapper .blockquote.blockquote-fr {
+    margin-top: 2rem;
+    padding-top: calc(1rem + 26px);
+    background: url("/etc.clientlibs/edc/clientlibs/clientlib-base/resources/images/quote-open-fr.png"), url("/etc.clientlibs/edc/clientlibs/clientlib-base/resources/images/quote-close-fr.png");
+    background-repeat: no-repeat;
+    background-position: top left, bottom right;
+    background-size: 26px 20px;
+}
+
+.testimonial-slide .info-wrapper .blockquote blockquote {
+    color: #333;
+    font-family: "Georgia", "Times New Roman", Times, serif;
+    font-size: 21px;
+    font-weight: normal;
+    letter-spacing: 0.1px;
+    line-height: 1.5238;
+    margin: 0;
+    color: #2f78c6;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 720px) {
+    .testimonial-slide .info-wrapper .blockquote blockquote {
+        font-size: 1.3125rem;
+        line-height: 1.5238;
+        letter-spacing: 0.1px;
+    }
+}
+
+@media (min-width: 960px) {
+    .testimonial-slide .info-wrapper .blockquote blockquote {
+        font-size: 1.625rem;
+        line-height: 1.5384;
+        letter-spacing: -0.2px;
+    }
+}
+
+.testimonial-slide .info-wrapper .blockquote .author-info {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.7142;
+    padding-right: 2rem;
+}
+
+@media (min-width: 720px) {
+    .testimonial-slide .info-wrapper .blockquote .author-info {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .testimonial-slide .info-wrapper .blockquote .author-info {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+.testimonial-slide .info-wrapper .blockquote .author-info .author-position {
+    font-weight: normal;
+    display: block;
+}
+
+.testimonial-slide .info-wrapper .solutions {
+    margin-top: 1.5rem;
+    border-top: 2px solid #2f78c6;
+    padding: 1.5rem 15px;
+    background-color: #f4f8fc;
+}
+
+.testimonial-slide .info-wrapper .solutions .provided-sln {
+    margin-bottom: 1.5rem;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.testimonial-slide .info-wrapper .solutions .provided-sln:last-child {
+    margin-bottom: 0;
+}
+
+.testimonial-slide .info-wrapper .solutions .provided-sln p {
+    margin: 0;
+    color: #404041;
+}
+
+.testimonial-slide .info-wrapper .solutions .provided-sln .column-title {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.7142;
+    margin-bottom: .5rem;
+}
+
+@media (min-width: 720px) {
+    .testimonial-slide .info-wrapper .solutions .provided-sln .column-title {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .testimonial-slide .info-wrapper .solutions .provided-sln .column-title {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+.testimonial-slide .info-wrapper .link {
+    display: block;
+    padding: 1rem 0;
+}
+
+@media (min-width: 720px) {
+    .testimonial-slide .info-wrapper .blockquote {
+        padding-top: calc(2rem + 26px);
+    }
+    .testimonial-slide .info-wrapper .blockquote .author-info .author-position {
+        display: inline;
+    }
+    .testimonial-slide .info-wrapper .solutions {
+        margin-top: 2rem;
+    }
+    .testimonial-slide .info-wrapper .solutions .provided-sln {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 33.33333333%;
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .testimonial-slide .info-wrapper .solutions .provided-sln {
+        width: 33.33333333%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .testimonial-slide .info-wrapper .solutions::after {
+        content: '';
+        clear: both;
+        display: block;
+    }
+    .testimonial-slide .info-wrapper .link {
+        padding: 32px 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .testimonial-slide .img-wrapper {
+        float: left;
+        width: calc(100vw / 2 + 4.16667%);
+        /* We should take the full viewport width and divide it in half 
+             * (this will divide the column grid container in half too (6 columns).
+             * Since the left side is 6.5 columns, We are adding half a column there.
+             * Then to be calculate how much left margin we need to apply, we are substracting 
+             * the 6.5 columns ( 54.16667%, this leaves me with the width from the first column 
+             * to the left edge of the viewport ) And since we are moving this with margins, we 
+             * need to make it a negative margin so multiply by -1
+            */
+        margin-left: calc(((100vw / 2 + 4.16667%) - 54.16667%) * -1);
+    }
+    .testimonial-slide .img-wrapper img {
+        width: auto;
+        float: right;
+        margin-right: 6rem;
+        max-width: calc(100% - 9rem);
+    }
+    .testimonial-slide .info-wrapper {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 41.66666667%;
+        padding-right: 0;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .testimonial-slide .info-wrapper {
+        margin-left: 4.16666667%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .testimonial-slide .info-wrapper {
+        width: 41.66666667%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) {
+    .testimonial-slide .info-wrapper .blockquote {
+        margin-top: 0;
+    }
+    .testimonial-slide .info-wrapper .solutions .provided-sln {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .testimonial-slide .info-wrapper .solutions .provided-sln {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) {
+    .testimonial-slide .info-wrapper .solutions .provided-sln:last-child {
+        margin-bottom: 0;
+    }
+    .testimonial-slide::after {
+        content: '';
+        clear: both;
+        display: block;
+    }
+}

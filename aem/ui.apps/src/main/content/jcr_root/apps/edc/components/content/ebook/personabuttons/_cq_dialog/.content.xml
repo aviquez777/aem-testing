@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Persona Buttons"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <general
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="General Configuration"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <title
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="Enter the title"
+                                fieldLabel="Title"
+                                name="./title"
+                                required="{Boolean}true"/>
+                            <subtitle jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="Enter the subtitle"
+                                fieldLabel="Subtitle"
+                                name="./subtitle"
+                                required="{Boolean}true"/>
+                            <docID
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="Enter the docID"
+                                fieldLabel="docID"
+                                name="./docID"
+                                required="{Boolean}true"/>
+                            <assetTier
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldLabel="Asset Tier"
+                                name="./assetTier"
+                                required="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <level1
+                                        jcr:primaryType="nt:unstructured"
+                                        text="1"
+                                        value="1"/>
+                                    <level2
+                                        jcr:primaryType="nt:unstructured"
+                                        text="2"
+                                        value="2"/>
+                                    <level3
+                                        jcr:primaryType="nt:unstructured"
+                                        text="3"
+                                        value="3"/>
+                                    <level4
+                                        jcr:primaryType="nt:unstructured"
+                                        text="4"
+                                        value="4"/>
+                                    <level5
+                                        jcr:primaryType="nt:unstructured"
+                                        text="5"
+                                        value="5"/>
+                                </items>
+                            </assetTier>
+                        </items>
+                    </general>
+                    <button1
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Button 1"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <label
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Button label"
+                                name="./labelbtn1"
+                                required="{Boolean}true"/>
+                            <buttonID
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Button ID"
+                                name="./btn1Id"
+                                required="{Boolean}true"/>
+                            <persona
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldLabel="Persona"
+                                name="./personabtn1"
+                                required="{Boolean}true">
+                                <datasource
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="/apps/edc/components/common/datasource/personaslist.html"/>
+                            </persona>
+                            <chapters
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                composite="{Boolean}true"
+                                required="{Boolean}true"
+                                fieldLabel="Chapters">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    name="./chapterbtn1">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <path
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                            fieldDescription="Select a chapter. Premium ebook must exist for dialog to work"
+                                            fieldLabel="Chapter"
+                                            forceSelection="{Boolean}true"
+                                            rootPath="/content/edc/{0}/premium/ebook/{1}"
+                                            required="{Boolean}true"
+                                            name="./chapter"/>
+                                    </items>
+                                </field>
+                            </chapters>
+                        </items>
+                    </button1>
+                    <button2
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Button 2"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <label
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Button label"
+                                name="./labelbtn2"
+                                required="{Boolean}true"/>
+                            <buttonID
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Button ID"
+                                name="./btn2Id"
+                                required="{Boolean}true"/>
+                            <persona
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldLabel="Persona"
+                                name="./personabtn2"
+                                required="{Boolean}true">
+                                <datasource
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="/apps/edc/components/common/datasource/personaslist.html"/>
+                            </persona>
+                            <chapters
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                composite="{Boolean}true"
+                                required="{Boolean}true"
+                                fieldLabel="Chapters">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    name="./chapterbtn2">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <path
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                            fieldDescription="Select a chapter. Premium ebook must exist for dialog to work"
+                                            fieldLabel="Chapter"
+                                            forceSelection="{Boolean}true"
+                                            ootPath="/content/edc/{0}/premium/ebook/{1}"
+                                            required="{Boolean}true"
+                                            name="./chapter"/>
+                                    </items>
+                                </field>
+                            </chapters>
+                        </items>
+                    </button2>
+                    <button3
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Button 3"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <label
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Button label"
+                                name="./labelbtn3"
+                                required="{Boolean}true"/>
+                            <buttonID
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Button ID"
+                                name="./btn3Id"
+                                required="{Boolean}true"/>
+                            <persona
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldLabel="Persona"
+                                name="./personabtn3"
+                                required="{Boolean}true">
+                                <datasource
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="/apps/edc/components/common/datasource/personaslist.html"/>
+                            </persona>
+                            <chapters
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                composite="{Boolean}true"
+                                required="{Boolean}true"
+                                fieldLabel="Chapters">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    name="./chapterbtn3">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <path
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                            fieldDescription="Select a chapter. Premium ebook must exist for dialog to work"
+                                            fieldLabel="Chapter"
+                                            forceSelection="{Boolean}true"
+                                            rootPath="/content/edc/{0}/premium/ebook/{1}"
+                                            required="{Boolean}true"
+                                            name="./chapter"/>
+                                    </items>
+                                </field>
+                            </chapters>
+                        </items>
+                    </button3>
+                    <button4
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Button 4 (optional)"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <label
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Button label"
+                                name="./labelbtn4"/>
+                            <buttonID
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Button ID"
+                                name="./btn4Id"/>
+                            <persona
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldLabel="Persona"
+                                name="./personabtn4">
+                                <datasource
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="/apps/edc/components/common/datasource/personaslist.html"/>
+                            </persona>
+                            <chapters
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                composite="{Boolean}true"
+                                fieldLabel="Chapters">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    name="./chapterbtn4">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <path
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                           fieldDescription="Select a chapter. Premium ebook must exist for dialog to work"
+                                            fieldLabel="Chapter"
+                                            forceSelection="{Boolean}true"
+                                            rootPath="/content/edc/{0}/premium/ebook/{1}"
+                                            name="./chapter"/>
+                                    </items>
+                                </field>
+                            </chapters>
+                        </items>
+                    </button4>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

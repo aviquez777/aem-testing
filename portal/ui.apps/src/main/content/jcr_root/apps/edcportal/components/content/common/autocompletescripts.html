@@ -1,0 +1,144 @@
+<template data-sly-template.canadPost="${@ apiKey}">
+    <script type="text/javascript" data-sly-test="${apiKey}">
+        pca.messages.en.KEEPTYPING = "Hey! Keep typing your address to display more results";
+        pca.messages.fr.KEEPTYPING = "Hey! Continuer à taper votre adresse pour afficher plus de résultats";
+    
+        var fields = [
+            { element: "companyCountry-${uuid @ context='text'}", field: "CountryName", mode: pca.fieldMode.COUNTRY},
+            { element: "companyAddress1-${uuid @ context='text'}", field: "Line1", mode: pca.fieldMode.DEFAULT },
+            { element: "companyAddress2-${uuid @ context='text'}", field: "Line2", mode: pca.fieldMode.POPULATE },
+            { element: "companyCity-${uuid @ context='text'}", field: "City", mode: pca.fieldMode.POPULATE },
+            { element: "companyProvince-${uuid @ context='text'}", field: "ProvinceCode", mode: pca.fieldMode.POPULATE},
+            { element: "companyPostal-${uuid @ context='text'}", field: "PostalCode", mode: pca.fieldMode.POPULATE}
+        ],
+        options = {   
+            key: '${apiKey @ context="text"}',
+            minSearch: 5,
+            culture : '${currentPage.language.language @ context="text"}',
+            prompt : true,
+            bar : {
+                showCountry : false,
+                showLogo : true,
+                logoLink : false
+            },
+            setCursor: true
+        },
+        control = new pca.Address(fields, options);
+    
+        EDC.utils.attachEvents(document.querySelector('select[name="companyCountry"]'), 'change', function (e) {
+            var country = e.target.value;
+            if (country === 'CAN' || country === 'USA') {
+                control.enable();
+            } else {
+                control.disable();
+           }
+        });
+    
+        control.listen("populate", function (address) {
+            var itemToClick = document.querySelector('.ui.dropdown .menu .item[data-value="' + address.ProvinceCode + '"]'),
+                address1Field = document.querySelector('input[name="companyAddress1"]');
+    
+            if (itemToClick) {
+                itemToClick.click();
+            }
+    
+            if (address1Field) {
+                EDC.forms.validateField(address1Field);
+            }
+        });   
+    </script>
+</template>
+<template data-sly-template.loqate="${@ apiKey, uuid, useCountries, useDefaultCountry}">
+<!--/* 
+    required apiKey = api key from the config file, 
+    required uuid =  uuid from the form, 
+    optional useCountries = list of countries to use (i.e. 'CAN,USA'), default 'CAN'
+    optional useDefaultCountry = Boolean to pre-populate default country, default false
+*/-->
+    <sly data-sly-test.codesList="${useCountries ? useCountries : 'CAN'}" />
+    <sly data-sly-test.populate="${useDefaultCountry ? 'true' : 'false'}" />
+    <script type="text/javascript" data-sly-test="${apiKey}">
+        var doPopulate = ('${populate @ context="text"}' === 'true'),
+            selectedCountry = '',
+            postalValue = '',
+            setPostal,
+            fields = [
+                { element: "companyCountry-${uuid @ context='text'}", field: "CountryName", mode: pca.fieldMode.COUNTRY},
+                { element: "companyAddress1-${uuid @ context='text'}", field: "Line1", mode: pca.fieldMode.DEFAULT },
+                { element: "companyAddress2-${uuid @ context='text'}", field: "Line2", mode: pca.fieldMode.POPULATE },
+                { element: "companyCity-${uuid @ context='text'}", field: "City", mode: pca.fieldMode.POPULATE },
+                { element: "companyProvince-${uuid @ context='text'}", field: "ProvinceCode", mode: pca.fieldMode.POPULATE},
+                { element: "companyPostal-${uuid @ context='text'}", field: "PostalCode", mode: pca.fieldMode.POPULATE}
+            ],
+            options = {   
+                key: '${apiKey @ context="text"}',
+                countries: { 
+                    codesList: '${codesList @ context="text"}',
+                    populate: doPopulate
+                }, 
+                setCountryByIP: false
+            },
+            control = new pca.Address(fields, options);
+
+        function toggleControl(country) {
+            if (country.length > 0 && options.countries.codesList.indexOf(country) > -1) {
+                control.enable();
+            } else {
+                control.disable();
+            }
+        }
+
+        window.addEventListener('load', function() {
+            selectedCountry = document.querySelector('select[name="companyCountry"]').value;
+            if (doPopulate) {
+                EDC.utils.refreshCountryForLoqate();
+            } else {
+                toggleControl(selectedCountry);
+            }
+        });
+
+        EDC.utils.attachEvents(document.querySelector('select[name="companyCountry"]'), 'change', function (e) {
+            if (selectedCountry !== e.target.value) {
+                fields.forEach(function (field) {
+                    if (field.element === "companyProvince-${uuid @ context='text'}" || field.element === "companyCountry-${uuid @ context='text'}") {
+                        return;
+                    } else {
+                        document.querySelector('#' + field.element).value = '';
+                    }
+                });
+            } else {
+                postalValue = document.querySelector("#companyPostal-${uuid @ context='text'}").value;
+                setPostal = setInterval(function () {
+                    if (document.querySelector("#companyPostal-${uuid @ context='text'}").value === '') {
+                        document.querySelector("#companyPostal-${uuid @ context='text'}").value = postalValue;
+                        clearInterval(setPostal);
+                    }
+                }, 100);
+            }
+            selectedCountry = e.target.value;
+            toggleControl(e.target.value);
+        });
+    
+        control.listen("populate", function (address) {
+            var d = document,
+                provinceMap =  {
+                    QC: 'PQ',
+                    NL: 'NF'
+                },
+                itemToClick,
+                address1Field = d.querySelector('input[name="companyAddress1"]');
+
+            itemToClick = d.querySelector('.ui.dropdown .menu .item[data-value="' + (provinceMap[address.ProvinceCode] ? provinceMap[address.ProvinceCode] : address.ProvinceCode) + '"]');
+    
+            if (itemToClick) {
+                itemToClick.click();
+            } else {
+                EDC.forms.resetForm(d.querySelector('.form-group.province'));
+            }
+    
+            if (address1Field) {
+                EDC.forms.validateField(address1Field);
+            }
+        });
+    </script>
+</template>

@@ -1,0 +1,35 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.pagesearch="com.edc.edcweb.core.components.CardGrid"/>
+<sly data-sly-test.pages="${pagesearch.pages}"/>
+<sly data-sly-test.countrypageMode="${pagesearch.CountryMode}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !countrypageMode && !properties.tier2title && !pages && !properties.tier2loadmoremsg}"/>
+<sly data-sly-test.countryCTA="${pagesearch.ValueMapCountryMode['countrycta']}"/>
+<sly data-sly-test.countryLink="${pagesearch.ValueMapCountryMode['countryctaurl']}"/>
+<sly data-sly-test.countryTitle="${properties['countrytitle']}"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-test.smallcards="${properties.smallcards}"/>
+
+<section data-sly-test="${countrypageMode || properties.tier2title || pages || properties.tier2loadmoremsg}" class="wrapper-card-grid">
+  <sly data-sly-test="${countrypageMode || properties.tier2title}">
+    <h2 data-sly-test="${countryTitle || properties.tier2title}" class="title" >${countryTitle || properties.tier2title}</h2>
+  </sly>
+
+  <div data-sly-test="${pages && properties.articlespath}" class="content-card-grid" id="tag-result-card-grid" data-infinite-scroll="${properties.infinitescroll}" data-max-items="${properties.articlesperpage}" data-pages-count="${pages.size}"   data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'content-card-grid'}" data-event-type="infinite scroll"  data-event-name="infinite scroll load" data-small-cards=${smallcards}>
+    <sly data-sly-list.item="${pages}"
+         data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+         data-sly-use.itemTemplate="/apps/edc/components/common/contentcard.html">
+      <sly data-sly-use.articlepage="${'com.edc.edcweb.core.models.ArticlePage' @ page = item}"/>
+      <sly data-sly-call="${itemTemplate.item @ list = list, item = item, smallcards = smallcards, premium = articlepage.premium,
+                                        contenttypeclass = articlepage.contentTypeClassName, contenttypetitle = articlepage.contentTypeTitle, idx = itemList.count}"/>
+    </sly>
+  </div>
+
+  <sly data-sly-test="${countrypageMode || properties.tier2title || properties.tier2loadmoremsg}">
+    <div data-sly-test="${countryCTA}" class="view-more-cta">
+      <a target="${pagesearch.ValueMapCountryMode['linktarget']}"  href="${countryLink}">${countryCTA}</a>
+    </div>
+    <div data-sly-test="${properties.tier2loadmoremsg}" class="view-more-cta hide">
+      <p class="view-more-cta-p">${properties.tier2loadmoremsg}</p>
+    </div>
+  </sly>
+</section>

@@ -1,0 +1,64 @@
+<template data-sly-template.step1="${@  uuid, properties, formLabels, formErrorMessages, dropdownTemplates, multiSelectTemplate, inquiry}">
+    <div class="level level-1 tab-panel show" data-tab-number="1" data-tab-content="UNIQUEID-panel1-${uuid}" id="UNIQUEID-panel1-${uuid}" role="tabpanel" aria-labelledby="UNIQUEID-panel1-${uuid}" data-dirty-li="true">
+        <h3>${properties.inquirytitle} <span>${properties.inquirybluetitle}</span>
+        </h3>
+        <p class="description">${properties.inquirydescription}</p>
+        <div class="form-group">
+            <label for="comments-${uuid}">${formLabels.businessneeds}</label>
+            <textarea class="form-control" name="comments" id="comments-${uuid}" placeholder="${formLabels.businessneedsph}" rows="5" data-min-length="1" data-max-length="1000" required=""></textarea>
+            <span class="error" data-req-message="${formErrorMessages.required}" data-text-message="${formErrorMessages.format}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}"></span>
+        </div>
+        <div class="form-group painPoint">
+            <!--/* US 172230 */ -->
+            <div class="c-dropdown">
+                <div class="dropdown-overlay">
+                    <label for="painPoint-${uuid}">${formLabels.painpoint}</label>
+                    <div class="dropdown-container ui-multiple">
+                        <div class="dropdown-title">
+                            <span class="label-text">${formLabels.painpoint}</span>
+                            <span class="close-btn"></span>
+                        </div>
+                        <select class="form-control ui selection dropdown multiple" name="painPoint" id="painPoint-${uuid}" tabindex="0" data-sly-attribute.multiple="'multiple" data-sly-attribute.required="required" data-sly-attribute.data-no-url="true" data-default-value="${formLabels.painpointddph}" validation-rule="none">
+                            <option value="" hidden="">${formLabels.painpointddph}</option>
+                            <option value="clear-all">${formLabels.multipleddclear}</option>
+                            <option value="" data-sly-repeat="${inquiry.painpointitems}" value="${item.value}" data-english-name="${item.enName}" data-routing="${item.routing}">${item[inquiry.langVar]}</option>
+                        </select>
+                        <span class="error dropdown-error" data-req-message="${formErrorMessages.required}" data-select-one-message="${formErrorMessages.required}" data-no-url-message="${formErrorMessages.nourl}"></span>
+                        <div class="selection-container">
+                            <p class="selection" data-singular-text="${formLabels.multipleddsingular}" data-plural-text="${formLabels.multipleddplural}">(0) ${formLabels.multipleddplural}</p>
+                            <button class="edc-primary-btn" disabled="">
+                                <span>${formLabels.multipleddconfirm}</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/* END US 172230 */ -->
+        </div>
+        <div class="form-group annualSales">
+            <sly data-sly-call="${dropdownTemplates.dropdown @ name='annualSales', uuid=uuid, label=formLabels.annualsales,
+                placeholder=formLabels.annualsalesddph, required=true, nourl=true,
+                requirederror=formErrorMessages.required, invaliderror=formErrorMessages.required, options=inquiry.annualsalesitems}">
+            </sly>
+        </div>
+        <div data-form-field="company-incorporated" class="form-group company-incorporated">
+            <label id="company-incorporated-${uuid}">${formLabels.years}</label>
+            <div class="radio-group" role="radiogroup" aria-labelledby="company-incorporated-${uuid}">
+                <div data-sly-repeat="${inquiry.yearitems}" class="radio-option">
+                    <input type="radio" class="form-control" id="company-incorporated-${uuid}" name="year" value="${item}" required="" />
+                    <label for="company-incorporated-${uuid}">${inquiry.yearitems[item]}</label>
+                </div>
+                <span class="error" data-req-message="${formErrorMessages.required}"></span>
+            </div>
+        </div>
+        <div class="form-group productsServ">
+            <label for="productsServ-${uuid}">${formLabels.product}</label>
+            <input type="text" class="form-control" name="productsServ" id="productsServ-${uuid}" data-min-length="1" data-max-length="100" validation-rule="name" data-no-url="true" required="" />
+            <span class="error" data-req-message="${formErrorMessages.required}" data-text-message="${formErrorMessages.format}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}"></span>
+        </div>
+        <div class="form-group">
+            <sly data-sly-call="${multiSelectTemplate.multiselect @ lovPath=inquiry.marketsintpath, fieldName='marketsInt-large', label=formLabels.marketsint, placeholder=formLabels.marketsintph, isRequired='true', isRequiredError=formErrorMessages.required}">
+            </sly>
+        </div>
+    </div>
+</template>

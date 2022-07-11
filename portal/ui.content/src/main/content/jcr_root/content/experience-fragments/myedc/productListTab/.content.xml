@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2020-07-10T12:51:44.629-06:00"
+        cq:lastModifiedBy="admin"
+        cq:tags="[]"
+        cq:template="/libs/cq/experience-fragments/components/experiencefragment/template"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Product List Tab"
+        jcr:uuid="6121ccc1-c5a6-454e-8b0f-e19234fe2799"
+        sling:resourceType="cq/experience-fragments/components/experiencefragment"/>
+    <product-list-tab/>
+    <product-list-tab-fr/>
+</jcr:root>

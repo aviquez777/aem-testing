@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <stepLabel jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Label for Step 2 of 3"
+                fieldLabel="Label for Step 2 of 3"
+                required="{Boolean}true"
+                name="./step2Of3"/>
+            <step2Title
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Title after Step 2 of 3"
+                fieldDescription="i.e. Credit Card Details"
+                name="./step2Title"
+                required="{Boolean}true"/>
+            <level2Message
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                fieldLabel="Warning Text"
+                fieldDescription="i.e. Your payment may take a moment to process...."
+                name="./level2Message"
+                useFixedInlineToolbar="{Boolean}true"
+                required="{Boolean}true">
+                <rtePlugins jcr:primaryType="nt:unstructured">
+                    <format
+                        jcr:primaryType="nt:unstructured"
+                        features="*"/>
+                    <links
+                        jcr:primaryType="nt:unstructured"
+                        features="[modifylink,unlink]"/>
+                </rtePlugins>
+                <uiSettings jcr:primaryType="nt:unstructured">
+                    <cui jcr:primaryType="nt:unstructured">
+                        <inline
+                            jcr:primaryType="nt:unstructured"
+                            toolbar="[format#bold,format#italic,format#underline,#lists,links#modifylink,links#unlink,links#anchor]">
+                        </inline>
+                    </cui>
+                </uiSettings>
+            </level2Message>
+        </items>
+    </content>
+</jcr:root>

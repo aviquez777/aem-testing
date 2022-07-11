@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <noqsTitle
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Invalid Access Title"
+                fieldDescription="i.e. Unfortunately the URL you’ve enter is not correct"
+                name="./noqsTitle"
+                required="{Boolean}true"/>
+            <noqsMessage
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                fieldLabel="Invalid Access Message Text"
+                fieldDescription="i.e. Unfortunately the URL you’ve enter is not correct"
+                name="./noqsMessage"
+                useFixedInlineToolbar="{Boolean}true"
+                required="{Boolean}true">
+                <rtePlugins jcr:primaryType="nt:unstructured">
+                    <format
+                        jcr:primaryType="nt:unstructured"
+                        features="*"/>
+                    <links
+                        jcr:primaryType="nt:unstructured"
+                        features="[modifylink,unlink]"/>
+                </rtePlugins>
+                <uiSettings jcr:primaryType="nt:unstructured">
+                    <cui jcr:primaryType="nt:unstructured">
+                        <inline
+                            jcr:primaryType="nt:unstructured"
+                            toolbar="[format#bold,format#italic,format#underline,#lists,links#modifylink,links#unlink,links#anchor]">
+                        </inline>
+                    </cui>
+                </uiSettings>
+            </noqsMessage>
+        </items>
+    </content>
+</jcr:root>

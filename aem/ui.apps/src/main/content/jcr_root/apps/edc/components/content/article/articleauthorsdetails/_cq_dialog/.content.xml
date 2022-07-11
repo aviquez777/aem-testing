@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" 
+    xmlns:granite="http://www.adobe.com/jcr/granite/1.0" 
+    xmlns:cq="http://www.day.com/jcr/cq/1.0" 
+    xmlns:jcr="http://www.jcp.org/jcr/1.0" 
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Article Authors Details Configuration"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <articleauthorsdetailsconfig jcr:primaryType="nt:unstructured"
+                jcr:title="Article Authors Details Configuration"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                    <items jcr:primaryType="nt:unstructured">
+                        <compTitle
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Component Title"
+                            fieldDescription="Title used for the main component"
+                            name="./compTitle"/>
+                        <ctaViewAllAuthorsText
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="View all authors CTA Text"
+                            fieldDescription="Text for the CTA that points to view all authors section, default value is: 'View all authors'"
+                            name="./ctaViewAllAuthorsText"/>
+                        <ctaViewAllAuthorsLink
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="View all authors Section Link (i.e #id_section)"
+                            fieldDescription="In this the id of the body authors component must be insert to link to that specific section, remember to add '#' at the begining of text"
+                            name="./ctaViewAllAuthorsLink"/>
+                        <numAuthorsRendered jcr:primaryType="nt:unstructured"
+                            fieldLabel="Quantity of Authors to be rendered (Default 3, Mininum 1, Maximun 10)"
+                            fieldDescription="number of authors to be render on page, it will get highlighted in red if number is over 10"
+                            sling:resourceType="granite/ui/components/foundation/form/numberfield"
+                            name="./numAuthorsRendered"
+                            min="{Double}1"
+                            max="{Double}10" />
+                        <authors sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                            fieldLabel="Authors"
+                            fieldDescription="Field to add authors, minimum 1"
+                            jcr:primaryType="nt:unstructured"
+                            composite="{Boolean}true">
+                            <field sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    jcr:primaryType="nt:unstructured" 
+                                    name="./authors">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <authorbiopath jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                            fieldLabel="Authors's bio"
+                                            fieldDescription="Select the biography page for an specific author."
+                                            forceSelection="{Boolean}true"
+                                            multiple="{Boolean}false"
+                                            name="./authorbiopath"
+                                            required="{Boolean}true"
+                                            rootPath="/content/edc/en/bio"/>
+                                    </items>
+                            </field>
+                        </authors>
+                    </items>
+            </articleauthorsdetailsconfig>
+        </items>
+    </content>
+</jcr:root>

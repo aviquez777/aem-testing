@@ -1,0 +1,74 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.mstl="com.edc.edcweb.core.models.MSTL"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-use.messages="com.edc.edcweb.core.models.FormCommonMessages"/>
+<sly data-sly-use.formsTemplates="${'/apps/edc/components/common/forms.html'}" />
+<sly data-sly-test.hasValues="${properties.firstNameLabel}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !hasValues}"/>
+<sly data-sly-use.dropdownTemplates="${'/apps/edc/components/common/dropdown.html'}" />
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+
+
+<sly data-sly-test="${hasValues || mstl.eloquaFormName || mstl.eloquaFormSubmitURL || mstl.eloquaFormId || mstl.eloquaSiteId}" >
+    <section class="c-mstl-section">
+        <form name="${mstl.eloquaFormName}" class="c-mstl-form" novalidate="" action="${mstl.eloquaFormSubmitURL}" id="${mstl.eloquaFormId}" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'Contact Us Form'}" data-event-type="form" data-event-name="form submit" data-event-engagement="3" data-event-action="main body" data-event-level="primary">
+            <sly data-sly-call="${formsTemplates.formhiddenfields @ elqFormName=mstl.eloquaFormName, elqSiteId=mstl.eloquaSiteId, lang=mstl.pageLanguage, formID=mstl.eloquaFormId}">
+            </sly>
+            <input type="text" name="middleName" class="form-control" placeholder="middleName" tabindex="-1" autoComplete="false" />
+            <input type="hidden" name="eventID" class="form-control" data-no-url="" value="" />
+            <input type="hidden" name="cdoSubmissionDate" class="form-control" data-no-url="" value="" />
+            <div class="mstl-text-container">
+                <div class="cmp cmp-text">
+                    <h2 class="edc-blue title" data-sly-test="${properties.title}">${properties.title}</h2>
+                    <div data-sly-test="properties.description" class="description">
+                        ${properties.description @ context='html'}
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="form-container">
+                    <div class="form-row">
+                        <div class="firstName">
+                            <label for="firstName-${uuid}">${properties.firstNameLabel}</label>
+                            <input class="form-control" type="text" name="firstName" id="firstName-${uuid}" placeholder="${properties.firstNamePlaceholder}" data-min-length="1" data-no-url="" required="" validation-rule="name" >
+                            <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                        </div>
+                        <div class="lastName">
+                            <label for="lastName-${uuid}">${properties.lastNameLabel}</label>
+                            <input class="form-control" type="text" name="lastName" id="lastName-${uuid}" placeholder="${properties.lastNamePlaceholder}" data-no-url="" required="" validation-rule="name" >
+                            <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                        </div>
+                    </div>
+                    <div class="emailAddress">
+                        <label for="emailAddress-${uuid}">${properties.emailLabel}</label>
+                        <input class="form-control" type="email" name="emailAddress" id="emailAddress-${uuid}" placeholder="${properties.emailPlaceholder}" required="">
+                        <span class="error" data-req-message="${messages.formErrorMessages.required}" data-email-message="${messages.formErrorMessages.email}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                    </div>
+                    <div class="company">
+                        <label for="company-${uuid}">${properties.companyNameLabel}</label>
+                        <input class="form-control" type="text" name="company" id="company-${uuid}" placeholder="${properties.companyNamePlaceholder}" data-no-url="" required="" data-min-length="2" data-max-length="100" validation-rule="legalName" >
+                        <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                    </div>
+                    <div class="mstl-form-disclaimer">
+                            ${properties.consentText @ context='html'}
+                        <div class="actions">
+                            <button type="submit"><span>${properties.submitButtonText}</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="disclaimer-container">
+                <div class="key-line"></div>
+                <div class="disclaimer">
+                    ${properties.disclaimer @ context='html'}
+                </div>
+            </div>
+            <div class="success ${wcmmode.disabled ? 'hide' : 'show'}">
+                <img data-sly-test="${properties.successIcon}" src="${properties.successIcon}" alt="${properties.successIconAlt}" />
+                <h2>${properties.successTitle}</h2>
+                <div class="large">${properties.successPrimaryText @ context='html'}</div>
+            </div>
+        </form>
+    </section>
+</sly>

@@ -1,0 +1,69 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-use.messages="com.edc.edcweb.core.models.FormCommonMessages"/>
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+<sly data-sly-use.eloqua="com.edc.edcweb.core.models.EloquaData"/>
+
+<sly data-sly-use.model="com.edc.edcweb.core.models.PolicyReader" />
+<sly data-sly-test.policy="${model.policy}"/>
+<sly data-sly-test.labels="${model.labels}"/>
+
+<sly data-sly-test.dialogfieldsDefault="${properties.displaytype == 'default' ? properties.defaulttitle && properties.defaultdescription : false}" />
+<sly data-sly-test.dialogfieldsForm="${properties.displaytype == 'form' ? properties.email && properties.subject && properties.title && properties.feedback && properties.ctaText && properties.successTitle : false}" />
+
+<sly data-sly-test.dialogfields="${properties.maintitle && properties.description && properties.illustration && properties.illustrationalt && (dialogfieldsDefault || dialogfieldsForm)}" />
+
+<sly data-sly-call="${templates.placeholder @ isEmpty = !policy && !dialogfields, emptyTextAppend='Not all necessary fields are defined. Set the policy or fill all necessary fields in the component dialog.'}"/>
+<sly data-sly-use.ibButtonTemplate="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+
+<!--/* inlclide lib to handle csrf token for us*/-->
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html" data-sly-test.clientlibCategories="granite.csrf.standalone" data-sly-call="${clientLib.js @ categories=clientlibCategories}" />
+
+<div data-sly-test="${dialogfields || policy}" class="c-inlist-feedback-form full-width">
+    <div class="background">
+        <div class="container ${properties.displaytype == 'default' ? 'default' : ''}">
+            <div class="img-wrapper">
+                <img src="${properties.illustration || labels['illustration']}" alt="" />
+            </div>
+            <div class="feedback-description">
+                <h2 class="title">${properties.maintitle || labels['maintitle']}</h2>
+                <div class="description">
+                    ${properties.description || labels['description'] @ context='html'}
+                </div>
+            </div>
+            <div class="feedback-content">
+                <h3 class="subtitle">
+                    <sly data-sly-test="${properties.displaytype == 'default'}">${properties.defaulttitle || labels['defaulttitle']}</sly>
+                    <sly data-sly-test="${properties.displaytype == 'form'}">${properties.title || labels['title']}</sly>
+                </h3>
+                <div class="content" data-sly-test="${properties.displaytype == 'default'}">
+                    ${properties.defaultdescription || labels['defaultdescription'] @ context='html'}
+                </div>
+                <form data-sly-test="${properties.displaytype == 'form'}" name="inlistFeedbackForm" class="feedback-form" novalidate="" method="post" action="/bin/feedbackFormServlet" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'InList Feedback Form'}" data-event-type="form" data-event-name="form submit" data-event-engagement="3" data-event-action="main body" data-event-level="primary">
+                    <input type="hidden" name="docID" class="form-control" value="${eloqua.docId}" validation-rule="none" />
+                    <input type="hidden" name="emailAddress" class="form-control" value="" validation-rule="none" />
+                    <input type="hidden" name="_charset_" id="_charset_" className="form-control" value="UTF-8" validation-rule="none" />
+                    <div class="content">
+                        <div class="feedback-comment">
+                            <label for="comment-${uuid}">${properties.feedback || labels['feedback']}</label>
+                            <textarea id="comment-${uuid}" class="form-control" name="comment" rows="5" placeholder="${properties.feedbackplaceholder || labels['feedbackplaceholder']}" required=""></textarea>
+                            <span class="error" data-req-message="${messages.formErrorMessages.required}"></span>
+                        </div>
+                        <div class="cta-container">
+                            <div data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled', buttontext=properties.ctaText || labels['ctaText'], btntype='submit'}"  data-sly-unwrap></div>
+                        </div>
+                        <div class="submit-failed-message hide">
+                            <p>${messages.formErrorMessages.elqerror}</p>
+                        </div>
+                    </div>
+                    <div class="success hide">
+                        <h3 class="title">${properties.successTitle || labels['successTitle']}</h3>
+                        <div>${properties.successMsg || labels['successMsg'] @ context='html'}</div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

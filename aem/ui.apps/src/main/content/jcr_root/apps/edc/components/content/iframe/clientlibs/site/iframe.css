@@ -1,0 +1,41 @@
+.c-iframe {
+    box-sizing: border-box;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.c-iframe * {
+    box-sizing: border-box;
+}
+
+.c-iframe iframe {
+    border: 0;
+    transform: translate(-50%, 0%);
+    margin-left: 50%;
+}
+
+.c-iframe iframe.iframe-power-bi {
+    width: 100%;
+    padding: 10px;
+    height: 26.25rem;
+    transform: translate(0, 0%);
+    margin-left: 0%;
+}
+
+@media (min-width: 720px) {
+    .c-iframe iframe.iframe-power-bi {
+        height: 45rem;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-iframe iframe.iframe-power-bi {
+        height: 60rem;
+    }
+}
+
+@media (min-width: 1140px) {
+    .c-iframe iframe.iframe-power-bi {
+        height: 100vh;
+    }
+}

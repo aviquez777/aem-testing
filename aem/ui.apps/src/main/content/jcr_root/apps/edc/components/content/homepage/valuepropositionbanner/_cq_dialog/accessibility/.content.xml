@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Value Proposition Banner"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+            margin="{Boolean}false">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <accessibility
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <heading
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/text"
+                                    class="coral-Form-fieldlabel"
+                                    text="CTA (To hide, leave CTA link url and/or Video Youtube ID blank)"/>
+                            <heading
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/text"
+                                    class="coral-Form-fieldlabel"
+                                    text="Aria label/ Data slide number text/ Aria roledescription"/>
+                            <well
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/container">
+                                <layout
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <carouselSectionAriaLabel
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldDescription="Carousel section aria-label"
+                                            fieldLabel="Carousel section aria-label"
+                                            required="{Boolean}true"
+                                            name="./carouselSectionAriaLabel" />
+                                    <previousSlideAriaLabel
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldDescription="Previous Slide aria-label"
+                                            fieldLabel="Previous Slide arial-abel"
+                                            required="{Boolean}true"
+                                            name="./previousSlideAriaLabel" />
+                                    <nextSlideAriaLabel
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldDescription="Next Slide aria-label"
+                                            fieldLabel="Next Slide arial-abel"
+                                            required="{Boolean}true"
+                                            name="./nextSlideAriaLabel" />
+                                    <currentSlideAriaLabel
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldDescription="Current Slide aria-label"
+                                            fieldLabel="Current Slide arial-abel"
+                                            required="{Boolean}true"
+                                            name="./currentSlideAriaLabel" />
+                                    <carouselRoleDescription
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldDescription="Carousel Role Description"
+                                            fieldLabel="Carousel Role Description"
+                                            required="{Boolean}true"
+                                            name="./carouselRoleDescription" />
+                                    <slideRoleDescription
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldDescription="Slide Role Description"
+                                            fieldLabel="Slide Role Description"
+                                            required="{Boolean}true"
+                                            name="./slideRoleDescription" />
+                                    <slideNumberText
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldDescription="Data slide number text"
+                                            fieldLabel="Data slide number text"
+                                            required="{Boolean}true"
+                                            name="./slideNumberText" />
+                                </items>
+                            </well>
+                        </items>
+                    </accessibility>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

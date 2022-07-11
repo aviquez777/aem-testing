@@ -1,0 +1,29 @@
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = true, emptyTextAppend='Form will display properly on published mode'}"/>
+
+<sly data-sly-use.encoderPath="${'com.edc.edcweb.core.helpers.Base64EnconderHelper' @ toEncode=currentPage.path}"/>
+<sly data-sly-use.encoderResource="${'com.edc.edcweb.core.helpers.Base64EnconderHelper' @ toEncode=properties['sling:resourceType']}"/>
+
+<sly data-sly-use.model="com.edc.edcweb.core.models.gatedleadgenform.GlgformModel" />
+<sly data-sly-test.questionList = "${model.questionList}" />
+
+<section data-sly-test="${questionList}"  class="c-gated-lead-gen-form">
+    <sly data-sly-use.messages="com.edc.edcweb.core.models.FormCommonMessages"/>
+    <sly data-sly-use.forms="forms.html"/>
+
+    <sly data-sly-test.componentName="${datalayer.componentTitle ? datalayer.componentTitle : 'Gated Content Access Form'}" />
+    <!--/* inlclide lib to handle csrf token for us */-->
+    <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html" data-sly-test.clientlibCategories="granite.csrf.standalone" data-sly-call="${clientLib.js @ categories=clientlibCategories}" />
+    <!--/* Email form */-->
+    <sly data-sly-call="${forms.emailform @ encodedPath=encoderPath.encoded, encodedResource=encoderResource.encoded, messages=messages}"/>
+    <!--/* Data form */-->
+    <sly data-sly-call="${forms.gatedform @ model=model, encodedPath=encoderPath.encoded, encodedResource=encoderResource.encoded, questionList=questionList, messages=messages}"/>
+
+    <div class="submit-failed-message ${wcmmode.disabled ? 'hide' : 'show'}">
+        <p data-default-text="${properties.submitErrorText}"></p>
+    </div>
+
+    <div data-sly-resource="${'processingScreen' @ resourceType='edc/components/content/processingscreen'}"></div>
+</section>

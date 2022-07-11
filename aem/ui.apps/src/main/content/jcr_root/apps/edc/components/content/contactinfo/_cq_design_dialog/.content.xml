@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Contact Information"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <section
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Contact Information"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                    margin="{Boolean}false"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <title
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="Appears as primary text on the left hand side."
+                                fieldLabel="Title"
+                                name="./title"
+                                required="{Boolean}true"
+                                wrapperClass="core-image-alt"/>
+                            <schedule
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Appears above the phone number on the desktop view."
+                                fieldLabel="Text 1"
+                                name="./schedule"
+                                required="{Boolean}true"/>
+                            <ctatext1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="Button text on the mobile device view."
+                                fieldLabel="CTA Text 1"
+                                name="./ctatext1"
+                                required="{Boolean}true"/>
+                            <phonenumber
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="Appears on the desktop view and is also used for the &quot;tel&quot; link on mobile devices. Format: 1-XXX-XXX-XXXX."
+                                fieldLabel="CTA Phone Number, formatted as 1-XXX-XXX-XXXX."
+                                name="./phonenumber"
+                                required="{Boolean}true"/>
+                            <submittext
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Appears on the desktop view below the phone number."
+                                fieldLabel="Text 2"
+                                name="./submittext"
+                                required="{Boolean}true"/>
+                            <cta2
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <heading
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/text"
+                                        class="coral-Form-fieldlabel"
+                                        text="CTA 2"/>
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <target
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldDescription="Determines if the link will open in the current or new window. "
+                                                fieldLabel="Link target"
+                                                name="./linktarget">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <existing
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Existing window"
+                                                        value="_self"/>
+                                                    <new
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="New window"
+                                                        value="_blank"/>
+                                                </items>
+                                            </target>
+                                            <ctatext2
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Button text appearing on desktop and mobile views."
+                                                fieldLabel="Link text"
+                                                name="./linktext"
+                                                required="{Boolean}true"/>
+                                            <targeturl
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldDescription="The URL visitors will be directed to after clicking the CTA button."
+                                                fieldLabel="Link url"
+                                                name="./linkurl"
+                                                required="{Boolean}false"
+                                                rootPath="/content/edc"/>
+                                        </items>
+                                    </well>
+                                </items>
+                            </cta2>
+                            <employeeinfo
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <heading
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/text"
+                                        class="coral-Form-fieldlabel"
+                                        text="Employee Information"/>
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <imgsrc
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="Image"
+                                                class="cq-droptarget"
+                                                fieldDescription="The background image shown by the contact information component."
+                                                mimeTypes="[image]"
+                                                multiple="{Boolean}false"
+                                                name="./fileReference"
+                                                rootPath="/content/dam/edc" />
+                                            <employeename
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Employee name"
+                                                name="./employeename"
+                                                required="{Boolean}false"
+                                                wrapperClass="core-image-alt"/>
+                                            <employeetitle
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Employee title"
+                                                name="./employeetitle"
+                                                required="{Boolean}false"
+                                                wrapperClass="core-image-alt"/>
+                                        </items>
+                                    </well>
+                                </items>
+                            </employeeinfo>
+                        </items>
+                    </column>
+                </items>
+            </section>
+        </items>
+    </content>
+</jcr:root>

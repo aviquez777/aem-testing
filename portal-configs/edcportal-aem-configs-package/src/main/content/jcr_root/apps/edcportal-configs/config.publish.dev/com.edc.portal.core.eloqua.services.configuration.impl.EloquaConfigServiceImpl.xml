@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+  xmlns:jcr="http://www.jcp.org/jcr/1.0"
+  jcr:primaryType="sling:OsgiConfig"
+  getUrlToGetBaseUrl="https://login.eloqua.com/id"
+  getTokenUrl="https://login.eloqua.com/auth/oauth2/token"
+  getClientId="4378c90e-1b40-4099-aa81-ece34aac9759"
+  getClientSecret="1I6CpfBBGvEWUYnc2xAqGLmc7NpG5PrFJPNlbwZEQTf8hBIraQ83Pv7YyAGOKnwkiSu5838MPlXcc32fDsrMeHohLcVbvn8NMZ5J"
+  getSiteName="EDCTestDev"
+  getUserName="AEM.Integration"
+  getPassword="xMQur1?S"
+  getMyEDCProfileCDOId="96"
+  getProgressiveProfileCDOId="65"
+  getDocumentHistoryCDOId="97"
+  getEndPointFallBack="https://secure.p01.eloqua.com/API/REST/{version}/"/>

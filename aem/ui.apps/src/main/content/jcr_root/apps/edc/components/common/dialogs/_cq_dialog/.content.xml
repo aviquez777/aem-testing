@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:description="Accordian"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Accordian"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/section">
+                    <image
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Basic"
+                        sling:resourceType="granite/ui/components/foundation/section">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/well"
+                            margin="{Boolean}false"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <desktop
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldLabel="Desktop breakpoint image"
+                                        mimeTypes="[image]"
+                                        multiple="{Boolean}false"
+                                        name="./fileReference"
+                                        required="{Boolean}false"
+                                        rootPath="/content/dam/edc"/>
+                                    <tablet
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldLabel="Tablet breakpoint image"
+                                        mimeTypes="[image]"
+                                        multiple="{Boolean}false"
+                                        name="./tabletFileReference"
+                                        rootPath="/content/dam/edc"/>
+                                    <phone
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldLabel="Phone breakpoint image"
+                                        mimeTypes="[image]"
+                                        multiple="{Boolean}false"
+                                        name="./phoneFileReference"
+                                        rootPath="/content/dam/edc"/>
+                                    <alt
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Alternate text"
+                                        name="./alt"
+                                        required="{Boolean}false"
+                                        wrapperClass="core-image-alt"/>
+                                    <lazyload
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldDescription="Determines if the image should be lazily loaded."
+                                        fieldLabel="Lazy load"
+                                        name="./lazyload">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <true
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Enable lazy loading"
+                                                value="true"/>
+                                            <false
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Disable lazy loading"
+                                                value="false"/>
+                                        </items>
+                                    </lazyload>
+                                </items>
+                            </column>
+                        </items>
+                    </image>
+                    <imagesourceset
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Basic"
+                        sling:resourceType="granite/ui/components/foundation/section">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/well"
+                            margin="{Boolean}false"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <desktop
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldLabel="Desktop breakpoint image"
+                                        mimeTypes="[image]"
+                                        multiple="{Boolean}false"
+                                        name="./fileReference"
+                                        required="{Boolean}true"
+                                        rootPath="/content/dam/edc"/>
+                                    <tablet
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldLabel="Tablet breakpoint image"
+                                        mimeTypes="[image]"
+                                        multiple="{Boolean}false"
+                                        name="./tabletFileReference"
+                                        rootPath="/content/dam/edc"/>
+                                    <phone
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldLabel="Phone breakpoint image"
+                                        mimeTypes="[image]"
+                                        multiple="{Boolean}false"
+                                        name="./phoneFileReference"
+                                        rootPath="/content/dam/edc"/>
+                                    <alt
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Alternate text"
+                                        name="./alt"
+                                        wrapperClass="core-image-alt"/>
+                                    <lazyload
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                                        name="./lazyload"
+                                        value="false">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <true
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Enable lazy loading"
+                                                value="true"/>
+                                            <false
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Disable lazy loading"
+                                                value="false"/>
+                                        </items>
+                                    </lazyload>
+                                </items>
+                            </column>
+                        </items>
+                    </imagesourceset>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

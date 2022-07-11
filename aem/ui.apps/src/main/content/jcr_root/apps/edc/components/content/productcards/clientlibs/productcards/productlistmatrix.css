@@ -1,0 +1,198 @@
+.show-separator,
+.keyline,
+.separator {
+    border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+}
+
+/**paddings for content heading **/
+.spacing-content-headings, .product-matrix-list > div > header h2 {
+    margin: 16px 0;
+}
+
+@media (min-width: 960px) {
+    .spacing-content-headings, .product-matrix-list > div > header h2 {
+        margin: 32px 0;
+    }
+}
+
+.product-matrix-list {
+    background: #f6f6f6;
+    border: 1px solid #ebebeb;
+    display: inline-block;
+    padding-bottom: 64px;
+    padding-top: 64px;
+    box-sizing: border-box;
+}
+
+.product-matrix-list * {
+    box-sizing: border-box;
+}
+
+.product-matrix-list.single-card {
+    background: none;
+    border: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+    width: 100%;
+}
+
+.product-matrix-list.single-card .product-list {
+    margin-bottom: 40px;
+}
+
+.product-matrix-list.single-card .product-list .product-card {
+    width: auto;
+    max-width: 300px;
+}
+
+.product-matrix-list > div > header {
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    text-align: left;
+}
+
+@media (min-width: 1140px) {
+    .product-matrix-list > div > header {
+        width: 100%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.product-matrix-list .product-list {
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    margin-top: 40px;
+}
+
+@media (min-width: 960px) {
+    .product-matrix-list .product-list {
+        width: 100%;
+        float: left;
+    }
+}
+
+@media (min-width: 1140px) {
+    .product-matrix-list .product-list {
+        width: 100%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .product-list {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+    .product-matrix-list {
+        padding-bottom: 80px;
+        padding-top: 80px;
+    }
+    .product-matrix-list.single-card {
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+    .product-matrix-list.single-card .product-list .product-card {
+        width: auto;
+        max-width: 340px;
+    }
+    .product-matrix-list > div > header {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        text-align: center;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .product-matrix-list > div > header {
+        width: 66.66666667%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 720px) {
+    .product-matrix-list .product-list {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        float: none !important;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .product-matrix-list .product-list {
+        width: 100%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .product-matrix-list .product-list .product-card:last-child {
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .product-matrix-list > div > header {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        text-align: center;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .product-matrix-list > div > header {
+        width: 50%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 960px) {
+    .product-matrix-list .product-list {
+        flex-flow: nowrap;
+    }
+    .product-matrix-list .product-list .product-card {
+        margin-right: 30px;
+    }
+}
+
+@media (min-width: 1140px) {
+    .product-matrix-list.single-card .product-list .product-card {
+        width: auto;
+        max-width: 370px;
+    }
+    .product-matrix-list > div > header {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+    }
+}
+
+@media (min-width: 1140px) and (min-width: 1140px) {
+    .product-matrix-list > div > header {
+        width: 50%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

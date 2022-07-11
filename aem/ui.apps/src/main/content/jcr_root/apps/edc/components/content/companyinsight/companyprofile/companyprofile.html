@@ -1,0 +1,42 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty=!properties.backToSearch, emptyTextAppend='Component not configured'}"/>
+<sly data-sly-test.lang="${currentPage.language.language}"/>
+<!--/* Processing takes place on com.edc.edcportal */-->
+<sly data-sly-use.model="com.edc.edcportal.core.models.ci.CompanyProfile"/>
+<sly data-sly-test.sections="${model.sectionsMap}"/>
+<sly data-sly-test.sectionTitles="${model.sectionTitlesMap}"/>
+<sly data-sly-test.fieldLabels="${model.fieldLabelsMap}"/>
+<sly data-sly-test.sectionClasses="${model.sectionClassesMap}"/>
+<sly data-sly-test.sectionNullMap="${model.sectionNullMap}"/>
+<sly data-sly-test.data="${model.data}"/>
+
+<sly data-sly-use.sectionTemplate="templates.html"/>
+<sly data-sly-test.backPageUrl="/${lang}${data.searchPageNode}.html"/>
+
+<section data-sly-test="${properties.backToSearch}" class="c-company-insight-corporation full-width" data-event-component="corporation page" data-event-action="main body" data-engagement-type="1" data-event-level="1" data-back-url="${backPageUrl}">
+    <div class="background-section">
+        <div class="light-blue-section">
+            <div class="container">
+                <h1>${data.companyName ? data.companyName : '&nbsp;'}</h1>
+                <div class="grey-section">
+                   <div class="company-info" data-sly-list.section="${sections}">
+                        <sly data-sly-call="${sectionTemplate.section @ item = section, sections = sections, sectionClasses = sectionClasses, sectionTitles = sectionTitles, sectionNullMap= sectionNullMap, fieldLabels = fieldLabels, data = data}"/>
+                    </div>
+                    <div class="corp-disclaimer" data-sly-test="${properties.disclaimer}">
+                        ${properties.disclaimer @context='html'}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="corp-actions">
+            <div class="container">
+                <div class="main-actions">
+                    <a href="${backPageUrl}"  x-cq-linkchecker="skip" class="back-on-footer">${properties.backToSearch}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+document.title = document.title + " ${data.companyName @ context='scriptString'}"
+</script>

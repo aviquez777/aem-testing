@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <ab
+        jcr:primaryType="nt:unstructured"
+        enName="Alberta"
+        frName="Alberta"
+        canPostVal="AB"
+        value="AB" />
+    <bc
+        jcr:primaryType="nt:unstructured"
+        enName="British Columbia"
+        frName="Colombie-Britannique"
+        canPostVal="BC"
+        value="BC" />
+    <mb
+        jcr:primaryType="nt:unstructured"
+        enName="Manitoba"
+        frName="Manitoba"
+        canPostVal="MB"
+        value="MB" />
+    <nb
+        jcr:primaryType="nt:unstructured"
+        enName="New Brunswick"
+        frName="Nouveau-Brunswick"
+        canPostVal="NB"
+        value="NB" />
+    <nf
+        jcr:primaryType="nt:unstructured"
+        enName="Newfoundland and Labrador"
+        frName="Terre-Neuve-et-Labrador"
+        canPostVal="NL"
+        value="NF" />
+    <ns
+        jcr:primaryType="nt:unstructured"
+        enName="Nova Scotia"
+        frName="Nouvelle-Écosse"
+        canPostVal="NS"
+        value="NS" />
+    <nt
+        jcr:primaryType="nt:unstructured"
+        enName="Northwest Territories"
+        frName="Territoires du Nord-Ouest"
+        canPostVal="NT"
+        value="NT" />
+    <nu
+        jcr:primaryType="nt:unstructured"
+        enName="Nunavut"
+        frName="Nunavut"
+        canPostVal="NU"
+        value="NU" />
+    <on
+        jcr:primaryType="nt:unstructured"
+        enName="Ontario"
+        frName="Ontario"
+        canPostVal="ON"
+        value="ON" />
+    <pe
+        jcr:primaryType="nt:unstructured"
+        enName="Prince Edward Island"
+        frName="Île-du-Prince-Édouard"
+        canPostVal="PE"
+        value="PE" />
+    <pq
+        jcr:primaryType="nt:unstructured"
+        enName="Quebec"
+        frName="Québec"
+        canPostVal="QC"
+        value="PQ" />
+    <sk
+        jcr:primaryType="nt:unstructured"
+        enName="Saskatchewan"
+        frName="Saskatchewan"
+        canPostVal="SK"
+        value="SK" />
+    <yt
+        jcr:primaryType="nt:unstructured"
+        enName="Yukon"
+        frName="Yukon"
+        canPostVal="YT"
+        value="YT" />
+</jcr:root>

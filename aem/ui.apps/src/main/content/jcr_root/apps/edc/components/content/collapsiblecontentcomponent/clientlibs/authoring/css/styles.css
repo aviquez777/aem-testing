@@ -1,0 +1,9 @@
+.collapsible-content-dialog-wrapper div coral-alert {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+.collapsible-content-dialog-wrapper div coral-alert coral-alert-header {
+    margin-bottom: 1rem;
+}

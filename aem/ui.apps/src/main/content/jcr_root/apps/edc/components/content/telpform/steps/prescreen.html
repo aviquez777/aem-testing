@@ -1,0 +1,26 @@
+<template data-sly-template.prescreen="${@ properties, formLabels}">
+    <div class="bcap-pre-screen">
+        <h3 data-sly-test="${properties.preScreenTitle}" class="description-title">${properties.preScreenTitle}</h3>
+        <div data-sly-test="${properties.preScreenDesc}" class="description-content">
+           ${properties.preScreenDesc @ context = 'html'}
+        </div>
+        <h4  data-sly-test="${properties.ctasHelpText}">${properties.ctasHelpText}</h4>
+        <sly data-sly-use.ctaButtonsMF="${'com.edc.edcweb.core.helpers.MultifieldReaderHelper' @ multifield='preScreenCtaButtons'}"/>
+
+        <div class="bcap-versions" data-sly-list.ctaButton="${ctaButtonsMF.fields}">
+            <sly data-sly-test.version="${ctaButton.bcapVersion}"/>
+            <button type="button" data-version="${version}" data-dynamic-json="/bin/telpFormServlet${version == 'dyna' ? '.dyna.json' : ''}">
+                <span>${ctaButton.buttonLeadText}</span>
+                <span class="bcap-loan">${ctaButton.buttonAmoutText}</span>
+            </button>
+        </div>
+        <div class="bcap-disclaimer" data-sly-test="${properties.preScreenDesc2}">
+            ${properties.preScreenDesc2 @ context = 'html'}
+        </div>
+        <div class="bcap-actions">
+            <button type="button" class="button disabled" disabled="" data-event-type="button" data-event-name="button click– start form cta" data-english-text="${properties.nextButtonText ? properties.nextButtonText : formLabels.nextButton}" data-engagement-type="1" data-event-level="1" data-activate-questionnaire="true">
+                <span>${properties.nextButtonText ? properties.nextButtonText : formLabels.nextButton}</span>
+            </button>
+        </div>
+    </div>
+</template>

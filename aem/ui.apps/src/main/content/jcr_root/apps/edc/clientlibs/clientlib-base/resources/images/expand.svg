@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="11px" viewBox="0 0 20 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon / Expand</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M10,10.554794 C10.3822074,10.667195 10.8123491,10.5726229 11.1138943,10.2710777 L19.4768596,1.90811234 C19.9161896,1.46878232 19.9161896,0.756487615 19.4768596,0.317157593 L19.4768596,0.317157593 L19.4768596,0.317157593 C19.0375296,-0.122172429 18.3252349,-0.122172429 17.8859049,0.317157593 L10,8.20306246 L2.11409513,0.317157593 C1.67476511,-0.122172429 0.962470409,-0.122172429 0.523140387,0.317157593 L0.523140387,0.317157593 C0.0838103655,0.756487615 0.0838103655,1.46878232 0.523140387,1.90811234 L0.523140387,1.90811234 L8.88610575,10.2710777 C9.18765091,10.5726229 9.61779265,10.667195 10,10.554794 Z" id="path-1"></path>
+    </defs>
+    <g id="---Sprint-15" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Knowledge-Landing---Sentence-Complete-S15" transform="translate(-756.000000, -372.000000)">
+            <g id="Sentence-Builder" transform="translate(0.000000, 129.000000)">
+                <g transform="translate(366.000000, 148.000000)" id="Second-input">
+                    <g transform="translate(0.000000, 76.000000)">
+                        <g id="Group-2">
+                            <g id="First-input" transform="translate(168.000000, 0.000000)">
+                                <g id="Icon-/-Expand" transform="translate(208.000000, 0.000000)">
+                                    <g id="Expand---Alt" transform="translate(14.000000, 19.000000)">
+                                        <mask id="mask-2" fill="white">
+                                            <use xlink:href="#path-1"></use>
+                                        </mask>
+                                        <use id="Mask" fill="#004A6B" xlink:href="#path-1"></use>
+                                        <g id="Fill-/-EDC-Light-Blue" mask="url(#mask-2)">
+                                            <g transform="translate(-14.000000, -19.000000)" id="Fill-/-Light-Blue">
+                                                <g>
+                                                    <rect id="EDcC-Blue" fill="#4386AC" x="0" y="0" width="48" height="48"></rect>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

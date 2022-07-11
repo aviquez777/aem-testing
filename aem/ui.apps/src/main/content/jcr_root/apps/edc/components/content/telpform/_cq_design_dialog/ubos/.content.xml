@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <ubo jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="i.e. How many Ultimate Beneficial Owners?"
+                fieldLabel="Label for Ultimate Beneficial Owners (UBO)"
+                required="{Boolean}true"
+                name="./ubo"/>
+            <uboPh jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Text for Please select on UBO Dropdown Placeholder"
+                required="{Boolean}true"
+                fieldLabel="UBO Dropdown Placeholder"
+                name="./uboPh"/>
+            <ubos jcr:primaryType="nt:unstructured"
+                 sling:resourceType="granite/ui/components/coral/foundation/form/multifield" 
+                 fieldDescription="Click '+' to add a new ubo" 
+                 fieldLabel="Number of UBOS" 
+                 composite="{Boolean}true"
+                 required="{Boolean}true"> 
+                 <field jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container" 
+                         name="./ubos"> 
+                     <items jcr:primaryType="nt:unstructured">
+                         <uboValue jcr:primaryType="nt:unstructured"
+                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield" 
+                             fieldLabel="Ultimate Beneficial Owners #"
+                             fieldDescription="Ultimate Beneficial Owners Value"
+                             required="{Boolean}true"
+                             name="./uboValue" />
+                     </items> 
+                 </field> 
+            </ubos>
+           <uboRowTitle jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Subheader Text (without the row number)"
+                required="{Boolean}true"
+                fieldLabel="Subheader Text (Row Title)"
+                name="./uboRowTitle" />
+            <uboFirstName jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Label for UBO First Name"
+                fieldLabel="Label for UBO First Name"
+                required="{Boolean}true"
+                name="./uboFirstName"/>
+            <uboLastName jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Label for UBO Last Name"
+                fieldLabel="Label for UBO Last Name"
+                required="{Boolean}true"
+                name="./uboLastName"/>
+            <uboCountry jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Label for UBO Country of residence"
+                fieldLabel="Label for UBO Country of residence"
+                required="{Boolean}true"
+                name="./uboCountry"/>
+             <uboCountryPh jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="laceholder for UBO Country  Dropdown i.e. --Select--'"
+                fieldLabel="Placeholder for UBO Country  Dropdown"
+                required="{Boolean}true"
+                name="./uboCountryPh"/>
+        </items>
+    </content>
+</jcr:root>

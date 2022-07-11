@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+    getAPIUrl="https://api.onlinexperiences.com/scripts/Server.nxp?LASCmd=" 
+    getLASCmd="AI:4;F:APIUTILS!50500"
+    getStudioShowRegistrationLASCmd="AI:4;F:APIUTILS!50569"
+    getAPIUserAuthCode="hePre6ric9plKok8qeclbenaFajltr"
+    getAPIUserCredentials ="DanA6LBrlguXUkove04tHltheCrEJL"
+    getShowBaseUrl="https://onlinexperiences.com/Launch/Event/ShowKey="/> 

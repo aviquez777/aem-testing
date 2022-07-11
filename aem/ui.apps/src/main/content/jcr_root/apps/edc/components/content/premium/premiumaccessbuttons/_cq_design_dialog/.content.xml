@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+      jcr:primaryType="nt:unstructured"
+      jcr:title="Premium Access Buttons"
+      sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+        margin="{Boolean}false">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                        fieldLabel="Title"
+                        name="./title"
+                        useFixedInlineToolbar="{Boolean}true"
+                        required="{Boolean}true"/>
+                    <description
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                        fieldLabel="Description"
+                        name="./description"
+                        useFixedInlineToolbar="{Boolean}true"
+                        required="{Boolean}true">
+                        <rtePlugins jcr:primaryType="nt:unstructured">
+                            <format
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <lists
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <links
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                        </rtePlugins>
+                        <uiSettings jcr:primaryType="nt:unstructured">
+                            <cui jcr:primaryType="nt:unstructured">
+                                <inline
+                                    jcr:primaryType="nt:unstructured"
+                                    toolbar="[format#bold,format#italic,format#underline,#lists,links#modifylink,links#unlink,links#anchor]">
+                                    <popovers jcr:primaryType="nt:unstructured">
+                                        <lists
+                                            jcr:primaryType="nt:unstructured"
+                                            items="[lists#unordered,lists#ordered,lists#outdent,lists#indent]"
+                                            ref="lists"/>
+                                    </popovers>
+                                </inline>
+                            </cui>
+                        </uiSettings>
+                    </description>
+                    <register
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Register CTA text"
+                        name="./register"
+                        required="{Boolean}true"/>
+                    <login
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Login text"
+                        fieldDescription="Text that goes before de login link"
+                        name="./login"
+                        required="{Boolean}true"/>
+                    <loginLink
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Login link text"
+                        fieldDescription="Text for the login link"
+                        name="./loginLink"
+                        required="{Boolean}true"/>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

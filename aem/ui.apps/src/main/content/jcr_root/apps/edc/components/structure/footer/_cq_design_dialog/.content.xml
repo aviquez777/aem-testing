@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Footer"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <links
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Links Section"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                    margin="{Boolean}false"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <lefttitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Heading text for left section of the footer"
+                                fieldLabel="Left section title"
+                                name="./lefttitle"/>
+                            <leftlinks
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <multi
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                        composite="{Boolean}true"
+                                        fieldLabel="Left side links">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                            name="./leftlinks">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <column
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <text
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Link text"
+                                                            name="./linktext"
+                                                            required="{Boolean}false"/>
+                                                        <url
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                            fieldLabel="Link url"
+                                                            name="./linkurl"
+                                                            required="{Boolean}false"
+                                                            rootPath="/content/edc"/>
+                                                        <target
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                            fieldDescription="Specify whether to open this link in a new or existing window"
+                                                            fieldLabel="Link target"
+                                                            name="./linktarget">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <existing
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="Existing window"
+                                                                    value="_self"/>
+                                                                <new
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="New window"
+                                                                    value="_blank"/>
+                                                            </items>
+                                                        </target>
+                                                    </items>
+                                                </column>
+                                            </items>
+                                        </field>
+                                    </multi>
+                                </items>
+                            </leftlinks>
+                            <centertitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Heading text for left section of the footer"
+                                fieldLabel="Center section title"
+                                name="./centertitle"/>
+                            <centerlinks
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <multi
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                        composite="{Boolean}true"
+                                        fieldLabel="Center links">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                            name="./centerlinks">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <column
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <text
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Link text"
+                                                            name="./linktext"
+                                                            required="{Boolean}false"/>
+                                                        <url
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                            fieldLabel="Link url"
+                                                            name="./linkurl"
+                                                            required="{Boolean}false"
+                                                            rootPath="/content/edc"/>
+                                                        <target
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                            fieldDescription="Specify whether to open this link in a new or existing window"
+                                                            fieldLabel="Link target"
+                                                            name="./linktarget">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <existing
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="Existing window"
+                                                                    value="_self"/>
+                                                                <new
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="New window"
+                                                                    value="_blank"/>
+                                                            </items>
+                                                        </target>
+                                                    </items>
+                                                </column>
+                                            </items>
+                                        </field>
+                                    </multi>
+                                </items>
+                            </centerlinks>
+                            <righttitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Heading text for right section of the footer"
+                                fieldLabel="Right section title"
+                                name="./righttitle"/>
+                            <rightlinks
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <multi
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                        composite="{Boolean}true"
+                                        fieldLabel="Right side links">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                            name="./rightlinks">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <column
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <text
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Link text"
+                                                            name="./linktext"
+                                                            required="{Boolean}false"/>
+                                                        <url
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                            fieldLabel="Link url"
+                                                            name="./linkurl"
+                                                            required="{Boolean}false"
+                                                            rootPath="/content/edc"/>
+                                                        <target
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                            fieldDescription="Specify whether to open this link in a new or existing window"
+                                                            fieldLabel="Link target"
+                                                            name="./linktarget">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <existing
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="Existing window"
+                                                                    value="_self"/>
+                                                                <new
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="New window"
+                                                                    value="_blank"/>
+                                                            </items>
+                                                        </target>
+                                                    </items>
+                                                </column>
+                                            </items>
+                                        </field>
+                                    </multi>
+                                </items>
+                            </rightlinks>
+                        </items>
+                    </column>
+                </items>
+            </links>
+            <contact
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Contact Section"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                    margin="{Boolean}false"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <contacttitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Heading text for Contact section"
+                                fieldLabel="Contact section title"
+                                name="./contacttitle"/>
+                            <phonenumber
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Telephone number"
+                                name="./phonenumber"/>
+                            <phonelabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Telephone label"
+                                name="./phonelabel"/>
+                            <links
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <multi
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                        composite="{Boolean}true"
+                                        fieldLabel="Contact section links">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                            name="./contactlinks">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <column
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <text
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Link text"
+                                                            name="./linktext"
+                                                            required="{Boolean}false"/>
+                                                        <url
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                            fieldLabel="Link url"
+                                                            name="./linkurl"
+                                                            required="{Boolean}false"
+                                                            rootPath="/content/edc"/>
+                                                        <target
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                            fieldDescription="Specify whether to open this link in a new or existing window"
+                                                            fieldLabel="Link target"
+                                                            name="./linktarget">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <existing
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="Existing window"
+                                                                    value="_self"/>
+                                                                <new
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="New window"
+                                                                    value="_blank"/>
+                                                            </items>
+                                                        </target>
+                                                    </items>
+                                                </column>
+                                            </items>
+                                        </field>
+                                    </multi>
+                                </items>
+                            </links>
+                            <socialtitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Heading text for social network section"
+                                fieldLabel="Social section title"
+                                name="./socialtitle"/>
+                            <sociallinks
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <multi
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                        composite="{Boolean}true"
+                                        fieldLabel="Social network links">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                            name="./sociallinks">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <column
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <text
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Link text"
+                                                            name="./linktext"
+                                                            required="{Boolean}false"/>
+                                                        <url
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                            fieldLabel="Link url"
+                                                            name="./linkurl"
+                                                            required="{Boolean}false"
+                                                            rootPath="/content/edc"/>
+                                                        <target
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                            fieldDescription="Specify whether to open this link in a new or existing window"
+                                                            fieldLabel="Link target"
+                                                            name="./linktarget">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <existing
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="Existing window"
+                                                                    value="_self"/>
+                                                                <new
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="New window"
+                                                                    value="_blank"/>
+                                                            </items>
+                                                        </target>
+                                                    </items>
+                                                </column>
+                                            </items>
+                                        </field>
+                                    </multi>
+                                </items>
+                            </sociallinks>
+                        </items>
+                    </column>
+                </items>
+            </contact>
+            <bottom
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Bottom Section"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                    margin="{Boolean}false"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <edclogo
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <heading
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/text"
+                                        class="coral-Form-fieldlabel"
+                                        text="EDC logo"/>
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <edctarget
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldDescription="Determines if the link will open in the current or new window. "
+                                                fieldLabel="Target"
+                                                name="./edclogotarget"
+                                                required="{Boolean}true">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <new
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="New window"
+                                                        value="_blank"/>
+                                                    <existing
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Existing window"
+                                                        value="_self"/>
+                                                </items>
+                                            </edctarget>
+                                            <edclogo
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldDescription="The EDC logo shown in the footer component."
+                                                fieldLabel="Logo image file"
+                                                mimeTypes="[image]"
+                                                multiple="{Boolean}false"
+                                                name="./edclogo"
+                                                rootPath="/content/dam/edc"/>
+                                            <edclogo2x
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldDescription="The EDC logo 2x shown in the footer component."
+                                                fieldLabel="Logo image 2x file"
+                                                mimeTypes="[image]"
+                                                multiple="{Boolean}false"
+                                                name="./edclogo2x"
+                                                rootPath="/content/dam/edc"/>
+                                            <edcalttext
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Alternate text"
+                                                name="./edcalttext"
+                                                wrapperClass="core-image-alt"/>
+                                            <edctargeturl
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldDescription="The URL visitors will be directed to after clicking the EDC footer logo"
+                                                fieldLabel="Url"
+                                                name="./edclogourl"
+                                                required="{Boolean}false"
+                                                rootPath="/content/edc"/>
+                                        </items>
+                                    </well>
+                                </items>
+                            </edclogo>
+                            <canadalogo
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <heading
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/text"
+                                        class="coral-Form-fieldlabel"
+                                        text="Canada logo"/>
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <canadatarget
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldDescription="Determines if the link will open in the current or new window. "
+                                                fieldLabel="Target"
+                                                name="./canadalogotarget"
+                                                required="{Boolean}true">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <new
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="New window"
+                                                        value="_blank"/>
+                                                    <existing
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Existing window"
+                                                        value="_self"/>
+                                                </items>
+                                            </canadatarget>
+                                            <canadalogo
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldDescription="The Government of Canada logo shown in the footer component."
+                                                fieldLabel="Logo image file"
+                                                mimeTypes="[image]"
+                                                multiple="{Boolean}false"
+                                                name="./canadalogo"
+                                                rootPath="/content/dam/edc"/>
+                                            <canadalogo2x
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldDescription="The Government of Canada logo 2x shown in the footer component."
+                                                fieldLabel="Logo image 2x file"
+                                                mimeTypes="[image]"
+                                                multiple="{Boolean}false"
+                                                name="./canadalogo2x"
+                                                rootPath="/content/dam/edc"/>
+                                            <canadaalttext
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Alternate text"
+                                                name="./canadaalttext"
+                                                wrapperClass="core-image-alt"/>
+                                            <canadalogourl
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldDescription="The URL visitors will be directed to after clicking the Canada footer logo"
+                                                fieldLabel="Url"
+                                                name="./canadalogourl"
+                                                required="{Boolean}false"
+                                                rootPath="/content/edc"/>
+                                        </items>
+                                    </well>
+                                </items>
+                            </canadalogo>
+                            <links
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <multi
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                        composite="{Boolean}true"
+                                        fieldLabel="Bottom links">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                            name="./bottomlinks">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <column
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <text
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Link text"
+                                                            name="./linktext"
+                                                            required="{Boolean}false"/>
+                                                        <url
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                            fieldLabel="Link url"
+                                                            name="./linkurl"
+                                                            required="{Boolean}false"
+                                                            rootPath="/content/edc"/>
+                                                        <target
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                            fieldDescription="Specify whether to open this link in a new or existing window"
+                                                            fieldLabel="Link target"
+                                                            name="./linktarget">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <existing
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="Existing window"
+                                                                    value="_self"/>
+                                                                <new
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="New window"
+                                                                    value="_blank"/>
+                                                            </items>
+                                                        </target>
+                                                    </items>
+                                                </column>
+                                            </items>
+                                        </field>
+                                    </multi>
+                                </items>
+                            </links>
+                        </items>
+                    </column>
+                </items>
+            </bottom>
+            <address
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Address Section"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                    margin="{Boolean}false"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <addressoffice
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <heading
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/text"
+                                        class="coral-Form-fieldlabel"
+                                        text="EDC Address"/>
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <companyname
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="The company name"
+                                                fieldLabel="Company name"
+                                                name="./companyname"/>
+                                            <edcaddress
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="The office address"
+                                                fieldLabel="Office address"
+                                                name="./edcaddress"/>
+                                        </items>
+                                    </well>
+                                </items>
+                            </addressoffice>
+                        </items>
+                    </column>
+                </items>
+            </address>
+            <accessibility
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Accessibility Section"
+                    sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                        margin="{Boolean}false"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <arialabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Footer section nav tag aria label"
+                                fieldLabel="Footer section nav tag aria label"
+                                required="true"
+                                name="./arialabel"/>
+                        </items>
+                    </column>
+                </items>
+            </accessibility>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,43 @@
+<template data-sly-template.spiffive="${@ form, properties, uuid, messages}">
+    <sly data-sly-use.dropdownTemplates="${'/apps/edc/components/common/dropdown.html'}" />
+
+    <!--/* Annual sales LOVs */-->
+    <sly data-sly-use.ds="${'com.edc.edcweb.core.models.FormCommonObjects' @ path ='/apps/edc/settings/wcm/designs/edc-data/annualSales'}"> </sly>
+    <sly data-sly-test.annualSales="${ds.optionsFromDataSourcePath}" > </sly>
+
+    <!--/* Shipment ranges LOVs */-->
+    <sly data-sly-use.ds="${'com.edc.edcweb.core.models.FormCommonObjects' @ path ='/apps/edc/settings/wcm/designs/edc-data/shipmentRange'}"> </sly>
+    <sly data-sly-test.shipmentRange="${ds.optionsFromDataSourcePath}" > </sly>
+
+    <div class="level level-5 hide">
+        <h2 class="title">
+            <span class="title-color">${properties.step5bluetitle}</span> ${properties.step5title}
+        </h2>
+        <p data-sly-test="${properties.step5description}" class="description">${properties.step5description}</p>
+        <div data-form-field="ineligibleSize" class="form-group">
+            <sly data-sly-call="${dropdownTemplates.dropdown @ name='ineligibleSize', uuid=uuid, label=properties.inelegibleclientannualsalesLabel,
+                 secondarylabel=properties.inelegibleclientannualsalesSecondaryLabel, placeholder=properties.inelegibleclientannualsalesHelp,
+                 required=false, nourl=true, invaliderror=messages.formErrorMessages.format, options=annualSales}">
+            </sly>
+        </div>
+        <div data-form-field="ineligibleIndustry" class="form-group">
+            <sly data-sly-call="${dropdownTemplates.dropdown @ dropdowntype='multiple', name='ineligibleIndustry', uuid=uuid, label=properties.inelegibleclientindustriesLabel,
+                 placeholder=properties.inelegibleclientindustriesHelp,
+                 required=false, nourl=true, buttontext=properties.inelegibleclientindustriesConfirm, clearalltext=properties.inelegibleclientindustriesClear,
+                 singulartext=properties.inelegibleclientindustriesSingular, pluraltext=properties.inelegibleclientindustriesPlural,
+                 invaliderror=messages.formErrorMessages.format, options=form.industryitems}">
+            </sly>
+        </div>
+        <div data-form-field="ineligibleShipments" class="form-group">
+            <sly data-sly-call="${dropdownTemplates.dropdown @ name='ineligibleShipments', uuid=uuid, label=properties.inelegibleclientshipmentLabel,
+                placeholder=properties.inelegibleclientshipmentHelp, required=false, nourl=true,
+                invaliderror=messages.formErrorMessages.format, options=shipmentRange}">
+            </sly>
+        </div>
+        <div data-form-field="ineligibleOther" class="form-group">
+            <label for="ineligibleOther-${uuid}">${properties.inelegibleclientotherLabel}</label>
+            <input type="text" id="ineligibleOther-${uuid}" class="form-control" name="ineligibleOther" data-no-url="true" placeholder="${properties.inelegibleclientotherHelp}" validation-rule="none" />
+            <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+        </div>
+    </div>
+</template>

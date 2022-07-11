@@ -1,0 +1,67 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.model="com.edc.edcweb.core.models.FeaturedEdcThoughtLead" />
+<sly data-sly-call="${templates.placeholder @ isEmpty = !model}"/>
+
+<sly data-sly-test.cardList="${model.cardList}"/>
+<sly data-sly-test.showdate="${model.showdate}"/>
+
+<sly data-sly-test="${!cardList}">
+    <sly data-sly-call="${templates.placeholder @ isEmpty = !cardList, emptyTextAppend='No enough pages to display'}"/>
+</sly>
+
+<sly data-sly-test.locale="${currentPage.language.language}"/>
+<sly data-sly-test.dateformat="${ locale == 'fr' ? 'dd MMMM yyyy' : 'MMMM dd, yyyy'}"/>
+
+
+<section data-sly-test="${cardList}" class="featured-edc-thought-leadership" data-event-component="Featured EDC Thought Leadership">
+    <sly data-sly-use.commonTemplates="${'/apps/edc/components/common/templates.html'}" />
+    <h2 data-sly-test="${properties.feattitle}" class="title-featured">${properties.feattitle}</h2>
+    <div class="content-info">
+        <sly data-sly-list="${cardList}">
+            <sly data-sly-test="${itemList.index == 0}">
+                <sly data-sly-use.itemBlock="premiumcard.html"
+                     data-sly-call="${itemBlock.item @ card=item, class='content-premium', action='featured 1', commonTemplates=commonTemplates}"/>
+            </sly>
+            <sly data-sly-test="${itemList.index == 1}">
+                <sly data-sly-use.itemBlock="premiumcard.html"
+                     data-sly-call="${itemBlock.item @ card=item, class='content-articles', action='featured 2', commonTemplates=commonTemplates}"/>
+            </sly>
+            <sly data-sly-test="${itemList.index == 2}">
+                <sly data-sly-use.itemBlock="premiumcard.html"
+                     data-sly-call="${itemBlock.item @ card=item, class='content-articles', action='featured 3', commonTemplates=commonTemplates}"/>
+            </sly>
+        </sly>
+    </div>
+    <!--/* Non-premium (Right) List */-->
+    <div class="content-recent-articles">
+        <h4 class="title-recent">${properties.rightlisttitle}</h4>
+        <sly data-sly-list="${cardList}">
+            <sly data-sly-test="${(itemList.index != 0) && (itemList.index != 1) && (itemList.index != 2)}">
+                <sly data-sly-use.itemBlock="rightlist.html"
+                     data-sly-call="${itemBlock.item @ card=item, index=itemList.count, dateformat=dateformat, showdate=showdate, commonTemplates=commonTemplates}"/>
+            </sly>
+            <div data-sly-test="${rightList}" class="content-recent-articles">
+                <h4 class="title-recent" data-sly-test.rightlisttitle="${properties.rightlisttitle}">${rightlisttitle}</h4>
+                <sly data-sly-list="${rightList}">
+                    <sly data-sly-use.itemPage="${'com.edc.edcweb.core.models.ArticlePage' @ page = item}"/>
+                    <a data-sly-use.urlRes="${'com.edc.edcweb.core.models.PageModelHelper' @ path=item.path}" href="${urlRes.url}" class="content-articles" data-event-action="latest articles ${itemList.count}" data-event-type="link" data-event-level="secondary" data-event-name="link click" data-event-engagement="1">
+                        <div class="card-img ${item.properties['imagealignment']}">
+                            <img src="${item.properties['teaserimage']}" alt="${item.properties['imagealttext']}"/>
+                        </div>
+                        <div class="card-content">
+                            <div class="tag-section">
+                                <div class="tag-text">
+                                    <span class="tag-color ${itemPage.contentTypeClassName}"></span>
+                                    <span class="tag-title">${itemPage.contentTypeTitle}</span>
+                                </div>
+                                <p data-sly-use.pageDate="${'com.edc.edcweb.core.models.PageModelHelper' @ page=item, authorOverride=true}">${dateformat @ format=pageDate.date, locale=locale}</p>
+                            </div>
+                            <h4 class="title article">${item.pageTitle || item.title || item.name}</h4>
+                        </div>
+                    </a>
+                </sly>
+            </div>
+        </sly>
+    </div>
+    <a data-sly-test="${properties.bottomlinktext && properties.bottomlink}" class="see-more" data-sly-use.urlRes="${'com.edc.edcweb.core.models.PageModelHelper' @ path = properties.bottomlink}" href="${urlRes.url}">${properties.bottomlinktext}</a>
+</section>

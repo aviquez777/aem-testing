@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+  xmlns:cq="http://www.day.com/jcr/cq/1.0"
+  xmlns:jcr="http://www.jcp.org/jcr/1.0"
+  xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+  jcr:primaryType="nt:unstructured" jcr:title="Case Studies"
+  sling:resourceType="cq/gui/components/authoring/dialog">
+  <content jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+    margin="{Boolean}false">
+    <items jcr:primaryType="nt:unstructured">
+      <column jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+          <general jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+            <items jcr:primaryType="nt:unstructured">
+              <heading jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/text"
+                class="coral-Form-fieldlabel"
+                text="General" />
+              <well jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <layout jcr:primaryType="nt:unstructured"
+                  sling:resourceType="granite/ui/components/coral/foundation/layouts/well" />
+                <items jcr:primaryType="nt:unstructured">
+                  <title jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    fieldDescription="Optional title for the component"
+                    fieldLabel="Title"
+                    name="./title" />
+                  <anchorID jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    fieldDescription="Anchor link from the page banner component (use letters and numbers only)"
+                    fieldLabel="Anchor Id"
+                    name="./anchorId" />
+                </items>
+              </well>
+              <!-- change the text and the multifield-limit-min:3-max:3 as necessary -->
+              <slides
+                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                fieldDescription="Click '+' to add a new slide"
+                fieldLabel="There must be 3 case studies:"
+                jcr:primaryType="nt:unstructured"
+                composite="{Boolean}true" 
+                validation="multifield-limit-min:3-max:3">
+                <field
+                  sling:resourceType="granite/ui/components/coral/foundation/container"
+                  jcr:primaryType="nt:unstructured"
+                  name="./slides">
+                  <items jcr:primaryType="nt:unstructured">
+                    <slide jcr:primaryType="nt:unstructured"
+                      sling:resourceType="granite/ui/components/coral/foundation/include"
+                      path="edc/components/content/casestudies/cq:dialog/slide/content" />
+                    <expanded jcr:primaryType="nt:unstructured"
+                      sling:resourceType="granite/ui/components/coral/foundation/include"
+                      path="edc/components/content/casestudies/cq:dialog/expanded/content" />
+                  </items>
+                </field>
+              </slides>
+            </items>
+          </general>
+        </items>
+      </column>
+    </items>
+  </content>
+</jcr:root>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <option1
+        jcr:primaryType="nt:unstructured"
+        enName="Bank of Montreal"
+        frName="Banque de Montréal"
+        value="Bank of Montreal"/>
+    <option2
+        jcr:primaryType="nt:unstructured"
+        enName="BNP Paribas, Canada Branch"
+        frName="BNP Paribas, Canada Branch"
+        value="BNP Paribas, Canada Branch"/>
+    <option3
+        jcr:primaryType="nt:unstructured"
+        enName="BNP Paribas (Canada)"
+        frName="BNP Paribas (Canada)"
+        value="BNP Paribas (Canada)"/>
+    <option4
+        jcr:primaryType="nt:unstructured"
+        enName="CIBC"
+        frName="CIBC"
+        value="CIBC"/>
+    <option5
+        jcr:primaryType="nt:unstructured"
+        enName="Desjardins"
+        frName="Desjardins"
+        value="Desjardins"/>
+    <option6
+        jcr:primaryType="nt:unstructured"
+        enName="HSBC Bank Canada"
+        frName="Banque HSBC Canada"
+        value="HSBC Bank Canada"/>
+    <option7
+        jcr:primaryType="nt:unstructured"
+        enName="Laurentian Bank"
+        frName="Banque Laurentienne"
+        value="Laurentian Bank"/>
+    <option8
+        jcr:primaryType="nt:unstructured"
+        enName="National Bank of Canada"
+        frName="Banque Nationale du Canada"
+        value="National Bank of Canada"/>
+    <option9
+        jcr:primaryType="nt:unstructured"
+        enName="RBC"
+        frName="RBC"
+        value="RBC"/>
+    <option10
+        jcr:primaryType="nt:unstructured"
+        enName="Scotia Bank"
+        frName="Banque Scotia"
+        value="Scotia Bank"/>
+    <option11
+        jcr:primaryType="nt:unstructured"
+        enName="TD Bank"
+        frName="TD Bank"
+        value="TD Bank"/>
+    <option12
+        jcr:primaryType="nt:unstructured"
+        enName="TD Canada Trust"
+        frName="TD Canada Trust"
+        value="TD Canada Trust"/>
+    <option13
+        jcr:primaryType="nt:unstructured"
+        enName="TD Securities"
+        frName="Valeurs Mobilières TD"
+        value="TD Securities"/>
+    <option14
+        jcr:primaryType="nt:unstructured"
+        enName="Other"
+        frName="Autre"
+        value="Other"/>
+</jcr:root>

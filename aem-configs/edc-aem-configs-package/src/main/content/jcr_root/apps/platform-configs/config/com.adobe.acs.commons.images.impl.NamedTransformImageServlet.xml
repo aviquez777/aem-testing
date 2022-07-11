@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+    prop.asset-rendition-picker-regex="cq5dam\\.web\\.(.*)"
+    sling.servlet.resourceTypes="[dam/Asset]"
+    acs.commons.namedimage.filename.pattern="(image|img)\\.(.+)"/>
+    <!-- Original resource type list, limit to the ones we use -->
+    <!-- nt/file,nt/resource,dam/Asset,cq/Page,cq/PageContent,nt/unstructured,foundation/components/image,foundation/components/parbase,foundation/components/page -->

@@ -1,0 +1,40 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.policyReader="com.edc.edcweb.core.models.PolicyReader" />
+<sly data-sly-call="${templates.placeholder @ isEmpty=!policyReader.policy, emptyTextAppend='Component has no policy'}"/>
+<sly data-sly-test="${policyReader.policy}">
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+<!--/* This Processing takes place on com.edc.edcportal */-->
+<sly data-sly-use.model="com.edc.edcportal.core.models.ci.SearchBar"/>
+<form class="c-company-insight-search-bar" data-json-url="${model.countryJsonUrl}"action="${model.servletUrl}" method="POST">
+    <div class="inputs">
+        <div class="search-criteria" data-directions-text="${policyReader.labels['directionsText']}">
+            <label for="search-company-${uuid}">${policyReader.labels['companyLabel']}</label>
+            <input autocomplete="off" value="${model.name}" type="text" id="search-company-${uuid}" name="name" class="search-input" placeholder="${policyReader.labels['companyPlaceholder']}" data-min-length="3" data-max-length="150"  maxlength="150" validation-rule="open"/>
+            <span class="error" data-length-min-message="${policyReader.labels['minLengthError']}" data-length-max-message="${policyReader.labels['maxLengthError']}"></span>
+        </div>
+        <div class="search-box" data-directions-text="${policyReader.labels['directionsText']}">
+            <label for="search-country-${uuid}">${policyReader.labels['countryLabel']}</label>
+            <div class="search-container">
+                <input name="countryLabel" autocomplete="off" value="" data-code="${model.country}" type="text" id="search-country-${uuid}" class="search-input country" placeholder="${policyReader.labels['countryPlaceholder']}" aria-label="${policyReader.labels['countryPlaceholder']}" aria-owns="search-results" aria-controls="sr-announce"/>
+                <div class="close-btn"></div>
+                <div class="divider">
+                    <span></span>
+                </div>
+                <div id="search-results" class="search-results" aria-hidden="true">
+                    <ul role="listbox" aria-label="${policyReader.labels['ariaSearchResultLabel']}" aria-selected="false" data-not-found-message="${policyReader.labels['notFoundMsg']}"></ul>
+                </div>
+                <div id="sr-announce" aria-live="polite" class="sr-only"></div>
+            </div>
+            <input type="hidden" name="country" value="${model.country}" />
+            <input type="hidden" name="language" />
+        </div>
+    </div>
+    <div class="actions">
+        <sly data-sly-test.isDisabled="${(model.name && model.country) ? '' : 'disabled'}"/>
+        <button type="submit" disabled="${isDisabled}" class="button search-btn ${isDisabled}" aria-label="${policyReader.labels['countryPlaceholder']}">
+            <span>${policyReader.labels['searchBtnText']}</span>
+        </button>
+    </div>
+</form>
+</sly>

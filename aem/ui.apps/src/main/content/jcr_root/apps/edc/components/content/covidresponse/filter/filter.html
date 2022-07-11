@@ -1,0 +1,77 @@
+<sly data-sly-use.model="${'com.edc.edcweb.core.models.covidresponse.Filter'}"/>
+<sly data-sly-test.filterTags="${model.filterTags}"/>
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-test.hasvalues="${properties.introText &&  properties.btnClear}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !hasvalues}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !(filterTags.size > 0), emptyTextAppend = 'No tags defined'}"/>
+<sly data-sly-test.analyticsName="${properties.analyticsName ? properties.analyticsName : 'Filter'}"/>
+<sly data-sly-use.buttonTemplate="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+
+<section data-sly-test="${hasvalues}" class="c-covid-response-page-filter" aria-label="${analyticsName}" data-event-component="${analyticsName}" data-event-type="Category Filter" data-event-name="Category Filter" data-event-engagement="1" data-event-action="main body" data-event-level="1">
+    <sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+    <sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+    <sly data-sly-test.titleTags="${model.titleTags}"/>
+    <sly data-sly-test.enTitleTags="${model.enTitleTags}"/>
+    <section class="cards-filters" role="search" aria-labelledby="cards-filter-${uuid}">
+        <div class="filter-title">
+            ${properties.introText @context = 'html'}
+            <button class="edc-btn-icon close-button" aria-label="${properties.btnClose}">
+                <span></span>
+            </button>
+        </div>
+        <div class="filter-criteria" data-sly-list.l1="${filterTags}">
+            <sly data-sly-test.dataName="category-${l1List.count}"/>
+            <section class="card-filter" data-name="${dataName}" aria-expanded="true" aria-labelledby="${dataName}-${uuid}">
+                <div class="filter-title">
+                    <h3 id="category-${uuid}" class="title" tabindex="0">${titleTags[l1]}</h3>
+                    <button class="edc-btn-icon chevron" aria-label="${properties.hideOptions}" data-hide="${properties.hideOptions}" data-show="${properties.showOptions}">
+                        <span></span>
+                    </button>
+                </div>
+                <ul class="filters" data-sly-list.l2="${filterTags[l1]}">
+                    <li class="filter">
+                        <sly data-sly-test.l2Id="${dataName}-filter-${l2List.count}"/>
+                        <input type="checkbox" id="${l2Id}" class="filter-option" data-english-name="${enTitleTags[l2]}" data-value="${titleTags[l2]}" value="${l2}" />
+                        <label for="${l2Id}">${titleTags[l2]}</label>
+                        <ul data-sly-list.l3="${filterTags[l1][l2]}" class="subfilters ${wcmmode.disabled ? 'hide' : ''}">
+                        <sly data-sly-test.l3Id="${l2id}-subfilter-${l2List.count}"/>
+                            <li class="subfilter">
+                                <input type="checkbox" id="${l3Id}" class="filter-option" data-english-name="${enTitleTags[l3]}" data-value="${titleTags[l3]}" value="${l3}" />
+                                <label for="${l3Id}">${titleTags[l3]}</label>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <div class="filter-footer">
+            <div class="button-option">
+                <div data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled', buttontext=properties.btnClear, buttoncssclasses='clear-filter', btntype='button'}"  data-sly-unwrap></div>
+            </div>
+            <div class="button-option">
+                <div data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='disabled', buttontext=properties.btnApply, buttoncssclasses='apply-filter', btntype='button'}"  data-sly-unwrap></div>
+            </div>
+        </div>
+    </section>
+    <section class="filter-data" aria-label="${properties.filterDataTitle}">
+        <div data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled', buttontext=properties.btnFilter, buttoncssclasses='show-filters', btntype='button'}"  data-sly-unwrap></div>
+        <div class="filter-tags hide" data-close-label="${properties.filterDataCloseLabel}">
+            <ul>
+                <li class="clear">
+                    <div data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled', buttontext=properties.btnClear, buttoncssclasses='clear-tag', btntype='button'}"  data-sly-unwrap></div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="cards-info" aria-live="polite" aria-label="${properties.searchResultsAria}">
+        <div class="cards-list">
+             <sly data-sly-resource="${'cards' @ resourceType='edc/components/content/covidresponse/filtercontainer', decorationTagName='div', cssClassName='cards-page'}"/>
+        </div>
+        <div class="no-match hide" data-no-results="no results found">
+            <h2 class="no-match-title">${properties.noMatchTitle}</h2>
+            <div class="no-match-info">
+                ${properties.noMatchInfo @ context='html'}
+            </div>
+        </div>
+    </section>
+</section>

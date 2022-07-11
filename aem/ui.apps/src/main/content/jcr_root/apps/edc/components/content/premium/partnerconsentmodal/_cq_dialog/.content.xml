@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+      jcr:primaryType="nt:unstructured"
+      jcr:title="Partner Consent Modal"
+      sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+        margin="{Boolean}false">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <partner
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldLabel="Partner"
+                        fieldDescription="If none selected the user will perform a simple login and the user will not consent to share data with any partner"
+                        name="./partner">
+                        <items jcr:primaryType="nt:unstructured">
+                            <none
+                                jcr:primaryType="nt:unstructured"
+                                text="None"
+                                value=""/>
+                            <desjardins
+                                jcr:primaryType="nt:unstructured"
+                                text="Desjardins"
+                                value="desjardins"/>
+                        </items>
+                    </partner>
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Title"
+                        name="./title"
+                        required="{Boolean}true"/>
+                    <description
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                        fieldLabel="Description"
+                        name="./description"
+                        useFixedInlineToolbar="{Boolean}true"
+                        required="{Boolean}true">
+                        <rtePlugins jcr:primaryType="nt:unstructured">
+                            <format
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <lists
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <links
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                        </rtePlugins>
+                        <uiSettings jcr:primaryType="nt:unstructured">
+                            <cui jcr:primaryType="nt:unstructured">
+                                <inline
+                                    jcr:primaryType="nt:unstructured"
+                                    toolbar="[format#bold,format#italic,format#underline,#lists,links#modifylink,links#unlink,links#anchor]">
+                                    <popovers jcr:primaryType="nt:unstructured">
+                                        <lists
+                                            jcr:primaryType="nt:unstructured"
+                                            items="[lists#unordered,lists#ordered,lists#outdent,lists#indent]"
+                                            ref="lists"/>
+                                    </popovers>
+                                </inline>
+                            </cui>
+                        </uiSettings>
+                    </description>
+                    <consent
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                        fieldLabel="Consent text"
+                        name="./consent"
+                        required="{Boolean}true"/>
+                    <accept
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Accept CTA text"
+                        fieldDescription="Text for the accept button"
+                        name="./accept"
+                        required="{Boolean}true"/>
+                    <cancelCtaLabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Label"
+                        name="./cancelCtaLabel"
+                        required="{Boolean}true"/>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

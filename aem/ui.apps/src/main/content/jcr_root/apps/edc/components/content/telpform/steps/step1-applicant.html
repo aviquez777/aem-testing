@@ -1,0 +1,232 @@
+<template data-sly-template.level1="${@  uuid, properties, formLabels, formErrorMessages, formType, preScreen}">
+    <sly data-sly-use.modalTemplate="/apps/edc/components/common/modals.html"/>
+    <sly data-sly-use.dropdownTemplate="${'/apps/edc/components/common/dropdown.html'}" />
+    <!--/* Countries */-->
+    <sly data-sly-use.ds="${'com.edc.edcweb.core.models.FormCommonObjects' @ path ='/apps/edc/settings/wcm/designs/edc-data/countries', sort = true}"/>
+    <sly data-sly-test.countries="${ds.optionsFromDataSourcePath}" />
+     <!--/* Provinces */-->
+    <sly data-sly-use.ds="${'com.edc.edcweb.core.models.FormCommonObjects' @ path ='/apps/edc/settings/wcm/designs/edc-data/province', sort = true}"/>
+    <sly data-sly-test.provinces="${ds.optionsFromDataSourcePath}" />
+     <!--/* States  */-->
+    <sly data-sly-use.ds="${'com.edc.edcweb.core.models.FormCommonObjects' @ path ='/apps/edc/settings/wcm/designs/edc-data/usStates', sort = true}"/>
+    <sly data-sly-test.states="${ds.optionsFromDataSourcePath}" />
+
+    <div class="level level-${formType == 'TLP' ? 1 : 2} ${(wcmmode.disabled && (preScreen || formType != 'TLP')) ? 'hide' : 'show'}">
+        <h2>
+            <span class="title-color">${formLabels.step1Of4}</span> ${properties.step1Title}
+        </h2>
+        <p data-sly-test="${properties.step1Description}">${properties.step1Description @ context='html'}</p>
+        <div data-form-field="legalName" class="form-group">
+            <label for="legalName-${uuid}">${formLabels.legalName}</label>
+            <input type="text" id="legalName-${uuid}" class="form-control" name="legalName" data-no-url="true" required="" validation-rule="legalName" />
+            <span class="error" data-req-message="${formErrorMessages.required}" data-text-message="${formErrorMessages.format}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}" data-no-url-message="${formErrorMessages.nourl}"></span>
+        </div>
+        <div data-form-field="tradeName" class="form-group">
+            <label for="tradeName-${uuid}">${formLabels.tradeName}</label>
+            <!--/* Modal */-->
+            <sly data-sly-test="${properties.tradeNameModalTitle && properties.tradeNameModalDescription}" data-sly-call="${modalTemplate.moreinfomodal @ modalTitle = properties.tradeNameModalTitle, modalText = properties.tradeNameModalDescription, modalAriaOpen = formLabels.step1modalsariaopen, modalAriaClose = formLabels.step1modalsariaclose}"/>
+            <input type="text"  id="tradeName-${uuid}" class="form-control" name="tradeName" placeholder="${formLabels.tradeNamePh}" data-no-url="true" validation-rule="tradeName" data-max-length="100" />
+            <span class="error" data-req-message="${formErrorMessages.required}" data-text-message="${formErrorMessages.format}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}" data-no-url-message="${formErrorMessages.nourl}"></span>
+        </div>
+        <div data-form-field="businessNumber" class="form-group">
+            <label for="businessNumber-${uuid}">${formLabels.brn}</label>
+            <!--/* Modal */-->
+            <sly data-sly-test="${properties.brnModalTitle && properties.brnModalDescription}" data-sly-call="${modalTemplate.moreinfomodal @ modalTitle = properties.brnModalTitle, modalText = properties.brnModalDescription, modalAriaOpen = formLabels.step1modalsariaopen, modalAriaClose = formLabels.step1modalsariaclose}"/>
+            <div data-sly-test="${properties.brnDescription}" class="description">${properties.brnDescription @ context='html'}</div>
+            <input type="tel" id="businessNumber-${uuid}" class="form-control" name="businessNumber" placeholder="${formLabels.brnPh}" data-max-length="9" data-min-length="9" data-no-url="true" required="" validation-rule="numbersOnly" />
+            <span class="error" data-req-message="${formErrorMessages.required}" data-tel-message="${formErrorMessages.phone}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}" data-special-message="${formErrorMessages.brn}"  data-no-url-message="${formErrorMessages.nourl}"></span>
+        </div>
+        <div data-form-field="lastAnnualSales" class="form-group">
+            <label for="lastAnnualSales-${uuid}">${formLabels.lastAnnualSales}</label>
+            <div class="last-annual-sales-container">
+                <input type="text" id="lastAnnualSales-${uuid}" class="form-control numeric special-input" name="lastAnnualSales" placeholder="${formLabels.lastAnnualSalesPh}" inputMode="numeric" maxLength="22" data-no-url="true" required="" validation-rule="none" />
+                <div class="symbol"></div>
+                <span class="error" data-req-message="${formErrorMessages.required}" data-text-message="${formErrorMessages.format}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}"  data-no-url-message="${formErrorMessages.nourl}"></span>
+            </div>
+        </div>
+        <!--/** Key name / Value switched due to content's "workaround" of switching when entering the values **/-->
+        <div class="form-group" data-form-field="financialYearEndMonth">
+            <sly data-sly-use.lov="${'com.edc.edcweb.core.models.MultiFieldPolicyReader' @ multifieldName = 'fyems', fieldKeyName = 'monthName', fieldValueName = 'monthValue'}"/>
+            <sly data-sly-call="${dropdownTemplate.dropdown @ name = 'financialYearEndMonth', uuid = uuid, label = formLabels.fyem,
+                        placeholder = formLabels.fyemPh, required= true, nourl = true,
+                        requirederror=formErrorMessages.required, invaliderror=formErrorMessages.required,
+                        options=lov.valueMap}" />
+        </div>
+         <!--/** start 126464 **/-->
+        <div class="form-group" data-form-field="employees" data-form-version="COVIDR-E::MMG::BCAP-EXT" data-sly-test="${formType != 'TLP'}" class="form-group employees">
+            <sly data-sly-use.ds="${'com.edc.edcweb.core.models.FormCommonObjects' @ path ='/apps/edc/settings/wcm/designs/edc-data/mmEmpolyees'}"/>
+            <sly data-sly-test.mmEmployeesLov="${ds.optionsFromDataSourcePath}" />
+            <sly data-sly-call="${dropdownTemplate.dropdown @ name='employees', uuid=uuid, label=formLabels.mmEmployees,
+                    placeholder=formLabels.mmEmployeesPh, required=true, nourl=true,
+                    requirederror=formErrorMessages.required, invaliderror=formErrorMessages.required,
+                    options=mmEmployeesLov}"/>
+        </div>
+        <!--/** end 126464 **/-->
+        <div class="cdia-section">
+            <input type="hidden" name="cdia" value="${formLabels.cdiaNo}" />
+            <div class="form-group cdia-radio">
+                <div class="label-with-disclaimer">
+                    <label id="cdia-${uuid}" class="radio-label">${formLabels.cdia @ context='html'}</label>
+                </div>
+                <div class="form-row radio-group" role="radiogroup" aria-labelledby="cdia-${uuid}">
+                    <div class="radio-option">
+                        <input type="radio" class="form-control" id="ourOfCanadaYes-${uuid}" name="ourOfCanadaRadio" data-show-value="for-financing" value="yes" required="" data-no-url="true" data-translated-text="${formLabels.cdiaYes}"/>
+                        <label for="ourOfCanadaYes-${uuid}">${formLabels.cdiaYes}</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" class="form-control" id="ourOfCanadaNo-${uuid}" name="ourOfCanadaRadio" data-show-value="for-financing" value="no" required="" data-no-url="true" checked=""  data-translated-text="${formLabels.cdiaNo}"/>
+                        <label for="ourOfCanadaNo-${uuid}">${formLabels.cdiaNo}</label>
+                    </div>
+                </div>
+                <span class="error" data-req-message="${formErrorMessages.required}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}" data-no-url-message="${formErrorMessages.nourl}"></span>
+            </div>
+            <div class="form-group for-financing hide">
+                <div class="label-with-disclaimer">
+                    <label id="forFinancing-${uuid}" class="radio-label">${formLabels.forFinancing @ context='html'}</label>
+                </div>
+                <div class="form-row radio-group" role="radiogroup" aria-labelledby="forFinancing-${uuid}">
+                    <div class="radio-option">
+                        <input type="radio" class="form-control" id="forFinancingYes-${uuid}" name="forFinancingRadio" value="yes" data-no-url="true" />
+                        <label for="forFinancingYes-${uuid}">${formLabels.forFinancingYes}</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" class="form-control" id="forFinancingNo-${uuid}" name="forFinancingRadio" value="no" data-no-url="true" />
+                        <label for="forFinancingNo-${uuid}">${formLabels.forFinancingNo}</label>
+                    </div>
+                </div>
+                <span class="error" data-req-message="${formErrorMessages.required}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}" data-no-url-message="${formErrorMessages.nourl}"></span>
+            </div>
+        </div>
+        <h2>${properties.uboTitle}</h2>
+         <!--/* Modal */-->
+        <sly data-sly-test="${properties.uboModalTitle && properties.uboModalDescription}" data-sly-call="${modalTemplate.moreinfomodal @ modalTitle = properties.uboModalTitle, modalText = properties.uboModalDescription, modalAriaOpen = formLabels.step1modalsariaopen, modalAriaClose = formLabels.step1modalsariaclose}"/>
+        <div data-sly-test="${properties.uboDescription}" class="description">${properties.uboDescription @ context='html'}</div>
+        <div class="form-group" data-form-field="ultimateBeneficialOwners">
+            <sly data-sly-use.lov="${'com.edc.edcweb.core.models.MultiFieldPolicyReader' @ multifieldName = 'ubos', fieldKeyName = 'uboValue', fieldValueName = 'uboValue'}"/>
+            <sly data-sly-call="${dropdownTemplate.dropdown @ name = 'ultimateBeneficialOwners', uuid = uuid, label = formLabels.ubo,
+                        placeholder = formLabels.uboPh, required= true, nourl = true,
+                        requirederror=formErrorMessages.required, invaliderror=formErrorMessages.required,
+                        options=lov.valueMap}" />
+        </div>
+        <div class="ubo-fields hide" data-uuid="${uuid}">
+        <h3>${formLabels.uboRowTitle}</h3>
+            <div class="form-row">
+                <div data-form-field="uboFirstName" class="form-group first-name">
+                    <label for="uboFirstName-${uuid}">${formLabels.uboFirstName}</label>
+                    <input type="text" id="uboFirstName-${uuid}" class="form-control" name="uboFirstName" data-no-url="true" required="" validation-rule="name" data-max-length="100" data-min-length="2" />
+                    <span class="error" data-req-message="${formErrorMessages.required}" data-text-message="${formErrorMessages.format}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}" data-no-url-message="${formErrorMessages.nourl}"></span>
+                </div>
+                <div data-form-field="uboLastName" class="form-group last-name">
+                    <label for="uboLastName-${uuid}">${formLabels.uboLastName}</label>
+                    <input type="text" id="uboLastName-${uuid}" class="form-control" name="uboLastName" data-no-url="true" required="" validation-rule="name" data-max-length="100" data-min-length="2" />
+                    <span class="error" data-req-message="${formErrorMessages.required}" data-text-message="${formErrorMessages.format}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}"  data-no-url-message="${formErrorMessages.nourl}"></span>
+                </div>
+            </div>
+            <div data-form-field="uboCountry" class="form-group">
+                <sly data-sly-call="${dropdownTemplate.dropdown @ name='uboCountry', uuid=uuid, label=formLabels.uboCountry,
+                    placeholder=formLabels.uboCountryPh, required=true, nourl=true,
+                    requirederror=formErrorMessages.required, invaliderror=formErrorMessages.required,
+                    options=countries}"/>
+            </div>
+        </div>
+        <h2>${properties.hqTitle}</h2>
+         <!--/* Modal */-->
+        <sly data-sly-test="${properties.hqModalTitle && properties.hqModalDescription}" data-sly-call="${modalTemplate.moreinfomodal @ modalTitle = properties.hqModalTitle, modalText = properties.hqModalDescription, modalAriaOpen = formLabels.step1modalsariaopen, modalAriaClose = formLabels.step1modalsariaclose}"/>
+        <div data-sly-test="${properties.hqDescription}" class="description">${properties.hqDescription @ context='html'}</div>
+        <div class="form-group">
+            <label for="companyAddress1-${uuid}">${formLabels.companyAddress1}</label>
+            <input type="text" id="companyAddress1-${uuid}" class="form-control" name="companyAddress1" placeholder="${formLabels.companyAddress1Ph}" data-no-url="true" required="" validation-rule="address1" />
+            <span class="error" data-req-message="${formErrorMessages.required}" data-text-message="${formErrorMessages.format}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}" data-no-url-message="${formErrorMessages.nourl}"></span>
+        </div>
+        <div class="form-group">
+            <label for="companyAddress2-${uuid}">${formLabels.companyAddress2}</label>
+            <input type="text" id="companyAddress2-${uuid}" class="form-control" name="companyAddress2" placeholder="${formLabels.companyAddress2Ph}" data-no-url="true" validation-rule="address2"/>
+            <span class="error" data-req-message="${formErrorMessages.required}" data-text-message="${formErrorMessages.format}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}" data-no-url-message="${formErrorMessages.nourl}"></span>
+        </div>
+        <div data-form-field="companyCountry" class="form-group country">
+            <sly data-sly-call="${dropdownTemplate.dropdown @ name='companyCountry', uuid=uuid, label=formLabels.companyCountry,
+                placeholder=formLabels.companyCountryPh, required=true, nourl=true,
+                requirederror=formErrorMessages.required, invaliderror=formErrorMessages.required,
+                options=countries}"/>
+        </div>
+        <div data-form-field="companyProvince" class="form-group">
+            <sly data-sly-call="${dropdownTemplate.dropdown @ name='companyProvince', uuid=uuid, label=formLabels.companyProvince,
+                placeholder=formLabels.companyProvincePh, required=true, nourl=true,
+                requirederror=formErrorMessages.required, invaliderror=formErrorMessages.required,
+                additionalclasses='can', options=provinces, disabled=true}"/>
+            <sly data-sly-call="${dropdownTemplate.dropdown @ name='companyProvince-alt', uuid=uuid, label=formLabels.companyProvinceAlt,
+                placeholder=formLabels.companyProvinceAltPh, required=true, nourl=true,
+                requirederror=formErrorMessages.required, invaliderror=formErrorMessages.required,
+                additionalclasses='hide usa', options=states}"/>
+            <label class="hide" for="companyProvinceInput-${uuid}">${formLabels.companyProvinceInput}</label>
+            <input type="text" id="companyProvinceInput-${uuid}" name="companyProvinceInput" placeholder="${formLabels.companyProvinceInputPh}" class="form-control hide" data-no-url="true" validation-rule="province" />
+            <span class="error" data-req-message="${formErrorMessages.required}" data-text-message="${formErrorMessages.format}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}" data-no-url-message="${formErrorMessages.nourl}"></span>
+        </div>
+        <div class="form-group form-row">
+            <div data-form-field="companyCity" class="form-group company-city">
+                <label for="companyCity-${uuid}">${formLabels.companyCity}</label>
+                <input type="text" id="companyCity-${uuid}" class="form-control" name="companyCity" placeholder="${formLabels.companyCityPh}" data-no-url="true" required="" validation-rule="city" />
+                <span class="error" data-req-message="${formErrorMessages.required}" data-text-message="${formErrorMessages.format}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}"  data-no-url-message="${formErrorMessages.nourl}"></span>
+            </div>
+            <div data-form-field="companyPostal" class="form-group company-postal">
+                <label for="companyPostal-${uuid}" data-default-label="${formLabels.companyPostal}" data-usa-label="${formLabels.companyPostalUSA}">${formLabels.companyPostal}</label>
+                <input type="text" id="companyPostal-${uuid}" class="form-control" name="companyPostal" placeholder="${formLabels.companyPostalPh}" data-no-url="true" required="" validation-rule="postalCode"/>
+                <span class="error" data-req-message="${formErrorMessages.required}" data-text-message="${formErrorMessages.postalcode}"  data-text-secondary-message="${formErrorMessages.alphadashesspaces}"  data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}" data-no-url-message="${formErrorMessages.nourl}"></span>
+            </div>
+        </div>
+<!--/** Task 362412  **/-->
+        <sly data-sly-test="${formType != 'BCAP-EXT'}">
+            <h2>${properties.ceoTitle}</h2>
+            <div data-sly-test="${properties.ceoDescription}" class="description">${properties.ceoDescription @ context='html'}</div>
+            <div class="form-row">
+                <div data-form-field="ceoFirstName" class="form-group first-name">
+                    <label for="ceoFirstName-${uuid}">${formLabels.ceoFirstName}</label>
+                    <input type="text" id="ceoFirstName-${uuid}" class="form-control" name="ceoFirstName" placeholder="${formLabels.ceoFirstNamePh}" data-no-url="true" required="" validation-rule="name" data-max-length="100" data-min-length="2"/>
+                    <span class="error" data-req-message="${formErrorMessages.required}" data-text-message="${formErrorMessages.format}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}" data-no-url-message="${formErrorMessages.nourl}"></span>
+                </div>
+                <div data-form-field="ceoLastName" class="form-group last-name">
+                    <label for="ceoLastName-${uuid}">${formLabels.ceoLastName}</label>
+                    <input type="text" id="ceoLastName-${uuid}" class="form-control" name="ceoLastName" placeholder="${formLabels.ceoLastNamePh}" data-no-url="true" required="" validation-rule="name" data-max-length="100" data-min-length="2"/>
+                    <span class="error" data-req-message="${formErrorMessages.required}" data-text-message="${formErrorMessages.format}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}" data-no-url-message="${formErrorMessages.nourl}"></span>
+                </div>
+                <div data-sly-test="${formType && formType != 'TLP'}" data-form-version="COVIDR-E::MMG::BCAP-EXT" data-form-field="ceoCountry" class="form-group country">
+                    <sly data-sly-call="${dropdownTemplate.dropdown @ name='ceoCountry', uuid=uuid, label=formLabels.ceoCountry,
+                        placeholder=formLabels.ceoCountryPh, required=true, nourl=true,
+                        requirederror=formErrorMessages.required, invaliderror=formErrorMessages.required,
+                        options=countries}"/>
+                </div>
+            </div>
+        </sly>
+<!--/** End Task 362412  **/-->
+
+<!--/**  Task 118283 **/-->
+        <sly data-sly-test="${formType && formType != 'TLP' && formType != 'BCAP-EXT'}">
+            <h2 class="title-paddings" data-sly-test="${properties.step1BcapTitle}">${properties.step1BcapTitle}</h2>
+            <div class="diversity-and-inclusion-description" data-sly-test="${properties.step1BcapDescription}">
+                ${properties.step1BcapDescription @ context='html'}
+            </div>
+            <sly data-sly-use.sectionMF="${'com.edc.edcweb.core.helpers.MultifieldReaderHelper' @ multifield='bcapIncDivSection'}"/>
+            <sly data-sly-list.section="${sectionMF.fields}">
+                <h3 class="title-paddings" >${section.sectionBcapTitle}</h3>
+                <sly data-sly-test.radioName="${section.sectionBcapType}"/>
+                <!--/**  Get the nested multifield path **/-->
+                <sly data-sly-test.radiosPath="bcapIncDivSection/item${sectionList.index}/sectionRadios"/>
+                <sly data-sly-use.radiosMF="${'com.edc.edcweb.core.helpers.MultifieldReaderHelper' @ multifield=radiosPath}"/>
+                <div class="form-row radio-group" role="radiogroup" aria-labelledby="${radioName}-${uuid}" data-sly-list.radio="${radiosMF.fields}">
+                    <div class="radio-option not-bold">
+                        <input type="radio" class="form-control" id="${radioName}${radioList.count}-${uuid}" name="${radioName}" data-no-url="true" value="${radio.radioValue}" />
+                        <label for="${radioName}${radioList.count}-${uuid}">${radio.radioText @ context='html'}</label>
+                    </div>
+                </div>
+            </sly>
+        </sly>
+<!--/** end Task 118283 **/-->
+
+<!--/** Task 362412  **/-->
+        <div class="form-group" data-sly-test="${formType == 'BCAP-EXT'}">
+            <sly data-sly-use.itmTemplate="/apps/edc/components/common/inclusivetrade/inclusivetrade.html"/>
+            <sly data-sly-call="${itmTemplate.inclusivetrade @ uuid = uuid, properties = properties, formErrorMessages=formErrorMessages}"/>
+        </div>
+<!--/** End Task 362412  **/-->
+    </div>
+</template>

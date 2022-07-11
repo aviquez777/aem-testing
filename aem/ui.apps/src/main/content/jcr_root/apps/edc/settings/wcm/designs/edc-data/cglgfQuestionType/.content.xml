@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <standard jcr:primaryType="nt:unstructured">
+        <firstLastName jcr:primaryType="nt:unstructured"
+            questionFieldName="firstName,lastName"
+            questionName="First and Last Name"
+            questionType="Name Block"/>
+        <title jcr:primaryType="nt:unstructured"
+            questionFieldName="title"
+            questionName="Job title"
+            questionType="Text Field"/>
+        <tradeStatus jcr:primaryType="nt:unstructured"
+            questionFieldName="tradeStatus"
+            questionName="Trade Status"
+            questionLov="/apps/edc/settings/wcm/designs/edc-data/tradeStatus"
+            questionType="Multi Select"/>
+        <companyName jcr:primaryType="nt:unstructured"
+            questionFieldName="companyName"
+            questionName="Legal name of company"
+            questionType="Text Field"/>
+        <phoneBlock jcr:primaryType="nt:unstructured"
+            questionFieldName="mainPhone,CoMainPhoneExt"
+            questionName="Company Phone / Ext"
+            questionType="Phone Block"/>
+        <fullAddress jcr:primaryType="nt:unstructured"
+            questionFieldName="companyAddress1,companyAddress2,companyCity,companyProvince,companyPostal,companyCountry"
+            questionName="Full Address"
+            questionType="Address Block"/>
+        <countryCityProvince jcr:primaryType="nt:unstructured"
+            questionFieldName="companyCountry,companyProvince,companyCity"
+            questionName="Country Prov/State City"
+            questionType="Country Prov/State City Block"/>
+        <annualSalesBcap jcr:primaryType="nt:unstructured"
+            questionFieldName="annualSales"
+            questionName="Annual Sales"
+            questionLov="/apps/edc/settings/wcm/designs/edc-data/annualSalesBcap"
+            questionType="Single Select"/>
+        <employees jcr:primaryType="nt:unstructured"
+            questionFieldName="employees1"
+            questionName="Employees"
+            questionLov="/apps/edc/settings/wcm/designs/edc-data/empolyees"
+            questionType="Single Select"/> 
+        <painPoint jcr:primaryType="nt:unstructured"
+            questionFieldName="painPoint"
+            questionName="Pain Points / Challenges"
+            questionLov="/apps/edc/settings/wcm/designs/edc-data/painPoints"
+            questionType="Multi Select"/>
+        <industry jcr:primaryType="nt:unstructured"
+            questionFieldName="industry"
+            questionName="Company Industry"
+            questionLov="/apps/edc/settings/wcm/designs/edc-data/industry"
+            questionType="Single Select"/>
+<!-- Other campaigns -->
+        <fiLoan jcr:primaryType="nt:unstructured"
+            questionFieldName="fiLoan"
+            questionName="FI Loan"
+            questionType="Yes / No Radio"/> 
+        <covidWC jcr:primaryType="nt:unstructured"
+            questionFieldName="covidWC"
+            questionName="Covid WC"
+            questionType="Yes / No Radio"/>
+        <salesTiming jcr:primaryType="nt:unstructured"
+            questionFieldName="salesTiming"
+            questionLov="/apps/edc/settings/wcm/designs/edc-data/salesTiming"
+            questionName="Sales Timing"
+            questionType="Single Select"/>
+        <nonCDNCurrencyExperience jcr:primaryType="nt:unstructured"
+            questionFieldName="nonCDNCurrencyExperience"
+            questionName="Non Canadian Dollar Experience"
+            questionLov="/apps/edc/settings/wcm/designs/edc-data/nonCDNCurrencyExperience"
+            questionType="Single Select"/>
+        <fxContractExperience jcr:primaryType="nt:unstructured"
+            questionFieldName="fxContractExperience"
+            questionLov="/apps/edc/settings/wcm/designs/edc-data/fxContractExperience"
+            questionName="fx Contract Experience"
+            questionType="Single Select"/>
+         <marketsInt jcr:primaryType="nt:unstructured"
+            questionFieldName="marketsInt-large"
+            questionName="Select your market"
+            questionLov="/apps/edc/settings/wcm/designs/edc-data/regionsMarketsInt"
+            questionType="Country Multi Select"/>
+    </standard>
+    <customerField jcr:primaryType="nt:unstructured">
+        <fiName jcr:primaryType="nt:unstructured"
+            questionFieldName="fiName"
+            questionName="FI Name"/>
+        <fiContactRole jcr:primaryType="nt:unstructured"
+            questionFieldName="Existing Job Role"
+            questionName="What is your role?"/>
+        <fiClientAnnualSales jcr:primaryType="nt:unstructured"
+            questionFieldName="fiClientAnnualSales"
+            questionName="Client annual sales"/>
+        <customerField01 jcr:primaryType="nt:unstructured"
+            questionFieldName="customerField1"
+            questionName="Customer Field One" />
+        <customerField02 jcr:primaryType="nt:unstructured"
+            configured="{Boolean}false"
+            questionFieldName="customerField2"
+            questionName="Customer Field Two"/>
+        <customerField03 jcr:primaryType="nt:unstructured"
+            configured="{Boolean}false"
+            questionFieldName="customerField3"
+            questionName="Customer Field Three"/>
+        <customerField04 jcr:primaryType="nt:unstructured"
+            configured="{Boolean}false"
+            questionFieldName="customerField4"
+            questionName="Customer Field Four" />
+        <customerField05 jcr:primaryType="nt:unstructured"
+            configured="{Boolean}false"
+            questionFieldName="customerField5"
+            questionName="Customer Field Five" />
+        <customerField06 jcr:primaryType="nt:unstructured"
+            configured="{Boolean}false"
+            questionFieldName="customerField6"
+            questionName="Customer Field Six"/>
+        <customerField07 jcr:primaryType="nt:unstructured"
+            configured="{Boolean}false"
+            questionFieldName="customerField7"
+            questionName="Customer Field Seven"/>
+        <customerField08 jcr:primaryType="nt:unstructured"
+            configured="{Boolean}false"
+            questionFieldName="customerField8"
+            questionName="Customer Field Eight" />
+        <customerField09 jcr:primaryType="nt:unstructured"
+            configured="{Boolean}false"
+            questionFieldName="customerField9"
+            questionName="Customer Field Nine" />
+        <customerField10 jcr:primaryType="nt:unstructured"
+            configured="{Boolean}false"
+            questionFieldName="customerField10"
+            questionName="Customer Field Ten"/>
+    </customerField>
+<!--  Configured questions that must be loaded on policy first time only -->
+    <configured jcr:primaryType="nt:unstructured">
+        <item0
+            jcr:primaryType="nt:unstructured"
+            questionFieldName="fiName"
+            questionName="FI Name"
+            questionToUse="/apps/edc/settings/wcm/designs/edc-data/cglgfQuestionType/customerField/fiName"
+            questionType="Single Select">
+            <questionLov jcr:primaryType="nt:unstructured">
+                <item0
+                    jcr:primaryType="nt:unstructured"
+                    enName="Bank of Nova Scotia"
+                    frName="Bank of Nova Scotia "
+                    value="Bank of Nova Scotia"/>
+                <item1
+                    jcr:primaryType="nt:unstructured"
+                    enName="Bank of Montreal"
+                    frName="Bank of Montreal"
+                    value="Bank of Montreal"/>
+                <item2
+                    jcr:primaryType="nt:unstructured"
+                    enName="Canadian Imperial Bank of Commerce"
+                    frName="Canadian Imperial Bank of Commerce"
+                    value="Canadian Imperial Bank of Commerce"/>
+                <item3
+                    jcr:primaryType="nt:unstructured"
+                    enName="Desjardins"
+                    frName="Desjardins"
+                    value="Desjardins"/>
+                <item4
+                    jcr:primaryType="nt:unstructured"
+                    enName="HSBC Bank Canada"
+                    frName="HSBC Bank Canada"
+                    value="HSBC Bank Canada"/>
+                <item5
+                    jcr:primaryType="nt:unstructured"
+                    enName="National Bank"
+                    frName="National Bank"
+                    value="National Bank"/>
+                <item6
+                    jcr:primaryType="nt:unstructured"
+                    enName="Royal Bank of Canada"
+                    frName="Royal Bank of Canada"
+                    value="Royal Bank of Canada"/>
+                <item7
+                    jcr:primaryType="nt:unstructured"
+                    enName="Toronto-Dominion Bank"
+                    frName="Toronto-Dominion Bank"
+                    value="Toronto-Dominion Bank"/>
+                <item8
+                    jcr:primaryType="nt:unstructured"
+                    enName="Other"
+                    frName="Other"
+                    value="other"/>
+            </questionLov>
+        </item0>
+        <item1
+            jcr:primaryType="nt:unstructured"
+            questionFieldName="fiContactRole"
+            questionName="Existing Job Role"
+            questionToUse="/apps/edc/settings/wcm/designs/edc-data/cglgfQuestionType/customerField/fiContactRole"
+            questionType="Single Select">
+            <questionLov jcr:primaryType="nt:unstructured">
+                <item0
+                    jcr:primaryType="nt:unstructured"
+                    enName="Sales or Relationship/Account Manager/Director"
+                    frName="Sales or Relationship/Account Manager/Director"
+                    value="Sales or Relationship/Account Manager/Director"/>
+                <item1
+                    jcr:primaryType="nt:unstructured"
+                    enName="Risk, Credit or Product Specialist"
+                    frName="Risk, Credit or Product Specialist"
+                    value="Risk, Credit or Product Specialist"/>
+                <item2
+                    jcr:primaryType="nt:unstructured"
+                    enName="Regional/National/Senior Leadership"
+                    frName="Regional/National/Senior Leadership"
+                    value="Regional/National/Senior Leadership"/>
+                <item3
+                    jcr:primaryType="nt:unstructured"
+                    enName="Executive"
+                    frName="Executive"
+                    value="Executive"/>
+                <item4
+                    jcr:primaryType="nt:unstructured"
+                    enName="Other"
+                    frName="Other"
+                    value="other"/>
+            </questionLov>
+        </item1>
+        <item2
+            jcr:primaryType="nt:unstructured"
+            questionFieldName="fiClientAnnualSales"
+            questionName="Client annual sales"
+            questionToUse="/apps/edc/settings/wcm/designs/edc-data/cglgfQuestionType/customerField/fiClientAnnualSales"
+            questionType="Multi Select">
+            <questionLov jcr:primaryType="nt:unstructured">
+                <item0
+                    jcr:primaryType="nt:unstructured"
+                    enName="No current revenue"
+                    frName="No current revenue"
+                    value="No current revenue"/>
+                <item1
+                    jcr:primaryType="nt:unstructured"
+                    enName="Under 2 million"
+                    frName="Under 2 million"
+                    value="Under 2 million"/>
+                <item2
+                    jcr:primaryType="nt:unstructured"
+                    enName="$2,000,000 - $10,000,000"
+                    frName="$2,000,000 - $10,000,000"
+                    value="$2,000,000 - $10,000,000"/>
+                <item3
+                    jcr:primaryType="nt:unstructured"
+                    enName="$10,000,000 - $49,999,999"
+                    frName="$10,000,000 - $49,999,999"
+                    value="$10,000,000 - $49,999,999"/>
+                <item4
+                    jcr:primaryType="nt:unstructured"
+                    enName="$50,000,000 and $299,999,999"
+                    frName="$50,000,000 and $299,999,999"
+                    value="$50,000,000 and $299,999,999"/>
+                <item5
+                    jcr:primaryType="nt:unstructured"
+                    enName="$300,000,000 and above"
+                    frName="$300,000,000 and above"
+                    value="$300,000,000 and above"/>
+                <item6
+                    jcr:primaryType="nt:unstructured"
+                    enName="Not applicable "
+                    frName="Not applicable "
+                    value="Not applicable "/>
+            </questionLov>
+        </item2>
+    </configured>
+</jcr:root>

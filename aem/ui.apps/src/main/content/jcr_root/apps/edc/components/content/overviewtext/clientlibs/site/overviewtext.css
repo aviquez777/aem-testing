@@ -1,0 +1,165 @@
+.breadcrumb-wrapper + .overviewtext .section-blurb {
+    padding-top: 1rem;
+}
+
+.section-blurb.bg-edc-dark-blue {
+    box-sizing: border-box;
+    padding: 3.5rem .9375rem;
+    text-align: center;
+}
+
+.section-blurb.bg-edc-dark-blue div,
+.section-blurb.bg-edc-dark-blue p {
+    color: #333;
+    font-family: "Georgia", "Times New Roman", Times, serif;
+    font-size: 19px;
+    font-weight: normal;
+    line-height: 1.6842;
+    letter-spacing: 0;
+    color: #fff;
+}
+
+@media (min-width: 720px) {
+    .section-blurb.bg-edc-dark-blue div,
+    .section-blurb.bg-edc-dark-blue p {
+        font-size: 1.1875rem;
+        line-height: 1.6842;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .section-blurb.bg-edc-dark-blue div,
+    .section-blurb.bg-edc-dark-blue p {
+        font-size: 1.25rem;
+        line-height: 1.6;
+        letter-spacing: 0;
+    }
+}
+
+.section-blurb:not(.bg-edc-dark-blue) {
+    box-sizing: border-box;
+    text-align: center;
+    width: auto;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.section-blurb:not(.bg-edc-dark-blue) ol {
+    list-style-position: inside;
+    list-style-type: decimal;
+}
+
+.section-blurb:not(.bg-edc-dark-blue) ul {
+    list-style-position: inside;
+    list-style-type: initial;
+}
+
+.section-blurb:not(.bg-edc-dark-blue) ul li {
+    font-family: "Georgia", "Times New Roman", Times, serif;
+}
+
+.section-blurb:not(.bg-edc-dark-blue) :last-child {
+    margin-bottom: 0;
+}
+
+.section-blurb:not(.bg-edc-dark-blue) .show-icon {
+    height: 2rem;
+    width: 100%;
+    background: url("/etc.clientlibs/edc/clientlibs/clientlib-base/resources/images/squiggle.svg") no-repeat center 2.5rem;
+    background-size: auto 2rem;
+    margin-bottom: .5rem;
+    background-position: center;
+}
+
+.section-blurb:not(.bg-edc-dark-blue) h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.section-blurb:not(.bg-edc-dark-blue) div:last-child {
+    margin-bottom: 0;
+}
+
+.section-blurb:not(.bg-edc-dark-blue) ul,
+.section-blurb:not(.bg-edc-dark-blue) ol,
+.section-blurb:not(.bg-edc-dark-blue) dl {
+    padding-left: 0;
+}
+
+.section-blurb:not(.bg-edc-dark-blue) div,
+.section-blurb:not(.bg-edc-dark-blue) p {
+    color: #333;
+    font-family: "Georgia", "Times New Roman", Times, serif;
+    font-size: 21px;
+    font-weight: normal;
+    letter-spacing: 0.1px;
+    line-height: 1.5238;
+}
+
+@media (min-width: 720px) {
+    .section-blurb:not(.bg-edc-dark-blue) div,
+    .section-blurb:not(.bg-edc-dark-blue) p {
+        font-size: 1.3125rem;
+        line-height: 1.5238;
+        letter-spacing: 0.1px;
+    }
+}
+
+@media (min-width: 960px) {
+    .section-blurb:not(.bg-edc-dark-blue) div,
+    .section-blurb:not(.bg-edc-dark-blue) p {
+        font-size: 1.625rem;
+        line-height: 1.5384;
+        letter-spacing: -0.2px;
+    }
+}
+
+.section-blurb:not(.bg-edc-dark-blue).reverse h2 {
+    color: #26a2b5;
+    margin-bottom: 0;
+    margin-top: 1rem;
+}
+
+.section-blurb:not(.bg-edc-dark-blue).show-separator {
+    padding-top: 4rem;
+    padding-bottom: 5.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.section-blurb:not(.bg-edc-dark-blue):not(.show-separator) {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    margin-bottom: 0;
+}
+
+@media (min-width: 720px) {
+    .section-blurb:not(.bg-edc-dark-blue) .show-icon {
+        height: 4rem;
+        background-size: auto 4rem;
+    }
+    .section-blurb:not(.bg-edc-dark-blue) h2 {
+        min-height: 1.5rem;
+    }
+    .section-blurb:not(.bg-edc-dark-blue) h2,
+    .section-blurb:not(.bg-edc-dark-blue) div {
+        width: 100%;
+        margin-top: 0;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+
+@media (min-width: 960px) {
+    .section-blurb:not(.bg-edc-dark-blue) {
+        min-width: 45rem;
+    }
+    .section-blurb:not(.bg-edc-dark-blue) h2 {
+        min-height: 2.5rem;
+    }
+}

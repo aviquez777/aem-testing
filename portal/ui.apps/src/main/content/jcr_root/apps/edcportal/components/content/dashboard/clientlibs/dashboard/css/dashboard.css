@@ -1,0 +1,653 @@
+@charset "UTF-8";
+.c-my-dashboard {
+    box-sizing: border-box;
+    margin-bottom: 4rem;
+    width: 100%;
+}
+
+.c-my-dashboard * {
+    box-sizing: border-box;
+}
+
+.c-my-dashboard .hide {
+    display: none;
+}
+
+.c-my-dashboard .tabs-section {
+    padding: 0;
+}
+
+.c-my-dashboard .tabs-section .no-btn {
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+
+.c-my-dashboard .tabs-section .no-btn span::after {
+    content: '';
+    margin: 0;
+    right: -15px;
+}
+
+.c-my-dashboard .tabs-section .no-btn:hover span, .c-my-dashboard .tabs-section .no-btn:active span, .c-my-dashboard .tabs-section .no-btn:focus span {
+    padding: 0;
+}
+
+.c-my-dashboard .tabs-section .c-myedc-nav select {
+    margin-bottom: 3.5rem;
+}
+
+.c-my-dashboard .tabs-section section {
+    padding: 0;
+    margin-top: 3.5rem;
+    /*IE 11 Fix**/
+    width: 100%;
+}
+
+.c-my-dashboard .tabs-section section .tabs .loading-screen,
+.c-my-dashboard .tabs-section section .tabs .error-message {
+    text-align: center;
+    padding: 3rem 0;
+    font-size: 20px;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.c-my-dashboard .tabs-section section .tabs .loading-screen.hide,
+.c-my-dashboard .tabs-section section .tabs .error-message.hide {
+    display: none;
+}
+
+.c-my-dashboard .tabs-section section .tabs .error-message {
+    color: #c81414;
+}
+
+.c-my-dashboard .tabs-section section .message-box {
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(25, 25, 25, 0.1);
+    -webkit-transition: box-shadow .5s ease;
+    -moz-transition: box-shadow .5s ease;
+    transition: box-shadow .5s ease;
+    padding: 2rem 1.25rem;
+    position: relative;
+}
+
+.c-my-dashboard .tabs-section section .message-box:hover {
+    -webkit-box-shadow: 0 0 20px 10px rgba(51, 51, 51, 0.1);
+    -moz-box-shadow: 0 0 20px 10px rgba(51, 51, 51, 0.1);
+    box-shadow: 0 0 20px 10px rgba(51, 51, 51, 0.1);
+}
+
+.c-my-dashboard .tabs-section section .message-box button.message-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+}
+
+.c-my-dashboard .tabs-section section .message-box button.message-close.no-btn span::after {
+    content: "";
+    font-family: "iconfonts";
+    font-weight: normal;
+    font-size: 3rem;
+    line-height: 3rem;
+    color: #2f78c6;
+    opacity: 1;
+    position: relative;
+    right: 0;
+}
+
+.c-my-dashboard .tabs-section section .message-box h2 {
+    margin-top: 0;
+}
+
+.c-my-dashboard .tabs-section section .message-box p {
+    font-size: 14px;
+    line-height: 1.7142;
+    color: #707070;
+    margin-bottom: 0;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .cards-container.hide {
+    display: none;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page {
+    display: none;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page.show {
+    display: block;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a {
+    display: block;
+    text-decoration: none;
+    padding: 2rem 0;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a > .tag-section {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a > .tag-section p {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a > .tag-section .tag-text {
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 20px;
+    display: flex;
+    margin-bottom: .5rem;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a > .tag-section .tag-text::before {
+    font-family: "iconfonts";
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    margin-right: .5rem;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a > .tag-section .tag-text.live {
+    color: #c8102e;
+    align-items: center;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a > .tag-section .tag-text.live::before {
+    content: '';
+    background: #c8102e;
+    border-radius: 50%;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a > .tag-section .tag-text.ondemand {
+    color: #3fa67a;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a > .tag-section .tag-text.ondemand::before {
+    content: "";
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a > .tag-section .tag-text.upcoming {
+    color: #175a9f;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a > .tag-section .tag-text.upcoming::before {
+    content: "";
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a > .tag-section .date-text {
+    color: #707070;
+    line-height: 28px;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a .tab-panel-content {
+    display: inline-flex;
+    width: 100%;
+    margin-top: 0;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a .tab-panel-content .resource-img,
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a .tab-panel-content .webinar-img {
+    width: 104px;
+    height: 72px;
+    overflow: hidden;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a .tab-panel-content .resource-img img,
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a .tab-panel-content .webinar-img img {
+    width: auto;
+    height: 100%;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a .tab-panel-content .resource-content,
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a .tab-panel-content .webinar-content {
+    width: 68%;
+    padding-left: 1rem;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a .tab-panel-content .resource-content .title,
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a .tab-panel-content .webinar-content .title {
+    margin: 0;
+    margin-top: .5rem;
+    color: #333;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a .tab-panel-content .resource-content > .description,
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a .tab-panel-content .webinar-content > .description {
+    display: none;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a .tab-panel-content .resource-content .tag-section {
+    display: block;
+    text-transform: capitalize;
+    line-height: 1;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a .tab-panel-content .resource-content .tag-section .tag-text {
+    display: inline-flex;
+    align-items: center;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a .tab-panel-content .resource-content .tag-section .tag-text .tag-color {
+    display: block;
+    height: 6px;
+    width: 24px;
+    margin-bottom: 2px;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a .tab-panel-content .resource-content .tag-section .tag-text .tag-color.article, .c-my-dashboard .tabs-section section .items-list article.tab-panel .page a .tab-panel-content .resource-content .tag-section .tag-text .tag-color.default {
+    background-color: #8c294e;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a .tab-panel-content .resource-content .tag-section .tag-text .tag-color.blog {
+    background-color: #26a2b5;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a .tab-panel-content .resource-content .tag-section .tag-text .tag-color.video {
+    background-color: #746ab9;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a .tab-panel-content .resource-content .tag-section .tag-text .tag-color.success-story {
+    background-color: #3fa67a;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a .tab-panel-content .resource-content .tag-section .tag-text .tag-color.weekly-commentary {
+    background-color: #f1c238;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a .tab-panel-content .resource-content .tag-section .tag-text .tag-color.ebook {
+    background-color: #c4cfca;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a .tab-panel-content .resource-content .tag-section .tag-text .tag-color.guide, 
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a .tab-panel-content .resource-content .tag-section .tag-text .tag-color.report,
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a .tab-panel-content .resource-content .tag-section .tag-text .tag-color.infographic,
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a .tab-panel-content .resource-content .tag-section .tag-text .tag-color.tool {
+    background-color: #ed834e;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a .tab-panel-content .resource-content .tag-section .tag-text .tag-color.webinar {
+    background-color: #ece9de;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a .tab-panel-content .resource-content .tag-section .tag-text .tag-title {
+    padding-left: .5rem;
+    color: #707070;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.7142;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .page a .tab-panel-content .webinar-content .tag-section {
+    display: none;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .discover-more {
+    text-align: center;
+    border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+    padding: 1.5rem 0 2.5rem;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .discover-more.no-keyline {
+    border: 0;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .discover-more.hide {
+    display: none;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .discover-more .discover-more-text h3 {
+    font-size: 18px;
+    line-height: 28px;
+    margin-top: 0;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .discover-more .discover-more-text p {
+    color: #707070;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.7142;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .actions-section.hide {
+    display: none;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .actions-section .actions {
+    display: inline-flex;
+    align-items: center;
+    margin: 2.5rem 0 0;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .actions-section .actions .pagination {
+    padding-right: 15px;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .actions-section .actions button.arrow {
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(25, 25, 25, 0.1);
+    background: #fff url("/etc.clientlibs/edc/clientlibs/clientlib-base/resources/images/dropdown.svg") no-repeat center;
+    background-size: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    position: relative;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .actions-section .actions button.arrow::before {
+    display: block;
+    position: absolute;
+    content: '';
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .actions-section .actions button.arrow.arrow-left {
+    transform: rotate(90deg);
+    margin-right: 7.5px;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .actions-section .actions button.arrow.arrow-right {
+    transform: rotate(-90deg);
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .actions-section .actions button.arrow.disabled {
+    cursor: no-drop;
+    background-color: #ebebeb;
+}
+
+.c-my-dashboard .tabs-section section .items-list article.tab-panel .actions-section > a {
+    width: 100%;
+}
+
+@media (min-width: 720px) {
+    .c-my-dashboard .container {
+        width: 100%;
+    }
+    .c-my-dashboard .tabs-section nav {
+        margin-bottom: .5rem;
+    }
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .page a {
+        padding: 2.5rem 0 1.75rem;
+    }
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .page a .tab-panel-content .resource-img,
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .page a .tab-panel-content .webinar-img {
+        width: 150px;
+        height: 112px;
+    }
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .page a .tab-panel-content .resource-content,
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .page a .tab-panel-content .webinar-content {
+        width: 65%;
+    }
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .page a .tab-panel-content .resource-content .tag-section .tag-text .tag-title,
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .page a .tab-panel-content .webinar-content .tag-section .tag-text .tag-title {
+        line-height: 20px;
+    }
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .page a .tab-panel-content .resource-content .title,
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .page a .tab-panel-content .webinar-content .title {
+        line-height: 32px;
+    }
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .actions-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .actions-section > a {
+        width: auto;
+        margin: 2rem 0 0;
+    }
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .discover-more {
+        text-align: left;
+    }
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .discover-more .discover-more-text h3 {
+        margin-bottom: .5rem;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-my-dashboard {
+        padding: 0;
+        margin-bottom: 5rem;
+    }
+    .c-my-dashboard .tabs-section {
+        display: flex;
+        padding-top: 0;
+    }
+    .c-my-dashboard .tabs-section > section {
+        margin-top: 0;
+    }
+    .c-my-dashboard .tabs-section > section .message-box {
+        min-height: 1px;
+        padding-left: 20px;
+        padding-right: 105px;
+        position: relative;
+        width: 100%;
+        margin-bottom: 6.5rem;
+        padding-top: 1.5rem;
+        padding-bottom: 2.5rem;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-my-dashboard .tabs-section > section .message-box {
+        width: 100%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-my-dashboard .tabs-section > section .tab-set {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-my-dashboard .tabs-section > section .tab-set {
+        width: 100%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-my-dashboard .tabs-section > section .c-need-assistance {
+        margin-top: 4.5rem;
+    }
+    .c-my-dashboard .tabs-section > section .c-need-assistance > div {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 75%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-my-dashboard .tabs-section > section .c-need-assistance > div {
+        width: 75%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .page a {
+        padding: 2.5rem 0 1.5rem;
+    }
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .page a > .tag-section {
+        display: none;
+    }
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .page a .tab-panel-content.three-rows .resource-content .description p,
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .page a .tab-panel-content.three-rows .webinar-content .description p {
+        margin-top: .5rem;
+    }
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .page a .tab-panel-content .resource-img,
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .page a .tab-panel-content .webinar-img {
+        width: 255px;
+        height: 168px;
+    }
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .page a .tab-panel-content .resource-content,
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .page a .tab-panel-content .webinar-content {
+        width: 60%;
+        position: relative;
+        overflow: hidden;
+    }
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .page a .tab-panel-content .resource-content::after,
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .page a .tab-panel-content .webinar-content::after {
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5) 30%, #fff);
+        position: absolute;
+        content: '';
+        width: 160px;
+        height: 25px;
+        bottom: 0;
+        right: 0;
+    }
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .page a .tab-panel-content .resource-content .description,
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .page a .tab-panel-content .webinar-content .description {
+        display: block;
+    }
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .page a .tab-panel-content .resource-content .description p,
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .page a .tab-panel-content .webinar-content .description p {
+        margin-top: 1rem;
+        font-size: 14px;
+        line-height: 1.7142;
+    }
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .page a .tab-panel-content .webinar-content {
+        max-height: 160px;
+    }
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .page a .tab-panel-content .webinar-content .tag-section {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+    }
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .page a .tab-panel-content .webinar-content .tag-section p {
+        font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        margin-bottom: 0;
+        font-size: 14px;
+    }
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .page a .tab-panel-content .webinar-content .tag-section .tag-text {
+        font-weight: 600;
+        text-transform: uppercase;
+        line-height: 20px;
+        display: flex;
+    }
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .page a .tab-panel-content .webinar-content .tag-section .tag-text::before {
+        font-family: "iconfonts";
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        margin-right: .5rem;
+    }
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .page a .tab-panel-content .webinar-content .tag-section .tag-text.live {
+        color: #c8102e;
+        align-items: center;
+    }
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .page a .tab-panel-content .webinar-content .tag-section .tag-text.live::before {
+        content: '';
+        background: #c8102e;
+        border-radius: 50%;
+    }
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .page a .tab-panel-content .webinar-content .tag-section .tag-text.ondemand {
+        color: #3fa67a;
+    }
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .page a .tab-panel-content .webinar-content .tag-section .tag-text.ondemand::before {
+        content: "";
+    }
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .page a .tab-panel-content .webinar-content .tag-section .tag-text.upcoming {
+        color: #175a9f;
+    }
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .page a .tab-panel-content .webinar-content .tag-section .tag-text.upcoming::before {
+        content: "";
+    }
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .page a .tab-panel-content .webinar-content .tag-section .date-text {
+        color: #707070;
+        line-height: 28px;
+    }
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .page a .tab-panel-content .resource-content {
+        max-height: 152px;
+    }
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .discover-more {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 3.5rem 0 3.75rem;
+    }
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .discover-more .discover-more-text h3 {
+        font-size: 20px;
+    }
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .discover-more .discover-more-text p {
+        margin-bottom: 0;
+    }
+    .c-my-dashboard .tabs-section > section .items-list article.tab-panel .discover-more a {
+        float: right;
+    }
+}
+
+@media (min-width: 1140px) {
+    .c-my-dashboard .tabs-section > section {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 100%;
+    }
+}
+
+@media (min-width: 1140px) and (min-width: 1140px) {
+    .c-my-dashboard .tabs-section > section {
+        width: 100%;
+        float: left;
+    }
+}
+
+@media (min-width: 1140px) {
+    .c-my-dashboard .tabs-section > section .tab-set {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 100%;
+    }
+}
+
+@media (min-width: 1140px) and (min-width: 1140px) {
+    .c-my-dashboard .tabs-section > section .tab-set {
+        width: 100%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

@@ -1,0 +1,39 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.multifield="${'com.edc.edcweb.core.helpers.MultifieldReaderHelper' @ multifield='radiobuttontexts'}"/>
+<sly data-sly-test.radiotexts="${multifield.fields}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !radiotexts}"/>
+<sly data-sly-use.eloqua="com.edc.edcweb.core.models.EloquaData"/>
+<sly data-sly-use.ibTemplateObj="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+
+<form data-sly-test="${radiotexts}" name="investor-relations" class="c-investor-relations extended-form"
+      data-event-component="Investor Relations Form" data-event-type="form" data-event-name="form submit - investor-relations"
+      data-event-action="main body" data-event-value="${eloqua.docId}" data-engagement-type="3"
+      data-event-level="primary">
+    <div class="content investor-relations page-1">
+        <div class="title">
+            ${properties.optionaltext @ context="html"}
+        </div>
+        <div class="form-row input-radio-group">
+            <sly data-sly-use.linkresolver="${'com.edc.edcweb.core.helpers.LinkExternalizer' @srcPath=radiotexts[0].url, scheme=request.scheme}"/>
+            <input type="radio" id="qualified-institutional-buyer" name="investorRelations"
+                   data-form="${linkresolver.LinkWithHtmlExtension}" data-restrictions-on-access="qualified institutional buyer" required/>
+            <label for="qualified-institutional-buyer">${radiotexts[0].statement}</label>
+        </div>
+        <div class="form-row input-radio-group">
+            <sly data-sly-use.linkresolver="${'com.edc.edcweb.core.helpers.LinkExternalizer' @srcPath=radiotexts[1].url, scheme=request.scheme}"/>
+            <input type="radio" id="non-us" name="investorRelations" data-form="${linkresolver.LinkWithHtmlExtension}" data-restrictions-on-access="non-american outside us" required/>
+            <label for="non-us">${radiotexts[1].statement}</label>
+        </div>
+        <div class="form-row input-radio-group">
+            <sly data-sly-use.linkresolver="${'com.edc.edcweb.core.helpers.LinkExternalizer' @srcPath=radiotexts[2].url, scheme=request.scheme}"/>
+            <input type="radio" id="none" name="investorRelations" data-form="${linkresolver.LinkWithHtmlExtension}" data-restrictions-on-access="not confirmed" required/>
+            <label for="none">${radiotexts[2].statement}</label>
+        </div>
+        <div class="submit-failed-message hide">
+            <p>${properties.errorReqOneMessage}</p>
+        </div>
+        <div class="actions">
+            <div data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='button', isUsedForModal='nomodal', buttonstate='enabled', buttontext=properties.submitbutton, btntype='submit'}"  data-sly-unwrap></div>
+        </div>
+    </div>
+</form>

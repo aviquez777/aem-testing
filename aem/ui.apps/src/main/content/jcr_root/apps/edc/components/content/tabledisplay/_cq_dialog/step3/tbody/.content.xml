@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="TBody"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <notes jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/well">
+                <items jcr:primaryType="nt:unstructured">
+                    <alert
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/alert"
+                        size="S"
+                        text="IMPORTANT."
+                        variant="Warning"/>
+                    <description
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                        resize="none"
+                        disabled="{Boolean}true"
+                        granite:class="td-field-readonly"
+                        value="Add first the desired quantity of rows before defining if the approach will be Even / Odd or Parent / Child, dropdown for parent child options only will be activated if the rows exist first. "/>
+                </items>
+            </notes>
+            <rowType jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                fieldLabel="Choose if the styling approach is Even / Odd or Parent Child"
+                granite:class="cq-dialog-dropdown-showhide"
+                name="./rowType">
+                <granite:data
+                    jcr:primaryType="nt:unstructured"
+                    cq-dialog-dropdown-showhide-target=".parentchild-showhide-target"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <evenodd jcr:primaryType="nt:unstructured"
+                        text="Even / Odd - Styling type."
+                        selected="{Boolean}true"
+                        value="evenodd"/>
+                    <parentchild jcr:primaryType="nt:unstructured"
+                        text="Parent / Child - Style approach"
+                        value="parentchild"/>
+                </items>
+            </rowType>
+            <notes1 jcr:primaryType="nt:unstructured"
+                granite:class="hide parentchild-showhide-target"
+                sling:resourceType="granite/ui/components/coral/foundation/well">
+                <granite:data
+                    jcr:primaryType="nt:unstructured"
+                    showhidetargetvalue="parentchild"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <alert
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/alert"
+                        size="S"
+                        text="IMPORTANT."
+                        variant="info"/>
+                    <description
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                        resize="none"
+                        disabled="{Boolean}true"
+                        granite:class="td-field-readonly"
+                        value="If you choose parent / child  Style approach, you will get a dropdown per row to decide if that row will be a parent or if it will be a child."/>
+                </items>
+            </notes1>
+            <tableBodyRows jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                composite="{Boolean}true"
+                fieldLabel="Table Body Configuration"
+                fieldDescription="Click on Add button to add rows">
+                <field
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                    name="./tableBodyRows">
+                    <items jcr:primaryType="nt:unstructured">
+                        <column
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/well">
+                            <items jcr:primaryType="nt:unstructured">
+                                <rowVariant jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                    granite:class="hide parentchild-showhide-target"
+                                    name="./rowVariant">
+                                    <granite:data
+                                        jcr:primaryType="nt:unstructured"
+                                        showhidetargetvalue="parentchild"/>
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <parent jcr:primaryType="nt:unstructured"
+                                            text="Parent Row"
+                                            value="parentrow"/>
+                                        <parentLine jcr:primaryType="nt:unstructured"
+                                            text="Parent Row With Keyline"
+                                            value="parentrowline"/>
+                                        <child jcr:primaryType="nt:unstructured"
+                                            text="Child Row"
+                                            value="childrow"/>
+                                        <childLine jcr:primaryType="nt:unstructured"
+                                            text="Child Row With Keyline"
+                                            value="childrowline"/>
+                                    </items>
+                                </rowVariant>
+                                <tbodyRowCell
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                    fieldDescription="Row Cells"
+                                    fieldLabel="Row Cells"
+                                    jcr:primaryType="nt:unstructured"
+                                    granite:class="td-table-body"
+                                    composite="{Boolean}true">
+                                    <field sling:resourceType="granite/ui/components/coral/foundation/container"
+                                            jcr:primaryType="nt:unstructured" 
+                                            name="./tbodyRowCell">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <bCellSpan jcr:primaryType="nt:unstructured"
+                                                fieldLabel="Select # of columns used by the cell"
+                                                name="./bCellSpan"
+                                                sling:resourceType="granite/ui/components/foundation/form/numberfield"
+                                                min="{Double}1" />
+                                            <bRowSpan jcr:primaryType="nt:unstructured"
+                                                fieldLabel="Select # of rows used by the cell"
+                                                name="./bRowSpan"
+                                                sling:resourceType="granite/ui/components/foundation/form/numberfield"
+                                                min="{Double}1" />
+                                            <bodyCell
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                value="RTE Cell Body"
+                                                granite:class="td-cell-readonly"
+                                                name="./bodyCell"/>
+                                        </items>
+                                    </field>
+                                </tbodyRowCell>
+                            </items>
+                        </column>
+                    </items>
+                </field>
+            </tableBodyRows>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,36 @@
+<sly data-sly-use.pageinfo="com.edc.edcweb.core.models.Page"> 
+  <sly data-sly-test.refpath="${pageinfo.referenceURL}"/></sly>
+  <sly data-sly-test.pageLang="${currentPage.language.language}"/>
+  <sly data-sly-test.quoteLang="${pageLang == 'fr' ? 'blockquote-fr' : 'blockquote-en'}"/>
+
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.quotetext}"/>
+<div data-sly-test="${properties.quotetext}"  >
+<!--/* Normal Pull Quote */-->
+  <sly data-sly-test="${properties.premiumornot != 'premium'}">
+    <sly data-sly-test.hidequote="${properties.quotemarks ? '' : 'hide-quotes' }" />
+    <blockquote cite=${refpath}  class="blockquote ${quoteLang} ${hidequote}" >
+        <h3 class="title"><cite>${properties.quotetext}</cite></h3>
+        <footer>
+            <span data-sly-test="${properties.quoteby}" itemscope itemtype="http://schema.org/Person" class="author">${properties.quoteby}</span>
+            <span data-sly-test="${properties.company || properties.position} "><strong class="dash"> &nbsp;&mdash;&nbsp; </strong><span data-sly-test="${properties.position}" class="detail">${properties.position}</span></span>
+            <span> <span data-sly-test="${properties.position && properties.company}" class="comma">,&nbsp; </span><span data-sly-test="${properties.company}" class="detail">${properties.company}</span></span>
+        </footer>
+    </blockquote>
+  </sly>
+<!--/* Excerpt for Premium Teasers */-->
+  <sly data-sly-test="${properties.premiumornot == 'premium'}">
+    <section class="pull-quote-premium-teasers full-width">
+        <div class="container">
+            <div class="content">
+                <p class="${properties.quotealign ? properties.quotealign : 'center' }">
+                    <span>&ldquo;</span>
+                      ${properties.quotetext}
+                    <span>&rdquo;</span>
+                </p>
+            </div>
+        </div>
+    </section>
+  </sly>
+
+</div>

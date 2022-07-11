@@ -1,0 +1,9 @@
+# amCharts map library version number 3.21.14
+ammap.js
+lang/fr.js
+maps/js/canadaHigh.js
+maps/js/canadaLow.js
+maps/js/continentsHigh.js
+maps/js/continentsLow.js
+maps/js/worldHigh.js
+maps/js/worldLow.js

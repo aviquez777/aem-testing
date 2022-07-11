@@ -1,0 +1,21 @@
+<template data-sly-template.item="${@ list, item, smallcards, premium, contenttypeclass, contenttypetitle, idx}">
+  <sly data-sly-use.gentemplates="/apps/edc/components/common/templates.html"/>
+	<a data-sly-use.urlRes="${'com.edc.edcweb.core.models.PageModelHelper' @ path = item.path}" href="${urlRes.url}" class="content-card ${premium && !smallcards ? 'premium' : ''}" data-event-action="${idx}" data-event-type="link" data-event-name="link click - card grid" data-event-engagement="1">
+		<!--/** If there is no value set for image alignment, default is 'center' **/-->
+	    <div data-sly-test="${item.properties['teaserimage']}" class="card-img ${item.properties['imagealignment'] ? item.properties['imagealignment'] : 'center'}">
+	    	<img data-sly-test="${premium}"  src="${item.properties['tabletFileReference']}" alt="${item.properties['imagealttext']}"/>
+	    	<img data-sly-test="${!premium}" src="${item.properties['teaserimage']}" alt="${item.properties['imagealttext']}"/>
+	    </div>
+	    <div class="card-content">
+	        <h4 class="title">${item.pageTitle || item.title || item.name}</h4>
+          <p class="synopsis">
+            <span class="category-tag ${contenttypeclass}">${contenttypetitle}</span>
+            <sly data-sly-use.pageDate="${'com.edc.edcweb.core.models.PageModelHelper' @ page=item}" data-sly-test.displayDate="${pageDate.date}"/>
+            <span class="date" data-sly-test="${displayDate && contenttypeclass != 'success-story'}">
+              <sly data-sly-call="${gentemplates.date @ date = displayDate}"/>
+            </span>
+            ${item.properties['articlesynopsis']}
+          </p>
+      </div>
+  </a>
+</template>

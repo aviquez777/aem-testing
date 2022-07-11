@@ -1,0 +1,36 @@
+<template data-sly-template.level2="${@  uuid, properties, formLabels, formErrorMessages, formType}">
+    <div class="level level-${formType == 'TLP' ? 2 : 3} ${wcmmode.disabled ? 'hide' : 'show'}">
+        <h2>
+            <span class="title-color">${formLabels.step2Of4}</span> ${properties.step2Title}
+        </h2>
+        ${properties.step2Description @ context='html'}
+        <div class="form-row">
+            <div data-form-field="contactFirstName" class="form-group first-name">
+                <label for="contactFirstName-${uuid}">${formLabels.contactFirstName}</label>
+                <input type="text" id="contactFirstName-${uuid}" class="form-control" name="contactFirstName" data-no-url="true" required="" validation-rule="name" />
+                <span class="error" data-req-message="${formErrorMessages.required}" data-text-message="${formErrorMessages.format}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}" data-no-url-message="${formErrorMessages.nourl}"></span>
+            </div>
+            <div data-form-field="contactLastName" class="form-group last-name">
+                <label for="contactLastName-${uuid}">${formLabels.contactLastName}</label>
+                <input type="text" id="contactLastName-${uuid}" class="form-control" name="contactLastName" data-no-url="true" required="" validation-rule="name" />
+                <span class="error" data-req-message="${formErrorMessages.required}" data-text-message="${formErrorMessages.format}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}" data-no-url-message="${formErrorMessages.nourl}"></span>
+            </div>
+        </div>
+        <div data-form-field="contactEmailAddress" class="form-group">
+            <label for="contactEmailAddress-${uuid}">${formLabels.contactEmailAddress}</label>
+            <input type="email" id="contactEmailAddress-${uuid}" class="form-control email" name="contactEmailAddress" required="" />
+            <span class="error" data-req-message="${formErrorMessages.required}" data-email-message="${formErrorMessages.email}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}"></span>
+        </div>
+        <div data-form-field="phoneNumber" class="form-group">
+            <label for="phoneNumber-${uuid}">${formLabels.businessPhoneNumber}</label>
+            <input type="tel" id="phoneNumber-${uuid}" class="form-control" name="phoneNumber" required="" />
+            <span class="error" data-req-message="${formErrorMessages.required}" data-tel-message="${formErrorMessages.phone}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}"></span>
+        </div>
+        <div class="form-row checkbox-item">
+            <input type="checkbox" class="form-control" id="caslConsent-${uuid}" name="caslConsent" />
+            <div class="input-description">
+                <label for="caslConsent-${uuid}">${formLabels.caslConsent @ context='html'}</label>
+            </div>
+        </div>
+    </div>
+</template>

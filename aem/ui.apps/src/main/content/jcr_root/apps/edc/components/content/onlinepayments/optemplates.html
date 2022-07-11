@@ -1,0 +1,120 @@
+<!--/* Step 1 */-->
+<template data-sly-template.step1="${@ isPublish, companyname, policynumber, edc, amount, currency}">
+    <sly data-sly-use.messages="com.edc.edcweb.core.models.FormCommonMessages"/>
+    <sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+    <sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+    <sly data-sly-use.encryptedPath="${'com.edc.edcweb.core.helpers.EncryptUtils' @ toEncrypt=currentPage.path}"/>
+    <sly data-sly-use.ibTemplateObj="/apps/edc/components/common/interactionbutton/ibtemplate.html"/>
+    <h2>
+        <span class="title-color">${properties.step1Of3}</span> ${properties.step1Title}
+    </h2>
+    <form name="" novalidate="" action="">
+        <input type="hidden" class="form-control" data-no-url="true" name="accountEDCId" value="${edc @ context='html'}"/>
+        <input type="hidden"class="form-control" validation-rule="none" name="cp" value="${encryptedPath.encrypted}"/>
+        <input type="hidden"class="form-control" validation-rule="none" name="ticket" value=""/>
+        <section class="form-section">
+            <div class="form-row">
+                <div data-form-field="contactFirstName" class="form-group first-name">
+                    <label for="contactFirstName-${uuid}">${properties.firstNameLabel}</label>
+                    <input type="text"value="" id="contactFirstName-${uuid}" placeholder="${properties.firstNamePH}" class="form-control" name="contactFirstName" data-no-url="true" required validation-rule="name" data-max-length="100" maxLength="101"/>
+                    <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                </div>
+                <div data-form-field="contactLastName" class="form-group last-name">
+                    <label for="contactLastName-${uuid}">${properties.lastNameLabel}</label>
+                    <input type="text" value="" id="contactLastName-${uuid}" placeholder="${properties.lastNamePH}" class="form-control" name="contactLastName" data-no-url="true" required validation-rule="name" data-max-length="100" maxLength="101"/>
+                    <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                </div>
+            </div>
+            <div data-form-field="companyName" class="form-group">
+                <label for="companyName-${uuid}">${properties.companyNameLabel}</label>
+                <input type="text" value="${companyname @ context='html'}" id="companyName-${uuid}" class="form-control" name="companyName" data-no-url="true" required validation-rule="legalName" readonly="" disabled=""/>
+                <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+            </div>
+            <div data-form-field="policyNumber" class="form-group">
+                <label for="policyNumber-${uuid}">${properties.policyNumberLabel}</label>
+                <input type="text"value="${policynumber @ context='html'}" id="policyNumber-${uuid}" class="form-control" name="policyNumber" data-no-url="true" required validation-rule="" readonly="" disabled=""/>
+                <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+            </div>
+            <div class="form-row">
+                <div data-form-field="paymentAmount" class="form-group amount">
+                    <label for="paymentAmount -${uuid}">${properties.paymentAmountLabel}</label>
+                    <div class="input-container">
+                        <input type="text" id="paymentAmount-${uuid}" value="${amount @ context='html'}" class="form-control" name="paymentAmount" data-no-url="true" required validation-rule="" validation-rule="numbersDecimal" data-max-length="10" maxLength="11"/>
+                        <div class="symbol"></div>
+                        <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.numbersDecimal}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                    </div>
+                </div>
+                <div data-form-field="paymentCurrency" class="form-group currency">
+                    <label for="paymentCurrency-${uuid}">${properties.paymentCurrencyLabel}</label>
+                    <input type="text" id="paymentCurrency -${uuid}" value="${currency @ context='html'}" class="form-control" name="paymentCurrency" data-no-url="true" validation-rule="" required readonly="" disabled=""/>
+                    <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                </div>
+            </div>
+            <div data-form-field="emailAddress" class="form-group">
+                <label for="emailAddress-${uuid}">${properties.emailLabel}</label>
+                <input type="email" id="emailAddress-${uuid}" placeholder="${properties.emailPH}"  class="form-control email" name="emailAddress" required data-min-length="1" data-max-length="40" maxLength="40"/>
+                <span class="error" data-req-message="${messages.formErrorMessages.required}" data-email-message="${messages.formErrorMessages.email}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+            </div>
+            <div data-form-field="comments" class="form-group" data-sly-test="${properties.commentsLabel}">
+                <label for="comments-${uuid}">${properties.commentsLabel}</label>
+                <textarea id="comments-${uuid}" class="form-control" placeholder="${properties.commentsPH}" name="comments" rows="8" validation-rule="" data-max-length="254" maxLength="255"></textarea>
+                <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+            </div>
+            <div class="amount-alert ${isPublish ? 'hide' : 'show'}">
+                ${properties.amountAlert @ context='html'}
+            </div>
+        </section>
+        <div class="level-message">
+            ${properties.level1Message @ context='html'}
+        </div>
+        <div class="form-actions">
+            <sly data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='button', buttonstate='enabled', buttontext=properties.nextBtnText, btntype='button'}"/>
+        </div>
+    </form>
+</template>
+<!--/* Step 2 */-->
+<template data-sly-template.step2="">
+    <h2>
+        <span class="title-color">${properties.step2Of3}</span> ${properties.step2Title}
+    </h2>
+    <div class="moneris-wrapper">
+        <div id="moneris-checkout"></div>
+    </div>
+    <div class="level-message">
+         ${properties.level2Message @ context='html'}
+    </div>
+</template>
+<!--/* Step 3 */-->
+<template data-sly-template.step3="${@ isPublish}">
+    <h2>
+        <span class="title-color">${properties.step3Of3}</span> ${properties.step3Title}
+    </h2>
+    <div class="transaction-results">
+        <div class="transaction-context">
+            <h3 class="result-title" data-sly-test="${isPublish}" data-transaction-approved="${properties.approvedTitle}" data-transaction-declined="${properties.declinedTitle}"></h3>
+            <h3 class="result-title" data-sly-test="${!isPublish}">${properties.approvedTitle}</h3>
+            <div class="result-text result-text-approved ${isPublish ? 'hide' : 'show'}">
+                ${properties.approvedDesc @ context='html'}
+            </div>
+            <p data-sly-test="${!isPublish}">&nbsp;</p>
+            <h3 class="result-title" data-sly-test="${!isPublish}">${properties.declinedTitle}</h3>
+            <div class="result-text result-text-declined ${isPublish ? 'hide' : 'show'}">
+                ${properties.declinedDesc @ context='html'}
+            </div>
+        </div>
+        <div class="transaction-status">
+            <p class="status-title">${properties.statusLabel}</p>
+            <p class="status-text status-approved-text ${isPublish ? 'hide' : 'show'}">${properties.transactionApproved}</p>
+            <p class="status-text status-declined-text ${isPublish ? 'hide' : 'show'}">${properties.transactionDeclined}</p>
+        </div>
+        <div class="confirmation-number ${isPublish ? 'hide' : 'show'}">
+            <p class="confirmation-number-title">${properties.confNumber}</p>
+            <p class="confirmation-number-text"></p>
+        </div>
+        <div class="result-actions ${isPublish ? 'hide' : 'show'}">
+            <button type="button" class="button go-back" data-event-type="button" data-event-name="button - go back" data-english-text="Go back">
+                <span>${properties.backBtnText}</span>
+            </button>
+        </div>
+    </div>
+</template>

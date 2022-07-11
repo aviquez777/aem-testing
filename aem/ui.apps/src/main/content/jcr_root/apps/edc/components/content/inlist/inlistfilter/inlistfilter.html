@@ -1,0 +1,128 @@
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-use.inlist="com.edc.edcweb.core.models.inlist.InListSupplierCardsAndFilters"/>
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-use.categoryTemplates="${'/apps/edc/components/content/inlist/inlistfilter/filtercategory.html'}" />
+<sly data-sly-use.supplierCardTemplates="${'/apps/edc/components/content/inlist/inlistfilter/suppliercard.html'}" />
+<sly data-sly-test.hasvalues="${properties.componenttitle &&  properties.btnclear && properties.btnapply}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !hasvalues}"/>
+<sly data-sly-use.ibButtonTemplate="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+
+<div data-sly-test="${hasvalues}">
+    <section class="c-inlist-filter" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'inList Filter'}" data-event-type="button" data-event-name="button click" data-event-engagement="1" data-event-action="main body" data-event-level="1">
+        <section class="supplier-filters" role="search">
+            <div class="filter-title">
+                <h2 class="title">${properties.componenttitle}</h2>
+                <div data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled', btntype='submit', arialabelledby='Close', buttoncssclasses='edc-btn-icon close-button'}"  data-sly-unwrap></div>
+            </div>
+            <div class="filter-criteria" data-sly-list="${inlist.serviceSupplier.availableCategories}">
+                <sly data-sly-test="${item == 'ServiceTypes'}" data-sly-call="${categoryTemplates.categoryFields @ title=inlist.serviceSupplier.filterCategories[item].title,
+                matchAll=inlist.serviceSupplier.filterCategories[item].matchAll,
+                modalId='modal-service-type',
+                modalLinkText=properties.modallink,
+                modalTitle=properties.modaltitleservicetype,
+                modalDescription=properties.modaldescriptionservicetype,
+                mapValues=inlist.serviceSupplier.filterCategories[item].options,
+                typeCategory='service-type',
+                indexOrder=itemList.index,
+                showMore=properties.showmore,
+                showLess=properties.showless}">
+                </sly>
+                <sly data-sly-test="${item == 'MarketsServed'}" data-sly-call="${categoryTemplates.categoryFields @ title=inlist.serviceSupplier.filterCategories[item].title,
+                matchAll=inlist.serviceSupplier.filterCategories[item].matchAll,
+                modalId='modal-markets-served',
+                modalLinkText=properties.modallink,
+                modalTitle=properties.modaltitlemarketsserved,
+                modalDescription=properties.modaldescriptionmarketsserved,
+                mapValues=inlist.serviceSupplier.filterCategories[item].options,
+                typeCategory='market',
+                indexOrder=itemList.index,
+                showMore=properties.showmore,
+                showLess=properties.showless}">
+                </sly>
+                <sly data-sly-test="${item == 'ModesOfTransportation'}" data-sly-call="${categoryTemplates.categoryFields @ title=inlist.serviceSupplier.filterCategories[item].title,
+                matchAll=inlist.serviceSupplier.filterCategories[item].matchAll,
+                modalId='modal-trans-modes', 
+                modalLinkText=properties.modallink,
+                modalTitle=properties.modaltitlemodestransportation,
+                modalDescription=properties.modaldescriptionmodestransportation,
+                mapValues=inlist.serviceSupplier.filterCategories[item].options,
+                typeCategory='modes-trans',
+                indexOrder=itemList.index,
+                showMore=properties.showmore,
+                showLess=properties.showless}">
+                </sly>
+                <sly data-sly-test="${item == 'Services'}" data-sly-call="${categoryTemplates.categoryFields @ title=inlist.serviceSupplier.filterCategories[item].title,
+                matchAll=inlist.serviceSupplier.filterCategories[item].matchAll,
+                modalId='modal-services',
+                modalLinkText=properties.modallink,
+                modalTitle=properties.modaltitleservices,
+                modalDescription=properties.modaldescriptionservices,
+                mapValues=inlist.serviceSupplier.filterCategories[item].options,
+                typeCategory='services',
+                indexOrder=itemList.index,
+                showMore=properties.showmore,
+                showLess=properties.showless}">
+                </sly>
+                <sly data-sly-test="${item == 'Industries'}"  data-sly-call="${categoryTemplates.categoryFields @ title=inlist.serviceSupplier.filterCategories[item].title,
+                matchAll=inlist.serviceSupplier.filterCategories[item].matchAll,
+                modalId='modal-industries',
+                modalLinkText=properties.modallink,
+                modalTitle=properties.modaltitleindustries,
+                modalDescription=properties.modaldescriptionindustries,
+                mapValues=inlist.serviceSupplier.filterCategories[item].options,
+                typeCategory='industries',
+                indexOrder=itemList.index,
+                showMore=properties.showmore,
+                showLess=properties.showless}">
+                </sly>
+                <sly data-sly-test="${item == 'QuoteResponseTimes'}"  data-sly-call="${categoryTemplates.categoryFields @ title=inlist.serviceSupplier.filterCategories[item].title,
+                matchAll=inlist.serviceSupplier.filterCategories[item].matchAll,
+                modalId='modal-response-times',
+                modalLinkText=properties.modallink,
+                modalTitle=properties.modaltitlequoteresponse,
+                modalDescription=properties.modaldescriptionquoteresponse,
+                mapValues=inlist.serviceSupplier.filterCategories[item].options,
+                typeCategory='response-times',
+                indexOrder=itemList.index,
+                showMore=properties.showmore,
+                showLess=properties.showless}">
+                </sly>
+            </div>
+            <div class="filter-footer">
+                <div class="button-option">
+                    <div data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled', buttontext=properties.btnclear, btntype='button', buttoncssclasses='edc-tertiary-btn clear-filter'}"  data-sly-unwrap></div>
+                </div>
+                <div class="button-option">
+                    <div data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled', buttontext=properties.btnclear, btntype='button', buttoncssclasses='edc-tertiary-btn clear-filter'}"  data-sly-unwrap></div>
+                </div>
+            </div>
+        </section>
+        <section class="filter-data">
+            <div data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled', buttontext=properties.componenttitle, btntype='button', buttoncssclasses='edc-tertiary-btn show-filters'}"  data-sly-unwrap></div>
+            <div class="filter-tags hide" data-close-label="Remove tag">
+                <ul>
+                    <li class="clear">
+                        <div data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled', buttontext=properties.btnclear, btntype='button', buttoncssclasses='edc-btn-unstyled clear-tag'}"  data-sly-unwrap></div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="suppliers-info" aria-live="polite" role="region" aria-label="Suppliers Search Results">
+            <div class="c-inlist-supplier-card" data-sly-list="${inlist.serviceSupplier.suppliers}">
+                <sly data-sly-call="${supplierCardTemplates.supplierCard @ cardObj=item,
+                pathProfile=inlist.supplierProfilePath,
+                target=properties.suppliernewtab,
+                serviceLabel=properties.servicelabel,
+                supplierBtn=properties.supplierbtn,
+                locationZero=properties.locationzero,
+                locationSingle=properties.locationsingle,
+                locationPlural=properties.locationplural,
+                position=itemList.even ? 'odd': 'even'}">
+                </sly>
+            </div>
+            <div class="no-match hide">
+                <span>No results</span>
+            </div>
+        </section>
+    </section>
+</div>

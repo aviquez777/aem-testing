@@ -1,0 +1,34 @@
+<template data-sly-template.supplierCard="${@ cardObj, target, pathProfile, serviceLabel, supplierBtn, locationZero, locationSingle, locationPlural, position}">
+    <sly data-sly-use.ibButtonTemplate="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+    <div class="${['supplier-card', position] @ join=' '}" data-service-type="${cardObj.serviceTypeIds}" data-markets="${cardObj.marketsServedIds}" data-transportation="${cardObj.transportationModesIds}" data-services="${cardObj.servicesIds}" data-industries="${cardObj.supplierIndustriesIds}" data-response="${cardObj.responseTimeId}"  data-english-name="${cardObj.englishName}">
+        <div class="supplier-heading">
+            <h4 class="service-type">${cardObj.serviceType}</h4>
+            <h3 class="supplier-name">${cardObj.name}</h3>
+            <p class="headquarters">
+                <sly data-sly-test="${cardObj.numberOfLocations == '0'}">
+                    ${cardObj.city}, ${cardObj.country} - ${locationZero}
+                </sly>
+                <sly data-sly-test="${cardObj.numberOfLocations == '1'}">
+                    ${cardObj.city}, ${cardObj.country} + ${cardObj.numberOfLocations} ${locationSingle}
+                </sly>
+                <sly data-sly-test="${cardObj.numberOfLocations != '0' && cardObj.numberOfLocations != '1'}">
+                    ${cardObj.city}, ${cardObj.country} + ${cardObj.numberOfLocations} ${locationPlural}
+                </sly>
+            </p>
+        </div>
+        <div class="supplier-body">
+            <p>${cardObj.briefDescription}</p>
+            <div class="supplier-services">
+                <h4>${serviceLabel}</h4>
+                <ul data-sly-list="${cardObj.services}">
+                    <li>${item}</li>
+                </ul>
+            </div>
+            <hr />
+        </div>
+        <div class="supplier-footer">
+            <sly data-sly-test.linkUrl="${[pathProfile, cardObj.id, 'html'] @ join='.'}"/>
+            <div data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='link', isUsedForModal='nomodal', buttonstate='enabled', link=linkUrl, buttontext=supplierBtn, target=target, linkchecker='valid', buttoncssclasses='button edc-primary-btn'}"  data-sly-unwrap></div>
+        </div>
+    </div>
+</template>

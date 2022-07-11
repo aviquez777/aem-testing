@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <ak
+        jcr:primaryType="nt:unstructured"
+        enName="Alaska"
+        frName="Alaska"
+        value="AK"
+        tagValue="Alaska" />
+    <al
+        jcr:primaryType="nt:unstructured"
+        enName="Alabama"
+        frName="Alabama"
+        value="AL"
+        tagValue="Alabama" />
+    <ar
+        jcr:primaryType="nt:unstructured"
+        enName="Arkansas"
+        frName="Arkansas"
+        value="AR"
+        tagValue="Arkansas" />
+    <az
+        jcr:primaryType="nt:unstructured"
+        enName="Arizona"
+        frName="Arizona"
+        value="AZ"
+        tagValue="Arizona" />
+    <ca
+        jcr:primaryType="nt:unstructured"
+        enName="California"
+        frName="Californie"
+        value="CA"
+        tagValue="California" />
+    <co
+        jcr:primaryType="nt:unstructured"
+        enName="Colorado"
+        frName="Colorado"
+        value="CO"
+        tagValue="Colorado" />
+    <ct
+        jcr:primaryType="nt:unstructured"
+        enName="Connecticut"
+        frName="Connecticut"
+        value="CT"
+        tagValue="Connecticut" />
+    <dc
+        jcr:primaryType="nt:unstructured"
+        enName="District of Columbia"
+        frName="District de Colombie"
+        value="DC"
+        tagValue="District of Columbia" />
+    <de
+        jcr:primaryType="nt:unstructured"
+        enName="Delaware"
+        frName="Delaware"
+        value="DE"
+        tagValue="Delaware" />
+    <fl
+        jcr:primaryType="nt:unstructured"
+        enName="Florida"
+        frName="Floride"
+        value="FL"
+        tagValue="Florida" />
+    <ga
+        jcr:primaryType="nt:unstructured"
+        enName="Georgia"
+        frName="Géorgie"
+        value="GA"
+        tagValue="Georgia" />
+    <hi
+        jcr:primaryType="nt:unstructured"
+        enName="Hawaii"
+        frName="Hawaï"
+        value="HI"
+        tagValue="Hawaii" />
+    <ia
+        jcr:primaryType="nt:unstructured"
+        enName="Iowa"
+        frName="Iowa"
+        value="IA"
+        tagValue="Iowa" />
+    <id
+        jcr:primaryType="nt:unstructured"
+        enName="Idaho"
+        frName="Idaho"
+        value="ID"
+        tagValue="Idaho" />
+    <il
+        jcr:primaryType="nt:unstructured"
+        enName="Illinois"
+        frName="Illinois"
+        value="IL"
+        tagValue="Illinois" />
+    <in
+        jcr:primaryType="nt:unstructured"
+        enName="Indiana"
+        frName="Indiana"
+        value="IN"
+        tagValue="Indiana" />
+    <ks
+        jcr:primaryType="nt:unstructured"
+        enName="Kansas"
+        frName="Kansas"
+        value="KS"
+        tagValue="Kansas" />
+    <ky
+        jcr:primaryType="nt:unstructured"
+        enName="Kentucky"
+        frName="Kentucky"
+        value="KY"
+        tagValue="Kentucky" />
+    <la
+        jcr:primaryType="nt:unstructured"
+        enName="Louisiana"
+        frName="Louisiane"
+        value="LA"
+        tagValue="Louisiana" />
+    <ma
+        jcr:primaryType="nt:unstructured"
+        enName="Massachusetts"
+        frName="Massachusetts"
+        value="MA"
+        tagValue="Massachusetts" />
+    <md
+        jcr:primaryType="nt:unstructured"
+        enName="Maryland"
+        frName="Maryland"
+        value="MD"
+        tagValue="Maryland" />
+    <me
+        jcr:primaryType="nt:unstructured"
+        enName="Maine"
+        frName="Maine"
+        value="ME"
+        tagValue="Maine" />
+    <mi
+        jcr:primaryType="nt:unstructured"
+        enName="Michigan"
+        frName="Michigan"
+        value="MI"
+        tagValue="Michigan" />
+    <mn
+        jcr:primaryType="nt:unstructured"
+        enName="Minnesota"
+        frName="Minnesota"
+        value="MN"
+        tagValue="Minnesota" />
+    <mo
+        jcr:primaryType="nt:unstructured"
+        enName="Missouri"
+        frName="Missouri"
+        value="MO"
+        tagValue="Missouri" />
+    <ms
+        jcr:primaryType="nt:unstructured"
+        enName="Mississippi"
+        frName="Mississippi"
+        value="MS"
+        tagValue="Mississippi" />
+    <mt
+        jcr:primaryType="nt:unstructured"
+        enName="Montana"
+        frName="Montana"
+        value="MT"
+        tagValue="Montana" />
+    <nc
+        jcr:primaryType="nt:unstructured"
+        enName="North Carolina"
+        frName="Caroline du Nord"
+        value="NC"
+        tagValue="North Carolina" />
+    <nd
+        jcr:primaryType="nt:unstructured"
+        enName="North Dakota"
+        frName="Dakota du Nord"
+        value="ND"
+        tagValue="North Dakota" />
+    <ne
+        jcr:primaryType="nt:unstructured"
+        enName="Nebraska"
+        frName="Nebraska"
+        value="NE"
+        tagValue="Nebraska" />
+    <nh
+        jcr:primaryType="nt:unstructured"
+        enName="New Hampshire"
+        frName="New Hampshire"
+        value="NH"
+        tagValue="New Hampshire" />
+    <nj
+        jcr:primaryType="nt:unstructured"
+        enName="New Jersey"
+        frName="New Jersey"
+        value="NJ"
+        tagValue="New Jersey" />
+    <nm
+        jcr:primaryType="nt:unstructured"
+        enName="New Mexico"
+        frName="Nouveau-Mexique"
+        value="NM"
+        tagValue="New Mexico" />
+    <nv
+        jcr:primaryType="nt:unstructured"
+        enName="Nevada"
+        frName="Nevada"
+        value="NV"
+        tagValue="Nevada" />
+    <ny
+        jcr:primaryType="nt:unstructured"
+        enName="New York"
+        frName="État de New York"
+        value="NY"
+        tagValue="New York" />
+    <oh
+        jcr:primaryType="nt:unstructured"
+        enName="Ohio"
+        frName="Ohio"
+        value="OH"
+        tagValue="Ohio" />
+    <ok
+        jcr:primaryType="nt:unstructured"
+        enName="Oklahoma"
+        frName="Oklahoma"
+        value="OK"
+        tagValue="Oklahoma" />
+    <or
+        jcr:primaryType="nt:unstructured"
+        enName="Oregon"
+        frName="Orégon"
+        value="OR"
+        tagValue="Oregon" />
+    <pa
+        jcr:primaryType="nt:unstructured"
+        enName="Pennsylvania"
+        frName="Pennsylvanie"
+        value="PA"
+        tagValue="Pennsylvania" />
+    <ri
+        jcr:primaryType="nt:unstructured"
+        enName="Rhode Island"
+        frName="Rhode Island"
+        value="RI"
+        tagValue="Rhode Island" />
+    <sc
+        jcr:primaryType="nt:unstructured"
+        enName="South Carolina"
+        frName="Caroline du Sud"
+        value="SC"
+        tagValue="South Carolina" />
+    <sd
+        jcr:primaryType="nt:unstructured"
+        enName="South Dakota"
+        frName="Dakota du Sud"
+        value="SD"
+        tagValue="South Dakota" />
+    <tn
+        jcr:primaryType="nt:unstructured"
+        enName="Tennessee"
+        frName="Tennessee"
+        value="TN"
+        tagValue="Tennessee" />
+    <tx
+        jcr:primaryType="nt:unstructured"
+        enName="Texas"
+        frName="Texas"
+        value="TX"
+        tagValue="Texas" />
+    <ut
+        jcr:primaryType="nt:unstructured"
+        enName="Utah"
+        frName="Utah"
+        value="UT"
+        tagValue="Utah" />
+    <va
+        jcr:primaryType="nt:unstructured"
+        enName="Virginia"
+        frName="Virginie"
+        value="VA"
+        tagValue="Virginia" />
+    <vt
+        jcr:primaryType="nt:unstructured"
+        enName="Vermont"
+        frName="Vermont"
+        value="VT"
+        tagValue="Vermont" />
+    <wa
+        jcr:primaryType="nt:unstructured"
+        enName="Washington"
+        frName="État de Washington"
+        value="WA"
+        tagValue="Washington" />
+    <wi
+        jcr:primaryType="nt:unstructured"
+        enName="Wisconsin"
+        frName="Wisconsin"
+        value="WI"
+        tagValue="Wisconsin" />
+    <wv
+        jcr:primaryType="nt:unstructured"
+        enName="West Virginia"
+        frName="Virginie-Occidentale"
+        value="WV"
+        tagValue="West Virginia" />
+    <wy
+        jcr:primaryType="nt:unstructured"
+        enName="Wyoming"
+        frName="Wyoming"
+        value="WY"
+        tagValue="Wyoming" />
+</jcr:root>

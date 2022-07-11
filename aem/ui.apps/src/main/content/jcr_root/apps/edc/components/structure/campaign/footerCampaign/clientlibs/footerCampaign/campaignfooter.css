@@ -1,0 +1,244 @@
+@charset "UTF-8";
+.mulberry-theme #footer.campaign-footer .footer-bottom {
+    background-color: #661e38;
+}
+
+.pelorous-theme #footer.campaign-footer .footer-bottom {
+    background-color: #1d7d8c;
+}
+
+.sea-green-theme #footer.campaign-footer .footer-bottom {
+    background-color: #328560;
+}
+
+.sandstone-theme #footer.campaign-footer * {
+    color: #333;
+}
+
+.sandstone-theme #footer.campaign-footer .footer-bottom {
+    background-color: #ed834e;
+}
+
+.saffron-theme #footer.campaign-footer * {
+    color: #333;
+}
+
+.saffron-theme #footer.campaign-footer .footer-bottom {
+    background-color: #f1c238;
+}
+
+#footer.campaign-footer .footer-bottom-info {
+    opacity: 0;
+}
+
+#footer.campaign-footer .footer-bottom-info.show {
+    -moz-transition: opacity 0.8s ease-in-out;
+    -o-transition: opacity 0.8s ease-in-out;
+    -webkit-transition: opacity 0.8s ease-in-out;
+    transition: opacity 0.8s ease-in-out;
+    opacity: 1;
+}
+
+#footer.campaign-footer .footer-bottom-info .brands {
+    margin-bottom: 1.5rem;
+}
+
+#footer.campaign-footer .footer-bottom-info .links {
+    margin-bottom: 1.5rem;
+}
+
+#footer.campaign-footer .footer-bottom-info .links li {
+    font-size: 12px;
+    margin-right: 1.25rem;
+}
+
+#footer.campaign-footer .footer-bottom-info .info {
+    font-weight: normal;
+}
+
+#footer.campaign-footer .footer-bottom-info .info span {
+    line-height: 1rem;
+    margin-top: .25rem;
+}
+
+#footer.campaign-footer .footer-bottom-info .social-icons {
+    margin-top: 1.5rem;
+}
+
+#footer.campaign-footer .footer-bottom-info .social-icons p {
+    font-size: 12px;
+    margin-bottom: 1rem;
+}
+
+#footer.campaign-footer .footer-bottom-info .social-icons ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+#footer.campaign-footer .footer-bottom-info .social-icons ul a {
+    text-decoration: none;
+}
+
+#footer.campaign-footer .footer-bottom-info .social-icons ul a:hover {
+    opacity: .6;
+}
+
+#footer.campaign-footer .footer-bottom-info .social-icons span {
+    font-family: "iconfonts";
+    margin-right: 1.875rem;
+}
+
+#footer.campaign-footer .footer-bottom-info .social-icons span.facebook::after {
+    content: "";
+}
+
+#footer.campaign-footer .footer-bottom-info .social-icons span.linkedin::after {
+    content: "";
+}
+
+#footer.campaign-footer .footer-bottom-info .social-icons span.twitter::after {
+    content: "";
+}
+
+#footer.campaign-footer .footer-bottom-info .social-icons span.youtube::after {
+    content: "";
+}
+
+@media (min-width: 720px) {
+    #footer.campaign-footer .footer-bottom-info {
+        padding: 1.5rem 0;
+    }
+    #footer.campaign-footer .footer-bottom-info .company {
+        margin-right: 1.25rem;
+    }
+    #footer.campaign-footer .footer-bottom-info .brands {
+        margin-bottom: 1rem;
+    }
+    #footer.campaign-footer .footer-bottom-info .links {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    #footer.campaign-footer .footer-bottom-info .links {
+        width: 100%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    #footer.campaign-footer .footer-bottom-info .info {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 100%;
+        text-align: left;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    #footer.campaign-footer .footer-bottom-info .info {
+        width: 100%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    #footer.campaign-footer .footer-bottom-info .info span {
+        margin-top: 0;
+    }
+    #footer.campaign-footer .footer-bottom-info .social-icons {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 41.66666667%;
+        align-items: center;
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 0;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    #footer.campaign-footer .footer-bottom-info .social-icons {
+        width: 41.66666667%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    #footer.campaign-footer .footer-bottom-info .social-icons p {
+        margin: 0;
+    }
+    #footer.campaign-footer .footer-bottom-info .social-icons span {
+        margin-right: 1.25rem;
+    }
+    #footer.campaign-footer .footer-bottom-info .social-icons li:first-child span {
+        margin-left: 1.5rem;
+    }
+    #footer.campaign-footer .footer-bottom-info .social-icons li:last-child span {
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .saffron-theme #footer.campaign-footer .info span:first-child,
+    .sandstone-theme #footer.campaign-footer .info span:first-child {
+        border-left: 1px solid #333;
+    }
+    #footer.campaign-footer .info span:first-child {
+        border-left: 1px solid #fff;
+        padding-left: 1.25rem;
+    }
+    #footer.campaign-footer .footer-bottom-info .brands {
+        margin-bottom: 1.5rem;
+    }
+    #footer.campaign-footer .footer-bottom-info .footer-info {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 75%;
+        align-items: baseline;
+        display: flex;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    #footer.campaign-footer .footer-bottom-info .footer-info {
+        width: 75%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) {
+    #footer.campaign-footer .footer-bottom-info .footer-info .links,
+    #footer.campaign-footer .footer-bottom-info .footer-info .info {
+        width: auto;
+    }
+    #footer.campaign-footer .footer-bottom-info .footer-info .links {
+        margin-bottom: 0;
+    }
+    #footer.campaign-footer .footer-bottom-info .social-icons {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 25%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    #footer.campaign-footer .footer-bottom-info .social-icons {
+        width: 25%;
+        float: left;
+    }
+}

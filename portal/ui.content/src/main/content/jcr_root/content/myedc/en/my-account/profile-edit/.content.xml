@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastReplicationAction="Activate"
+        cq:template="/conf/edcportal/settings/wcm/templates/content-page"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Edit Profile"
+        sling:resourceType="edcportal/components/structure/page"
+        firstpublished="{Date}2018-10-25T15:28:29.803-04:00">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <myedcbanner
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="edcportal/components/content/myedcbanner"
+                headline="MyEDC Account"/>
+            <leftcolumn jcr:primaryType="nt:unstructured">
+                <myedcnavigation
+                    jcr:primaryType="nt:unstructured"
+                    ctaurl="/content/edc/en/tradeinsights"
+                    webinarsurl="/content/edc/en/events"
+                    sling:resourceType="edcportal/components/content/myedcnavigation"
+                />
+            </leftcolumn>
+            <rightcolumn jcr:primaryType="nt:unstructured">
+                <manageprofile
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="edcportal/components/content/manageprofile"
+                    hideSelectAll="{Boolean}true"
+                    hideSelectRegion="{Boolean}true"
+                    showCancelButton="{Boolean}true"
+                    itmafterlist="&lt;p>Better understanding the makeup of Canadian businesses will help us improve equitable access to support.&amp;nbsp; We invite you to help us by responding below.&lt;/p>&#xd;&#xa;&lt;p>Responding to the following question is completely &lt;b>voluntary &lt;/b>and will not impact admissibility to EDC existing programs, products and services. The information you submit will be used and processed by EDC according to its &lt;a href=&quot;https://www.edc.ca/en/privacy-notice.html&quot;>Privacy Notice&lt;/a> and &lt;a href=&quot;https://www.edc.ca/en/about-us/corporate/disclosure/info-source.html&quot;>Business Diversity Notice&lt;/a> in support of EDC’s Inclusive Trade strategy.&lt;/p>&#xd;&#xa;"
+                    itmbeforelist="&lt;p>EDC's Inclusive Trade strategy aims to deepen our impact on inclusion, diversity and equity through supporting Canadian exporting businesses owned or led by the following groups:&lt;/p>&#xd;&#xa;"
+                    itmcheckboxestitle="Select all that apply to your company (Optional):"
+                    itmtitle="Inclusion, Diversity, and Equity"
+                    modalariaclose="close"
+                    modalariaopen="open"
+                    other="Other (please specify)"
+                    otherph="If other please specify"
+                    questionsubtitle="Select all groups which apply to your company (Optional):"
+                    saveButtonKey="button-text-save-detail"
+                    textIsRich="[true,true,true,true,true,true,true,true]"
+                    titleKey="form-manage-profile-title"
+                    allFieldsReqKey="label-text-all-fields-required"
+                    formType="update"
+                    autoCompleteDirectionsText="Keyboard users, use up and down arrows to review and enter to select. Touch device users, explore by touch or with swipe gestures"
+                    autoCompleteMatchNotFound="No matches found. Please try a new search."
+                    autoCompleteNoResults="No results found"
+                    autoCompleteAriaSearchResult="Search Result"
+                    autoCompleteOther="Other">
+                    <needassistance
+                            fragmentPath="/content/experience-fragments/myedc/needAssistance/need-assistance"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="cq/experience-fragments/editor/components/experiencefragment"/>
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            width="12"/>
+                    </cq:responsive>
+                    <grouplist jcr:primaryType="nt:unstructured">
+                        <item0
+                            jcr:primaryType="nt:unstructured"
+                            group="Women"
+                            grouptype="w"
+                            tooltipdescription="&lt;p>Women&lt;/p>&#xd;&#xa;"
+                            tooltiptitle="Women"/>
+                        <item1
+                            jcr:primaryType="nt:unstructured"
+                            group="LGBTQ2+"
+                            grouptype="g"
+                            hastooltip="true"
+                            tooltipdescription="Lesbian, gay, bisexual, or another minority sexual identity such as asexual or pansexual, as well as minority gender identity (trans and non-binary identities like genderqueer, gender fluid, pangender or agender)."
+                            tooltiptitle="LGBTQ2+"/>
+                        <item2
+                            jcr:primaryType="nt:unstructured"
+                            group="Indigenous"
+                            grouptype="i"
+                            hastooltip="true"
+                            tooltipdescription="&lt;p>First Nations, Inuit or Metis&lt;/p>&#xd;&#xa;"
+                            tooltiptitle="Indigenous"/>
+                        <item3
+                            jcr:primaryType="nt:unstructured"
+                            group="Black"
+                            grouptype="b"/>
+                        <item4
+                            jcr:primaryType="nt:unstructured"
+                            group="Other racialized communities"
+                            grouptype="r"
+                            hastooltip="true"
+                            tooltipdescription="&lt;p>East Asian, Latin American, Middle Eastern, South Asian, Southeast Asian, West Asian, Mixed race&lt;/p>&#xd;&#xa;"
+                            tooltiptitle="Other racialized communities"/>
+                        <item5
+                            jcr:primaryType="nt:unstructured"
+                            group="Persons with disabilities"
+                            grouptype="d"
+                            hastooltip="true"
+                            tooltipdescription="&lt;p>Persons with any impairment, including a physical, mental, intellectual, cognitive, learning, communication or sensory impairment — or a functional limitation — whether permanent, temporary or episodic in nature, or evident or not, that, in interaction with a barrier, hinders a person’s full and equal participation in society&lt;/p>&#xd;&#xa;"
+                            tooltiptitle="Persons with disabilities"/>
+                    </grouplist>
+                    <checkboxlist jcr:primaryType="nt:unstructured">
+                        <item0
+                            jcr:primaryType="nt:unstructured"
+                            checkboxlabel="My company is majority owned (51% or more) by an individual from one of the diversity and equity groups"
+                            checkboxtype="m"
+                            opensquestion="true"
+                            questiontitle="Company is MAJORITY owned (51% or more) by person(s) who identify as"/>
+                        <item1
+                            jcr:primaryType="nt:unstructured"
+                            checkboxlabel="My company is minority owned (1-50% or unsure of ownership %) by an individual from one of the diversity and equity groups"
+                            checkboxtype="n"
+                            opensquestion="true"
+                            questiontitle="Company is MINORITY owed (unknown or 0-50%) by person(s) who identify as"/>
+                        <item2
+                            jcr:primaryType="nt:unstructured"
+                            checkboxlabel="The President, CEO, or COO of my company identifies with one of the diversity and equity groups"
+                            checkboxtype="l"
+                            opensquestion="true"
+                            questiontitle="Do Leaders (President/CEO), identify as"/>
+                        <item3
+                            jcr:primaryType="nt:unstructured"
+                            checkboxlabel="I do not know"
+                            checkboxtype="k"/>
+                        <item4
+                            jcr:primaryType="nt:unstructured"
+                            checkboxlabel="Prefer not to answer"
+                            checkboxtype="p"/>
+                        <item5
+                            jcr:primaryType="nt:unstructured"
+                            checkboxlabel="None of the above"
+                            checkboxtype="a"/>
+                    </checkboxlist>
+                </manageprofile>
+            </rightcolumn>
+        </root>
+    </jcr:content>
+</jcr:root>

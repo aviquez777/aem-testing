@@ -1,0 +1,32 @@
+<template data-sly-template.section="${@ item, sections, sectionTitles, sectionNullMap, sectionClasses, fieldLabels, data}">
+<sly data-sly-test.sectionClass="${sectionClasses[item]}"/>
+<sly data-sly-test.displayIfNull="${sectionNullMap[item]}"/>
+    <div class="company-info__section ${sectionClass}">
+        <h4>${sectionTitles[item]}</h4>
+        <sly data-sly-list.section="${sections[item]}">
+            <sly data-sly-list.keyName="${section}">
+                <sly data-sly-test.label="${fieldLabels[keyName]}"/>
+                <sly data-sly-test.value="${sections[item][keyName]}"/>
+                <sly data-sly-test.showText="true"/>
+                    <sly data-sly-test="${label && value}">
+                        <p data-sly-test="${value}" class="company-info__section--text ${(sectionList.count==2) ? 'separate' : ''}">
+                            <span class="text-label">${label}</span>
+                            <span class="text-value">${value}</span>
+                        </p>
+                        <sly data-sly-test.showText="false"/>
+                     </sly>
+                     <sly data-sly-test="${keyName != 'googleMapLink' && showText}">
+                        <p class="company-info__section--text ${(sectionClass == 'company-info__section' && sectionList.count==1) ? 'special-text' : ''}">
+                            ${value ? value : displayIfNull}
+                        </p>
+                        <p data-sly-test="${!wcmmode.disabled && displayIfNull}">If Null: ${displayIfNull}</p>
+                    </sly>
+                <a data-sly-test="${keyName == data.mapLinkVar}" href="${data.mapBaseUrl}${value}" x-cq-linkchecker="skip" target="${properties.linktarget}">${properties.viewMapLinkText}</a>
+            </sly>
+        </sly>
+        <p class="company-info__section--text special-text" data-sly-test="${!sections[item] && displayIfNull}">
+            ${displayIfNull}
+        </p>
+        <p data-sly-test="${!wcmmode.disabled && displayIfNull}">Will display <em>"${displayIfNull}"</em> if no value from API</p>
+    </div>
+</template>

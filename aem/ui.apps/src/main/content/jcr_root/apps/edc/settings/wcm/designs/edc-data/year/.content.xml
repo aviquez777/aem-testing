@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <option1
+        jcr:primaryType="nt:unstructured"
+        enName="Not yet incorporated"
+        frName="Elle n’est pas encore constituée en société."
+        value="Not yet incorporated"/>
+    <option2
+        jcr:primaryType="nt:unstructured"
+        enName="Under 1 year"
+        frName="Moins de 1 an"
+        value="Under 1 year"/>
+    <option3
+        jcr:primaryType="nt:unstructured"
+        enName="1-5 years"
+        frName="De 1 à 5 ans"
+        value="1-5 years"/>
+    <option4
+        jcr:primaryType="nt:unstructured"
+        enName="Over 5 years"
+        frName="Plus de 5 ans"
+        value="Over 5 years"/>
+</jcr:root>

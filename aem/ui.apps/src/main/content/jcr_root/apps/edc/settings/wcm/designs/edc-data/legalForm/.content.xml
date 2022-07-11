@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <option1
+        jcr:primaryType="nt:unstructured"
+        enName="Incorporated"
+        frName="Incorporée"
+        value="Incorporated"/>
+    <option2
+        jcr:primaryType="nt:unstructured"
+        enName="Partnership/JV"
+        frName="Parenariat/JV"
+        value="Partnership/JV"/>
+    <option3
+        jcr:primaryType="nt:unstructured"
+        enName="Sole Proprietorship"
+        frName="Entreprise individuelle"
+        value="Sole Proprietorship"/>
+    <option4
+        jcr:primaryType="nt:unstructured"
+        enName="Branch/Subsidiary (foreign owned)"
+        frName="Fillale/propriété étranger"
+        value="Branch/Subsidiary (foreign owned)"/>
+    <option5
+        jcr:primaryType="nt:unstructured"
+        enName="Other"
+        frName="Autre"
+        value="Other"/>
+</jcr:root>

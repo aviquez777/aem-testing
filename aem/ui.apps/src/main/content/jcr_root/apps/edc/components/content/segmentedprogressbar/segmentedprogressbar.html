@@ -1,0 +1,15 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = true, emptyTextAppend='Component will render properly only on publish mode.'}"/>
+
+<div class="c-segmented-progress-bar" data-segments="${properties.segments}" data-current-step="${properties.currentStep}" data-progress-step="${properties.stepWord ? properties.stepWord : 'step-word' @ i18n}" data-progress-of="${properties.ofWord ? properties.ofWord : 'of-word' @ i18n}" data-progress-title="${properties.stepTitle}">
+    <div class="progress-container">
+        <div class="progress-segment"></div>
+    </div>
+    <h2 class="multistep-title hide">
+        <span class="title-step title-color"></span>
+        <span class="title-current title-color"></span>
+        <span class="title-of title-color"></span>
+        <span class="title-total title-color"></span>
+        <span class="title-text"></span>
+    </h2>
+</div>

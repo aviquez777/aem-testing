@@ -1,0 +1,53 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-use.newsletter="com.edc.edcweb.core.models.NewsletterSubscription"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-use.eloqua="com.edc.edcweb.core.models.EloquaData"/>
+<sly data-sly-use.messages="com.edc.edcweb.core.models.FormCommonMessages"/>
+<sly data-sly-use.formsTemplates="${'/apps/edc/components/common/forms.html'}" />
+<sly data-sly-test.hasvalues="${newsletter.title}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !hasvalues}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = (!hasvalues || newsletter.displaytype == 'newsletter-banner'), emptyTextAppend = 'Banner execution selected'}" />
+<sly data-sly-use.page="com.adobe.cq.wcm.core.components.models.Page"/>
+<sly data-sly-test.isBanker="${page.templateName == 'banker-page' ? 'banker' : 'tradeinsights'}"/>
+<sly data-sly-use.ibTemplateObj="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+<sly data-sly-test="${hasvalues}" >
+    <sly data-sly-test="${newsletter.eloquaFormName || newsletter.eloquaFormSubmitURL}">
+        <section class="c-newsletter-subscription ${newsletter.displaytype ? newsletter.displaytype : 'newsletter-body'}" aria-labelledby="newsletter-title-${uuid}"> <!--newsletter-body newsletter-banner-->
+            <div class="newsletter-content">
+                <div class="${newsletter.displaytype == 'newsletter-banner' ? 'container' : ''}">
+                    <button data-sly-test="${newsletter.displaytype == 'newsletter-banner'}" class="close-button" type="button" aria-label="${'close' @ i18n}"></button>
+                    <form name="${isBanker != 'banker' ? newsletter.eloquaFormName : 'MIP2-Newsletter-233'}" class="newsletter-form" noValidate="" action="${newsletter.eloquaFormSubmitURL}" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'Newsletter Subscription'}" data-event-type="form" data-event-name="${newsletter.eventName ? newsletter.eventName : 'tradeinsights newsletter submission'}" data-event-engagement="2" data-event-level="primary">
+                        <sly data-sly-call="${formsTemplates.formhiddenfields @ elqFormName=(isBanker != 'banker' ? newsletter.eloquaFormName : 'MIP2-Newsletter-233'),
+                                elqSiteId=newsletter.eloquaSiteId , lang=newsletter.pageLanguage, docID= newsletter.docID,
+                                inquiryID=newsletter.inquiryID, formID='SubLevel1'}">
+                        </sly>
+                        <input type="text" name="middleName" className="form-control" placeholder="middlename" tabIndex="-1" autoComplete="false"/>
+                        <input type="hidden" name="assetTier" class="form-control" data-no-url="" value="${eloqua.assetTier}" />
+                        <input type="hidden" name="caslConsent" id="caslhidden-${uuid}" class="form-control" data-no-url="" value="yes" />
+                        <div class="form-content">
+                            <img data-sly-test="${newsletter.logo && newsletter.displaytype != 'newsletter-banner'}" src="${newsletter.logo}" alt="${newsletter.logoAlt}" srcset="${newsletter.logoHighRes}" />
+                            <h3 data-sly-test="${newsletter.title}" id="newsletter-title-${uuid}" class="title">${newsletter.title}</h3>
+                            <p data-sly-test="${newsletter.subtitle && newsletter.displaytype != 'newsletter-banner'}" class="small">${newsletter.subtitle}</p>
+                            <div class="content-fields">
+                                <input type="email" aria-label="Email Address" placeholder="${newsletter.placeholder}" name="emailAddress" required />
+                                <div data-sly-test="${newsletter.ctaText && (newsletter.displaytype == 'newsletter-banner')}" data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='button', isUsedForModal='nomodal', buttonstate='enabled', buttontext=newsletter.ctaText, btntype='submit'}"  data-sly-unwrap></div>
+                                <span class="error" data-req-message="${messages.formErrorMessages.required}" data-email-message="${messages.formErrorMessages.email}"></span>
+                                <div data-sly-test="${newsletter.disclaimer}" class="note">${newsletter.disclaimer @ context='html'}</div>
+                                <div data-sly-test="${newsletter.ctaText && !(newsletter.displaytype == 'newsletter-banner')}" data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='button', isUsedForModal='nomodal', buttonstate='enabled', buttontext=newsletter.ctaText, btntype='submit'}"  data-sly-unwrap></div>
+                            </div>
+                        </div>
+
+                        <div class="success">
+                            <img data-sly-test="${newsletter.logo && newsletter.displaytype != 'newsletter-banner'}" src="${newsletter.logo}" alt="${newsletter.logoAlt}" srcset="${newsletter.logoHighRes}" />
+                            <h3 data-sly-test="${newsletter.successTitle}" class="title">${newsletter.successTitle}</h3>
+                            <p  data-sly-test="${newsletter.successText}">${newsletter.successText}</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </sly>
+</sly>

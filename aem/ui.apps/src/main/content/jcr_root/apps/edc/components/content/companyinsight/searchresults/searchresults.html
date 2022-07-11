@@ -1,0 +1,43 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.title, emptyTextAppend='Component not configured'}"/>
+<sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+<!--/* Processing takes place on com.edc.edcportal */-->
+<sly data-sly-use.model="com.edc.edcportal.core.models.ci.SearchResults"/>
+<sly data-sly-test.responseStatus="${model.ciCompanySearchDO.responseStatus}"/>
+<sly data-sly-test.companyProfilePageUrl="${model.companyProfilePageUrl}"/>
+<sly data-sly-test.data="${model.data}"/>
+<sly data-sly-test.pageCount="${model.pageCount}"/>
+<sly data-sly-test.results="${model.ciCompanySearchDO.results}"/>
+<sly data-sly-test.lang="${currentPage.language.language}"/>
+<sly data-sly-test.showError="${responseStatus !=  data.errorResultsFound || !wcmmode.disabled}"/>
+
+<section data-sly-test="${properties.title}" class="c-company-insight-search-results full-width" data-page-count="${pageCount}" data-event-component="search results page" data-event-action="main body" data-engagement-type="1" data-event-level="1" data-error-type="${responseStatus}">
+    <sly data-sly-use.resultTemplate="templates.html"/>
+    <sly data-sly-test.basePageUrl="/${lang}${data.companyProfilePageNode}"/>
+    <div class="search-info container">
+        <div class="results-section" data-sly-test="${responseStatus ==  data.errorResultsFound}">
+            <h2>${properties.title}</h2>
+            <sly data-sly-test="${properties.disclaimer}">${properties.disclaimer @context='html'}</sly>
+            <ul class="results" data-sly-list="${results}">
+                <sly data-sly-call="${resultTemplate.result @ item = item.result, pageCount = pageCount, counter = itemList.count, basePageUrl = basePageUrl}"/>
+            </ul>
+            <div class="main-actions" data-sly-test="${results.size > pageCount}">
+                <button class="no-btn">
+                    <span>${properties.loadMore}</span>
+                </button>
+            </div>
+        </div>
+        <div class="section-blurb normal show-icon">
+            <sly data-sly-use.errors="${'com.edc.edcweb.core.helpers.MultifieldReaderHelper' @ multifield='errorsMap'}"/>
+            <div data-sly-list="${errors.fields}">
+                <sly data-sly-test="${item.errorKeyName == responseStatus || !wcmmode.disabled}">
+                <h2 class="fade-in-slide-up">${item.errorTitle}</h2>
+                    <div class="fade-in-slide-up">${item.errorText @ context='html'}</div>
+                </sly>
+                <sly data-sly-test="${!wcmmode.disabled}"><p>&nbsp;</p></sly>
+            </div>
+        </div>
+        <!--/* content fragment */-->
+        <sly data-sly-test="${showError}" data-sly-resource="${'content-fragment' @ resourceType='cq/experience-fragments/editor/components/experiencefragment', decorationTagName='div'}"/>
+    </div>
+</section>

@@ -1,0 +1,62 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.heading}"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-use.contactUsTabs="${'com.edc.edcweb.core.models.ContactUsTabs'}"/>
+<sly data-sly-test.canadaRegions="${contactUsTabs.CanadaOffices}"/>
+<sly data-sly-test.abroadRegions="${contactUsTabs.AbroadOffices}"/>
+<sly data-sly-test.internationalRegions="${contactUsTabs.InternationalOffices}"/>
+<div data-sly-test="${properties.heading}" id="CONTACTUSID" data-component-target="CONTACTUSID" class="c-contact-us-tabs" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'Contact Us Tabs'}" data-event-type="interaction" data-event-engagement="1" data-event-action="main body">
+    <h2 class="title">${properties.heading}</h2>
+    <div class="tabs">
+        <nav role="tablist">
+            <div class="tab-labels-container">
+                <ul class="tab-labels">
+                    <li role="presentation"><a href="#CONTACTUSID:tab-1" data-link-target="tab-1" class="tab-label selected" id="CONTACTUSID-tab-1" aria-controls="CONTACTUSID-panel-1" role="tab" aria-selected="true">${properties.canadaHeading}</a></li>
+                    <li role="presentation"><a href="#CONTACTUSID:tab-2" data-link-target="tab-2" class="tab-label" id="CONTACTUSID-tab-2" aria-controls="CONTACTUSID-panel-2" role="tab" aria-selected="false">${properties.abroadHeading}</a></li>
+                    <li role="presentation"><a href="#CONTACTUSID:tab-3" data-link-target="tab-3" class="tab-label" id="CONTACTUSID-tab-3" aria-controls="CONTACTUSID-panel-3" role="tab" aria-selected="false">${properties.internationalHeading}</a></li>
+                </ul>
+            </div>
+        </nav>
+        <section id="tab-content" aria-live="polite" role="region">
+            <article class="tab-panel show" id="CONTACTUSID-panel-1" role="tabpanel" aria-labelledby="CONTACTUSID-tab-1">
+                <sly data-sly-test="${canadaRegions}" data-sly-list.item="${canadaRegions}">
+                    <div class="region">
+                        <h3 class="region-title">${item.Region}</h3>
+                    <sly data-sly-test="${item.Offices}" data-sly-list.officeitem="${item.Offices}">
+                           <div class="office" itemscope itemtype="http://schema.org/GovernmentOffice" itemprop="location">
+                               <h4 class="office-location" itemscope itemtype="http://schema.org/Text" itemprop="name">${officeitem.City}</h4>
+                            <div class="office-address" itemprop="address">${officeitem.Address}</div>
+                        </div>
+                    </sly>
+                    </div>
+                </sly>
+            </article>
+            <article class="tab-panel" id="CONTACTUSID-panel-2" role="tabpanel" aria-labelledby="CONTACTUSID-tab-2">
+                <sly data-sly-test="${abroadRegions}" data-sly-list.item="${abroadRegions}">
+                    <div class="region">
+                        <h3 class="region-title">${item.Region}</h3>
+                    <sly data-sly-test="${item.Offices}" data-sly-list.officeitem="${item.Offices}">
+                           <div class="office" itemscope itemtype="http://schema.org/GovernmentOffice" itemprop="location">
+                               <h4 class="office-location" itemscope itemtype="http://schema.org/Text" itemprop="name">${officeitem.City}</h4>
+                            <div class="office-address" itemprop="address">${officeitem.Address}</div>
+                        </div>
+                    </sly>
+                    </div>
+                </sly>
+            </article>
+            <article class="tab-panel" id="CONTACTUSID-panel-3" role="tabpanel" aria-labelledby="CONTACTUSID-tab-3">
+                <sly data-sly-test="${internationalRegions}" data-sly-list.item="${internationalRegions}">
+                    <div class="region">
+                        <h3 class="region-title">${item.Region}</h3>
+                    <sly data-sly-test="${item.Offices}" data-sly-list.officeitem="${item.Offices}">
+                           <div class="office" itemscope itemtype="http://schema.org/GovernmentOffice" itemprop="location">
+                               <h4 class="office-location" itemscope itemtype="http://schema.org/Text" itemprop="name">${officeitem.City}</h4>
+                            <div class="office-address" itemprop="address">${officeitem.Address}</div>
+                        </div>
+                    </sly>
+                    </div>
+                </sly>
+            </article>
+        </section>
+    </div>
+</div>

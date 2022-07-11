@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="SCI Modal Interstitial"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldDescription="Title for the Modal"
+                        fieldLabel="Modal Title"
+                        name="./title"
+                        required="{Boolean}true"/>
+                    <modalImg
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Insert Image / Icon on the Modal "
+                        mimeTypes="[image]"
+                        multiple="{Boolean}false"
+                        name="./modalImg"
+                        rootPath="/content/dam/edc"
+                        required="{Boolean}false"/>
+                    <imgAlt
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldDescription="Alt image text"
+                        fieldLabel="Alt image"
+                        name="./imgAlt"
+                        required="{Boolean}false"/>
+                    <secondTitle
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldDescription="Title for the Modal"
+                        fieldLabel="Second Modal Title"
+                        name="./secondTitle"
+                        required="{Boolean}false"/>
+                    <text
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldDescription="Description for the Modal"
+                        fieldLabel="Modal Text"
+                        name="./text"
+                        required="{Boolean}true"/>
+                     <btnText
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Button Link Text"
+                        name="./btnText"
+                        required="{Boolean}true"/>
+                    <linktUrl1
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Button Link URL"
+                        name="./btnLink"
+                        required="{Boolean}false"
+                        rootPath="/content/edc"/>
+                     <dataAnchorForScroll
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Anchor for Scroll to section"
+                        fieldDescription="This field must only contain lowercase letters, numbers, dashes, and underscores."
+                        name="./dataAnchorForScroll"
+                        validation="field.target"
+                        required="{Boolean}true"/>
+                     <ariaLabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Aria Label"
+                        name="./ariaLabel"
+                        required="{Boolean}true"/>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

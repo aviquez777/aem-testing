@@ -1,0 +1,70 @@
+<template data-sly-template.moreinfomodal="${@ modalTitle, modalText, modalAriaOpen, modalAriaClose}">
+    <sly data-sly-use.buttonTemplate="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+    <div class="c-more-information-modal hide" role="dialog" aria-modal="true">
+        <button type="button" class="modal-triggerer" aria-label="${modalAriaOpen}">?</button>
+        <div class="modal-section hide">
+            <div class="modal-shade"></div>
+            <div class="modal-container">
+                <div class="modal-title">
+                    <h2>${modalTitle}</h2>
+                    <button type="button" class="modal-close" aria-label="${modalAriaClose}"></button>
+
+                    <sly data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled', buttontext=modalAriaClose, buttoncssclasses='modal-close'}"  />
+
+                </div>
+                <div class="modal-text">
+                    <p>${modalText @ context='html'}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+<template data-sly-template.consentmodal="${@ modalTitle, modalTopText, modalBottomText, modalMultifieldName, modalMultifieldValue, modalMultifieldDesc, acceptCtaText, acceptEnglishText, cancelText, cancelEnglishText, modalFormActionUrl, modalFormMethod, mmodalAriaOpen, modalAriaClose, modalAriaScrollText, errorText}">
+    <sly data-sly-use.ibTemplateObj="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+    <sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+    <sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+    <div class="consent-request-modal hide" role="dialog" aria-modal="true">
+        <div class="modal-shade"></div>
+        <div class="modal-container">
+            <button type="button" class="modal-close" aria-label="${modalAriaClose}" data-english-text="Close"></button>
+            <div class="modal-title">
+                <h2>${modalTitle}</h2>
+            </div>
+            <form data-sly-attribute.method="${modalFormMethod}" name="consent-request-modal-form" action="${modalFormActionUrl}" novalidate="">
+                <div class="modal-text shadow-after shadow-before">
+                    <div class="text-section">
+                        <div class="full-section">
+                            ${modalTopText @ context='html'}
+                            <div class="casl-section">
+                                <sly data-sly-use.checkboxes="${'com.edc.edcweb.core.helpers.MultifieldReaderHelper' @ multifield=modalMultifieldName}"/>
+                                <div class="form-row checkbox-item" data-sly-list="${checkboxes.fields}">
+                                    <sly data-sly-test.fieldId="${itemList.count}-${uuid}"/>
+                                    <input type="checkbox" class="form-control" id="caslConsent${fieldId}" name="p${itemList.count}" data-no-url="true" value="${item[modalMultifieldValue]}" />
+                                    <div class="input-description">
+                                        <label for="caslConsent${fieldId}">
+                                           ${item[modalMultifieldDesc] @ context='html'}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                             ${modalBottomText @ context='html'}
+                        </div>
+                    </div>
+                    <div class="anchor-container ${wcmmode.disabled ? 'hide' : 'show'}">
+                        <span class="circle-button" role="button" aria-label="${modalAriaScrollText}"></span>
+                    </div>
+                    <div class="modal-error-message hide" data-default-message="errorText" >
+                        <p>${errorText}</p>
+                    </div>
+                </div>
+                <div class="modal-ctas">
+                    <sly data-sly-test.attr="${['data-english-text',acceptEnglishText] @ join = '='}"/>
+                    <div data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='button', btntype='Submit', buttoncssclasses='ibtn-lg disabled', buttonstate='disabled', buttontext=acceptCtaText, customattribs=attr}"  data-sly-unwrap></div>
+                    <sly data-sly-test.attr="${['data-english-text',cancelEnglishText] @ join = '='}"/>
+                    <div data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='button', buttoncssclasses='unstyled', buttonstate='enabled', buttontext=cancelText, linkchecker='valid', customattribs=provAttr}"  data-sly-unwrap></div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</template>

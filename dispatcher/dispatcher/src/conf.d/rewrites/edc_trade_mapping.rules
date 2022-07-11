@@ -1,0 +1,16 @@
+#EDC Trade Page Mapping#
+RewriteCond %{REQUEST_URI} ^/export-help-request(.*)$
+RewriteRule ^/?(.*)$ https://${DISPATCHER_SERVER_NAME_SIMPLE}/en/premium/tool/export-help-team.html?$1 [QSA,L,NC]
+
+RewriteCond %{REQUEST_URI} ^/export-help-request-new-question(.*)$
+RewriteRule ^/?(.*)$ https://${DISPATCHER_SERVER_NAME_SIMPLE}/en/premium/tool/export-help-team.html?$1 [QSA,L,NC]
+
+#French
+RewriteCond %{REQUEST_URI} ^/fr/demande-de-renseignements-sur-le-commerce(.*)$
+RewriteRule ^/?(.*)$ https://${DISPATCHER_SERVER_NAME_SIMPLE}/en/premium/tool/export-help-team.html?$1 [QSA,L,NC]
+
+RewriteCond %{REQUEST_URI} ^/fr/demande-de-renseignements-sur-le-commerce-question(.*)$
+RewriteRule ^/?(.*)$ https://${DISPATCHER_SERVER_NAME_SIMPLE}/en/premium/tool/export-help-team.html?$1 [QSA,L,NC]
+
+#RewriteRule ^(.*)$ https://${DISPATCHER_SERVER_NAME_SIMPLE}/$1 [R=301,L]
+RewriteRule ^(.*)$ https://${DISPATCHER_SERVER_NAME_SIMPLE}/ [R=301,L]

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Template">
+    <jcr:content
+        cq:lastModified="{Date}2018-04-03T12:56:23.645-06:00"
+        cq:lastModifiedBy="admin"
+        cq:lastReplicated="{Date}2017-10-24T10:02:21.992-04:00"
+        cq:lastReplicatedBy="namase"
+        cq:lastReplicationAction="Activate"
+        cq:templateType="/conf/edc/settings/wcm/template-types/market-entry-advisors-page"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Market Entry Advisors Page"
+        status="enabled"/>
+</jcr:root>

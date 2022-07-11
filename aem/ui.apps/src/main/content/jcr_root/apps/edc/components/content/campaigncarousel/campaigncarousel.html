@@ -1,0 +1,36 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+<sly data-sly-use.carouselModel="com.edc.edcweb.core.components.CampaignProductCarousel"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = carouselModel}"/>
+<sly data-sly-use.commonTemplates="${'/apps/edc/components/common/templates.html'}" />
+
+<section data-sly-test="${carouselModel.getCardsList && carouselModel.getCarouselTitle}">
+    <div class="c-campaign-product-carousel">
+        <h2 class="title">${carouselModel.getCarouselTitle}</h2>
+        <div class="results-grid carousel" data-event-component="campaign product carousel" data-event-type="button" data-event-name="button click-Carousel New Results" data-event-engagement="1" data-event-action="Campaign Product Carousel Section" data-event-level="1">
+                <div class="carousel-slides">
+                    <sly data-sly-list="${carouselModel.getCardsList}">
+                        <a data-sly-use.urlRes="${'com.edc.edcweb.core.models.PageModelHelper' @ path=item.getCardURL}" href="${urlRes.url}" target="${item.getCardLinkTargetType}" class="campaign-product-card slide" data-slide-position="${item.getCardPosition}">
+                            <div class="card-img">
+                                <img src=${item.getCardImagePath} alt=${item.getCardImageAlt} />
+                            </div>
+                            <div class="card-content">
+                                <div class="campaign-product-card-metainfo">
+                                    <span class="campaign-product-card-tag"></span>
+                                    <span class="campaign-product-label">${item.getCardLabel}</span>
+                                </div>
+                                <h4 class="content-title">${item.getCardTitle}</h4>
+                            </div>
+                        </a>
+                    </sly>
+                </div>
+                <div class="carousel-actions hide">
+                    <div class="carousel-ballons"></div>
+                    <div class="carousel-arrows">
+                        <button type="button" class="carousel-button" data-action="left"></button>
+                        <button type="button" class="carousel-button" data-action="right"></button>
+                    </div>
+                </div>
+        </div>
+    </div>
+</section>

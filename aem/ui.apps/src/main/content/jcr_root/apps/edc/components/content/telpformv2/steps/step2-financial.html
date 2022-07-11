@@ -1,0 +1,55 @@
+<template data-sly-template.level2="${@  uuid, properties, formLabels, formErrorMessages, formType}">
+    <sly data-sly-use.modalTemplate="/apps/edc/components/common/modals.html"/>
+    <sly data-sly-use.banks="${'com.edc.edcweb.core.models.lovapi.FinancialInstitutions' @ formType = 'TLP'}"/>
+    <div class="level level-2 ${wcmmode.disabled ? 'hide' : 'show'}" data-level-title="${properties.step2Title}">
+        <h2 data-sly-test="${!wcmmode.disabled}">
+            <span class="title-color"><em>Step 2 of 2</em></span> ${properties.step2Title}
+        </h2>
+        ${properties.step2Description @ context='html'}
+        <sly data-sly-test.banksLbl="${formLabels.bankLabel}"/>
+        <sly data-sly-test.banksPh="${formLabels.bankPlaceholder}"/>
+        <div class="form-group" data-form-field="bank">
+            <div class="c-dropdown">
+                <div class="dropdown-overlay">
+                    <label for="bank-${uuid}">${banksLbl}</label>
+                    <!--/* Modal */-->
+                    <sly data-sly-test="${properties.fiModalTitle && properties.fiModalDescription}" data-sly-call="${modalTemplate.moreinfomodal @ modalTitle = properties.fiModalTitle, modalText = properties.fiModalDescription, modalAriaOpen = formLabels.step1modalsariaopen, modalAriaClose = formLabels.step1modalsariaclose}"/>
+                    <div class="dropdown-container">
+                        <div class="dropdown-title">
+                            <span class="label-text">${banksLbl}</span>
+                            <span class="close-btn"></span>
+                        </div>
+                        <select name="bank" id="bank-${uuid}" class="form-control ui selection dropdown" required="" data-no-url="true" data-default-value="${banksPh}" data-limit="" validation-rule="none">
+                            <option value="" hidden="">${banksPh}</option>
+                            <option data-sly-repeat="${banks.valueMapList}" value="${item.bankValue}" special-data="${item.bankDomain}">${item.bankName}</option>
+                        </select>
+                        <span class="error dropdown-error" data-req-message="${formErrorMessages.required}" data-select-one-message="${formErrorMessages.required}" data-no-url-message="${formErrorMessages.nourl}"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3>${properties.managerTitle}</h3>
+        <div data-sly-test="${properties.managerOptDesc}" class="description">${properties.managerOptDesc @context='html'}</div>
+        <div data-form-field="managerFirstName" class="form-group">
+            <label for="managerFirstName-${uuid}">${formLabels.managerFirstName}</label>
+            <input type="text" id="managerFirstName-${uuid}" class="form-control" name="managerFirstName" data-no-url="true" validation-rule="name" data-max-length="100" />
+            <span class="error" data-req-message="${formErrorMessages.required}" data-text-message="${formErrorMessages.format}"data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}" data-no-url-message="${formErrorMessages.nourl}"></span>
+        </div>
+        <div data-form-field="managerLastName" class="form-group">
+            <label for="managerLastName-${uuid}">${formLabels.managerLastName}</label>
+            <input type="text" id="managerLastName-${uuid}" class="form-control" name="managerLastName" data-no-url="true" validation-rule="name" data-max-length="100" />
+            <span class="error" data-req-message="${formErrorMessages.required}" data-text-message="${formErrorMessages.format}"data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}" data-no-url-message="${formErrorMessages.nourl}"></span>
+        </div>
+        <div data-form-field="managerEmailAddress" class="form-group">
+            <label for="managerEmailAddress-${uuid}">${formLabels.managerEmailAddress}</label>
+            <input type="email" id="managerEmailAddress-${uuid}" class="form-control email" name="managerEmailAddress" required="" />
+            <span class="error" data-req-message="${formErrorMessages.required}" data-email-message="${formErrorMessages.email}" data-bank-email-message="${formLabels.bankErrorMsg}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}"></span>
+        </div>
+        <div class="form-row checkbox-item">
+            <input type="checkbox" class="form-control" id="caslConsent-${uuid}" name="caslConsent" />
+            <div class="input-description">
+                <label for="caslConsent-${uuid}">${formLabels.caslConsent @ context='html'}</label>
+            </div>
+        </div>
+    </div>
+</template>

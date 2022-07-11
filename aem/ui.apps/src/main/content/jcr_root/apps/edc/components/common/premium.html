@@ -1,0 +1,37 @@
+<template data-sly-template.premiumitem="${@ itemclassname, itemtypetitle, itemurl, itemtarget, itemdate, itemimagealign, itemimageref, itremimagealt, itemtitle, itemsynopsis}">
+  <sly data-sly-use.contentrec="com.edc.edcweb.core.components.ContentRecommendations"/>
+  <sly data-sly-use.gentemplates="/apps/edc/components/common/templates.html"/>
+  <sly data-sly-use.ibTemplateObj="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+  <div class="recommended-article-premium" data-event-value="${itemtypetitle}">
+    <!--/** Headline comes from the template policy but can be overridden at the page level.     **/-->
+    <!--/** If it is provided at the page level, use it. Otherwise, look for it at the template. **/-->
+    <h2 class="title">${properties.headline || contentrec.headlineFromPolicy}</h2>
+    <div class="recommended-article-content">
+      <div class="image ${itemimagealign ? itemimagealign : 'center'}">
+        <a class="ra-premium" href="${itemurl}" target="${itemtarget}">
+          <img src="${itemimageref}" alt="${itemimagealt}"/>
+        </a>
+      </div>
+      <div class="article">
+          <div class="description">
+            <div class="description-text">
+                <div class="meta-info">
+                  <span data-sly-test="${itemtypetitle}" class="category-tag ${itemclassname}">${itemtypetitle}</span>
+                  <span class="date" data-sly-test="${itemdate && (itemclassname != 'success-story')}">
+                    <sly data-sly-call="${gentemplates.date @ date = itemdate}"/>
+                  </span>
+                </div>
+                <a class="ra-premium" href="${itemurl}" target="${itemtarget}" data-event-type="link" data-event-name="link click – content rec" data-event-level="secondary" data-event-text="${itemtitle}">${itemtitle}</a>
+                <p class="small">${itemsynopsis}</p>
+            </div>
+            <sly data-sly-test="${properties.ctatext}">
+              <sly data-sly-use.urlres="${'com.edc.edcweb.core.models.PageModelHelper' @ path = properties.ctaurl}"/>
+              <sly data-sly-test.ctaurl="${urlres.url || itemurl}" />
+              <div data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='link', link=ctaurl, buttontext=properties.ctatext, isUsedForModal='nomodal', buttonstate='enabled', linkchecker='valid', eventtype='button', eventname='button click - content rec',eventlevel='primary'}"  data-sly-unwrap></div>
+              <div data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='link', buttoncssclasses='unstyled', isUsedForModal='nomodal', buttonstate='enabled', link=urlres.url || itemurl, buttontext=properties.ctatext, target='_self', linkchecker='valid'}"  data-sly-unwrap></div>
+            </sly>
+          </div>
+      </div>
+    </div>
+  </div>
+</template>

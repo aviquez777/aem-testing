@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Ebook chapter toggle"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+  <content jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+          <tabs jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/container">
+            <layout jcr:primaryType="nt:unstructured"
+              sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+              type="nav" />
+                <items jcr:primaryType="nt:unstructured">
+                    <translations
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Text Translations"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <content
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                margin="{Boolean}false">
+                                <items jcr:primaryType="nt:unstructured">
+                                  <nextchapter
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldDescription="Translation for Next Chapter"
+                                    fieldLabel="Next Chapter"
+                                    required="{Boolean}true"
+                                    name="./nextchapter"/>
+                                  <chapter
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldDescription="Translation for Chapter"
+                                    fieldLabel="Chapter"
+                                    required="{Boolean}true"
+                                    name="./chapter"/>
+                                  <of
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldDescription="Translation for of"
+                                    fieldLabel="of"
+                                    required="{Boolean}true"
+                                    name="./of"/>
+                                  <minute
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldDescription="Translation for minute (in sigular)"
+                                    fieldLabel="min"
+                                    required="{Boolean}true"
+                                    name="./minute"/>
+                                  <minutes
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldDescription="Translation for minute (in plural)"
+                                    fieldLabel="mins"
+                                    required="{Boolean}true"
+                                    name="./minutes"/>
+                                  <readtime
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldDescription="Translation for read"
+                                    fieldLabel="read"
+                                    required="{Boolean}true"
+                                    name="./readtime"/>
+                                </items>
+                            </content>
+                        </items>
+                    </translations>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

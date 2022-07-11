@@ -1,0 +1,379 @@
+.c-calculator-insurance {
+    background-color: #f4f8fc;
+    border-color: rgba(0, 74, 107, 0.15);
+    border-style: solid;
+    border-width: 1px 0;
+    display: inline-block;
+    text-align: center;
+}
+
+.c-calculator-insurance .container {
+    box-sizing: border-box;
+}
+
+.c-calculator-insurance .calculator {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    float: left;
+    box-sizing: border-box;
+    padding: 1rem 15px;
+}
+
+.c-calculator-insurance .calculator .table-container {
+    margin-top: 0;
+}
+
+.c-calculator-insurance .calculator .table-container table {
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    font-size: 14px;
+    margin-top: 2.5rem;
+}
+
+.c-calculator-insurance .calculator .table-container table td,
+.c-calculator-insurance .calculator .table-container table th {
+    text-align: right;
+}
+
+.c-calculator-insurance .calculator .table-container table td:first-child,
+.c-calculator-insurance .calculator .table-container table th:first-child {
+    text-align: left;
+    width: 50%;
+}
+
+.c-calculator-insurance .calculator .table-container table tbody tr:first-child td,
+.c-calculator-insurance .calculator .table-container table tbody tr {
+    font-weight: normal;
+    background-color: #fff;
+}
+
+.c-calculator-insurance .calculator .table-container table .insurance-results {
+    font-weight: bold;
+}
+
+.c-calculator-insurance .calculator .table-container table .insurance-results .neg {
+    color: #dd3034;
+}
+
+.c-calculator-insurance .calculator .table-container table .insurance-results .pos {
+    color: #007C03;
+}
+
+.c-calculator-insurance .calculator .row {
+    margin: 1.5rem 0 0;
+}
+
+.c-calculator-insurance .calculator .title {
+    box-sizing: border-box;
+    margin: 0 0 1rem;
+}
+
+.c-calculator-insurance .calculator .title + .row {
+    margin-top: 2.5rem;
+}
+
+.c-calculator-insurance .calculator .sub-head {
+    margin: 0 0 2.5rem;
+}
+
+.c-calculator-insurance .calculator .field {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 0;
+    padding-right: 0;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    position: relative;
+    text-align: left;
+}
+
+.c-calculator-insurance .calculator .field div.error {
+    display: none;
+    font-size: 12px;
+    margin-top: .5rem;
+    padding: 0 0 1rem;
+}
+
+.c-calculator-insurance .calculator .field div.error span {
+    display: none;
+}
+
+.c-calculator-insurance .calculator .field div.error.show {
+    display: block;
+}
+
+.c-calculator-insurance .calculator .field div.error.show.invalid .invalid {
+    display: block;
+}
+
+.c-calculator-insurance .calculator .field div.error.show.zero .zero {
+    display: block;
+}
+
+.c-calculator-insurance .calculator .field .dropdown {
+    margin-bottom: 0;
+}
+
+.c-calculator-insurance .calculator .field + .field {
+    margin-top: 1.5rem;
+}
+
+.c-calculator-insurance .calculator .tiles.row {
+    margin: 0;
+}
+
+.c-calculator-insurance .calculator .input-container {
+    position: relative;
+    width: 100%;
+}
+
+.c-calculator-insurance .calculator .input-container input {
+    margin-bottom: 0;
+    padding-left: 2.5rem;
+}
+
+.c-calculator-insurance .calculator .input-container input:lang(fr) {
+    padding-left: 20px;
+}
+
+.c-calculator-insurance .calculator .input-container input.error + .symbol::after {
+    color: #dd3034;
+}
+
+.c-calculator-insurance .calculator .input-container .symbol::after {
+    content: '$';
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    height: 20px;
+    left: 20px;
+    position: absolute;
+    top: 16px;
+    width: 20px;
+}
+
+.c-calculator-insurance .calculator .input-container .symbol:lang(en)::after {
+    left: 20px;
+}
+
+.c-calculator-insurance .calculator .input-container .symbol:lang(fr)::after {
+    left: auto;
+    right: 20px;
+}
+
+.c-calculator-insurance .calculator .notifications {
+    box-sizing: border-box;
+    display: none;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.c-calculator-insurance .calculator .notifications:before, .c-calculator-insurance .calculator .notifications:after {
+    content: " ";
+    display: table;
+}
+
+.c-calculator-insurance .calculator .notifications:after {
+    clear: both;
+}
+
+.c-calculator-insurance .calculator .notifications.invalid {
+    margin-top: 2rem;
+}
+
+.c-calculator-insurance .calculator .notifications.valid {
+    margin-bottom: 0;
+}
+
+.c-calculator-insurance .calculator .notifications.valid p {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 0;
+    padding-right: 0;
+    float: left;
+    text-align: center;
+}
+
+.c-calculator-insurance .calculator .notifications.valid h2 {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 0;
+    padding-right: 0;
+    float: left;
+    color: #1a65b2;
+    margin-top: 0;
+    text-align: center;
+}
+
+.c-calculator-insurance .calculator .notifications.show {
+    display: block;
+}
+
+.c-calculator-insurance .calculator .notifications.amount p {
+    margin-bottom: 0;
+}
+
+.c-calculator-insurance .calculator .notifications.amount p + p {
+    margin-top: 0;
+}
+
+.c-calculator-insurance .calculator .notifications .table .fade-shadow::after {
+    height: 0;
+}
+
+@media (min-width: 720px) {
+    .c-calculator-insurance {
+        padding: 5rem 0;
+    }
+    .c-calculator-insurance .calculator {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 75%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-calculator-insurance .calculator {
+        width: 75%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-calculator-insurance .calculator table tr td:first-child {
+        width: 50%;
+    }
+    .c-calculator-insurance .calculator .field {
+        box-sizing: border-box;
+    }
+    .c-calculator-insurance .calculator .field #zero-amount {
+        top: -1.875rem;
+    }
+    .c-calculator-insurance .calculator .notifications {
+        margin: 0;
+    }
+    .c-calculator-insurance .calculator .notifications.valid {
+        margin-bottom: -10rem;
+    }
+    .c-calculator-insurance .calculator .notifications.valid p {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 960px) {
+    .c-calculator-insurance .calculator .notifications.valid p {
+        width: 41.66666667%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-calculator-insurance .calculator .notifications.amount p {
+        text-align: center;
+    }
+    .c-calculator-insurance .amount {
+        position: relative;
+    }
+    .c-calculator-insurance .input-container input {
+        /* Removes the x button in IE */
+    }
+    .c-calculator-insurance .input-container input::-ms-clear {
+        display: none;
+    }
+    .c-calculator-insurance .input-container .symbol::after {
+        top: 16px;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-calculator-insurance .calculator {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-calculator-insurance .calculator {
+        width: 50%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-calculator-insurance .calculator .row {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+    .c-calculator-insurance .calculator .row .row {
+        width: 100%;
+    }
+    .c-calculator-insurance .calculator .row .field {
+        width: 50%;
+    }
+    .c-calculator-insurance .calculator .row .field:first-child {
+        padding-right: 12.75px;
+    }
+    .c-calculator-insurance .calculator .row .field:last-child {
+        padding-left: 12.75px;
+    }
+    .c-calculator-insurance .calculator .row .field .c-dropdown .dropdown-container.open {
+        min-height: 175px;
+        height: auto;
+    }
+    .c-calculator-insurance .calculator .row .field + .field {
+        margin-top: 0;
+    }
+    .c-calculator-insurance .calculator .notifications {
+        text-align: center;
+    }
+    .c-calculator-insurance .calculator .notifications.valid p {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-calculator-insurance .calculator .notifications.valid p {
+        width: 33.33333333%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .calculator .input-container {
+        top: 6px;
+    }
+}

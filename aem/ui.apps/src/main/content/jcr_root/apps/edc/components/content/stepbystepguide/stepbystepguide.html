@@ -1,0 +1,29 @@
+<sly data-sly-use.guide="com.edc.edcweb.core.models.StepByStepGuide">
+	<sly data-sly-test.hasvalues="${guide.title}"/>
+	<sly data-sly-test.positionvalid="${guide.positionValid}"/> 
+</sly>
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !positionvalid}"/>
+<sly data-sly-test = "${positionvalid}" >  
+	<section class="step-by-step full-width">
+	    <div class="container layout-4">
+	        <h1 class="main-title" data-sly-test="${guide.title}">${guide.title}</h1>
+	        <div class="section">
+	            <h2 class="sub-title" data-sly-test="${guide.subtitle1}">${guide.subtitle1}</h2>
+	            <p data-sly-test="${guide.text1}">${guide.text1}</p>
+	        </div><div class="section">
+	            <h2 class="sub-title" data-sly-test="${guide.subtitle2}">${guide.subtitle2}</h2>
+	            <p data-sly-test="${guide.text2}">${guide.text2}</p>
+	        </div><div class="section">
+	            <h2 class="sub-title" data-sly-test="${guide.subtitle3}">${guide.subtitle3}</h2>
+	            <p data-sly-test="${guide.text3}">${guide.text3}</p>
+	        </div><div class="section">
+	            <h2 class="sub-title" data-sly-test="${guide.subtitle4}">${guide.subtitle4}</h2>
+	            <p data-sly-test="${guide.text4}">${guide.text4}</p>
+	        </div>
+	        <p class="disclaimer" data-sly-test="${guide.disclaimer}">${guide.disclaimer} 
+	        	<a data-sly-test="${guide.linkText}" href="${guide.linkUrl}" target="${guide.linkTarget}">${guide.linkText}</a>
+	        </p> 
+	    </div>
+	</section>
+</sly>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Upload Section"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <uploadTitle
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Upload Title"
+                fieldLabel="Upload Title"
+                name="./uploadTitle"
+                required="{Boolean}true"/>
+            <uploadDescription
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                fieldDescription="Upload Description"
+                fieldLabel="Upload Description"
+                name="./uploadDescription"
+                required="{Boolean}true"/>
+            <uploadInstructions
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                fieldDescription="Upload Instructions"
+                fieldLabel="Upload Instructions"
+                name="./uploadInstructions"
+                required="{Boolean}true"/>
+            <uploadCtaButton
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Upload CTA Button"
+                fieldLabel="Upload CTA Button"
+                name="./uploadCtaButton"
+                required="{Boolean}true"/>
+            <fileSizeLimit
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldDescription="Upload Max File Size in MB"
+                fieldLabel="Upload Max File Size in MB"
+                name="./fileSizeLimit"
+                required="{Boolean}true"/>
+            <filesQuantityLimit
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldDescription="Maximum number of files to be uploaded"
+                fieldLabel="Maximum number of files to be uploaded"
+                name="./filesQuantityLimit"
+                required="{Boolean}true"/>
+            <filesQuantityLimitTxt
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Upload 'files max' text"
+                fieldLabel="Upload Max Number of files text"
+                name="./filesQuantityLimitTxt"
+                required="{Boolean}true"/>
+            <uploadMaxFileSize
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Upload Max File Size 'Up To' text"
+                fieldLabel="Upload Max File Size 'Up To' text"
+                name="./uploadMaxFileSize"
+                required="{Boolean}true"/>
+             <fileSizeLimitTotalTxt
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Upload Max File Size 'Total Limit' text"
+                fieldLabel="Upload Max File Size 'Total Limit' text"
+                name="./fileSizeLimitTotalTxt"
+                required="{Boolean}true"/>
+      </items>
+    </content>
+</jcr:root>

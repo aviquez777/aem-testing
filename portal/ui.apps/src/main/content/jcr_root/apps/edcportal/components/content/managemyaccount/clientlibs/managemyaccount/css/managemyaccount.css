@@ -1,0 +1,278 @@
+.c-manage-my-account {
+    box-sizing: border-box;
+    margin-bottom: 4rem;
+    width: 100%;
+    padding: 0 15px;
+}
+
+.c-manage-my-account * {
+    box-sizing: border-box;
+}
+
+.c-manage-my-account .tabs {
+    padding: 0;
+}
+
+.c-manage-my-account .tabs section {
+    padding: 0;
+}
+
+.c-manage-my-account .tabs section .tab-panel {
+    display: none;
+}
+
+.c-manage-my-account .tabs section .tab-panel .article-top-text {
+    padding-bottom: 3.5rem;
+    margin-bottom: 3.5rem;
+    font-size: 20px;
+    border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+}
+
+.c-manage-my-account .tabs section .tab-panel h2 {
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.c-manage-my-account .tabs section .tab-panel.show {
+    display: block;
+}
+
+.c-manage-my-account .tabs .region .office .office-location {
+    margin-top: 0;
+}
+
+.c-manage-my-account .tabs .region .office .buttons {
+    text-align: left;
+    margin-top: 3rem;
+}
+
+.c-manage-my-account .tabs .region .office .buttons a {
+    margin-left: 2rem;
+    font-weight: 600;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.c-manage-my-account .form-ctas {
+    min-height: 1px;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    width: 100%;
+    float: left;
+}
+
+.c-manage-my-account .form-ctas a.button {
+    width: 100%;
+    margin-bottom: .5em;
+}
+
+.c-manage-my-account h2 {
+    margin-top: 0;
+}
+
+.c-manage-my-account fieldset {
+    margin-bottom: 3.25rem;
+}
+
+.c-manage-my-account fieldset div {
+    min-height: 1px;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    width: 100%;
+    float: left;
+}
+
+.c-manage-my-account fieldset p {
+    border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.7142;
+    font-weight: normal;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+@media (min-width: 720px) {
+    .c-manage-my-account fieldset p {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-manage-my-account fieldset p {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-manage-my-account .container {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 100%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-manage-my-account .container {
+        width: 100%;
+        float: left;
+        min-width: 100%;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-manage-my-account .tabs nav {
+        margin-bottom: 4.5rem;
+    }
+    .c-manage-my-account fieldset div {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 100%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 960px) {
+    .c-manage-my-account fieldset div {
+        width: 100%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-manage-my-account fieldset div.large {
+        float: right;
+    }
+    .c-manage-my-account fieldset div.large p {
+        min-height: 153px;
+    }
+    .c-manage-my-account fieldset div.large + * + div {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 960px) {
+    .c-manage-my-account fieldset div.large + * + div {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-manage-my-account .form-ctas {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 100%;
+        position: relative;
+        display: flex;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 960px) {
+    .c-manage-my-account .form-ctas {
+        width: 100%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-manage-my-account .form-ctas a.button {
+        width: 48%;
+        height: auto;
+        margin-bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .c-manage-my-account .form-ctas a.button + a.button {
+        margin-left: 15px;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-manage-my-account {
+        margin-bottom: 5rem;
+    }
+
+    .c-manage-my-account .container {
+        min-width: 960px;
+    }
+
+    .c-manage-my-account .tabs {
+        display: flex;
+    }
+
+    .c-manage-my-account .tabs .c-myedc-nav {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 15px;
+        position: relative;
+        width: 25%;
+        max-width: calc(1110px / 4);
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-manage-my-account .tabs .c-myedc-nav {
+        width: 25%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-manage-my-account .tabs .c-myedc-nav.sticky {
+        position: fixed;
+        top: 30px;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-manage-my-account .tabs .c-myedc-nav.sticky + section {
+        margin-left: 25%;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-manage-my-account .tabs section {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-manage-my-account .tabs section {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-manage-my-account fieldset {
+        margin-bottom: 6.5rem;
+    }
+    .c-manage-my-account fieldset p {
+        padding-bottom: 1.5rem;
+        margin-bottom: 2.5rem;
+    }
+}

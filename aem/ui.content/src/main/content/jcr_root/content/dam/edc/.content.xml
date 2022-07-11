@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="sling:OrderedFolder">
+    <jcr:content
+        jcr:primaryType="nt:unstructured"
+        jcr:title="edc">
+        <folderThumbnail/>
+    </jcr:content>
+    <asset.jpg/>
+    <errorhandling/>
+    <large-image.jpg/>
+    <VD_x0020_Credit_x0020_Insurance_x0020_Sprint_x0020_9_x0020_1B_x0020_-_x0020_Desktop.jpg/>
+    <footer.png/>
+    <header.png/>
+</jcr:root>

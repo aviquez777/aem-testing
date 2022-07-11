@@ -1,0 +1,83 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.model="com.edc.edcweb.core.models.StickyNav"/>
+<sly data-sly-test.hasCTA="${(model.linktext && model.linkurl) || (model.modaltext1 && model.modalname1) || (model.sectiontext1 && model.sectiontarget1)}"/>
+<sly data-sly-test.hasNav="${model.links}"/>
+<sly data-sly-test.isFi="${model.navVersion == 'fi'}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !model.text && !model.text2}"/>
+<sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+
+<section class="c-sticky-nav-wrapper full-width" data-version="${model.navVersion}" id="c-sticky-nav-wrapper-${uuid}" data-sly-test="${model.text || model.text2}" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'sticky navigation'}" data-event-type="link" data-event-engagement="2" data-event-level="primary" data-event-action="sticky nav">
+    <div class="container">
+        <div class="sticky-nav-inner">
+            <div data-sly-test="${model.text}" class="product-name ${isFi ? 'hidden-md' : ''}">
+                <span class="${hasNav || hasCTA ? 'hidden-sm' : ''}">${model.text}</span>
+            </div>
+            <div data-sly-test="${model.links || model.fiLinks}" class="link-list-wrapper">
+                <div class="c-dropdown">
+                    <div class="dropdown-overlay">
+                        <label for="sticky-nav-dropdown">${model.text}</label>
+                        <div class="dropdown-container">
+                            <div class="dropdown-title">
+                                <span class="label-text">${model.text}</span>
+                                <span class="close-btn"></span>
+                            </div>
+                            <select data-sly-test="${!isFi}" data-sly-list="${model.links}" name="sticky-nav-dropdown" id="sticky-nav-dropdown" class="form-control ui selection dropdown" data-default-value="${'Section' @ i18n}">
+                                <option data-sly-test="${itemList.index == 0}">${'Section' @ i18n}</option>
+                                <sly data-sly-test.eventname="${'{0}{1}' @ format=['link click - ', item.linkText]}"/>
+                                <option data-event-name="${eventname}" value="${item.target}" data-link-type="data-target">${item.linkText}</option>
+                            </select>
+                            <div data-sly-test="${model.text2}" class="selection-container">
+                                <sly data-sly-call="${commonTemplates.phonelink @ phonenumber=model.text2, classes='button edc-tertiary-btn', linkchecker='valid'}"/>
+                            </div>
+                            <select data-sly-test="${isFi}" data-sly-list="${model.fiLinks}" name="sticky-nav-dropdown" id="sticky-nav-dropdown" class="form-control ui selection dropdown" data-default-value="${'Section' @ i18n}">
+                                <sly data-sly-test.eventname="${'{0}{1}' @ format=['link click - ', item.linkText]}"/>
+                                <!--/* Generate link for option */-->
+                                <sly data-sly-use.linkext="${'com.edc.edcweb.core.helpers.LinkExternalizer' @srcPath=item.linkUrl, scheme=request.scheme}"/>
+                                <sly data-sly-test.optionlinkurl="${model.isPublish ? linkext.PublishPageRelUrl : item.linkUrl}"/>
+                                <sly data-sly-test.optiontarget="${item.linkTarget ? item.linkTarget : ''}"/>
+                                <sly data-sly-test.optionlink="${item.linkUrl ? optionlinkurl : optiontarget}"/>
+                                <!--/* Set option */-->
+                                <sly data-sly-test.datatarget="${item.linkTarget ? 'data-target' : ''}"/>
+                                <option data-sly-test="${itemList.index == 0}">${'Section' @ i18n}</option>
+                                <option class="${model.pageUrl == item.linkUrl ? 'active selected' : ''}" data-event-name="${eventname}" value="${optionlink}" data-link-type="${item.linkUrl ? 'href' : datatarget}">${item.linkText}</option> 
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <ul data-sly-test="${!isFi}" data-sly-list="${model.links}" class="link-list">
+                    <li data-sly-attribute.class="${itemList.index == 0 ? 'active' : ''}">
+                        <sly data-sly-test.eventname="${'{0}{1}' @ format=['link click - ', item.linkText]}"/>
+                        <sly data-sly-test="${item.linkText}"
+                             data-sly-call="${commonTemplates.anchorlink @ text=item.linkText, target=item.target, eventname=eventname}"/>
+                    </li>
+                </ul>
+                <ul data-sly-test="${isFi}" data-sly-list="${model.fiLinks}" class="link-list">
+                    <li data-sly-attribute.class="${model.pageUrl == item.linkUrl ? 'active' : ''}">
+                        <sly data-sly-test.eventname="${'{0}{1}' @ format=['link click - ', item.linkText]}"/>
+                        <sly data-sly-test="${item.linkText}"
+                             data-sly-call="${commonTemplates.linkoranchor @ link=item.linkUrl, text=item.linkText, target=item.linkTarget, eventname=eventname}"/>
+                    </li>
+                </ul>
+            </div>
+            <div class="phone">
+                <span data-sly-test="${model.text2}" class="${hasNav || hasCTA ? 'hidden-xs' : ''}">${model.text2}</span>
+            </div>
+            <div data-sly-test="${hasCTA}" class="cta">
+                <sly data-sly-test.eventname="${'{0}{1}' @ format=['link click - ', (datalayer.componentTitle != '' ? datalayer.componentTitle : 'sticky navigation')]}"></sly>
+                <sly data-sly-test="${model.cta1type == 'link' && model.linktext && model.linkurl}"
+                     data-sly-call="${commonTemplates.link @ link=model.linkurl, ctatext=model.linktext, target=model.linktarget, classes='button edc-primary-btn', type='link', eventname=eventname, eventlevel='secondary'}"/>
+
+                <sly data-sly-test.eventname="${'{0}{1}' @ format=['link click - ', model.modaltext1]}"/>
+                <sly data-sly-test="${model.cta1type == 'modal' && model.modaltext1 && model.modalname1}"
+                     data-sly-call="${commonTemplates.link @ modaltext=model.modaltext1, modaltrigger=model.modalname1, classes='button edc-primary-btn', type='ctamodal', eventname=eventname, eventlevel='secondary'}"/>
+
+                <sly data-sly-test.eventname="${'{0}{1}' @ format=['link click - ', model.sectiontext1]}"/>
+                <sly data-sly-test="${model.cta1type == 'section' && model.sectiontext1 && model.sectiontarget1}"
+                     data-sly-call="${commonTemplates.anchorlink @ text=model.sectiontext1, classes='button edc-primary-btn', target=model.sectiontarget1, eventname=eventname}"></sly>
+            </div>
+        </div>
+    </div>
+</section>

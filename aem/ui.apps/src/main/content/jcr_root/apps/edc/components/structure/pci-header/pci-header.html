@@ -1,0 +1,40 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-use.header="com.edc.edcweb.core.models.HeaderPCI" />
+<sly data-sly-call="${templates.placeholder @ isEmpty = !header.logoImage}" />
+
+<div class="header-container">
+    <div id="skip">
+        <a href="#maincontent">${header.skipText}</a>
+    </div>
+    <header class="pci-main-header">
+        <div class="top-nav full-width">
+            <div class="container">
+                <div class="pci-header-nav">
+                    <a x-cq-linkchecker="valid" href="${header.logoUrl}" class="logo" target="${header.logoTarget}">
+                        <img src="${header.logoImage}" alt="${header.logoAltText}" />
+                    </a>
+                    <nav>
+                        <ul>
+                            <li>
+                                <div class="login-button-container">
+                                    <button type="button" class="login-button button edc-primary-btn">
+                                        <span>${header.loggedOutText}</span>
+                                    </button>
+                                </div>
+                            </li>
+                            <li>
+                                <sly data-sly-use.languageToggle="com.edc.edcweb.core.components.LanguageToggle">
+                                    <a x-cq-linkchecker="valid" href="${languageToggle.toggleUrl}" class="language-toggle button edc-tertiary-btn" data-language="${languageToggle.toggleAbbreviation}" >
+                                        <span class="language-d">${languageToggle.toggleLanguage}</span>
+                                        <span class="language-m">${languageToggle.toggleAbbreviation}</span>
+                                    </a>
+                                </sly>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="maincontent"></div>
+</div>

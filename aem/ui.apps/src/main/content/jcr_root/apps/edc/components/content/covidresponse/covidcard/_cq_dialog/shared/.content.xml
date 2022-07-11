@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" 
+          xmlns:granite="http://www.adobe.com/jcr/granite/1.0" 
+          xmlns:cq="http://www.day.com/jcr/cq/1.0" 
+          xmlns:jcr="http://www.jcp.org/jcr/1.0" 
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="COVID-19 Solutions Triage tool"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                        <orgTag
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                                allowBulkEdit="{Boolean}true"
+                                fieldDescription="First card must be the primary organizaition"
+                                fieldLabel="Organization filter tags"
+                                multiple="{Boolean}true"
+                                name="./organizationtags"
+                                required="{Boolean}true"
+                                rootPath="/content/cq:tags/edc">
+                        <granite:data
+                                jcr:primaryType="nt:unstructured"
+                                cq-msm-lockable="cq:tags"/>
+                        </orgTag>
+                        <filterTag
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                                allowBulkEdit="{Boolean}true"
+                                fieldDescription="Other Card filter tags (Except Organizational Tags)"
+                                fieldLabel="Other Card filter tags"
+                                multiple="{Boolean}true"
+                                name="./filtertags"
+                                required="{Boolean}true"
+                                rootPath="/content/cq:tags/edc">
+                        <granite:data
+                                jcr:primaryType="nt:unstructured"
+                                cq-msm-lockable="cq:tags"/>
+                        </filterTag>
+                        <!-- ‘Product type’ can be removed or ‘hidden’ from the product card. After thinking through the use of this it will not be needed
+                        <productType
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="Enter a product type for the card (top right)"
+                                required="{Boolean}false"
+                                fieldLabel="Product type"
+                                name="./productyype" />
+                             -->
+                        <title
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="Enter a title for the card"
+                                required="true"
+                                fieldLabel="Title"
+                                name="./title" />
+                        <description
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                fieldDescription="Enter a description for the card"
+                                required="{Boolean}false"
+                                fieldLabel="Description"
+                                name="./description"
+                                useFixedInlineToolbar="{Boolean}true">
+                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                    <format
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*" />
+                                    <justify
+                                        jcr:primaryType="nt:unstructured"
+                                        features="" />
+                                    <lists
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*" />
+                                    <links
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*" />
+                                    <subsuperscript
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*" />
+                                </rtePlugins>
+                                <uiSettings jcr:primaryType="nt:unstructured">
+                                    <cui jcr:primaryType="nt:unstructured">
+                                        <inline
+                                            jcr:primaryType="nt:unstructured"
+                                            toolbar="[format#bold,format#italic,format#underline,#lists,links#modifylink,links#unlink,links#anchor]">
+                                            <popovers jcr:primaryType="nt:unstructured">
+                                                <format
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[format#bold,format#italic,format#underline,subsuperscript#subscript,subsuperscript#superscript]"
+                                                    ref="format" />
+                                                <lists
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[lists#unordered,lists#ordered]"
+                                                    ref="lists" />
+                                            </popovers>
+                                        </inline>
+                                    </cui>
+                                </uiSettings>
+                        </description>
+                        <mainCta
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Main CTA"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                        <mainCtaLink
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldDescription="Enter the url for the main CTA button to the right of the card"
+                                                fieldLabel="Main CTA Url"
+                                                name="./mainctalink"
+                                                required="{Boolean}false"
+                                                rootPath="/content/edc" />
+                                        <mainCtaText
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text for the main CTA button to the right of the card"
+                                                required="{Boolean}false"
+                                                fieldLabel="Main CTA Text"
+                                                name="./mainctatext" />
+                                        <mainCtaTarget
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                            fieldDescription="Determines if the link will open in the current or new window. "
+                                            fieldLabel="Target"
+                                            name="./mainCtaTarget"
+                                            required="{Boolean}false">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <new
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="New window"
+                                                    value="_blank"/>
+                                                <existing
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="Existing window"
+                                                    value="_self"/>
+                                            </items>
+                                        </mainCtaTarget>
+                                </items>
+                        </mainCta>
+                        <bottomCta
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Bottom CTA"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                        <bottomCtaLink
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldDescription="Enter the url for one bottom CTA link"
+                                                fieldLabel="Bottom CTA Url"
+                                                name="./bottomctalink"
+                                                required="{Boolean}false"
+                                                rootPath="/content/edc" />
+                                        <bottomCtaText
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text for one bottom CTA link"
+                                                required="{Boolean}false"
+                                                fieldLabel="Bottom CTA Text"
+                                                name="./bottomctatext" />
+                                        <bottomCtaTarget
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                            fieldDescription="Determines if the link will open in the current or new window. "
+                                            fieldLabel="Target"
+                                            name="./bottomCtaTarget"
+                                            required="{Boolean}false">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <new
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="New window"
+                                                    value="_blank"/>
+                                                <existing
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="Existing window"
+                                                    value="_self"/>
+                                            </items>
+                                        </bottomCtaTarget>
+                                </items>
+                        </bottomCta>
+                        <bottomTwoCta
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Bottom right CTA"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                        <bottomTwoCtaLink
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldDescription="Enter the url for a second bottom CTA link"
+                                                fieldLabel="Bottom two CTA Url"
+                                                name="./bottomtwoctalink"
+                                                required="{Boolean}false"
+                                                rootPath="/content/edc" />
+                                        <bottomTwoCtaText
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text for a second bottom CTA link"
+                                                required="{Boolean}false"
+                                                fieldLabel="Bottom two CTA Text"
+                                                name="./bottomtwoctatext" />
+                                        <bottomTwoCtaTarget
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                            fieldDescription="Determines if the link will open in the current or new window. "
+                                            fieldLabel="Target"
+                                            name="./bottomTwoCtaTarget"
+                                            required="{Boolean}false">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <new
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="New window"
+                                                    value="_blank"/>
+                                                <existing
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="Existing window"
+                                                    value="_self"/>
+                                            </items>
+                                        </bottomTwoCtaTarget>
+                                </items>
+                        </bottomTwoCta>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,89 @@
+.c-company-insight-search-results-banner.full-width {
+    width: auto;
+}
+
+.c-company-insight-search-results-banner.blue-section {
+    background-color: #f4f8fc;
+    padding: 0 1rem;
+}
+
+.c-company-insight-search-results-banner.blue-section .container {
+    position: relative;
+}
+
+.c-company-insight-search-results-banner.blue-section .title {
+    color: #2f78c6;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.c-company-insight-search-results-banner.blue-section .search-bar {
+    display: flex;
+    border-radius: 4px;
+    padding: 1rem;
+}
+
+.c-company-insight-search-results-banner.blue-section .search-bar .search-image {
+    display: none;
+}
+
+.c-company-insight-search-results-banner.blue-section .search-bar .search-content {
+    flex: 1;
+}
+
+.c-company-insight-search-results-banner.blue-section .search-bar .search-content h1,
+.c-company-insight-search-results-banner.blue-section .search-bar .search-content h1 p {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 4rem 0 2rem;
+    font-size: 20px;
+    line-height: 1.6;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+
+.c-company-insight-search-results-banner.blue-section .search-bar .search-content .c-company-insight-search-bar .inputs label {
+    display: none;
+}
+
+@media (min-width: 720px) {
+    .c-company-insight-search-results-banner.full-width {
+        width: 100vw;
+    }
+    .c-company-insight-search-results-banner.blue-section {
+        padding: 0;
+    }
+    .c-company-insight-search-results-banner.blue-section .search-bar {
+        padding: 2rem 2rem 4rem;
+    }
+    .c-company-insight-search-results-banner.blue-section .search-bar .search-image {
+        display: flex;
+        flex: 1;
+        margin: 0 4rem 0 0;
+    }
+    .c-company-insight-search-results-banner.blue-section .search-bar .search-image img {
+        width: 100%;
+        align-self: start;
+        margin-top: 3rem;
+    }
+    .c-company-insight-search-results-banner.blue-section .search-bar .search-content {
+        flex: 5;
+    }
+    .c-company-insight-search-results-banner.blue-section .search-bar .search-content h1,
+    .c-company-insight-search-results-banner.blue-section .search-bar .search-content h1 p {
+        font-size: 1.5rem;
+        line-height: 1.6666;
+        letter-spacing: -0.1px;
+    }
+    .c-company-insight-search-results-banner.blue-section .search-bar .search-content .c-company-insight-search-bar .inputs label {
+        display: block;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-company-insight-search-results-banner.blue-section .search-bar .search-content h1,
+    .c-company-insight-search-results-banner.blue-section .search-bar .search-content h1 p {
+        font-size: 1.875rem;
+        line-height: 1.3333;
+        letter-spacing: -0.2px;
+    }
+}

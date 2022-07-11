@@ -1,0 +1,46 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.policyModel="com.edc.edcweb.core.models.PolicyReader"/>
+<sly data-sly-test.policy="${policyModel.policy}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !policy, emptyTextAppend='No Labels defined on component\'s policy'}"/>
+<sly data-sly-test.labels="${policyModel.labels}"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+
+<sly data-sly-test="${policy}">
+  <sly data-sly-use.model="com.edc.edcweb.core.models.NewsRoomFilter"/>
+  <sly data-sly-test.newsList="${model.newsList}"/>
+  <sly data-sly-test.yearsList="${model.yearsList}"/>
+  <sly data-sly-test.currentYear="${yearsList[0]}"/>
+  <sly data-sly-use.messages="com.edc.edcweb.core.models.FormCommonMessages"/>
+  <sly data-sly-test.hasNews="${newsList.size > 0 && yearsList.size > 0}"/>
+  <sly data-sly-call="${templates.placeholder @ isEmpty = !hasNews, emptyTextAppend='No News Found'}"/>
+</sly>
+
+<section data-sly-test="${policy && hasNews}" class="c-newsroom-filter" role="complementary" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'Newsroom Filter'}" data-event-type="filter" data-event-name="filter - year" data-event-action="main body" data-event-engagement="1">
+    <h2>${labels['listingTitle']}</h2>
+    <div class="filter">
+        <h3>${labels['filterBy']}:</h3>
+        <div class="c-dropdown">
+            <div class="dropdown-overlay">
+                <label for="semantic-ui-dropdown">${labels['selectYearLabel']}</label>
+                <div class="dropdown-container">
+                    <div class="dropdown-title">
+                        <span class="label-text">${labels['selectYearLabel']}</span>
+                        <span class="close-btn"></span>
+                    </div>
+                    <select data-sly-list="${yearsList}" name="semantic-ui-dropdown" id="semantic-ui-dropdown" class="form-control ui selection dropdown" data-default-value="${labels['selectYearLabel']}">
+                        <option value="${item}">${item}</option>
+                    </select>
+                    <span class="error dropdown-error" data-req-message="${messages.formErrorMessages.required}" data-select-one-message="${messages.formErrorMessages.oneoption}"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ul data-sly-list="${newsList}">
+        <li class="news ${currentYear != item.year ? 'hide' : ''}" data-year="${item.year}">
+            <p>${item.displayDate}</p>
+            <a href="${item.url}">
+                <h3>${item.title}</h3>
+            </a>
+        </li>
+    </ul>
+</section>

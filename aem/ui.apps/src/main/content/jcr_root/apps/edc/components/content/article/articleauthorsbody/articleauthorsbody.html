@@ -1,0 +1,25 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.AABModel="com.edc.edcweb.core.components.ArticleAuthorsBody"/>
+
+<section data-sly-test="${AABModel.getBiographies}" class="c-article-authors-body-component">
+    <div class="main-title">
+        <h3>${AABModel.getCompTitle}</h3>
+    </div>
+    <div class="authors-list" data-sly-list="${AABModel.getBiographies}">
+        <div class="author">
+            <div data-sly-test="${item.getFileReference}" class="author-image-wrapper">
+                <img src="${item.getFileReference}" alt="${item.getImgalt}" />
+            </div>
+            <div class="author-info">
+                <a class="author-name" data-sly-use.urlRes="${'com.edc.edcweb.core.models.PageModelHelper' @ path = item.getAuthorPagePath}" href="${urlRes.url}" target="_self">
+                    <h4>${item.getAuthorname}</h4>
+                </a>
+                <p data-sly-test="$item.getJobtitle}" class="author-job-title">${item.getJobtitle}</p>
+                <a data-sly-test="${item.getLinkedin}" class="author-linkedin-link" data-sly-use.urlRes="${'com.edc.edcweb.core.models.PageModelHelper' @ path = item.getLinkedin}" href="${urlRes.url}" target="_self">
+                    <span class="author-linkedin-icon"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !AABModel.getBiographies}"></sly>

@@ -1,0 +1,16 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.model="com.edc.edcportal.core.models.UpdateMessage"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty}"/>
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = true, emptyTextAppend='Component will render properlt only on publish mode, and once profile is selected'}"/>
+
+<div data-sly-test="${model.profileUpdateStatus == 'true'}">
+<section data-eventType="${model.getActionType}" class="${model.profileUpdateStatus == 'true' ? '':'hide'} ${wcmmode.disabled ? '':'hide' }  c-success-message full-width" data-event-component="Success Message" data-event-type="myedc" data-event-engagement="3" data-event-action="main body" data-event-level="primary" data-event-name-basic-info="user update - basic info" data-event-name-password="user update - password">
+    <div class="content-info">
+        <p>${'success-message' @ i18n}</p>
+    </div>
+    <div class="content-accept">
+        <button class="close-button" aria-label="Close"></button>
+    </div>
+</section>
+</div>

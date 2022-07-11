@@ -1,0 +1,28 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.policyReader="com.edc.edcweb.core.models.PolicyReader" />
+
+<sly data-sly-test.loadingText="${properties.loadingText ? properties.loadingText : policyReader.labels.loadingText}"/>
+<sly data-sly-test.title="${properties.title ? properties.title : policyReader.labels.title}"/>
+<sly data-sly-test.message="${properties.message ? properties.message : policyReader.labels.message}"/>
+<sly data-sly-test.successTitle="${properties.successTitle ? properties.successTitle : policyReader.labels.successTitle}"/>
+<sly data-sly-test.successMessage="${properties.successMessage ? properties.successMessage : policyReader.labels.successMessage}"/>
+<!--/* As per The Documentation the only required field is the loading text inside the circle  */-->
+<sly data-sly-call="${templates.placeholder @ isEmpty = !loadingText, emptyTextAppend='No policy or properties defined for component'}"/>
+
+<div data-sly-test="${loadingText}" class="c-processing-screen ${wcmmode.edit ? 'c-processing-screen--edit': ''}" role="complementary">
+    <div class="processing-section">
+        <div class="loading">
+            <div class="spinning-circle">
+                <div class="outer-circle">
+                    <div class="inner-cirle">${loadingText}</div>
+                </div>
+            </div>
+        </div>
+        <h2>${title}</h2>
+        <p>${message}</p>
+    </div>
+    <div class="success-message">
+        <h2 class="title-color">${successTitle}</h2>
+        <div>${successMessage}</div>
+    </div>
+</div>

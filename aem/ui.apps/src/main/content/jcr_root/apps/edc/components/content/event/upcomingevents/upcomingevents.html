@@ -1,0 +1,15 @@
+<sly data-sly-use.eventsModel="com.edc.edcweb.core.components.UpcomingWBCEventsRetrieverComponent"/>
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-test.modelCreated="${eventsModel.getHeading && eventsModel.getHeadingAlignment}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !modelCreated}"></sly>
+
+<section data-sly-test="${modelCreated}" class="c-upcoming-webinars ${eventsModel.getMakeFullWidth}">
+    <sly data-sly-use.encoderPath="${'com.edc.edcweb.core.helpers.Base64EnconderHelper' @ toEncode=currentPage.path}"/>
+    <h2 class="main-title ${eventsModel.getHeadingAlignment}">${eventsModel.getHeading}</h2>
+    <div class="loading-screen hide">Loading...</div>
+    <div class="error-message hide no-results">
+        <h3>${eventsModel.getErrorTitle}</h3>
+        <p>${eventsModel.getErrorText}</p>
+    </div>
+    <div class="cards-container" data-json-url="/bin/upcomingeventsservlet.json?pageUrl=${encoderPath.encoded}" data-type="webinar"></div>
+</section>

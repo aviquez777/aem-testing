@@ -1,0 +1,96 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !resource.hasChildren}"/>
+<sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-test.pageLang="${currentPage.language.language}"/>
+<sly data-sly-test.playVideo="${pageLang == 'fr' ? 'Lire la video' : 'Play Video'}"/>
+<sly data-sly-test.closeButton="${pageLang == 'fr' ? 'fermer' : 'close'}"/>
+
+<section data-sly-attribute.id="${properties.anchorId}" data-sly-test="${resource.hasChildren}" role="contentinfo" class="full-width c-case-studies" data-event-type="case study image" data-event-name="case study image click" data-event-engagement="1" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'Case Studies'}" >
+  <div class="container" data-sly-list.slides="${resource.children}">
+    <h2 class="title" data-sly-test="${properties.title}">${properties.title}</h2>
+    <!--/* Slides Start */-->
+    <div class="content-video-grid" data-sly-list.slide="${slides.children}">
+      <div class="container-video" data-event-text="${slide.expandedHeadline || slide.Headline}">
+        <div class="content-video">
+          <a href="#" class="video-img center" data-case="${slideList.count}" data-event-action="${slideList.count}">
+            <span class="hide">${playVideo}</span>
+            <div class="video-section">
+              <sly data-sly-call="${commonTemplates.picture @ desktop=slide.fileReference, tablet=slide.tabletFileReference, phone=slide.teaserImage, imageAlt=slide.imageAltText}"/>
+              <span class="start-video" data-sly-test="${slide.videoId}">
+                <img src="/etc.clientlibs/edc/clientlibs/clientlib-base/resources/images/video-play.svg" alt="${playVideo}">
+              </span>
+           </div>
+          </a>
+          <div class="video-content">
+            <h3 class="title">
+              <a href="#" class="title-link center utils-change-text" data-case="${slideList.count}" data-event-action="${slideList.count}" data-text="${slide.clientName}" data-mobile-text="${slide.clientNameMobile}"></a>
+            </h3><span class="mdash">&nbsp;&mdash;&nbsp;</span><p class="linktext utils-change-text" data-text="${slide.clientCompany}" data-mobile-text="${slide.clientCompanyMobile}"></p>
+            <p class="headline">
+              <a href="#" class="healine-link center" data-case="${slideList.count}" data-event-action="${slideList.count}">${slide.headline}</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/* Slides End */-->
+  <!--/* Expanded View Start */-->
+  <sly data-sly-list.slides="${resource.children}">
+    <div class="single-cases" data-sly-list.slide="${slides.children}">
+      <div class="case-study hide" data-case="${slideList.count}">
+        <div class="container case-close-section">
+            <a href="#" class="case-close">
+               <span class="close-text">${closeButton}</span> <span class="iconfont close"></span>
+            </a>
+        </div>
+        <div class="full-width-video">
+          <div class="container">
+            <sly data-sly-call="${commonTemplates.youtube @ videoId=slide.videoId, playtext=playVideo}"/>
+            <sly data-sly-test="${!slide.videoId}" data-sly-call="${commonTemplates.picture @ desktop=slide.expandedfileReference, tablet=slide.expandedtabletFileReference, phone=slide.expandedTeaserImage, imageAlt=slide.expandedImageAltText || slide.imageAltText}"/>
+          </div>
+        </div>
+        <div class="full-width-text fade-in">
+          <div class="container text-section">
+            <blockquote class="blockquote ">
+              <h3 class="title">
+                <cite>${slide.blockQuote}</cite>
+              </h3>
+              <footer data-component-state="initialized">
+                <span data-sly-test="${slide.displayName}" itemscope="" itemtype="http://schema.org/Person" class="author">${slide.clientName}</span>
+                <span data-sly-test="${slide.displayCompany}" class="first-detail">
+                  <strong class="dash"> — </strong>
+                    <span class="detail">${slide.clientCompany}</span>
+                </span><span data-sly-test="${slide.quoteDetails}">
+                  <span class="comma">,&nbsp;</span>
+                  <span class="detail">${slide.quoteDetails}</span>
+                </span>
+              </footer>
+            </blockquote>
+            <div class="plain-text">
+              <h2>${slide.expandedHeadline || slide.Headline}</h2>
+              <p>${slide.expandedDescription @ context='html'}</p>
+            </div>
+            <div class="info-section" data-sly-test="${(slide.attr1Title && slide.attr1Text) || (slide.attr2Title && slide.attr2Text) || (slide.attr3Title && slide.attr3Text)}">
+              <div class="info-margin">
+                <div class="item" data-sly-test="${slide.attr1Title && slide.attr1Text}">
+                  <h3 class="label">${slide.attr1Title}</h3>
+                  <p class="text">${slide.attr1Text}</p>
+                </div>
+                <div class="item" data-sly-test="${slide.attr2Title && slide.attr2Text}">
+                  <h3 class="label">${slide.attr2Title}</h3>
+                  <p class="text">${slide.attr2Text}</p>
+                </div>
+                <div class="item" data-sly-test="${slide.attr3Title && slide.attr3Text}">
+                  <h3 class="label">${slide.attr3Title}</h3>
+                  <p class="text">${slide.attr3Text}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sly>
+  <!--/* Expanded view End */-->
+</section>

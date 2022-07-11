@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <questionFieldName
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                fieldDescription="Hidden field to save the questionFieldName data"
+                name="./questionFieldName"
+                required="{Boolean}true"/>
+            <questionToUse
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                fieldDescription="questionToUse"
+                fieldLabel="questionToUse"
+                name="./questionToUse"
+                required="{Boolean}true"/>
+            <questionName
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                fieldDescription="Hidden field to save the data as the disabled will not send data"
+                name="./questionName"
+                required="{Boolean}true"/>
+            <questionNameRo
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="As it will appear on the questions drop down"
+                fieldLabel="Internal Question Name"
+                name="./questionName"
+                disabled="{Boolean}true"
+                required="{Boolean}true"/>
+            <questionType
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                fieldDescription="Hidden field to save the data as the disabled will not send data"
+                name="./questionType"
+                required="{Boolean}true"/>
+            <questionTypeRo
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                fieldDescription="Determines the Question Type"
+                fieldLabel="Question Type"
+                name="./questionType"
+                disabled="{Boolean}true"
+                required="{Boolean}true"
+                granite:class="cq-dialog-dropdown-showhide-multi">
+                <items jcr:primaryType="nt:unstructured">
+                   <pleaseSelect
+                        jcr:primaryType="nt:unstructured"
+                        text="Please Select"
+                        value=""/>
+                    <text
+                        jcr:primaryType="nt:unstructured"
+                        text="Text Field"
+                        value="Text Field"/>
+                    <select
+                        jcr:primaryType="nt:unstructured"
+                        text="Single Select"
+                        value="Single Select"/>
+                    <multiSelect
+                        jcr:primaryType="nt:unstructured"
+                        text="Multi Select"
+                        value="Multi Select"/>
+                    <radio
+                        jcr:primaryType="nt:unstructured"
+                        text="Yes / No Radio"
+                        value="Yes / No Radio"/>
+                </items>
+                 <granite:data
+                    jcr:primaryType="nt:unstructured"
+                    cq-dialog-dropdown-showhide-target=".lov-hide-show"/>
+            </questionTypeRo>
+            <singleSelect
+                jcr:primaryType="nt:unstructured"
+                granite:class="hide lov-hide-show"
+                sling:resourceType="granite/ui/components/coral/foundation/well">
+                <granite:data
+                    jcr:primaryType="nt:unstructured"
+                    showhidetargetvalue="Single Select"/>
+                <items jcr:primaryType="nt:unstructured">
+                  <question
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/include"
+                        path="edc/components/content/gatedleadgenform/cq:design_dialog/lov/content"/>
+                </items>
+            </singleSelect>
+            <multiSelect
+                jcr:primaryType="nt:unstructured"
+                granite:class="hide lov-hide-show"
+                sling:resourceType="granite/ui/components/coral/foundation/well">
+                <granite:data
+                    jcr:primaryType="nt:unstructured"
+                    showhidetargetvalue="Multi Select"/>
+                <items jcr:primaryType="nt:unstructured">
+                  <question
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/include"
+                        path="edc/components/content/gatedleadgenform/cq:design_dialog/lov/content"/>
+                </items>
+            </multiSelect>
+        </items>
+    </content>
+</jcr:root>

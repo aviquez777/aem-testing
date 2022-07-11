@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="EDC Page"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        granite:class="cq-dialog-content-page"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs jcr:primaryType="nt:unstructured">
+                <items jcr:primaryType="nt:unstructured">
+                    <basic
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Basic"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <title
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Title and Tags"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <tags
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                                                allowBulkEdit="{Boolean}true"
+                                                autocreateTag="{Boolean}true"
+                                                fieldLabel="Tags"
+                                                multiple="{Boolean}true"
+                                                name="./cq:tags"
+                                                required="{Boolean}true">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cq-msm-lockable="cq:tags"/>
+                                            </tags>
+                                            <tagsShowOnCreate
+                                                cq:hideOnEdit="{Boolean}true"
+                                                cq:showOnCreate="{Boolean}false"
+                                                granite:comment="Handled by a custom POST servlet for the Create Page case"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                                                fieldLabel="Tags"
+                                                multiple="{Boolean}true"
+                                                name="./cq:tags"/>
+                                        </items>
+                                    </title>
+                                    <moretitles
+                                        cq:showOnCreate="{Boolean}true"
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="More Titles and Description"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <pagetitle
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Article Title"
+                                                name="./pageTitle"
+                                                required="{Boolean}true">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    allowBulkEdit="{Boolean}true"
+                                                    cq-msm-lockable="pageTitle"/>
+                                            </pagetitle>
+                                        </items>
+                                    </moretitles>
+                                    <costum
+                                        cq:showOnCreate="{Boolean}true"
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Additional EDC Properties"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <synopsis
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:orderBefore="redirect"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                fieldLabel="Synopsis"
+                                                name="./articlesynopsis"
+                                                required="{Boolean}true"
+                                                wrapperClass="core-image-alt"/>
+                                            <desktop
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:orderBefore="redirect"
+                                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldDescription="Article image dimension: 1,440 x 553&#xa;Video image dimension:"
+                                                fieldLabel="Desktop Breakpoint Image"
+                                                mimeTypes="[image]"
+                                                multiple="{Boolean}false"
+                                                name="./fileReference"
+                                                required="{Boolean}true"
+                                                rootPath="/content/dam/edc"/>
+                                            <tablet
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:orderBefore="redirect"
+                                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldDescription="Article image dimension: 768 x 398&#xa;Video image dimension:"
+                                                fieldLabel="Tablet Breakpoint (Premium Teaser) Image"
+                                                mimeTypes="[image]"
+                                                multiple="{Boolean}false"
+                                                name="./tabletFileReference"
+                                                required="{Boolean}true"
+                                                rootPath="/content/dam/edc"/>
+                                            <teaserimage
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:orderBefore="redirect"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldDescription="Article image dimension: 375 x 208&#xa;Video image dimension:"
+                                                fieldLabel="Mobile Breakpoint (Non-Premium Teaser) Image"
+                                                name="./teaserimage"
+                                                required="{Boolean}true"
+                                                rootPath="/content/dam/edc"/>
+                                            <imagealttext
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:orderBefore="redirect"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Used as the alternate text for all article images"
+                                                fieldLabel="Image Alternate Text"
+                                                name="./imagealttext"
+                                                required="{Boolean}true"
+                                                wrapperClass="core-image-alt"/>
+                                            <alignment
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:orderBefore="redirect"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Image Alignment"
+                                                name="./imagealignment">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <left
+                                                        jcr:primaryType="nt:unstructured"
+                                                        selected="{Boolean}false"
+                                                        text="Left align"
+                                                        value="left"/>
+                                                    <center
+                                                        jcr:primaryType="nt:unstructured"
+                                                        selected="{Boolean}true"
+                                                        text="Center align"
+                                                        value="center"/>
+                                                    <right
+                                                        jcr:primaryType="nt:unstructured"
+                                                        selected="{Boolean}false"
+                                                        text="Right align"
+                                                        value="right"/>
+                                                </items>
+                                            </alignment>
+                                            <firstpublished
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:orderBefore="redirect"
+                                                sling:resourceType="granite/ui/components/foundation/form/datepicker"
+                                                disabled="{Boolean}false"
+                                                displayedFormat="YYYY-MM-DD"
+                                                emptyText="YYYY-MM-DD"
+                                                fieldLabel="First Published [YYYY-MM-DD]"
+                                                name="./firstpublished"
+                                                valueFormat="YYYY-MM-DD"/>
+                                            <publishdate
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:orderBefore="redirect"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Select Publish Date to Display"
+                                                name="./publishdate">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <first
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="First published date"
+                                                        value="first"/>
+                                                    <last
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Last published date or created date if never published"
+                                                        value="last"/>
+                                                    <nodate
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Do not display a date"
+                                                        value="nodate"/>
+                                                </items>
+                                            </publishdate>
+                                        </items>
+                                    </costum>
+                                    <series
+                                        cq:showOnCreate="{Boolean}true"
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Article Series"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <substitutepath
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldDescription="Path of the next article in the Series. Last article must point to the first article to complete the Series."
+                                                fieldLabel="Next article in Series"
+                                                name="./nextarticle"
+                                                rootPath="/content"/>
+                                            <isfirst
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                                defaultChecked="{Boolean}false"
+                                                fieldLabel="First article of the Series."
+                                                ignoreData="{Boolean}false"
+                                                name="./isfirst"
+                                                required="{Boolean}false"
+                                                text="First article of the Series."
+                                                uncheckedValue="false"
+                                                value="true"/>
+                                            <maxitems
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                defaultValue="0"
+                                                fieldLabel="Number of parts in series"
+                                                min="{Double}0.0"
+                                                name="./nbpartseries"
+                                                required="{Boolean}false"/>
+                                        </items>
+                                    </series>
+                                </items>
+                            </column>
+                        </items>
+                    </basic>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

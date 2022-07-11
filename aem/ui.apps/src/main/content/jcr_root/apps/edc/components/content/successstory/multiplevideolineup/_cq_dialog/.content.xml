@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Multiple Video Line-up"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <keyline
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldDescription="Determines the keyline to show."
+                        fieldLabel="keyline"
+                        name="./keyline">
+                        <items jcr:primaryType="nt:unstructured">
+                            <none
+                                jcr:primaryType="nt:unstructured"
+                                selected="{Boolean}true"
+                                text="None"
+                                value="none"/>
+                            <top
+                                jcr:primaryType="nt:unstructured"
+                                text="Top"
+                                value="top"/>
+                        </items>
+                    </keyline>
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Title"
+                        required="{Boolean}true"
+                        name="./title" />
+                    <subtitle
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Subtitle"
+                        required="{Boolean}true"
+                        name="./subtitle" />
+                    <relatedPage1
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldDescription="Select a related success story page."
+                        fieldLabel="Related success story page"
+                        name="./relatedPage1"
+                        required="{Boolean}true"
+                        rootPath="/content/edc"
+                        forceSelection="{Boolean}true"/>
+                    <relatedPage2
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldDescription="Select a related success story page."
+                        fieldLabel="Related success story page"
+                        name="./relatedPage2"
+                        required="{Boolean}true"
+                        rootPath="/content/edc"
+                        forceSelection="{Boolean}true"/>
+                    <relatedPage3
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldDescription="Select a related success story page."
+                        fieldLabel="Related success story page"
+                        name="./relatedPage3"
+                        required="{Boolean}true"
+                        rootPath="/content/edc"
+                        forceSelection="{Boolean}true"/>
+                    <viewMoreText
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldDescription="View more text."
+                        fieldLabel="View more text"
+                        name="./viewMoreText" />
+                    <viewMoreLink
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldDescription="View more link url."
+                        fieldLabel="View more link url"
+                        name="./viewMoreLink"
+                        rootPath="/content/edc"/>
+                    <viewMoreTarget
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldDescription="Determines if the link will open in the current or new window. "
+                        fieldLabel="View more link target"
+                        name="./viewMoreTarget">
+                        <items jcr:primaryType="nt:unstructured">
+                            <existing
+                                jcr:primaryType="nt:unstructured"
+                                text="Existing window"
+                                value="_self"/>
+                            <new
+                                jcr:primaryType="nt:unstructured"
+                                text="New window"
+                                value="_blank"/>
+                        </items>
+                    </viewMoreTarget>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

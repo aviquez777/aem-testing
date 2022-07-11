@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Covid / FITT Product Card"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <wellImg
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <headingImg
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/text"
+                        class="coral-Heading--4"
+                        text="Image"/>
+                    <imgSrc
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                        allowUpload="{Boolean}false"
+                        autoStart="{Boolean}false"
+                        class="cq-droptarget"
+                        fieldDescription="Recommended size 375 x 210. Same Image will be used for Desktop and Tablet / mobile has no image"
+                        fieldLabel="Image for Desktop and Tablet (Recommended size 375 x 210)"
+                        fileNameParameter="./fileName"
+                        fileReferenceParameter="./fileReference"
+                        mimeTypes="[image]"
+                        multiple="{Boolean}false"
+                        name="./imgSrc"
+                        title="Image for Desktop and Tablet"
+                        uploadUrl="${suffix.path}"
+                        useHTML5="{Boolean}true"/>
+                    <imgAlt
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Author image alternate text"
+                        name="./imgAlt"
+                        required="{Boolean}false"
+                        wrapperClass="core-image-alt"/>
+                </items>
+            </wellImg>
+            <wellPdf
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <headingPdf
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/text"
+                        class="coral-Heading--4"
+                        text="Pdf"/>
+                    <pdfLinkText
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Pdf Link text"
+                        name="./pdfLinkText" />
+                    <pdfLinkUrl
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Link url"
+                        name="./pdfLinkUrl"
+                        rootPath="/content/dam/edc"/>
+                </items>
+            </wellPdf>
+        </items>
+    </content>
+</jcr:root>

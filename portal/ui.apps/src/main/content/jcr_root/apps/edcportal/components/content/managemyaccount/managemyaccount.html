@@ -1,0 +1,78 @@
+<sly data-sly-test="${wcmmode.disabled}" data-sly-use.model="${'com.edc.edcportal.core.models.ManageMyAccount'}"/>
+
+<sly data-sly-test.headers="${model.headers}"/>
+<sly data-sly-test.lang="${model.language}"/>
+
+<sly data-sly-test.formFields="${model.formFields}"/>
+<sly data-sly-test.formDefinitions="${model.fieldDefinitions}"/>
+
+<sly data-sly-test.profileType="${model.profileType}"/>
+
+<section class="c-manage-my-account" id="SIGNIN" data-component-target="SIGNIN">
+    <div class="tabs">
+        <div class="container">
+            <section id="tab-content" aria-live="polite" role="region">
+                <article class="tab-panel show" id="SIGNINTOYOURACCOUNTpanel-1" role="tabpanel" aria-labelledby="SIGNIN-tab-2">
+                    <h2>${properties.basicInformationTitle? properties.basicInformationTitle : 'Basic information' }</h2>
+                    <fieldset>
+                        <sly data-sly-list="${headers}">
+                            <sly data-sly-test.labelVar="${lang}Label"/>
+                            <sly data-sly-test.formDefinition="${formDefinitions[item]}"/>
+                            <sly data-sly-test.label="${formDefinition[labelVar]}"/>
+                            <div>
+                                <legend>${label ? label : item}</legend>
+                                <p>${headers[item]}</p>
+                            </div>
+                        </sly>
+                        <div class="form-ctas">
+                            <a x-cq-linkchecker="skip" href="${model.editBasicInformationLink}" class="edc-priimary-btn button">
+                                <span>${'cta-edit-basic-information' @ i18n}</span>
+                            </a>
+                             <!--*// Task 21435 squid:S2068 *//-->
+                            <a x-cq-linkchecker="skip" href="${model.changePLink}" class="edc-priimary-btn button">
+                                <span>${'cta-change-password' @ i18n}</span>
+                            </a>
+                        </div>
+                    </fieldset>
+                    <h2>${properties.detailedInformationTitle ? properties.detailedInformationTitle : 'Detailed information' }</h2>
+                    <fieldset> 
+                        <sly data-sly-list="${formFields}">
+                            <sly data-sly-test.formDefinition="${formDefinitions[item]}"/>
+                            <sly data-sly-test.fieldType="${formDefinition['fieldType']}"/>
+                            <sly data-sly-test.labelVar="${lang}Label"/>
+                            <sly data-sly-test.label="${formDefinition[labelVar]}"/>
+                            <!--/** Check for Extra Info   **/-->
+                            <sly data-sly-test.extraInfoPath="/apps/edcportal/settings/wcm/designs/myEDC-data/formFieldsVariations/${profileType}/${item}"/>
+                            <sly data-sly-use.extraInfo="${'com.edc.edcportal.core.models.FormExtraInfoObjects' @ path = extraInfoPath}"/>
+                            <sly data-sly-test.fieldExtraLabel="${extraInfo.options.label}"/>
+                            <sly data-sly-test.fieldExtraFieldType="${extraInfo.options.fieldtype}"/>
+
+                            <sly data-sly-test.fieldType="${fieldExtraFieldType ? fieldExtraFieldType : fieldType}"/>
+                            <sly data-sly-test.label="${fieldExtraLabel ? fieldExtraLabel : label}"/>
+
+                            <sly data-sly-test.value="${formFields[item]}">
+                                <div data-sly-test="${fieldType != 'hidden' || fieldType != 'checkbox'}">
+                                    <legend>${label}</legend>
+                                    <p>${value}</p>
+                                </div>
+                            </sly>
+                        </sly>
+                        <div class="form-ctas" data-sly-test="${model.editDetailedInformationLink}">
+                            <a x-cq-linkchecker="skip" href="${model.editDetailedInformationLink @ extension = 'html'}" class="edc-primary-btn button"  x-cq-linkchecker="skip">
+                                <span>${'cta-edit-detailed-information' @ i18n}</span>
+                            </a>
+                        </div>
+                    </fieldset>
+                </article>
+                <div class="c-acct-preference">
+                    <h2>${properties.deactivateAccountTitle}</h2>
+                    <p>${properties.deactivateAccountText @ context='html'}</p>
+                </div>
+                <div class="keyline"></div>
+                <sly data-sly-test="${wcmmode.disabled}">
+                    <sly data-sly-resource="${'needassistance' @ resourceType='cq/experience-fragments/editor/components/experiencefragment'}"/>
+                </sly>
+            </section>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,293 @@
+.c-mstl-form {
+    box-sizing: border-box;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    width: 100%;
+}
+
+@media (min-width: 720px) {
+    .c-mstl-form {
+        width: 100%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.c-mstl-form * {
+    box-sizing: border-box;
+}
+
+.c-mstl-form span.error {
+    display: none;
+}
+
+.c-mstl-form .hide {
+    display: none;
+}
+
+.c-mstl-form .content label {
+    float: left;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.c-mstl-form .content .mstl-form-disclaimer {
+    margin-bottom: 2rem;
+}
+
+.c-mstl-form .content .mstl-form-disclaimer p {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.c-mstl-form .content .mstl-form-disclaimer .actions button {
+    width: 100%;
+}
+
+.c-mstl-form .content .mstl-form-disclaimer .checkbox-item span {
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+.c-mstl-form .content .mstl-form-disclaimer .checkbox-item .input-description {
+    display: inline-block;
+    height: auto;
+    width: calc(90% - 1rem);
+}
+
+.c-mstl-form .content .mstl-form-disclaimer .checkbox-item .input-description label {
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+.c-mstl-form .edc-blue {
+    color: #2f78c6;
+}
+
+.c-mstl-form .disclaimer-container p {
+    margin-top: 2rem;
+}
+
+.c-mstl-form .mstl-text-container {
+    margin-bottom: 5rem;
+}
+
+.c-mstl-form .mstl-text-container .title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.c-mstl-form .mstl-text-container .center-paragraph {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.c-mstl-form .mstl-text-container .bold-paragraph {
+    font-weight: bold;
+}
+
+.c-mstl-form .mstl-text-container .cmp-text {
+    padding: 0;
+}
+
+.c-mstl-form .mstl-text-container .cmp-text ul {
+    margin: 4rem 1rem;
+    padding-left: 0;
+}
+
+.c-mstl-form .mstl-text-container .cmp-text ul li {
+    margin-bottom: 1rem;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+
+.c-mstl-form .success {
+    display: none;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.c-mstl-form .success.show {
+    display: block;
+}
+
+.c-mstl-form .success h2 {
+    margin-bottom: 2rem;
+    color: #2f78c6;
+}
+
+.c-mstl-form .success .large {
+    margin-bottom: 3rem;
+}
+
+@media (min-width: 720px) {
+    .c-mstl-form .content .form-container {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 83.33333333%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-mstl-form .content .form-container {
+        width: 83.33333333%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-mstl-form .content .firstName {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+        clear: both;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-mstl-form .content .firstName {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-mstl-form .content .lastName {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 0;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-mstl-form .content .lastName {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-mstl-form .content .mstl-form-disclaimer {
+        margin-top: .5rem;
+    }
+    .c-mstl-form .content .mstl-form-disclaimer .text div {
+        margin-bottom: 0;
+    }
+    .c-mstl-form .content .mstl-form-disclaimer .actions {
+        text-align: right;
+    }
+    .c-mstl-form .content .mstl-form-disclaimer .actions button {
+        width: auto;
+    }
+    .c-mstl-form .success h2,
+    .c-mstl-form .success .large {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 83.33333333%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-mstl-form .success h2,
+    .c-mstl-form .success .large {
+        width: 83.33333333%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-mstl-form .success h2 {
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+    }
+}
+
+@media (min-width: 1140px) {
+    .c-mstl-form .mstl-text-container {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 58.33333333%;
+    }
+}
+
+@media (min-width: 1140px) and (min-width: 720px) {
+    .c-mstl-form .mstl-text-container {
+        width: 58.33333333%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 1140px) {
+    .c-mstl-form .success {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 58.33333333%;
+    }
+}
+
+@media (min-width: 1140px) and (min-width: 720px) {
+    .c-mstl-form .success {
+        width: 58.33333333%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 1140px) {
+    .c-mstl-form .content {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 58.33333333%;
+    }
+}
+
+@media (min-width: 1140px) and (min-width: 720px) {
+    .c-mstl-form .content {
+        width: 58.33333333%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 1140px) {
+    .c-mstl-form .content .form-container {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 100%;
+        padding: 0;
+    }
+}
+
+@media (min-width: 1140px) and (min-width: 720px) {
+    .c-mstl-form .content .form-container {
+        width: 100%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

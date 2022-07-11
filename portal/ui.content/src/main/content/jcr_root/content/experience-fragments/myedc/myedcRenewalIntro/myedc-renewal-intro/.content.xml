@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:tags="[]"
+        cq:template="/conf/edc/settings/wcm/templates/edc-experience-fragment"
+        cq:xfMasterVariation="{Boolean}true"
+        cq:xfVariantType="web"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Renewal Form Introduction"
+        jcr:uuid="698b81d3-804a-4073-967c-8b9fee2f044f"
+        sling:resourceType="edc/components/structure/xfpage">
+        <root
+            jcr:lastModified="{Date}2016-11-22T17:31:48.669+02:00"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <introtext
+                jcr:lastModified="{Date}2021-04-27T16:28:05.693-06:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="edcportal/components/content/introtext"
+                text="&lt;h2 style=&quot;text-align: center;&quot;>&lt;span class=&quot;blue-light&quot;>Update your profile&lt;/span>&lt;/h2>&#xd;&#xa;&lt;h3 style=&quot;text-align: center;&quot;>Let's make sure your information is up to date&lt;/h3>&#xd;&#xa;&lt;p style=&quot;text-align: center;&quot;>Each year, we check in to learn how we can make EDC solutions more helpful to you, based on your profile information.&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;p style=&quot;text-align: center;&quot;>Please review and update your profile information, then click save to continue.&lt;/p>&#xd;&#xa;&lt;p style=&quot;text-align: center;&quot;>Note: Your privacy is important to us. Feel confident that your information is never shared with third parties. Check out our &lt;a x-cq-linkchecker=&quot;valid&quot; href=&quot;/en/privacy-notice.html&quot; target=&quot;_blank&quot;>privacy policy&lt;/a> for more details.&amp;nbsp;&lt;/p>&#xd;&#xa;"
+                textIsRich="true"/>
+        </root>
+    </jcr:content>
+    <rep:policy/>
+</jcr:root>

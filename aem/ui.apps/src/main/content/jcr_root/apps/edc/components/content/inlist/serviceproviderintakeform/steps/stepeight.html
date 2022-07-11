@@ -1,0 +1,127 @@
+<template data-sly-template.spifeight="${@ form, properties, uuid, messages}">
+    <sly data-sly-use.dropdownTemplates="${'/apps/edc/components/common/dropdown.html'}" />
+
+    <!--/* Consolidation options LOVs */-->
+    <sly data-sly-use.ds="${'com.edc.edcweb.core.models.FormCommonObjects' @ path ='/apps/edc/settings/wcm/designs/edc-data/consolidationOptions'}"> </sly>
+    <sly data-sly-test.consolidationOptions="${ds.optionsFromDataSourcePath}" > </sly>
+
+    <!--/* Special Services LOVs */-->
+    <sly data-sly-use.ds="${'com.edc.edcweb.core.models.FormCommonObjects' @ path ='/apps/edc/settings/wcm/designs/edc-data/specialServices'}"> </sly>
+    <sly data-sly-test.specialServices="${ds.optionsFromDataSourcePath}" > </sly>
+
+    <div class="level level-8 hide">
+        <h2 class="title">
+            <span class="title-color">${properties.step8bluetitle}</span> ${properties.step8title}
+        </h2>
+        <p data-sly-test="${properties.step8description}" class="description">${properties.step8description}</p>
+        <div data-form-field="topIndustry1" class="form-group">
+            <sly data-sly-call="${dropdownTemplates.dropdown @ name='topIndustry1', uuid=uuid, label=properties.costumerindustry1Label,
+                placeholder=properties.costumerindustry1Help, required=true, nourl=true,
+                requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=form.industryitems}">
+            </sly>
+        </div>
+        <div data-form-field="topIndustry2" class="form-group">
+            <sly data-sly-call="${dropdownTemplates.dropdown @ name='topIndustry2', uuid=uuid, label=properties.costumerindustry2Label,
+                placeholder=properties.costumerindustry2Help, required=true, nourl=true,
+                requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=form.industryitems}">
+            </sly>
+        </div>
+        <div data-form-field="topIndustry3" class="form-group">
+            <sly data-sly-call="${dropdownTemplates.dropdown @ name='topIndustry3', uuid=uuid, label=properties.costumerindustry3Label,
+                placeholder=properties.costumerindustry3Help, required=true, nourl=true,
+                requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=form.industryitems}">
+            </sly>
+        </div>
+        <div data-form-field="consolidationOptions" class="form-group">
+            <sly data-sly-call="${dropdownTemplates.dropdown @ dropdowntype='multiple', name='consolidationOptions', uuid=uuid, label=properties.consolidationservicesLabel,
+                 placeholder=properties.consolidationservicesHelp,
+                 required=false, nourl=true, buttontext=properties.consolidationservicesConfirm, clearalltext=properties.consolidationservicesClear,
+                 singulartext=properties.consolidationservicesSingular, pluraltext=properties.consolidationservicesPlural,
+                 invaliderror=messages.formErrorMessages.format, options=consolidationOptions}">
+            </sly>
+        </div>
+        <div data-form-field="consolidationOther" class="form-group">
+            <label for="consolidationOther-${uuid}">${properties.otherconsolidationservicesLabel}</label>
+            <input type="text" id="consolidationOther-${uuid}" class="form-control" name="consolidationOther" data-no-url="true" placeholder="${properties.otherconsolidationservicesHelp}" validation-rule="none" />
+            <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+        </div>
+        <div data-form-field="quoteURL" class="form-group">
+            <label for="quoteURL-${uuid}">${properties.instantquotesLabel}</label>
+            <input type="text" id="quoteURL-${uuid}" class="form-control" name="quoteURL" placeholder="${properties.instantquotesHelp}" />
+            <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+        </div>
+        <div data-form-field="specialServicesOptions" class="form-group">
+            <sly data-sly-call="${dropdownTemplates.dropdown @ dropdowntype='multiple', name='specialServicesOptions', uuid=uuid, label=properties.specializedservicesLabel,
+                 placeholder=properties.specializedservicesHelp,
+                 required=false, nourl=true, buttontext=properties.specializedservicesConfirm, clearalltext=properties.specializedservicesClear,
+                 singulartext=properties.specializedservicesSingular, pluraltext=properties.specializedservicesPlural,
+                 invaliderror=messages.formErrorMessages.format, options=specialServices}">
+            </sly>
+        </div>
+        <div data-form-field="specialServicesOther" class="form-group">
+            <label for="specialServicesOther-${uuid}">${properties.otherspecializedservicesLabel}</label>
+            <input type="text" id="specialServicesOther-${uuid}" class="form-control" name="specialServicesOther" data-no-url="true" placeholder="${properties.otherspecializedservicesHelp}" validation-rule="none" />
+            <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+        </div>
+        <div class="form-group" data-form-field="hours">
+            <div class="radio-group" role="radiogroup" aria-labelledby="hours-${uuid}">
+                <h3 id="hours-${uuid}">${properties.company24hourserviceLabel}</h3>
+                <div class="radio-option">
+                    <input type="radio" id="hoursYes-${uuid}" class="form-control" name="hours" value="yes" required="" data-no-url="true" />
+                    <label for="hoursYes-${uuid}">${properties.company24hourserviceYes}</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="hoursNo-${uuid}" class="form-control" name="hours" value="no" required="" data-no-url="true" />
+                    <label for="hoursNo-${uuid}">${properties.company24hourserviceNo}</label>
+                </div>
+                <span class="error" data-radio-message="${messages.formErrorMessages.required}"></span>
+            </div>
+        </div>
+        <div class="form-group" data-form-field="exportDeclaration">
+            <div class="radio-group" role="radiogroup" aria-labelledby="exportDeclaration-${uuid}">
+                <h3 id="exportDeclaration-${uuid}">${properties.canadianexportdeclarationLabel}</h3>
+                <div class="radio-option">
+                    <input type="radio" id="exportDeclarationYes-${uuid}" class="form-control" name="exportDeclaration" value="yes" required="" data-no-url="true" />
+                    <label for="exportDeclarationYes-${uuid}">${properties.canadianexportdeclarationYes}</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="exportDeclarationNo-${uuid}" class="form-control" name="exportDeclaration" value="no" required="" data-no-url="true" />
+                    <label for="exportDeclarationNo-${uuid}">${properties.canadianexportdeclarationNo}</label>
+                </div>
+                <span class="error" data-radio-message="${messages.formErrorMessages.required}"></span>
+            </div>
+        </div>
+        <div class="form-group" data-form-field="customsClearance">
+            <div class="radio-group" role="radiogroup" aria-labelledby="customsClearance-${uuid}">
+                <h3 id="customsClearance-${uuid}">${properties.customsclearanceLabel}</h3>
+                <div class="radio-option">
+                    <input type="radio" id="customsClearanceYes-${uuid}" class="form-control" name="customsClearance" value="yes" required="" data-no-url="true" />
+                    <label for="customsClearanceYes-${uuid}">${properties.customsclearanceYes}</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="customsClearanceNo-${uuid}" class="form-control" name="customsClearance" value="no" required="" data-no-url="true" />
+                    <label for="customsClearanceNo-${uuid}">${properties.customsclearanceNo}</label>
+                </div>
+                <span class="error" data-radio-message="${messages.formErrorMessages.required}"></span>
+            </div>
+            <h2 class="subsection">${properties.sectiontitlereleaseandconsent}</h2>
+            <div class="form-disclaimers">
+                <div class="form-group">
+                    <input type="checkbox" id="caslConsent-${uuid}" class="form-control" name="caslConsent" data-no-url="true" value="yes" required="" />
+                    <label for="caslConsent-${uuid}">${properties.casl @ context='html'}</label>
+                    <span class="error" data-checkbox-message="${messages.formErrorMessages.required}"></span>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="consentMM1-${uuid}" class="form-control" name="consentMM1" data-no-url="true" value="yes" required="" />
+                    <label for="consentMM1-${uuid}">${properties.consent @ context='html'}</label>
+                    <span class="error" data-checkbox-message="${messages.formErrorMessages.required}"></span>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="consentMM2-${uuid}" class="form-control" name="consentMM2" data-no-url="true" value="yes" required="" />
+                    <label for="consentMM2-${uuid}">${properties.legalconsent @ context='html'}</label>
+                    <span class="error" data-checkbox-message="${messages.formErrorMessages.required}"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

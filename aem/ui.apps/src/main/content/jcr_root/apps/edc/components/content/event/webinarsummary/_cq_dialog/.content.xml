@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Webinar Summary"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Title"
+                        name="./title"
+                        required="{Boolean}true"/>
+                    <text
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                        fieldLabel="Text"
+                        name="./text"
+                        required="{Boolean}true"
+                        useFixedInlineToolbar="{Boolean}true">
+                        <rtePlugins jcr:primaryType="nt:unstructured">
+                            <format
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <lists
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <paraformat
+                                jcr:primaryType="nt:unstructured"
+                                features="*">
+                                <formats jcr:primaryType="nt:unstructured">
+                                    <small
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Small"
+                                        tag="small"/>
+                                    <default_p
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Paragraph"
+                                        tag="p"/>
+                                    <default_h1
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Heading 1"
+                                        tag="h1"/>
+                                    <default_h2
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Heading 2"
+                                        tag="h2"/>
+                                    <default_h3
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Heading 3"
+                                        tag="h3"/>
+                                    <default_h4
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Heading 4"
+                                        tag="h4"/>
+                                    <default_h5
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Heading 5"
+                                        tag="h5"/>
+                                    <default_h6
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Heading 6"
+                                        tag="h6"/>
+                                    <default_blockquote
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Quote"
+                                        tag="blockquote"/>
+                                    <default_pre
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Preformatted"
+                                        tag="pre"/>
+                                </formats>
+                            </paraformat>
+                            <links
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                        </rtePlugins>
+                        <uiSettings jcr:primaryType="nt:unstructured">
+                            <cui jcr:primaryType="nt:unstructured">
+                                <inline
+                                    jcr:primaryType="nt:unstructured"
+                                    toolbar="[format#bold,format#italic,format#underline,#lists,links#modifylink,links#unlink,#paraformat]">
+                                    <popovers jcr:primaryType="nt:unstructured">
+                                        <lists
+                                            jcr:primaryType="nt:unstructured"
+                                            items="[lists#unordered,lists#ordered,lists#outdent,lists#indent]"
+                                            ref="lists"/>
+                                        <paraformat
+                                            jcr:primaryType="nt:unstructured"
+                                            items="paraformat:getFormats:paraformat-pulldown"
+                                            ref="paraformat"/>
+                                    </popovers>
+                                </inline>
+                            </cui>
+                        </uiSettings>
+                    </text>
+                    <showtopkeyline
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                        defaultChecked="{Boolean}true"
+                        ignoreData="{Boolean}false"
+                        name="./showtopkeyline"
+                        text="Show top keyline"
+                        uncheckedValue="false"
+                        value="true"/>
+                    <cta
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <heading
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/text"
+                                class="coral-Form-fieldlabel"
+                                text="CTA"/>
+                            <well
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <layout
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <target
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldDescription="Determines if the link will open in the current or new window. "
+                                        fieldLabel="Link target"
+                                        name="./linktarget">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <existing
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Existing window"
+                                                value="_self"/>
+                                            <new
+                                                jcr:primaryType="nt:unstructured"
+                                                text="New window"
+                                                value="_blank"/>
+                                        </items>
+                                    </target>
+                                    <text
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Button text appearing on desktop and mobile views."
+                                        fieldLabel="Link text"
+                                        name="./linktext"/>
+                                    <url
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldDescription="The URL visitors will be directed to after clicking the CTA button."
+                                        fieldLabel="Link url"
+                                        name="./linkurl"
+                                        required="{Boolean}false"
+                                        rootPath="/content/edc"/>
+                                </items>
+                            </well>
+                        </items>
+                    </cta>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

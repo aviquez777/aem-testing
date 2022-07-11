@@ -1,0 +1,613 @@
+.c-eh-form {
+    box-sizing: border-box;
+}
+
+.c-eh-form * {
+    box-sizing: border-box;
+}
+
+.c-eh-form form {
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 720px) {
+    .c-eh-form form {
+        width: 100%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.c-eh-form span.error {
+    display: none;
+}
+
+.c-eh-form .form-row,
+.c-eh-form .form-group,
+.c-eh-form h3 {
+    float: left;
+    width: 100%;
+}
+
+.c-eh-form .hide {
+    display: none;
+}
+
+.c-eh-form .form-content.hide,
+.c-eh-form .submit-success-screen.hide,
+.c-eh-form .submit-failed-message.hide {
+    display: none;
+}
+
+.c-eh-form .submit-failed-message {
+    margin-bottom: 3rem;
+}
+
+.c-eh-form .companyAddress1 span.error,
+.c-eh-form .companyName span.error,
+.c-eh-form .city span.error,
+.c-eh-form .c-dropdown span.error,
+.c-eh-form .comments span.error {
+    margin-bottom: 20px !important;
+}
+
+.c-eh-form .content-header {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    margin-top: 2rem;
+    border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+}
+
+.c-eh-form .content-header.show-separator {
+    background: url("/etc.clientlibs/edc/clientlibs/clientlib-base/resources/images/squiggle.svg") no-repeat center 40px;
+    background-size: auto 44px;
+    padding-top: 6rem;
+}
+
+.c-eh-form .content-header .title {
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    width: 66.66666667%;
+    margin-left: 16.66666667%;
+    color: #2f78c6;
+    text-align: center;
+}
+
+@media (min-width: 720px) {
+    .c-eh-form .content-header .title {
+        width: 66.66666667%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.c-eh-form .content-header .description {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.c-eh-form .content label {
+    float: left;
+}
+
+.c-eh-form .content .eh-disclaimer .actions button {
+    width: 100%;
+}
+
+.c-eh-form .content .eh-disclaimer .text {
+    display: flex;
+}
+
+.c-eh-form .content .eh-disclaimer .text div {
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% - 32px);
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+.c-eh-form .content .eh-disclaimer .text div p {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.7142;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+@media (min-width: 720px) {
+    .c-eh-form .content .eh-disclaimer .text div p {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-eh-form .content .eh-disclaimer .text div p {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+.c-eh-form .content .checkbox-item {
+    padding: 15px;
+    background: #ebebeb;
+    margin-top: 20px;
+    margin-bottom: 3rem;
+    border-radius: 5px;
+}
+
+.c-eh-form .content .checkbox-item .input-description {
+    display: inline-block;
+    width: calc(90% - 1rem);
+}
+
+.c-eh-form .content .checkbox-item .input-description label {
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+.c-eh-form .content .selection-container button {
+    float: none;
+}
+
+.c-eh-form .content button {
+    float: right;
+}
+
+.c-eh-form .question-asked-section.hide {
+    display: none;
+}
+
+.c-eh-form .actions {
+    float: right;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.c-eh-form .submit-success-screen .message-content {
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+@media (min-width: 720px) {
+    .c-eh-form .submit-success-screen .message-content {
+        width: 100%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.c-eh-form .submit-success-screen > .title {
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    width: 100%;
+    color: #2f78c6;
+    text-align: center;
+    margin: 3rem 0;
+}
+
+@media (min-width: 720px) {
+    .c-eh-form .submit-success-screen > .title {
+        width: 100%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.c-eh-form .submit-success-screen .c-progressive-profiling {
+    padding: 0;
+    margin: 0 15px;
+}
+
+.c-eh-form .submit-success-screen .success-bottom-message {
+    background-color: #f4f8fc;
+    text-align: center;
+    margin-top: 4rem;
+    padding: 3rem 1rem;
+}
+
+@media (min-width: 720px) {
+    .c-eh-form .content-header {
+        margin-bottom: 3rem;
+    }
+    .c-eh-form .submit-success-screen .message-content {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 54.16666667%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-eh-form .submit-success-screen .message-content {
+        width: 54.16666667%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-eh-form .submit-success-screen > .title {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 66.66666667%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-eh-form .submit-success-screen > .title {
+        width: 66.66666667%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-eh-form .submit-success-screen .c-progressive-profiling > form,
+    .c-eh-form .submit-success-screen .c-progressive-profiling .myedc-container {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 83.33333333%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-eh-form .submit-success-screen .c-progressive-profiling > form,
+    .c-eh-form .submit-success-screen .c-progressive-profiling .myedc-container {
+        width: 83.33333333%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-eh-form .submit-success-screen .c-progressive-profiling .myedc-container {
+        padding: 6rem 7rem;
+    }
+    .c-eh-form .submit-success-screen .success-bottom-message {
+        margin-top: 0;
+    }
+    .c-eh-form .submit-success-screen .success-bottom-message p {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 66.66666667%;
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-eh-form .submit-success-screen .success-bottom-message p {
+        width: 66.66666667%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-eh-form .content {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 83.33333333%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-eh-form .content {
+        width: 83.33333333%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-eh-form .content .firstName,
+    .c-eh-form .content .mainPhone,
+    .c-eh-form .content .province {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+        clear: both;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-eh-form .content .firstName,
+    .c-eh-form .content .mainPhone,
+    .c-eh-form .content .province {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-eh-form .content .lastName,
+    .c-eh-form .content .phoneExt,
+    .c-eh-form .content .postal {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 0;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-eh-form .content .lastName,
+    .c-eh-form .content .phoneExt,
+    .c-eh-form .content .postal {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-eh-form .content .eh-disclaimer {
+        display: flex;
+        align-items: center;
+        margin-top: .5rem;
+    }
+    .c-eh-form .content .eh-disclaimer .text {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 66.66666667%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-eh-form .content .eh-disclaimer .text {
+        width: 66.66666667%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-eh-form .content .eh-disclaimer .text div {
+        margin-bottom: 0;
+    }
+    .c-eh-form .content .eh-disclaimer .actions {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 0;
+        position: relative;
+        width: 33.33333333%;
+        text-align: right;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-eh-form .content .eh-disclaimer .actions {
+        width: 33.33333333%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-eh-form .content .eh-disclaimer .actions button {
+        width: auto;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-eh-form .content {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 66.66666667%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-eh-form .content {
+        width: 66.66666667%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-eh-form .content .firstName,
+    .c-eh-form .content .mainPhone,
+    .c-eh-form .content .province {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-eh-form .content .firstName,
+    .c-eh-form .content .mainPhone,
+    .c-eh-form .content .province {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-eh-form .content .lastName,
+    .c-eh-form .content .phoneExt,
+    .c-eh-form .content .postal {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 0;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-eh-form .content .lastName,
+    .c-eh-form .content .phoneExt,
+    .c-eh-form .content .postal {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-eh-form .content .eh-disclaimer .text {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 66.66666667%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-eh-form .content .eh-disclaimer .text {
+        width: 66.66666667%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-eh-form .content .eh-disclaimer .actions {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 0;
+        position: relative;
+        width: 33.33333333%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-eh-form .content .eh-disclaimer .actions {
+        width: 33.33333333%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-eh-form .submit-success-screen .message-content,
+    .c-eh-form .submit-success-screen > .title {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 66.66666667%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-eh-form .submit-success-screen .message-content,
+    .c-eh-form .submit-success-screen > .title {
+        width: 66.66666667%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-eh-form .submit-success-screen .success-bottom-message p {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 58.33333333%;
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-eh-form .submit-success-screen .success-bottom-message p {
+        width: 58.33333333%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-eh-form .submit-success-screen .c-progressive-profiling {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 100%;
+        max-width: 1140px;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-eh-form .submit-success-screen .c-progressive-profiling {
+        width: 100%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-eh-form .submit-success-screen .c-progressive-profiling > form,
+    .c-eh-form .submit-success-screen .c-progressive-profiling .myedc-container {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-eh-form .submit-success-screen .c-progressive-profiling > form,
+    .c-eh-form .submit-success-screen .c-progressive-profiling .myedc-container {
+        width: 50%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-eh-form .submit-success-screen .c-progressive-profiling .myedc-container {
+        padding: 5.75rem 5.25rem;
+    }
+}

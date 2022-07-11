@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="iButton | Analytics."
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <ibconfig jcr:primaryType="nt:unstructured"
+                jcr:title="iButton | Analytics."
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <action
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldDescription="Used just for buttons."
+                        fieldLabel="Event Action"
+                        name="./action"
+                        required="{Boolean}false"/>
+                    <eventName
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Event Name"
+                        name="./eventName"
+                        required="{Boolean}false"/>
+                    <eventLevel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Event Level"
+                        name="./eventLevel"
+                        required="{Boolean}false"/>
+                    <eventType
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Event Type"
+                        name="./eventType"
+                        required="{Boolean}false"/>
+                    <analytics
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Analytics"
+                        fieldDescription="value given to data-analytics attribute for analytics."
+                        name="./analytics"
+                        required="{Boolean}false"/>
+                </items>
+            </ibconfig>
+        </items>
+    </content>
+</jcr:root>

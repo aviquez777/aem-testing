@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Select Profile"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <titleKey
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Translation Key (overriden by Segmented Progress Bar Title)"
+                fieldDescription="Choose from 'form-register-profile-title', 'form-manage-profile-title', 'form-update-profile-title' "
+                name="./titleKey"/>
+            <allFieldsReqKey
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="All fields Required Key"
+                fieldDescription="Choose from 'label-text-all-fields-required-reg' : 'label-text-all-fields-required'"
+                name="./allFieldsReqKey"/>
+            <saveButtonKey
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Save Button Key"
+                fieldDescription="Choose from 'button-text-finish' : 'button-text-save-detail-info'"
+                name="./saveButtonKey"/>
+            <tcLink
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                emptyText="URL to terms &amp; conditions page"
+                fieldLabel="Terms &amp; conditions URL (Register Step Only)"
+                fieldDescription="The terms &amp; conditions is planned to be a page nested under the legal page in the footer (https://www.edc.ca/en/legal.html)"
+                name="./tcLink"/>
+            <hideSelectAll
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                defaultChecked="{Boolean}false"
+                fieldLabel="Hide Select All"
+                name="./hideSelectAll"
+                required="{Boolean}false"
+                text="Hide Select All from multiselect component"
+                value="{Boolean}true"/>
+            <hideSelectRegion
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                defaultChecked="{Boolean}false"
+                fieldLabel="Hide Select Region"
+                name="./hideSelectRegion"
+                required="{Boolean}false"
+                text="Hide Select Region from multiselect component"
+                value="{Boolean}true"/>
+            <showCancelButton
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                defaultChecked="{Boolean}false"
+                fieldLabel="Show Cancel Button"
+                name="./showCancelButton"
+                required="{Boolean}false"
+                text="Show Cancel button"
+                value="{Boolean}true"/>
+            <inclusivetrade
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/include"
+                path="/apps/edcportal/components/content/common/inclusivetrade/cq:dialog/content"/>
+        </items>
+    </content>
+</jcr:root>

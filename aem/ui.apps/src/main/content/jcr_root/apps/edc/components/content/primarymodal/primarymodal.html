@@ -1,0 +1,32 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.primarymodal="com.edc.edcweb.core.models.PrimaryModal"/>
+<sly data-sly-use.policyReader="com.edc.edcweb.core.models.PolicyReader" />
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.name}"/>
+<sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+
+<span data-sly-test="${wcmmode.edit  &&  properties.name}"><strong>Primary Modal:</strong> ${properties.name}</span>
+
+<div class="c-modal modal-example" role="dialog" aria-modal="true">
+    <div class="modal-dialog" id="${properties.name}">
+        <div class="modal-shade"></div>
+        <div class="modal-container">
+            <button class="edc-btn-icon modal-close" aria-label="${policyReader.labels['closetext'] || 'close window'}">
+                <span class="${properties.closestyle=='black' ? '' : 'white'}"></span>
+            </button>
+            <div class="modal-content" role="region" aria-labelledby="${properties.name}-aria-label">
+                <div class="img-wrapper">
+                    <img alt="${properties.alt}" src="${properties.fileReference}" />
+                </div>
+                <p id="${properties.name}-aria-label" class="modal-text">${properties.text}</p>
+                <div class="cta-container">
+                    <div class="cta">
+                        <sly data-sly-call="${commonTemplates.link @ type = 'link', link=primarymodal.linkUrl1, ctatext=properties.linktext1, target=properties.linktarget1, classes='cta1 button edc-tertiary-btn', linkchecker='valid'}"/>
+                    </div>
+                    <div class="cta">
+                        <sly data-sly-call="${commonTemplates.link @ type = 'link', link=primarymodal.linkUrl2, ctatext=properties.linktext2, target='_self', classes='cta2 button edc-tertiary-btn', linkchecker='valid'}"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

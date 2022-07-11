@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+  xmlns:cq="http://www.day.com/jcr/cq/1.0"
+  xmlns:jcr="http://www.jcp.org/jcr/1.0"
+  xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+  jcr:primaryType="nt:unstructured"
+  jcr:title="Brand Campaign - Sentence Builder"
+  sling:resourceType="cq/gui/components/authoring/dialog">
+  <content jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+    margin="{Boolean}false">
+    <items jcr:primaryType="nt:unstructured">
+      <column jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+          <title jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+            fieldLabel="Title"
+            fieldDescription="Optional header that is displayed above the sentence "
+            name="./title"
+            required="{Boolean}false" />
+          <sentencetext jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+            fieldLabel="Sentence Text"
+            fieldDescription="Mandatory sentence that displays before the dropdown"
+            name="./sentencetext"
+            required="{Boolean}true" />
+          <globallinktarget
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+            fieldDescription="Determines globally if all the links will open in the current or new window."
+            fieldLabel="Global Link Target"
+            name="./globallinktarget"
+            required="{Boolean}true">
+            <items jcr:primaryType="nt:unstructured">
+              <new jcr:primaryType="nt:unstructured"
+                text="New window"
+                value="_blank" />
+              <existing jcr:primaryType="nt:unstructured"
+                text="Existing window"
+                value="_self" />
+            </items>
+          </globallinktarget>
+          <cta jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/container">
+            <items jcr:primaryType="nt:unstructured">
+              <heading jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/text"
+                class="coral-Form-fieldlabel"
+                text="CTA" />
+              <well jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout jcr:primaryType="nt:unstructured"
+                  sling:resourceType="granite/ui/components/foundation/layouts/well" />
+                <items jcr:primaryType="nt:unstructured">
+                  <text jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    fieldDescription="Button text appearing on desktop and mobile views."
+                    fieldLabel="Link text"
+                    name="./linkText"
+                    required="{Boolean}false" />
+                  <url jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                    fieldDescription="The URL visitors will be directed to after clicking the CTA button."
+                    fieldLabel="Link url"
+                    name="./linkUrl"
+                    required="{Boolean}false"
+                    rootPath="/content/edc" />
+                  <target jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                    fieldDescription="Determines if the link will open in the current or new window. "
+                    fieldLabel="Link target" 
+                    name="./linkTarget"
+                    required="{Boolean}false">
+                    <items jcr:primaryType="nt:unstructured">
+                      <existing
+                        jcr:primaryType="nt:unstructured"
+                        text="Existing window"
+                        value="_self" />
+                      <new jcr:primaryType="nt:unstructured"
+                        text="New window"
+                        value="_blank" />
+                    </items>
+                  </target>
+                </items>
+              </well>
+            </items>
+          </cta>
+          <defaultpages jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/container">
+            <items jcr:primaryType="nt:unstructured">
+              <heading jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/text"
+                class="coral-Form-fieldlabel"
+                text="Default Pages" />
+              <well jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout jcr:primaryType="nt:unstructured"
+                  sling:resourceType="granite/ui/components/foundation/layouts/well" />
+                <items jcr:primaryType="nt:unstructured">
+                  <defaulTag jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    fieldLabel="Default Selected Tag"
+                    fieldDescritpion="The selected tag when the page loads"
+                    name="./defaulttag"
+                    required="{Boolean}true" />
+                  <defaultpage1
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                    fieldLabel="Default Page 1"
+                    multiple="{Boolean}false"
+                    name="./defaultpage1"
+                    forceSelection="{Boolean}true"
+                    required="{Boolean}true"
+                    rootPath="/content/edc" />
+                  <defaultpage2
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                    fieldLabel="Default Page 2"
+                    multiple="{Boolean}false"
+                    name="./defaultpage2"
+                    forceSelection="{Boolean}true"
+                    required="{Boolean}true"
+                    rootPath="/content/edc" />
+                  <defaultpage3
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                    fieldLabel="Default Page 3"
+                    multiple="{Boolean}false"
+                    name="./defaultpage3"
+                    forceSelection="{Boolean}true"
+                    required="{Boolean}true"
+                    rootPath="/content/edc" />
+                </items>
+              </well>
+            </items>
+          </defaultpages>
+          <dropdownoptions
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+            composite="{Boolean}true"
+            fieldLabel="Dropdown options"
+            required="{Boolean}true">
+            <field jcr:primaryType="nt:unstructured"
+              sling:resourceType="granite/ui/components/foundation/form/fieldset"
+              name="./dropdownoptions">
+              <items jcr:primaryType="nt:unstructured">
+                <label jcr:primaryType="nt:unstructured"
+                  sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                  fieldLabel="Label"
+                  name="./label"
+                  required="{Boolean}true" />
+                <page1 jcr:primaryType="nt:unstructured"
+                  sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                  fieldLabel="Page 1"
+                  multiple="{Boolean}false"
+                  name="./page1"
+                  required="{Boolean}true"
+                  forceSelection="{Boolean}true"
+                  rootPath="/content/edc" />
+                <page2 jcr:primaryType="nt:unstructured"
+                  sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                  fieldLabel="Page 2"
+                  multiple="{Boolean}false"
+                  name="./page2"
+                  required="{Boolean}true"
+                  forceSelection="{Boolean}true"
+                  rootPath="/content/edc" />
+                <page3 jcr:primaryType="nt:unstructured"
+                  sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                  fieldLabel="Page 3"
+                  multiple="{Boolean}false"
+                  name="./page3"
+                  required="{Boolean}true"
+                  forceSelection="{Boolean}true"
+                  rootPath="/content/edc" />
+              </items>
+            </field>
+          </dropdownoptions>
+        </items>
+      </column>
+    </items>
+  </content>
+</jcr:root>

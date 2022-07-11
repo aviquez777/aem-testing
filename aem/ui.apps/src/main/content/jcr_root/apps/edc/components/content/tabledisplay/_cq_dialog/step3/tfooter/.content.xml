@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="TFooter"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tableFooterRows jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                composite="{Boolean}true"
+                fieldLabel="Table Footer Configuration."
+                fieldDescription="Click on Add button to add rows"
+                validation="multifield-limit-min:0-max:1">
+                <field
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                    name="./tableFooterRows">
+                    <items jcr:primaryType="nt:unstructured">
+                        <column
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/well">
+                            <items jcr:primaryType="nt:unstructured">
+                                <tableFooterRowColumns
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                    fieldDescription="Footer Row Cells"
+                                    fieldLabel="Footer Row Cells"
+                                    jcr:primaryType="nt:unstructured"
+                                    granite:class="td-table-footer"
+                                    composite="{Boolean}true">
+                                    <field sling:resourceType="granite/ui/components/coral/foundation/container"
+                                            jcr:primaryType="nt:unstructured" 
+                                            name="./tfooterCell">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <fCellSpan jcr:primaryType="nt:unstructured"
+                                                fieldLabel="Select # of columns used by the cell"
+                                                name="./fCellSpan"
+                                                sling:resourceType="granite/ui/components/foundation/form/numberfield"
+                                                min="{Double}1" />
+                                            <fRowSpan jcr:primaryType="nt:unstructured"
+                                                fieldLabel="Select # of rows used by the cell"
+                                                name="./fRowSpan"
+                                                sling:resourceType="granite/ui/components/foundation/form/numberfield"
+                                                min="{Double}1" />
+                                            <footerCell
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                value="RTE Cell Footer"
+                                                granite:class="td-cell-readonly"
+                                                name="./footerCell"/>
+                                        </items>
+                                    </field>
+                                </tableFooterRowColumns>
+                            </items>
+                        </column>
+                    </items>
+                </field>
+            </tableFooterRows>
+        </items>
+    </content>
+</jcr:root>

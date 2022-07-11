@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+  xmlns:jcr="http://www.jcp.org/jcr/1.0"
+  jcr:primaryType="sling:OsgiConfig"
+  getLandingSearchPageNode="/premium/tool/company-insight"
+  getSearchResultsPageNode="/premium/tool/company-insight/search-results"
+  getCompanyProfilePageNode="/premium/tool/company-insight/company-profile"
+  getMapKeys="companyName,streetAddress,province,city,countryName"
+  getMapBaseUrl="https://www.google.com/maps?q="
+  getPageCount="10"
+  getTokenUrl="https://login.microsoftonline.com/d4167d58-713e-4e8f-8ba2-869b5491fb80/oauth2/token"
+  getClientId="e02bdd6f-4ee3-4984-8d2e-7cd5639d0b9b"
+  getClientSecret ="42e15KJASZ3.~w5J~c3Wqa-Bl_ijngPyjp"
+  getResource="api://c287f3e5-da5d-43b0-b916-becb3777c817"
+  getCIProxyUrl="https://proxy.api.edc.ca"
+  getCIBaseEndpoint="/insight"
+  getOCPCIsubscriptionKey="f5f53c11f8b04cc19e1e91285288f554"/>

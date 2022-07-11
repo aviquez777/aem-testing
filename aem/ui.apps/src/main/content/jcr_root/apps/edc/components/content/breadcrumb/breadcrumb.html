@@ -1,0 +1,16 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.model="com.edc.edcweb.core.models.Breadcrumb"/>
+<sly data-sly-test.breadcrumbs="${model.breadcrumbList}"/>
+<sly data-sly-test.hasBreadcrumbs="${breadcrumbs.size > 0}"/>
+<sly data-sly-test.hasPolicy="${model.hasPolicy}"/>
+<sly data-sly-test.isSingleLink="${model.singleLink}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = (!hasPolicy && !hasBreadcrumbs), emptyTextAppend='No policy defined for component'}"/>
+
+<sly data-sly-call="${templates.placeholder @ isEmpty = !hasBreadcrumbs}"/>
+<nav aria-label="Breadcrumb" class="breadcrumb ${isSingleLink ? 'single' : ''}" data-sly-test="${hasPolicy || hasBreadcrumbs}">
+    <ol data-sly-list.crumb="${breadcrumbs}">
+        <li data-sly-list.key="${crumb}">
+            <a data-sly-attribute.aria-current="${crumbList.last && crumbList.count != 1 ? 'page' : ''}" href="${key}">${crumb[key]}</a>
+        </li>
+    </ol>
+</nav>

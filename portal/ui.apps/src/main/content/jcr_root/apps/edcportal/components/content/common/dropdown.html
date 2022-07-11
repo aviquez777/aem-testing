@@ -1,0 +1,78 @@
+<!--/*~~~~~~~~~~~~~~~~~~~~~  D R O P D O W N  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Dropdown - display a custom dropdown
+
+  Parameters:
+    dropdowntype  - Type of dropdown, possible values are:
+                     single   - single choose
+                     multiple - multiple choose
+    variation     - Specific dropdown variations
+                     time - Time dropdown inside Schedule a Call form.
+    name          - Label attributes: name and for. Select attribute: id.
+    label         - Text to be shown in the label tag
+    placeholder   - Text to be shown like placeholder in the dropdown
+    required      - Validates dropdown as required, possible values are:
+                     true  - Dropdown value is required.
+                     false - Dropdown value is NOT required.
+    nourl         - Validates dropdown value is not an URL, possible values are:
+                     true  - Dropdown value must to be not an URL.
+                     false - Dropdown value can be an URL.
+    disabled      - Disables the dropdown
+    buttontext    - Mobile button text for confirm the selection.
+    clearalltext  - Clear selection label
+    singulartext  - Dropdown Singular Selection Text
+    pluraltext    - Dropdown Plural Selection Text
+    requirederror - Dropdown required validation error message
+    invaliderror  - Dropdown invalid validation error message
+    options       - Dropdown Options
+    optionvalue   - Name of the property for value when options is a list, like inquiry, and not a map
+    optiontext    - Name of the property for text when options is a list, like inquiry, and not a map
+
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+<template data-sly-template.dropdown="${@ dropdowntype, variation, name, id, label, placeholder, required, nourl, disabled, buttontext, clearalltext, singulartext, pluraltext, requirederror, invaliderror, options, optionvalue, optiontext, additionalclasses, selectedvalue, errorClass, tooltipText}">
+    <sly data-sly-test.isTime="${variation == 'time'}" />
+    <sly data-sly-test.idVar="${id ? id : name}" />
+    <sly data-sly-test.isMultiple="${dropdowntype == 'multiple'}">
+      <sly data-sly-test.singulartextV="${singulartext ? singulartext : 'input-select-option-text-singulartext' @ i18n}"/>
+      <sly data-sly-test.pluraltextV="${pluraltext ?  pluraltext : 'input-select-option-text-pluraltext' @ i18n}"/>
+      <sly data-sly-test.buttontextV="${buttontext ? buttontext : 'input-select-option-multiple-confirm-select-mobile-button-text' @ i18n}"/>
+      <sly data-sly-test.clearalltextV="${clearalltext ? clearalltext : 'input-select-option-text-clearalltext' @ i18n}"/>
+      <sly data-sly-test.selectedValid="${'{0}={1}' @ format=['data-selected-value', selectedvalue]}" />
+    </sly>
+    <div class="c-dropdown ${additionalclasses}" data-selected-values="${selectedvalue}">
+        <div class="dropdown-overlay">
+            <label for="${name}" data-sly-test="${label}">${label}
+                <sly data-sly-test="${tooltipText}">
+                    <sly data-sly-use.tooltipTemplate="/apps/edcportal/components/content/common/tooltip.html" />
+                    <sly data-sly-call="${tooltipTemplate.tooltip @ tooltipText=tooltipText}"/>
+                </sly>
+            </label>
+            <div class="dropdown-container ${isMultiple ? 'ui-multiple' : ''}">
+                <div class="dropdown-title">
+                    <span class="label-text">${label}</span>
+                    <span class="close-btn"></span>
+                </div>
+                <select class="form-control ui selection dropdown ${errorClass} ${isMultiple ? dropdowntype : ''} ${disabled ? 'disabled' : ''}" name="${name}" id="${idVar}" data-sly-attribute.multiple="${dropdowntype == 'multiple'}" data-sly-attribute.required="${required}" data-sly-attribute.data-no-url="${nourl}" data-default-value="${placeholder}" data-no-url="true" data-limit="" data-sly-attribute="${attrMap}">
+                    <option value="" hidden="">${placeholder}</option>
+                    <option value="clear-all" data-sly-test="${isMultiple}">${clearalltextV}</option>
+                    <option data-sly-test.isOptionsList="${optionvalue && optiontext}" 
+                            data-sly-repeat.item="${options}" value="${item[optionvalue]}">${item[optiontext]}</option>
+                    <option data-sly-test="${isTime && !isOptionsList}" data-sly-repeat.item="${options}" data-begin="${item.fromtime}" value="${item.fromtime}-${item.totime}">${item.timetext}</option>
+                    <sly data-sly-test.isSelected=false />
+                    <sly data-sly-list="${options}">
+                        <sly data-sly-test.isSelected="${!isMultiple}">
+                          <sly data-sly-use.helperModel="${'com.edc.edcportal.core.models.StringOperationsHelperModel' @ valuesToSearch = selectedvalue, valueToFind = item}" data-sly-test.isSelected="${helperModel.compareStrings}"/>
+                        </sly>
+                        <option value="${item}" data-sly-attribute.selected="${isSelected}" data-sly-test="${!isTime && !isOptionsList}" >${options[item]}</option>
+                    </sly>
+                </select>
+                <span class="error dropdown-error" data-req-message="${requirederror}" data-select-multiple-message="${dropdowntype == 'multiple' ? invaliderror : ''}" data-select-one-message="${dropdowntype != 'multiple' ? invaliderror : ''}">${errorClass ? requirederror : ''}</span>
+                <div class="selection-container" data-sly-test="${isMultiple}">
+                    <p class="selection" data-singular-text="${singulartextV}" data-plural-text="${pluraltextV}">(0) ${pluraltextV}</p>
+                    <button class="edc-primary-btn" disabled="">
+                        <span>${buttontextV}</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

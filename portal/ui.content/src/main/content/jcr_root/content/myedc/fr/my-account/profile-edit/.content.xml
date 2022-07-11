@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastReplicationAction="Activate"
+        cq:template="/conf/edcportal/settings/wcm/templates/content-page"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:language="fr"
+        jcr:title="Editer le Profil"
+        sling:alias="modifiez-profil"
+        sling:resourceType="edcportal/components/structure/page"
+        firstpublished="{Date}2018-10-25T15:28:29.803-04:00">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <updatemessage
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="edcportal/components/content/updateMessage"/>
+            <myedcbanner
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="edcportal/components/content/myedcbanner"
+                headline="Compte MonEDC"/>
+            <leftcolumn jcr:primaryType="nt:unstructured">
+                <myedcnavigation
+                    jcr:primaryType="nt:unstructured"
+                    ctaurl="/content/edc/fr/exportactions"
+                    webinarsurl="/content/edc/fr/evenements"
+                    sling:resourceType="edcportal/components/content/myedcnavigation"/>
+            </leftcolumn>
+            <rightcolumn jcr:primaryType="nt:unstructured">
+                <manageprofile
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="edcportal/components/content/manageprofile"
+                    hideSelectAll="{Boolean}true"
+                    hideSelectRegion="{Boolean}true"
+                    showCancelButton="{Boolean}true"
+                    saveButtonKey="button-text-save-detail-info"
+                    titleKey="form-manage-profile-title"
+                    allFieldsReqKey="label-text-all-fields-required"
+                    formType="update"
+                    itmafterlist="&lt;p>En comprenant mieux qui est à la tête d’une entreprise au Canada, nous pourrons faciliter davantage l’accès équitable à du soutien pour ces personnes. Merci de nous aider en répondant à la question ci-dessous.&lt;/p>&#xd;&#xa;&lt;p>&lt;b>Rien ne vous oblige à répondre&lt;/b> à cette question, et votre décision n’aura aucune incidence sur votre accès aux programmes, produits et services d’EDC. Les renseignements que vous nous fournirez seront utilisés et traités par EDC conformément à l’&lt;a href=&quot;https://www.edc.ca/fr/enonce-confidentialite.html&quot;>Énoncé de confidentialité&lt;/a> et à l’&lt;a href=&quot;https://www.edc.ca/fr/a-propos-de-nous/entreprise/divulgation/source-info.html&quot;>Énoncé sur la diversité en entreprise&lt;/a>, qui sous-tendent sa stratégie de commerce inclusif.&lt;/p>&#xd;&#xa;"
+                    itmbeforelist="&lt;p>La stratégie de commerce inclusif d’EDC vise à renforcer l’influence de la Société sur l’inclusion, la diversité et l’équité par son accompagnement des entreprises canadiennes exportatrices détenues ou dirigées par une personne appartenant à l’un de ces groupes :&lt;/p>&#xd;&#xa;"
+                    itmcheckboxestitle="Sélectionnez tous les énoncés qui s’appliquent à votre entreprise (facultatif) :"
+                    itmtitle="Inclusion, diversité et équité"
+                    modalariaclose="fermé"
+                    modalariaopen="ouvert"
+                    other="Autre (veuillez préciser)"
+                    otherph="Si vous avez répondu « Autre », veuillez préciser :"
+                    questionsubtitle="Sélectionnez tous les groupes qui s’appliquent à votre entreprise (facultatif) :"
+                    textIsRich="[true,true,true,true,true,true,true,true]"
+                    autoCompleteDirectionsText="Utilisateurs de clavier, utilisez les flèches haut et bas pour passer en revue et entrer pour sélectionner. Utilisateurs d'appareils tactiles, explorez au toucher ou avec des gestes de balayage"
+                    autoCompleteMatchNotFound="Aucun résultat. Essayez une nouvelle recherche, s'il vous plaît."
+                    autoCompleteNoResults="Aucun résultat trouvéd"
+                    autoCompleteAriaSearchResult="Résultat de la recherche"
+                    autoCompleteOther="Autre">
+                    <needassistance
+                            fragmentPath="/content/experience-fragments/myedc/needAssistance/need-assistance-fr"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="cq/experience-fragments/editor/components/experiencefragment"/>
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            width="12"/>
+                    </cq:responsive>
+                    <grouplist jcr:primaryType="nt:unstructured">
+                        <item0
+                            jcr:primaryType="nt:unstructured"
+                            group="Femmes"
+                            grouptype="w"/>
+                        <item1
+                            jcr:primaryType="nt:unstructured"
+                            group="Membres de la communauté LGBTQ2+"
+                            grouptype="g"
+                            hastooltip="true"
+                            tooltipdescription="Personne lesbienne, gaie, bisexuelle, ou appartenant à une autre minorité d’identité sexuelle (personne asexuée ou pansexuelle) ou à une minorité d’identité de genre (personne trans ou non binaire, p. ex. personne allosexuelle, fluide, pangenre ou agenre)."
+                            tooltiptitle="Membres de la communauté LGBTQ2+"/>
+                        <item2
+                            jcr:primaryType="nt:unstructured"
+                            group="Personnes autochtones"
+                            grouptype="i"
+                            hastooltip="true"
+                            tooltipdescription="&lt;p>Personne issue d’une communauté innue, métisse ou des Premières Nations&lt;/p>&#xd;&#xa;"
+                            tooltiptitle="Personnes autochtones"/>
+                        <item3
+                            jcr:primaryType="nt:unstructured"
+                            group="Personnes noires"
+                            grouptype="b"/>
+                        <item4
+                            jcr:primaryType="nt:unstructured"
+                            group="Autres communautés racisées"
+                            grouptype="r"
+                            hastooltip="true"
+                            tooltipdescription="&lt;p>Personne de l’Asie de l’Est, de l’Amérique latine, du Moyen-Orient, de l’Asie du Sud, de l’Asie du Sud-Est, de l’Asie de l’Ouest ou d’origines métissées&lt;/p>&#xd;&#xa;"
+                            tooltiptitle="Autres communautés racisées"/>
+                        <item5
+                            jcr:primaryType="nt:unstructured"
+                            group="Personnes handicapées"
+                            grouptype="d"
+                            hastooltip="true"
+                            tooltipdescription="&lt;p>Personne ayant un handicap physique, mental, intellectuel, cognitif, sensoriel, d’apprentissage ou de communication (temporaire ou épisodique, visible ou non), ou des limitations fonctionnelles, qui l’empêche de participer pleinement et entièrement à la société&lt;/p>&#xd;&#xa;"
+                            tooltiptitle="Personnes handicapées"/>
+                    </grouplist>
+                    <checkboxlist jcr:primaryType="nt:unstructured">
+                        <item0
+                            jcr:primaryType="nt:unstructured"
+                            checkboxlabel="Mon entreprise est détenue en majorité (à 51 % ou plus) par une personne appartenant à l'un des groupes de diversité et d'équité"
+                            checkboxtype="m"
+                            opensquestion="true"
+                            questiontitle="L’entreprise est détenue en MAJORITÉ (à 51 % ou plus) par une personne appartenant à l’un des groupes suivants."/>
+                        <item1
+                            jcr:primaryType="nt:unstructured"
+                            checkboxlabel="Mon entreprise est détenue en minorité (entre 1 % et 50 %, ou pourcentage inconnu) par une personne appartenant à l'un des groupes de diversité et d'équité"
+                            checkboxtype="n"
+                            opensquestion="true"
+                            questiontitle="L’entreprise est détenue en MINORITÉ (pourcentage inconnu ou entre 0 % et 50 %) par une personne appartenant à l’un des groupes suivants."/>
+                        <item2
+                            jcr:primaryType="nt:unstructured"
+                            checkboxlabel="Le [La] président[e], le [la] chef de la direction ou le [la] chef de l’exploitation de mon entreprise appartient à l'un des groupes de diversité et d'équité"
+                            checkboxtype="l"
+                            opensquestion="true"
+                            questiontitle="Les dirigeantes ou dirigeants (président[e] ou chef de la direction) appartiennent-ils à l’un des groupes suivants?"/>
+                        <item3
+                            jcr:primaryType="nt:unstructured"
+                            checkboxlabel="Je ne sais pas."
+                            checkboxtype="k"/>
+                        <item4
+                            jcr:primaryType="nt:unstructured"
+                            checkboxlabel="Je préfère ne pas répondre."
+                            checkboxtype="p"/>
+                        <item5
+                            jcr:primaryType="nt:unstructured"
+                            checkboxlabel="Aucune de ces réponses."
+                            checkboxtype="a"/>
+                    </checkboxlist>
+                </manageprofile>
+            </rightcolumn>
+        </root>
+    </jcr:content>
+</jcr:root>

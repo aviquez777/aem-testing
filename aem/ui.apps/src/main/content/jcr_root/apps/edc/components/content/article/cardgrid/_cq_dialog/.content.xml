@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Card Grid"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+        margin="{Boolean}false">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                   <config
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/text"
+                    class="coral-Form-fieldlabel"
+                    text="Configuration"/>
+                    <well1
+                      jcr:primaryType="nt:unstructured"
+                      sling:resourceType="granite/ui/components/foundation/container">
+                      <layout
+                          jcr:primaryType="nt:unstructured"
+                          sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                      <items jcr:primaryType="nt:unstructured">
+                          <articlespath
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                              fieldDescription="Path to location of articles (e.g., /content/edc/en/articles)."
+                              fieldLabel="Articles path"
+                              name="./articlespath"
+                              required="{Boolean}true"
+                              rootPath="/content/edc"/>
+                          <showAllCards
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                              text="Show all matching cards even if not tgged with Premium or Not Premium (Override default behaviour)"
+                              name="./showAllCards"
+                              value="{Boolean}true"/>
+                          <smallcards
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                              text="Small cards for both premium and non-premium content"
+                              name="./smallcards"
+                              value="{Boolean}true"/>
+                      </items>
+                    </well1>
+                    <heading
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/text"
+                        class="coral-Form-fieldlabel"
+                        text="Features on article pages"/>
+                      <well
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <tags
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                                allowBulkEdit="{Boolean}true"
+                                autocreateTag="{Boolean}true"
+                                fieldDescription="Overriden on country details pages by component using CountryCTA in the policy."
+                                fieldLabel="Show only articles with these tag(s) [for all articles select only the namespace]"
+                                multiple="{Boolean}true"
+                                name="./tagids"
+                                required="{Boolean}false">
+                                <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    cq-msm-lockable="cq:tags"/>
+                            </tags>
+                            <match
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldLabel="Match"
+                                name="./tagsMatch">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <all
+                                        jcr:primaryType="nt:unstructured"
+                                        text="all tags"
+                                        value="all"/>
+                                    <any
+                                        jcr:primaryType="nt:unstructured"
+                                        selected="{Boolean}true"
+                                        text="any tag"
+                                        value="any"/>
+                                </items>
+                            </match>
+                            <includecurrentpage
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                defaultChecked="{Boolean}false"
+                                ignoreData="{Boolean}false"
+                                name="./includecurrentpage"
+                                text="Include the current page in results"
+                                uncheckedValue="no"
+                                value="yes"/>
+                            <maxitems
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                defaultValue="10"
+                                fieldLabel="Maximum articles per page"
+                                min="{Double}0.0"
+                                name="./articlesperpage"
+                                required="{Boolean}false"/>
+                        </items>
+                    </well>
+                    <countrypage
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <heading
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/text"
+                                class="coral-Form-fieldlabel"
+                                text="Features on country detail pages"/>
+                            <well
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <layout
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <linktext
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Title"
+                                        name="./countrytitle"/>
+                                    <countryarticleperpage
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                        defaultValue="6"
+                                        fieldLabel="Maximum articles per page"
+                                        min="{Double}0.0"
+                                        name="./countryarticleperpage"
+                                        required="{Boolean}false"/>
+                                </items>
+                            </well>
+                        </items>
+                    </countrypage>
+                    <tier2
+                      jcr:primaryType="nt:unstructured"
+                      sling:resourceType="granite/ui/components/foundation/container">
+                      <items jcr:primaryType="nt:unstructured">
+                        <heading
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/text"
+                            class="coral-Form-fieldlabel"
+                            text="Features on tier 2"/>
+                        <well
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/container">
+                            <layout
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                            <items jcr:primaryType="nt:unstructured">
+                              <tier2title
+                                  jcr:primaryType="nt:unstructured"
+                                  sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                  fieldLabel="Title"
+                                  name="./tier2title"/>
+                              <infinitescroll
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                text="Infinite Scroll?"
+                                value="{Boolean}true"
+                                uncheckedValue="{Boolean}false"
+                                name="./infinitescroll"
+                                defaultChecked="{Boolean}true"
+                                class="cq-dialog-checkbox-showhide"
+                                cq-dialog-checkbox-showhide-target=".infinitescroll-option-enable-showhide-target"/>
+                              <showHideContainer
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hidden infinitescroll-option-enable-showhide-target"
+                                showhidetargetvalue="">
+                                <items jcr:primaryType="nt:unstructured">
+                                <tier2loadmoremsg
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Load More Message"
+                                    name="./tier2loadmoremsg"
+                                    class="tier2-load-more-message"
+                                    required="{Boolean}true"/>
+                                </items>
+                                </showHideContainer>
+                          </items>
+                        </well>
+                      </items>
+                    </tier2>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:deviceGroups="[/etc/mobile/groups/responsive]"
+        cq:template="/conf/edc/settings/wcm/templates/success-story-page"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:uuid="156f9add-0997-46ef-8661-99088016d513"
+        sling:resourceType="/apps/edc/components/structure/successstory/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <header
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="edc/components/structure/header"
+                editable="{Boolean}true"/>
+            <responsivegrid
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid">
+                <cq:responsive jcr:primaryType="nt:unstructured"/>
+                  <articlecontainer
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="edc/components/structure/article/articlecontainer">
+                    <!-- Change articleleftcontainer editable to true when needed -->
+                     <articleleftcontainer
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/foundation/components/responsivegrid"
+                        editable="{Boolean}false">
+                        <cq:responsive jcr:primaryType="nt:unstructured">
+                            <default
+                                jcr:primaryType="nt:unstructured"
+                                width="3"/>
+                            <tablet
+                                jcr:primaryType="nt:unstructured"
+                                width="12"/>
+                            <phone
+                                jcr:primaryType="nt:unstructured"
+                                width="12"/>
+                     </cq:responsive>
+                    </articleleftcontainer>
+                    <articlebodycontainer
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="edc/components/structure/article/articlebodycontainer"
+                        editable="{Boolean}true">
+                        <cq:responsive jcr:primaryType="nt:unstructured">
+                            <default
+                                jcr:primaryType="nt:unstructured"
+                                width="6"/>
+                            <tablet
+                                jcr:primaryType="nt:unstructured"
+                                width="12"/>
+                            <phone
+                                jcr:primaryType="nt:unstructured"
+                                width="12"/>
+                        </cq:responsive>
+                    </articlebodycontainer>
+                    <articlerightcontainer
+                        jcr:created="{Date}2017-11-02T07:39:49.175-04:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2017-11-02T07:39:49.175-04:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="edc/components/structure/article/articlerightcontainer"
+                        editable="{Boolean}true">
+                        <cq:responsive jcr:primaryType="nt:unstructured">
+                            <default
+                                jcr:primaryType="nt:unstructured"
+                                width="3"/>
+                            <phone
+                                jcr:primaryType="nt:unstructured"
+                                width="12"/>
+                            <tablet
+                                jcr:primaryType="nt:unstructured"
+                                width="12"/>
+                        </cq:responsive>
+                    </articlerightcontainer>
+                </articlecontainer>
+                <responsivegrid
+                  jcr:primaryType="nt:unstructured"
+                  sling:resourceType="wcm/foundation/components/responsivegrid"
+                  editable="{Boolean}true"/>
+                </responsivegrid>
+            <footer
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="edc/components/structure/footer"/>
+        </root>
+        <cq:responsive jcr:primaryType="nt:unstructured">
+            <breakpoints jcr:primaryType="nt:unstructured">
+                <phone
+                    jcr:primaryType="nt:unstructured"
+                    title="Smaller Screen"
+                    width="{Long}719"/>
+                <tablet
+                    jcr:primaryType="nt:unstructured"
+                    title="Tablet"
+                    width="{Long}959"/>
+            </breakpoints>
+        </cq:responsive>
+    </jcr:content>
+</jcr:root>

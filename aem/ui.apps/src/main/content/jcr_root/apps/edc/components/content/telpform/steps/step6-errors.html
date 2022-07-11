@@ -1,0 +1,28 @@
+<template data-sly-template.step6="${@  uuid, properties, formLabels}">
+    <sly data-sly-use.ibButtonTemplate="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+    <div class="success-message ${wcmmode.disabled ? 'hide' : 'show'}">
+        <h2>${properties.elegibleTitle}</h2>
+        ${properties.elegibleMsg @ context='html'}
+        <div data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='link', buttonstate='enabled', link=properties.elegibleUrl, buttontext=properties.elegibleButtonText, buttoncssclasses='ibtn-lg'}" data-sly-unwrap></div>
+        <hr class="lg" />
+        <div class="special-msg">
+            <h4>${properties.elegibleNoteTitle}</h4>
+            ${properties.elegibleNoteMsg @ context='html'}
+        </div>
+    </div>
+    <div class="fail-message ${wcmmode.disabled ? 'hide' : 'show'}">
+        <h2>${properties.inelegibleTitle}</h2>
+        ${properties.inelegibleMsg @ context='html'}
+        <div data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='link', buttonstate='enabled', link=properties.inelegibleUrl, buttontext=properties.inelegibleButtonText, buttoncssclasses='ibtn-lg'}" data-sly-unwrap></div>
+    </div>
+    <div class="form-ctas bottom-ctas">
+        <div class="ctas-container">
+            <div data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='link', buttonstate='enabled', link='#', action='back', backText=formLabels.backButton, editText=formLabels.editButton, buttontext=formLabels.backButton, buttoncssclasses='back cta hide ibtn-lg'}" data-sly-unwrap></div>
+            <div data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='button', btntype='submit', buttonstate='enabled', action='next', buttontext=formLabels.nextButton, buttoncssclasses='next-btn show ibtn-lg'}" data-sly-unwrap></div>
+            <div data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='button', btntype='submit', buttonstate='enabled', action='q-done', buttontext=formLabels.proceedButton, buttoncssclasses='done-btn hide ibtn-lg'}" data-sly-unwrap></div>
+        </div>
+    </div>
+    <div class="submit-failed-message ${wcmmode.disabled ? 'hide' : 'show'}">
+        <p>${formLabels.formSubmitFail}</p>
+    </div>
+</template>>

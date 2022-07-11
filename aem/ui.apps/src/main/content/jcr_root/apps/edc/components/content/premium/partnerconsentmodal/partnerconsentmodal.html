@@ -1,0 +1,34 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+
+<sly data-sly-test.editMode="${wcmmode.edit && properties.title}">
+    <sly data-sly-test.message="${'{0}{1}' @ format=['Consent Modal for: ', properties.partner ? properties.partner : 'no partner selected']}"/>
+</sly>
+
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = editMode, emptyTextAppend=message}"/>
+
+<div data-sly-test="${!wcmmode.edit && properties.title}" class="c-partner-consent-modal hide" role="dialog" aria-modal="true" data-consent-value="${properties.partner}" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'Partner Consent Modal'}" data-event-type="button" data-event-name="button click - consent popup" data-event-engagement="3" data-event-action="main body" data-event-level="primary" data-product-desc="knowledge product">
+    <div class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2 class="title">${properties.title}</h2>
+                <button class="edc-btn-icon close-button" aria-label="Close">
+                    <span></span>
+                </button>
+            </div>
+            <div class="modal-info">
+                <div class="description">${properties.description @ context="html"}</div>
+                <p class="toc">${properties.consent}</p>
+            </div>
+            <div class="modal-links">
+                <a class="button btn-medium edc-primary-btn consent">
+                    <span>${properties.accept}</span>
+                </a>
+                <button class="edc-btn-unstyled button cancel">
+                    <span>${properties.cancelCtaLabel}</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

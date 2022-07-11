@@ -1,0 +1,488 @@
+@charset "UTF-8";
+.c-triage-tool {
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(25, 25, 25, 0.1);
+    -webkit-transition: box-shadow .5s ease;
+    -moz-transition: box-shadow .5s ease;
+    transition: box-shadow .5s ease;
+    width: 100%;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 3.9375rem;
+}
+
+.c-triage-tool:hover {
+    -webkit-box-shadow: 0 0 20px 10px rgba(51, 51, 51, 0.1);
+    -moz-box-shadow: 0 0 20px 10px rgba(51, 51, 51, 0.1);
+    box-shadow: 0 0 20px 10px rgba(51, 51, 51, 0.1);
+}
+
+.c-triage-tool * {
+    box-sizing: border-box;
+}
+
+.c-triage-tool .hide {
+    display: none !important;
+}
+
+.c-triage-tool button.no-btn {
+    background-color: transparent;
+    font-style: normal;
+    border-radius: 0;
+    color: #fff;
+    font-weight: normal;
+    cursor: pointer;
+    padding: 0;
+    transition: none;
+    text-decoration: underline;
+}
+
+.c-triage-tool .q-header {
+    position: relative;
+    background-color: #2f78c6;
+    padding: 1.25rem;
+    text-align: center;
+}
+
+.c-triage-tool .q-header .q-title {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.c-triage-tool .q-header button {
+    position: absolute;
+    right: 1.25rem;
+    top: 1.25rem;
+}
+
+.c-triage-tool .q-body {
+    padding: 1.5rem 1.3125rem;
+    min-height: 445px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.c-triage-tool .q-body .first-page {
+    display: none;
+}
+
+.c-triage-tool .q-body .q-loading,
+.c-triage-tool .q-body .q-content,
+.c-triage-tool .q-body .q-results {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.c-triage-tool .q-body .q-loading .results-grid .carousel-actions.hide,
+.c-triage-tool .q-body .q-content .results-grid .carousel-actions.hide,
+.c-triage-tool .q-body .q-results .results-grid .carousel-actions.hide {
+    display: none;
+}
+
+.c-triage-tool .q-body .q-content .q-title,
+.c-triage-tool .q-body .q-results .q-title {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+    color: #757575;
+}
+
+.c-triage-tool .q-body .q-content {
+    width: 100%;
+    padding: 0 .3125rem;
+}
+
+.c-triage-tool .q-body .q-content .q-text {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+
+.c-triage-tool .q-body .q-content .q-text > span p {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    display: inherit;
+}
+
+.c-triage-tool .q-body .q-content .q-text .c-more-information-modal {
+    vertical-align: super;
+}
+
+.c-triage-tool .q-body .q-content .q-subtext {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 1.7142;
+    margin-top: 1rem;
+}
+
+.c-triage-tool .q-body .q-content .q-options,
+.c-triage-tool .q-body .q-content .q-dropdown,
+.c-triage-tool .q-body .q-content .q-slider {
+    margin-top: 2rem;
+}
+
+.c-triage-tool .q-body .q-content .q-options {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.c-triage-tool .q-body .q-content .q-options button {
+    width: 100%;
+    margin-bottom: .9375rem;
+    transition: none;
+    border: 1px solid #2f78c6;
+    padding: 1.25rem 1.5625rem;
+}
+
+.c-triage-tool .q-body .q-content .q-options button:last-child {
+    margin-bottom: 0;
+}
+
+.c-triage-tool .q-body .q-content .q-dropdown {
+    min-width: 220px;
+    width: 100%;
+}
+
+.c-triage-tool .q-body .q-content .q-dropdown label {
+    display: none;
+}
+
+.c-triage-tool .q-body .q-content .q-slider {
+    width: 100%;
+}
+
+.c-triage-tool .q-body .q-content .q-slider .slider-value {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.c-triage-tool .q-body .q-content .q-slider .slider {
+    box-sizing: content-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 15px;
+    background: #ccc;
+    outline: none;
+    opacity: .7;
+    border-radius: 625rem;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.c-triage-tool .q-body .q-content .q-slider .slider:hover {
+    opacity: 1;
+}
+
+.c-triage-tool .q-body .q-content .q-slider .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #fff;
+    border: 1px solid rgba(51, 51, 51, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.c-triage-tool .q-body .q-content .q-slider .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid rgba(51, 51, 51, 0.3);
+    cursor: pointer;
+}
+
+.c-triage-tool .q-body .q-content .q-slider .slider::-ms-track {
+    width: 100%;
+    height: 15px;
+    background: transparent;
+    /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+    border-color: transparent;
+    /*leave room for the larger thumb to overflow with a transparent border */
+    border-width: 6px 0;
+    color: transparent;
+    /*remove default tick marks*/
+}
+
+.c-triage-tool .q-body .q-content .q-slider .slider::-ms-thumb {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid rgba(51, 51, 51, 0.3);
+}
+
+.c-triage-tool .q-body .q-content .q-slider .slider::-ms-tooltip {
+    display: none;
+}
+
+.c-triage-tool .q-body .q-results {
+    text-align: center;
+}
+
+.c-triage-tool .q-body .q-results .actions {
+    margin-top: 2rem;
+}
+
+.c-triage-tool .q-body .q-results h3,
+.c-triage-tool .q-body .q-results p {
+    width: 100%;
+}
+
+.c-triage-tool .q-body .q-results h3.title-for-desktop {
+    display: none;
+}
+
+.c-triage-tool .q-body .q-results h3.title-for-mobile {
+    font-size: 24px;
+    margin: 2rem 0 0;
+    color: #000;
+    text-align: center;
+}
+
+.c-triage-tool .q-body .q-results h3.title-for-mobile > p {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+@media (min-width: 720px) {
+    .c-triage-tool .q-body .q-results h3.title-for-mobile > p {
+        font-size: 1.25rem;
+        line-height: 1.2;
+        letter-spacing: -0.1px;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-triage-tool .q-body .q-results h3.title-for-mobile > p {
+        font-size: 1.375rem;
+        line-height: 1.4545;
+        letter-spacing: -0.2px;
+    }
+}
+
+.c-triage-tool .q-body .q-results p {
+    margin: 0;
+}
+
+.c-triage-tool .q-footer {
+    background-color: #fff;
+    padding: .9375rem 1.625rem;
+    display: flex;
+    justify-content: center;
+}
+
+.c-triage-tool .q-footer button {
+    width: 100%;
+    border: 1px solid #2f78c6;
+}
+
+.c-triage-tool .q-footer button[disabled] {
+    color: #fff;
+    border: 1px solid #707070;
+    background-color: #707070;
+}
+
+.c-triage-tool.first-question .q-body .first-page {
+    display: block;
+}
+
+@media (min-width: 720px) {
+    .c-triage-tool .q-body {
+        flex-direction: row;
+        min-height: 0;
+    }
+    .c-triage-tool .q-body .q-content {
+        padding: 0 .5625rem;
+    }
+    .c-triage-tool .q-body .q-content .q-text {
+        font-size: 20px;
+        line-height: 1.6;
+    }
+    .c-triage-tool .q-body .q-content .q-text > span p {
+        font-size: 20px;
+        line-height: 1.6;
+    }
+    .c-triage-tool .q-body .q-content .q-options {
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+    }
+    .c-triage-tool .q-body .q-content .q-options button {
+        margin-bottom: 0;
+        margin-left: 1rem;
+    }
+    .c-triage-tool .q-body .q-content .q-options button:first-child {
+        margin-left: 0;
+    }
+    .c-triage-tool .q-body .q-content .q-dropdown {
+        max-width: 50%;
+    }
+    .c-triage-tool .q-body .q-results {
+        position: relative;
+        text-align: left;
+    }
+    .c-triage-tool .q-body .q-results h3.title-for-desktop {
+        display: block;
+        margin: 0 0 .5rem;
+        color: #2f78c6;
+        text-align: left;
+    }
+    .c-triage-tool .q-body .q-results h3.title-for-desktop > p {
+        color: #333;
+        font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.5;
+        letter-spacing: 0;
+        text-align: left;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-triage-tool .q-body .q-results h3.title-for-desktop > p {
+        font-size: 1.25rem;
+        line-height: 1.2;
+        letter-spacing: -0.1px;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 960px) {
+    .c-triage-tool .q-body .q-results h3.title-for-desktop > p {
+        font-size: 1.375rem;
+        line-height: 1.4545;
+        letter-spacing: -0.2px;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-triage-tool .q-body .q-results h3.title-for-mobile {
+        display: none;
+    }
+    .c-triage-tool .q-body .q-results .results-grid {
+        width: 100%;
+        padding: 0 5rem;
+    }
+    .c-triage-tool .q-body .q-results .results-grid .carousel-slides {
+        position: absolute;
+        display: flex;
+        overflow: hidden;
+        width: calc(100% - 10rem);
+    }
+    .c-triage-tool .q-body .q-results .results-grid .carousel-actions {
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 45%;
+        left: 0;
+    }
+    .c-triage-tool .q-body .q-results .results-grid .carousel-actions .carousel-button {
+        position: absolute;
+    }
+    .c-triage-tool .q-body .q-results .results-grid .carousel-actions .carousel-button.hide {
+        display: none;
+    }
+    .c-triage-tool .q-body .q-results .results-grid .carousel-actions .carousel-button::before {
+        font-family: "iconfonts";
+        font-size: 24px;
+        font-weight: normal;
+        content: "";
+    }
+    .c-triage-tool .q-body .q-results .results-grid .carousel-actions .carousel-button[data-action='left'] {
+        left: 0;
+        padding: .5rem .2rem .5rem .5rem;
+    }
+    .c-triage-tool .q-body .q-results .results-grid .carousel-actions .carousel-button[data-action='left']:hover {
+        padding: .5rem .2rem .5rem .5rem;
+    }
+    .c-triage-tool .q-body .q-results .results-grid .carousel-actions .carousel-button[data-action='left']::before {
+        content: "";
+    }
+    .c-triage-tool .q-body .q-results .results-grid .carousel-actions .carousel-button[data-action='right'] {
+        right: 0;
+        padding: .5rem .5rem .5rem .2rem;
+    }
+    .c-triage-tool .q-body .q-results .results-grid .carousel-actions .carousel-button[data-action='right']:hover {
+        padding: .5rem .5rem .5rem .2rem;
+    }
+    .c-triage-tool .q-body .q-results .results-grid .carousel-actions .carousel-button[data-action='right']::before {
+        content: "";
+    }
+    .c-triage-tool .q-footer {
+        padding: .9375rem 1.875rem;
+    }
+    .c-triage-tool .q-footer button {
+        max-width: 150px;
+    }
+    .c-triage-tool.first-question .q-header {
+        text-align: left;
+        padding-left: 4rem;
+    }
+    .c-triage-tool.first-question .q-body {
+        justify-content: space-between;
+    }
+    .c-triage-tool.first-question .q-body .first-page {
+        width: 45%;
+        padding-left: 3rem;
+    }
+    .c-triage-tool.first-question .q-body .q-content {
+        width: 50%;
+    }
+    .c-triage-tool.first-question .q-body .q-content .q-text,
+    .c-triage-tool.first-question .q-body .q-content .q-subtext {
+        text-align: left;
+    }
+    .c-triage-tool.first-question .q-footer {
+        justify-content: flex-end;
+    }
+    .c-triage-tool.results .q-header {
+        text-align: left;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-triage-tool .q-body .q-content {
+        padding: 0 2.125rem;
+    }
+    .c-triage-tool .q-body .q-content .q-text {
+        font-size: 22px;
+        line-height: 32px;
+    }
+    .c-triage-tool .q-body .q-content .q-text > span p {
+        font-size: 22px;
+        line-height: 32px;
+    }
+    .c-triage-tool .q-footer {
+        padding: .9375rem 3.4375rem;
+    }
+}

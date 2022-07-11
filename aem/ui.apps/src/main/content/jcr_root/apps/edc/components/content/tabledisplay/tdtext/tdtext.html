@@ -1,0 +1,5 @@
+<sly data-sly-use.textModel="com.adobe.cq.wcm.core.components.models.Text"/>
+<sly data-sly-test.tdText="${textModel.text}"/>
+
+<span data-sly-test="${tdText}" data-sly-unwrap>${tdText @ context = 'html'}</span>
+<span data-sly-test="${!tdText}" data-sly-unwrap><em class="c-td-text-placeholder">Edit Cell Value</em></span>

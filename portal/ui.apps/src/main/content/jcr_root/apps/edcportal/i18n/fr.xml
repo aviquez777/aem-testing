@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:language="fr"
+    jcr:mixinTypes="[mix:language]"
+    jcr:primaryType="nt:folder">
+<!--  General text labels -->
+    <link-text-back-to-dashboard
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:key="link-text-back-to-dashboard"
+        sling:message="Retour au tableau de bord"/>
+    <link-text-manage-profile
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:key="link-text-manage-profile"
+        sling:message="Gérer mon profile"/>
+    <label-text-other
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:key="label-text-other"
+        sling:message="Autre"/>
+    <label-text-profile
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:key="label-text-profile"
+        sling:message="Profil"/>
+    <label-text-all-fields-required-reg
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:key="label-text-all-fields-required-reg"
+        sling:message="Tous les champs sont obligatoires."/>
+    <label-text-all-fields-required
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:key="label-text-all-fields-required"
+        sling:message="Vérifiez et complétez votre profil. Tous les champs sont obligatoires."/>
+    <label-text-i-understand-terms-conditions
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:key="label-text-i-understand-terms-conditions"
+        sling:message="J'ai lu les"/>
+    <label-text-i-understand-terms-conditions-2
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:key="label-text-i-understand-terms-conditions-2"
+        sling:message="d'EDC et j'y consens."/>
+    <link-text-logout
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:key="link-text-logout"
+        sling:message="Logout"/>
+    <link-text-cancel
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:key="link-text-cancel"
+        sling:message="Annuler"/>
+    <link-text-terms-conditions
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:key="link-text-terms-conditions"
+        sling:message="conditions générales"/>
+<!-- Input Options -->
+    <input-select-option-text-select-other-type
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:key="input-select-option-text-select-other-type"
+        sling:message="Sélectionnez un autre type"/>
+    <input-select-option-text-please-select
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:key="input-select-option-text-please-select"
+        sling:message="--Veuillez sélectionner--"/>
+    <input-select-option-multiple-selected-singulartext
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:key="input-select-option-text-singulartext"
+        sling:message="option sélectionnée"/>
+    <input-select-option-multiple-selected-pluraltext
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:key="input-select-option-text-pluraltext"
+        sling:message="options sélectionnées"/>
+    <input-select-option-multiple-selected-clearalltext
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:key="input-select-option-text-clearalltext"
+        sling:message="Effacer tout sélectionné"/>
+    <input-select-option-multiple-confirm-select-mobile-button-text
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:key="input-select-option-multiple-confirm-select-mobile-button-text"
+        sling:message="Confirmer la sélectionon"/>
+<!--  Buttons -->
+    <button-text-next
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:key="button-text-next"
+        sling:message="Suivant"/> 
+    <button-text-submit
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:key="button-text-submit"
+        sling:message="Soumettre"/> 
+    <button-text-finish
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:key="button-text-finish"
+        sling:message="Terminer l’inscription"/>
+    <button-text-save-detail-info
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:key="button-text-save-detail-info"
+        sling:message="Sauvegarder"/>
+<!-- Forms Specific texts -->
+    <form-select-profile-title
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:key="form-select-profile-title"
+        sling:message="Choisissez le profil qui vous décrit le mieux"/>
+    <form-select-profile-no-select-error
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:key="form-select-profile-no-select-error"
+        sling:message="Pour continuer, vous devez d'abord sélectionner un type de profil."/>
+    <form-register-profile-title
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:key="form-register-profile-title"
+        sling:message="Mon profil"/>
+    <form-manage-profile-title
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:key="form-manage-profile-title"
+        sling:message="Modifier les renseignements détaillés"/>
+    <form-update-profile-title
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:key="form-update-profile-title"
+        sling:message="Modifier les renseignements détaillés"/>
+<!-- MyEDC Navigation -->
+    <my-dashboard-title
+            jcr:mixinTypes="[sling:Message]"
+            jcr:primaryType="nt:folder"
+            sling:key="my-dashboard-title"
+            sling:message="Mon tableau de bord"/>
+    <my-dashboard-loading
+            jcr:mixinTypes="[sling:Message]"
+            jcr:primaryType="nt:folder"
+            sling:key="my-dashboard-loading"
+            sling:message="Chargement en cours..."/>
+    <manage-my-profile-title
+            jcr:mixinTypes="[sling:Message]"
+            jcr:primaryType="nt:folder"
+            sling:key="manage-my-profile-title"
+            sling:message="Mon profil"/>
+    <mobile-navigation-title
+            jcr:mixinTypes="[sling:Message]"
+            jcr:primaryType="nt:folder"
+            sling:key="mobile-navigation-title"
+            sling:message="Menu"/>
+<!-- Manage My Account -->
+    <cta-edit-basic-information
+            jcr:mixinTypes="[sling:Message]"
+            jcr:primaryType="nt:folder"
+            sling:key="cta-edit-basic-information"
+            sling:message="Modifier les renseignements"/>
+    <cta-change-password
+            jcr:mixinTypes="[sling:Message]"
+            jcr:primaryType="nt:folder"
+            sling:key="cta-change-password"
+            sling:message="Modifier le mot de passe"/>
+    <cta-edit-detailed-information
+            jcr:mixinTypes="[sling:Message]"
+            jcr:primaryType="nt:folder"
+            sling:key="cta-edit-detailed-information"
+            sling:message="Modifier les renseignements détaillés"/>
+    <success-message
+            jcr:mixinTypes="[sling:Message]"
+            jcr:primaryType="nt:folder"
+            sling:key="success-message"
+            sling:message="Vos renseignements sont sauvegardés"/>
+<!-- - Dashboard  -->
+    <dashboard-welcome-message-box-title
+            jcr:mixinTypes="[sling:Message]"
+            jcr:primaryType="nt:folder"
+            sling:key="dashboard-welcome-message-box-title"
+            sling:message="Bienvenue à MonEDC"/>
+     <dashboard-welcome-message-box-text
+            jcr:mixinTypes="[sling:Message]"
+            jcr:primaryType="nt:folder"
+            sling:key="dashboard-welcome-message-box-text"
+            sling:message="Ce tableau de bord central vous offre un accès gratuit et illimité à des renseignements sur les marchés, à des conseils d’experts et à des services numériques qui vous aideront à faire croître votre entreprise à l’étranger. Vous trouverez également tout le contenu que vous avez consulté récemment."/>
+     <dashboard-welcome-message-box-text-two
+            jcr:mixinTypes="[sling:Message]"
+            jcr:primaryType="nt:folder"
+            sling:key="dashboard-welcome-message-box-text-two"
+            sling:message="N’oubliez pas : tout comme le commerce mondial, MonEDC évolue constamment; consultez-le régulièrement pour rester au fait des derniers débouchés et risques, et des tendances et sujets incontournables de l’heure."/>
+    <dashboard-products-tab-title
+            jcr:mixinTypes="[sling:Message]"
+            jcr:primaryType="nt:folder"
+            sling:key="dashboard-products-tab-title"
+            sling:message="Ressources en vedette"/>
+    <dashboard-my-resources-tab-title
+            jcr:mixinTypes="[sling:Message]"
+            jcr:primaryType="nt:folder"
+            sling:key="dashboard-my-resources-tab-title"
+            sling:message="Mes ressources"/>
+    <dashboard-my-resources-empty-title
+            jcr:mixinTypes="[sling:Message]"
+            jcr:primaryType="nt:folder"
+            sling:key="dashboard-my-resources-empty-title"
+            sling:message="Explorer les connaissances en exportation"/>
+    <dashboard-my-resources-empty-text
+            jcr:mixinTypes="[sling:Message]"
+            jcr:primaryType="nt:folder"
+            sling:key="dashboard-my-resources-empty-text"
+            sling:message="Vous trouverez ici le contenu et les services numériques recommandés les plus pertinents selon les besoins de votre entreprise, parmi toutes les solutions qu’EDC peut vous offrir."/>
+    <dashboard-my-webinars-tab-title
+            jcr:mixinTypes="[sling:Message]"
+            jcr:primaryType="nt:folder"
+            sling:key="dashboard-my-webinars-tab-title"
+            sling:message="Mes webinaires"/>
+    <dashboard-my-webinars-empty-title
+            jcr:mixinTypes="[sling:Message]"
+            jcr:primaryType="nt:folder"
+            sling:key="dashboard-my-webinars-empty-title"
+            sling:message="Explorer les connaissances en exportation"/>
+    <dashboard-my-webinars-empty-text
+            jcr:mixinTypes="[sling:Message]"
+            jcr:primaryType="nt:folder"
+            sling:key="dashboard-my-webinars-empty-text"
+            sling:message="Commencez à découvrir tout ce qu’EDC peut vous offrir, à vous et à votre entreprise. Visitez notre centre d’expertise ExportActions et notre carrefour d’événements et de webinaires pour trouver l’information et les outils qui vous aideront à avoir du succès à l’étranger."/>
+    <dashboard-my-webinars-looking-more-title
+            jcr:mixinTypes="[sling:Message]"
+            jcr:primaryType="nt:folder"
+            sling:key="dashboard-my-webinars-looking-more-title"
+            sling:message="Need French translation"/>
+    <dashboard-my-webinars-looking-more-text
+            jcr:mixinTypes="[sling:Message]"
+            jcr:primaryType="nt:folder"
+            sling:key="dashboard-my-webinars-looking-more-text"
+            sling:message="Need French translation"/>
+    <dashboard-icon-arrow-right-button-text
+            jcr:mixinTypes="[sling:Message]"
+            jcr:primaryType="nt:folder"
+            sling:key="dashboard-icon-arrow-right-button-text"
+            sling:message="Faites défiler vers la droite"/>
+     <dashboard-icon-arrow-left-button-text
+            jcr:mixinTypes="[sling:Message]"
+            jcr:primaryType="nt:folder"
+            sling:key="dashboard-icon-arrow-left-button-text"
+            sling:message="**Faire défiler vers la gauche"/>
+    <dashboard-discover-tradeinsights-button-text
+            jcr:mixinTypes="[sling:Message]"
+            jcr:primaryType="nt:folder"
+            sling:key="dashboard-discover-tradeinsights-button-text"
+            sling:message="Découvrir ExportActions"/>
+<!-- Webinars -->
+     <webinar-page-load-error
+            jcr:mixinTypes="[sling:Message]"
+            jcr:primaryType="nt:folder"
+            sling:key="webinar-page-load-error"
+            sling:message="Désolé, l’affichage ne réussit pas. Veuillez réessayer plus tard."/>
+     <webinar-api-error
+            jcr:mixinTypes="[sling:Message]"
+            jcr:primaryType="nt:folder"
+            sling:key="webinar-api-error"
+            sling:message="Désolé, quelque chose a mal tourné. Veuillez réessayer plus tard."/>
+     <watch-webinars
+            jcr:mixinTypes="[sling:Message]"
+            jcr:primaryType="nt:folder"
+            sling:key="watch-webinars"
+            sling:message="Parcourir les webinaires"/>
+    <webinar-status-upcoming
+            jcr:mixinTypes="[sling:Message]"
+            jcr:primaryType="nt:folder"
+            sling:key="webinar-status-upcoming"
+            sling:message="Prochain webinaire"/>
+    <webinar-status-live
+            jcr:mixinTypes="[sling:Message]"
+            jcr:primaryType="nt:folder"
+            sling:key="webinar-status-live"
+            sling:message="En direct"/>
+    <webinar-status-ondemand
+            jcr:mixinTypes="[sling:Message]"
+            jcr:primaryType="nt:folder"
+            sling:key="webinar-status-ondemand"
+            sling:message="Accessible sur demande"/>
+<!-- Multiselect -->
+    <multifield-regionWord
+            jcr:mixinTypes="[sling:Message]"
+            jcr:primaryType="nt:folder"
+            sling:key="multifield-regionWord"
+            sling:message="région"/>
+    <multifield-noResults
+            jcr:mixinTypes="[sling:Message]"
+            jcr:primaryType="nt:folder"
+            sling:key="multifield-noResults"
+            sling:message="Aucun résultat"/>
+    <multifield-selectAll
+            jcr:mixinTypes="[sling:Message]"
+            jcr:primaryType="nt:folder"
+            sling:key="multifield-selectAll"
+            sling:message="Tout sélectionner"/>
+    <multifield-deselectAll
+            jcr:mixinTypes="[sling:Message]"
+            jcr:primaryType="nt:folder"
+            sling:key="multifield-deselectAll"
+            sling:message="Effacer tout"/>
+    <multifield-resetButtonText
+            jcr:mixinTypes="[sling:Message]"
+            jcr:primaryType="nt:folder"
+            sling:key="multifield-resetButtonText"
+            sling:message="Recommencer"/>
+    <step-word
+            jcr:mixinTypes="[sling:Message]"
+            jcr:primaryType="nt:folder"
+            sling:key="step-word"
+            sling:message="Étape"/>
+    <of-word
+            jcr:mixinTypes="[sling:Message]"
+            jcr:primaryType="nt:folder"
+            sling:key="of-word"
+            sling:message="sur"/>
+    <tooltip-aria-label
+            jcr:mixinTypes="[sling:Message]"
+            jcr:primaryType="nt:folder"
+            sling:key="tooltip-aria-label"
+            sling:message="Sélectionner pour ouvrir le texte de l'info-bulle"/>
+</jcr:root>

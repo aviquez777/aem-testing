@@ -1,0 +1,20 @@
+<sly data-sly-use.model="com.edc.edcweb.core.models.CookieBanner"/>
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !model.message}"/>
+
+<section data-sly-test="${model.message}" class="c-cookie-banner full-width ${wcmmode.edit ? '' : 'hide'}" role="banner">
+    <div class="content">
+        <div class="container">
+            <div class="content-info">
+                ${model.message @ context = 'html'}
+            </div>
+            <div class="content-accept">
+                <div data-sly-test="${model.linktext}"
+                     data-sly-use.templates="${'/apps/edc/components/common/templates.html'}"
+                     data-sly-call="${templates.link @ type = 'cta', ctatext=model.linktext, classes='button edc-primary-btn', linkchecker='valid'}"
+                     data-sly-unwrap>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

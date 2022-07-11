@@ -1,0 +1,34 @@
+<!--/*~~~~~~~~~~~~~~~~~~~~~  FORM HIDDEN FIELDS  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Form hidden fields - renders global hidden fields for forms
+
+  Parameters:
+    elqFormName - Eloqua form name
+    elqSiteId - Eloqua site Id
+    lang - current page language, possible values: "French", "English"
+    docID - optional, in case the docId comes from the component dialog
+    inquiryID - Forms's inquiy Id
+    formID - Eloqua form Id
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+<template data-sly-template.formhiddenfields="${@ elqFormName, elqSiteId, lang, docID, inquiryID, formID}">
+    <sly data-sly-use.eloqua="com.edc.edcweb.core.models.EloquaData"/>
+
+    <input type="hidden" name="elqFormName" class="form-control" value="${elqFormName}" validation-rule="none" />
+    <input type="hidden" name="elqSiteId" class="form-control" value="${elqSiteId}" validation-rule="none" />
+    <input type="hidden" name="fullFromPage" class="form-control" value="" validation-rule="none" />
+    <input type="hidden" name="fromPage" class="form-control" value="" validation-rule="none" />
+    <input type="hidden" name="gatedURL" class="form-control" value="" validation-rule="none" />
+    <input type="hidden" name="refPage" class="form-control" value="" validation-rule="none" />
+    <input type="hidden" name="kw" class="form-control" value="" validation-rule="none" />
+    <input type="hidden" name="il" class="form-control" value="" validation-rule="none" />
+    <input type="hidden" name="lang" class="form-control" value="${lang ? lang : eloqua.pageLanguage}" validation-rule="none" />
+    <input type="hidden" name="docID" class="form-control" value="${docID ? docID : eloqua.docId}" validation-rule="none" />
+    <input type="hidden" name="ownerID" class="form-control" value="${eloqua.ownerTags}" validation-rule="none" />
+    <input type="hidden" name="inquiryID" class="form-control" value="${inquiryID}" validation-rule="none" />
+    <input type="hidden" name="formID" class="form-control" value="${formID}" validation-rule="none" />
+    <input type="hidden" name="exportJourney" class="form-control" value="${eloqua.categoryTags}" validation-rule="none" />
+    <input type="hidden" name="exportPain" class="form-control" value="${eloqua.subCategoryTags}" validation-rule="none" />
+    <input type="hidden" name="buyerJourney" class="form-control" value="${eloqua.exportStatusTags}" validation-rule="none" />
+    <input type="hidden" name="personaID" class="form-control" value="${eloqua.personaTags}" validation-rule="none" />
+    <input type="hidden" name="elqCustomerGUID" class="form-control" value="" validation-rule="none" />
+    <input type="hidden" name="elqCookieWrite" class="form-control" value="0" validation-rule="none" />
+</template>

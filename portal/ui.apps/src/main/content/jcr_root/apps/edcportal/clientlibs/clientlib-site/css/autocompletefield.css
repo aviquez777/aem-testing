@@ -1,0 +1,172 @@
+@charset "UTF-8";
+.c-autocomplete-field {
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.c-autocomplete-field * {
+    box-sizing: border-box;
+}
+
+.c-autocomplete-field span.error,
+.c-autocomplete-field .hide {
+    display: none;
+}
+
+form .form-group .c-autocomplete-field input.error ~ span.error {
+    margin-bottom: 0;
+    margin-top: 1rem;
+}
+
+.c-autocomplete-field .search-container {
+    position: relative;
+}
+
+.c-autocomplete-field .search-input {
+    display: block;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-bottom: 0;
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    /* Internet Explorer 10-11 */
+    /* Microsoft Edge */
+    /* Removes the x button in IE */
+}
+
+.c-autocomplete-field .search-input::placeholder {
+    color: #333;
+    opacity: 1;
+}
+
+.c-autocomplete-field .search-input:-ms-input-placeholder {
+    color: #333;
+}
+
+.c-autocomplete-field .search-input::-ms-input-placeholder {
+    color: #333;
+}
+
+.c-autocomplete-field .search-input::-ms-clear {
+    display: none;
+}
+
+.c-autocomplete-field .search-results {
+    display: none;
+    width: 100%;
+    background-color: #fff;
+}
+
+.c-autocomplete-field .search-results ul {
+    margin: 0;
+    padding: 0;
+}
+
+.c-autocomplete-field .search-results ul li {
+    line-height: 1;
+}
+
+.c-autocomplete-field .search-results ul li button.edc-btn-unstyled {
+    background-color: transparent;
+    font-style: normal;
+    border-radius: 0;
+    font-weight: normal;
+    cursor: pointer;
+    display: inline-block;
+    padding: 11.6px 1rem;
+    transition: none;
+    text-align: left;
+    color: inherit;
+    width: 100%;
+    overflow: hidden;
+    text-decoration: none;
+    margin: 0;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    text-transform: capitalize;
+    line-height: 1.7142;
+}
+
+.c-autocomplete-field .search-results ul li button.edc-btn-unstyled::after {
+    clear: both;
+    content: ' ';
+    display: block;
+}
+
+.c-autocomplete-field .search-results ul li button.edc-btn-unstyled span::after {
+    margin: 0;
+    right: 0;
+}
+
+.c-autocomplete-field .search-results ul li button.edc-btn-unstyled:hover span, .c-autocomplete-field .search-results ul li button.edc-btn-unstyled:active span, .c-autocomplete-field .search-results ul li button.edc-btn-unstyled:focus span {
+    padding: 0;
+}
+
+.c-autocomplete-field .search-results ul li button.edc-btn-unstyled:focus {
+    background-color: #f4f8fc;
+    color: #1a65b2;
+}
+
+.c-autocomplete-field .search-results ul li:hover button {
+    background-color: #f4f8fc;
+    color: #1a65b2;
+}
+
+.c-autocomplete-field .search-results ul li.no-results {
+    padding: 15px;
+    font-size: 16px;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.c-autocomplete-field .search-results ul li.no-results:hover {
+    background-color: transparent;
+}
+
+.c-autocomplete-field .search-results ul li.hidden {
+    display: none;
+}
+
+.c-autocomplete-field.open .search-container {
+    -webkit-box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
+    background: #fff;
+    box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
+    border-radius: 4px;
+    padding-bottom: .25rem;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
+
+.c-autocomplete-field.open .search-container .close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    margin-right: .5rem;
+    cursor: pointer;
+}
+
+.c-autocomplete-field.open .search-container .close-btn::after {
+    content: "";
+    font-family: "iconfonts";
+    font-weight: normal;
+}
+
+.c-autocomplete-field.open .divider {
+    padding: 0 1rem;
+    width: 100%;
+}
+
+.c-autocomplete-field.open .divider span {
+    border-top: 1px solid #ccc;
+    display: block;
+}
+
+.c-autocomplete-field.open .search-input {
+    border: 0;
+}
+
+.c-autocomplete-field.open .search-input:focus {
+    border-color: transparent;
+}
+
+.c-autocomplete-field.open .search-results {
+    display: block;
+}

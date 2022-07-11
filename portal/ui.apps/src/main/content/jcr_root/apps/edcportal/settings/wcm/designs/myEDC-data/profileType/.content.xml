@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+   <!-- Important  formfields vales must match the name of defined ones on the field definitions -->
+   <!-- formfields will be appended to the common fields firstName,lastName,emailAddress,mobilephone, leave empty if no extra fields required -->
+    <canadian-company
+        jcr:primaryType="nt:unstructured"
+        enName="Canadian Company"
+        frName="Entreprise canadienne"
+        enTitle="Tell us about your company"
+        frTitle="Parlez-nous de votre entreprise"
+        enSubtitle="The information you provide will help us get to know you and your business better. It’ll allow us to tailor resources to fit your needs and provide expert advice to help you meet your export goals."
+        frSubtitle="L’information que vous nous fournirez sur votre entreprise et vous nous aidera à mieux vous connaître, à adapter les ressources à vos besoins et à vous donner des conseils d’experts en vue de l’atteinte de vos objectifs d’exportation."
+        value="canadian-company"
+        formFields="companyName,title,companyCountry,companyAddress1,companyAddress2,companyCity,companyProvince,companyProvinceAlt,companyProvinceInput,companyPostal,mainPhone,phoneExt,employees,annualSales,tradeStatus,painPoint,industry,marketsInt,ITMValue,ITMOther,CASL"/>
+    <non-canadian
+        jcr:primaryType="nt:unstructured"
+        enName="Non-Canadian company"
+        frName="Entreprise étrangère"
+        value="non-canadian"
+        formFields="companyCountry,companyAddress1,companyAddress2,companyCity,companyProvince,companyProvinceAlt,companyProvinceInput,companyPostal,mainPhone,phoneExt,title,companyName,employees,annualSales,industry,marketsInt,CASL"/>
+    <fi
+        jcr:primaryType="nt:unstructured"
+        enName="Financial institution"
+        frName="Institution financière"
+        enTitle="Financial institution profile"
+        frTitle="Profil de l'institution financière"
+        enSubtitle="Fill in all fields, so we can customize your experience."
+        frSubtitle="Remplir tous les champs pour que nous puissions personnaliser votre expérience."
+        value="fi"
+        showAutoComplete="false"
+        formFields="companyCountry,companyName,companyNameCan,companyNameOther,companyCity,companyProvince,companyProvinceAlt,companyProvinceInput,fiJobRole,fiOtherJobRole,fiClientsAnnualSales,CASL"/>
+    <broker
+        jcr:primaryType="nt:unstructured"
+        enName="Insurance broker"
+        frName="Courtier d’assurance"
+        enTitle="Insurance broker profile"
+        frTitle="Profil du courtier d'assurances"
+        enSubtitle="Fill in all fields, so we can customize your experience."
+        frSubtitle="Remplir tous les champs pour que nous puissions personnaliser votre expérience."
+        value="broker"
+        formFields="companyName,title,companyCountry,companyAddress1,companyAddress2,companyCity,companyProvince,companyProvinceAlt,companyProvinceInput,companyPostal,mainPhone,phoneExt,employees,marketsInt,CASL"/>
+    <gov
+        jcr:primaryType="nt:unstructured"
+        enName="Government employee"
+        frName="Employé du gouvernement"
+        enTitle="Tell us about yourself"
+        frTitle="Parlez-nous de vous"
+        enSubtitle="Fill in all fields, so we can customize your experience."
+        frSubtitle="Remplir tous les champs pour que nous puissions personnaliser votre expérience."
+        value="gov"
+        formFields="companyName,marketsInt,CASL"/>
+    <student
+        jcr:primaryType="nt:unstructured"
+        enName="Student"
+        frName="Étudiant"
+        enTitle="Tell us about yourself"
+        frTitle="Parlez-nous de vous"
+        enSubtitle="Fill in all fields, so we can customize your experience."
+        frSubtitle="Remplir tous les champs pour que nous puissions personnaliser votre expérience."
+        value="student"
+        formFields="marketsInt,CASL"/>
+    <edc
+        jcr:primaryType="nt:unstructured"
+        enName="EDC employee"
+        frName="Employé d’EDC"
+        enTitle="Tell us about yourself"
+        frTitle="Parlez-nous de vous"
+        enSubtitle="Fill in all fields, so we can customize your experience."
+        frSubtitle="Remplir tous les champs pour que nous puissions personnaliser votre expérience."
+        value="edc"
+        formFields="marketsInt,CASL"/>
+</jcr:root>

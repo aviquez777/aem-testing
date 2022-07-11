@@ -1,0 +1,88 @@
+<!--/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This file sets the logic for script loading
+If window.EDC.utils.isEuro = true OPT Out No Cookies
+If window.EDC.utils.isEuro = false OPT In Full Cookies
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+<template data-sly-template.headlibs="${@ designPath, staticDesignPath, clientlibCategories}"
+          data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html">
+  <sly data-sly-test="${!wcmmode.disabled}" data-sly-call="${clientLib.all @ categories = [
+'wcm.foundation.allowedcomponents',
+'cq.pagetypes.html5page',
+'cq.authoring.page',
+'cq.wcm.foundation-main',
+'cq.shared'
+]
+}"></sly>
+
+  <!--/*  Cloudservices */-->
+  <sly data-sly-include="/libs/cq/cloudserviceconfigs/components/servicelibs/servicelibs.jsp"></sly>
+
+  <sly data-sly-test="${clientlibCategories}" data-sly-call="${clientLib.css @ categories=clientlibCategories}"></sly>
+  <link data-sly-test="${staticDesignPath}" href="${staticDesignPath}" rel="stylesheet" type="text/css" />
+
+  <sly data-sly-use.pageinfo="com.edc.edcportal.core.models.Page"></sly>
+  <!--/* Do not load tracking scripts on author mode unless overriden on config */-->
+  <sly data-sly-test="${(!wcmmode.edit && !wcmmode.design)}">
+    <!--/* New OT code Starts */-->
+    <sly data-sly-test.oneTrustUrl="${pageinfo.oneTrustUpgradeSet}">
+      <sly data-sly-use.datalayer="com.edc.edcweb.core.models.Datalayer"></sly>
+      <script type="text/javascript">window.$=jQuery.noConflict();</script>
+      <!-- OneTrust Cookies Consent Notice start for edc.ca-->
+      <script data-sly-test="${pageinfo.oneTrustScriptIntegrityHash}" type="text/javascript" src="${pageinfo.oneTrustScripSrc}" integrity="${pageinfo.oneTrustScriptIntegrityHash}" crossorigin="anonymous" charset="UTF-8" data-domain-script="${pageinfo.oneTrustDomainSrc}" data-document-language="true"></script>
+      <script data-sly-test="${!pageinfo.oneTrustScriptIntegrityHash}" type="text/javascript" src="${pageinfo.oneTrustScripSrc}" data-domain-script="${pageinfo.oneTrustDomainSrc}" data-document-language="true"></script>
+      <script type="text/javascript">
+            window.$=jQuery.noConflict();
+            var _elqQ = _elqQ || [];
+
+            window.userState = function(options) {
+              EDC.props.userData = options;
+            };
+
+            (function () {
+                var userLocation, satCookie = getCookie("sat_track");
+
+                const countries = "ca";
+
+                window.jsonFeed = function (t) {
+                    userLocation = {
+                        country: t.country,
+                        state: t.state
+                    }
+
+                    if (t.country.toLowerCase() === countries) {
+                        getCookie("sat_track")?'':setCookie("sat_track", 'false', 365);
+                        EDC.nonEU = false;
+                    } else {
+                        getCookie("sat_track")?'':setCookie("sat_track", 'true', 365);
+                        EDC.nonEU = true;
+                    }
+
+                };
+
+                function setCookie(name, value, days) {
+                    var d = new Date();
+                    d.setTime(d.getTime() + 24 * 60 * 60 * 1000 * days);
+                    document.cookie = name + "=" + value + ";domain=.edc.ca;path=/;expires=" + d.toGMTString();
+                }
+
+                function getCookie(name) {
+                    var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+                    return v ? v[2] : null;
+                }
+            }());
+        </script>
+      <script src="https://geolocation.onetrust.com/cookieconsentpub/v1/geo/location"></script>
+      <script type="text/javascript">function OptanonWrapper() { }</script>
+      <!-- OneTrust Cookies Consent Notice end for edc.ca -->
+      <script src="/bin/myedc/userstate" type="text/javascript"></script>
+      <script src="${pageinfo.dtmUrl @ context='text'}" type="text/javascript"></script>
+    </sly>
+
+    <!--/* New OT code Ends */-->
+
+
+  </sly>
+  </sly>
+  <!--/* END Do not load tracking scripts on author mode */-->
+
+</template>

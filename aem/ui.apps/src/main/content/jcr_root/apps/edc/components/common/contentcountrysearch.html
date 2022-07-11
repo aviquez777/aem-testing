@@ -1,0 +1,20 @@
+<template data-sly-template.item="${@ list, item, target}">
+	
+		<!--/** If there is no value set for image alignment, default is 'center' **/-->
+	   
+	    <li class="content"><!-- //NOSONAR -->
+                     
+                    <div class="countries">
+                    	<a href="${item.CountryPageUrl}" target=${target}>${item.CountryName}</a>
+                    </div>
+                    <div class="edcposition">
+                        <p class="${item.position}">${item.PositionLabel}</p>
+                    </div>
+                    <div class="riskrating">
+                        <p class="${item.rating}">${item.RatingLabel}</p>
+                    </div>
+         </li>
+                
+	     
+	
+</template>

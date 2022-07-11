@@ -1,0 +1,33 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.model="com.edc.edcweb.core.models.PolicyReader" />
+<sly data-sly-test.policyProps="${model.labels}"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-test.heroOverline="${properties.heroOverline ? properties.heroOverline : policyProps.heroOverline}"/>
+<sly data-sly-test.heroTitle="${properties.heroTitle ? properties.heroTitle : policyProps.heroTitle}"/>
+<sly data-sly-test.heroSubTitle="${properties.heroSubTitle ? properties.heroSubTitle : policyProps.heroSubTitle}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !heroTitle, emptyTextAppend='No title defined in policy or properties'}"/>
+
+<section data-sly-test="${heroTitle}" class="c-faq-search-banner full-width ${properties.bottomMargin == 'yes' ? 'bottom-margin' : ''}" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'FAQ Search Banner'}" data-event-action="main body" data-engagement-type="3" data-event-level="primary" data-event-type="form" data-event-name="site search – search result click">
+    <div class="container">
+        <h3 class="hero-overline">${heroOverline}</h3>
+        <h2 class="hero-title">${heroTitle}</h2>
+        <p>${heroSubTitle}</p>
+        <div class="quick-search">
+            <section data-sly-use.search="com.adobe.cq.wcm.core.components.models.Search" class="cmp-search" role="search" data-cmp-is="search" data-cmp-min-length="${search.searchTermMinimumLength}" data-cmp-results-size="${search.resultsSize}">
+                <form class="cmp-search__form" data-cmp-hook-search="form" method="get" action="${currentPage.path @ addSelectors=['edcsearchresults'], extension='json', suffix = search.relativePath}" autocomplete="off">
+                    <div class="cmp-search__field">
+                        <em class="cmp-search__icon" data-cmp-hook-search="icon"></em>
+                        <span class="cmp-search__loading-indicator" data-cmp-hook-search="loadingIndicator"></span>
+                        <input type="text" class="cmp-search__input" data-cmp-hook-search="input" name="fulltext" placeholder="${policyProps.searchInputPlaceholder}" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-invalid="false" tabindex="0" />
+                        <em class="cmp-search__clear-icon" data-cmp-hook-search="clear" aria-hidden="true"></em>
+                    </div>
+                </form>
+                <div class="cmp-search__results" data-cmp-hook-search="results" role="listbox" aria-multiselectable="false"></div>
+                <script data-cmp-hook-search="itemTemplate" type="x-template"><a class="cmp-search__item" data-cmp-hook-search="item"><span class="cmp-search__item-title" data-cmp-hook-search="itemTitle"></span></a></script>
+                <div class="no-results" aria-hidden="true" data-cmp-hook-search="noResults">
+                    <span>${policyProps.searchModalNoResults}</span>
+                </div>
+            </section>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,246 @@
+.tag-results-banner {
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+    background-color: #26a2b5;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.tag-results-banner::after {
+    content: '';
+    z-index: 1;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 11vw 100vw;
+    border-color: transparent transparent #fff;
+    position: absolute;
+    bottom: -1px;
+    right: 0;
+}
+
+.tag-results-banner * {
+    box-sizing: border-box;
+}
+
+.tag-results-banner::after {
+    border-left-width: 105vw;
+}
+
+.tag-results-banner .container {
+    padding-top: 2.5rem;
+    padding-bottom: 3rem;
+}
+
+.tag-results-banner .headings {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.tag-results-banner h1 {
+    min-height: 1px;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+    width: 100%;
+    float: left;
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.tag-results-banner h2 {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 24px;
+    min-height: 1px;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+    width: 100%;
+    float: left;
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.tag-results-banner .description {
+    min-height: 1px;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+    width: 100%;
+    float: left;
+}
+
+.tag-results-banner .description p,
+.tag-results-banner .description.enhanced {
+    font-size: 24px;
+    margin-top: 0;
+    line-height: 40px;
+    color: #fff;
+}
+
+@media (min-width: 720px) {
+    .tag-results-banner::after {
+        border-bottom-width: 9vw;
+    }
+    .tag-results-banner .container {
+        padding-top: 3.5rem;
+        padding-bottom: 4.5rem;
+    }
+    .tag-results-banner h2 {
+        margin-bottom: .5rem;
+    }
+    .tag-results-banner h1,
+    .tag-results-banner h2,
+    .tag-results-banner .description {
+        min-height: 1px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        position: relative;
+        width: 66.66666667%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .tag-results-banner h1,
+    .tag-results-banner h2,
+    .tag-results-banner .description {
+        width: 66.66666667%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) {
+    .tag-results-banner::after {
+        border-bottom-width: 7vw;
+    }
+    .tag-results-banner .container {
+        padding-bottom: 5rem;
+    }
+    .tag-results-banner .container .secondary {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 33.33333333%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .tag-results-banner .container .secondary {
+        width: 33.33333333%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) {
+    .tag-results-banner .container .secondary h4,
+    .tag-results-banner .container .secondary .secondary-description {
+        min-height: 1px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        position: relative;
+        width: 83.33333333%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .tag-results-banner .container .secondary h4,
+    .tag-results-banner .container .secondary .secondary-description {
+        width: 83.33333333%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) {
+    .tag-results-banner h1,
+    .tag-results-banner h2,
+    .tag-results-banner .description {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 58.33333333%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .tag-results-banner h1,
+    .tag-results-banner h2,
+    .tag-results-banner .description {
+        width: 58.33333333%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) {
+    .tag-results-banner.with-description h1,
+    .tag-results-banner.with-description h2,
+    .tag-results-banner.with-description .description {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 41.66666667%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .tag-results-banner.with-description h1,
+    .tag-results-banner.with-description h2,
+    .tag-results-banner.with-description .description {
+        width: 41.66666667%;
+        float: left;
+    }
+}
+
+@media (min-width: 1140px) {
+    .tag-results-banner h1,
+    .tag-results-banner h2,
+    .tag-results-banner .description {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 58.33333333%;
+    }
+}
+
+@media (min-width: 1140px) and (min-width: 1140px) {
+    .tag-results-banner h1,
+    .tag-results-banner h2,
+    .tag-results-banner .description {
+        width: 58.33333333%;
+        float: left;
+    }
+}
+
+@media (min-width: 1140px) {
+    .tag-results-banner.with-description h1,
+    .tag-results-banner.with-description h2,
+    .tag-results-banner.with-description .description {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 41.66666667%;
+    }
+}
+
+@media (min-width: 1140px) and (min-width: 1140px) {
+    .tag-results-banner.with-description h1,
+    .tag-results-banner.with-description h2,
+    .tag-results-banner.with-description .description {
+        width: 41.66666667%;
+        float: left;
+    }
+}

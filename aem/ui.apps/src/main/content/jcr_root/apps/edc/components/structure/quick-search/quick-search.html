@@ -1,0 +1,47 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.policyReader="com.edc.edcweb.core.models.PolicyReader" />
+<sly data-sly-test.policy="${policyReader.policy}"/>
+<sly data-sly-call="${template.placeholder @ isEmpty = !policy, emptyTextAppend='No Policy defined'}"/>
+<sly data-sly-call="${template.placeholder @ isEmpty = policy, emptyTextAppend='Quick Search Modal'}"/>
+<sly data-sly-use.ibTemplateObj="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+<sly data-sly-test.labels="${policyReader.labels}"/>
+<section class="c-modal-search" data-modal-to-trigger="modal-search" role="dialog" aria-labelledby="edc-search-title" aria-modal="true" data-event-component="Modal Search" data-event-type="form" data-event-name="site search – search field focus" data-event-name-result-click="site search – search result click" data-event-action="main header" data-engagement-type="3" data-event-level="primary">
+    <div class="modal-dialog">
+        <div class="modal-container">
+            <div class="modal-content" role="region">
+                <div class="content-region">
+                    <h2 id="edc-search-title">${labels.searchModalTitle}</h2>
+                    
+                    <div data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='button', isUsedForModal='nomodal', buttonstate='enabled', buttonsize='ibtn-sm', buttontype='primary-outline', buttontext=labels.searchModalClose, buttoncssclasses='edc-primary-btn modal-close edc-tertiary-btn'}"  data-sly-unwrap></div>
+                    
+                    <!-- <button class="edc-primary-btn modal-close edc-tertiary-btn" aria-label="${labels.searchModalClose}">
+                        <span>${labels.searchModalClose}</span>
+                    </button> -->
+                </div>
+                <div class="quick-search">
+                    <section data-sly-use.search="com.adobe.cq.wcm.core.components.models.Search" class="cmp-search" role="search" data-cmp-is="search" data-cmp-min-length="${search.searchTermMinimumLength}" data-cmp-results-size="${search.resultsSize}">
+                        <form class="cmp-search__form" data-cmp-hook-search="form" method="get" action="${currentPage.path @ addSelectors=['edcsearchresults'], extension='json', suffix = search.relativePath}" autocomplete="off">
+                            <div class="cmp-search__field">
+                                <em class="cmp-search__icon" data-cmp-hook-search="icon"></em>
+                                <span class="cmp-search__loading-indicator" data-cmp-hook-search="loadingIndicator"></span>
+                                <input class="cmp-search__input" data-cmp-hook-search="input" type="text" name="fulltext" placeholder="${labels.searchInputPlaceholder}" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-invalid="false">
+                                <button class="cmp-search__clear" data-cmp-hook-search="clear">
+                                    <em class="cmp-search__clear-icon"></em>
+                                </button>
+                            </div>
+                        </form>
+                        <div class="cmp-search__results" data-cmp-hook-search="results" role="listbox" aria-multiselectable="false"></div>
+                        <script data-cmp-hook-search="itemTemplate" type="x-template">
+                            <a class="cmp-search__item" data-cmp-hook-search="item">
+                                <span class="cmp-search__item-title" data-cmp-hook-search="itemTitle"></span>
+                            </a>
+                        </script>
+                        <div data-cmp-hook-search="noResults" class="no-results hide">
+                            <h3>${labels.searchModalNoResults}</h3>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

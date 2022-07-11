@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+  xmlns:jcr="http://www.jcp.org/jcr/1.0"
+  jcr:primaryType="sling:OsgiConfig"
+  getResource="api://9bbd928d-3787-43e4-b805-c8475d4b9c2c"
+  getBCTokenBaseEndpoint="/auth/Token"
+  getOCPBCTokensubscriptionKey="0bba31934ea34f4aafd5de2d48e2877b"
+  getSPAEndpoint=" https://stconnectionst1prd.z27.web.core.windows.net/assets/connections-app.js"/>

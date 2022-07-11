@@ -1,0 +1,269 @@
+@media (min-width: 720px) {
+    article.article .article-body .c-single-video {
+        display: block;
+        margin: 32px 0;
+        padding: 0;
+    }
+    article.article .article-body .c-single-video .description,
+    article.article .article-body .c-single-video .video-container {
+        position: relative;
+        width: 100%;
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        margin: 0;
+    }
+    article.article .article-body .c-single-video .description p,
+    article.article .article-body .c-single-video .video-container p {
+        position: relative;
+        width: 100%;
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    article.article .article-body .c-single-video .description .content,
+    article.article .article-body .c-single-video .video-container .content {
+        position: relative;
+        width: 100%;
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: "Georgia", "Times New Roman", Times, serif;
+        margin-bottom: 1.5rem;
+    }
+    article.article .article-body .c-single-video .description .content :last-child,
+    article.article .article-body .c-single-video .video-container .content :last-child {
+        margin-bottom: 0;
+    }
+    article.article .article-body .c-single-video .description h2,
+    article.article .article-body .c-single-video .video-container h2 {
+        margin-top: 0;
+    }
+    article.article .article-body .c-single-video.large .video-container {
+        margin-left: calc(-33.3333% - (30px / 3));
+        margin-right: calc(-33.3333% - (30px / 3));
+        width: auto;
+    }
+}
+
+.c-single-video {
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 32px 0;
+    width: 100%;
+}
+
+.c-single-video .description {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    float: left;
+    box-sizing: border-box;
+}
+
+.c-single-video .description h2 {
+    /**paddings for content heading **/
+    margin: 16px 0;
+}
+
+@media (min-width: 960px) {
+    .c-single-video .description h2 {
+        margin: 32px 0;
+    }
+}
+
+.c-single-video .description .content {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 0;
+    padding-right: 0;
+    float: left;
+    font-family: "Georgia", "Times New Roman", Times, serif;
+    margin-bottom: 1.5rem;
+}
+
+.c-single-video .description .content :last-child {
+    margin-bottom: 0;
+}
+
+.c-single-video .video-container {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    float: left;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.c-single-video .video-container iframe {
+    width: 100%;
+    height: 100% !important;
+}
+
+.c-single-video.full .video-container,
+.c-single-video.full .description {
+    padding: 0;
+}
+
+.ytp-share-button-visible {
+    display: none !important;
+}
+
+@media (min-width: 720px) {
+    .c-single-video {
+        padding: 64px 0;
+    }
+    .c-single-video .description {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-single-video .description {
+        width: 33.33333333%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-single-video .description .content {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-single-video .description .content {
+        width: 91.66666667%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-single-video .video-container {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-single-video .video-container {
+        width: 58.33333333%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-single-video .video-container {
+        margin-left: 8.33333333%;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-single-video.full {
+        display: block;
+        overflow: hidden;
+        padding: 2.5rem 0 5rem;
+    }
+    .c-single-video.full .video-container,
+    .c-single-video.full .description {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-single-video.full .video-container,
+    .c-single-video.full .description {
+        width: 100%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-single-video.full .video-container,
+    .c-single-video.full .description {
+        margin-left: 0%;
+    }
+}
+
+@media (min-width: 1140px) {
+    .c-single-video {
+        padding: 80px 15px;
+    }
+    .c-single-video .description {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        padding-right: 60px;
+    }
+}
+
+@media (min-width: 1140px) and (min-width: 1140px) {
+    .c-single-video .description {
+        width: 33.33333333%;
+        float: left;
+    }
+}
+
+@media (min-width: 1140px) {
+    .c-single-video .description .content {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+    }
+}
+
+@media (min-width: 1140px) and (min-width: 1140px) {
+    .c-single-video .description .content {
+        width: 83.33333333%;
+        float: left;
+    }
+}
+
+@media (min-width: 1140px) {
+    .c-single-video .video-container {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+    }
+}
+
+@media (min-width: 1140px) and (min-width: 1140px) {
+    .c-single-video .video-container {
+        width: 58.33333333%;
+        float: left;
+    }
+}
+
+@media (min-width: 1140px) and (min-width: 1140px) {
+    .c-single-video .video-container {
+        margin-left: 8.33333333%;
+    }
+}

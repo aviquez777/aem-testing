@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <option1
+        jcr:primaryType="nt:unstructured"
+        enName="Aerospace"
+        frName="Aéronautique"
+        value="AERO"/>
+    <option2
+        jcr:primaryType="nt:unstructured"
+        enName="Agrifood"
+        frName="Agroalimentaire"
+        value="AGF"/>
+    <option3
+        jcr:primaryType="nt:unstructured"
+        enName="Buildings"
+        frName="Immeubles"
+        value="BDG"/>
+    <option4
+        jcr:primaryType="nt:unstructured"
+        enName="Chemicals"
+        frName="Produits chimiques"
+        value="CM"/>
+    <option5
+        jcr:primaryType="nt:unstructured"
+        enName="Consumer Goods / Services"
+        frName="Biens / Services de consommation"
+        value="CGS"/>
+    <option6
+        jcr:primaryType="nt:unstructured"
+        enName="Defence"
+        frName="Défense"
+        value="DEF"/>
+    <option7
+        jcr:primaryType="nt:unstructured"
+        enName="Education"
+        frName="Éducation"
+        value="EDU"/>
+    <option8
+        jcr:primaryType="nt:unstructured"
+        enName="Financial Services (Insurance and Banking)"
+        frName="Services financiers (assurances et banques)"
+        value="FSIB"/>
+    <option9
+        jcr:primaryType="nt:unstructured"
+        enName="Forestry"
+        frName="Foresterie"
+        value="FOR"/>
+    <option10
+        jcr:primaryType="nt:unstructured"
+        enName="General Manufacturing"
+        frName="Fabrication générale"
+        value="GM"/>
+    <option11
+        jcr:primaryType="nt:unstructured"
+        enName="Government Services (emergency / police etc. )"
+        frName="Services gouvernementaux (urgence / police, etc.)"
+        value="GS"/>
+    <option12
+        jcr:primaryType="nt:unstructured"
+        enName="Healthcare"
+        frName="Soins de santé"
+        value="HEALT"/>
+    <option13
+        jcr:primaryType="nt:unstructured"
+        enName="ICT (Information and Communications Technology)"
+        frName="TIC (Technologies de l’information et des communications)"
+        value="ICT"/>
+    <option14
+        jcr:primaryType="nt:unstructured"
+        enName="Industrial / Commercial Services"
+        frName="Services industriels / commerciaux"
+        value="ICS"/>
+    <option15
+        jcr:primaryType="nt:unstructured"
+        enName="Life Sciences"
+        frName="Sciences de la vie"
+        value="LS"/>
+    <option16
+        jcr:primaryType="nt:unstructured"
+        enName="Marine Vessel"
+        frName="Bâtiments maritimes"
+        value="MV"/>
+    <option17
+        jcr:primaryType="nt:unstructured"
+        enName="Mining and Metals"
+        frName="Mines et métaux"
+        value="MM"/>
+    <option18
+        jcr:primaryType="nt:unstructured"
+        enName="Oil and Gas"
+        frName="Pétrole et gaz naturel"
+        value="OG"/>
+    <option19
+        jcr:primaryType="nt:unstructured"
+        enName="Other Infrastructure"
+        frName="Autre infrastructure"
+        value="OI"/>
+    <option20
+        jcr:primaryType="nt:unstructured"
+        enName="Packaging/Labeling"
+        frName="Conditionnement/Étiquetage"
+        value="PL"/>
+    <option21
+        jcr:primaryType="nt:unstructured"
+        enName="Power"
+        frName="Électricité"
+        value="PO"/>
+    <option22
+        jcr:primaryType="nt:unstructured"
+        enName="Professional Services"
+        frName="Services de membres de professions libérales"
+        value="PS"/>
+    <option23
+        jcr:primaryType="nt:unstructured"
+        enName="Rail Vehicles"
+        frName="Véhicules ferroviaires"
+        value="RLV"/>
+    <option24
+        jcr:primaryType="nt:unstructured"
+        enName="Road Vehicles"
+        frName="Véhicules routiers"
+        value="RDV"/>
+    <option25
+        jcr:primaryType="nt:unstructured"
+        enName="Solid Waste"
+        frName="Déchets solides"
+        value="SW"/>
+    <option26
+        jcr:primaryType="nt:unstructured"
+        enName="Sports and Leisure facilities"
+        frName="Installations de sports et de loisirs"
+        value="SLF"/>
+    <option27
+        jcr:primaryType="nt:unstructured"
+        enName="Transportation Infrastructure"
+        frName="Infrastructure de transport"
+        value="TI"/>
+    <option28
+        jcr:primaryType="nt:unstructured"
+        enName="Water and Wastewater"
+        frName="Eaux et eaux usées"
+        value="WW"/>
+</jcr:root>

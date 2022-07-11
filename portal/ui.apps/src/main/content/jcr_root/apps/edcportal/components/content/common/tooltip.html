@@ -1,0 +1,8 @@
+<template data-sly-template.tooltip="${@ tooltipText}">
+    <div data-sly-test="${tooltipText}" class="c-tool-tip hide-tool-text" role="dialog" aria-modal="true">
+        <button type="button" class="tool-tip-triggerer" aria-label="${'tooltip-aria-label' @ i18n}">i</button>
+        <div class="tool-tip-text">
+            <p>${tooltipText @ context='html'}</p>
+        </div>
+    </div>
+</template>

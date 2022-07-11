@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Error Message"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+        margin="{Boolean}false">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items
+                    jcr:primaryType="nt:unstructured"
+                    sling:hideChildren="[title,linkURL,description,size]">
+                    <errormessage
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                        fieldLabel="Error message"
+                        name="./errormessage"
+                        required="{Boolean}true"/>
+                    <backlink
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <heading
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/text"
+                                class="coral-Form-fieldlabel"
+                                text="Back link"/>
+                            <well
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <layout
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <target
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldDescription="Determines if the link will open in the current or new window. "
+                                        fieldLabel="CTA target"
+                                        name="./linktarget">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <existing
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Existing window"
+                                                value="_self"/>
+                                            <new
+                                                jcr:primaryType="nt:unstructured"
+                                                text="New window"
+                                                value="_blank"/>
+                                        </items>
+                                    </target>
+                                    <linktext
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Text"
+                                        name="./linktext"
+                                        required="{Boolean}false"/>
+                                    <linkurl
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldLabel="Url"
+                                        name="./linkurl"
+                                        required="{Boolean}false"
+                                        rootPath="/content/edc"/>
+                                </items>
+                            </well>
+                        </items>
+                    </backlink>
+                    <imgsrc
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                        allowUpload="{Boolean}false"
+                        autoStart="{Boolean}false"
+                        class="cq-droptarget"
+                        fieldDescription="Optional image shown below the error message."
+                        fieldLabel="Image"
+                        fileNameParameter="./fileName"
+                        fileReferenceParameter="./fileReference"
+                        mimeTypes="[image]"
+                        multiple="{Boolean}false"
+                        name="./imgsrc"
+                        title="Upload Image Asset"
+                        uploadUrl="${suffix.path}"
+                        useHTML5="{Boolean}true"/>
+                    <imgalt
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Alternate text"
+                        name="./imagealttext"
+                        wrapperClass="core-image-alt"/>
+                </items>
+            </column>
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:hideResource="{Boolean}true"/>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:template="/conf/edc/settings/wcm/templates/country-detail-page"
+        jcr:primaryType="cq:PageContent"
+        sling:redirect="{Boolean}true"
+        sling:resourceType="edc/components/structure/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <responsivegrid
+                jcr:created="{Date}2018-02-08T10:41:23.225-05:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2018-02-08T10:50:49.649-05:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid"/>
+            <herobanner
+                jcr:created="{Date}2018-02-08T10:40:49.905-05:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2018-02-08T13:54:39.213-05:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="edc/components/content/herobanner"/>
+            <overviewtext
+                jcr:created="{Date}2018-02-08T10:34:15.487-05:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2018-02-08T13:54:44.318-05:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="edc/components/content/overviewtext"/>
+            <list
+                jcr:created="{Date}2018-02-08T10:39:26.912-05:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2018-02-08T13:54:50.286-05:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="edc/components/content/article/list"/>
+        </root>
+    </jcr:content>
+</jcr:root>

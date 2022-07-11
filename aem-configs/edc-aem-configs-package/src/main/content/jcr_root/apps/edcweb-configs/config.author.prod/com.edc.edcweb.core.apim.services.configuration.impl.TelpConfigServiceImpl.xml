@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+  xmlns:jcr="http://www.jcp.org/jcr/1.0"
+  jcr:primaryType="sling:OsgiConfig"
+  getTokenUrl="https://login.microsoftonline.com/d4167d58-713e-4e8f-8ba2-869b5491fb80/oauth2/token"
+  getClientId="e02bdd6f-4ee3-4984-8d2e-7cd5639d0b9b"
+  getClientSecret = "42e15KJASZ3.~w5J~c3Wqa-Bl_ijngPyjp"
+  getResource="https://EDCanada.onmicrosoft.com/2e0b7008-8846-4176-9627-80cdc27709cc"
+  getTelpProxyUrl="https://proxy.api.edc.ca"
+  getTelpBaseEndpoint="/gps/api/gps/v1/gpsrequest"
+  getOCPTelpsubscriptionKey="f85f4198b6464a8499c22c30fd007d6f"/> 

@@ -1,0 +1,88 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.insights="com.edc.edcweb.core.models.InsightsSearch"/>
+<sly data-sly-test.pages="${insights.pages}" />
+<sly data-sly-test.hasvalues="${properties.filterlabel && properties.articlespath}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !hasvalues}"/>
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+
+<section class="c-insights-search-filter" aria-label="${'Filter' @ i18n}" data-sly-test="${hasvalues && pages}" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'insights search filter'}" data-event-type="category filter" data-event-name="category filter – insights search" data-event-engagement="1" data-event-action="main body" data-event-level="1">
+    <section class="insights-search-filters" role="search" aria-labelledby="insights-search-filter-${uuid}">
+        <div class="filter-title">
+            <h2 id="insights-search-filter-${uuid}" class="title">${properties.filterlabel}</h2>
+            <button class="edc-btn-icon close-button" aria-label="${'Close' @ i18n}">
+                <span></span>
+            </button>
+        </div>
+        <div class="filter-criteria" data-sly-list.filtersection="${insights.filterSections}">
+            <section class="insights-search-filter ${filtersection.filterName}" aria-expanded="true" aria-labelledby="${filtersection.filterName}-${uuid}">
+                <div class="filter-title">
+                    <h3 id="${filtersection.filterName}-${uuid}" class="title" tabindex="0">${filtersection.isTrending ? filtersection.trendingLabel : filtersection.filterLabel}</h3>
+                    <button class="edc-btn-icon chevron" aria-label="${'Hide' @ i18n} ${'Options' @ i18n}" data-hide="${'Hide' @ i18n} ${'Options' @ i18n}" data-show="${'Show' @ i18n} ${'Options' @ i18n}">
+                        <span></span>
+                    </button>
+                </div>
+                <ul class="filters" data-sly-list.item="${filtersection.subFilters}">
+                    <li class="filter ${(filtersection.showMore) && (itemList.index >= 3) ? 'hide' : ''}">
+                        <input type="checkbox" id="${filtersection.filterName}-${itemList.index}" class="filter-option" data-english-name="${item.datalayer}" data-value="${item.label}" value="${item.value}" />
+                        <label for="${filtersection.filterName}-${itemList.index}">${item.label}</label>
+                        <ul class="subfilters hide" data-sly-list.subitem="${item.subTags}">
+                            <li class="subfilter">
+                                <input type="checkbox" id="${item.value}-${subitemList.index}" class="filter-option" data-english-name="${subitem.datalayer}" data-value="${subitem.label}" value="${subitem.value}" />
+                                <label for="subcategory-${itemList.index}-${subitemList.index}">${subitem.label}</label>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="show-buttons" data-sly-test="${filtersection.showMore && filtersection.subFilters.size > 3}">
+                    <button class="edc-btn-unstyled show-more" data-more="${properties.showmorelabel}" data-less="${properties.showlesslabel}">
+                        <span>${properties.showmorelabel}</span>
+                    </button>
+                </div>
+            </section>
+        </div>
+        <div class="filter-footer">
+            <div class="button-option">
+                <button type="button" class="edc-tertiary-btn clear-filter">
+                    <span>${properties.clearalllabel}</span>
+                </button>
+            </div>
+            <div class="button-option">
+                <button type="button" class="edc-primary-btn apply-filter" disabled="">
+                    <span>${properties.applylabel}</span>
+                </button>
+            </div>
+        </div>
+    </section>
+    <section class="filter-data" aria-label="Insights Search ${'Filter' @ i18n} {'Tags$' @ i18n}">
+        <button type="button" class="edc-tertiary-btn show-filters">
+            <span>${properties.filterlabel}</span>
+        </button>
+        <div class="filter-tags hide" data-close-label="${'Delete Tag' @ i18n}">
+            <ul>
+                <li class="clear">
+                    <button class="edc-btn-unstyled clear-tag">
+                        <span>${properties.clearalllabel}</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="insights-search-info" aria-live="polite" aria-label="Insights Search ${'Search Results' @ i18n}" data-open-link="${properties.linktarget || '_self'}">
+        <div class="article-list">
+            <ul class="article-page" data-page="0" data-sly-list.item="${pages}"
+                data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+                data-sly-use.itemTemplate="/apps/edc/components/common/article.html">
+                <sly data-sly-use.articlepage="${'com.edc.edcweb.core.models.ArticlePage' @ page = item}"/>
+                <sly data-sly-use.pagedate="${'com.edc.edcweb.core.models.PageModelHelper' @ page = item}" data-sly-test.itemdate="${pagedate.date}"/>
+                <li class="insights-search-article ${articlepage.premium ? 'premium' : ''}" data-page-name="${item.name}" data-sly-call="${itemTemplate.item @ list = list, item = item, contenttypeclass = articlepage.contentTypeClassName, contenttypetitle = articlepage.contentTypeTitle, itemdate = itemdate, itemtype='insightssearch', linktarget=properties.linktarget}"></li>
+            </ul>
+        </div>
+        <div class="no-match hide" data-no-results="no results found">
+            <h2 class="no-match-title">${properties.noresulttitle}</h2>
+            <div class="no-match-info">
+                ${properties.noresultmessage @ context='html'}
+            </div>
+        </div>
+    </section>
+</section>

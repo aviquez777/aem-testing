@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:EditConfig">
+    <cq:inplaceEditing
+        jcr:primaryType="cq:InplaceEditingConfig"
+        active="{Boolean}true"
+        editorType="text"
+        configPath = "inplaceEditingConfig">
+        <!-- Task 221435 ConfigAndInstallShouldOnlyContainOsgiNodes -->
+        <inplaceEditingConfig jcr:primaryType="nt:unstructured"
+            externalStyleSheets="/apps/edc/components/content/text/clientlibs/site/rtedialog.css">
+            <rtePlugins jcr:primaryType="nt:unstructured">
+                <styles jcr:primaryType="nt:unstructured" features="*">
+                    <styles jcr:primaryType="nt:unstructured">
+                        <blueText jcr:primaryType="nt:unstructured"
+                            cssName="blue-light"
+                            text="Blue text">
+                        </blueText>
+                        <whiteText jcr:primaryType="nt:unstructured"
+                            cssName="white"
+                            text="White text">
+                        </whiteText>
+                        <colorDarkBlue jcr:primaryType="nt:unstructured"
+                            cssName="dark-blue"
+                            text="Dark Blue">
+                        </colorDarkBlue>
+                    </styles>
+                </styles>
+            </rtePlugins>
+        </inplaceEditingConfig>
+    </cq:inplaceEditing>
+</jcr:root>

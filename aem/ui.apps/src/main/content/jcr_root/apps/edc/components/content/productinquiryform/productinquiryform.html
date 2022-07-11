@@ -1,0 +1,114 @@
+
+<sly data-sly-use.inquiry="com.edc.edcweb.core.models.ProductInquiryForm" />
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents" />
+<sly data-sly-use.eloqua="com.edc.edcweb.core.models.EloquaData" />
+<sly data-sly-use.messages="com.edc.edcweb.core.models.FormCommonMessages"/>
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid" />
+<sly data-sly-use.policyReader="com.edc.edcweb.core.models.PolicyReader" />
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-use.formsTemplates="${'/apps/edc/components/common/forms.html'}" />
+<sly data-sly-use.dropdownTemplates="${'/apps/edc/components/common/dropdown.html'}" />
+<sly data-sly-use.multiSelectTemplate="/apps/edc/components/common/multiselect.html" />
+<sly data-sly-test.formErrorMessages="${messages.formErrorMessages}"/>
+<sly data-sly-test.uuid="${genuuid.generateUuid}" />
+<sly data-sly-test.policy="${policyReader.policy}"/>
+<sly data-sly-test.hasvalues="${properties.formtitle}" />
+<sly data-sly-call="${templates.placeholder @ isEmpty = !policy, emptyTextAppend='No Policy defined'}" />
+<sly data-sly-test.formLabels="${policyReader.labels}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = policy && !formLabels, emptyTextAppend='No Labels defined'}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = formLabels && !hasvalues, emptyTextAppend='Form not defined'}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = formLabels && hasvalues, emptyTextAppend='Form will display properly on published mode'}"/>
+<sly data-sly-use.ibButtonTemplate="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+
+<sly data-sly-test="${formLabels && hasvalues}">    
+    <section class="c-inquiry tab-set">
+        <sly data-sly-test="${inquiry.eloquaFormName || inquiry.eloquaFormSubmitURL || inquiry.eloquaFormId || inquiry.eloquaSiteId}" >
+            <!--/* AddressComplete */-->
+            <sly data-sly-test.addressService="${inquiry.addressCompleteService}" />
+            <sly data-sly-test.addressCompleteKey="${inquiry.addressCompleteKey @ context='text'}"/>
+            <link data-sly-test="${addressCompleteKey}" rel="stylesheet" type="text/css" href="${inquiry.addressCompleteCSSUrl @ context='text'}${addressService == 'CandaPost' ? addressCompleteKey : '' @ context='text'}" />
+            <script data-sly-test="${addressCompleteKey}" type="text/javascript" src="${inquiry.addressCompleteJSUrl @ context='text'}${addressService == 'CandaPost' ? addressCompleteKey : '' @ context='text'}"></script>
+            <!--/* AddressComplete */-->
+            <form name="${inquiry.eloquaFormName}" novalidate="" action="${inquiry.eloquaFormSubmitURL}" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'Product Inquiry Form'}" data-event-type="form" data-event-name="form submit" data-event-engagement="3" data-event-action="main body"  data-event-level="primary" data-event-text="submit">
+                <sly data-sly-call="${formsTemplates.formhiddenfields @ elqFormName=inquiry.eloquaFormName, elqSiteId=inquiry.eloquaSiteId,
+                    lang=inquiry.pageLanguage, inquiryID=properties.inquiryid,
+                    formID=inquiry.eloquaFormName}">
+                </sly>
+                <input type="text" name="middleName" class="form-control" placeholder="middlename" tabindex="-1" autoComplete="false" />
+                <input type="hidden" name="assetTier" class="form-control" data-no-url="" value="${eloqua.assetTier}" />
+                <input type="hidden" name="eventID" class="form-control" data-no-url="" value="" />
+                <input type="hidden" name="SR#" class="form-control" data-no-url="" value="" />
+                <!--/* US 172230 */ -->
+                <input type="hidden" name="routing" class="form-control" data-no-url="" value="" validation-rule="none" />
+                <input type="hidden" name="painPointDescriptions" class="form-control" data-no-url="" value="" validation-rule="none" />
+                <!--/* END US 172230 */ -->
+                <div class="content-header show-separator">
+                    <h2 class="title">${properties.formtitle}</h2>
+                    <div class="description">
+                        ${properties.formdescription @ context='html'}
+                    </div>
+                </div>
+                <div class="levels tabs">
+                    <div role="tablist" class="nav-bar">
+                        <div class="tab-labels-container">
+                            <ul class="tab-labels">
+                                <li class="active">
+                                    <button type="button" class="tab-label dirty selected" id="UNIQUEID-tab1-${uuid}" aria-controls="UNIQUEID-panel1-${uuid}" role="tab" aria-selected="true" data-step="1">
+                                        <span class="step-title">${formLabels.step1navtitle}</span>
+                                        <span class="step-text">${formLabels.step1navsubtitle}</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-label" id="UNIQUEID-tab2-${uuid}" aria-controls="UNIQUEID-panel2-${uuid}" role="tab" aria-selected="${wcmmode.edit ? '' : 'hide'}" data-step="2">
+                                        <span class="step-title">${formLabels.step2navtitle}</span>
+                                        <span class="step-text">${formLabels.step2navsubtitle}</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-label" id="UNIQUEID-tab3-${uuid}" aria-controls="UNIQUEID-panel3-${uuid}" role="tab" aria-selected="false" data-step="3">
+                                        <span class="step-title">${formLabels.step3navtitle}</span>
+                                        <span class="step-text">${formLabels.step3navsubtitle}</span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="actions-nav hide">
+                            <div data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled', buttontext=formLabels.scrollright, btntype='button', buttoncssclasses='icon icon-arrow-right'}"  data-sly-unwrap></div>
+                            <div data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled', buttontext=formLabels.scrollleft, btntype='button', buttoncssclasses='icon icon-arrow-left'}"  data-sly-unwrap></div>
+                        </div>
+                    </div>
+                    <div id="tab-content-${uuid}" aria-live="polite">
+                        <sly data-sly-use.template="steps/step1.html"/>
+                        <sly data-sly-call="${template.step1 @ uuid = uuid, properties = properties, formLabels = formLabels, formErrorMessages=formErrorMessages, dropdownTemplates=dropdownTemplates, multiSelectTemplate=multiSelectTemplate, inquiry=inquiry}"/>  
+                        <sly data-sly-use.template="steps/step2.html"/>
+                        <sly data-sly-call="${template.step2 @ uuid = uuid, properties = properties, formLabels = formLabels, formErrorMessages=formErrorMessages, dropdownTemplates=dropdownTemplates, inquiry=inquiry}"/>
+                        <sly data-sly-use.template="steps/step3.html"/>
+                        <sly data-sly-call="${template.step3 @ uuid = uuid, properties = properties, formLabels = formLabels, formErrorMessages=formErrorMessages, dropdownTemplates=dropdownTemplates, inquiry=inquiry}"/>
+                    </div>
+                    <div class="form-ctas bottom-ctas show-flex space-end">
+                        <sly data-sly-test.attrs1="${['data-event-text','next'] @ join = '='}"/>
+                        <div data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='link', isUsedForModal='nomodal', buttonstate='enabled', link='#', action='back',customattribs=attrs1, buttontext=formLabels.back, buttoncssclasses='back cta hide'}"  data-sly-unwrap></div>
+                        <sly data-sly-test.attrs2="${['data-event-text','next'] @ join = '='}"/>
+                        <div data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled',action='next',customattribs=attrs2, buttontext=formLabels.next, btntype='submit', buttoncssclasses='next-btn show'}"  data-sly-unwrap></div>
+                        <sly data-sly-test.attrs3="${['data-event-text','submit'] @ join = '='}"/>
+                        <div data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled',action='done',customattribs=attrs3, buttontext=formLabels.next, btntype='submit', buttoncssclasses='done-btn hide'}"  data-sly-unwrap></div>
+                    </div>
+                    <div class="submit-failed-message hide">
+                        ${properties.submitfailed @ context='html'}
+                    </div>
+                </div>
+            </form>
+            <div class="success-message hide">
+                <img src="${properties.successimage}" alt="${properties.successimagealt}" />
+                <h2 class="title-color">${properties.successmaintitle}</h2>
+                <div>
+                    ${properties.successdescription @ context='html'}
+                </div>
+                <div data-sly-call="${ibButtonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled', buttontext=formLabels.resetsuccessbutton, btntype='button'}"  data-sly-unwrap></div>
+            </div>
+            <sly data-sly-use.scriptsTemplate="/apps/edc/components/common/autocompletescripts.html"/>
+            <sly data-sly-test="${addressService == 'CandaPost'}" data-sly-call="${scriptsTemplate.canadPost @ apiKey=addressCompleteKey}"/>
+            <sly data-sly-test="${addressService == 'Loqate'}" data-sly-call="${scriptsTemplate.loqate @ apiKey=addressCompleteKey, uuid=uuid}"/>
+        </sly>
+    </section>
+</sly>

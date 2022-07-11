@@ -1,0 +1,85 @@
+<sly data-sly-use.multifield="${'com.edc.edcweb.core.helpers.MultifieldReaderHelper' @ multifield='tabs'}"/>
+<sly data-sly-test.tabs="${multifield.fields}"/>
+<!--/* The only tab does not have title, cannot display tab */-->
+<sly data-sly-test="${tabs.size == 1 && !tabs[0].tabtitle}">
+    <sly data-sly-test.tabs=""/>
+    <sly data-sly-test.errorText="The only tab does not have title, cannot display tab"/>
+</sly>
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !tabs, emptyTextAppend=errorText}"/>
+<sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+<sly data-sly-test.firstShown ="true" /><!--/* Switch to flip on first one, as title may be empty on the real one */-->
+<sly data-sly-use.ibTemplateObj="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+
+<section class="c-sign-in" id="SIGNIN" data-component-target="SIGNIN" data-sly-test="${tabs}">
+    <div class="tabs">
+        <div class="container">
+            <nav class="c-myedc-nav" role="tablist">
+                <div class="tab-labels-container">
+                    <p class="tabs-title">${properties.tabstitle}</p>
+                    <!--/* Mobile */-->
+                    <select class="select-label" name="select-label" data-sly-list="${tabs}">
+                        <option value="${itemList.index}">${item.tabtitle}</option>
+                    </select>
+                    <!--/* Desktop */-->
+                    <ul class="tab-labels" role="tablist" data-sly-list="${tabs}">
+                        <li role="presentation">
+                            <a data-sly-test="${item.tabtitle}" href="#SIGNIN:tab-${itemList.count}" data-link-target="tab-${itemList.count}" class="tab-label ${firstShown == 'true' ? 'selected' : ''}" id="SIGNIN-tab-${itemList.count}"  aria-controls="SIGNIN-panel-${itemList.count}" role="tab" data-sly-attribute.aria-selected="${firstShown}">
+                                ${item.tabtitle}
+                                <!--/* if first one has enetered here, set the siwcth to something else than true*/-->
+                                <sly data-sly-test="${firstShown == 'true'}">
+                                    <sly data-sly-test.firstShown="" />
+                                </sly>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="division">
+                <span class="keyline"></span>
+            </div>
+            <sly data-sly-test.firstShown ="true" /><!--/* Reset the switch to flip on first one, as title may be empty on the real one */-->
+            <section id="tab-content" aria-live="polite" role="region" data-sly-list="${tabs}">
+                <article data-sly-test="${item.tabtitle}" class="tab-panel ${firstShown == 'true' ? 'show' : ''}" id="SIGNIN-panel-${itemList.count}" role="tabpanel" aria-labelledby="SIGNIN-tab-${itemList.count}">
+                    <!--/* if the first one has enetered here, set the siwcth to something else than true*/-->
+                    <sly data-sly-test="${firstShown == 'true'}">
+                        <sly data-sly-test.firstShown="" />
+                    </sly>
+                    <div class="region">
+                        <div data-sly-test="${item.description}" class="article-top-text" data-sly-test="${item.description}">
+                            ${item.description}
+                        </div>
+                        <div class="office">
+                            <h2 class="office-location">${item.tabtitle}</h2>
+                            <p data-sly-test="${item.tabtext}">${item.tabtext @ context='html'}</p>
+                            <div class="buttons">
+                                <!--/* Button */-->
+                                <sly data-sly-test="${item.buttonurl && item.buttontext && item.tabType != 'myedc'}">
+                                    <sly data-sly-use.urlres="${'com.edc.edcweb.core.models.PageModelHelper' @ path = item.buttonurl}" data-sly-test.buttonlink="${urlres.url}">
+                                        <div data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='link', isUsedForModal='nomodal', buttonstate='enabled', link=buttonlink, buttontext=item.buttontext, target='_self', linkchecker='valid'}"  data-sly-unwrap></div>                    
+                                    </sly>
+                                </sly>
+                                <sly data-sly-test="${item.buttontext && item.tabType == 'myedc'}">
+                                    <sly data-sly-use.urlres="${'com.edc.edcweb.core.helpers.SignInHelper'}" data-sly-test.buttonlink="${urlres.loginUrl}">
+                                        <div data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='link', isUsedForModal='nomodal', buttonstate='enabled', link=buttonlink, buttontext=item.buttontext, target='_self', linkchecker='skip'}"  data-sly-unwrap></div>                    
+                                    </sly>
+                                </sly>
+                                <!--/* Link */-->
+                                <sly data-sly-test="${item.linkurl && item.linktext && item.tabType != 'myedc'}">
+                                    <sly data-sly-use.urlres="${'com.edc.edcweb.core.models.PageModelHelper' @ path = item.linkurl}" data-sly-test.linkurl="${urlres.url}">
+                                       <div data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='link', isUsedForModal='nomodal', buttonstate='enabled', link=linkurl, buttontext=item.linktext, target='_self', linkchecker='valid', buttoncssclasses='tertiary'}"  data-sly-unwrap></div>                    
+                                    </sly>
+                                </sly>
+                                <sly data-sly-test="${item.linktext && item.tabType == 'myedc'}">
+                                    <sly data-sly-use.urlres="${'com.edc.edcweb.core.helpers.SignInHelper'}" data-sly-test.linkurl="${urlres.signUpUrl}">
+                                        <div data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='link', isUsedForModal='nomodal', buttonstate='enabled', link=linkurl, buttontext=item.linktext, target='_self', linkchecker='skip', buttoncssclasses='tertiary'}"  data-sly-unwrap></div>                    
+                                    </sly>
+                                </sly>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,16 @@
+subject=${subject}
+
+<html>
+<head>
+<title>${subject}</title>
+</head>
+<body>
+<p>Workflow Title: ${workflowTitle}</p>
+<p>Message left in comment box by user from the previous step:</p>
+<blockquote>&ldquo;${message}&rdquo; - ${user}</blockquote>
+<p>Please modify the page according to the annotations left on the page and/or comments left by the reviewer in the comment box.</p>
+<p>Author URL: ${authorUrl}</p>
+<p>View as published URL: ${viewAsPublishedUrl}</p>
+<p>This is an automatically generated message. Please do not reply.</p>
+</body>
+</html>

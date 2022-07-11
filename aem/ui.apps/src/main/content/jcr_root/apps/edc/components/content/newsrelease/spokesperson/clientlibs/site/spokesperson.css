@@ -1,0 +1,37 @@
+.c-spokesperson {
+    margin: 1.875rem 0;
+}
+
+.c-spokesperson * {
+    box-sizing: border-box;
+}
+
+.c-spokesperson h2 {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0;
+    margin: 1rem 0;
+}
+
+@media (min-width: 720px) {
+    .c-spokesperson h2 {
+        font-size: 1.25rem;
+        line-height: 1.2;
+        letter-spacing: -0.1px;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-spokesperson h2 {
+        font-size: 1.375rem;
+        line-height: 1.4545;
+        letter-spacing: -0.2px;
+    }
+}
+
+.c-spokesperson p {
+    margin: 0;
+}

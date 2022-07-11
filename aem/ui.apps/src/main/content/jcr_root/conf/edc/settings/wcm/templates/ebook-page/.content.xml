@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Template">
+    <jcr:content
+        cq:lastModified="{Date}2018-06-20T16:30:43.307-06:00"
+        cq:lastModifiedBy="admin"
+        cq:templateType="/conf/edc/settings/wcm/template-types/ebook-page"
+        jcr:description="EDC Ebook Page"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Ebook Page"
+        status="enabled"/>
+</jcr:root>

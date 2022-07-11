@@ -1,0 +1,78 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-use.campaignmodal="com.edc.edcweb.core.models.MyEDCCampaign"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-use.eloqua="com.edc.edcweb.core.models.EloquaData"/>
+<sly data-sly-use.messages="com.edc.edcweb.core.models.FormCommonMessages"/>
+<sly data-sly-use.formsTemplates="${'/apps/edc/components/common/forms.html'}" />
+<sly data-sly-test.hasvalues="${campaignmodal.title}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !hasvalues}"/>
+<sly data-sly-use.page="com.adobe.cq.wcm.core.components.models.Page"/>
+<sly data-sly-test.isBanker="${page.templateName == 'banker-page' ? 'banker' : 'tradeinsights'}"/>
+<sly data-sly-test.preview="${wcmmode.disabled}"/>
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+<sly data-sly-use.ibTemplateObj="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+
+<section class="c-modal-campaign" role="dialog" aria-modal="true" data-event-component="brand interstitial" data-event-action="main body">
+    <!--/* Author Only */-->
+    <sly data-sly-test="${!preview}">
+        <button type="button" class="edc-btn-unstyled modal-trigger anchor" data-modal-to-trigger="modal-fta-${uuid}">
+            <span>Click here to show the Modal Campaign. Modal will display correctly when published.</span>
+        </button>
+    </sly>
+    <!--/* Closing Author Only */-->
+    <div class="modal-campaign" id="modal-fta-${uuid}">
+        <div class="modal-shade"></div>
+        <div class="modal-container">
+            <button class="edc-btn-icon modal-close-campaign" aria-label="Back to filter" data-english-text="close">
+                <span></span>
+            </button>
+            <div class="modal-content" role="region" aria-labelledby="${uuid}-label"
+                aria-describedby="${uuid}-desc">
+                <div class="modal-title">
+                    <h3 class="title">${campaignmodal.topTitle}</h3>
+                </div>
+                <div id="${uuid}" class="modal-richtext">
+                    <sly data-sly-test="${campaignmodal.eloquaFormName || campaignmodal.eloquaFormSubmitURL || preview }">
+                        <section class="c-newsletter-subscription ${campaignmodal.displaytype ? campaignmodal.displaytype : 'newsletter-body'}" aria-labelledby="newsletter-title-${uuid}">
+                            <div class="newsletter-content">
+                                <div class="${campaignmodal.displaytype == 'newsletter-banner' ? 'container' : ''}">
+                                    <form name="${isBanker != 'banker' ? campaignmodal.eloquaFormName : 'MIP2-Newsletter-233'}" class="newsletter-form" noValidate="" action="${campaignmodal.eloquaFormSubmitURL}" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'Newsletter Subscription'}" data-event-type="form" data-event-name="${campaignmodal.eventName ? campaignmodal.eventName : 'tradeinsights newsletter submission'}" data-event-engagement="2" data-event-level="primary">
+                                        <sly data-sly-call="${formsTemplates.formhiddenfields @ elqFormName=(isBanker != 'banker' ? campaignmodal.eloquaFormName : 'MIP2-Newsletter-233'),
+                                                elqSiteId=campaignmodal.eloquaSiteId , lang=campaignmodal.pageLanguage, docID= campaignmodal.docID,
+                                                inquiryID=campaignmodal.inquiryID, formID='SubLevel1'}">
+                                        </sly>    
+                                        <input type="hidden" name="elqCookieWrite" class="form-control" value="0" validation-rule="none" />
+                                        <input type="text" name="middleName" class="form-control" placeholder="middlename" tabindex="-1" autoComplete="false" />
+                                        <input type="hidden" name="assetTier" class="form-control" data-no-url="true" value="" />
+                                        <input type="hidden" name="caslConsent" id="caslhidden-${uuid}" class="form-control" data-no-url="true" value="yes" />
+                                        <div class="form-content">
+                                            <h3 id="newsletter-title-${uuid}" class="title">${campaignmodal.title}</h3>
+                                            <p  class="small">${campaignmodal.subtitle}</p>
+                                            <div class="content-fields">
+                                                <input type="email" aria-label="Email Address" placeholder="${campaignmodal.placeholder}" name="emailAddress" required />
+                                                <span class="error" data-req-message="${messages.formErrorMessages.required}" data-email-message="${messages.formErrorMessages.email}"></span>
+                                                <div class="note">${campaignmodal.disclaimer @ context='html'}</div>
+                                                <div class="actions">
+                                                    <sly data-sly-test.attr="${['data-english-text',campaignmodal.cancelBtnEnglishText] @ join = '='}"/>
+                                                    <div data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='button', buttontext=campaignmodal.cancelBtnText, buttoncssclasses='dismiss-btn primary-outline', buttonstate='enabled'}"  data-sly-unwrap></div>
+                                                    <sly data-sly-test.attr="${['data-english-text',campaignmodal.submitBtnEnglishText] @ join = '='}"/>
+                                                    <div data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='button', buttontext=campaignmodal.submitBtnText, buttoncssclasses='', buttonstate='enabled', btntype='submit'}"  data-sly-unwrap></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </section>
+                    </sly>
+                </div>
+            </div>
+            <div class="success">
+                <img src="${campaignmodal.logo}" alt="${campaignmodal.logoAlt}" srcset="${campaignmodal.logoHighRes}" />
+                <h3  class="title">${campaignmodal.successTitle}</h3>
+                <p>${campaignmodal.successText}</p>
+            </div>
+        </div>
+    </div>
+</section>

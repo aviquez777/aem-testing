@@ -1,0 +1,17 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.model="com.edc.edcweb.core.models.ReferenceAccordion"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !model.title, emptyTextAppend='No Section Title found in url, or page template is not Left-hand Navigation Page PCI'}"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+
+<div class="ref-accordion panel ${wcmmode.disabled ? '' : 'open'}" data-sly-test="${model.title}" aria-label="${model.title}" role="region" aria-expanded="${wcmmode.disabled ? 'false' : 'true'}" data-stay-open="${properties.stayOpen ? 'true': 'false'}" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'Reference Accordion'}" data-event-action="main body" data-event-text="${model.title}" data-event-engagement="3" data-event-level="primary" data-event-type="link" data-event-name="${model.title}">
+    <h3 class="button-heading">
+        <button id="panel-button-${uuid}" class="panel-label" aria-expanded="${wcmmode.disabled ? 'false' : 'true'}"  aria-controls="content-container-${uuid}">${model.title}
+            <i class="icon-arrow"></i><!-- //NOSONAR -->
+        </button>
+    </h3>
+    <div aria-hidden="${wcmmode.disabled ? 'true' : 'false'}" class="panel-inner">
+        <div class="panel-content" data-sly-list="${model.pathList}">
+            <sly data-sly-resource="${item}"></sly>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,199 @@
+article.article .article-body .image-body-text {
+    padding: 0;
+    margin: 0;
+}
+
+.image-body-text {
+    box-sizing: border-box;
+    position: relative;
+    padding: 0 15px;
+}
+
+.image-body-text * {
+    box-sizing: border-box;
+}
+
+.image-body-text .content-image {
+    overflow: hidden;
+}
+
+.image-body-text .text-before-image {
+    margin-bottom: 32px;
+}
+
+.image-body-text .text-after-image {
+    margin-top: 32px;
+}
+
+.image-body-text .image-caption {
+    padding-top: 1rem;
+}
+
+.image-body-text .image-caption p {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    letter-spacing: 0.4px;
+    line-height: 2;
+    line-height: 1rem;
+    color: #707070;
+}
+
+@media (min-width: 720px) {
+    .image-body-text .image-caption p {
+        font-size: .75rem;
+        line-height: 2;
+        letter-spacing: 0.4px;
+    }
+}
+
+@media (min-width: 960px) {
+    .image-body-text .image-caption p {
+        font-size: .75rem;
+        line-height: 2;
+        letter-spacing: 0.4px;
+    }
+}
+
+.image-body-text .image-caption > :last-child {
+    margin: 0;
+}
+
+@media (min-width: 720px) {
+    .image-body-text .image-caption {
+        padding: 1.5rem 0 0;
+    }
+}
+
+.image-body-text .img-wrapper {
+    position: relative;
+}
+
+.image-body-text img {
+    max-width: 100%;
+    display: block;
+}
+
+.image-body-text ul li,
+.image-body-text ol li {
+    font-family: "Georgia", "Times New Roman", Times, serif;
+    font-size: 16px;
+}
+
+.image-body-text ul {
+    list-style: disc;
+    list-style-position: inside;
+}
+
+.image-body-text ol {
+    list-style: decimal;
+    list-style-position: inside;
+}
+
+.image-body-text.default {
+    margin: 48px 0;
+}
+
+.image-body-text.default ol,
+.image-body-text.default ul {
+    padding-left: 0;
+}
+
+.image-body-text.default img {
+    margin: 0;
+}
+
+.image-body-text.small .image-caption {
+    display: none;
+}
+
+.image-body-text .content-image-small {
+    min-height: 1px;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    width: 50%;
+    float: left;
+    padding-bottom: calc(32px / 2);
+    margin-right: 32px;
+}
+
+.image-body-text .content-image-small img {
+    width: 100%;
+}
+
+.image-body-text .content-image-small::after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.image-body-text .content-image-medium img,
+.image-body-text .content-image-large img {
+    width: 100%;
+}
+
+.image-body-text .content-image-large .image-caption {
+    text-align: center;
+}
+
+.image-body-text .content-image-default.image-center picture, .image-body-text .content-image-default.image-right picture {
+    display: block;
+}
+
+.image-body-text .content-image-default.image-center img, .image-body-text .content-image-default.image-right img {
+    display: inline;
+    margin: 0;
+}
+
+.image-body-text .link {
+    display: inline-block;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.image-body-text .modal-example .modal-trigger {
+    background-color: rgba(255, 255, 255, 0);
+    background-image: url("/etc.clientlibs/edc/clientlibs/clientlib-base/resources/images/expand-image.png");
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    background-size: 100%;
+    top: 10px;
+    right: 10px;
+    text-indent: -9999em;
+}
+
+.image-body-text .image-center,
+.image-body-text .center {
+    text-align: center;
+}
+
+.image-body-text .image-right,
+.image-body-text .right {
+    text-align: right;
+}
+
+@media (min-width: 720px) {
+    .image-body-text.large .image-caption {
+        text-align: center;
+    }
+}
+
+@media (min-width: 960px) {
+    .image-body-text .content-image-large {
+        margin-left: calc(-33.3333% - (30px / 3));
+        margin-right: calc(-33.3333% - (30px / 3));
+    }
+    .image-body-text.default {
+        text-align: left;
+    }
+    .image-body-text .text-after-image:not(.center) ol,
+    .image-body-text .text-after-image:not(.center) ul,
+    .image-body-text .text-before-image:not(.center) ol,
+    .image-body-text .text-before-image:not(.center) ul {
+        padding-left: 2.5rem;
+    }
+}

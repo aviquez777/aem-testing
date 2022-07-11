@@ -1,0 +1,14 @@
+<sly data-sly-use.model="com.edc.edcweb.core.models.TagResultHeader"/>
+<sly data-sly-use.modelprofile="com.edc.edcweb.core.models.inlist.InListSupplierProfile"/>
+<sly data-sly-test.profile="${modelprofile.supplierProfile}" />
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-call="${templates.placeholder @ isEmpty = !profile.name}"/>
+
+<div data-sly-test="${profile.name}" class="tag-results-banner full-width">
+    <div class="container">
+        <div class="headings">
+            <h1>${profile.name}</h1>
+            <h2 data-sly-test="${model.Title || properties.title}">${model.Title || properties.title}</h2>
+        </div>
+    </div>
+</div>

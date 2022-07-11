@@ -1,0 +1,62 @@
+<template data-sly-template.inclusivetrade="${@  uuid, properties, formErrorMessages}">
+<!--/** Important Hidden fields will be added below this block via "normal logic" **/-->
+    <sly data-sly-use.modalTemplate="/apps/edcportal/components/content/common/modals.html"/>
+    <section data-sly-test="${properties.itmtitle}" class="c-inclusive-trade-measure-questions">
+        <h3 data-sly-test="${properties.itmtitle}">${properties.itmtitle}</h3>
+        <div class="measure-questions-text">
+            ${properties.itmbeforelist @context='html'}
+            <sly data-sly-list.groupsMultifield="${resource.getChildren}">
+                <ul data-sly-test="${groupsMultifield.name == 'grouplist'}" data-sly-list.group="${groupsMultifield.getChildren}">
+                    <li>
+                        <span>${group.group}</span>
+                        <sly data-sly-test="${group.hastooltip}" data-sly-call="${modalTemplate.moreinfomodal @ modalTitle = group.tooltiptitle, modalText = group.tooltipdescription, modalAriaOpen = properties.modalariaopen, modalAriaClose = properties.modalariaclose}"/>
+                    </li>
+                </ul>
+            </sly>
+            ${properties.itmafterlist @context='html'}
+        </div>
+        <div class="questions-checkboxes">
+            <label id="inclusiveTradeMeasureQuestions-${uuid}">${properties.itmcheckboxestitle}</label>
+            <sly data-sly-list.checkboxesMultifield="${resource.getChildren}">
+                <sly data-sly-test="${checkboxesMultifield.name == 'checkboxlist'}" data-sly-list.checkbox="${checkboxesMultifield.getChildren}">
+                    <div class="checkbox-item">
+                        <input type="checkbox" data-handle-checkbox="${checkbox.opensquestion ? 'top-group' : 'bottom-group'}" data-show-extra-question="${checkboxList.count}" id="${checkbox.checkboxtype}-${uuid}" name="${checkbox.checkboxtype}" data-no-url="true" value="${checkbox.checkboxtype}" />
+                        <div class="input-description">
+                            <label for="${checkbox.checkboxtype}-${uuid}">${checkbox.checkboxlabel}</label>
+                        </div>
+                    </div>
+
+                </sly>
+            </sly>
+        </div>
+        <sly data-sly-list.checkboxesMultifield="${resource.getChildren}">
+            <sly data-sly-test="${checkboxesMultifield.name == 'checkboxlist'}" data-sly-list.checkbox="${checkboxesMultifield.getChildren}">
+                <div class="extra-question hide" data-sly-test="${checkbox.opensquestion}" data-section-id="${checkbox.checkboxtype}" data-show-extra-question="${checkboxList.count}">
+                    <label>${checkbox.questiontitle}</label>
+                    <p>${properties.questionsubtitle}</p>  
+                    <sly data-sly-list.groupsMultifield="${resource.getChildren}">
+                        <sly data-sly-test="${groupsMultifield.name == 'grouplist'}" data-sly-list.group="${groupsMultifield.getChildren}">   
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="${checkbox.checkboxtype}${group.grouptype}-${uuid}" name="${checkbox.checkboxtype}${group.grouptype}" data-no-url="true" value="${checkbox.checkboxtype}${group.grouptype}" />
+                                <div class="input-description">
+                                    <label for="${checkbox.checkboxtype}${group.grouptype}-${uuid}">${group.group}</label>
+                                    <sly data-sly-test="${group.hastooltip}" data-sly-call="${modalTemplate.moreinfomodal @ modalTitle = group.tooltiptitle, modalText = group.tooltipdescription, modalAriaOpen = properties.modalariaopen, modalAriaClose = properties.modalariaclose}"/>
+                                </div>
+                            </div>
+                        </sly>
+                    </sly>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="${checkbox.checkboxtype}o-${uuid}" data-checkbox-type="other" name="${checkbox.checkboxtype}o" data-no-url="true" value="${checkbox.checkboxtype}o" />
+                        <div class="input-description">
+                            <label for="${checkbox.checkboxtype}o-${uuid}">${properties.other}</label>
+                        </div>
+                    </div>
+                    <div data-form-field="${checkbox.checkboxtype}oText">
+                        <input type="text" id="${checkbox.checkboxtype}oText-${uuid}" name="${checkbox.checkboxtype}oText" placeholder="${properties.otherph}" data-other-text-field="${checkbox.checkboxtype}o" data-no-url="true" validation-rule="" data-min-length="0" data-max-length="30" />
+                        <span class="error" data-no-url-message="${formErrorMessages.nourl}" data-length-min-message="${formErrorMessages.minlength}" data-length-max-message="${formErrorMessages.maxlength}" ></span>
+                    </div>
+                </div>
+            </sly>
+        </sly>
+    </section>
+</template>

@@ -1,0 +1,180 @@
+.text-background,
+article.article .article-body .text-background {
+    clear: both;
+    padding: 32px 15px;
+    margin: 32px 0;
+}
+
+.text-background .subtitle,
+.text-background h2,
+article.article .article-body .text-background .subtitle,
+article.article .article-body .text-background h2 {
+    margin-top: 0;
+}
+
+.text-background .subtitle,
+article.article .article-body .text-background .subtitle {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: 0;
+    margin-bottom: 16px;
+}
+
+@media (min-width: 720px) {
+    .text-background .subtitle,
+    article.article .article-body .text-background .subtitle {
+        font-size: .9375rem;
+        line-height: 1.6;
+        letter-spacing: -0.2px;
+    }
+}
+
+@media (min-width: 960px) {
+    .text-background .subtitle,
+    article.article .article-body .text-background .subtitle {
+        font-size: .9375rem;
+        line-height: 1.6;
+        letter-spacing: -0.2px;
+    }
+}
+
+.text-background p:first-of-type,
+article.article .article-body .text-background p:first-of-type {
+    margin-top: 16px;
+}
+
+.text-background ul,
+article.article .article-body .text-background ul {
+    list-style-type: disc;
+    padding-left: 15px;
+}
+
+.text-background ul li,
+article.article .article-body .text-background ul li {
+    padding: 0 0 1em 10px;
+    line-height: 27px;
+}
+
+.text-background ul li:last-child,
+article.article .article-body .text-background ul li:last-child {
+    padding: 0 0 0 10px;
+}
+
+.text-background .btn-area,
+article.article .article-body .text-background .btn-area {
+    text-align: center;
+}
+
+.text-background.bg-light,
+article.article .article-body .text-background.bg-light {
+    background-color: #f4f8fc;
+}
+
+.text-background.bg-light p,
+article.article .article-body .text-background.bg-light p {
+    color: #333;
+    font-family: "Georgia", "Times New Roman", Times, serif;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.7142;
+}
+
+@media (min-width: 720px) {
+    .text-background.bg-light p,
+    article.article .article-body .text-background.bg-light p {
+        font-size: .875rem;
+        line-height: 1.7142;
+    }
+}
+
+@media (min-width: 960px) {
+    .text-background.bg-light p,
+    article.article .article-body .text-background.bg-light p {
+        font-size: .875rem;
+        line-height: 1.7142;
+    }
+}
+
+.text-background.bg-light li,
+article.article .article-body .text-background.bg-light li {
+    color: #333;
+    font-family: "Georgia", "Times New Roman", Times, serif;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.7142;
+}
+
+@media (min-width: 720px) {
+    .text-background.bg-light li,
+    article.article .article-body .text-background.bg-light li {
+        font-size: .875rem;
+        line-height: 1.7142;
+    }
+}
+
+@media (min-width: 960px) {
+    .text-background.bg-light li,
+    article.article .article-body .text-background.bg-light li {
+        font-size: .875rem;
+        line-height: 1.7142;
+    }
+}
+
+.text-background.bg-dark,
+article.article .article-body .text-background.bg-dark {
+    background-color: rgba(51, 51, 51, 0.05);
+}
+
+.text-background.bg-lighter,
+article.article .article-body .text-background.bg-lighter {
+    background-color: #f9f9f9;
+}
+
+.text-background.bg-lighter h4,
+article.article .article-body .text-background.bg-lighter h4 {
+    color: #191919;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 2;
+}
+
+@media (min-width: 720px) {
+    .text-background.bg-lighter h4,
+    article.article .article-body .text-background.bg-lighter h4 {
+        font-size: .75rem;
+        line-height: 2;
+    }
+}
+
+@media (min-width: 960px) {
+    .text-background.bg-lighter h4,
+    article.article .article-body .text-background.bg-lighter h4 {
+        font-size: .75rem;
+        line-height: 2;
+    }
+}
+
+.text-background.bg-lighter img,
+article.article .article-body .text-background.bg-lighter img {
+    width: calc(100% + 64px);
+    margin-left: -32px;
+}
+
+@media (min-width: 720px) {
+    .text-background,
+    article.article .article-body .text-background {
+        padding: 32px;
+    }
+}
+
+@media (max-width: 719px) {
+    .text-background.bg-dark img,
+    article.article .article-body .text-background.bg-lighter img {
+        width: calc(100% + 30px);
+        margin-left: -15px;
+    }
+}

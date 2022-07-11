@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <oilgas jcr:primaryType="nt:unstructured"
+        enName="Oil and gas"
+        frName="Pétrole et gaz"
+        value="OILGAS" />
+    <military jcr:primaryType="nt:unstructured"
+        enName="Military or weapons"
+        frName="Militaire ou armes"
+        value="MILITARY" />
+    <cannabis jcr:primaryType="nt:unstructured"
+        enName="Cannabis"
+        frName="Cannabis"
+        value="CANNABIS" />
+    <adult jcr:primaryType="nt:unstructured"
+        enName="Adult Entertainment"
+        frName="Divertissement pour adultes"
+        value="ADULT" />
+    <gambling
+        jcr:primaryType="nt:unstructured"
+        enName="Gambling"
+        frName="Jeux d'argent"
+        value="GAMBLING" />
+    <payday
+        jcr:primaryType="nt:unstructured"
+        enName="Payday lending or pawn shops"
+        frName="Prêt sur salaire ou prêteur sur gage" 
+        value="PAYDAY" />
+    <thermal jcr:primaryType="nt:unstructured"
+        enName="Thermal Coal Power Generation or Thermal Coal Mining"
+        frName="Production d'énergie thermique au charbon ou extraction de charbon thermique"
+        value="THERMAL" />
+    <none jcr:primaryType="nt:unstructured"
+        enName="None of the above"
+        frName="Aucune de ses réponses"
+        value="NONE" />
+</jcr:root>

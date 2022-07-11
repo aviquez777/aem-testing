@@ -1,0 +1,2 @@
+#base=css
+searchpage.css

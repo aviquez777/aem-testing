@@ -1,0 +1,303 @@
+@charset "UTF-8";
+.show-separator,
+.keyline,
+.separator {
+    border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+}
+
+/**paddings for content heading **/
+.spacing-content-headings {
+    margin: 16px 0;
+}
+
+@media (min-width: 960px) {
+    .spacing-content-headings {
+        margin: 32px 0;
+    }
+}
+
+.modal-dialog.ebook-nav-modal-content {
+    overflow: auto;
+}
+
+.modal-dialog.ebook-nav-modal-content * {
+    box-sizing: border-box;
+}
+
+.modal-dialog.ebook-nav-modal-content .modal-shade {
+    position: fixed;
+}
+
+.modal-dialog.ebook-nav-modal-content .modal-close {
+    display: none;
+}
+
+.modal-dialog.ebook-nav-modal-content .modal-container {
+    position: relative;
+    padding: 32px 0;
+    margin: 0 8.33%;
+    width: 83.34%;
+}
+
+.modal-dialog.ebook-nav-modal-content .modal-container .nav-title {
+    color: #333;
+    font-family: "Georgia", "Times New Roman", Times, serif;
+    font-size: 21px;
+    font-weight: normal;
+    letter-spacing: 0.0058em;
+    line-height: 1.5238;
+    margin: 0 32px 25px;
+    color: #004a6b;
+}
+
+@media (min-width: 720px) {
+    .modal-dialog.ebook-nav-modal-content .modal-container .nav-title {
+        font-size: 1.3125rem;
+        line-height: 1.5238;
+    }
+}
+
+@media (min-width: 960px) {
+    .modal-dialog.ebook-nav-modal-content .modal-container .nav-title {
+        font-size: 1.625rem;
+        line-height: 1.5384;
+    }
+}
+
+.modal-dialog.ebook-nav-modal-content .modal-container .nav-title a {
+    text-decoration: none;
+}
+
+.modal-dialog.ebook-nav-modal-content .modal-container button {
+    display: block;
+    width: 88%;
+    margin: 6% 6% 0;
+}
+
+.modal-dialog.ebook-nav-modal-content .modal-container ul {
+    padding: 0;
+}
+
+.modal-dialog.ebook-nav-modal-content .modal-container ul li a, .modal-dialog.ebook-nav-modal-content .modal-container ul li.selected {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    letter-spacing: 0.4px;
+    line-height: 2;
+    display: flex;
+    font-weight: normal;
+    padding: 8px 32px;
+    text-align: left;
+    text-decoration: none;
+}
+
+@media (min-width: 720px) {
+    .modal-dialog.ebook-nav-modal-content .modal-container ul li a, .modal-dialog.ebook-nav-modal-content .modal-container ul li.selected {
+        font-size: .75rem;
+        line-height: 2;
+    }
+}
+
+@media (min-width: 960px) {
+    .modal-dialog.ebook-nav-modal-content .modal-container ul li a, .modal-dialog.ebook-nav-modal-content .modal-container ul li.selected {
+        font-size: .75rem;
+        line-height: 2;
+    }
+}
+
+.modal-dialog.ebook-nav-modal-content .modal-container ul li a span, .modal-dialog.ebook-nav-modal-content .modal-container ul li.selected span {
+    padding-right: 10px;
+}
+
+.modal-dialog.ebook-nav-modal-content .modal-container ul li a:hover, .modal-dialog.ebook-nav-modal-content .modal-container ul li a:focus {
+    text-decoration: underline;
+}
+
+.modal-dialog.ebook-nav-modal-content .modal-container ul li.selected {
+    background-color: rgba(67, 134, 172, 0.05);
+    font-weight: 600;
+}
+
+.modal-dialog.ebook-nav-modal-content .modal-container .key-line {
+    border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+    margin: 0;
+    display: block;
+    clear: both;
+}
+
+.c-ebook-navigation {
+    overflow: hidden;
+    padding: 0 16px;
+    margin-bottom: 16px;
+}
+
+.c-ebook-navigation * {
+    box-sizing: border-box;
+}
+
+.c-ebook-navigation .modal-section {
+    padding: 32px 0;
+}
+
+.c-ebook-navigation .modal-section .modal-example button {
+    display: flex;
+    align-items: center;
+}
+
+.c-ebook-navigation .modal-section .modal-example button span {
+    color: #333;
+    font-family: "Georgia", "Times New Roman", Times, serif;
+    font-size: 21px;
+    font-weight: normal;
+    letter-spacing: 0.1px;
+    line-height: 1.5238;
+    color: #1a65b2;
+    text-decoration: none;
+}
+
+@media (min-width: 720px) {
+    .c-ebook-navigation .modal-section .modal-example button span {
+        font-size: 1.3125rem;
+        line-height: 1.5238;
+        letter-spacing: 0.1px;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-ebook-navigation .modal-section .modal-example button span {
+        font-size: 1.625rem;
+        line-height: 1.5384;
+        letter-spacing: -0.2px;
+    }
+}
+
+.c-ebook-navigation .modal-section .modal-example button::before {
+    content: "";
+    font-family: "iconfonts";
+    padding-right: 10px;
+}
+
+.c-ebook-navigation .modal-section .modal-example.sticky {
+    position: fixed;
+    background-color: #fff;
+    padding: 32px 16px;
+    width: 100%;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+}
+
+.c-ebook-navigation .nav-title {
+    display: none;
+}
+
+.c-ebook-navigation ul {
+    display: none;
+}
+
+.c-ebook-navigation .key-line {
+    border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+    margin: 0;
+    display: block;
+    clear: both;
+}
+
+@media (min-width: 960px) {
+    .modal-dialog.show.ebook-nav-modal-content {
+        display: none;
+    }
+    .c-ebook-navigation {
+        padding: 30px 16px;
+    }
+    .c-ebook-navigation .nav-title {
+        display: block;
+        margin: 0 0 16px;
+        color: #333;
+        font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 12px;
+        font-weight: normal;
+        letter-spacing: 0.4px;
+        line-height: 2;
+        font-size: 12px;
+        font-weight: 600;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 720px) {
+    .c-ebook-navigation .nav-title {
+        font-size: .75rem;
+        line-height: 2;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-ebook-navigation .nav-title {
+        font-size: .75rem;
+        line-height: 2;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-ebook-navigation .modal-section {
+        display: none;
+    }
+    .c-ebook-navigation ul {
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+    .c-ebook-navigation ul li {
+        display: block;
+    }
+    .c-ebook-navigation ul li a, .c-ebook-navigation ul li.selected {
+        color: #333;
+        font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 12px;
+        font-weight: normal;
+        letter-spacing: 0.4px;
+        line-height: 2;
+        display: flex;
+        font-weight: normal;
+        padding: 8px 16px;
+        text-align: left;
+        text-decoration: none;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 720px) {
+    .c-ebook-navigation ul li a, .c-ebook-navigation ul li.selected {
+        font-size: .75rem;
+        line-height: 2;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-ebook-navigation ul li a, .c-ebook-navigation ul li.selected {
+        font-size: .75rem;
+        line-height: 2;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-ebook-navigation ul li a span, .c-ebook-navigation ul li.selected span {
+        padding-right: 10px;
+    }
+    .c-ebook-navigation ul li a:hover, .c-ebook-navigation ul li a:focus {
+        text-decoration: underline;
+    }
+    .c-ebook-navigation ul li.selected {
+        background-color: rgba(67, 134, 172, 0.05);
+        font-weight: 600;
+    }
+    .c-ebook-navigation .key-line {
+        display: none;
+    }
+}
+
+@media (min-width: 623px) {
+    .modal-dialog.ebook-nav-modal-content .modal-container {
+        left: 0;
+    }
+}

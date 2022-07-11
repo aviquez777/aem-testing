@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <option1
+        jcr:primaryType="nt:unstructured"
+        enName="Yes, I do currently"
+        frName="Oui, j’en fais actuellement."
+        value="Yes, currently"/>
+    <option2
+        jcr:primaryType="nt:unstructured"
+        enName="Yes, I expect to in the the future (within one year)"
+        frName="Oui, je prévois en faire dans l’avenir (d’ici un an)."
+        value="Yes, in the the future (within 1 year)"/>
+    <option3
+        jcr:primaryType="nt:unstructured"
+        enName="No, not in foreseeable future"
+        frName="Non, je ne prévois pas en faire pour l’instant."
+        value="No"/>
+</jcr:root>

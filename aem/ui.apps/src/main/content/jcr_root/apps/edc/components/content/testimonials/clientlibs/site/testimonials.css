@@ -1,0 +1,23 @@
+.c-testimonial {
+    box-sizing: border-box;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+}
+
+.c-testimonial * {
+    box-sizing: border-box;
+}
+
+@media (min-width: 720px) {
+    .c-testimonial {
+        padding-top: 4.5rem;
+        padding-bottom: 4.5rem;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-testimonial {
+        padding-top: 6.5rem;
+        padding-bottom: 6.5rem;
+    }
+}

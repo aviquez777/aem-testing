@@ -1,0 +1,17 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-test.title="${currentPage.pageTitle || currentPage.title}" />
+<sly data-sly-use.pagedate="${'com.edc.edcweb.core.models.PageModelHelper' @ page = currentPage, authorOverride = true}" data-sly-test.date="${pagedate.date}"/>
+<sly data-sly-test.location="${pageProperties.location}" />
+<sly data-sly-test.isConfigured="${title && location}" />
+<sly data-sly-call="${templates.placeholder @ isEmpty = !isConfigured}"/>
+<header class="c-news-room-header" data-sly-test="${isConfigured}">
+ <p data-sly-test="${wcmmode.edit}">(${component.title} is authorable in page properties.)</p>
+ <sly data-sly-use.gentemplates="/apps/edc/components/common/templates.html"/>
+  <h1 class="title">${title}</h1>
+  <div class="meta-info">
+    <time datetime="${'yyyy-MM-dd hh:mm' @ format=date}">
+      <span class="date"><sly data-sly-call="${gentemplates.date @ date = date}"/></span>
+    </time>
+    <span class="location">${location}</span>
+  </div>
+</header>

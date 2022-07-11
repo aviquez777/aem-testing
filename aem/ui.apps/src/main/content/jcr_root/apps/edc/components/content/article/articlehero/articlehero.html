@@ -1,0 +1,113 @@
+<sly data-sly-use.pageserie="com.edc.edcweb.core.models.Series" />
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !(pageProperties['fileReference']  ||  properties.fileReference)}"/>
+<sly data-sly-use.page="com.adobe.cq.wcm.core.components.models.Page"/>
+<sly data-sly-use.articlepage="${'com.edc.edcweb.core.models.ArticlePage' @ page = currentPage}"/>
+<sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+<!--/** ------------------------------------------------------ **/-->
+<!--/** If page language is French, use the French date format **/-->
+<!--/** ------------------------------------------------------ **/-->
+<sly data-sly-test="${page.language == 'fr'}">
+	<sly data-sly-test.dateformat="dd MMMM yyyy"/>
+</sly>
+<!--/** ------------------------------------------------------ **/-->
+<!--/** Default is English, so if not French... use the        **/-->
+<!--/** English date format                                    **/-->
+<!--/** ------------------------------------------------------ **/-->
+<sly data-sly-test="${page.language != 'fr'}">
+	<sly data-sly-test.dateformat="MMMM dd, yyyy"/>
+</sly>
+<!--/** ------------------------------------------------------ **/-->
+
+<header data-sly-test="${pageProperties['fileReference']  ||  properties.fileReference}" class="full-width">
+	<!--/** ------------------------------------------------------ **/-->
+	<!--/**                    D E S K T O P                       **/-->
+	<!--/** ------------------------------------------------------ **/-->
+	<sly data-sly-test.desktop="${pageProperties['fileReference']}" />
+	<!--/** ------------------------------------------------------ **/-->
+	<!--/** If no fileReference @ the page properties level, take  **/-->
+	<!--/** the one from the component properties level            **/-->
+	<!--/** ------------------------------------------------------ **/-->
+	<sly data-sly-test="${!desktop}">
+		<sly data-sly-test.desktop="${properties.fileReference}"/>
+	</sly>
+	<!--/** ------------------------------------------------------ **/-->
+	<!--/**                     T A B L E T                        **/-->
+	<!--/** ------------------------------------------------------ **/-->
+	<sly data-sly-test.tablet="${pageProperties['tabletFileReference']}" />
+	<!--/** ------------------------------------------------------ **/-->
+	<!--/** If no tabletFileReference @ the page properties level, **/-->
+	<!--/** take the one from the component properties level       **/-->
+	<!--/** ------------------------------------------------------ **/-->
+	<sly data-sly-test="${!tablet}">
+		<sly data-sly-test.tablet="${properties.tabletFileReference ? properties.tabletFileReference : desktop}"/>
+	</sly>
+	<!--/** ------------------------------------------------------ **/-->
+	<!--/**                      P H O N E                         **/-->
+	<!--/** ------------------------------------------------------ **/-->
+	<sly data-sly-test.phone="${pageProperties['teaserimage']}" /> 
+	<!--/** ------------------------------------------------------ **/-->
+	<!--/** If no teaserimage @ the page properties level, take    **/-->
+	<!--/** the one from the component properties level. In theory **/-->
+	<!--/** there should always be a teaser at the page level as   **/-->
+	<!--/** as it has been mandatory for quite a while. Ignoring   **/-->
+	<!--/** that for now (this code will be removed after content  **/-->
+	<!--/** migration is completed anyway).                        **/-->
+	<!--/** ------------------------------------------------------ **/-->
+	<sly data-sly-test="${!phone}">
+		<sly data-sly-test.phone="${properties.phoneFileReference ? properties.phoneFileReference : desktop}" /> 
+    </sly>
+    <sly data-sly-use.policy="com.edc.edcweb.core.models.PolicyReader" />
+    <sly data-sly-test.policyProps="${policy.labels}"/>
+    <div class="img-wrapper">
+        <sly data-sly-test="${desktop || tablet || phone}" data-sly-call="${commonTemplates.picture @ desktop=desktop, tablet=tablet, phone=phone, imageAlt=pageProperties['imagealttext']}"/>
+    </div>
+    <div class="article-hero-content">
+        <div class="container title-section">
+            <div class="main-header">
+                <nav aria-label="Breadcrumb" class="breadcrumb" data-sly-test="${articlepage.breadCrumbLink}">
+                    <ol>
+                        <li>
+                            <a href="${articlepage.breadCrumbLink}">${articlepage.breadCrumbLabel}</a>
+                        </li>
+                        <li data-sly-test="${policyProps.customBcLink}">
+                            <a data-sly-use.urlRes="${'com.edc.edcweb.core.models.PageModelHelper' @ path = policyProps.customBcUrl}" href="${urlRes.url}" aria-current="page">${policyProps.customBcLink}</a>
+                        </li>
+                        <li data-sly-test="${!policyProps.customBcLink}">
+                            <a data-sly-use.urlRes="${'com.edc.edcweb.core.models.PageModelHelper' @ path = currentPage.path}" href="${urlRes.url}" aria-current="page">${articlepage.ContentTypeTitle}</a>
+                        </li>
+                    </ol>
+                </nav>
+                <h1 class="title">${properties.rtetitle ? properties.rtetitle : pageProperties.pageTitle @ context="html"}</h1>
+            </div>
+        </div>
+        <div class="container meta-info-section">
+            <div class="meta-info">
+                <sly data-sly-test="${pageProperties['publishdate'] == 'first'}">
+                    <time data-sly-test.havefirstpublished="${pageProperties['firstpublished']}" dateTime="${pageProperties['firstpublished']}">
+                        <span class="date">${dateformat @ format=pageProperties['firstpublished'], locale=page.language}</span>
+                    </time>
+                    <time><span data-sly-test="${!havefirstpublished}" class="date">[Not yet published]</span></time>
+                </sly>
+                <sly data-sly-test="${pageProperties['publishdate'] ==  'last'}">
+                    <time data-sly-test.havelastpublished="${pageProperties['cq:lastReplicated']}" dateTime="${pageProperties['cq:lastReplicated']}">
+                        <span class="date">${dateformat @ format=pageProperties['cq:lastReplicated'], locale=page.language}</span>
+                    </time>
+                    <time data-sly-test="${!havelastpublished}" dateTime="${pageProperties['jcr:created']}">
+                        <span class="date">${dateformat @ format=pageProperties['jcr:created'], locale=page.language}</span>
+                    </time>
+                </sly>
+                <sly data-sly-test="${properties.displayprimarytag != 'no'}" data-sly-use.tagresolver="${'com.edc.edcweb.core.models.Tags' @ tagId=properties.primarytag}" >
+                    <a x-cq-linkchecker="valid" href="/content/edc/${page.language}/tag/${tagresolver.tagByTagId.name}.html">
+                        <span data-primary-tag="${properties.primarytag}" class="category data-article-category">
+                            ${tagresolver.titleByTagId}
+                        </span>
+                    </a>
+                </sly>
+                <sly data-sly-test="${pageserie.isSerie && pageserie.IsValid }">
+                    <span class="series-breadcrumb">${pageserie.PartLabel}${pageserie.IndexCurrentPage}${pageserie.OfLabel}${pageserie.NbPartSeries}${pageserie.SeriesLabel}</span>
+                </sly>
+            </div>
+        </div>
+    </div>
+</header>

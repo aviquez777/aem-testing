@@ -1,0 +1,154 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.model="com.edc.edcweb.core.models.inlist.InListSupplierProfile"/>
+<sly data-sly-test.profile="${model.supplierProfile}" />
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+<sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.contactustitle}"/>
+
+<div class="c-inlist-supplier-profile" data-sly-test="${properties.contactustitle}" data-suppliername="${profile.name || ''}">
+    <div class="contact-us section" itemscope="" itemType="http://schema.org/Organization">
+        <h4 class="title">${properties.contactustitle}</h4>
+        <div class="info-wrapper">
+            <div class="main-info">
+                <p class="subtitle response" data-sly-test.contactChannels="${profile.contact}">${properties.contactusquickresponse}</p>
+                <p class="subtitle hours" data-sly-test="${contactChannels}">${profile.referralResponseTime}</p>
+                <sly data-sly-list.keyitem="${contactChannels}">
+                    <p data-sly-test="${keyitemList.first}" class="${keyitem}" itemProp="${keyitem != 'website' ? keyitem : ''}">
+                        <sly data-sly-test.href="${keyitem == 'email' ? 'mailto:' : (keyitem == 'phone' ? 'tel:' : '')}${contactChannels[keyitem]}" />
+                        <a x-cq-linkchecker="${keyitem == 'website' ? 'valid' : ''}" href="${href}" class="c-interaction-button">${contactChannels[keyitem]}</a>
+                    </p>
+                </sly>
+            </div>
+            <div class="other-info">
+                <p class="subtitle">${properties.contactusother}</p>
+                <p data-sly-repeat.key="${contactChannels.keySet @ begin=1}" class="${key}" itemProp="${key != 'website' ? key : ''}">
+                    <sly data-sly-test.href="${key == 'email' ? 'mailto:' : (key == 'phone' ? 'tel:' : '')}${contactChannels[key]}" />
+                    <a x-cq-linkchecker="${keyitem == 'website' ? 'skip' : ''}" href="${href}">${contactChannels[key]}</a>
+                </p>
+                <sly data-sly-test.requestQuoteURL=${profile.requestQuoteURL}>
+                    <div class="request-quote">
+                        <a x-cq-linkchecker="skip" class="button edc-primary-btn c-interaction-button" href="${requestQuoteURL}" target="_blank">
+                            <span>${properties.contactusbtn}</span>
+                        </a>
+                    </div>
+                </sly>
+            </div>
+        </div>
+        <div class="locations-wrapper" data-sly-test.addresses="${profile.addresses}">
+            <div class="locations">
+                <dl class="location" itemProp="address" data-sly-list.address="${addresses}">
+                    <dt class="subtitle" data-sly-test="${address.isHeadQuater || addressList.index < 2}">${address.isHeadQuater ? properties.contactusheadquarters : properties.contactusotheroffices}</dt>
+
+                    <sly data-sly-test.isHeadQuater="${address.isHeadQuater}">
+                        <dd class="top">${address.street}</dd>
+                        <dd>${address.city}${address.province ? ',' : ''} ${address.province}</dd>
+                        <dd class="last">${address.postCode}${address.postCode ? ', ' : ''}${address.country}</dd>
+                    </sly>
+
+                    <sly data-sly-test="${!isHeadQuater}">
+                        <dd class="${addressList.index == 1 ? 'top' : ''}">${address.country}</dd>
+                    </sly>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <div class="supplier-info">
+        <div class="section">
+            <h3 class="title">${properties.abouttitle}</h3>
+            <div class="content">
+                ${profile.description}
+            </div>
+        </div>
+        <div class="section services" data-sly-test.services="${profile.services}">
+            <div class="section-title">
+                <h3 class="title">${properties.servicestitle}</h3>
+                <div class="c-modal modal-example" role="dialog" aria-modal="true" data-sly-test="${properties.servicesLinktext && properties.servicesHelpTitle && properties.servicesExitText}">
+                    <sly data-sly-test.id="modal-services-${uuid}" />
+                    <button type="button" class="c-interaction-button unstyled modal-trigger anchor" data-modal-to-trigger="${id}"><span>${properties.servicesLinktext}</span></button>
+                    <sly data-sly-call="${commonTemplates.modal @ classes='generic-modal', id=id, title=properties.servicesHelpTitle, description=properties.servicesHelpText, closemobile=properties.servicesExitText}"/>
+                </div>
+            </div>
+            <div class="content">
+                <ul data-sly-list.service="${services}">
+                    <li>${service}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="section" data-sly-test.transportationModes="${profile.transportationModes}">
+            <div class="section-title">
+                <h3 class="title">${properties.transportationtitle}</h3>
+                <div class="c-modal modal-example" role="dialog" aria-modal="true" data-sly-test="${properties.transportationLinktext && properties.transportationHelpTitle && properties.transportationExitText}">
+                    <sly data-sly-test.id="modal-transportation-${uuid}" />
+                    <button type="button" class="c-interaction-button unstyled modal-trigger anchor" data-modal-to-trigger="${id}"><span>${properties.transportationLinktext}</span></button>
+                    <sly data-sly-call="${commonTemplates.modal @ classes='generic-modal', id=id, title=properties.transportationHelpTitle, description=properties.transportationHelpText, closemobile=properties.transportationExitText}"/>
+                </div>
+            </div>
+            <div class="content">
+                <ul class="${transportationModes.length > 3 ? 'split' : ''}" data-sly-list.transportationMode="${transportationModes}">
+                    <li>${transportationMode}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="section" data-sly-test.industries="${profile.industries}">
+            <div class="section-title">
+                <h3 class="title">${properties.industriestitle}</h3>
+                <div class="c-modal modal-example" role="dialog" aria-modal="true" data-sly-test="${properties.industriesLinktext && properties.industriesHelpTitle && properties.industriesExitText}">
+                    <sly data-sly-test.id="modal-industries-${uuid}" />
+                    <button type="button" class="c-interaction-button unstyled modal-trigger anchor" data-modal-to-trigger="${id}"><span>${properties.industriesLinktext}</span></button>
+                    <sly data-sly-call="${commonTemplates.modal @ classes='generic-modal', id=id, title=properties.industriesHelpTitle, description=properties.industriesHelpText, closemobile=properties.industriesExitText}"/>
+                </div>
+            </div>
+            <div class="content">
+                <ul data-sly-list.industry="${industries}">
+                    <li>${industry}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="section" data-sly-test.marketsServed="${profile.marketsServed}">
+            <div class="section-title">
+                <h3 class="title">${properties.marketstitle}</h3>
+                <div class="c-modal modal-example" role="dialog" aria-modal="true" data-sly-test="${properties.marketsLinktext && properties.marketsHelpTitle && properties.marketsExitText}">
+                    <sly data-sly-test.id="modal-markets-${uuid}" />
+                    <button type="button" class="c-interaction-button unstyled modal-trigger anchor" data-modal-to-trigger="${id}"><span>${properties.marketsLinktext}</span></button>
+                    <sly data-sly-call="${commonTemplates.modal @ classes='generic-modal', id=id, title=properties.marketsHelpTitle, description=properties.marketsHelpText, closemobile=properties.marketsExitText}"/>
+                </div>
+            </div>
+            <div class="content">
+                <ul class="${marketsServed.length > 3 ? 'split' : ''}" data-sly-list.marketServed="${marketsServed}">
+                    <li>${marketServed}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="section" data-sly-test.certifications="${profile.certifications}">
+            <div class="section-title">
+                <h3 class="title">${properties.certificationstitle}</h3>
+                <div class="c-modal modal-example" role="dialog" aria-modal="true" data-sly-test="${properties.certificationsLinktext && properties.certificationsHelpTitle && properties.certificationsExitText}">
+                    <sly data-sly-test.id="modal-certifications-${uuid}" />
+                    <button type="button" class="c-interaction-button unstyled modal-trigger anchor" data-modal-to-trigger="${id}"><span>${properties.certificationsLinktext}</span></button>
+                    <sly data-sly-call="${commonTemplates.modal @ classes='generic-modal', id=id, title=properties.certificationsHelpTitle, description=properties.certificationsHelpText, closemobile=properties.certificationsExitText}"/>
+                </div>
+            </div>
+            <div class="content">
+                <ul data-sly-list.certification="${certifications}">
+                    <li>${certification}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="section" data-sly-test.languages="${profile.languagesServed}">
+            <div class="section-title">
+                <h3 class="title">${properties.languagestitle}</h3>
+                <div class="c-modal modal-example" role="dialog" aria-modal="true" data-sly-test="${properties.languagesLinktext && properties.languagesHelpTitle && properties.languagesExitText}">
+                    <sly data-sly-test.id="modal-languages-${uuid}" />
+                    <button type="button" class="c-interaction-button unstyled modal-trigger anchor" data-modal-to-trigger="${id}"><span>${properties.languagesLinktext}</span></button>
+                    <sly data-sly-call="${commonTemplates.modal @ classes='generic-modal', id=id, title=properties.languagesHelpTitle, description=properties.languagesHelpText, closemobile=properties.languagesExitText}"/>
+                </div>
+            </div>
+            <div class="content">
+                <ul class="${languages.length > 3 ? 'split' : ''}" data-sly-list.language="${languages}">
+                    <li>${language}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

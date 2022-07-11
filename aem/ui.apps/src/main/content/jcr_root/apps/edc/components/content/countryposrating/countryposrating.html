@@ -1,0 +1,105 @@
+<sly data-sly-use.countryinfo="com.edc.edcweb.core.models.CountryInfo" />
+<sly data-sly-test.positionvalid="${countryinfo.PositionMap['positionHeading']}"/>
+<sly data-sly-test.riskvalid="${countryinfo.RatingMap['cccHeading']}"/>
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !countryinfo.hasPolicy}"/>
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+
+<sly data-sly-use.policymodel="com.edc.edcweb.core.models.PolicyReader" />
+<sly data-sly-test.labels="${policymodel.labels}"/>
+
+<div class="c-country-pos-rating" data-sly-test="${countryinfo.hasPolicy}">    
+    <div class="content-row">
+        <div class="c-edc-position" role="complementary" aria-labelledby="EDCPOSITION" data-sly-test="${positionvalid}">
+            <h3> ${countryinfo.PositionMap['positionTitle']} </h3>
+            <sly data-sly-test.desktop="${countryinfo.PositionMap['positionFileReference']}" />
+            <sly data-sly-test.tablet="${countryinfo.PositionMap['positionTablet'] ? countryinfo.PositionMap['positionTablet'] : countryinfo.PositionMap['positionFileReference']}" />
+            <source media="(min-width: 960px)" srcSet="${desktop}" sizes="100vw" />
+            <source media="(min-width: 720px)" srcSet="${tablet}" sizes="100vw" />
+            <source media="(min-width: 320px)" srcSet="${tablet}" sizes="100vw" />
+            <img src="${tablet}" alt="${countryinfo.PositionMap['positionAlt']}" />
+            <h2 class="title" id="EDCPOSITION">${countryinfo.PositionMap['positionHeading']}</h2>
+            <p class="subtitle">${countryinfo.PositionMap['positionSubtitle']}</p>
+            ${countryinfo.PositionMap['positionText']  @ context='html'}
+
+            <sly data-sly-test.posLinkText = "${countryinfo.PositionMap['positionLinktext']}" />
+            <div class="c-modal modal-example" role="dialog" aria-modal="true">
+                <button type="button" class="edc-btn-unstyled modal-trigger anchor learn-about" data-modal-to-trigger="${[uuid, 'modal-countrydetail-position'] @ join='-'}">
+                    <span>${posLinkText}</span>
+                </button>
+                <div class="modal-dialog position-rating" id="${[uuid, 'modal-countrydetail-position'] @ join='-'}" data-sly-test=${posLinkText}>
+                    <div class="modal-shade"></div>
+                    <div class="modal-container">
+                        <button class="edc-btn-icon modal-close" aria-label="${countryinfo.PositionMap['positionExitText']}">
+                            <span></span>
+                        </button>
+                        <div class="modal-content" role="region" aria-labelledby="${[uuid, 'positionvalid-label'] @ join='-'}" aria-describedby="${[uuid, 'positionvalid-desc'] @ join='-'}">
+                            <div class="modal-title">
+                                <h3 id="${[uuid, 'positionvalid-label'] @ join='-'}" class="title" data-sly-test.posHelpTitle="${countryinfo.PositionMap['positionHelpTitle']}">
+                                    ${posHelpTitle}
+                                </h3>
+                            </div>
+                            <div id="${[uuid, 'positionvalid-desc'] @ join='-'}" class="modal-richtext" data-sly-test.posHelpText="${countryinfo.PositionMap['positionHelpText']}">
+                                ${posHelpText  @ context='html'}
+                            </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+        <!--/* <div data-sly-test="${countryinfo.RatingMap && riskvalid}" class="c-ccc-rating" role="complementary" aria-labelledby="CCCRATING"></div> */-->
+        <div class="c-ccc-rating" role="complementary" aria-labelledby="CCCRATING">
+            <div class="position-row">
+                <div data-sly-test="${countryinfo.myEdcSession}" class="rating">
+                    <h3>${countryinfo.RatingMap['cccTitle']}</h3>
+                    <sly data-sly-test.desktop="${countryinfo.RatingMap['cccFileReference']}" />
+                    <sly data-sly-test.tablet="${countryinfo.RatingMap['cccTablet'] ? countryinfo.RatingMap['cccTablet'] : countryinfo.RatingMap['cccFileReference']}" />
+                    <source media="(min-width: 960px)" srcSet="${desktop}" sizes="100vw" />
+                    <source media="(min-width: 720px)" srcSet="${tablet}" sizes="100vw" />
+                    <source media="(min-width: 320px)" srcSet="${tablet}" sizes="100vw" />
+                    <img src="${tablet}" alt="${countryinfo.RatingMap['cccAlt']}" />
+                    <h2 class="title" id="CCCRATING">${countryinfo.RatingMap['cccHeading']}</h2>
+                    <p class="subtitle">${countryinfo.RatingMap['cccSubtitle']}</p>
+                    ${countryinfo.RatingMap['cccDescription']  @ context='html'}
+
+                    <sly data-sly-test.cccLinkText = "${countryinfo.RatingMap['cccLinktext']}" />
+                    <div class="c-modal modal-example" role="dialog" aria-modal="true">
+                        <button type="button" class="edc-btn-unstyled modal-trigger anchor learn-about" data-modal-to-trigger="${[uuid, 'modal-countrydetail-ccc'] @ join='-'}">
+                            <span>${cccLinkText}</span>
+                        </button>
+                        <div class="modal-dialog position-rating" id="${[uuid, 'modal-countrydetail-ccc'] @ join='-'}" data-sly-test=${cccLinkText}>
+                            <div class="modal-shade"></div>
+                            <div class="modal-container">
+                                <button class="edc-btn-icon modal-close" aria-label="${countryinfo.RatingMap['cccExitText']}">
+                                    <span></span>
+                                </button>
+                                <div class="modal-content" role="region" aria-labelledby="${[uuid, 'riskvalid-label'] @ join='-'}" aria-describedby="${[uuid, 'riskvalid-desc'] @ join='-'}">
+                                    <div class="modal-title">
+                                        <h3 id="${[uuid, 'riskvalid-label'] @ join='-'}" class="title" data-sly-test.cccHelpTitle="${countryinfo.RatingMap['cccHelpTitle']}">
+                                            ${cccHelpTitle}
+                                        </h3>
+                                    </div>
+                                    <div id="${[uuid, 'riskvalid-desc'] @ join='-'}" class="modal-richtext" data-sly-test.cccHelpText="${countryinfo.RatingMap['cccHelpText']}">
+                                        ${cccHelpText  @ context='html'}
+                                    </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-sly-test="${!countryinfo.myEdcSession}" class="position">
+                    <h4 data-sly-test="${labels['cccTitlepositiontext']}">${labels['cccTitlepositiontext']}</h4>
+                    <p data-sly-test="${labels['cccSubtitlepositiontext']}">${labels['cccSubtitlepositiontext']}</p>
+                    ${labels['cccDescriptionpositiontext'] @ context='html'}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="no-results" data-sly-test="${!riskvalid && !positionvalid}">
+        <h4>${labels['defaultMsgTitle']}</h4>
+        <div>
+            ${labels['defaultMsgDesc'] @ context='html'}
+        </div>
+    </div>
+</div>

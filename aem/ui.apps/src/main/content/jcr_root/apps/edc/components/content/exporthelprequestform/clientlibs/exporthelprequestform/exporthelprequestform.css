@@ -1,0 +1,298 @@
+.c-export-help-request-form {
+    border-top: 1px solid rgba(51, 51, 51, 0.3);
+    box-sizing: border-box;
+    margin-bottom: 2rem;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.c-export-help-request-form.email-closed {
+    border-top: 0;
+}
+
+.c-export-help-request-form * {
+    box-sizing: border-box;
+}
+
+.c-export-help-request-form .hide,
+.c-export-help-request-form span.error {
+    display: none;
+}
+
+.c-export-help-request-form .show {
+    display: inline-block;
+}
+
+.c-export-help-request-form .show-block {
+    display: block;
+}
+
+.c-export-help-request-form .show-flex {
+    align-items: center;
+    display: flex;
+    display: -webkit-flex;
+}
+
+.c-export-help-request-form .space-center {
+    justify-content: space-between;
+}
+
+.c-export-help-request-form .space-end {
+    justify-content: flex-end;
+}
+
+.c-export-help-request-form .title-color {
+    color: #4386ac;
+}
+
+.c-export-help-request-form .title {
+    margin-bottom: 0;
+    margin-top: 3rem;
+}
+
+.c-export-help-request-form .description {
+    margin-top: 0;
+}
+
+.c-export-help-request-form .email-disclaimer {
+    margin: 0;
+}
+
+.c-export-help-request-form .email-disclaimer > p {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    letter-spacing: 0.4px;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 720px) {
+    .c-export-help-request-form .email-disclaimer > p {
+        font-size: .75rem;
+        line-height: 2;
+        letter-spacing: 0.4px;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-export-help-request-form .email-disclaimer > p {
+        font-size: .75rem;
+        line-height: 2;
+        letter-spacing: 0.4px;
+    }
+}
+
+.c-export-help-request-form .status {
+    border-top: 1px solid rgba(51, 51, 51, 0.3);
+    clear: both;
+}
+
+.c-export-help-request-form .status .status-bar {
+    min-height: 1px;
+    padding-left: 0;
+    padding-right: 15px;
+    position: relative;
+    width: 8.33333333%;
+    float: left;
+    border-top: 4px solid #3fa67a;
+}
+
+.c-export-help-request-form .form-group {
+    margin-bottom: 1rem;
+}
+
+.c-export-help-request-form .levels {
+    clear: both;
+}
+
+.c-export-help-request-form .levels .headings {
+    margin: 2rem 0;
+}
+
+.c-export-help-request-form .levels .subHeadings p {
+    margin: 0;
+}
+
+.c-export-help-request-form .levels .bottom-ctas {
+    clear: both;
+}
+
+.c-export-help-request-form .levels .form-ctas {
+    margin-bottom: 2rem;
+}
+
+.c-export-help-request-form .levels .form-ctas .back {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+}
+
+.c-export-help-request-form .levels .level-1 .form-ctas {
+    float: right;
+}
+
+.c-export-help-request-form .levels .level-1,
+.c-export-help-request-form .levels .level-2,
+.c-export-help-request-form .levels .level-3,
+.c-export-help-request-form .levels .level-4,
+.c-export-help-request-form .levels .level-5 {
+    min-height: 1px;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    width: 100%;
+    float: left;
+}
+
+.c-export-help-request-form .success-message {
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    width: 100%;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+}
+
+@media (min-width: 720px) {
+    .c-export-help-request-form .success-message {
+        width: 100%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.c-export-help-request-form .success-message h2 {
+    margin-bottom: .5rem;
+}
+
+@media (min-width: 720px) {
+    .c-export-help-request-form .form-group {
+        margin-bottom: 2rem;
+    }
+    .c-export-help-request-form .status {
+        margin-bottom: 5rem;
+        margin-top: 1rem;
+    }
+    .c-export-help-request-form .email-field {
+        margin-bottom: 1rem;
+    }
+    .c-export-help-request-form .levels {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 66.66666667%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-export-help-request-form .levels {
+        width: 66.66666667%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-export-help-request-form .levels .form-ctas .cancel {
+        margin-bottom: 0;
+    }
+    .c-export-help-request-form .levels .headings {
+        margin-bottom: 3rem;
+        margin-top: 0;
+    }
+    .c-export-help-request-form .levels .input-group {
+        display: flex;
+        display: -webkit-flex;
+    }
+    .c-export-help-request-form .levels .input-group .first {
+        padding-right: 1rem;
+    }
+    .c-export-help-request-form .levels .input-group .last {
+        padding-left: 1rem;
+        padding-right: 0;
+    }
+    .c-export-help-request-form .levels .input-half {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-export-help-request-form .levels .input-half {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-export-help-request-form .levels .input-full {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 100%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-export-help-request-form .levels .input-full {
+        width: 100%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-export-help-request-form .success-message h2 {
+        margin-bottom: 1rem;
+    }
+    .c-export-help-request-form .email-disclaimer > p {
+        line-height: 1.5;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-export-help-request-form .email-disclaimer {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 58.33333333%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 720px) {
+    .c-export-help-request-form .email-disclaimer {
+        width: 58.33333333%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-export-help-request-form .email-disclaimer > p {
+        line-height: 1.5;
+    }
+    .c-export-help-request-form .levels {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 720px) {
+    .c-export-help-request-form .levels {
+        width: 50%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

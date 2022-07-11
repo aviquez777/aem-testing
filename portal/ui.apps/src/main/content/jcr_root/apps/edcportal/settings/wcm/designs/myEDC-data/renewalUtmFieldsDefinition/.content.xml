@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <renewalTrafficSrc
+        jcr:primaryType="nt:unstructured"
+        fieldName="renewalTrafficSrc"
+        valueFrom="cookie" />
+    <renewalUtmSource
+        jcr:primaryType="nt:unstructured"
+        fieldName="renewalUtmSource"
+        valueFrom="utm_source" />
+    <renewalUtmMedium
+        jcr:primaryType="nt:unstructured"
+        fieldName="renewalUtmMedium"
+        valueFrom="utm_medium" />
+    <renewalUtmCampaign
+        jcr:primaryType="nt:unstructured"
+        fieldName="renewalUtmCampaign"
+        valueFrom="utm_campaign" />
+    <renewalUtmContent
+        jcr:primaryType="nt:unstructured"
+        fieldName="renewalUtmContent"
+        valueFrom="utm_content" />
+    <renewalUtmTerm
+        jcr:primaryType="nt:unstructured"
+        fieldName="renewalUtmTerm"
+        valueFrom="utm_term" />
+</jcr:root>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:tags="[edc:access-type/premium]"
+        cq:template="/conf/edc/settings/wcm/templates/market-entry-advisors-premium-page"
+        jcr:primaryType="cq:PageContent"
+        sling:redirect="true"
+        sling:resourceType="edc/components/structure/marketentryadvisors/premium-page"
+        imagealignment="center"
+        publishdate="first">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <responsivegrid
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid">
+                <overviewtext
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="edc/components/content/overviewtext"/>
+                <text
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="edc/components/content/text">
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            width="4"/>
+                         <phone
+                            jcr:primaryType="nt:unstructured"
+                            width="12"/>
+                    </cq:responsive>
+                </text>
+                <text_copy
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="edc/components/content/text">
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            width="4"/>
+                         <phone
+                            jcr:primaryType="nt:unstructured"
+                            width="12"/>
+                    </cq:responsive>
+                </text_copy>
+                <text_copy_270251526
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="edc/components/content/text">
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            width="4"/>
+                         <phone
+                            jcr:primaryType="nt:unstructured"
+                            width="12"/>
+                    </cq:responsive>
+                </text_copy_270251526>
+                <cuntrygrid
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="edc/components/content/mea/countrygrid"/>
+                <contactprofile
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="edc/components/content/mea/contactprofile"/>
+            </responsivegrid>
+        </root>
+    </jcr:content>
+</jcr:root>

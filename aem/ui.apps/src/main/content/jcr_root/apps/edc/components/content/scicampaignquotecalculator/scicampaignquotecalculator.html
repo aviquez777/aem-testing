@@ -1,0 +1,89 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+<sly data-sly-use.cta1="${'com.edc.edcweb.core.models.ParamTextUrlLinks' @ linkText=properties.cta1text, linkUrl=properties.cta1link, linkTarget=properties.cta1target}"/>
+<sly data-sly-use.cta2="${'com.edc.edcweb.core.models.ParamTextUrlLinks' @ linkText=properties.cta2text, linkUrl=properties.cta2link, linkTarget=properties.cta2target}"/>
+<sly data-sly-use.cta3="${'com.edc.edcweb.core.models.ParamTextUrlLinks' @ linkText=properties.cta3text, linkUrl=properties.cta3link, linkTarget=properties.cta3target}"/>
+<sly data-sly-use.cta4="${'com.edc.edcweb.core.models.ParamTextUrlLinks' @ linkText=properties.cta4text, linkUrl=properties.cta4link, linkTarget=properties.cta4target}"/>
+<sly data-sly-use.ibTemplateObj="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+
+<section class="c-sci-quote-calculator full-width"   data-sly-test="${properties.title}"  data-event-component="${datalayer.componentTitle ? datalayer.componentTitle : 'SCI Campaign Quote Calculator'}" data-event-page="${datalayer.pageURL}" data-max-limit="${properties.amounttoinsuremaxvalue ? properties.amounttoinsuremaxvalue : '500000'}" data-version=${properties.version} data-event-type="form" data-engagement-type="3" data-event-level="1">
+    <div class="sci-quote-calculator" role="complementary" data-sly-attribute.id="${properties.linkid}" data-event-component="Quick Quote Calculator">
+        <div class="calculator-container">
+            <h2 class="title">
+                ${properties.title}
+            </h2>
+            <div class="content">
+                <div class="amount show">
+                    <label for="sci-quote-calculator-amount">${properties.amounttoinsure}</label>
+                    <div class="input-container">
+                        <input id="sci-quote-calculator-amount" type="text" placeholder="${properties.amounttoinsureplaceholder}" class="numeric" inputMode="numeric" maxlength="9"/>
+                        <div class="symbol"></div>
+                    </div>
+                    <span id="zero-amount" class="error">${properties.zeroamounttoinsure}</span>
+                </div>
+                <div class="amount-selected">
+                    <label htmlFor="sci-quote-calculator-amount-selected">${properties.amounttoinsureselected}</label>
+                    <span data-value="$" data-placement="start"></span>
+                </div>
+                
+                <div class="duration show">
+                    <label for="coverage-duration">${properties.coverageperiod}</label>
+                    <select id="coverage-duration" name="coverage-duration" disabled>
+                        <option value="0">${properties.coverageperiodunitplaceholder}</option>
+                        <option value="90">90 ${properties.coverageperiodunit}</option>
+                        <option value="180">180 ${properties.coverageperiodunit}</option>
+                    </select>
+                </div>
+                <div class="duration-selected">
+                    <label htmlFor="coverage-duration">${properties.coverageperiodselected}</label>
+                    <span data-value="${properties.coverageperiodunit}" data-placement="end"></span>
+                </div>
+                <div class="payment-time show">
+                    <label for="coverage-payment-time">${properties.paymentterms}</label>
+                    <select id="coverage-payment-time" name="coverage-payment-time" disabled>
+                        <option value="0">${properties.paymentermsplaceholder}</option>
+                        <option value="0-90">${properties.paymenttermsoptionone} ${properties.coverageperiodunit}</option>
+                        <option value="91-180">${properties.paymenttermsoptiontwo} ${properties.coverageperiodunit}</option>
+                    </select>
+                </div>
+                <div class="payment-time-selected">
+                    <label htmlFor="payment-time">${properties.paymenttermsselected}</label>
+                    <span data-value="${properties.coverageperiodunit}" data-placement="end"></span>
+                </div>
+            </div>
+            <div id="coverage-error" class="notifications amount">${properties.coverageerrormessage @ context='html'}</div>
+            <div id="coverage-success" class="notifications valid">
+                <p>${properties.coveragesuccess @ context="html"}</p>
+                <h2><span id="min-coverage-amount"></span> - <span id="max-coverage-amount"></span><sup>*</sup></h2>
+            </div>
+        </div>
+        
+    </div>
+    <div class="sci-quote-calculator-disclaimer ${!wcmmode.disabled ? 'show' : ''}">
+        <div class="calculator-container">
+        <!--// Check if this button should be here //-->
+            <div class="actions">
+                <a class="button edc-primary-btn btn-cta" href="${cta4.linkUrl}" target="${cta4.linkTarget}" data-event-name="Button click" data-english-text="${properties.startappFormButtonEnTxt}"><span>${cta4.linkText}</span></a>
+                <button type="button" class="no-btn reset" data-event-name="Button click" data-english-text="${properties.resetFormButtonEnTxt}">${cta1.linkText}</button>
+            </div>
+            <div class="wrong-amount ${!wcmmode.disabled ? 'show' : ''}">
+                <sly data-sly-test.attrs2="${['aria-label','Learn more about EDC Portfolio Credit Insurance'] @ join = '='}"/>
+                <div data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='link', isUsedForModal='nomodal', buttonstate='enabled', link=cta2.linkUrl, customattribs=attrs2, buttontext=cta2.linkText, targtet=cta2.linkTarget, buttoncssclasses='button edc-primary-btn btn-cta'}"  data-sly-unwrap></div>
+                <div class="note disclaimer">
+                    ${properties.schedule @ context="html"}
+                </div>
+            </div>
+            <div class="valid-amount ${!wcmmode.disabled ? 'show' : ''}">
+                <div class="note disclaimer">
+                    ${properties.disclaimer @ context="html"}
+                    <sly data-sly-test.attrs1="${['aria-label','Send a Question','data-event-name','Button click','data-english-text',properties.sendQuestionFormButtonEnTxt] @ join = '='}"/>
+                    <div data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='link', isUsedForModal='nomodal', buttonstate='enabled', link=cta3.linkUrl, customattribs=attrs1, buttontext=cta3.linkText, targtet=cta3.linkTarget}"  data-sly-unwrap></div>                    
+                </div>
+                <div data-sly-resource="${'shareyourdetails-form' @ resourceType='edc/components/content/shareyourdetailsform'}"></div>
+            </div>
+        </div>
+    </div>
+</section>
+ 

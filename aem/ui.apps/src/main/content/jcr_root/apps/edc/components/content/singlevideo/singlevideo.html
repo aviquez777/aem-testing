@@ -1,0 +1,14 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.videoid}"/>
+<sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+
+<section class="c-single-video ${properties.videosize}" data-sly-test="${properties.videoid}" data-event-engagement="1" data-event-action="main body"  data-event-level="primary" data-event-text="play">
+    <div class="description" data-sly-test="${properties.title || properties.description}">
+        <h2 data-sly-test="${properties.title}">${properties.title}</h2>
+        <div class="content">${properties.description @ context='html'}</div>
+    </div>
+    <sly data-sly-test.playtext="${'Play' @ i18n}"/>
+    <sly data-sly-call="${commonTemplates.youtube @ videoId=properties.videoid, desktop=properties.fileReference, tablet=properties.tabletFileReference, phone=properties.teaserimage, alttext=properties.imagealttext, playtext=playtext}"/>
+</section>
+

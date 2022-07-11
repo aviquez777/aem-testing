@@ -1,0 +1,163 @@
+# deny everything and allow specific entries
+#/0023 { /type "allow" /glob "* /content/*" }  # disable this rule to allow mapped content only
+
+# enable specific mime types in non-public content directories
+/0040 { /type "allow" /glob "* *.mp4 *"   }  # enable mp4
+/0041 { /type "allow" /glob "* /etc.clientlibs*.css *"   }  # enable css
+/0042 { /type "allow" /glob "* *.gif *"   }  # enable gifs
+/0043 { /type "allow" /glob "* *.ico *"   }  # enable icos
+/0044 { /type "allow" /glob "* /etc.clientlibs*.js *"    }  # enable javascript
+/0045 { /type "allow" /glob "* *.png *"   }  # enable png
+/0046 { /type "allow" /glob "* *.swf *"   }  # enable flash
+/0047 { /type "allow" /glob "* *.svg *"   }  # enable SVG
+/0048 { /type "allow" /glob "* *.woff *"  }  # enable woff
+/0049 { /type "allow" /glob "* *.ttf *"   }  # enable ttf
+/0050 { /type "allow" /glob "* *.eot *"   }  # enable eot
+/0051 { /type "allow" /glob "* *.jpg *"   }  # enable jpg
+/0052 { /type "allow" /glob "* *.JPG *"   }  # enable jpg
+/0053 { /type "allow" /glob "* *.jpeg *"   }  # enable jpeg
+/0054 { /type "allow" /glob "* /etc/designs/*.js *"    }  # enable javascript
+
+# enable features
+/0055 { /type "allow" /url  "/bin/telpFormServlet*" } # allow TELP FORM submission call
+/0056 { /type "allow" /method "POST" /url "/bin/myedc/webinarservice*" } # allow to call myedc webinar services
+/0057 { /type "allow" /method "GET" /url "/bin/myedc/webinarservice*" } # allow to call myedc webinar services
+/0058 { /type "allow" /method "GET" /url  "/bin/ehhFilterSearchServlet*" } # allow EHH Filter submission call
+/0059 { /type "allow" /method "GET" /url "/bin/webinarstatus*" } # allow to call webinar status services
+#/0060 { /type "allow" /url "POST /content/[.]*.form.html" }  # allow POSTs to form selectors under content
+#/0061 { /type "allow" /url "* /libs/cq/personalization/*" }  # enable personalization
+#/0062 { /type "allow" /url "POST /content/[.]*.commerce.cart.json" }  # allow POSTs to update the shopping cart
+/0063 { /type "allow" /method "POST" /url "/bin/progressiveProfilingFormServlet*" } # allow POST method for progressing profile feature(edc)
+/0064 { /type "allow" /method "POST" /url "/bin/sessionInfoServlet*" } # allow POST method for mea session info(edc)
+/0065 { /type "allow" /method "GET"  /url "/bin/qnaMakerServlet*" } # allow to call qna service
+/0066 { /type "allow" /method "POST" /url "/bin/apsgFormServlet*" } # allow to call to apsg service
+/0067 { /type "allow" /method "POST"  /url "/bin/brokerForm*" } # allow to call broker form service   
+/0068 { /type "allow" /method "POST" /url "/bin/feedbackFormServlet*" } # allow to call feedbackForm services
+/0069 { /type "allow" /method "POST" /url "/bin/myedc/frontController*" } # allow to call myedc services
+/0070 { /type "allow" /method "GET" /url  "/bin/redirectErrors*" } # allow to call my edc redirect error service
+/0071 { /type "allow" /method "GET" /url "/bin/myedc/frontController*" } # allow to call myedc services
+/0072 { /type "allow" /method "GET" /url "/bin/myedc/userstate*" } # allow to get user login status
+/0073 { /type "allow" /method "GET" /url  "/bin/contentTransaction*" } # allow to call progressive profiling content transaction service
+/0074 { /type "allow" /method "GET" /url  "/bin/sitemapgenerator*" } # allow to call sitemap generator service
+/0075 { /type "allow" /method "POST" /url  "/bin/cimRequestForm*" } # allow cim form submission call
+
+# deny content grabbing
+/0076 { /type "deny"  /glob "GET */_jcr_content.json*" }
+/0077 { /type "deny"  /glob "GET */jcr:content.json*" }
+/0078 { /type "deny"  /glob "GET */_jcr_content.feed*" }
+/0079 { /type "deny"  /glob "GET */jcr:content.feed*" }
+/0080 { /type "deny"  /glob "GET *.jcr:content.feed*" }
+/0081 { /type "deny"  /glob "GET *.infinity.json*" }
+/0082 { /type "deny"  /glob "GET *.tidy.json*"     }
+/0083 { /type "deny"  /glob "GET *.sysview.xml*"   }
+/0084 { /type "deny"  /glob "GET *.docview.json*"  }
+/0085 { /type "deny"  /glob "GET *.docview.xml*"   }
+/0086 { /type "deny"  /glob "GET *.*[0-9].json*"   }
+/0087 { /type "deny"  /glob "GET *.feed.xml*"      }
+#    /0088 { /type "allow" /glob "GET *.1.json*"        }  # allow one-level json requests
+
+# deny query
+/0090 { /type "deny"  /glob "* *.query.json*" }
+
+#Elham's changes
+/0091 { /type "deny"  /glob "GET /content.pages.json*"      }
+/0092 { /type "deny"  /glob "GET /content.languages.json*"      }
+/0093 { /type "deny"  /glob "GET /content.blueprint.json*"      }
+/0094 { /type "deny"  /glob "GET /content.feed.html*"      }
+
+# Required by Asset Share
+/0095 { /type "allow" /url "/libs/dam/lightbox.json" }
+/0097 { /type "allow" /url "/libs/dam/lightbox" }
+/0098 { /type "allow" /url "/libs/dam/drm" }
+/0099 { /type "allow" /url "/libs/granite/csrf/token.json" }
+/0100 { /type "allow" /url "/libs/wcm/core/content/pageinfo.json" }
+/0102 { /type "allow" /url "/home/users/*/profile/querybuilder/savedsearch*" }
+/0103 { /type "allow" /url "/libs/cq/security/userinfo.json" }
+/0104 { /type "allow" /url "/libs/cq/i18n/dict.en.json" }
+# /home/users/x/y/profile/lightbox/default/th9X93NN9F.jpg.assetdownload.zip?_charset_=utf-8
+/0105 { /type "allow" /url "/home/users/*/lightbox/*.assetdownload.zip" }
+
+# Asset Share: Tags
+/0110 { /type "allow" /url "/content/dam/*/jcr:content.infinity.json" }
+/0111 { /type "allow" /url "/libs/wcm/core/resources/languages.overlay.infinity.json" }
+# /etc/tags.tags.json, /etc/tags.json, /etc/tags/properties/orientation.infinity.json, /etc/tags/*.infinity.json etc
+/0112 { /type "allow" /url "/etc/tags*json" }
+
+# EHH Feedback form
+/0113 { /type "allow" /method "POST" /url  "/bin/yesnoquestionformservlet*" } # allow Ehh feedback form submission
+/0114 { /type "allow" /method "GET" /url  "/bin/myedc/userprofiletype*" } # gets user profile type
+/0115 { /type "allow" /method "POST" /url  "/bin/ehhTeamRequestForm*" } # EHH team request form
+
+# Site admin:
+/0130 { /type "allow" /url "/libs/wcm/core/content/search/searchpanel/facets.overlay.infinity.json" }
+
+#Company Insight
+/0131 { /type "allow" /url "/bin/myedc/countrylist.json*" }
+/0132 { /type "allow" /method "POST" /url "/bin/myedc/ciCompanySearch*" }
+
+#Triage tool
+/0133 { /type "allow" /url "/bin/triagetool*" }
+
+#CompanyInsight
+/0134 { /type "allow" /method "GET" /url "/bin/myedc/ciCompanySearch*" }
+
+#Webinar
+/0135 { /type "allow" /url "/bin/myedc/mydashboard*" }
+
+## AMSSEC034 Deny dot dot semicolon attack
+/0136 { /type "deny" /url '.*/[.][.];/.*' }
+
+## AMSSEC033 block user and loginstatus servlet endpoints
+/000136b  { /type "deny" /url '.*(loginstatus|userinfo|currentuser).*'  }
+
+#BCAP
+/0137 { /type "allow" /method "GET"  /url "/bin/gatedContentServlet*" }
+/0138 { /type "allow" /method "POST"  /url "/bin/gatedContentServlet*" }
+
+## Search
+/0139 { /type "allow" /method "GET" /url "/content/edc/*/*.searchresults.json/*" }
+
+## Consent Request Gating servlet
+/0140 { /type "allow" /method "GET" /url "/bin/myedc/crgservlet" }
+/0141 { /type "allow" /method "POST" /url "/bin/myedc/crgservlet" }
+
+## Business Connections
+/0142 { /type "allow" /method "GET" /url "/bin/myedc/tokenservice*" }
+
+## Oauth Redirect
+/0143 { /type "allow" /method "GET" /url "/bin/en/oauthredir" }
+/0144 { /type "allow" /method "GET" /url "/bin/fr/oauthredir" }
+
+## Supplier registration
+/0145 { /type "allow" /method "POST" /url "/bin/gps*" }
+
+## Content Fix
+/0146 { /type "deny" /path "/content/" }
+/0147 { /type "deny" /path "/content/*/*.*.json*" }
+/0148 { /type "deny" /path "/content/*/*.*.conf*" }
+/0149 { /type "deny" /path "/content/*/*.*.doc*" }
+/0150 { /type "allow" /extension '(pptx|xlsx|docx|doc|xls|ppt)' /path "/content/dam/edc/*" }  # disable this rule to allow mapped content only
+
+
+/0159 { /type "allow"  /glob "GET */_jcr_content.articlesbytagid.json*" }
+/0160 { /type "allow"  /glob "GET */_jcr_content.amchartmap.json*" }
+
+/0161 { /type "allow" /method "GET" /url "/content/edc/*/*.edcsearchresults.json*" }
+/0162 { /type "allow" /method "GET" /url "/content/edc/*/*.covidtrigetool.json*" }
+/0163 { /type "allow" /method "GET" /url "/content/edc/*/*.countrylist.json*" }
+/0164 { /type "allow" /glob "* /content/edc/*/premium/*/*.html*" }
+/0165 { /type "allow" /glob "* /content/edc/*/premium/*/*.html*" }
+/0166 { /type "allow" /url "/content/dam/edc/seoadmin/robots.txt" }
+
+##Select Credit Insurance Campaign - Quote Calculator Enhancements
+/0167 { /type "allow" /method "GET" /url  "/bin/shareDetailsServlet*" } # allow Contact Details form GET call
+/0168 { /type "allow" /method "POST" /url  "/bin/shareDetailsServlet*" } # allow  Contact Details form POST call
+
+##Online Payments
+/0169 { /type "allow" /method "POST" /url  "/bin/op*" } # allow Moneris form submission call
+
+# allow Upcoming Webinars servlet
+/0170 { /type "allow" /method "GET" /url "/bin/upcomingeventsservlet.json" }
+
+#MSTLFormServlet
+/171 { /type "allow" /method "GET"  /url "/bin/mstlFormServlet*" }

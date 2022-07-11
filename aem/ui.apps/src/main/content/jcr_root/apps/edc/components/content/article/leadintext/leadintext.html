@@ -1,0 +1,5 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = (!properties.text)}"/>
+
+
+<p data-sly-test="${properties.text}" class="lead-in-copy xlarge">${properties.text}</p>

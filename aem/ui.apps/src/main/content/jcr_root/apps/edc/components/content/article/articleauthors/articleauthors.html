@@ -1,0 +1,33 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.model="com.edc.edcweb.core.components.ArticleAuthors"/>
+<sly data-sly-use.ewmodel="${'com.edc.edcweb.core.models.ExportWiseLogo'}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty=wcmmode.edit}"/>
+
+<div class="authors" data-sly-list="${model.biographies}">
+    <sly data-sly-test.authorPath="${itemList.index == 0 ? model.primaryAuthorPath : model.secondaryAuthorPath}" />
+    <sly data-sly-test.displayBio="${itemList.index == 0 ? model.primaryShowBio == 'yes' : model.secondaryShowBio == 'yes'}" />
+    <sly data-sly-test.shortBio="${itemList.index == 0 ? model.primaryShortBio : model.secondaryShortBio}" />
+    <div class="author article" itemScope itemType="http://schema.org/Person"><a href="${authorPath}" target="_self">
+        <img src="${item.fileReference}" alt="${item.imgalt}" itemProp="image" data-sly-test="${item.fileReference}" width="100" height="100"/>
+        <img src="/content/dam/edc/system/author-default.jpg" alt="" itemProp="image"  data-sly-test="${!item.fileReference}" width="100" height="100"/></a>
+        <div class="info">
+            <a href="${authorPath}" target="_self"><span class="name" itemprop="name">${item.authorname}</span></a>
+            <span class="position" data-sly-test="${item.jobtitle}">${item.jobtitle}</span>
+            <span class="company" data-sly-test="${item.company}">${item.company}</span>
+            <a data-sly-test="${item.phone}" href="tel:${item.phone}">
+                <span itemProp="telephone" class="phone">${item.phone}</span>
+            </a>
+            <a data-sly-test="${item.email}" href="mailto:${item.email}">
+                <span itemProp="email" class="email">${item.email}</span>
+            </a>
+            <a href="${item.linkedin}" class="linkedin" target="${item.linkTarget}" title="Linkedin - ${item.authorname}" data-sly-test="${item.linkedin}"><span>${item.authorname}</span></a>
+        </div>
+        <div class="biography" data-sly-test="${displayBio}">
+            ${shortBio ? shortBio : item.biography @ context='html'}
+        </div>
+    </div>
+    <div data-sly-test="${ewmodel.showOnPage && itemList.last}">
+        <a href="${ewmodel.linkUrl}" target="${ewmodel.linkTarget}" data-sly-test="${ewmodel.linkUrl}"><img src="${ewmodel.logoReference}" alt="${ewmodel.altText}"/></a>
+        <p><a href="${ewmodel.linkUrl}" target="${ewmodel.linkTarget}" data-sly-test="${ewmodel.linkText}">${ewmodel.linkText}</a></p>
+    </div>
+</div>

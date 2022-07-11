@@ -1,0 +1,40 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.model="com.edc.edcweb.core.models.LeftHandNavigationNew" />
+<sly data-sly-test.pages="${model.pages}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !pages}"/>
+<sly data-sly-use.dropdownTemplates="${'/apps/edc/components/common/dropdown.html'}" />
+<nav class="c-left-hand-nav-new ${model.noBottomMargin ? 'no-b-margin' : ''}">
+    <div class="left-hand main-nav showMobile">
+        <button class="hamburger-link">
+            <em class="hamburger-icon"></em>${model.navTitle}
+        </button>
+        <div class="modal hide">
+            <div class="modal-shade"></div>
+            <div class="modal-content">
+                <p>${model.navTitle}</p>
+                <button class="edc-btn-icon modal-close">
+                    <span></span>
+                </button>
+                <ul class="modal-menu"  data-sly-list="${pages}">
+                    <li class="parent-link md">
+                        <sly data-sly-test.childPages="${item.children}"/>
+                        <sly data-sly-test.parentKey="${itemList.index}"/>
+                        <sly data-sly-use.linkresolver="${'com.edc.edcweb.core.helpers.LinkExternalizer' @srcPath=item.page.properties['substitutepath'] ? item.page.properties['substitutepath'] : item.page.path, scheme=request.scheme}"/>
+                        <a class="link ${childPages ? 'has-subitems' : 'expanded'}" x-cq-linkchecker="valid" target="${model.target}" href="${linkresolver.LinkWithHtmlExtension}" parent-key="${parentKey}" aria-expanded="false" button-key="${parentKey}">
+                           ${item.page.navigationTitle ? item.page.navigationTitle : item.page.title}<span role="button" aria-label="${model.expandLabel}" button-key="${parentKey}"></span>
+                        </a>
+                        <ul data-sly-list.subItem="${childPages}">
+                            <li>
+                                <sly data-sly-use.linkresolver="${'com.edc.edcweb.core.helpers.LinkExternalizer' @srcPath=subItem.page.properties['substitutepath'] ? subItem.page.properties['substitutepath'] : subItem.page.path, scheme=request.scheme}"/>
+                                <a class="sublink ${(currentPage.path == subItem.page.path) ? 'selected' : ''}" sublink-key="${parentKey}" x-cq-linkchecker="valid" target="${model.target}" href="${linkresolver.LinkWithHtmlExtension}">
+                                    ${subItem.page.navigationTitle ? subItem.page.navigationTitle : subItem.page.title}
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+

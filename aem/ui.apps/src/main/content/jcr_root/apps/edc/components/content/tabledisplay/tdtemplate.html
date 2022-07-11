@@ -1,0 +1,86 @@
+<!--/** 
+    === Generic thead element template.
+**/-->
+<template data-sly-template.theadBasic="${@ resource}">
+    <sly data-sly-test.hvariant="${resource.tableVariant == 'stickyfc'? 'column-sticky' : ''}"/>
+    <sly data-sly-test.hvariant2="${resource.tableVariant == 'stickyhf'? 'head-sticky' : ''}"/>
+    <sly data-sly-test.hvariant3="${resource.tableVariant == 'stickyho'? 'head-sticky' : ''}"/>
+    <sly data-sly-test.isTableSortable="${resource.isTableSortable == 'sortable'? 'double-arrow' : ''}"/>
+
+    <thead class="${hvariant} ${hvariant2} ${hvariant3}" data-sly-list.hRowObj="${resource.tableHeaderRows.getChildren}">
+        <tr>
+            <sly data-sly-list.hRowItem="${hRowObj.getChildren}">
+                <sly data-sly-list.hRowItemChild="${hRowItem.getChildren}">
+                    <th id="td-head-${hRowObjList.index}-${hRowItemChildList.index}" colspan="${hRowItemChild.hCellSpan}" rowspan="${hRowItemChild.hRowSpan}">
+                        <span class="${isTableSortable}" data-sly-resource="${'header{0}{1}' @ format=[hRowObjList.index, hRowItemChildList.index], resourceType='edc/components/content/tabledisplay/tdtext'}"></span>
+                    </th>
+                </sly>
+            </sly>
+        </tr>
+    </thead>
+</template>
+<!--/**
+    === Generic tbody element template.
+**/-->
+ <template data-sly-template.tbodyBasic="${@ resource}">
+    <sly data-sly-test.bvariant="${resource.tableVariant == 'stickyfc'? 'column-sticky' : ''}"/>
+    <sly data-sly-test.rowType="${resource.rowType == 'evenodd'? 'row-even-odd' : ''}"/>
+    
+    <tbody class="${bvariant} ${rowType}" data-sly-list.bRowObj="${resource.tableBodyRows.getChildren}">
+        <sly data-sly-test.rowVariantParent="${bRowObj.rowVariant == 'parentrow'? 'row-parent' : ''}"/>
+        <sly data-sly-test.rowVariantParentLine="${bRowObj.rowVariant == 'parentrowline'? 'row-parent-line' : ''}"/>
+        <sly data-sly-test.rowVariantChild="${bRowObj.rowVariant == 'childrow'? 'row-child' : ''}"/>
+        <sly data-sly-test.rowVariantChildLine="${bRowObj.rowVariant == 'childrowline'? 'row-child-line' : ''}"/>
+        <sly data-sly-test.isTblSortable="${resource.isTableSortable == 'sortable'? 'sortable' : ''}"/>
+
+        <tr class="${rowVariantParent} ${rowVariantParentLine} ${rowVariantChild} ${rowVariantChildLine}">
+            <sly data-sly-list.bRowObjChild="${bRowObj.getChildren}">
+                <sly data-sly-test="${bRowObjChild.name == 'tbodyRowCell'}">
+                    <sly data-sly-list.bRowItem="${bRowObj.getChildren}">
+                        <sly data-sly-list.bRowItemChild="${bRowItem.getChildren}">
+                            <td colspan="${bRowItemChild.bCellSpan}" rowspan="${bRowItemChild.bRowSpan}">
+                                <sly data-sly-resource="${'bodyCell{0}{1}' @ format=[bRowObjList.index, bRowItemChildList.index], resourceType='edc/components/content/tabledisplay/tdtext'}" data-sly-unwrap></sly>
+                            </td>
+                        </sly>
+                    </sly>
+                </sly>
+            </sly>
+        </tr>
+    </tbody>
+</template>
+<!--/**
+=== Generic tfoot element template.
+**/-->
+ <template data-sly-template.tfootBasic="${@ resource}">
+    <sly data-sly-test.fvariant="${resource.tableVariant == 'stickyfc'? 'column-sticky' : ''}"/>
+    <sly data-sly-test.fvariant2="${resource.tableVariant == 'stickyhf'? 'footer-sticky' : ''}"/>
+
+    <tfoot data-sly-test="${resource.isTableFooterRowReady}" class="${fvariant} ${fvariant2}" data-sly-list.fRowObj="${resource.tableFooterRows.getChildren}">
+        <tr>
+            <sly data-sly-list.fRowItem="${fRowObj.getChildren}">
+                <sly data-sly-list.fRowItemChild="${fRowItem.getChildren}">
+                    <td colspan="${fRowItemChild.fCellSpan}" rowspan="${fRowItemChild.fRowSpan}">
+                        <sly data-sly-resource="${'footer{0}{1}' @ format=[fRowObjList.index, fRowItemChildList.index], resourceType='edc/components/content/tabledisplay/tdtext'}" data-sly-unwrap></sly>
+                    </td>
+                </sly>
+            </sly>
+        </tr>
+    </tfoot>
+</template>
+
+<!--/**    
+************************************************************
+    === TABLES.
+************************************************************
+ BASIC
+ **/-->
+<template data-sly-template.tdVersionOne="${@ resource}">
+    <sly data-sly-test.tblVariant="${resource.tableVariant == 'stickyhf' || resource.tableVariant == 'stickyfc' || resource.tableVariant == 'stickyho'? 'c-table-display__sticky' : ''}"/>
+    <sly data-sly-test.isTblSortable="${resource.isTableSortable == 'sortable'? 'sortable' : ''}"/>
+
+    <table class="${tblVariant}" data-is-sortable="${isTblSortable}">
+        <div data-sly-call="${theadBasic @ resource=resource}" data-sly-unwrap></div>
+        <div data-sly-call="${tbodyBasic @ resource=resource}" data-sly-unwrap></div>
+        <div data-sly-call="${tfootBasic @ resource=resource}" data-sly-unwrap></div>
+    </table>
+</template>

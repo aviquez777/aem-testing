@@ -1,0 +1,39 @@
+.c-blue-background-main-container {
+    width: 100vw;
+    height: auto;
+    position: relative;
+    margin-left: -50vw;
+    left: 50%;
+}
+
+.c-blue-background-main-container.default-blue-background {
+    background-color: #f4f8fc;
+}
+
+.c-blue-background-main-container .c-blue-background-container {
+    margin: 0 auto;
+    min-width: 21.438rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.c-blue-background-main-container .c-blue-background-container.full-width {
+    min-width: none;
+    max-width: none;
+    padding: 0;
+    width: 100vw;
+}
+
+@media (min-width: 720px) {
+    .c-blue-background-main-container .c-blue-background-container {
+        max-width: 45rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-blue-background-main-container .c-blue-background-container {
+        max-width: 71.25rem;
+    }
+}

@@ -1,0 +1,30 @@
+.c-news-room-header {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 0 15px;
+}
+
+.c-news-room-header .breadcrumb {
+    padding-left: 0;
+}
+
+.c-news-room-header .title {
+    margin: 1.5rem 0 1rem;
+}
+
+.c-news-room-header .meta-info {
+    font-size: 14px;
+}
+
+.c-news-room-header .location {
+    text-transform: uppercase;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    margin-left: 1.625rem;
+}
+
+@media (min-width: 720px) {
+    .c-news-room-header {
+        margin-bottom: 3rem;
+    }
+}

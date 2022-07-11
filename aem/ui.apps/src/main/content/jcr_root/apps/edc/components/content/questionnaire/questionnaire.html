@@ -1,0 +1,99 @@
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+<sly data-sly-use.dropdownTemplates="${'/apps/edc/components/common/dropdown.html'}" />
+<sly data-sly-use.model="com.edc.edcweb.core.models.questionnaire.Questionnaire" />
+<sly data-sly-use.formMessages="com.edc.edcweb.core.models.FormCommonMessages"/>
+<sly data-sly-use.modalTemplate="/apps/edc/components/common/modals.html"/>
+<sly data-sly-use.buttonTemplate="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+
+<div class="c-questionnaire" data-json-url="${model.questionnairejson}" data-is-dynamic="${model.isDynamic}" data-approval="${model.approvalvalue}" data-rejection="${model.rejectionvalue}" data-event-component="questionnaire" data-event-type="form" data-event-name="form submit - questionnaire" data-event-action="questionnaire" data-engagement-type="1" data-event-level="1" data-destination-page="#">
+    <input type="hidden" name="q-result" />
+    <div class="q-header">
+        <p class="l-spacer"></p>
+        <p class="q-number" data-question-text="${model.questiontext}" data-review-answers-text="${model.reviewyouranswers}" data-end-text="${model.endofquestionnaire}"><span class="q-number-text">${model.questiontext}</span> <span class="q-number-number"></span></p>
+        <div data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled', buttontext=model.resetbtntext, buttoncssclasses='unstyled hide'}"  data-sly-unwrap></div>
+        <p class="r-spacer"></p>
+    </div>
+    <div class="q-body">
+        <div class="q-content hide">
+            <h3 class="q-text">
+                <span></span>
+                <!--/* Modal */-->
+                <sly data-sly-call="${modalTemplate.moreinfomodal @ modalAriaOpen = modal.modalariaopen, modalAriaClose = model.modalariaclose}"/>
+            </h3>
+            <p class="q-subtext"></p>
+            <div class="q-options">
+                <div data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled', buttontext='', buttontype='primary-outline'}"  data-sly-unwrap></div>
+                <div data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled', buttontext='', buttontype='primary-outline'}"  data-sly-unwrap></div>
+            </div>
+            <div class="q-dropdown hide">
+                <div class="c-dropdown">
+                    <div class="dropdown-overlay">
+                        <label for="countries-${uuid}">${model.dropdownlabel}</label>
+                        <div class="dropdown-container">
+                            <div class="dropdown-title">
+                                <span class="label-text">${model.dropdownlabel}</span>
+                                <span class="close-btn"></span>
+                            </div>
+                            <select name="countries" id="countries-${uuid}" class="form-control ui selection dropdown" required="true" data-no-url="true">
+                                <option value="" hidden=""></option>
+                            </select>
+                            <span class="error dropdown-error" data-req-message="${formErrorMessages.required}" data-select-one-message="${formErrorMessages.required}"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="q-multi-dropdown hide">
+                <div class="c-dropdown">
+                    <div class="dropdown-overlay">
+                        <label for="multi-countries-${uuid}">${model.dropdownlabel}</label>
+                        <div class="dropdown-container ui-multiple">
+                            <div class="dropdown-title">
+                                <span class="label-text">${model.dropdownlabel}</span>
+                                <span class="close-btn"></span>
+                            </div>
+                            <select name="multi-countries" id="multi-countries-${uuid}" class="form-control ui selection dropdown" multiple="" data-limit="" validation-rule="none">
+                                <option value="" hidden=""></option>
+                                <option value="clear-all">${model.multiclearalltext}</option>
+                                <option value="" special-data=""></option>
+                            </select>
+                            <span class="error dropdown-error" data-req-message="${formErrorMessages.required}" data-select-one-message="${formErrorMessages.required}" data-no-url-message="${formErrorMessages.nourl}"></span>
+                            <div class="selection-container">
+                                <p class="selection" data-singular-text="${model.multisingulartext}" data-plural-text="${model.multipluraltext}">(0) ${model.multipluraltext}</p>
+
+                                <div data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='disabled', buttontext=model.multiconfirmtext, btntype='button', buttoncssclasses='secondary-outline'}"  data-sly-unwrap></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="q-summary hide">
+            <p class="q-title"></p>
+            <hr class="sm" />
+        </div>
+        <div class="q-results hide">
+            <h3 class="results-title" data-approved="${model.approvedtitle}" data-rejected="${model.rejectedtitle}"></h3>
+            <p class="results-msg" data-approved="${model.approvedmsg}" data-rejected="${model.rejectedmsg}"></p>
+        </div>
+        <div class="anchor-container hide">
+            <span class="circle-button" role="button" aria-label="scrolls to the button of the answers"></span>
+        </div>
+        <div class="q-loading">
+            <h3>${model.loadingtext}</h3>
+        </div>
+    </div>
+    <div class="q-footer">
+        <div data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='disabled', buttontext=model.nextbtntext, btntype='button', buttoncssclasses='btn-next'}"  data-sly-unwrap></div>
+
+        <div data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled', buttontext=model.submitbtntext, btntype='button', buttoncssclasses='btn-submit hide'}"  data-sly-unwrap></div>
+    </div>
+    <!--/* Bug 163351 */-->
+    <div class="q-special-footer hide" data-sly-test="${model.rejectedctaurl && model.rejectedctatext}">
+        <sly data-sly-use.linkresolver="${'com.edc.edcweb.core.helpers.LinkExternalizer' @srcPath=model.rejectedctaurl, scheme=request.scheme}"/>
+        <a href="${linkresolver.LinkWithHtmlExtension}" class="button edc-primary-button">
+            <span>${model.rejectedctatext}</span>
+        </a>
+    </div>
+    <!--/* End Bug 163351 */-->
+</div>

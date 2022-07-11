@@ -1,0 +1,169 @@
+<template data-sly-template.fieldItem="${@ properties, profileType, fieldDefinition, fieldValue, lang, uuid, fieldErrors, currentCountry, tooltipTemplate, dropdownTemplate, multiSelectTemplate, errors}">
+  <sly data-sly-test.labelVar="${lang}Label"/>
+  <sly data-sly-test.label="${fieldDefinition[labelVar]}"/>
+  <sly data-sly-test.placeholderVar="${lang}PlaceHolder"/>
+  <sly data-sly-test.placeholder="${fieldDefinition[placeholderVar]}"/>
+  <sly data-sly-test.fieldType="${fieldDefinition['fieldType']}"/>
+
+  <sly data-sly-test.fieldName="${fieldDefinition['fieldName']}"/>
+  <sly data-sly-test.isRequired="${fieldDefinition['isRequired']}"/>
+  <sly data-sly-test.cssClass="${fieldDefinition['cssClass']}"/>
+  <sly data-sly-test.formGroupClass="${fieldDefinition['formGroupClass']}"/>
+  <sly data-sly-test.minLength="${fieldDefinition['minLength']}"/>
+  <sly data-sly-test.maxLength="${fieldDefinition['maxLength']}"/>
+  <sly data-sly-test.validation="${fieldDefinition['validation'] ? fieldDefinition['validation'] : 'required'}"/>
+  <sly data-sly-test.capitalize="${fieldDefinition['capitalize']}"/>
+  <sly data-sly-test.validationRule="${fieldDefinition['validationRule']}"/>
+  <sly data-sly-test.dataMask="${fieldDefinition['dataMask']}"/>
+  <sly data-sly-test.startFormRow="${fieldDefinition['startFormRow']}"/>
+  <sly data-sly-test.endFormRow="${fieldDefinition['endFormRow']}"/>
+  <sly data-sly-test.dataNoUrl="${fieldDefinition['dataNoUrl']}"/>
+  
+  <sly data-sly-test.tempFieldName=""/>
+  <!--/** Check for Extra Info   **/-->
+  <sly data-sly-test.extraInfoPath="/apps/edcportal/settings/wcm/designs/myEDC-data/formFieldsVariations/${profileType}/${fieldName}"/>
+  <sly data-sly-use.extraInfo="${'com.edc.edcportal.core.models.FormExtraInfoObjects' @ path = extraInfoPath}"/>
+  <sly data-sly-test.fieldExtraTitle="${extraInfo.options.title}"/>
+  <sly data-sly-test.fieldExtraSubtitle="${extraInfo.options.subtitle}"/>
+  <sly data-sly-test.fieldExtraTooltip="${extraInfo.options.tooltip}"/>
+  <sly data-sly-test.fieldExtraLabel="${extraInfo.options.label}"/>
+  <sly data-sly-test.fieldExtraPlaceholder="${extraInfo.options.placeholder}"/>
+  <sly data-sly-test.fieldExtraFieldType="${extraInfo.options.fieldtype}"/>
+  <sly data-sly-test.fieldExtraCssClass="${extraInfo.options.cssClass}"/>
+  <sly data-sly-test.fieldExtraGroupClass="${extraInfo.options.formGroupClass}"/>
+  <sly data-sly-test.fieldExtraStartFormRow="${extraInfo.options.startFormRow}"/>
+  <sly data-sly-test.fieldExtraEndFormRow="${extraInfo.options.endFormRow}"/>
+  <sly data-sly-test.fieldExtraValidationRule="${extraInfo.options.validationRule}"/>
+  <!--/** Field Extra Options **/-->
+  <sly data-sly-test.label="${fieldExtraLabel ? fieldExtraLabel : label}"/>
+  <sly data-sly-test.placeholder="${fieldExtraPlaceholder? fieldExtraPlaceholder : placeholder}"/>
+  <sly data-sly-test.fieldType="${fieldExtraFieldType ? fieldExtraFieldType : fieldType}"/>
+  <sly data-sly-test.cssClass="${fieldExtraCssClass ? fieldExtraCssClass : cssClass}"/>
+  <sly data-sly-test.formGroupClass="${fieldExtraGroupClass ? fieldExtraGroupClass : formGroupClass}"/>
+  <sly data-sly-test.startFormRow="${fieldExtraStartFormRow ? fieldExtraStartFormRow : startFormRow}"/>
+  <sly data-sly-test.endFormRow="${fieldExtraEndFormRow ? fieldExtraEndFormRow : endFormRow}"/>
+  <sly data-sly-test.validationRule="${fieldExtraValidationRule ? fieldExtraValidationRule : validationRule}"/>
+  <sly data-sly-test.lovUseEnValAsCode="${fieldDefinition['lovUseEnValAsCode']}"/>
+  <sly data-sly-test.lovOtherLast="${fieldDefinition['lovOtherLast']}"/>
+
+    <sly data-sly-test="${startFormRow == 'true'}">
+    <div class="form-row">
+      </sly>
+    <sly data-sly-test.isRequiredError="${fieldErrors && !fieldErrors['isRequired'] && isRequired}"/>
+    <sly data-sly-test.inErrorClass="${isRequiredError ? 'error' : ''}"/>
+    <!--/**  Country specific dropdowns **/-->
+    <sly data-sly-test="${currentCountry == 'CAN' && fieldName == 'companyProvince'}">
+    <!--/** CAN and proper name, remove the hide from css<br>  **/-->
+        <sly data-sly-test.cssClass="can" />
+    </sly>
+    <sly data-sly-test="${currentCountry != 'CAN' && fieldName == 'companyProvince'}">
+    <!--/** Not CAN and proper name, hide, change the name and remove required<br>  **/-->
+        <sly data-sly-test.tempFieldName="companyProvince-alt" />
+        <sly data-sly-test.isRequired=""/>
+        <sly data-sly-test.formGroupClass="province myedc-province hide" />
+     </sly>
+     <sly data-sly-test="${currentCountry == 'USA' && fieldName == 'companyProvinceAlt'}">
+     <!--/** USA selected and USA Field name, remove the hide from css and change the name<br>  **/-->
+        <sly data-sly-test.cssClass="usa" />
+        <sly data-sly-test.tempFieldName="companyProvince" />
+        <sly data-sly-test.formGroupClass="province myedc-province" />
+      </sly>
+     <sly data-sly-test="${currentCountry != 'USA' && fieldName == 'companyProvinceAlt'}">
+     <!--/** Not USA and USA Field name, hide and remove required<br> **/-->
+        <sly data-sly-test.isRequired=""/>
+        <sly data-sly-test.formGroupClass="province myedc-province hide" />
+     </sly>
+     <sly data-sly-test="${(currentCountry != 'CAN' && currentCountry != 'USA') && fieldName == 'companyProvinceInput'}">
+     <!--/** Other selected and Other Field name, change the name <br> **/-->
+       <sly data-sly-test.tempFieldName="companyProvince" />
+       <sly data-sly-test.formGroupClass="province myedc-province" />
+     </sly>
+     <sly data-sly-test="${(currentCountry == 'CAN' || currentCountry == 'USA') && fieldName == 'companyProvinceInput'}">
+     <!--/** Not USA OR CAN and Other Field name, hide, and remove required<br> **/-->
+        <sly data-sly-test.formGroupClass="province myedc-province hide" />
+        <sly data-sly-test.isRequired=""/>
+     </sly>
+    <!--/** END Country specific dropdowns **/-->
+  <div data-sly-test="${fieldName != 'ITMValue' && fieldName != 'ITMOther'}" class="form-group ${formGroupClass}" data-form-field="${fieldName}" data-sly-attribute="${fieldDefinition.groupAttrMap}">
+    <h2 data-sly-test="${fieldExtraTitle}">${fieldExtraTitle}</h2>
+    <p data-sly-test="${fieldExtraSubtitle}">${fieldExtraSubtitle}</p>
+    <!--/** Input type text  **/-->
+    <sly data-sly-test="${fieldType == 'text' || fieldType == 'tel'}">
+      <label for="${tempFieldName ? tempFieldName : fieldName}-${uuid}" data-sly-test="${label}">${label}
+        <sly data-sly-test="#{fieldExtraTooltip}" data-sly-call="${tooltipTemplate.tooltip @ tooltipText=fieldExtraTooltip}"/>
+      </label>
+      <input value="${fieldValue}" type="${fieldType}" name="${tempFieldName ? tempFieldName : fieldName}" id="${tempFieldName ? tempFieldName : fieldName}-${uuid}" class="form-control ${cssClass} ${inErrorClass}" placeholder="${placeholder}" data-sly-attribute.required="${isRequired}" data-sly-attribute.maxlength="${maxLength}" data-sly-attribute.capitalize="${capitalize}" data-sly-attribute.validation-rule="${validationRule}" data-sly-attribute.data-mask="${dataMask}" data-sly-attribute.data-min-length="${minLength}" data-sly-attribute.data-max-length="${maxLength}" data-sly-attribute.data-no-url="${dataNoUrl}"/>
+      <span class="error" data-req-message="${errors.required}." data-no-url-message="${dataNoUrl ? errors.nourl : ''}" data-tel-message="${fieldType == 'tel' ? errors[validation] : ''}" data-text-message="${fieldType == 'text' ? errors.format : ''}" data-length-min-message="${errors.minlength}" data-length-max-message="${errors.maxlength}" data-pobox-message="${validationRule == 'specialAddress' ? errors[validationRule] : ''}">${isRequiredError ? errors.required : ''}</span>
+    </sly>
+    <!--/** Input type Select  **/-->
+    <sly data-sly-test="${fieldType == 'select'}">
+      <sly data-sly-test.lovApiName="${extraInfo.options.lovApiName ? extraInfo.options.lovApiName : fieldDefinition['lovApiName']}"/>
+        <!--/**  Force use LOV **/-->
+          <sly data-sly-test="${lovApiName}">
+            <sly data-sly-use.lovApi="${'com.edc.edcportal.core.models.lovapi.GenericLov' @ lovType = lovApiName, returnOptionsMap = true, useEnValAsCode = lovUseEnValAsCode, otherLast = lovOtherLast, otherValue = 'Other'}"/>
+            <sly data-sly-test.options="${lovApi.options}"/>
+            <!--/** US 321052 Financial Institution Profile Updates **/-->
+            <sly data-sly-test="${fieldName == 'fiJobRole' && fieldValue}">
+                <!--/** IF value not on the list, set the drop down value to Other **/ -->
+                <sly data-sly-use.helperFindModel="${'com.edc.edcportal.core.models.StringOperationsHelperModel' @ mapToSearch = options, keyToFind = fieldValue}" data-sly-test.tempFieldValue="${helperFindModel.findKeyInMap ? fieldValue : 'Other'}"/>
+            </sly>
+            <!--/** US 321052 Financial Institution Profile Updates **/-->
+          </sly>
+          <sly data-sly-test="${!lovApiName}">
+              <sly data-sly-test.lovPath="${fieldDefinition['lovPath']}"/>
+              <sly data-sly-use.ds="${'com.edc.edcportal.core.models.FormCommonObjects' @ path = lovPath}"/>
+              <sly data-sly-test.options="${ds.optionsFromDataSourcePath}"/>
+          </sly>
+        <!--/**  Force use LOV **/-->
+      <sly data-sly-test.isMultiple="${fieldDefinition['isMultiple']}"/>
+      <sly data-sly-test.dropdownType="${isMultiple ? 'multiple' : 'single'}"/>
+      <sly data-sly-test.id="${tempFieldName ? tempFieldName : fieldName}" />
+      <sly data-sly-test="${uuid}">
+        <sly data-sly-test.id="${'{0}-{1}' @ format=[tempFieldName ? tempFieldName : fieldName, uuid]}"/>
+      </sly>
+       <sly data-sly-call="${dropdownTemplate.dropdown @ dropdowntype = dropdownType , name = tempFieldName ? tempFieldName : fieldName, id = id,  label = label,
+         placeholder = placeholder, required = isRequired, nourl=true,
+         requirederror = errors.required, invaliderror = errors.oneoption,
+         options = options, optionvalue = null, optiontext = placeholder,  additionalclasses=cssClass , selectedvalue = tempFieldValue ? tempFieldValue : fieldValue, errorClass = inErrorClass,
+         tooltipText=fieldExtraTooltip}">
+      </sly>
+    </sly> 
+    <!--/** Input type multiSelect  **/-->
+    <sly data-sly-test="${fieldType == 'multiSelect'}">
+        <sly data-sly-test.desktopLabel="${fieldDefinition[labelVar]}"/>
+        <sly data-sly-test.lovPath="${fieldDefinition['lovPath']}"/>
+        <sly data-sly-test.lovApiName="${extraInfo.options.lovApiName ? extraInfo.options.lovApiName : fieldDefinition['lovApiName']}"/>
+      <sly data-sly-call="${multiSelectTemplate.multiselect @ lovPath = lovPath, lovApiName = lovApiName, fieldName = fieldName, selectedvalues = fieldValue, label = label, placeholder = placeholder, isRequired = isRequired, isRequiredError = errors.required, tooltipText=fieldExtraTooltip}"/>
+    </sly>
+    <!--/** Input type Checkbox  **/-->
+    <sly data-sly-test="${fieldType == 'checkbox'}">
+      <label for="${fieldName}">${label}</label>
+      <sly data-sly-test="#{fieldExtraTooltip}" data-sly-call="${tooltipTemplate.tooltip @ tooltipText=fieldExtraTooltip}"/>
+      <input value="${fieldValue}" type="${fieldType}" id="${fieldName}" class="form-control ${cssClass}" name="${fieldName}" data-sly-attribute.required="${isRequired}"/>
+      <span class="error" data-req-message="${errors.required}." data-text-message="${errors[validation]}."></span>
+    </sly>
+    <!--/** Input type Hidden  **/-->
+    <sly data-sly-test="${fieldType == 'hidden'}">
+      <input value="${fieldValue}" type="${fieldType}" id="${fieldName}" name="${fieldName}"/>
+    </sly>
+  <!--/** Input type autocompletefield  **/-->
+    <sly data-sly-test="${fieldType == 'autocompletefield'}">
+      <sly data-sly-test.lovPath="${fieldDefinition['lovPath']}"/>
+      <sly data-sly-test.lovApiName="${extraInfo.options.lovApiName ? extraInfo.options.lovApiName : fieldDefinition['lovApiName']}"/>
+      <sly data-sly-use.actemplate="/apps/edcportal/components/content/common/autocompletefield.html"/>
+      <sly data-sly-call="${actemplate.autocompletefield @ lovPath = lovPath, lovApiName = lovApiName, fieldName = fieldName, selectedvalue = fieldValue, label = label, placeholder = placeholder, isRequired = isRequired, isRequiredError = errors.required, tooltipText=fieldExtraTooltip, uuid=uuid, properties=properties, useEnValAsCode = lovUseEnValAsCode, dataNoUrl = dataNoUrl, validationRule = validationRule}"/>
+    </sly>
+  </div>
+  <!--/** Inclusive trade measure questions  **/-->
+  <sly data-sly-test="${properties.itmtitle && (fieldName == 'ITMValue' || fieldName == 'ITMOther')}">
+    <sly data-sly-test="${fieldName == 'ITMValue'}">
+      <sly data-sly-use.template="/apps/edcportal/components/content/common/inclusivetrade/inclusivetrade.html"/>
+      <sly data-sly-call="${template.inclusivetrade @ uuid = uuid, properties = properties, formErrorMessages=errors}"/>
+      <input value="${fieldValue}" type="${fieldType}" id="C_ITM_Primary_Question1" name="${fieldName}"/>
+    </sly>
+    <input data-sly-test="${fieldName == 'ITMOther'}" value="${fieldValue}" type="${fieldType}" id="C_ITM_Secondary_Question1" name="${fieldName}"/>
+  </sly>
+   <sly data-sly-test="${endFormRow == 'true'}">
+   </div>
+   </sly>
+</template>

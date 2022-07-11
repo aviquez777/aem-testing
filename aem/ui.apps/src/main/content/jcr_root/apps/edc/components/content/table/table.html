@@ -1,0 +1,16 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.table}"/>
+
+<section data-sly-test="${properties.table}" class="table table-${properties.tableType}">
+    <span data-sly-test="${properties.tableType == 'large' && (properties.keyline == 'top' || properties.keyline == 'top-bottom')}" class="key-line"></span>
+    <div data-sly-test="${properties.headings}" class="headings">
+        ${properties.headings @ context = 'html'}
+    </div>
+    <div class="border-table table-container table-${properties.tableType}">
+        ${properties.table @ context = 'html'}
+    </div>
+    <div data-sly-test="${properties.footnotes}" class="footnotes">
+        ${properties.footnotes @ context = 'html'}
+    </div>
+    <span data-sly-test="${properties.tableType == 'large' && (properties.keyline == 'bottom' || properties.keyline == 'top-bottom')}" class="key-line"></span>
+</section>

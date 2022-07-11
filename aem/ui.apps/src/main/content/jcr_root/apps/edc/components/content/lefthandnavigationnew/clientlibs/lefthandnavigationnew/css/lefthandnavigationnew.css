@@ -1,0 +1,313 @@
+@charset "UTF-8";
+.c-left-hand-nav-new .hide {
+    display: none;
+}
+
+.c-left-hand-nav-new .main-nav h3 {
+    color: #2f78c6;
+    font-size: .875rem;
+    line-height: 1.125rem;
+    letter-spacing: .4px;
+}
+
+.c-left-hand-nav-new .main-nav ul {
+    margin: 0;
+    padding-left: 0;
+    margin-right: .5rem;
+    padding-top: .1875rem;
+}
+
+.c-left-hand-nav-new .main-nav ul li {
+    position: relative;
+    padding: 2px 0 2px 2px;
+}
+
+.c-left-hand-nav-new .main-nav ul li a {
+    font-size: 16px;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+    display: block;
+    font-weight: 600;
+    padding: .5rem 3.5rem .5rem .5rem;
+    text-align: left;
+    text-decoration: none;
+    margin-bottom: .375rem;
+    cursor: pointer;
+}
+
+.c-left-hand-nav-new .main-nav ul li a .chevron {
+    line-height: .75rem;
+    position: absolute;
+    right: 1rem;
+    top: 1.15rem;
+}
+
+.c-left-hand-nav-new .main-nav ul li a .chevron::after {
+    content: "";
+    color: #333;
+    cursor: pointer;
+    font-family: 'iconfonts';
+    font-size: .75rem;
+    font-weight: 600;
+}
+
+.c-left-hand-nav-new .main-nav ul li a ~ ul {
+    max-height: 0;
+    margin-right: 0;
+    overflow: hidden;
+    transition: max-height .25s ease-out;
+    padding-top: 0;
+}
+
+.c-left-hand-nav-new .main-nav ul li a ~ ul li a {
+    font-size: 16px;
+    color: #404041;
+    font-weight: normal;
+    padding-left: 1.125rem;
+}
+
+.c-left-hand-nav-new .main-nav ul li a ~ ul li a:hover {
+    text-decoration: none;
+    background: #f4f8fc;
+}
+
+.c-left-hand-nav-new .main-nav ul li a ~ ul li a:focus {
+    text-decoration: none;
+    background: #f4f8fc;
+    outline: none;
+    border: 3px solid #8cb4e2;
+    border-radius: 3px;
+}
+
+.c-left-hand-nav-new .main-nav ul li a ~ ul li a:active {
+    text-decoration: none;
+    background: #caddf2;
+    outline: none;
+    border: 3px solid #8cb4e2;
+    border-radius: 3px;
+}
+
+.c-left-hand-nav-new .main-nav ul li a.selected {
+    background: rgba(67, 134, 172, 0.05);
+    border-radius: 0;
+    font-weight: 600;
+    border-left: 2px solid #2f78c6;
+    border-top: 0;
+    border-bottom: 0;
+}
+
+.c-left-hand-nav-new .main-nav ul li a.expanded {
+    color: #2f78c6;
+}
+
+.c-left-hand-nav-new .main-nav ul li a.expanded .chevron::after {
+    content: "";
+}
+
+.c-left-hand-nav-new .main-nav ul li a.expanded ~ ul {
+    max-height: 750px;
+    transition: max-height .25s ease-in;
+}
+
+.c-left-hand-nav-new .main-nav ul li a:hover {
+    text-decoration: none;
+    background: #f4f8fc;
+}
+
+.c-left-hand-nav-new .main-nav ul li a:focus {
+    text-decoration: none;
+    background: #f4f8fc;
+    outline: none;
+    border: 3px solid #8cb4e2;
+    border-radius: 3px;
+}
+
+.c-left-hand-nav-new .main-nav ul li a:active {
+    text-decoration: none;
+    background: #caddf2;
+    outline: none;
+    border: 3px solid #8cb4e2;
+    border-radius: 3px;
+}
+
+.c-left-hand-nav-new .main-nav ul li.selected a {
+    border-radius: 0;
+    font-weight: normal;
+}
+
+.c-left-hand-nav-new .main-nav .parent-link .blue-light {
+    background-color: rgba(67, 134, 172, 0.05);
+    font-weight: 600;
+}
+
+.c-left-hand-nav-new .main-nav .hamburger-link {
+    border: 1px solid #2f78c6;
+    border-radius: 3px;
+    padding: .5rem 0;
+    color: #333;
+    display: flex;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    background: #fff;
+    line-height: 1.5rem;
+    width: 100%;
+}
+
+.c-left-hand-nav-new .main-nav .hamburger-link:hover {
+    background: #f4f8fc;
+}
+
+.c-left-hand-nav-new .main-nav .hamburger-link:focus {
+    background: #f4f8fc;
+    outline: none;
+    border: 3px solid #8cb4e2;
+    border-radius: 3px;
+}
+
+.c-left-hand-nav-new .main-nav .hamburger-link:active {
+    background: #caddf2;
+    outline: none;
+    border: 3px solid #8cb4e2;
+    border-radius: 3px;
+}
+
+.c-left-hand-nav-new .main-nav .hamburger-link .hamburger-icon {
+    background-image: url("/etc.clientlibs/edc/clientlibs/clientlib-base/resources/images/hamburger-icon.svg");
+    width: 1.5rem;
+    margin: 0 .875rem;
+    height: 1.5rem;
+}
+
+.c-left-hand-nav-new .main-nav .modal .modal-shade {
+    background-color: rgba(25, 25, 25, 0.7);
+    width: 100%;
+    height: 100%;
+    z-index: 9999998;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.c-left-hand-nav-new .main-nav .modal .modal-content {
+    background: #fff;
+    width: calc(100% - 2rem);
+    max-width: 568px;
+    max-height: 70vh;
+    margin: 0 auto;
+    overflow: auto;
+    z-index: 9999999;
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    /* Track */
+    /* Handle */
+    /* Handle on hover */
+}
+
+.c-left-hand-nav-new .main-nav .modal .modal-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+.c-left-hand-nav-new .main-nav .modal .modal-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.c-left-hand-nav-new .main-nav .modal .modal-content::-webkit-scrollbar-thumb {
+    background: #ebebeb;
+    background: -moz-linear-gradient(left, #ebebeb 0%, #ebebeb 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #ebebeb), color-stop(50%, #ebebeb), color-stop(51%, rgba(255, 255, 255, 0)), color-stop(71%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(255, 255, 255, 0)));
+    background: -webkit-linear-gradient(left, #ebebeb 0%, #ebebeb 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: -o-linear-gradient(left, #ebebeb 0%, #ebebeb 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: -ms-linear-gradient(left, #ebebeb 0%, #ebebeb 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to right, #ebebeb 0%, #ebebeb 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebebeb', endColorstr='#ffffff', GradientType=1 );
+}
+
+.c-left-hand-nav-new .main-nav .modal .modal-content::-webkit-scrollbar-thumb:hover {
+    background: #ebebeb;
+    background: -moz-linear-gradient(left, #cccccc 0%, #cccccc 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #cccccc), color-stop(50%, #cccccc), color-stop(51%, rgba(255, 255, 255, 0)), color-stop(71%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(255, 255, 255, 0)));
+    background: -webkit-linear-gradient(left, #cccccc 0%, #cccccc 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: -o-linear-gradient(left, #cccccc 0%, #cccccc 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: -ms-linear-gradient(left, #cccccc 0%, #cccccc 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to right, #cccccc 0%, #cccccc 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 71%, rgba(255, 255, 255, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebebeb', endColorstr='#ffffff', GradientType=1 );
+}
+
+.c-left-hand-nav-new .main-nav .modal .modal-menu {
+    margin-right: 0;
+}
+
+.c-left-hand-nav-new .main-nav .modal p {
+    background: #f5f5f5;
+    padding: .625rem 3.5rem .625rem 1.125rem;
+    margin: 0;
+    line-height: 1.5rem;
+    font-size: 1rem;
+    border-bottom: 1px solid #ccc;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+}
+
+.c-left-hand-nav-new .main-nav .modal .modal-close {
+    right: -12px;
+    top: -8px;
+    margin: .5rem 1.125rem 0 0;
+    display: block;
+    position: absolute;
+}
+
+.c-left-hand-nav-new .main-nav .modal .modal-close span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+}
+
+.c-left-hand-nav-new .main-nav .modal .modal-close span::after {
+    color: #333;
+    content: "";
+    font-size: 2.5rem;
+    font-weight: normal;
+}
+
+.c-left-hand-nav-new.no-b-margin {
+    margin-bottom: 3.5rem;
+}
+
+@media (min-width: 960px) {
+    .c-left-hand-nav-new .main-nav .modal .modal-shade {
+        background-color: transparent;
+        width: 0;
+        height: 0;
+        z-index: 0;
+    }
+    .c-left-hand-nav-new .main-nav .modal .modal-content {
+        width: calc(100% - 2rem);
+        max-width: 100%;
+        max-height: 100%;
+        margin: inherit;
+        overflow: hidden;
+        z-index: 9999999;
+        position: inherit;
+        top: 0;
+        left: 0;
+        transform: none;
+    }
+    .c-left-hand-nav-new .main-nav .modal .modal-close {
+        display: none;
+    }
+    .c-left-hand-nav-new .main-nav .modal p {
+        background: transparent;
+        padding: 0 0 1.625rem;
+        border-bottom: 0;
+        color: #2f78c6;
+        font-size: .875rem;
+    }
+    .c-left-hand-nav-new .main-nav .hamburger-link {
+        display: none;
+    }
+    .c-left-hand-nav-new .main-nav .hide {
+        display: block;
+    }
+}

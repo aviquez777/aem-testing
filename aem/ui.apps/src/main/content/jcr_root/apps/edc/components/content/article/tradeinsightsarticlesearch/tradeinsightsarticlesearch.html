@@ -1,0 +1,149 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.tradeinsights="com.edc.edcweb.core.models.Tradeinsights"/>
+<sly data-sly-test.pages="${tradeinsights.pages}" />
+<sly data-sly-test.hasvalues="${properties.filterlabel && properties.articlespath}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !hasvalues}"/>
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+
+<section class="c-trade-insights-filter" aria-label="${'Filter' @ i18n}" data-sly-test="${hasvalues && pages}" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'trade insights filter'}" data-event-type="category filter" data-event-name="category filter – trade insights" data-event-engagement="1" data-event-action="main body" data-event-level="1">
+    <section class="trade-insights-filters" role="search" aria-labelledby="trade-insights-filter-${uuid}">
+        <div class="filter-title">
+            <h2 id="trade-insights-filter-${uuid}" class="title">${properties.filterlabel}</h2>
+            <button class="edc-btn-icon close-button" aria-label="${'Close' @ i18n}">
+                <span></span>
+            </button>
+        </div>
+        <div class="filter-criteria" data-sly-list.filterorder="${tradeinsights.filterOrder}">
+            <section class="trade-insights-filter category" aria-expanded="true" aria-labelledby="category-${uuid}" data-sly-test="${filterorder == 'category'}">
+                <div class="filter-title">
+                    <h3 id="category-${uuid}" class="title" tabindex="0">${properties.categorylabel}</h3>
+                    <button class="edc-btn-icon chevron" aria-label="${'Hide' @ i18n} ${'Options' @ i18n}" data-hide="${'Hide' @ i18n} ${'Options' @ i18n}" data-show="${'Show' @ i18n} ${'Options' @ i18n}">
+                        <span></span>
+                    </button>
+                </div>
+                <ul class="filters" data-sly-list.item="${tradeinsights.categories}">
+                    <li class="filter">
+                        <input type="checkbox" id="category-${itemList.index}" class="filter-option" data-english-name="${item.datalayer}" data-value="${item.label}" value="${item.value}" />
+                        <label for="category-${itemList.index}">${item.label}</label>
+                        <ul class="subfilters hide" data-sly-list.subitem="${item.subTags}">
+                            <li class="subfilter">
+                                <input type="checkbox" id="${item.value}-${subitemList.index}" class="filter-option" data-english-name="${subitem.datalayer}" data-value="${subitem.label}" value="${subitem.value}" />
+                                <label for="subcategory-${itemList.index}-${subitemList.index}">${subitem.label}</label>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <section class="trade-insights-filter trending-topic" aria-expanded="true" aria-labelledby="trending-topic-${uuid}" data-sly-test="${filterorder == 'trending'}">
+                <div class="filter-title">
+                    <h3 id="trending-topic-${uuid}" class="title" tabindex="0">${properties.trendinglabel}</h3>
+                    <button class="edc-btn-icon chevron" aria-label="${'Hide' @ i18n} ${'Options' @ i18n}" data-hide="${'Hide' @ i18n} ${'Options' @ i18n}" data-show="${'Show' @ i18n} ${'Options' @ i18n}">
+                        <span></span>
+                    </button>
+                </div>
+                <ul class="filters" data-sly-list.item="${tradeinsights.trending}">
+                    <li class="filter ${itemList.index >= 3 ? 'hide' : ''}">
+                        <input type="checkbox" id="trending-topic-${itemList.index}" class="filter-option" data-english-name="${item.datalayer}" data-value="${item.label}" value="${item.value}" />
+                        <label for="trending-topic-${itemList.index}">${item.label}</label>
+                    </li>
+                </ul>
+                <div class="show-buttons" data-sly-test="${tradeinsights.trending.size > 3}">
+                    <button class="edc-btn-unstyled show-more" data-more="${properties.showmorelabel}" data-less="${properties.showlesslabel}">
+                        <span>${properties.showmorelabel}</span>
+                    </button>
+                </div>
+            </section>
+            <section class="trade-insights-filter industry" aria-expanded="true" aria-labelledby="industry-${uuid}" data-sly-test="${filterorder == 'industry'}">
+                <div class="filter-title">
+                    <h3 id="industry-${uuid}" class="title" tabindex="0">${properties.industrylabel}</h3>
+                    <button class="edc-btn-icon chevron" aria-label="${'Hide' @ i18n} ${'Options' @ i18n}" data-hide="${'Hide' @ i18n} ${'Options' @ i18n}" data-show="${'Show' @ i18n} ${'Options' @ i18n}">
+                        <span></span>
+                    </button>
+                </div>
+                <ul class="filters" data-sly-list.item="${tradeinsights.industries}">
+                    <li class="filter ${itemList.index >= 3 ? 'hide' : ''}">
+                        <input type="checkbox" id="industry-${itemList.index}" class="filter-option" data-english-name="${item.datalayer}" data-value="${item.label}" value="${item.value}" />
+                        <label for="industry-${itemList.index}">${item.label}</label>
+                    </li>
+                </ul>
+                <div class="show-buttons" data-sly-test="${tradeinsights.industries.size > 3}">
+                    <button class="edc-btn-unstyled show-more" data-more="${properties.showmorelabel}" data-less="${properties.showlesslabel}">
+                        <span>${properties.showmorelabel}</span>
+                    </button>
+                </div>
+            </section>
+            <section class="trade-insights-filter region" aria-expanded="true" aria-labelledby="region-${uuid}" data-sly-test="${filterorder == 'region'}">
+                <div class="filter-title">
+                    <h3 id="region-${uuid}" class="title" tabindex="0">${properties.regionlabel}</h3>
+                    <button class="edc-btn-icon chevron" aria-label="${'Hide' @ i18n} ${'Options' @ i18n}" data-hide="${'Hide' @ i18n} ${'Options' @ i18n}" data-show="${'Show' @ i18n} ${'Options' @ i18n}">
+                        <span></span>
+                    </button>
+                </div>
+                <ul class="filters" data-sly-list.item="${tradeinsights.regions}">
+                    <li class="filter">
+                        <input type="checkbox" id="region-${itemList.index}" class="filter-option" data-english-name="${item.datalayer}" data-value="${item.label}" value="${item.value}" />
+                        <label for="region-${itemList.index}">${item.label}</label>
+                    </li>
+                </ul>
+            </section>
+            <section class="trade-insights-filter format" aria-expanded="true" aria-labelledby="format-${uuid}" data-sly-test="${filterorder == 'format'}">
+                <div class="filter-title">
+                    <h3 id="format-${uuid}" class="title" tabindex="0">${properties.formatlabel}</h3>
+                    <button class="edc-btn-icon chevron" aria-label="${'Hide' @ i18n} ${'Options' @ i18n}" data-hide="${'Hide' @ i18n} ${'Options' @ i18n}" data-show="${'Show' @ i18n} ${'Options' @ i18n}">
+                        <span></span>
+                    </button>
+                </div>
+                <ul class="filters" data-sly-list.item="${tradeinsights.formats}">
+                    <li class="filter">
+                        <input type="checkbox" id="format-${itemList.index}" class="filter-option" data-english-name="${item.datalayer}" data-value="${item.label}" value="${item.value}" />
+                        <label for="format-${itemList.index}">${item.label}</label>
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <div class="filter-footer">
+            <div class="button-option">
+                <button type="button" class="edc-tertiary-btn clear-filter">
+                    <span>${properties.clearalllabel}</span>
+                </button>
+            </div>
+            <div class="button-option">
+                <button type="button" class="edc-primary-btn apply-filter" disabled="">
+                    <span>${properties.applylabel}</span>
+                </button>
+            </div>
+        </div>
+    </section>
+    <section class="filter-data" aria-label="Trade Insights ${'Filter' @ i18n} {'Tags$' @ i18n}">
+        <button type="button" class="edc-tertiary-btn show-filters">
+            <span>${properties.filterlabel}</span>
+        </button>
+        <div class="filter-tags hide" data-close-label="${'Delete Tag' @ i18n}">
+            <ul>
+                <li class="clear">
+                    <button class="edc-btn-unstyled clear-tag">
+                        <span>${properties.clearalllabel}</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="trade-insights-info" aria-live="polite" aria-label="Trade Insights ${'Search Results' @ i18n}" data-open-link="${properties.linktarget || '_self'}">
+        <div class="article-list">
+            <ul class="article-page" data-page="0" data-sly-list.item="${pages}"
+                data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+                data-sly-use.itemTemplate="/apps/edc/components/common/article.html">
+                <sly data-sly-use.articlepage="${'com.edc.edcweb.core.models.ArticlePage' @ page = item}"/>
+                <sly data-sly-use.pagedate="${'com.edc.edcweb.core.models.PageModelHelper' @ page = item}" data-sly-test.itemdate="${pagedate.date}"/>
+                <li class="trade-insight-article ${articlepage.premium ? 'premium' : ''}" data-page-name="${item.name}" data-sly-call="${itemTemplate.item @ list = list, item = item, contenttypeclass = articlepage.contentTypeClassName, contenttypetitle = articlepage.contentTypeTitle, itemdate = itemdate, itemtype='tradeinsights', linktarget=properties.linktarget}"></li>
+            </ul>
+        </div>
+        <div class="no-match hide" data-no-results="no results found">
+            <h2 class="no-match-title">${properties.noresulttitle}</h2>
+            <div class="no-match-info">
+                ${properties.noresultmessage @ context='html'}
+            </div>
+        </div>
+    </section>
+</section>

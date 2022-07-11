@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OsgiConfig" 
+    getMonerisUrl="https://gateway.moneris.com/chkt/request/request.php" 
+    getCADStoreId="monmpg0250"
+    getCADApiToken="h9KV95tjJYAatCdHfCiy"
+    getCADCheckoutId="chktCX5UEg0250"
+    getUSDStoreId="monmpg0567"
+    getUSDApiToken="1IQY8jPfCJ7n0BC277gX"
+    getUSDCheckoutId="chktFMJ83g0567"
+    getEnvironment="prod"
+    getJavaScriptUrl="https://gateway.moneris.com/chkt/js/chkt_v1.00.js"
+     />

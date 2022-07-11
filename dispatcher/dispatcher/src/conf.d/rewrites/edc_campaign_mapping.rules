@@ -1,0 +1,412 @@
+# Risk Experts Campaign Rules
+RewriteRule ^/risk-experts$ /content/edc/en/campaign/risk-experts.html [NC,PT]
+RewriteRule ^/experts-du-risque$ /content/edc/fr/campaign/risk-experts.html [NC,PT]
+RewriteRule ^/en/campaign/risk-experts.html$  /risk-experts [R=301,L,NC]
+RewriteRule ^/fr/campaign/experts-du-risque.html$  /experts-du-risque [R=301,L,NC]
+
+#Ontario Technology Campaign Rules
+RewriteRule ^/ontario-technology$ /content/edc/en/campaign/ontario-technology.html [NC,PT]
+RewriteRule ^/technologie-ontario$ /content/edc/fr/campaign/ontario-technology.html [NC,PT]
+RewriteRule ^/en/campaign/ontario-technology.html$  /ontario-technology [R=301,L,NC]
+RewriteRule ^/fr/campaign/technologie-ontario.html$  /technologie-ontario [R=301,L,NC]
+
+#Risk-To-Reward Campaign Rules
+RewriteRule ^/risk-to-reward$ /content/edc/en/campaign/risk-to-reward.html [NC,PT]
+RewriteRule ^/du-risque-aux-benefices$ /content/edc/fr/campaign/risk-to-reward.html [NC,PT]
+RewriteRule ^/en/campaign/risk-to-reward.html$  /risk-to-reward [R=301,L,NC]
+RewriteRule ^/fr/campaign/du-risque-aux-benefices.html$  /du-risque-aux-benefices [R=301,L,NC]
+RewriteRule ^/arlene$ /risk-to-reward [R=301,L,NC]
+
+# AWC Campaign Rules (3)
+RewriteRule ^/working-capital$ /content/edc/en/campaign/working-capital.html [NC,PT]
+RewriteRule ^/fonds-roulement$ /content/edc/fr/campaign/working-capital.html [NC,PT]
+RewriteRule ^/en/campaign/working-capital.html$  /working-capital [R=301,L,NC]
+RewriteRule ^/fr/campaign/fonds-roulement.html$  /fonds-roulement [R=301,L,NC]
+
+RewriteRule ^/edc-export-guarantee-program-cg$ /content/edc/en/campaign/edc-export-guarantee-program-cg.html [NC,PT]
+RewriteRule ^/programme-garanties-exportations-edc-cg$ /content/edc/fr/campaign/edc-export-guarantee-program-cg.html [NC,PT]
+RewriteRule ^/en/campaign/edc-export-guarantee-program-cg.html$  /edc-export-guarantee-program-cg [R=301,L,NC]
+RewriteRule ^/fr/campaign/programme-garanties-exportations-edc-cg.html$  /programme-garanties-exportations-edc-cg [R=301,L,NC]
+
+RewriteRule ^/edc-export-guarantee-program-cg1$ /content/edc/en/campaign/edc-export-guarantee-program-cg1.html [NC,PT]
+RewriteRule ^/programme-garanties-exportations-edc-cg1$ /content/edc/fr/campaign/edc-export-guarantee-program-cg1.html [NC,PT]
+RewriteRule ^/en/campaign/edc-export-guarantee-program-cg1.html$  /edc-export-guarantee-program-cg1 [R=301,L,NC]
+RewriteRule ^/fr/campaign/programme-garanties-exportations-edc-cg1.html$  /programme-garanties-exportations-edc-cg1 [R=301,L,NC]
+
+# CI Campaign Rules (2)
+RewriteRule ^/edc-portfolio-credit-insurance-cg$ /content/edc/en/campaign/edc-portfolio-credit-insurance-cg.html [NC,PT]
+RewriteRule ^/assurance-credit-portefeuille-edc-cg$ /content/edc/fr/campaign/edc-portfolio-credit-insurance-cg.html [NC,PT]
+RewriteRule ^/en/campaign/edc-portfolio-credit-insurance-cg.html$  /edc-portfolio-credit-insurance-cg [R=301,L,NC]
+RewriteRule ^/fr/campaign/assurance-credit-portefeuille-edc-cg.html$  /assurance-credit-portefeuille-edc-cg [R=301,L,NC]
+
+RewriteRule ^/edc-portfolio-credit-insurance-schedule-your-call$ /content/edc/en/campaign/edc-portfolio-credit-insurance-schedule-your-call.html [NC,PT]
+RewriteRule ^/assurance-credit-portefeuille-edc-reserver-votre-appel$ /content/edc/fr/campaign/edc-portfolio-credit-insurance-schedule-your-call.html [NC,PT]
+RewriteRule ^/en/campaign/edc-portfolio-credit-insurance-schedule-your-call.html$  /edc-portfolio-credit-insurance-schedule-your-call [R=301,L,NC]
+RewriteRule ^/fr/campaign/assurance-credit-portefeuille-edc-reserver-votre-appel.html$  /assurance-credit-portefeuille-edc-reserver-votre-appel [R=301,L,NC]
+
+# CIT Campaign Rules (1)
+RewriteRule ^/ci-changes-benefits$ /content/edc/en/campaign/ci-changes-benefits.html [NC,PT]
+RewriteRule ^/ac-avantages-changements$ /content/edc/fr/campaign/ci-changes-benefits.html [NC,PT]
+RewriteRule ^/en/campaign/ci-changes-benefits.html$  /ci-changes-benefits [R=301,L,NC]
+RewriteRule ^/fr/campaign/ac-avantages-changements.html$  /ac-avantages-changements [R=301,L,NC]
+
+# CIT - Broker Campaign Rules (1)
+RewriteRule ^/edc-simplified-credit-insurance$ /content/edc/en/campaign/edc-simplified-credit-insurance.html [NC,PT]
+RewriteRule ^/assurance-credit-edc-simplifiees$ /content/edc/fr/campaign/edc-simplified-credit-insurance.html [NC,PT]
+RewriteRule ^/en/campaign/edc-simplified-credit-insurance.html$  /edc-simplified-credit-insurance [R=301,L,NC]
+RewriteRule ^/fr/campaign/assurance-credit-edc-simplifiees.html$  /assurance-credit-edc-simplifiees [R=301,L,NC]
+
+# CIT - Customer Campaign Rules (1)
+RewriteRule ^/simplified-credit-insurance$ /content/edc/en/campaign/simplified-credit-insurance.html [NC,PT]
+RewriteRule ^/assurance-credit-simplifiees$ /content/edc/fr/campaign/simplified-credit-insurance.html [NC,PT]
+RewriteRule ^/en/campaign/simplified-credit-insurance.html$  /simplified-credit-insurance [R=301,L,NC]
+RewriteRule ^/fr/campaign/assurance-credit-simplifiees.html$  /assurance-credit-simplifiees [R=301,L,NC]
+
+RewriteRule ^/simplified-credit-insurance-export$ /content/edc/en/campaign/simplified-credit-insurance-export.html [NC,PT]
+RewriteRule ^/assurance-credit-simplifiees-exportation$ /content/edc/fr/campaign/simplified-credit-insurance-export.html [NC,PT]
+RewriteRule ^/en/campaign/simplified-credit-insurance-export.html$  /simplified-credit-insurance-export [R=301,L,NC]
+RewriteRule ^/fr/campaign/assurance-credit-simplifiees-exportation.html$  /assurance-credit-simplifiees-exportation [R=301,L,NC]
+
+# CMSB Campaign Rules (4)
+RewriteRule ^/agri-food$ /content/edc/en/campaign/agri-food.html [NC,PT]
+RewriteRule ^/agroalimentaire$ /content/edc/fr/campaign/agri-food.html [NC,PT]
+RewriteRule ^/en/campaign/agri-food.html$  /agri-food [R=301,L,NC]
+RewriteRule ^/fr/campaign/agroalimentaire.html$  /agroalimentaire [R=301,L,NC]
+
+RewriteRule ^/agri-food/resources$ /content/edc/en/campaign/agri-food/resources.html [NC,PT]
+RewriteRule ^/agroalimentaire/ressources$ /content/edc/fr/campaign/agri-food/resources.html [NC,PT]
+RewriteRule ^/en/campaign/agri-food/resources.html$  /agri-food/resources [R=301,L,NC]
+RewriteRule ^/fr/campaign/agroalimentaire/ressources.html$  /agroalimentaire/ressources [R=301,L,NC]
+
+RewriteRule ^/agri-food/trade-insights$ /content/edc/en/campaign/agri-food/trade-insights.html [NC,PT]
+RewriteRule ^/agroalimentaire/export-actions$ /content/edc/fr/campaign/agri-food/trade-insights.html [NC,PT]
+RewriteRule ^/en/campaign/agri-food/trade-insights.html$  /agri-food/trade-insights [R=301,L,NC]
+RewriteRule ^/fr/campaign/agroalimentaire/export-actions.html$  /agroalimentaire/export-actions [R=301,L,NC]
+
+RewriteRule ^/agri-food/trade-shows-and-you$ /content/edc/en/campaign/agri-food/trade-shows-and-you.html [NC,PT]
+RewriteRule ^/agroalimentaire/salons-professionnels-et-vous$ /content/edc/fr/campaign/agri-food/trade-shows-and-you.html [NC,PT]
+RewriteRule ^/en/campaign/agri-food/trade-shows-and-you.html$  /agri-food/trade-shows-and-you [R=301,L,NC]
+RewriteRule ^/fr/campaign/agroalimentaire/salons-professionnels-et-vous.html$  /agroalimentaire/salons-professionnels-et-vous [R=301,L,NC]
+
+# ESCI Campaign Rules (8)
+RewriteRule ^/credit-insurance-listicle$ /content/edc/en/campaign/credit-insurance-listicle.html [NC,PT]
+RewriteRule ^/assurance-credit-liste$ /content/edc/fr/campaign/credit-insurance-listicle.html [NC,PT]
+RewriteRule ^/en/campaign/credit-insurance-listicle.html$  /credit-insurance-listicle [R=301,L,NC]
+RewriteRule ^/fr/campaign/assurance-credit-liste.html$  /assurance-credit-liste [R=301,L,NC]
+
+RewriteRule ^/credit-insurance-7reasons$ /content/edc/en/campaign/credit-insurance-7reasons.html [NC,PT]
+RewriteRule ^/assurance-credit-7raisons$ /content/edc/fr/campaign/credit-insurance-7reasons.html [NC,PT]
+RewriteRule ^/en/campaign/credit-insurance-7reasons.html$  /credit-insurance-7reasons [R=301,L,NC]
+RewriteRule ^/fr/campaign/assurance-credit-7raisons.html$  /assurance-credit-7raisons [R=301,L,NC]
+
+RewriteRule ^/ci-inmail$ /content/edc/en/campaign/ci-inmail.html [NC,PT]
+RewriteRule ^/ac-inmail$ /content/edc/fr/campaign/ci-inmail.html [NC,PT]
+RewriteRule ^/en/campaign/ci-inmail.html$  /ci-inmail [R=301,L,NC]
+RewriteRule ^/fr/campaign/ac-inmail.html$  /ac-inmail [R=301,L,NC]
+
+RewriteRule ^/credit-insurance-cg$ /content/edc/en/campaign/credit-insurance-cg.html [NC,PT]
+RewriteRule ^/assurance-credit-cg$ /content/edc/fr/campaign/credit-insurance-cg.html [NC,PT]
+RewriteRule ^/en/campaign/credit-insurance-cg.html$  /credit-insurance-cg [R=301,L,NC]
+RewriteRule ^/fr/campaign/assurance-credit-cg.html$  /assurance-credit-cg [R=301,L,NC]
+
+RewriteRule ^/credit-insurance$ /content/edc/en/campaign/credit-insurance.html [NC,PT]
+RewriteRule ^/assurance-credit$ /content/edc/fr/campaign/credit-insurance.html [NC,PT]
+RewriteRule ^/en/campaign/credit-insurance.html$  /credit-insurance [R=301,L,NC]
+RewriteRule ^/fr/campaign/assurance-credit.html$  /assurance-credit [R=301,L,NC]
+
+RewriteRule ^/edc-credit-insurance-cg$ /content/edc/en/campaign/edc-credit-insurance-cg.html [NC,PT]
+RewriteRule ^/assurance-credit-edc-cg$ /content/edc/fr/campaign/edc-credit-insurance-cg.html [NC,PT]
+RewriteRule ^/en/campaign/edc-credit-insurance-cg.html$  /edc-credit-insurance-cg [R=301,L,NC]
+RewriteRule ^/fr/campaign/assurance-credit-edc-cg.html$  /assurance-credit-edc-cg [R=301,L,NC]
+
+RewriteRule ^/sci-onboarding$ /content/edc/en/campaign/sci-onboarding.html [NC,PT]
+RewriteRule ^/acs-integration$ /content/edc/fr/campaign/sci-onboarding.html [NC,PT]
+RewriteRule ^/en/campaign/sci-onboarding.html$  /sci-onboarding [R=301,L,NC]
+RewriteRule ^/fr/campaign/acs-integration.html$  /acs-integration [R=301,L,NC]
+
+RewriteRule ^/sci-onboarding-benefits$ /content/edc/en/campaign/sci-onboarding-benefits.html [NC,PT]
+RewriteRule ^/acs-integration-avantages$ /content/edc/fr/campaign/sci-onboarding-benefits.html [NC,PT]
+RewriteRule ^/en/campaign/sci-onboarding-benefits.html$  /sci-onboarding-benefits [R=301,L,NC]
+RewriteRule ^/fr/campaign/acs-integration-avantages.html$  /acs-integration-avantages [R=301,L,NC]
+
+# ESCI / Credit Insurance Campaign Rules (3)
+RewriteRule ^/edc-select-credit-insurance-cg$ /content/edc/en/campaign/edc-select-credit-insurance-cg.html [NC,PT]
+RewriteRule ^/assurance-credit-edc-selective-cg$ /content/edc/fr/campaign/edc-select-credit-insurance-cg.html [NC,PT]
+RewriteRule ^/en/campaign/edc-select-credit-insurance-cg.html$  /edc-select-credit-insurance-cg [R=301,L,NC]
+RewriteRule ^/fr/campaign/assurance-credit-edc-selective-cg.html$  /assurance-credit-edc-selective-cg [R=301,L,NC]
+
+RewriteRule ^/domestic-credit-insurance$ /content/edc/en/campaign/domestic-credit-insurance.html [NC,PT]
+RewriteRule ^/assurance-credit-marche-canadien$ /content/edc/fr/campaign/domestic-credit-insurance.html [NC,PT]
+RewriteRule ^/en/campaign/domestic-credit-insurance.html$  /domestic-credit-insurance [R=301,L,NC]
+RewriteRule ^/fr/campaign/assurance-credit-marche-canadien.html$  /assurance-credit-marche-canadien [R=301,L,NC]
+
+RewriteRule ^/edc-portfolio-credit-insurance-cg$ /content/edc/en/campaign/edc-portfolio-credit-insurance-cg.html [NC,PT]
+RewriteRule ^/assurance-credit-portefeuille-edc-cg$ /content/edc/fr/campaign/edc-portfolio-credit-insurance-cg.html [NC,PT]
+RewriteRule ^/en/campaign/edc-portfolio-credit-insurance-cg.html$  /edc-portfolio-credit-insurance-cg [R=301,L,NC]
+RewriteRule ^/fr/campaign/assurance-credit-portefeuille-edc-cg.html$  /assurance-credit-portefeuille-edc-cg [R=301,L,NC]
+
+# Ocean Tech Campaign Rules (3)
+RewriteRule ^/ocean-technology$ /content/edc/en/campaign/ocean-technology.html [NC,PT]
+RewriteRule ^/technologie-oceanique$ /content/edc/fr/campaign/ocean-technology.html [NC,PT]
+RewriteRule ^/en/campaign/ocean-technology.html$  /ocean-technology [R=301,L,NC]
+RewriteRule ^/fr/campaign/technologie-oceanique.html$  /technologie-oceanique [R=301,L,NC]
+
+RewriteRule ^/edc-credit-insurance-cg-ot$ /content/edc/en/campaign/edc-credit-insurance-cg-ot.html [NC,PT]
+RewriteRule ^/edc-assurance-credit-cg-ot$ /content/edc/fr/campaign/edc-credit-insurance-cg-ot.html [NC,PT]
+RewriteRule ^/en/campaign/edc-credit-insurance-cg-ot.html$  /edc-credit-insurance-cg-ot [R=301,L,NC]
+RewriteRule ^/fr/campaign/edc-assurance-credit-cg-ot.html$  /edc-assurance-credit-cg-ot [R=301,L,NC]
+
+RewriteRule ^/edc-export-guarantee-program-cg-ot$ /content/edc/en/campaign/edc-export-guarantee-program-cg-ot.html [NC,PT]
+RewriteRule ^/edc-garanties-exportations-cg-ot$ /content/edc/fr/campaign/edc-export-guarantee-program-cg-ot.html [NC,PT]
+RewriteRule ^/en/campaign/edc-export-guarantee-program-cg-ot.html$  /edc-export-guarantee-program-cg-ot [R=301,L,NC]
+RewriteRule ^/fr/campaign/edc-garanties-exportations-cg-ot.html$  /edc-garanties-exportations-cg-ot [R=301,L,NC]
+
+# Thank you Campaign Rules (1)
+RewriteRule ^/thank-you-yes$ /content/edc/en/campaign/thank-you-yes.html [NC,PT]
+RewriteRule ^/merci-oui$ /content/edc/fr/campaign/thank-you-yes.html [NC,PT]
+RewriteRule ^/en/campaign/thank-you-yes.html$  /thank-you-yes [R=301,L,NC]
+RewriteRule ^/fr/campaign/merci-oui.html$  /merci-oui [R=301,L,NC]
+
+# Webinars Campaign Rules (1)
+RewriteRule ^/webinar$ /content/edc/en/campaign/webinar.html [NC,PT]
+RewriteRule ^/webinaire$ /content/edc/fr/campaign/webinar.html [NC,PT]
+RewriteRule ^/en/campaign/webinar.html$  /webinar [R=301,L,NC]
+RewriteRule ^/fr/campaign/webinaire.html$  /webinaire [R=301,L,NC]
+
+# Rethink Exports
+RewriteRule ^/rethink-export$ /content/edc/en/campaign/rethink-export.html [NC,PT]
+RewriteRule ^/repensons-lexportation$ /content/edc/fr/campaign/rethink-export.html [NC,PT]
+RewriteRule ^/en/campaign/rethink-export.html$  /rethink-export [R=301,L,NC]
+RewriteRule ^/fr/campaign/repensons-lexportation.html$  /repensons-lexportation [R=301,L,NC]
+
+# Quebec Technology
+RewriteRule ^/quebec-technology$ /content/edc/en/campaign/quebec-technology.html [NC,PT]
+RewriteRule ^/technologie-quebec$ /content/edc/fr/campaign/quebec-technology.html [NC,PT]
+RewriteRule ^/en/campaign/quebec-technology.html$  /quebec-technology [R=301,L,NC]
+RewriteRule ^/fr/campaign/technologie-quebec.html$  /technologie-quebec [R=301,L,NC]
+
+#Events-Webinar Campaigns
+RewriteRule ^/brexit-webinar$	/en/events/webinar/brexit-webinar.html [R=301,L,NC]
+RewriteRule ^/webinaire-brexit$	/fr/evenements/webinaire/webinaire-brexit.html [R=301,L,NC]
+
+RewriteRule ^/japan-webinar$	/en/events/webinar/japan-webinar.html [R=301,L,NC]
+RewriteRule ^/webinaire-japon$	/fr/evenements/webinaire/webinaire-japon.html [R=301,L,NC]
+
+RewriteRule ^/women-in-business-webinar$	/en/events/webinar/women-in-business-webinar.html [R=301,L,NC]
+RewriteRule ^/webinaire-entrepreneures$	/fr/evenements/webinaire/webinaire-entrepreneures.html [R=301,L,NC]
+
+RewriteRule ^/agrifood-2019-webinar$	/en/events/webinar/agrifood-2019-webinar.html [R=301,L,NC]
+RewriteRule ^/webinaire-agroalimentaire-2019$	/fr/evenements/webinaire/webinaire-agroalimentaire-2019.html [R=301,L,NC]
+
+RewriteRule ^/customer-connections-webinar$	/en/events/webinar/customer-connections-webinar.html [R=301,L,NC]
+RewriteRule ^/webinaire-mises-en-relation$	/fr/evenements/webinaire/webinaire-mises-en-relation.html [R=301,L,NC]
+
+RewriteRule ^/germany-webinar$	/en/events/webinar/germany-webinar.html [R=301,L,NC]
+RewriteRule ^/webinaire-allemagne$	/fr/evenements/webinaire/webinaire-allemagne.html [R=301,L,NC]
+
+RewriteRule ^/cultural-diversity-webinar$	/en/events/webinar/cultural-diversity-webinar.html [R=301,L,NC]
+RewriteRule ^/webinaire-diversite-culturelle$	/fr/evenements/webinaire/webinaire-diversite-culturelle.html [R=301,L,NC]
+
+RewriteRule ^/lets-talk-exports-webinar$	/en/events/webinar/lets-talk-exports-webinar.html [R=301,L,NC]
+RewriteRule ^/parlons-exportations$	/fr/evenements/webinaire/parlons-exportations.html [R=301,L,NC]
+
+RewriteRule ^/singapore-webinar$	/en/events/webinar/singapore-webinar.html [R=301,L,NC]
+RewriteRule ^/webinaire-singapour$	/fr/evenements/webinaire/webinaire-singapour.html [R=301,L,NC]
+
+RewriteRule ^/trade-diversification-webinar$	/en/events/webinar/trade-diversification-webinar.html [R=301,L,NC]
+RewriteRule ^/webinaire-diversification-du-commerce$	/fr/evenements/webinaire/webinaire-diversification-du-commerce.html [R=301,L,NC]
+
+RewriteRule ^/rbc-ftas-webinar$	/en/events/webinar/rbc-ftas-webinar.html [R=301,L,NC]
+RewriteRule ^/webinaire-rbc-ale$	/fr/evenements/webinaire/webinaire-rbc-ale.html [R=301,L,NC]
+
+RewriteRule ^/australia-webinar$	/en/events/webinar/australia-webinar.html [R=301,L,NC]
+RewriteRule ^/webinaire-australie$	/fr/evenements/webinaire/webinaire-australie.html [R=301,L,NC]
+
+RewriteRule ^/exportwebinars$	/en/events.html [R=301,L,NC]
+RewriteRule ^/webinaires-exportation$	/fr/evenements.html [R=301,L,NC]
+
+RewriteRule ^/exportwebinarseries$	/en/events.html [R=301,L,NC]
+RewriteRule ^/serie-webinaires-exportation$	/fr/evenements.html [R=301,L,NC]
+
+#Women In Trade Campaign
+RewriteRule ^/women-in-trade$ /content/edc/en/campaign/women-in-trade.html [NC,PT]
+RewriteRule ^/femmes-en-commerce$ /content/edc/fr/campaign/women-in-trade.html [NC,PT]
+RewriteRule ^/en/campaign/women-in-trade.html$  /women-in-trade [R=301,L,NC]
+RewriteRule ^/fr/campaign/femmes-en-commerce.html$  /femmes-en-commerce [R=301,L,NC]
+
+#EDC Credit Insurance CD ESHIP
+RewriteRule ^/edc-credit-insurance-cg-eship$ /content/edc/en/campaign/edc-credit-insurance-cg-eship.html [NC,PT]
+RewriteRule ^/assurance-credit-edc-cg-eship$ /content/edc/fr/campaign/edc-credit-insurance-cg-eship.html [NC,PT]
+RewriteRule ^/en/campaign/edc-credit-insurance-cg-eship.html$  /edc-credit-insurance-cg-eship [R=301,L,NC]
+RewriteRule ^/fr/campaign/assurance-credit-edc-cg-eship.html$  /assurance-credit-edc-cg-eship [R=301,L,NC]
+
+#EDC Tradeinsights ESHIP
+RewriteRule ^/edc-tradeinsights-eship$ /content/edc/en/campaign/edc-tradeinsights-eship.html [NC,PT]
+RewriteRule ^/edc-exportactions-eship$ /content/edc/fr/campaign/edc-tradeinsights-eship.html [NC,PT]
+RewriteRule ^/en/campaign/edc-tradeinsights-eship.html$  /edc-tradeinsights-eship [R=301,L,NC]
+RewriteRule ^/fr/campaign/edc-exportactions-eship.html$  /edc-exportactions-eship [R=301,L,NC]
+
+#Export Help Hub Campaign
+RewriteRule ^/export-help-hub$ /en/tool/export-help-hub.html [R=301,L,NC]
+RewriteRule ^/centre-aide-export$ /fr/outil/centre-aide-export.html [R=301,L,NC]
+
+#Webinar and Events
+RewriteRule ^/webinar-and-events$ /en/events.html [R=301,L,NC]
+RewriteRule ^/webinaires-et-evenements$ /fr/evenements.html [R=301,L,NC]
+
+#Lets Talk Exports
+RewriteRule ^/lte$ /content/edc/en/campaign/lte.html [NC,PT]
+RewriteRule ^/pe$ /content/edc/fr/campaign/lte.html [NC,PT]
+RewriteRule ^/en/campaign/lte.html$  /lte [R=301,L,NC]
+RewriteRule ^/fr/campaign/pe.html$  /pe [R=301,L,NC]
+
+#Welcome to EDC
+RewriteRule ^/welcome-to-edc$ /en/my-account/sign-up-b2c.html?target=/en/my-account/home.html [R=301,L,NC]
+RewriteRule ^/bienvenue-a-edc$ /fr/mon-compte/inscrire-b2c.html?target=/fr/mon-compte/accueil.html [R=301,L,NC]
+RewriteRule ^/en/campaign/welcome-to-edc.html$ /en/my-account/sign-up-b2c.html?target=/en/my-account/home.html [R=301,L,NC]
+RewriteRule ^/fr/campaign/bienvenue-a-edc.html$ /fr/mon-compte/inscrire-b2c.html?target=/fr/mon-compte/accueil.html [R=301,L,NC]
+
+#Inlist/Supplier Intake Form
+RewriteRule ^/freight-forwarder-registry$ /en/form/freight-forwarder-registry.html?utm_source=ciffa&utm_medium=print&utm_campaign=ac-kbs_inlist-signups&utm_content=newsletter-ad_ciffa_may-19_e [R=301,L,NC]
+RewriteRule ^/creation-profil-transitaire$ /fr/form/creation-profil-transitaire.html?utm_source=ciffa&utm_medium=print&utm_campaign=ac-kbs_inlist-signups&utm_content=newsletter-ad_ciffa_may-19_f [R=301,L,NC]
+
+#New Markets Campaign Page
+RewriteRule ^/new-markets$ /content/edc/en/campaign/new-markets.html [NC,PT]
+RewriteRule ^/nouveaux-marches$ /content/edc/fr/campaign/new-markets.html [NC,PT]
+RewriteRule ^/en/campaign/new-markets.html$  /new-markets [R=301,L,NC]
+RewriteRule ^/fr/campaign/nouveaux-marches.html$  /nouveaux-marches [R=301,L,NC]
+
+#Canada Cleantech
+RewriteRule ^/cleantech$ /content/edc/en/campaign/cleantech.html [NC,PT]
+RewriteRule ^/technologies-propres$ /content/edc/fr/campaign/technologies-propres.html [NC,PT]
+RewriteRule ^/en/campaign/cleantech.html$ /cleantech [R=301,L,NC]
+RewriteRule ^/fr/campaign/technologies-propres.html$ /technologies-propres [R=301,L,NC]
+RewriteRule ^/en/campaign/canada-cleantech.html$ /cleantech [R=301,L,NC]
+RewriteRule ^/fr/campaign/canada-technologies-propres.html$ /technologies-propres [R=301,L,NC]
+
+#EDC Support Canola
+RewriteRule ^/canola$ /en/homepage.html [R=301,L,NC]
+RewriteRule ^/secteurducanola$ /fr/accueil.html [R=301,L,NC]
+#RewriteRule ^/en/campaign/edc-supports-canola.html$ /canola [R=301,L,NC]
+#RewriteRule ^/fr/campaign/edc-soutient-le-canola.html$ /secteurducanola [R=301,L,NC]
+
+#June 15th Deployment
+RewriteRule ^/en/campaign/edc-supports-canola.html(.*)$ /en/homepage.html [R=301,L,NC]
+RewriteRule ^/fr/campaign/edc-soutient-le-canola.html(.*)$ /fr/accueil.html [R=301,L,NC]
+
+#Desjardins
+RewriteRule ^/desjardins-partnership$ /content/edc/en/campaign/desjardins.html [NC,PT]
+RewriteRule ^/partenariat-desjardins$ /content/edc/fr/campaign/desjardins.html [NC,PT]
+RewriteRule ^/en/campaign/desjardins.html$ /desjardins-partnership [R=301,L,NC]
+RewriteRule ^/fr/campaign/desjardins.html$ /partenariat-desjardins [R=301,L,NC]
+
+#2019-08-28 Deployment
+RewriteRule ^/textile-industry$ /content/dam/edc/en/corporate/corporate-social-responsibility/environment-people/textile-industry.pdf [NC,PT]
+RewriteRule ^/industrie-du-textile$ /content/dam/edc/fr/corporate/corporate-social-responsibility/environment-people/industrie-du-textile.pdf [NC,PT]
+RewriteRule ^/content/dam/edc/en/corporate/corporate-social-responsibility/environment-people/textile-industry.pdf$	/textile-industry [R=301,L,NC]
+RewriteRule ^/content/dam/edc/fr/corporate/corporate-social-responsibility/environment-people/industrie-du-textile.pdf$	/industrie-du-textile [R=301,L,NC]
+
+#2020-02-12 Deployment
+RewriteRule ^/economic-insights$ /content/edc/en/tag/economic-insights.html [NC,PT]
+RewriteRule ^/indicateurs-economiques$ /content/edc/fr/tag/tirer-profit-indicateurs-economiques.html [NC,PT]
+RewriteRule ^/en/tag/economic-insights.html$ /economic-insights [R=301,L,NC]
+RewriteRule ^/fr/tag/tirer-profit-indicateurs-economiques.html$ indicateurs-economiques [R=301,L,NC]
+
+#2020-05-12 Deployment
+RewriteRule ^/bcap-guarantee$ /content/edc/en/solutions/working-capital/bcap-guarantee.html [NC,PT]
+RewriteRule ^/garantie-pce$ /content/edc/fr/solutions/fonds-roulement/garantie-pce.html [NC,PT]
+
+#MyEDC Campaign - Removed in Junly 2021 deployment
+#RewriteRule ^/myedc$ /content/edc/en/campaign/myedc.html [NC,PT]
+#RewriteRule ^/monedc$ /content/edc/fr/campaign/monedc.html [NC,PT]
+
+#Business Relief
+RewriteRule ^/ns-businessrelief$ /content/edc/en/campaign/coronavirus-covid-19.html?utm_source=ns-seafood-alliance&utm_medium=partner-site&utm_campaign=covid_partner&utm_content=link_partner-content_jun-20_e [NC,PT]
+
+#ExportWise
+RewriteRule ^/en/exportwise-blog.html$  /en/tradeinsights.html [R=301,L,NC]
+RewriteRule ^/fr/exportateursavertis-blogue.html$   /fr/exportactions.html [R=301,L,NC]
+
+#2020 September 23rd Deployment
+RewriteRule ^/business-relief$ /content/edc/en/campaign/bcap-guarantee-financing.html [NC,PT]
+
+#2020 October 14th Deployemnt
+RewriteRule ^/saskatoon$ /content/edc/en/homepage.html?utm_source=saskatoonstarphoenix&utm_medium=print&utm_campaign=brand_campaign-unusual2020&utm_content=img_business-unusual-print-saskatoon [NC,PT]
+RewriteRule ^/windsor$	/content/edc/en/homepage.html?utm_source=windsorstar&utm_medium=print&utm_campaign=brand_campaign-unusual2020&utm_content=img_business-unusual-print-windsor [NC,PT]
+RewriteRule ^/labeauce$	/content/edc/fr/accueil.html?utm_source=lhebdobeauce&utm_medium=print&utm_campaign=brand_campaign-unusual2020&utm_content=img_business-unusual-print-beauce [NC,PT]
+RewriteRule ^/pei$	/content/edc/en/homepage.html?utm_source=charlottetownguardian&utm_medium=print&utm_campaign=brand_campaign-unusual2020&utm_content=img_business-unusual-print-charlottetown [NC,PT]
+RewriteRule ^/victoria$	/content/edc/en/homepage.html?utm_source=victoriatimescolonist&utm_medium=print&utm_campaign=brand_campaign-unusual2020&utm_content=img_business-unusual-print-victoria [NC,PT]
+
+#2020 November 8th Deployemnt
+RewriteRule ^/indigenous-business$ /content/edc/en/campaign/indigenous-business.html [NC,PT]
+RewriteRule ^/entreprises-autochtones$	/content/edc/fr/campaign/entreprises-autochtones.html [NC,PT]
+RewriteRule ^/en/campaign/indigenous-business.html$ /indigenous-business [R=301,L,NC]
+RewriteRule ^/fr/campaign/entreprises-autochtones.html$ /entreprises-autochtones [R=301,L,NC]
+
+#2021 Fev 24th Deployment
+RewriteRule ^/us-export$ /content/edc/en/campaign/us-export.html [NC,PT]
+RewriteRule ^/exportation-etats-unis$ /content/edc/fr/campaign/exportation-etats-unis.html [NC,PT]
+RewriteRule ^/welcome$ /content/edc/en/about-us/careers/welcome-edc.html [NC,PT]
+RewriteRule ^/bienvenue$ /content/edc/fr/a-propos-de-nous/carrieres/bienvenue-edc.html [NC,PT]
+RewriteRule ^/contract$ /content/edc/en/about-us/careers/welcome-edc-contract.html [NC,PT]
+RewriteRule ^/contrat$ /content/edc/fr/a-propos-de-nous/carrieres/bienvenue-edc-contrat.html [NC,PT]
+RewriteRule ^/welcome-findev$ /content/edc/en/about-us/careers/welcome-findev.html [NC,PT]
+RewriteRule ^/bienvenue-findev$ /content/edc/fr/a-propos-de-nous/carrieres/bienvenue-findev.html [NC,PT]
+
+RewriteRule ^/en/campaign/us-export.html$ /us-export [R=301,L,NC]
+RewriteRule ^/fr/campaign/exportation-etats-unis.html$ /exportation-etats-unis [R=301,L,NC]
+RewriteRule ^/en/about-us/careers/welcome-edc.html$ /welcome [R=301,L,NC]
+RewriteRule ^/fr/a-propos-de-nous/carrieres/bienvenue-edc.html$ /bienvenue [R=301,L,NC]
+RewriteRule ^/en/about-us/careers/welcome-edc-contract.html$ /contract [R=301,L,NC]
+RewriteRule ^/fr/a-propos-de-nous/carrieres/bienvenue-edc-contrat.html$ /contrat [R=301,L,NC]
+RewriteRule ^/en/about-us/careers/welcome-findev.html$ /welcome-findev [R=301,L,NC]
+RewriteRule ^/fr/a-propos-de-nous/carrieres/bienvenue-findev.html$ /bienvenue-findev [R=301,L,NC]
+
+#2021 March Deployment
+RewriteRule ^/growglobal$ /content/edc/en/campaign/grow-global.html [NC,PT]
+RewriteRule ^/croissance-internationale$ /content/edc/fr/campaign/croissance-internationale.html [NC,PT]
+
+#2021 May Deployment
+RewriteRule ^/incoterms$ /content/edc/en/guide/understanding-incoterms.html [NC,PT]
+RewriteRule ^/les-incoterms$ /content/edc/fr/guide/comprendre-les-incoterms.html [NC,PT]
+RewriteRule ^/export-help$ /content/edc/en/tool/export-help-hub.html [NC,PT]
+RewriteRule ^/centre-aide$ /content/edc/fr/outil/centre-aide-export.html [NC,PT]
+RewriteRule ^/insight$ /content/edc/en/tool/company-insight.html [NC,PT]
+RewriteRule ^/verif-entreprise$ /content/edc/fr/outil/verif-entreprise.html [NC,PT]
+RewriteRule ^/fittskills$ /content/edc/en/tool/edc-learn.html [NC,PT]
+RewriteRule ^/fitthabiletes$ /content/edc/fr/outil/edc-apprendre.html [NC,PT]
+RewriteRule ^/inlist$ /content/edc/en/tool/inlist.html [NC,PT]
+RewriteRule ^/enliste$ /content/edc/fr/outil/enliste.html [NC,PT]
+RewriteRule ^/webinars1$ /content/edc/en/events.html [NC,PT]
+RewriteRule ^/webinaires1$ /content/edc/fr/evenements.html [NC,PT]
+#RewriteRule ^/myedc1$ /content/edc/en/campaign/myedc.html [NC,PT] #Removed in 2021 July Deployment
+#RewriteRule ^/monedc1$ /content/edc/fr/campaign/monedc.html [NC,PT] # Removed in 2021 July Deployment
+RewriteRule ^/careers$ /content/edc/en/about-us/careers.html [NC,PT]
+RewriteRule ^/carrieres$ /content/edc/fr/a-propos-de-nous/carrieres.html [NC,PT]
+
+#2021 July Deployment
+RewriteRule ^/myedc$ /content/edc/en/tool/myedc.html [NC,PT]
+RewriteRule ^/monedc$ /content/edc/fr/outil/monedc.html [NC,PT]
+RewriteRule ^/myedc1$ /content/edc/en/tool/myedc.html [NC,PT]
+RewriteRule ^/monedc1$ /content/edc/fr/outil/monedc.html [NC,PT]
+
+#June 15th Deployment
+RewriteRule ^/supplier$	/content/edc/en/about-us/corporate/procurement.html [NC,PT]
+RewriteRule ^/fournisseur$	/content/edc/fr/a-propos-de-nous/entreprise/approvisionnement.html [NC,PT]
+#RewriteRule ^/en/about-us/corporate/procurement.html$ /supplier [R=301,L,NC]
+#RewriteRule ^/fr/a-propos-de-nous/entreprise/approvisionnement.html$ /fournisseur [R=301,L,NC]
+
+#2021 August Deployment
+RewriteRule ^/fx$	/content/edc/en/solutions/working-capital/foreign-exchange-facility-guarantee.html [NC,PT]
+RewriteRule ^/supplier$	/content/edc/en/about-us/corporate/procurement.html [NC,PT]
+RewriteRule ^/fournisseur$	/content/edc/fr/a-propos-de-nous/entreprise/approvisionnement.html [NC,PT]
+
+#2021 October Deployemnt
+RewriteRule ^/contract-findev$ /en/about-us/careers/welcome-findev-contract.html [R=301,L,NC]
+RewriteRule ^/contrat-findev$ /fr/a-propos-de-nous/carrieres/bienvenue-findev-contrat.html [R=301,L,NC]
+
+#2022 January Deployment
+RewriteRule ^/trade-recovery-guarantee$	/en/solutions/working-capital/trade-recovery-guarantee.html [R=301,L,NC]
+RewriteRule ^/garantie-de-relance-du-commerce$	/fr/solutions/fonds-roulement/garantie-de-relance-du-commerce.html [R=301,L,NC]
+RewriteRule ^/investment-matching$ 	/en/solutions/financing/investment-matching-program.html [R=301,L,NC]
+RewriteRule ^/investissement-contrepartie$	/fr/solutions/financement/programme-investissement-de-contrepartie.html [R=301,L,NC]

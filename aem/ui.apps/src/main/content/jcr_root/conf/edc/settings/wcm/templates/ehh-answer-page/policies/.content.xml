@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:policy="edc/components/structure/ehh/page/policy_1542131524689"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="wcm/core/components/policies/mappings">
+        <root jcr:primaryType="nt:unstructured">
+            <header
+                cq:policy="edc/components/structure/header/policy_1503509965268"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/core/components/policies/mapping"/>
+            <ehhanswercontainer jcr:primaryType="nt:unstructured">
+                <ehhanswerbodycontainer jcr:primaryType="nt:unstructured">
+                    <content
+                        cq:policy="wcm/foundation/components/responsivegrid/policy_18495551940608"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/core/components/policies/mapping">
+                        <edc jcr:primaryType="nt:unstructured">
+                            <components jcr:primaryType="nt:unstructured">
+                                <content jcr:primaryType="nt:unstructured">
+                                    <text
+                                        cq:policy="edc/components/content/text/policy_1542209619642"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="wcm/core/components/policies/mapping"/>
+                                </content>
+                            </components>
+                        </edc>
+                    </content>
+                </ehhanswerbodycontainer>
+                <ehhwidecontainer
+                    cq:policy="wcm/foundation/components/responsivegrid/policy_1548967747239"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/core/components/policies/mapping"/>
+                <ehhanswercontainer jcr:primaryType="nt:unstructured">
+                    <content
+                        cq:policy="wcm/foundation/components/responsivegrid/policy_18495551940608"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/core/components/policies/mapping">
+                        <edc jcr:primaryType="nt:unstructured">
+                            <components jcr:primaryType="nt:unstructured">
+                                <content jcr:primaryType="nt:unstructured">
+                                    <text
+                                        cq:policy="edc/components/content/text/policy_1542209619642"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="wcm/core/components/policies/mapping"/>
+                                </content>
+                            </components>
+                        </edc>
+                    </content>
+                </ehhanswercontainer>
+            </ehhanswercontainer>
+            <footer
+                cq:policy="edc/components/structure/footer/policy_1503595658633"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/core/components/policies/mapping"/>
+        </root>
+    </jcr:content>
+</jcr:root>

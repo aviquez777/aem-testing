@@ -1,0 +1,57 @@
+<sly data-sly-use.datalayer="com.edc.edcportal.core.models.Datalayer">
+    <!-- Data layer -->
+    <script type="text/javascript">
+
+    var dataLayerJS = (function () {
+        'use strict';
+        // Public Methods
+        function init() {
+            var obj = {
+                page: {
+                    category: {
+                        pageType: '${datalayer.templateType @ context="scriptString"}', // As named within AEM.
+                        primaryCategory: '${datalayer.primaryCategory @ context="scriptString"}', // From folder structure first entry following language folder.
+                        subCategory1: '${datalayer.subcategory1 @ context="scriptString"}', // From folder structure second entry following language folder.
+                        subCategory2: '${datalayer.subcategory2 @ context="scriptString"}' // Populate if category is present. Only use English name of category.
+                    },
+                    pageInfo: {
+                        issueDate: '${datalayer.issueDate @ context="scriptString"}', // YYYY-MM-DD
+                        pageName: '${datalayer.pageName @ context="scriptString"}', // Page name.
+                        siteEnv: '${datalayer.siteEnv @ context="scriptString"}', // Standard points of site env: such as dev/stage/test, etc.
+                        sysEnv: EDC.utils.getDeviceViewPort(), // Mobile / Desktop / Tablet.
+                        language: '${datalayer.pageLanguage @ context="scriptString"}', // From the folder structure, first folder following the domain.
+                        server: '${datalayer.pageHost @ context="scriptString"}', // Domain in URL. Specific to environment.
+                        disableAddthis: '' //Addthis status i.e. true for disabled, false for enabled.
+                    }
+                },
+                user: {
+                    segment : {
+                        exportStatus: '',
+                        persona: '',
+                        buyerStage: '',
+                        guid: '${datalayer.guid @ context="scriptString"}',
+                        authStatus: '${datalayer.authStatus @ context="scriptString"}',
+                        myedcCustStatus: '${datalayer.myEdcCustStatus @ context="scriptString"}',
+                        externalID: '${datalayer.externalID @ context="scriptString"}',
+                        productType: '${datalayer.productType @ context="scriptString"}',
+                        productDesc: '${datalayer.productDesc @ context="scriptString"}',
+                    }
+                },
+                events: []
+            };
+
+            if (window[EDC.datalayerObj]) {
+                window[EDC.datalayerObj] = obj;
+                EDC.forms.WaitUntilCustomerGUIDIsRetrieved(); // Eloqua Customer GUID.
+            }
+        }
+
+        return {
+            init: init
+        };
+    })();
+
+    dataLayerJS.init();
+    </script>
+    <!-- End of Data layer -->
+</sly>

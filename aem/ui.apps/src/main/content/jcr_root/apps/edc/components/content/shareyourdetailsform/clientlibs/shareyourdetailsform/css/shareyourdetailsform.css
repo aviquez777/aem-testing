@@ -1,0 +1,274 @@
+.c-share-your-details-form {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid rgba(51, 51, 51, 0.3);
+}
+
+.c-share-your-details-form * {
+    box-sizing: border-box;
+}
+
+.c-share-your-details-form h2,
+.c-share-your-details-form h3,
+.c-share-your-details-form h4 {
+    color: #2f78c6;
+}
+
+.c-share-your-details-form.no-border {
+    border: 0;
+}
+
+.c-share-your-details-form.no-border h3 {
+    margin-top: 0;
+}
+
+.c-share-your-details-form span.error,
+.c-share-your-details-form .hide {
+    display: none;
+}
+
+.c-share-your-details-form span.error {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.c-share-your-details-form .form-group .c-dropdown .dropdown-container .ui.selection.dropdown.error + span.error,
+.c-share-your-details-form .form-group .c-dropdown .dropdown-container .ui.selection.dropdown.error ~ span.error,
+.c-share-your-details-form .form-group input.error ~ span.error,
+.c-share-your-details-form .form-group input.error + span.error,
+.c-share-your-details-form .form-group .radio-group.error ~ span.error,
+.c-share-your-details-form .form-group .radio-group.error + span.error {
+    display: block;
+    padding-bottom: 1rem;
+}
+
+.c-share-your-details-form::after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.c-share-your-details-form .form-header {
+    margin: 0 0 2rem;
+}
+
+.c-share-your-details-form .form-header.hide {
+    display: none;
+}
+
+.c-share-your-details-form .email-section label {
+    display: none;
+}
+
+.c-share-your-details-form .email-section .email-section-row {
+    margin-bottom: 1rem;
+}
+
+.c-share-your-details-form .email-section .email-section-row .form-group,
+.c-share-your-details-form .email-section .email-section-row .actions {
+    width: 100%;
+}
+
+.c-share-your-details-form .email-section .email-section-row .actions button {
+    width: 100%;
+}
+
+.c-share-your-details-form .email-section .form-disclaimer .text p {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.7142;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+@media (min-width: 720px) {
+    .c-share-your-details-form .email-section .form-disclaimer .text p {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-share-your-details-form .email-section .form-disclaimer .text p {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+.c-share-your-details-form .form-section .form-group,
+.c-share-your-details-form .form-section .form-row {
+    float: left;
+    width: 100%;
+}
+
+.c-share-your-details-form .form-section h2 {
+    color: #333;
+}
+
+.c-share-your-details-form .form-section h3 {
+    display: none;
+}
+
+.c-share-your-details-form .form-section h3.show {
+    display: block;
+}
+
+.c-share-your-details-form .form-section .actions {
+    float: left;
+    display: flex;
+}
+
+.c-share-your-details-form .form-section .actions button[type='button'] {
+    display: none;
+    margin-right: 1rem;
+    border: 1px solid #2f78c6;
+}
+
+.c-share-your-details-form .form-section .actions button[type='button'].show {
+    display: block;
+}
+
+@media (min-width: 720px) {
+    .c-share-your-details-form {
+        padding: 0;
+    }
+    .c-share-your-details-form .form-header {
+        margin-bottom: 2rem;
+    }
+    .c-share-your-details-form .email-section .email-section-row {
+        display: flex;
+        margin-bottom: 0;
+    }
+    .c-share-your-details-form .email-section .email-section-row .form-group {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 15px;
+        position: relative;
+        width: 75%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-share-your-details-form .email-section .email-section-row .form-group {
+        width: 75%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-share-your-details-form .email-section .email-section-row .actions {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 25%;
+        transition: padding .5s;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-share-your-details-form .email-section .email-section-row .actions {
+        width: 25%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-share-your-details-form .email-section .email-section-row .actions:hover {
+        padding-left: 0;
+    }
+    .c-share-your-details-form .email-section .form-disclaimer {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+    }
+    .c-share-your-details-form .email-section .form-disclaimer .text div {
+        margin-bottom: 0;
+    }
+    .c-share-your-details-form .form-section .form-row {
+        margin-bottom: 1rem;
+    }
+    .c-share-your-details-form .form-section .form-row .form-group:first-child {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-share-your-details-form .form-section .form-row .form-group:first-child {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-share-your-details-form .form-section .form-row .form-group:last-child {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 0;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-share-your-details-form .form-section .form-row .form-group:last-child {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-share-your-details-form .form-section .form-row.single-element .form-group:first-child,
+    .c-share-your-details-form .form-section .form-row.single-element .form-group:last-child {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 100%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-share-your-details-form .form-section .form-row.single-element .form-group:first-child,
+    .c-share-your-details-form .form-section .form-row.single-element .form-group:last-child {
+        width: 100%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-share-your-details-form .form-section .actions {
+        text-align: right;
+        margin-top: 2rem;
+    }
+    .c-share-your-details-form .c-processing-screen {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 75%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-share-your-details-form .c-processing-screen {
+        width: 75%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

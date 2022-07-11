@@ -1,0 +1,49 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.policyReader="com.edc.edcweb.core.models.PolicyReader" />
+<sly data-sly-test.policy="${policyReader.policy}"/>
+<sly data-sly-test.locationName="${pageProperties['location']}"/>
+<sly data-sly-test.address="${pageProperties['address']}"/>
+<sly data-sly-test.city="${pageProperties['city']}"/>
+<sly data-sly-test.province="${pageProperties['province']}"/>
+<sly data-sly-test.country="${pageProperties['country']}"/>
+
+<sly data-sly-test.timezone="${pageProperties['timezone']}"/>
+<sly data-sly-test="${timezone=='0'}"> <sly data-sly-test.timezone=""/> </sly>
+
+<sly data-sly-test.mapLink="${pageProperties['mapLink']}"/>
+<sly data-sly-test.mapLinkTarget="${pageProperties['mapLinkTarget']}"/>
+<sly data-sly-test.mapLinkLabel="${policyReader.labels['mapLinkLabel']}"/>
+<sly data-sly-test.dateTimeLabel="${policyReader.labels['dateTimeLabel']}"/>
+<sly data-sly-test.locationNameLabel="${policyReader.labels['locationNameLabel']}"/>
+
+<sly data-sly-use.startDate="${'com.edc.edcweb.core.helpers.DateFormater' @date=pageProperties['startDate'], formatEN='EEE, MMMMM d, yyyy', formatFR='EEE, d MMMMM, yyyy'}"/>
+<sly data-sly-use.endDate="${'com.edc.edcweb.core.helpers.DateFormater' @date=pageProperties['endDate'], formatEN='EEE, MMMMM d, yyyy', formatFR='EEE, d MMMMM, yyyy'}"/>
+<sly data-sly-use.startTime="${'com.edc.edcweb.core.helpers.DateFormater' @date=pageProperties['startTime'], formatEN='h:mm a', formatFR='H a mm'}"/>
+<sly data-sly-use.endTime="${'com.edc.edcweb.core.helpers.DateFormater' @date=pageProperties['endTime'], formatEN='h:mm a', formatFR='H a mm'}"/>
+
+<sly data-sly-test.policy="${policyReader.policy}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !locationName && !startTime}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !policy, emptyTextAppend='No Policy defined'}"/>
+
+<sly data-sly-test ="${locationName || startDate || address || city || country }" >
+<section class="c-event-date-location">
+    <div class="date-time" role="region" aria-labelledby="EVENTDATELOCATION-event-date">
+        <h4 id="EVENTDATELOCATION-event-date" class="title">${dateTimeLabel}</h4>
+        <p data-sly-test="${startDate.DateConvertedLocale}"><time>${startDate.DateConvertedLocale}</time>
+        <sly data-sly-test="${endDate.DateConvertedLocale != startDate.DateConvertedLocale}"> - <time>${endDate.DateConvertedLocale}</time> </sly></p>
+        <p data-sly-test="${startTime.DateConvertedLocale}"><time>${startTime.DateConvertedLocale}</time>
+        <sly data-sly-test="${endTime.DateConvertedLocale}"> - <time>${endTime.DateConvertedLocale} </time>  </sly> ${pageProperties['timezone']}</p>
+    </div>
+    <div class="location" role="region" aria-labelledby="EVENTDATELOCATION-event-location">
+        <h4 id="EVENTDATELOCATION-event-location" class="title">${locationNameLabel}</h4>
+        <p data-sly-test="${locationName}">${locationName}</p>
+        <p data-sly-test="${address}">${address}</p>
+        <sly data-sly-test="${city && province}"><p>${city}, ${province}</p></sly>
+        <sly data-sly-test="${!city || !province}"><p>${city} ${province}</p></sly>
+        <p data-sly-test=${country}>${country}</p>
+        <sly data-sly-use.linkresolver="${'com.edc.edcweb.core.helpers.LinkExternalizer' @srcPath=mapLink, scheme=request.scheme}"/>
+        <a data-sly-test ="${mapLink}" class="cta" href="${linkresolver.LinkWithHtmlExtension}" target="${mapLinkTarget}">${policyReader.labels['mapLinkLabel']}</a>
+    </div>
+</section>
+</sly>
+        

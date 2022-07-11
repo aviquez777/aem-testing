@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Page Hero Banner"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+        margin="{Boolean}false">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <images
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <heading
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/text"
+                                class="coral-Form-fieldlabel"
+                                text="Images"/>
+                            <well
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <layout
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <desktop
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldDescription="Image dimension: 1,440 x 553"
+                                        fieldLabel="Desktop Breakpoint Image"
+                                        mimeTypes="[image]"
+                                        multiple="{Boolean}false"
+                                        name="./fileReference"
+                                        rootPath="/content/dam/edc"/>
+                                    <tablet
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldDescription="Image dimension: 768 x 398"
+                                        fieldLabel="Tablet Breakpoint Image"
+                                        mimeTypes="[image]"
+                                        multiple="{Boolean}false"
+                                        name="./tabletFileReference"
+                                        rootPath="/content/dam/edc"/>
+                                    <teaserimage
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldDescription="Image dimension: 320 x 418"
+                                        fieldLabel="Mobile Breakpoint Image"
+                                        name="./teaserimage"
+                                        rootPath="/content/dam/edc"/>
+                                    <imagealttext
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Used as the alternate text for all article images"
+                                        fieldLabel="Image Alternate Text"
+                                        name="./imagealttext"/>
+                                    <alignment
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldLabel="Image Alignment"
+                                        name="./imagealignment">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <left
+                                                jcr:primaryType="nt:unstructured"
+                                                selected="{Boolean}true"
+                                                text="Left align"
+                                                value="left"/>
+                                            <center
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Center align"
+                                                value="center"/>
+                                            <right
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Right align"
+                                                value="right"/>
+                                </items>
+                                    </alignment>
+                                    <backgroundicon
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldDescription="Determines the background icon."
+                                        fieldLabel="Background icon"
+                                        name="./backgroundIcon">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <none
+                                                jcr:primaryType="nt:unstructured"
+                                                text="None"
+                                                value=""/>
+                                            <chevrons
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Chevrons"
+                                                value="chevrons"/>
+                                            <backslashes
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Backslashes"
+                                                value="backslashes"/>
+                                            <pyramids
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Pyramids"
+                                                value="pyramids"/>
+                                            <waves
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Waves"
+                                                value="waves"/>
+                                        </items>
+                                    </backgroundicon>
+                                </items>
+                            </well>
+                        </items>
+                    </images>
+                    <videos
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <heading
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/text"
+                                class="coral-Form-fieldlabel"
+                                text="Videos"/>
+                            <well
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <layout
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <videoid
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Video Youtube ID"
+                                        fieldLabel="Video Youtube ID"
+                                        name="./videoid" />
+                                    <heading
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/text"
+                                        class="coral-Form-fieldlabel"
+                                        text="* NOTE: Before uploading your video file, remember that it is recommended to use a 16:9 aspect ratio for the videos. The best resolution is 1440px x 553px. If possible, keep the video size small, less than 800kb. Use compression tools if necessary."/>
+                                    <webmVideo
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldDescription="Video banner dimension: 1,440 x 553"
+                                        fieldLabel="Webm Video"
+                                        mimeTypes="[.webm]"
+                                        multiple="{Boolean}false"
+                                        name="./videowebm"
+                                        rootPath="/content/dam/edc"/>
+                                    <mp4Video
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldDescription="Video banner dimension: 1,440 x 553"
+                                        fieldLabel="Mp4 Video"
+                                        mimeTypes="[.mp4]"
+                                        multiple="{Boolean}false"
+                                        name="./videomp4"
+                                        rootPath="/content/dam/edc"/>
+                                    <oggVideo
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldDescription="Video banner dimension: 1,440 x 553"
+                                        fieldLabel="Ogg Video"
+                                        mimeTypes="[.ogg]"
+                                        multiple="{Boolean}false"
+                                        name="./videoogg"
+                                        rootPath="/content/dam/edc"/>
+                                </items>
+                            </well>
+                        </items>
+                    </videos>
+                    <text
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <heading
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/text"
+                                class="coral-Form-fieldlabel"
+                                text="Tagline / Title / Synopsis"/>
+                            <well
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <layout
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <tagline
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Tagline"
+                                        name="./tagline">
+                                    </tagline>
+                                    <pagetitle
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Title"
+                                        name="./pageTitle">
+                                    </pagetitle>
+                                    <synopsis
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                        fieldLabel="Synopsis"
+                                        name="./articlesynopsis"/>
+                                </items>
+                            </well>
+                        </items>
+                    </text>
+                    <cta
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <heading
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/text"
+                                class="coral-Form-fieldlabel"
+                                text="CTA"/>
+                            <well
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <layout
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <videoctatext
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="CTA button text"
+                                        name="./videoctatext" />
+                                    <videoctaurl
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldLabel="CTA link url (Only if a Video Youtube ID is not defined"
+                                        name="./linkurl"
+                                        rootPath="/content/edc"/>
+                                    <videoctatarget
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldLabel="CTA link target (Only if a Video Youtube ID is not defined)"
+                                        name="./linktarget">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <new
+                                                jcr:primaryType="nt:unstructured"
+                                                text="New window"
+                                                value="_blank"/>
+                                            <existing
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Existing window"
+                                                value="_self"/>
+                                        </items>
+                                    </videoctatarget>
+                                    <anchortarget
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="This field must only contain lowercase letters, numbers, dashes, and underscores."
+                                        fieldLabel="Anchor Link Target"
+                                        name="./anchortarget"/>
+                                </items>
+                            </well>
+                        </items>
+                    </cta>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

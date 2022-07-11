@@ -1,0 +1,30 @@
+<sly data-sly-use.model="com.edc.edcweb.core.models.EbookChapterToogle"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !model}"/>
+<sly data-sly-test.hasPolicy="${model.hasPolicy}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !hasPolicy, emptyTextAppend='No policy defined for component'}"/>
+<sly data-sly-test.showNav="${model.showNav}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !showNav, emptyTextAppend='Preview only url parameter is set'}"/>
+<sly data-sly-test.chapterCount="${model.chapterCount}"/>
+<sly data-sly-test.hasPages="${chapterCount > 0}" />
+<sly data-sly-call="${templates.placeholder @ isEmpty = !hasPages, emptyTextAppend='No Pages configured for ebook'}"/>
+
+<sly data-sly-test.ebookChapters="${model.ebookChapters}"/>
+<sly data-sly-test.nextChapter="${model.nextChapterText}"/>
+<sly data-sly-test.chapter="${model.chapterText}"/>
+<sly data-sly-test.of="${model.ofText}"/>
+<sly data-sly-test.minute="${model.minuteText}"/>
+<sly data-sly-test.minutes="${model.minutesText}"/>
+<sly data-sly-test.readTime="${model.readTimeText}"/>
+
+
+<section class="c-ebook-chapter" role="complementary" data-start-index="${model.currentChapter}" data-sly-test="${hasPolicy && showNav && hasPages}" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'Ebook chapter toggle'}" data-event-type="button" data-event-action="main body" data-destination-page="#" data-event-engagement="1">
+  <div data-sly-test="${properties.keyline == 'top'}" class="keyline"></div>
+  <sly data-sly-use.chaptertemplate="ebookchapter.html" />
+    <div class="content-slider">
+      <div class="ebook-slider" data-sly-list.ebookChapter="${ebookChapters}">
+        <sly data-sly-call="${chaptertemplate.chapter @ ebookChapter = ebookChapter, ctaText = properties.ctatext, nextChapter = nextChapter, chapter = chapter, of = of, minute = minute, minutes = minutes, readTime = readTime,  currentItem = ebookChapterList.count, totalItems = chapterCount}"></sly>
+      </div>
+    </div>
+</section>

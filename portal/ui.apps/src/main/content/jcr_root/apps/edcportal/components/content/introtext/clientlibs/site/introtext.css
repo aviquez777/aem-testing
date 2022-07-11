@@ -1,0 +1,49 @@
+.cmp-text {
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.cmp-text * {
+    box-sizing: border-box;
+}
+
+.cmp-text ul,
+.cmp-text ol {
+    list-style-position: inside;
+    padding-left: 16px;
+}
+
+.cmp-text ul li,
+.cmp-text ol li {
+    text-indent: -1.4rem;
+    margin-left: 1.4rem;
+}
+
+.cmp-text ul {
+    list-style-type: disc;
+}
+
+.cmp-text ol {
+    list-style-type: decimal;
+}
+
+.cmp-text.is-edited span.white {
+    background-color: #ccc;
+}
+
+.cmp-text.cmp-intro-text {
+    background: url("/etc.clientlibs/edc/clientlibs/clientlib-base/resources/images/squiggle.svg") no-repeat center 4px;
+    background-size: auto 44px;
+    padding: 3rem 0 1rem;
+}
+
+.cmp-text.cmp-intro-text p {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@media (min-width: 960px) {
+    .cmp-text.cmp-intro-text {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+}

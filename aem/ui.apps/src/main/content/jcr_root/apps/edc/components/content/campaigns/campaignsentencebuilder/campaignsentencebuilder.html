@@ -1,0 +1,40 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.model="com.edc.edcweb.core.models.CampaignSentenceBuilder"/>
+<sly data-sly-test.tagList="${model.tagList}"/>
+<sly data-sly-test.defPages="${model.defaultPages}"/>
+<sly data-sly-test.pagesJson="${model.pagesJson}"/>
+<sly data-sly-test.defaultTag="${properties.defaulttag}"/>
+<sly data-sly-test.globalTarget="${properties.globallinktarget}"/>
+<sly data-sly-test.isConfigured="${tagList && defPages && properties.sentencetext}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !isConfigured}"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+
+<section data-sly-test="${isConfigured}" class="c-sentence-builder-campaign" role="contentinfo" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'Campaign Sentence Builder'}" data-event-type="drop-down" data-event-name="selection" data-event-action="main body" data-event-engagement="1.5" >
+  <h3 data-sly-test="${properties.title}" class="headline">${properties.title}</h3>
+  <div class="sentence">
+    <span class="">${properties.sentencetext}</span>
+    <div class="select">
+      <label for="sentence-builder-selection" title="Sentence Builder Selection">
+        <!--/* There should be no spaces between the option and the chevron */-->
+        <span class="option">${defaultTag}</span><span class="chevron"></span>
+      </label>
+      <div class="dropdown-container">
+        <select name="sentence-builder-selection" id="sentence-builder-selection" data-sly-test="${tagList}">
+          <option disabled="disabled"></option>
+          <option data-sly-repeat="${tagList}" value="${item}">${item}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <sly data-sly-use.cardItem="carditem.html"/>
+  <div class="card-grid" data-sly-list="${defPages}" data-event-type="link" data-event-name="link click" data-event-engagement="1" data-event-level="primary">
+    <sly data-sly-call="${cardItem.item @ item = item, cardCategory = defaultTag, cardTarget=globalTarget}"/>
+  </div>
+  <div class="view-more" data-sly-test="${properties.linkText && properties.linkUrl}" data-event-type="link" data-event-name="link click" data-event-engagement="1" data-event-level="primary">
+    <sly data-sly-use.urlres="${'com.edc.edcweb.core.models.PageModelHelper' @ path = properties.linkUrl}"/>
+    <a href=${urlres.url} target="${properties.linkTarget}" x-cq-linkchecker="valid">${properties.linkText}</a>
+  </div>
+  <script data-sly-test="${pagesJson}">
+    EDC.props.sentenceBuilderCampaignData = ${pagesJson @ context='unsafe'};
+  </script>
+</section>

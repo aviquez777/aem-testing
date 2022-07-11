@@ -1,0 +1,109 @@
+<template data-sly-template.jsblock="${@ formId, lookupIdVisitor, lookupIdPrimary, elqSetSiteId, uuid}">
+
+    <script type="text/javascript">
+        var lookupIdVisitor = "${lookupIdVisitor @ context='text'}",
+            lookupIdPrimary = "${lookupIdPrimary @ context='text'}",
+            visitorUniqueField = "V_Email_Address",
+            primaryUniqueField = "C_EmailAddress",
+            eloquaFormID = "${formId @ context='text'}",
+            firstLookup = true,
+            cookieName;
+
+        function loadFields(FormID) {
+            var container = document.getElementById(FormID),
+                inputs = container ? container.querySelectorAll('input, select') : [],
+                index,
+                countryValue = GetElqContentPersonalizationValue('C_Country'),
+                firstName = GetElqContentPersonalizationValue('C_FirstName'),
+                lastName = GetElqContentPersonalizationValue('C_LastName'),
+                showCustomMsg = false;
+
+            inputs.forEach(function (input) {
+                var lookupID = input.id,
+                    lookupValue = lookupID === 'companyCountry-${uuid @ context="text"}' ? GetElqContentPersonalizationValue('C_Country') : GetElqContentPersonalizationValue(lookupID),
+                    lowerCaseValue = lookupValue.toLowerCase(),
+                    selectObj,
+                    validLookup = true;
+
+                if (lookupID && lookupValue) {
+                    if (countryValue !== 'CAN' && (lookupID === 'companyCountry-${uuid @ context="text"}' || lookupID === 'companyAddress1-${uuid @ context="text"}' || lookupID === 'companyCity-${uuid @ context="text"}' || lookupID === 'companyProvince-${uuid @ context="text"}' || lookupID === 'companyPostal-${uuid @ context="text"}')) {
+                        validLookup = false;
+                    }
+
+                    if (validLookup) {
+                        if (input.type === "checkbox" && (lowerCaseValue === "on" || lowerCaseValue === "true" || lowerCaseValue === "y" || lowerCaseValue === "yes" || lowerCaseValue === "checked" || lowerCaseValue === "1")) {
+                            input.checked=true;
+                        } else if (input.type === "select-one") {
+                            selectObj = container.querySelector('select[id="' + lookupID + '"]').closest('.ui.dropdown').querySelector('.menu .item[data-value="' + lookupValue + '"]');
+                            if (selectObj) {
+                                selectObj.click();
+                            }
+                        } else if (input.type === "text" || input.type === "email" || input.type === "tel" || input.name === "ITMValue" || input.name === "ITMOther") {
+                            input.value = lookupValue;
+                        }
+                        showCustomMsg = true;
+                    }
+                }
+            });
+
+            if (showCustomMsg) {
+                var title = container.querySelector('.content-header .title'),
+                    description = container.querySelector('.content-header .description');
+
+                if (firstName && lastName && title) {
+                    title.innerHTML = "${properties.hello @ context='text'} " + firstName +" "+ lastName;
+                }
+
+                if (description) {
+                    description.innerHTML = "<p>${properties.prepopdescription @ context='text'}</p>";
+                }
+            }
+        }
+
+        function SetElqContent() {
+            window.setElqContentFnCalled = true;
+            if (firstLookup) {
+                _elqQ.push(['elqDataLookup', escape(lookupIdPrimary), '<' + primaryUniqueField +'>' + GetElqContentPersonalizationValue(visitorUniqueField) + '</' + primaryUniqueField + '>']);
+                firstLookup = false;
+            } else {
+                loadFields(eloquaFormID);
+            }
+        }
+
+        if (!_elqQ) {
+            var _elqQ = [];
+
+            window.setElqContentFnCalled = false;
+            cookieName = "metricsinfoqac.edc.ca";
+
+            if (location.hostname == "www.edc.ca") {
+                cookieName = "metricsinfo.edc.ca";
+            }
+
+            _elqQ.push(['elqSetSiteId', '${elqSetSiteId @ context="text"}']);
+            _elqQ.push(['elqUseFirstPartyCookie', cookieName]);
+            _elqQ.push(['elqTrackPageView']);
+
+            (function() {
+                function async_load() {
+                    var s = document.createElement('script'),
+                        x;
+
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = '//img.en25.com/i/elqCfg.min.js';
+                    x = document.getElementsByTagName('script')[0];
+                    x.parentNode.insertBefore(s, x);
+                }
+
+                if (window.addEventListener) {
+                    window.addEventListener('DOMContentLoaded', async_load, false);
+                } else if (window.attachEvent) {
+                    window.attachEvent('onload', async_load);
+                }
+            })();
+        }
+
+        _elqQ.push(['elqDataLookup', escape(lookupIdVisitor), '']);
+    </script>
+</template>

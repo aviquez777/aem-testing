@@ -1,0 +1,93 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.contactus="com.edc.edcweb.core.models.ContactUs"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-use.messages="com.edc.edcweb.core.models.FormCommonMessages"/>
+<sly data-sly-use.formsTemplates="${'/apps/edc/components/common/forms.html'}" />
+<sly data-sly-test.hasvalues="${properties.firstname}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !hasvalues}"/>
+<sly data-sly-use.dropdownTemplates="${'/apps/edc/components/common/dropdown.html'}" />
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+<sly data-sly-use.buttonTemplate="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+
+<div data-sly-test="${hasvalues}">
+    <sly data-sly-test="${contactus.eloquaFormName || contactus.eloquaFormSubmitURL || contactus.eloquaFormId || contactus.eloquaSiteId}" >
+
+    <form name="${contactus.eloquaFormName}" class="c-contact-us" novalidate="" action="${contactus.eloquaFormSubmitURL}" id="${contactus.eloquaFormId}" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'Contact Us Form'}" data-event-type="form" data-event-name="form submit" data-event-engagement="3" data-event-action="main body" data-event-level="primary">
+        <sly data-sly-call="${formsTemplates.formhiddenfields @ elqFormName=contactus.eloquaFormName, elqSiteId=contactus.eloquaSiteId,
+                lang=contactus.pageLanguage, inquiryID=properties.inquiryID,
+                formID='EventLevel2'}">
+        </sly>
+        <input type="text" name="middleName" class="form-control" placeholder="middlename" tabindex="-1" autoComplete="false" />
+        <input type="hidden" name="eventID" class="form-control" data-no-url="" value="" />
+        <div class="content">
+            <div class="content-header">
+                <h2 class="title blue-light" data-sly-test="${properties.formtitle}">${properties.formtitle}</h2>
+                <div data-sly-test="properties.description" class="description">
+                    ${properties.description @ context='html'}
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="inquiry">
+                    <sly data-sly-call="${dropdownTemplates.dropdown @ name='inquiry', uuid=uuid, label=properties.inquirytypelabel,
+                         placeholder=properties.inquirytypeplaceholder, required=true, nourl=true,
+                         requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format,
+                         options=contactus.inquiryitems, optionvalue='inquiryvalue', optiontext='inquirytext'}">
+                    </sly>
+                </div>
+                <div class="firstName">
+                    <label for="firstName-${uuid}">${properties.firstname}</label>
+                    <input class="form-control" type="text" name="firstName" id="firstName-${uuid}" data-no-url="" required="" validation-rule="name" >
+                    <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                </div>
+                <div class="lastName">
+                    <label for="lastName-${uuid}">${properties.lastname}</label>
+                    <input class="form-control" type="text" name="lastName" id="lastName-${uuid}" data-no-url="" required="" validation-rule="name" >
+                    <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+                </div>
+            </div>
+            <div class="emailAddress">
+                <label for="emailAddress-${uuid}">${properties.businessemail}</label>
+                <input class="form-control" type="email" name="emailAddress" id="emailAddress-${uuid}" required="">
+                <span class="error" data-req-message="${messages.formErrorMessages.required}" data-email-message="${messages.formErrorMessages.email}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+            </div>
+            <div class="companyName">
+                <label for="companyName-${uuid}">${properties.companynamelabel}</label>
+                <input class="form-control" type="text" name="companyName" id="companyName-${uuid}" placeholder="${properties.companynameplaceholder}" data-no-url="" required="" validation-rule="legalName" >
+                <span class="error" data-req-message="${messages.formErrorMessages.required}" data-text-message="${messages.formErrorMessages.format}" data-length-min-message="${messages.formErrorMessages.minlength}" data-length-max-message="${messages.formErrorMessages.maxlength}"></span>
+            </div>
+            <div class="tradeStatus">
+                <sly data-sly-call="${dropdownTemplates.dropdown @ name='tradeStatus', uuid=uuid, label=properties.exportstatuslabel,
+                    placeholder=properties.exportstatusplaceholder, required=true, nourl=true,
+                    requirederror=messages.formErrorMessages.required, invaliderror=messages.formErrorMessages.format, options=contactus.exportstatusitems}">
+                </sly>
+            </div>
+            <div class="comments">
+                <label for="comments-${uuid}">${properties.commentlabel}</label>
+                <textarea class="form-control" name="comments" id="comments-${uuid}" rows="7" required="" validation-rule="none"></textarea>
+                <span class="error" data-req-message="${messages.formErrorMessages.required}"></span>
+            </div>
+            <div class="contact-us-disclaimer">
+                <div class="text">
+                    <input class="form-control" type="checkbox" name="caslConsent" id="caslConsent-${uuid}" value="yes" data-no-url="">
+                    <div>
+                        <label for="caslConsent-${uuid}">${properties.caslconsent @ context='html'}</label>
+                    </div>
+                    <span class="error" data-checkbox-message="${messages.formErrorMessages.checkbox}"></span>
+                </div>
+                    <div class="actions">
+                    <div data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='enabled', buttontext=properties.ctaText, btntype='submit'}"  data-sly-unwrap></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="success ${wcmmode.disabled ? 'hide' : 'show'}">
+            <img data-sly-test="${properties.successIcon}" src="${properties.successIcon}" alt="${properties.successIconAlt}" />
+            <h2>${properties.successTitle}</h2>
+            <div class="large">${properties.successPrimaryText @ context='html'}</div>
+            <sly data-sly-test="${properties.resetButtonText}">
+                <div data-sly-call="${buttonTemplate.ibTemplate @ buttonbehavior='button', buttonstate='disabled', buttontext=properties.resetButtonText, btntype='reset', buttoncssclasses='resetBtn disabled'}"  data-sly-unwrap></div>
+            </sly>
+        </div>
+    </form>
+</div>

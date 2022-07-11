@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+  xmlns:cq="http://www.day.com/jcr/cq/1.0"
+  xmlns:jcr="http://www.jcp.org/jcr/1.0"
+  xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+  jcr:primaryType="nt:unstructured" 
+  jcr:title="Add Date for publish later"
+  sling:resourceType="cq/gui/components/authoring/dialog">
+  <content jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/foundation/container">
+    <layout jcr:primaryType="nt:unstructured"
+      sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+      margin="false" />
+    <items jcr:primaryType="nt:unstructured">
+      <column jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+          <schedule jcr:primaryType="nt:unstructured"
+            jcr:title="Scheduling the page for publishing"
+            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+            <items jcr:primaryType="nt:unstructured">
+              <activationDate
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                displayedFormat="D MMMM YYYY hh:mm a"
+                displayTimezoneMessage="{Boolean}true"
+                fieldDescription="Please schedule the item for publish or leave blank to publish now"
+                fieldLabel="Publish Date (leave blank to publish now)" 
+                minDate="today"
+                name="publishDate"
+                type="datetime" />
+            </items>
+          </schedule>
+        </items>
+      </column>
+    </items>
+  </content>
+</jcr:root>

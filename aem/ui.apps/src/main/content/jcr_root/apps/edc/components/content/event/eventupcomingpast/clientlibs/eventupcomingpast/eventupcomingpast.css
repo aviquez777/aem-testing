@@ -1,0 +1,174 @@
+article.article .article-body .c-upcoming-past-events,
+.c-upcoming-past-events {
+    box-sizing: border-box;
+    margin-bottom: 48px;
+    margin-top: 48px;
+    overflow: hidden;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+article.article .article-body .c-upcoming-past-events *,
+.c-upcoming-past-events * {
+    box-sizing: border-box;
+}
+
+article.article .article-body .c-upcoming-past-events nav,
+.c-upcoming-past-events nav {
+    border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+    overflow: hidden;
+}
+
+article.article .article-body .c-upcoming-past-events nav ul,
+.c-upcoming-past-events nav ul {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    line-height: 1.5;
+}
+
+article.article .article-body .c-upcoming-past-events nav ul li,
+.c-upcoming-past-events nav ul li {
+    float: left;
+    list-style: none;
+    padding: 0;
+    max-width: 50%;
+}
+
+article.article .article-body .c-upcoming-past-events nav ul li a,
+.c-upcoming-past-events nav ul li a {
+    color: rgba(51, 51, 51, 0.3);
+    display: block;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    padding: 16px;
+    text-align: center;
+    text-decoration: none;
+}
+
+article.article .article-body .c-upcoming-past-events nav ul li a.selected,
+.c-upcoming-past-events nav ul li a.selected {
+    color: #4386ac;
+    border-bottom: 2px solid #4386ac;
+}
+
+article.article .article-body .c-upcoming-past-events .tab-panel,
+.c-upcoming-past-events .tab-panel {
+    display: none;
+    color: #333;
+    margin-top: -165px;
+    padding-top: 165px;
+}
+
+article.article .article-body .c-upcoming-past-events .tab-panel.show,
+.c-upcoming-past-events .tab-panel.show {
+    display: block;
+}
+
+article.article .article-body .c-upcoming-past-events .date-event-group h2,
+.c-upcoming-past-events .date-event-group h2 {
+    margin: 48px 0 32px;
+}
+
+article.article .article-body .c-upcoming-past-events .date-event-group .event,
+.c-upcoming-past-events .date-event-group .event {
+    border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+}
+
+article.article .article-body .c-upcoming-past-events .date-event-group .event .headline,
+.c-upcoming-past-events .date-event-group .event .headline {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: rgba(51, 51, 51, 0.5);
+    margin-top: 32px;
+}
+
+article.article .article-body .c-upcoming-past-events .date-event-group .event .headline span,
+.c-upcoming-past-events .date-event-group .event .headline span {
+    margin: 6px 32px 6px 0;
+    display: inline-block;
+}
+
+article.article .article-body .c-upcoming-past-events .date-event-group .event .headline span.tag,
+.c-upcoming-past-events .date-event-group .event .headline span.tag {
+    margin: 0;
+    padding: 6px 24px;
+    float: right;
+    color: #37769a;
+    background-color: rgba(67, 134, 172, 0.05);
+    border-radius: 6px;
+}
+
+article.article .article-body .c-upcoming-past-events .date-event-group .event .description,
+.c-upcoming-past-events .date-event-group .event .description {
+    clear: both;
+    margin-top: 5px;
+    margin-bottom: 32px;
+}
+
+article.article .article-body .c-upcoming-past-events .date-event-group .event .description h3,
+.c-upcoming-past-events .date-event-group .event .description h3 {
+    margin: 0;
+    word-wrap: break-word;
+}
+
+article.article .article-body .c-upcoming-past-events .date-event-group .event .description p,
+.c-upcoming-past-events .date-event-group .event .description p {
+    margin-top: 0;
+}
+
+article.article .article-body .c-upcoming-past-events .date-event-group .event .action,
+.c-upcoming-past-events .date-event-group .event .action {
+    margin-top: 10px;
+    margin-bottom: 32px;
+}
+
+article.article .article-body .c-upcoming-past-events .date-event-group:last-child .event:last-child,
+.c-upcoming-past-events .date-event-group:last-child .event:last-child {
+    border-bottom: 0;
+}
+
+@media (min-width: 720px) {
+    .c-upcoming-past-events .date-event-group h2 {
+        margin-bottom: 48px;
+    }
+    .c-upcoming-past-events .date-event-group .event .description {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 15px;
+        position: relative;
+        width: 62.5%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-upcoming-past-events .date-event-group .event .description {
+        width: 62.5%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-upcoming-past-events .date-event-group .event .action {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 0;
+        position: relative;
+        width: 37.5%;
+        text-align: right;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-upcoming-past-events .date-event-group .event .action {
+        width: 37.5%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-upcoming-past-events .date-event-group .event::after {
+        clear: both;
+        display: block;
+        content: ' ';
+    }
+}

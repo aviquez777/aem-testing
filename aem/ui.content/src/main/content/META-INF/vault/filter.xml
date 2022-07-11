@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/content/edc" mode="update" />
+    <filter root="/content/edc/en/data" />
+    <filter root="/content/edc/fr/data" />
+    <filter root="/content/experience-fragments">
+    	<exclude pattern="/content/experience-fragments/[^/]+(/.*)?"/>
+    </filter>
+    <filter root="/content/experience-fragments/pci"/>
+</workspaceFilter>

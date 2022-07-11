@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <option1
+        jcr:primaryType="nt:unstructured"
+        enName="0 employees"
+        frName="0 employés"
+        value="0 employees"/>
+    <option2
+        jcr:primaryType="nt:unstructured"
+        enName="1 to 9 employees"
+        frName="1 à 9 employés"
+        value="1 to 9 employees"/>
+    <option3
+        jcr:primaryType="nt:unstructured"
+        enName="10 to 49 employees"
+        frName="10 à 49 employés"
+        value="10 to 49 employees"/>
+    <option4
+        jcr:primaryType="nt:unstructured"
+        enName="50 to 99 employees"
+        frName="50 à 99 employés"
+        value="50 to 99 employees"/>
+    <option5
+        jcr:primaryType="nt:unstructured"
+        enName="100 to 249 employees"
+        frName="100 à 249 employés"
+        value="100 to 249 employees"/>
+    <option6
+        jcr:primaryType="nt:unstructured"
+        enName="250 to 499 employees"
+        frName="250 à 499 employés"
+        value="250 to 499 employees"/>
+    <option7
+        jcr:primaryType="nt:unstructured"
+        enName="500+ employees"
+        frName="500 employés et plus"
+        value="500+ employees"/>
+</jcr:root>

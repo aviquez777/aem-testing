@@ -1,0 +1,83 @@
+<table style="width: 100%; border-collapse: collapse; font-family: sans-serif; font-size: 12px;" border="0" cellpadding="0" cellspacing="0">
+    <tr style="border-collapse: collapse;">
+        <th style="text-align: left; padding: 5px 0; border-collapse: collapse;"><h1 style="font-size: 16px; font-weight: 600; margin: 10px 0 15px 0;">${emailTitle}</h1></th>
+    </tr>
+    <tr style="border-collapse: collapse;">
+        <td style="border-collapse: collapse; padding: 0 0 15px;">${emailDescription}</td>
+    </tr>
+    <tr style="border-collapse: collapse;">
+        <td style="border-collapse: collapse; padding: 5px 0;"><b>${emailRequestDateLabel}:</b> ${requestDateText}</td>
+    </tr>
+    <tr style="border-collapse: collapse;">
+        <td style="border-collapse: collapse; padding: 5px 0;"><b>${emailLanguageLabel}:</b> ${languageText}</td>
+    </tr>
+    <tr style="border-collapse: collapse;">
+        <td style="border-collapse: collapse; padding: 5px 0;"><b>${emailFullNameLabel}:</b> ${fullNameText}</td>
+    </tr>
+    <tr style="border-collapse: collapse;">
+        <td style="border-collapse: collapse; padding: 5px 0;"><b>${emailEmailLabel}:</b> ${emailText}</td>
+    </tr>
+    <tr style="border-collapse: collapse;">
+        <td style="border-collapse: collapse; padding: 5px 0;"><b>${emailCompanyNameLabel}:</b> ${companyNameText}</td>
+    </tr>
+    <tr style="border-collapse: collapse;">
+        <td style="border-collapse: collapse; padding: 5px 0;"><b>${emailIndustryLabel}:</b> ${industryText}</td>
+    </tr>
+    <tr style="border-collapse: collapse;">
+        <td style="border-collapse: collapse; padding: 5px 0;"><b>${emailMarketsLabel}:</b> ${marketsText}</td>
+    </tr>
+    <tr style="border-collapse: collapse;">
+        <td style="border-collapse: collapse; padding: 5px 0;"><b>${emailPainPointLabel}:</b> ${painPointText}</td>
+    </tr>
+    <tr style="border-collapse: collapse;">
+        <td style="border-collapse: collapse; padding: 5px 0 20px;"><b>${emailQuestionLabel}:</b> ${questionText}</td>
+    </tr>
+    <tr style="border-collapse: collapse;">
+        <td style="border-collapse: collapse;">
+            <table style="width: 100%; border-collapse: collapse; font-family: sans-serif; font-size: 12px;" border="0" cellpadding="0" cellspacing="0">
+                <tr style="border-collapse: collapse;">
+                    <th style="font-weight: 600; text-align: left; border: 1px solid #000000; border-collapse: collapse; padding: 5px 0; background-color: #d9d9d9;">${feedbackQuestion}</th>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr style="border-collapse: collapse;">
+        <td style="border-collapse: collapse;">
+            <table style="width: 100%; border-collapse: collapse; font-family: sans-serif; font-size: 12px;" border="0" cellpadding="0" cellspacing="0">
+                ${userInfo}
+            </table>
+        </td>
+    </tr>
+    <tr style="border-collapse: collapse;">
+        <td style="border-collapse: collapse;">
+            <table style="width: 100%; border-collapse: collapse; font-family: sans-serif; font-size: 12px;" border="0" cellpadding="0" cellspacing="0">
+                <tr style="border-collapse: collapse;">
+                    <th style="font-weight: 600; text-align: left; border: 1px solid #000000; border-collapse: collapse; padding: 5px 0; background-color: #d9d9d9;">${feedbackOneQuestion}</th>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr style="border-collapse: collapse;">
+        <td style="border-collapse: collapse;">
+            <table style="width: 100%; border-collapse: collapse; font-family: sans-serif; font-size: 12px;" border="0" cellpadding="0" cellspacing="0">
+                ${feedbackOneOptions}
+            </table>
+        </td>
+    </tr>
+    <tr style="border-collapse: collapse;">
+        <td style="border-collapse: collapse;">
+            <table style="width: 100%; border-collapse: collapse; font-family: sans-serif; font-size: 12px;" border="0" cellpadding="0" cellspacing="0">
+                <tr style="border-collapse: collapse;">
+                    <th style="font-weight: 600; text-align: left; border: 1px solid #000000; border-collapse: collapse; padding: 5px 0; background-color: #d9d9d9;">${feedbackTwoQuestion}</th>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr style="border-collapse: collapse;">
+        <td style="border-collapse: collapse;">
+            <table style="width: 100%; border-collapse: collapse; font-family: sans-serif; font-size: 12px;" border="0" cellpadding="0" cellspacing="0">
+                ${feedbackTwoOptions}
+            </table>
+        </td>
+    </tr>
+</table>

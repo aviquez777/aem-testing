@@ -1,0 +1,32 @@
+/** CSS for this component only **/
+.infobanner .tag-results-banner h1,
+.infobanner .tag-results-banner h2,
+.infobanner .tag-results-banner .container .secondary h4,
+.infobanner .tag-results-banner h1 + p,
+.infobanner .tag-results-banner h2 + p,
+.infobanner .tag-results-banner .container .secondary h4 + p {
+    float: none;
+    padding-left: 24px;
+    padding-right: 24px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.infobanner .tag-results-banner h1 + p,
+.infobanner .tag-results-banner h2 + p,
+.infobanner .tag-results-banner .container .secondary h4 + p {
+    margin-top: 0;
+}
+
+@media (min-width: 960px) {
+    .infobanner .tag-results-banner h1,
+    .infobanner .tag-results-banner h2,
+    .infobanner .tag-results-banner .container .secondary  h4,
+    .infobanner .tag-results-banner h1 + p,
+    .infobanner .tag-results-banner h2 + p,
+    .infobanner .tag-results-banner .container .secondary h4 + p {
+        padding-left: 16px;
+        padding-right: 16px;
+        max-width: 83.33333333%;
+    }
+}

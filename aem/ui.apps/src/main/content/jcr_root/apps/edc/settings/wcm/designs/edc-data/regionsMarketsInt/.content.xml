@@ -1,0 +1,1274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <northAmerica
+        jcr:primaryType="nt:unstructured"
+        enName="North America"
+        frName="L'Amérique du Nord">
+        <can
+            jcr:primaryType="nt:unstructured"
+            enName="Canada"
+            frName="Canada"
+            value="CAN"/>
+        <usa
+            jcr:primaryType="nt:unstructured"
+            enName="United States"
+            frName="États-Unis"
+            value="USA"/>
+        <ber
+            jcr:primaryType="nt:unstructured"
+            enName="Bermuda"
+            frName="Bermudes"
+            value="BER"/>
+        <grl
+            jcr:primaryType="nt:unstructured"
+            enName="Greenland"
+            frName="Groenland"
+            value="GRL"/>
+        <mex
+            jcr:primaryType="nt:unstructured"
+            enName="Mexico"
+            frName="Mexique"
+            value="MEX"/>
+        <spie
+            jcr:primaryType="nt:unstructured"
+            enName="Saint Pierre and Miquelon"
+            frName="Saint-Pierre-et-Miquelon"
+            value="SPIE"/>
+    </northAmerica>
+    <suouthCentralAmericaCaribbean
+        jcr:primaryType="nt:unstructured"
+        enName="South and Central America and the Caribbean"
+        frName="L'Amérique du Sud, Centrale et des Caraïbes">
+        <agl
+            jcr:primaryType="nt:unstructured"
+            enName="Anguilla"
+            frName="Anguilla"
+            value="AGL"/>
+        <ant
+            jcr:primaryType="nt:unstructured"
+            enName="Antigua and Barbuda"
+            frName="Antigua-et-Barbuda"
+            value="ANT"/>
+        <arg
+            jcr:primaryType="nt:unstructured"
+            enName="Argentina"
+            frName="Argentine"
+            value="ARG"/>
+        <aru
+            jcr:primaryType="nt:unstructured"
+            enName="Aruba"
+            frName="Aruba"
+            value="ARU"/>
+        <baha
+            jcr:primaryType="nt:unstructured"
+            enName="Bahamas"
+            frName="Bahamas"
+            value="BAHA"/>
+        <bar
+            jcr:primaryType="nt:unstructured"
+            enName="Barbados"
+            frName="Barbade"
+            value="BAR"/>
+        <beli
+            jcr:primaryType="nt:unstructured"
+            enName="Belize"
+            frName="Belize"
+            value="BELI"/>
+        <bes
+            jcr:primaryType="nt:unstructured"
+            enName="Bonaire, Sint Eustatius, Saba"
+            frName="Bonaire, Saint-Eustache, Saba"
+            value="BES"/>
+        <bol
+            jcr:primaryType="nt:unstructured"
+            enName="Bolivia"
+            frName="Bolivie"
+            value="BOL"/>
+        <bra
+            jcr:primaryType="nt:unstructured"
+            enName="Brazil"
+            frName="Brésil"
+            value="BRA"/>
+        <bvi
+            jcr:primaryType="nt:unstructured"
+            enName="Virgin Islands (British)"
+            frName="Îles Vierges Britanniques"
+            value="BVI"/>
+        <cay
+            jcr:primaryType="nt:unstructured"
+            enName="Cayman Islands"
+            frName="Caïmans, Îles"
+            value="CAY"/>
+        <chil
+            jcr:primaryType="nt:unstructured"
+            enName="Chile"
+            frName="Chili"
+            value="CHIL"/>
+        <col
+            jcr:primaryType="nt:unstructured"
+            enName="Colombia"
+            frName="Colombie"
+            value="COL"/>
+        <cos
+            jcr:primaryType="nt:unstructured"
+            enName="Costa Rica"
+            frName="Costa Rica"
+            value="COS"/>
+        <cub
+            jcr:primaryType="nt:unstructured"
+            enName="Cuba"
+            frName="Cuba"
+            value="CUB"/>
+        <cw
+            jcr:primaryType="nt:unstructured"
+            enName="Curaçao"
+            frName="Curaçao"
+            value="CW"/>
+        <dom
+            jcr:primaryType="nt:unstructured"
+            enName="Dominica"
+            frName="Dominique"
+            value="DOM"/>
+        <domr
+            jcr:primaryType="nt:unstructured"
+            enName="Dominican Republic"
+            frName="dominicaine, République"
+            value="DOMR"/>
+        <ecu
+            jcr:primaryType="nt:unstructured"
+            enName="Ecuador"
+            frName="Équateur"
+            value="ECU"/>
+        <fal
+            jcr:primaryType="nt:unstructured"
+            enName="Falkland Islands (Malvinas)"
+            frName="Falkland/Malouines, Îles"
+            value="FAL"/>
+        <fgu
+            jcr:primaryType="nt:unstructured"
+            enName="French Guiana"
+            frName="Guyane française"
+            value="FGU"/>
+        <grn
+            jcr:primaryType="nt:unstructured"
+            enName="Grenada"
+            frName="Grenade"
+            value="GRN"/>
+        <gua
+            jcr:primaryType="nt:unstructured"
+            enName="Guadeloupe"
+            frName="Guadeloupe"
+            value="GUA"/>
+        <guat
+            jcr:primaryType="nt:unstructured"
+            enName="Guatemala"
+            frName="Guatemala"
+            value="GUAT"/>
+        <guy
+            jcr:primaryType="nt:unstructured"
+            enName="Guyana"
+            frName="Guyana"
+            value="GUY"/>
+        <hai
+            jcr:primaryType="nt:unstructured"
+            enName="Haiti"
+            frName="Haïti"
+            value="HAI"/>
+        <hond
+            jcr:primaryType="nt:unstructured"
+            enName="Honduras"
+            frName="Honduras"
+            value="HOND"/>
+        <jam
+            jcr:primaryType="nt:unstructured"
+            enName="Jamaica"
+            frName="Jamaïque"
+            value="JAM"/>
+        <mar
+            jcr:primaryType="nt:unstructured"
+            enName="Martinique"
+            frName="Martinique"
+            value="MAR"/>
+        <mont
+            jcr:primaryType="nt:unstructured"
+            enName="Montserrat"
+            frName="Montserrat"
+            value="MONT"/>
+        <nic
+            jcr:primaryType="nt:unstructured"
+            enName="Nicaragua"
+            frName="Nicaragua"
+            value="NIC"/>
+        <pan
+            jcr:primaryType="nt:unstructured"
+            enName="Panama"
+            frName="Panama"
+            value="PAN"/>
+        <par
+            jcr:primaryType="nt:unstructured"
+            enName="Paraguay"
+            frName="Paraguay"
+            value="PAR"/>
+        <per
+            jcr:primaryType="nt:unstructured"
+            enName="Peru"
+            frName="Pérou"
+            value="PER"/>
+        <pue
+            jcr:primaryType="nt:unstructured"
+            enName="Puerto Rico"
+            frName="Porto Rico"
+            value="PUE"/>
+        <sal
+            jcr:primaryType="nt:unstructured"
+            enName="El Salvador"
+            frName="Salvador"
+            value="SAL"/>
+        <sgs
+            jcr:primaryType="nt:unstructured"
+            enName="South Georgia, S. Sandwich Is"
+            frName="Géor. Sud, Îles Sand. du Sud"
+            value="SGS"/>
+        <stb
+            jcr:primaryType="nt:unstructured"
+            enName="Saint Barthélemy"
+            frName="Saint-Barthélemy"
+            value="STB"/>
+        <stk
+            jcr:primaryType="nt:unstructured"
+            enName="Saint Kitts and Nevis"
+            frName="Saint-Kitts-et-Nevis"
+            value="STK"/>
+        <stl
+            jcr:primaryType="nt:unstructured"
+            enName="Saint Lucia"
+            frName="Sainte-Lucie"
+            value="STL"/>
+        <stm
+            jcr:primaryType="nt:unstructured"
+            enName="Saint Martin (French part)"
+            frName="Saint-Martin (française)"
+            value="STM"/>
+        <stv
+            jcr:primaryType="nt:unstructured"
+            enName="Saint Vincent and Grenadines"
+            frName="St-Vincent et Grenadines"
+            value="STV"/>
+        <sur
+            jcr:primaryType="nt:unstructured"
+            enName="Suriname"
+            frName="Suriname"
+            value="SUR"/>
+        <sx
+            jcr:primaryType="nt:unstructured"
+            enName="Sint Maarten (Dutch part)"
+            frName="Saint-Martin (néerlandaise)"
+            value="SX"/>
+        <tri
+            jcr:primaryType="nt:unstructured"
+            enName="Trinidad and Tobago"
+            frName="Trinité-et-Tobago"
+            value="TRI"/>
+        <tuc
+            jcr:primaryType="nt:unstructured"
+            enName="Turks and Caicos Islands"
+            frName="Turks-et-Caïcos, (les Îles)"
+            value="TUC"/>
+        <uru
+            jcr:primaryType="nt:unstructured"
+            enName="Uruguay"
+            frName="Uruguay"
+            value="URU"/>
+        <uvi
+            jcr:primaryType="nt:unstructured"
+            enName="Virgin Islands (U.S.)"
+            frName="Îles Vierges Des États-Unis"
+            value="UVI"/>
+        <ven
+            jcr:primaryType="nt:unstructured"
+            enName="Venezuela"
+            frName="Venezuela"
+            value="VEN"/>
+    </suouthCentralAmericaCaribbean>
+    <asiaPacific
+        jcr:primaryType="nt:unstructured"
+        enName="Asia and Pacific"
+        frName="L'Asie et du Pacifique">
+        <afg
+            jcr:primaryType="nt:unstructured"
+            enName="Afghanistan"
+            frName="Afghanistan"
+            value="AFG"/>
+        <aust
+            jcr:primaryType="nt:unstructured"
+            enName="Australia"
+            frName="Australie"
+            value="AUST"/>
+        <ban
+            jcr:primaryType="nt:unstructured"
+            enName="Bangladesh"
+            frName="Bangladesh"
+            value="BAN"/>
+        <bhu
+            jcr:primaryType="nt:unstructured"
+            enName="Bhutan"
+            frName="Bhoutan"
+            value="BHU"/>
+        <boc
+            jcr:primaryType="nt:unstructured"
+            enName="British Indian Ocean Territory"
+            frName="Océan Indien (R.-U.)"
+            value="BOC"/>
+        <bru
+            jcr:primaryType="nt:unstructured"
+            enName="Brunei Darussalam"
+            frName=" Brunéi Darussalam"
+            value="BRU"/>
+        <burm
+            jcr:primaryType="nt:unstructured"
+            enName="Myanmar"
+            frName="Myanmar"
+            value="BURM"/>
+        <cck
+            jcr:primaryType="nt:unstructured"
+            enName="Cocos (Keeling) Islands"
+            frName="Cocos/Keeling, Îles"
+            value="CCK"/>
+        <chin
+            jcr:primaryType="nt:unstructured"
+            enName="China"
+            frName="Chine"
+            value="CHIN"/>
+        <coo
+            jcr:primaryType="nt:unstructured"
+            enName="Cook Islands"
+            frName="Cook, Îles"
+            value="COO"/>
+        <cxr
+            jcr:primaryType="nt:unstructured"
+            enName="Christmas Island"
+            frName="Christmas, Île"
+            value="CXR"/>
+        <etim
+            jcr:primaryType="nt:unstructured"
+            enName="Timor-Leste"
+            frName="Timor-Leste"
+            value="ETIM"/>
+        <fiji
+            jcr:primaryType="nt:unstructured"
+            enName="Fiji"
+            frName="Fidji"
+            value="FIJI"/>
+        <frp
+            jcr:primaryType="nt:unstructured"
+            enName="French Polynesia"
+            frName="Polynésie française"
+            value="FRP"/>
+        <guam
+            jcr:primaryType="nt:unstructured"
+            enName="Guam"
+            frName="Guam"
+            value="GUAM"/>
+        <hmd
+            jcr:primaryType="nt:unstructured"
+            enName="Heard Island, Mcdonald Islands"
+            frName="Heard-et-Îles Macdonald, Île"
+            value="HMD"/>
+        <hong
+            jcr:primaryType="nt:unstructured"
+            enName="Hong Kong"
+            frName="Hong Kong"
+            value="HONG"/>
+        <indi
+            jcr:primaryType="nt:unstructured"
+            enName="India"
+            frName="Inde"
+            value="INDI"/>
+        <indo
+            jcr:primaryType="nt:unstructured"
+            enName="Indonesia"
+            frName="Indonésie"
+            value="INDO"/>
+        <jap
+            jcr:primaryType="nt:unstructured"
+            enName="Japan"
+            frName="Japon"
+            value="JAP"/>
+        <kam
+            jcr:primaryType="nt:unstructured"
+            enName="Cambodia"
+            frName="Cambodge"
+            value="KAM"/>
+        <kir
+            jcr:primaryType="nt:unstructured"
+            enName="Kiribati"
+            frName="Kiribati"
+            value="KIR"/>
+        <korn
+            jcr:primaryType="nt:unstructured"
+            enName="North Korea"
+            frName="Corée du Nord"
+            value="KORN"/>
+        <kors
+            jcr:primaryType="nt:unstructured"
+            enName="South Korea"
+            frName="Corée du Sud"
+            value="KORS"/>
+        <lao
+            jcr:primaryType="nt:unstructured"
+            enName="Laos"
+            frName="Laos"
+            value="LAO"/>
+        <mac
+            jcr:primaryType="nt:unstructured"
+            enName="Macao"
+            frName="Macao"
+            value="MAC"/>
+        <mal
+            jcr:primaryType="nt:unstructured"
+            enName="Malaysia"
+            frName="Malaisie"
+            value="MAL"/>
+        <mas
+            jcr:primaryType="nt:unstructured"
+            enName="Marshall Islands"
+            frName="Marshall, Îles"
+            value="MAS"/>
+        <mic
+            jcr:primaryType="nt:unstructured"
+            enName="Micronesia (FSM)"
+            frName="Micronésie (EFM)"
+            value="MIC"/>
+        <mld
+            jcr:primaryType="nt:unstructured"
+            enName="Maldives"
+            frName="Maldives"
+            value="MLD"/>
+        <mon
+            jcr:primaryType="nt:unstructured"
+            enName="Mongolia"
+            frName="Mongolie"
+            value="MON"/>
+        <nau
+            jcr:primaryType="nt:unstructured"
+            enName="Nauru"
+            frName="Nauru"
+            value="NAU"/>
+        <nca
+            jcr:primaryType="nt:unstructured"
+            enName="New Caledonia"
+            frName="Nouvelle-Calédonie"
+            value="NCA"/>
+        <nep
+            jcr:primaryType="nt:unstructured"
+            enName="Nepal"
+            frName="Népal"
+            value="NEP"/>
+        <nfk
+            jcr:primaryType="nt:unstructured"
+            enName="Norfolk Island"
+            frName="Norfolk, Île"
+            value="NFK"/>
+        <niu
+            jcr:primaryType="nt:unstructured"
+            enName="Niue"
+            frName="Niue"
+            value="NIU"/>
+        <nma
+            jcr:primaryType="nt:unstructured"
+            enName="Northern Mariana Islands"
+            frName="Mariannes Du Nord, Îles"
+            value="NMA"/>
+        <nzea
+            jcr:primaryType="nt:unstructured"
+            enName="New Zealand"
+            frName="Nouvelle-Zélande"
+            value="NZEA"/>
+        <pak
+            jcr:primaryType="nt:unstructured"
+            enName="Pakistan"
+            frName="Pakistan"
+            value="PAK"/>
+        <pal
+            jcr:primaryType="nt:unstructured"
+            enName="Palau"
+            frName="Palaos"
+            value="PAL"/>
+        <pcn
+            jcr:primaryType="nt:unstructured"
+            enName="Pitcairn"
+            frName="Pitcairn"
+            value="PCN"/>
+        <phi
+            jcr:primaryType="nt:unstructured"
+            enName="Philippines"
+            frName="Philippines"
+            value="PHI"/>
+        <png
+            jcr:primaryType="nt:unstructured"
+            enName="Papua New Guinea"
+            frName="Papouasie-Nouvelle-Guinée"
+            value="PNG"/>
+        <sam
+            jcr:primaryType="nt:unstructured"
+            enName="American Samoa"
+            frName="Samoa américaines"
+            value="SAM"/>
+        <samw
+            jcr:primaryType="nt:unstructured"
+            enName="Samoa"
+            frName="Samoa"
+            value="SAMW"/>
+        <sin
+            jcr:primaryType="nt:unstructured"
+            enName="Singapore"
+            frName="Singapour"
+            value="SIN"/>
+        <sol
+            jcr:primaryType="nt:unstructured"
+            enName="Solomon Islands"
+            frName="Salomon, Îles"
+            value="SOL"/>
+        <sri
+            jcr:primaryType="nt:unstructured"
+            enName="Sri Lanka"
+            frName="Sri Lanka"
+            value="SRI"/>
+        <tai
+            jcr:primaryType="nt:unstructured"
+            enName="Taiwan"
+            frName="Taïwan"
+            value="TAI"/>
+        <tha
+            jcr:primaryType="nt:unstructured"
+            enName="Thailand"
+            frName="Thaïlande"
+            value="THA"/>
+        <tok
+            jcr:primaryType="nt:unstructured"
+            enName="Tokelau"
+            frName="Tokelau"
+            value="TOK"/>
+        <ton
+            jcr:primaryType="nt:unstructured"
+            enName="Tonga"
+            frName="Tonga"
+            value="TON"/>
+        <tuv
+            jcr:primaryType="nt:unstructured"
+            enName="Tuvalu"
+            frName="Tuvalu"
+            value="TUV"/>
+        <umi
+            jcr:primaryType="nt:unstructured"
+            enName="US Minor Outlying Islands"
+            frName="Îles mineures éloign. , É.-U."
+            value="UMI"/>
+        <van
+            jcr:primaryType="nt:unstructured"
+            enName="Vanuatu"
+            frName="Vanuatu"
+            value="VAN"/>
+        <vie
+            jcr:primaryType="nt:unstructured"
+            enName="Vietnam"
+            frName="Vietnam"
+            value="VIE"/>
+        <wlf
+            jcr:primaryType="nt:unstructured"
+            enName="Wallis and Futuna"
+            frName="Wallis et Futuna"
+            value="WLF"/>
+    </asiaPacific>
+    <europeCis
+        jcr:primaryType="nt:unstructured"
+        enName="Europe and CIS"
+        frName="L'Europe et la CEI">
+        <ala
+            jcr:primaryType="nt:unstructured"
+            enName="Åland Islands"
+            frName="Åland, Îles"
+            value="ALA"/>
+        <alb
+            jcr:primaryType="nt:unstructured"
+            enName="Albania"
+            frName="Albanie"
+            value="ALB"/>
+        <and
+            jcr:primaryType="nt:unstructured"
+            enName="Andorra"
+            frName="Andorre"
+            value="AND"/>
+        <arm
+            jcr:primaryType="nt:unstructured"
+            enName="Armenia"
+            frName="Arménie"
+            value="ARM"/>
+        <astr
+            jcr:primaryType="nt:unstructured"
+            enName="Austria"
+            frName="Autriche"
+            value="ASTR"/>
+        <aze
+            jcr:primaryType="nt:unstructured"
+            enName="Azerbaijan"
+            frName="Azerbaïdjan"
+            value="AZE"/>
+        <bel
+            jcr:primaryType="nt:unstructured"
+            enName="Belgium"
+            frName="Belgique"
+            value="BEL"/>
+        <bos
+            jcr:primaryType="nt:unstructured"
+            enName="Bosnia and Herzegovina"
+            frName="Bosnie-Herzégovine"
+            value="BOS"/>
+        <bul
+            jcr:primaryType="nt:unstructured"
+            enName="Bulgaria"
+            frName="Bulgarie"
+            value="BUL"/>
+        <bye
+            jcr:primaryType="nt:unstructured"
+            enName="Belarus"
+            frName="Bélarus"
+            value="BYE"/>
+        <cro
+            jcr:primaryType="nt:unstructured"
+            enName="Croatia"
+            frName="Croatie"
+            value="CRO"/>
+        <cyp
+            jcr:primaryType="nt:unstructured"
+            enName="Cyprus"
+            frName="Chypre"
+            value="CYP"/>
+        <czr
+            jcr:primaryType="nt:unstructured"
+            enName="Czech Republic"
+            frName="tchèque, République"
+            value="CZR"/>
+        <den
+            jcr:primaryType="nt:unstructured"
+            enName="Denmark"
+            frName="Danemark"
+            value="DEN"/>
+        <est
+            jcr:primaryType="nt:unstructured"
+            enName="Estonia"
+            frName="Estonie"
+            value="EST"/>
+        <far
+            jcr:primaryType="nt:unstructured"
+            enName="Faroe Islands"
+            frName="Féroé, Îles"
+            value="FAR"/>
+        <fin
+            jcr:primaryType="nt:unstructured"
+            enName="Finland"
+            frName="Finlande"
+            value="FIN"/>
+        <fra
+            jcr:primaryType="nt:unstructured"
+            enName="France"
+            frName="France"
+            value="FRA"/>
+        <geo
+            jcr:primaryType="nt:unstructured"
+            enName="Georgia"
+            frName="Géorgie"
+            value="GEO"/>
+        <ger
+            jcr:primaryType="nt:unstructured"
+            enName="Germany"
+            frName="Allemagne"
+            value="GER"/>
+        <ggy
+            jcr:primaryType="nt:unstructured"
+            enName="Guernsey"
+            frName="Guernesey"
+            value="GGY"/>
+        <gib
+            jcr:primaryType="nt:unstructured"
+            enName="Gibraltar"
+            frName="Gibraltar"
+            value="GIB"/>
+        <gre
+            jcr:primaryType="nt:unstructured"
+            enName="Greece"
+            frName="Grèce"
+            value="GRE"/>
+        <hol
+            jcr:primaryType="nt:unstructured"
+            enName="Holy See"
+            frName="Saint-Siège "
+            value="HOL"/>
+        <hun
+            jcr:primaryType="nt:unstructured"
+            enName="Hungary"
+            frName="Hongrie"
+            value="HUN"/>
+        <ice
+            jcr:primaryType="nt:unstructured"
+            enName="Iceland"
+            frName="Islande"
+            value="ICE"/>
+        <ire
+            jcr:primaryType="nt:unstructured"
+            enName="Ireland"
+            frName="Irlande"
+            value="IRE"/>
+        <ism
+            jcr:primaryType="nt:unstructured"
+            enName="Isle of Man"
+            frName="Île De Man"
+            value="ISM"/>
+        <ita
+            jcr:primaryType="nt:unstructured"
+            enName="Italy"
+            frName="Italie"
+            value="ITA"/>
+        <jey
+            jcr:primaryType="nt:unstructured"
+            enName="Jersey"
+            frName="Jersey"
+            value="JEY"/>
+        <kaz
+            jcr:primaryType="nt:unstructured"
+            enName="Kazakhstan"
+            frName="Kazakhstan"
+            value="KAZ"/>
+        <kirg
+            jcr:primaryType="nt:unstructured"
+            enName="Kyrgyzstan"
+            frName="Kirghizistan"
+            value="KIRG"/>
+        <kos
+            jcr:primaryType="nt:unstructured"
+            enName="Kosovo"
+            frName="Kosovo"
+            value="KOS"/>
+        <lat
+            jcr:primaryType="nt:unstructured"
+            enName="Latvia"
+            frName="Lettonie"
+            value="LAT"/>
+        <lie
+            jcr:primaryType="nt:unstructured"
+            enName="Liechtenstein"
+            frName="Liechtenstein"
+            value="LIE"/>
+        <lit
+            jcr:primaryType="nt:unstructured"
+            enName="Lithuania"
+            frName="Lituanie"
+            value="LIT"/>
+        <lux
+            jcr:primaryType="nt:unstructured"
+            enName="Luxembourg"
+            frName="Luxembourg"
+            value="LUX"/>
+        <mace
+            jcr:primaryType="nt:unstructured"
+            enName="Macedonia, North Republic of"
+            frName="La Rép. de Macédoine du Nord "
+            value="MACE"/>
+        <malt
+            jcr:primaryType="nt:unstructured"
+            enName="Malta"
+            frName="Malte"
+            value="MALT"/>
+        <mnc
+            jcr:primaryType="nt:unstructured"
+            enName="Monaco"
+            frName="Monaco"
+            value="MNC"/>
+        <mne
+            jcr:primaryType="nt:unstructured"
+            enName="Montenegro"
+            frName="Monténégro"
+            value="MNE"/>
+        <mol
+            jcr:primaryType="nt:unstructured"
+            enName="Moldova"
+            frName="Moldova"
+            value="MOL"/>
+        <net
+            jcr:primaryType="nt:unstructured"
+            enName="Netherlands"
+            frName="Pays-Bas"
+            value="NET"/>
+        <nor
+            jcr:primaryType="nt:unstructured"
+            enName="Norway"
+            frName="Norvège"
+            value="NOR"/>
+        <pol
+            jcr:primaryType="nt:unstructured"
+            enName="Poland"
+            frName="Pologne"
+            value="POL"/>
+        <por
+            jcr:primaryType="nt:unstructured"
+            enName="Portugal"
+            frName="Portugal"
+            value="POR"/>
+        <rom
+            jcr:primaryType="nt:unstructured"
+            enName="Romania"
+            frName="Roumanie"
+            value="ROM"/>
+        <russ
+            jcr:primaryType="nt:unstructured"
+            enName="Russia"
+            frName="Russie"
+            value="RUSS"/>
+        <ser
+            jcr:primaryType="nt:unstructured"
+            enName="Serbia"
+            frName="Serbie"
+            value="SER"/>
+        <sjm
+            jcr:primaryType="nt:unstructured"
+            enName="Svalbard and Jan Mayen"
+            frName="Svalbard et l'Île Jan Mayen"
+            value="SJM"/>
+        <slk
+            jcr:primaryType="nt:unstructured"
+            enName="Slovakia"
+            frName="Slovaquie"
+            value="SLK"/>
+        <slo
+            jcr:primaryType="nt:unstructured"
+            enName="Slovenia"
+            frName="Slovénie"
+            value="SLO"/>
+        <sma
+            jcr:primaryType="nt:unstructured"
+            enName="San Marino"
+            frName="Saint-Marin"
+            value="SMA"/>
+        <spa
+            jcr:primaryType="nt:unstructured"
+            enName="Spain"
+            frName="Espagne"
+            value="SPA"/>
+        <swe
+            jcr:primaryType="nt:unstructured"
+            enName="Sweden"
+            frName="Suède"
+            value="SWE"/>
+        <swi
+            jcr:primaryType="nt:unstructured"
+            enName="Switzerland"
+            frName="Suisse"
+            value="SWI"/>
+        <tad
+            jcr:primaryType="nt:unstructured"
+            enName="Tajikistan"
+            frName="Tadjikistan"
+            value="TAD"/>
+        <tur
+            jcr:primaryType="nt:unstructured"
+            enName="Turkey"
+            frName="Turquie"
+            value="TUR"/>
+        <turk
+            jcr:primaryType="nt:unstructured"
+            enName="Turkmenistan"
+            frName="Turkménistan"
+            value="TURK"/>
+        <uk
+            jcr:primaryType="nt:unstructured"
+            enName="United Kingdom"
+            frName="Royaume-Uni"
+            value="UK"/>
+        <uka
+            jcr:primaryType="nt:unstructured"
+            enName="Ukraine"
+            frName="Ukraine"
+            value="UKA"/>
+        <uzb
+            jcr:primaryType="nt:unstructured"
+            enName="Uzbekistan"
+            frName="Ouzbékistan"
+            value="UZB"/>
+    </europeCis>
+    <africaMiidleEast
+        jcr:primaryType="nt:unstructured"
+        enName="Africa and Middle East"
+        frName="L'Afrique et du Moyen-Orient">
+        <alg
+            jcr:primaryType="nt:unstructured"
+            enName="Algeria"
+            frName="Algérie"
+            value="ALG"/>
+        <ang
+            jcr:primaryType="nt:unstructured"
+            enName="Angola"
+            frName="Angola"
+            value="ANG"/>
+        <atf
+            jcr:primaryType="nt:unstructured"
+            enName="French Southern Territories"
+            frName="Terres australes françaises"
+            value="ATF"/>
+        <ben
+            jcr:primaryType="nt:unstructured"
+            enName="Benin"
+            frName="Bénin"
+            value="BEN"/>
+        <bhr
+            jcr:primaryType="nt:unstructured"
+            enName="Bahrain"
+            frName="Bahreïn"
+            value="BHR"/>
+        <bot
+            jcr:primaryType="nt:unstructured"
+            enName="Botswana"
+            frName="Botswana"
+            value="BOT"/>
+        <bur
+            jcr:primaryType="nt:unstructured"
+            enName="Burundi"
+            frName="Burundi"
+            value="BUR"/>
+        <bvt
+            jcr:primaryType="nt:unstructured"
+            enName="Bouvet Island"
+            frName="Bouvet, Île"
+            value="BVT"/>
+        <cam
+            jcr:primaryType="nt:unstructured"
+            enName="Cameroon"
+            frName="Cameroun"
+            value="CAM"/>
+        <car
+            jcr:primaryType="nt:unstructured"
+            enName="Central African Republic"
+            frName="République centrafricaine"
+            value="CAR"/>
+        <chad
+            jcr:primaryType="nt:unstructured"
+            enName="Chad"
+            frName="Tchad"
+            value="CHAD"/>
+        <com
+            jcr:primaryType="nt:unstructured"
+            enName="Comoros"
+            frName="Comores"
+            value="COM"/>
+        <con
+            jcr:primaryType="nt:unstructured"
+            enName="Congo, Republic of"
+            frName="Congo, République du"
+            value="CON"/>
+        <cvi
+            jcr:primaryType="nt:unstructured"
+            enName="Cabo Verde"
+            frName="Cabo Verde"
+            value="CVI"/>
+        <dji
+            jcr:primaryType="nt:unstructured"
+            enName="Djibouti"
+            frName="Djibouti"
+            value="DJI"/>
+        <egy
+            jcr:primaryType="nt:unstructured"
+            enName="Egypt"
+            frName="Égypte"
+            value="EGY"/>
+        <erit
+            jcr:primaryType="nt:unstructured"
+            enName="Eritrea"
+            frName="Érythrée"
+            value="ERIT"/>
+        <esh
+            jcr:primaryType="nt:unstructured"
+            enName="Western Sahara"
+            frName="Sahara occidental"
+            value="ESH"/>
+        <etg
+            jcr:primaryType="nt:unstructured"
+            enName="Equatorial Guinea"
+            frName="Guinée équatoriale"
+            value="ETG"/>
+        <eth
+            jcr:primaryType="nt:unstructured"
+            enName="Ethiopia"
+            frName="Éthiopie"
+            value="ETH"/>
+        <gab
+            jcr:primaryType="nt:unstructured"
+            enName="Gabon"
+            frName="Gabon"
+            value="GAB"/>
+        <gam
+            jcr:primaryType="nt:unstructured"
+            enName="Gambia"
+            frName="Gambie"
+            value="GAM"/>
+        <gha
+            jcr:primaryType="nt:unstructured"
+            enName="Ghana"
+            frName="Ghana"
+            value="GHA"/>
+        <gui
+            jcr:primaryType="nt:unstructured"
+            enName="Guinea"
+            frName="Guinée"
+            value="GUI"/>
+        <guib
+            jcr:primaryType="nt:unstructured"
+            enName="Guinea-Bissau"
+            frName="Guinée-Bissau"
+            value="GUIB"/>
+        <iran
+            jcr:primaryType="nt:unstructured"
+            enName="Iran"
+            frName="Iran"
+            value="IRAN"/>
+        <iraq
+            jcr:primaryType="nt:unstructured"
+            enName="Iraq"
+            frName="Iraq"
+            value="IRAQ"/>
+        <isr
+            jcr:primaryType="nt:unstructured"
+            enName="Israel"
+            frName="Israël"
+            value="ISR"/>
+        <ivo
+            jcr:primaryType="nt:unstructured"
+            enName="Côte d'Ivoire"
+            frName="Côte d'Ivoire"
+            value="IVO"/>
+        <jor
+            jcr:primaryType="nt:unstructured"
+            enName="Jordan"
+            frName="Jordanie"
+            value="JOR"/>
+        <ken
+            jcr:primaryType="nt:unstructured"
+            enName="Kenya"
+            frName="Kenya"
+            value="KEN"/>
+        <kuw
+            jcr:primaryType="nt:unstructured"
+            enName="Kuwait"
+            frName="Koweït"
+            value="KUW"/>
+        <leb
+            jcr:primaryType="nt:unstructured"
+            enName="Lebanon"
+            frName="Liban"
+            value="LEB"/>
+        <les
+            jcr:primaryType="nt:unstructured"
+            enName="Lesotho"
+            frName="Lesotho"
+            value="LES"/>
+        <libe
+            jcr:primaryType="nt:unstructured"
+            enName="Liberia"
+            frName="Libéria"
+            value="LIBE"/>
+        <liby
+            jcr:primaryType="nt:unstructured"
+            enName="Libya"
+            frName="Libye"
+            value="LIBY"/>
+        <mad
+            jcr:primaryType="nt:unstructured"
+            enName="Madagascar"
+            frName="Madagascar"
+            value="MAD"/>
+        <mala
+            jcr:primaryType="nt:unstructured"
+            enName="Malawi"
+            frName="Malawi"
+            value="MALA"/>
+        <mali
+            jcr:primaryType="nt:unstructured"
+            enName="Mali"
+            frName="Mali"
+            value="MALI"/>
+        <mau
+            jcr:primaryType="nt:unstructured"
+            enName="Mauritania"
+            frName="Mauritanie"
+            value="MAU"/>
+        <maur
+            jcr:primaryType="nt:unstructured"
+            enName="Mauritius"
+            frName="Maurice"
+            value="MAUR"/>
+        <mor
+            jcr:primaryType="nt:unstructured"
+            enName="Morocco"
+            frName="Maroc"
+            value="MOR"/>
+        <moz
+            jcr:primaryType="nt:unstructured"
+            enName="Mozambique"
+            frName="Mozambique"
+            value="MOZ"/>
+        <myt
+            jcr:primaryType="nt:unstructured"
+            enName="Mayotte"
+            frName="Mayotte"
+            value="MYT"/>
+        <nam
+            jcr:primaryType="nt:unstructured"
+            enName="Namibia"
+            frName="Namibie"
+            value="NAM"/>
+        <nig
+            jcr:primaryType="nt:unstructured"
+            enName="Niger"
+            frName="Niger"
+            value="NIG"/>
+        <nige
+            jcr:primaryType="nt:unstructured"
+            enName="Nigeria"
+            frName="Nigéria"
+            value="NIGE"/>
+        <oma
+            jcr:primaryType="nt:unstructured"
+            enName="Oman"
+            frName="Oman"
+            value="OMA"/>
+        <pale
+            jcr:primaryType="nt:unstructured"
+            enName="West Bank and Gaza Strip"
+            frName="Cisjordanie et bande de Gaza"
+            value="PALE"/>
+        <qat
+            jcr:primaryType="nt:unstructured"
+            enName="Qatar"
+            frName="Qatar"
+            value="QAT"/>
+        <reu
+            jcr:primaryType="nt:unstructured"
+            enName="Réunion"
+            frName="Réunion"
+            value="REU"/>
+        <rwa
+            jcr:primaryType="nt:unstructured"
+            enName="Rwanda"
+            frName="Rwanda"
+            value="RWA"/>
+        <safr
+            jcr:primaryType="nt:unstructured"
+            enName="South Africa"
+            frName="Afrique du Sud"
+            value="SAFR"/>
+        <sao
+            jcr:primaryType="nt:unstructured"
+            enName="Sao Tome and Principe"
+            frName="Sao Tomé-et-Principe"
+            value="SAO"/>
+        <sau
+            jcr:primaryType="nt:unstructured"
+            enName="Saudi Arabia"
+            frName="Arabie saoudite"
+            value="SAU"/>
+        <sen
+            jcr:primaryType="nt:unstructured"
+            enName="Senegal"
+            frName="Sénégal"
+            value="SEN"/>
+        <sey
+            jcr:primaryType="nt:unstructured"
+            enName="Seychelles"
+            frName="Seychelles"
+            value="SEY"/>
+        <sie
+            jcr:primaryType="nt:unstructured"
+            enName="Sierra Leone"
+            frName="Sierra Leone"
+            value="SIE"/>
+        <som
+            jcr:primaryType="nt:unstructured"
+            enName="Somalia"
+            frName="Somalie"
+            value="SOM"/>
+        <ss
+            jcr:primaryType="nt:unstructured"
+            enName="South Sudan"
+            frName="Soudan du Sud"
+            value="SS"/>
+        <sth
+            jcr:primaryType="nt:unstructured"
+            enName="St Helena, Ascension, Tristan"
+            frName="St-Hélène, Ascension, Tristan"
+            value="STH"/>
+        <sud
+            jcr:primaryType="nt:unstructured"
+            enName="Sudan"
+            frName="Soudan"
+            value="SUD"/>
+        <swa
+            jcr:primaryType="nt:unstructured"
+            enName="Eswatini"
+            frName="Eswatini"
+            value="SWA"/>
+        <syr
+            jcr:primaryType="nt:unstructured"
+            enName="Syria"
+            frName="Syrie"
+            value="SYR"/>
+        <tan
+            jcr:primaryType="nt:unstructured"
+            enName="Tanzania"
+            frName="Tanzanie"
+            value="TAN"/>
+        <togo
+            jcr:primaryType="nt:unstructured"
+            enName="Togo"
+            frName="Togo"
+            value="TOGO"/>
+        <tun
+            jcr:primaryType="nt:unstructured"
+            enName="Tunisia"
+            frName="Tunisie"
+            value="TUN"/>
+        <uae
+            jcr:primaryType="nt:unstructured"
+            enName="United Arab Emirates"
+            frName="Émirats arabes unis"
+            value="UAE"/>
+        <uga
+            jcr:primaryType="nt:unstructured"
+            enName="Uganda"
+            frName="Ouganda"
+            value="UGA"/>
+        <uva
+            jcr:primaryType="nt:unstructured"
+            enName="Burkina Faso"
+            frName="Burkina Faso"
+            value="UVA"/>
+        <yem
+            jcr:primaryType="nt:unstructured"
+            enName="Yemen"
+            frName="Yémen"
+            value="YEM"/>
+        <zai
+            jcr:primaryType="nt:unstructured"
+            enName="Congo, DRC"
+            frName="Congo, RDC"
+            value="ZAI"/>
+        <zam
+            jcr:primaryType="nt:unstructured"
+            enName="Zambia"
+            frName="Zambie"
+            value="ZAM"/>
+        <zim
+            jcr:primaryType="nt:unstructured"
+            enName="Zimbabwe"
+            frName="Zimbabwe"
+            value="ZIM"/>
+    </africaMiidleEast>
+</jcr:root>

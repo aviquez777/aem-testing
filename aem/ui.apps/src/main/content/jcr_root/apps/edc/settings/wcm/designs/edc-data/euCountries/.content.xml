@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+<value1 
+ jcr:primaryType="nt:unstructured" 
+ value="austria"/>
+<value2 
+ jcr:primaryType="nt:unstructured" 
+ value="belgium"/>
+<value3 
+ jcr:primaryType="nt:unstructured" 
+ value="bulgaria"/>
+<value4 
+ jcr:primaryType="nt:unstructured" 
+ value="croatia"/>
+<value5 
+ jcr:primaryType="nt:unstructured" 
+ value="cyprus"/>
+<value6 
+ jcr:primaryType="nt:unstructured" 
+ value="czech republic"/>
+<value7 
+ jcr:primaryType="nt:unstructured" 
+ value="denmark"/>
+<value8 
+ jcr:primaryType="nt:unstructured" 
+ value="estonia"/>
+<value9 
+ jcr:primaryType="nt:unstructured" 
+ value="finland"/>
+<value10 
+ jcr:primaryType="nt:unstructured" 
+ value="france"/>
+<value11 
+ jcr:primaryType="nt:unstructured" 
+ value="germany"/>
+<value12 
+ jcr:primaryType="nt:unstructured" 
+ value="greece"/>
+<value13 
+ jcr:primaryType="nt:unstructured" 
+ value="hungary"/>
+<value14 
+ jcr:primaryType="nt:unstructured" 
+ value="ireland"/>
+<value15 
+ jcr:primaryType="nt:unstructured" 
+ value="italy"/>
+<value16 
+ jcr:primaryType="nt:unstructured" 
+ value="latvia"/>
+<value17 
+ jcr:primaryType="nt:unstructured" 
+ value="lithuania"/>
+<value18 
+ jcr:primaryType="nt:unstructured" 
+ value="luxembourg"/>
+<value19 
+ jcr:primaryType="nt:unstructured" 
+ value="malta"/>
+<value20 
+ jcr:primaryType="nt:unstructured" 
+ value="netherlands"/>
+<value21 
+ jcr:primaryType="nt:unstructured" 
+ value="poland"/>
+<value22 
+ jcr:primaryType="nt:unstructured" 
+ value="portugal"/>
+<value23 
+ jcr:primaryType="nt:unstructured" 
+ value="romania"/>
+<value24
+ jcr:primaryType="nt:unstructured" 
+ value="slovakia"/>
+<value25 
+ jcr:primaryType="nt:unstructured" 
+ value="slovenia"/>
+<value26 
+ jcr:primaryType="nt:unstructured" 
+ value="spain"/>
+<value27
+ jcr:primaryType="nt:unstructured" 
+ value="sweden"/>
+<value28
+ jcr:primaryType="nt:unstructured" 
+ value="united kingdom"/>
+</jcr:root>

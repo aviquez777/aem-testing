@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" 
+          xmlns:granite="http://www.adobe.com/jcr/granite/1.0" 
+          xmlns:cq="http://www.day.com/jcr/cq/1.0" 
+          xmlns:jcr="http://www.jcp.org/jcr/1.0" 
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="COVID-19 Solutions Triage tool Start Page"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                  <questionnairejson
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Json Service URL"
+                        fieldDescription="URL to get the json questionnaire files, Please ask DEV / QA for ths address"
+                        required="{Boolean}true"
+                        name="./questionnairejson"/>
+                    <startTitle
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldDescription="Title (Blue Bar)"
+                        required="true"
+                        fieldLabel="Title (Blue Bar)"
+                        name="./startTitle" />
+                    <startDescription
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                        fieldDescription="Enter a description"
+                        required="{Boolean}false"
+                        fieldLabel="Description"
+                        name="./startDescription"
+                        useFixedInlineToolbar="{Boolean}true">
+                        <rtePlugins jcr:primaryType="nt:unstructured">
+                            <format
+                                jcr:primaryType="nt:unstructured"
+                                features="*" />
+                            <justify
+                                jcr:primaryType="nt:unstructured"
+                                features="" />
+                            <lists
+                                jcr:primaryType="nt:unstructured"
+                                features="*" />
+                            <links
+                                jcr:primaryType="nt:unstructured"
+                                features="*" />
+                            <subsuperscript
+                                jcr:primaryType="nt:unstructured"
+                                features="*" />
+                        </rtePlugins>
+                        <uiSettings jcr:primaryType="nt:unstructured">
+                            <cui jcr:primaryType="nt:unstructured">
+                                <inline
+                                    jcr:primaryType="nt:unstructured"
+                                    toolbar="[format#bold,format#italic,format#underline,#lists,links#modifylink,links#unlink,links#anchor]">
+                                    <popovers jcr:primaryType="nt:unstructured">
+                                        <format
+                                            jcr:primaryType="nt:unstructured"
+                                            items="[format#bold,format#italic,format#underline,subsuperscript#subscript,subsuperscript#superscript]"
+                                            ref="format" />
+                                        <lists
+                                            jcr:primaryType="nt:unstructured"
+                                            items="[lists#unordered,lists#ordered]"
+                                            ref="lists" />
+                                    </popovers>
+                                </inline>
+                            </cui>
+                        </uiSettings>
+                </startDescription>
+                <nextbtntext
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    fieldLabel="Next button text"
+                    fieldDescription="Text for the 'Next' button"
+                    required="{Boolean}true"
+                    name="./nextbtntext"/>
+                <loadingtitle
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    fieldLabel="'Loading' title"
+                    fieldDescription="'Loading' title"
+                    required="{Boolean}true"
+                    name="./loadingtitle"/>
+                <!-- Not for MVP1
+                <backbtntext
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    fieldLabel="Back Link text"
+                    required="{Boolean}true"
+                    name="./backbtntext">
+                </backbtntext>
+                -->
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

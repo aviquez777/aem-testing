@@ -1,0 +1,77 @@
+@charset "UTF-8";
+nav.breadcrumb {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    letter-spacing: 0.4px;
+    line-height: 2;
+    margin: 0;
+    padding: 0 15px;
+}
+
+@media (min-width: 720px) {
+    nav.breadcrumb {
+        font-size: .75rem;
+        line-height: 2;
+        letter-spacing: 0.4px;
+    }
+}
+
+@media (min-width: 960px) {
+    nav.breadcrumb {
+        font-size: .75rem;
+        line-height: 2;
+        letter-spacing: 0.4px;
+    }
+}
+
+nav.breadcrumb.single {
+    position: relative;
+    margin: 1.375rem 0 2.25rem;
+    padding-left: 2.25rem;
+}
+
+nav.breadcrumb.single::before {
+    position: absolute;
+    top: 0;
+    left: 1.25rem;
+    color: #1a65b2;
+    content: "";
+    font-family: "iconfonts";
+    width: .5rem;
+    height: .75rem;
+}
+
+@media (min-width: 720px) {
+    nav.breadcrumb.single {
+        margin: 1.875rem 0;
+        padding-left: 1.25rem;
+    }
+    nav.breadcrumb.single::before {
+        left: .25rem;
+    }
+}
+
+nav.breadcrumb ol {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+nav.breadcrumb ol li {
+    display: inline;
+}
+
+nav.breadcrumb ol li + li::before {
+    display: inline-block;
+    margin: 0 .5rem;
+    transform: rotate(15deg);
+    border-right: .1em solid currentColor;
+    height: .8em;
+    content: '';
+}
+
+nav.breadcrumb a {
+    font-weight: 600;
+}

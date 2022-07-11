@@ -1,0 +1,45 @@
+.show-separator,
+.keyline,
+.separator {
+    border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+}
+
+/**paddings for content heading **/
+.spacing-content-headings {
+    margin: 16px 0;
+}
+
+@media (min-width: 960px) {
+    .spacing-content-headings {
+        margin: 32px 0;
+    }
+}
+
+.c-company-at-a-glance {
+    padding-bottom: 32px;
+}
+
+.c-company-at-a-glance .title {
+    margin-top: 0;
+    margin-bottom: 32px;
+}
+
+.c-company-at-a-glance .title::after {
+    height: 2px;
+    width: 65px;
+    background-color: #4386ac;
+    content: '';
+    display: block;
+    margin-top: 16px;
+}
+
+.c-company-at-a-glance .label {
+    margin-bottom: 8px;
+    font-size: 12px;
+}
+
+.c-company-at-a-glance .text {
+    margin-bottom: 16px;
+    margin-top: 0;
+    font-size: 12px;
+}

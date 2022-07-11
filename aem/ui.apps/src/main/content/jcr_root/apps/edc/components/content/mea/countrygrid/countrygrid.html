@@ -1,0 +1,56 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.loadMoreButton}"/>
+<sly data-sly-use.model="com.edc.edcweb.core.models.CountryGrid"/>
+<sly data-sly-test.hasPolicy="${model.hasPolicy}" />
+<sly data-sly-call="${templates.placeholder @ isEmpty = !hasPolicy, emptyTextAppend='No policy defined for component'}"/>
+<sly data-sly-test.premiumPage="${model.premiumPage}" />
+<!--/* store the list in a variable as it is needed to retrieve the country list */-->
+<sly data-sly-test.gridList="${model.gridList}" />
+<sly data-sly-call="${templates.placeholder @ isEmpty =(!gridList || gridList.size == 0), emptyTextAppend='No pages found'}"/>
+<!--/* datalayer */-->
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+<!--/*  All clear */-->
+<section data-sly-test="${gridList && hasPolicy && properties.loadMoreButton}" id="${uuid}" data-service-url="/bin/sessionInfoServlet" class="tab-set country-grid"  data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'country-grid'}"  data-event-type="interaction"   data-event-engagement="1" data-event-action="main body">
+  <!--/*  Top Key Line  */-->
+  <span data-sly-test="${(properties.keyline == 'top' || properties.keyline == 'top-bottom')}" class="key-line"></span>
+  <div class="grid-titles">
+    <h2 class="title" data-sly-test="${model.nonPremumTitle && model.premumTitle}" data-unlocked-title="${model.premumTitle}">${model.nonPremumTitle}</h2>
+  </div>
+  <!--/*  Tab Container */-->
+    <div class="tab-container">
+      <div class="tabs">
+        <nav role="tablist">
+          <div class="tab-labels-container fade-shadow-right">
+            <ul class="tab-labels" data-sly-list="${gridList}">
+              <li role="presentation">
+              <a href="#" class="tab-label ${itemList.first ? 'selected' : ''}" id="${uuid}-tab${itemList.count}" aria-controls="${uuid}-panel${itemList.count}" role="tab" aria-selected="${itemList.first ? 'true' : 'false'}">
+                ${item}
+              </a>
+            </li>
+            </ul>
+          </div>
+        </nav>
+        <section id="tab-content" aria-live="polite" role="region" data-sly-list="${gridList}">
+          <article class="tab-panel ${itemList.first ? 'show' : ''}" id="${uuid}-panel${itemList.count}" role="tabpanel" aria-labelledby="${uuid}-tab${itemList.count}">
+             <div class="content-country" data-sly-list.country="${gridList[item]}">
+                <div class="country-grid-item hide">
+                    <div class="card-img center">
+                      <img src="${country.countryImage}" alt="${country.countryImageAltTxt}"/>
+                    </div>
+                    <a class="link-country" href="${country.countryLink}">${country.countryName}</a>
+                </div>
+                <sly data-sly-test.createButton="${countryList.last}" />
+            </div>
+            <a href="#" id="${itemList.count}" class="country-grid-btn hide" data-sly-test="${model.loadMoreButton}">${model.loadMoreButton}</a>
+          </article>
+         </section>
+         <button class="icon icon-arrow-right"><span>scroll right</span></button>
+         <button class="icon icon-arrow-left"><span>scroll left</span></button>
+      </div>
+    <!--/*  End Tab Container */-->
+    </div>
+<!--/*  Bottom Key Line  */-->
+  <span data-sly-test="${(properties.keyline == 'bottom' || properties.keyline == 'top-bottom')}" class="key-line"></span>
+</section>

@@ -1,0 +1,170 @@
+# Include B2C EntityId Variables
+Include conf.d/variables/edc.vars
+
+ShibCompatValidUser Off
+
+RewriteRule ^/en/my-account/login-b2c.html$     /myedc/auth/Login?entityID=${b2c_login_entityid_en} [R,L,NC,QSA]
+RewriteRule ^/fr/mon-compte/connexion-b2c.html$    /myedc/auth/Login?entityID=${b2c_login_entityid_fr} [R,L,NC,QSA]
+RewriteRule ^/en/my-account/logout-b2c.html$    /myedc/auth/Logout [R,L,NC,QSA]
+RewriteRule ^/fr/mon-compte/deconnexion-b2c.html$    /myedc/auth/Logout [R,L,NC,QSA]
+RewriteRule ^/en/my-account/sign-up-b2c.html$     /myedc/auth/Login?entityID=${b2c_signup_entityid_en} [R,L,NC,QSA]
+RewriteRule ^/fr/mon-compte/inscrire-b2c.html$    /myedc/auth/Login?entityID=${b2c_signup_entityid_fr} [R,L,NC,QSA]
+
+<Location /myedc/auth>
+    SetHandler shib
+    AuthType None
+    Require all granted
+    ShibRequestSetting REMOTE_ADDR X-Forwarded-For
+    ShibRequestSetting redirectErrors /bin/redirectErrors
+</Location>
+
+<Location "/bin/myedc">
+   SetHandler shib
+   AuthType shibboleth
+   ShibRequestSetting requireSession 1
+   ShibRequestSetting exportAssertion 1
+   ShibRequestSetting REMOTE_ADDR X-Forwarded-For
+   ShibRequestSetting entityID ${b2c_login_entityid_en}
+   ShibUseHeaders On
+   Require valid-user
+   SetHandler dispatcher-handler
+</Location>
+
+ <Location "/content/myedc/en/my-account">
+   SetHandler shib
+   AuthType shibboleth
+   ShibRequestSetting requireSession 1
+   ShibRequestSetting exportAssertion 1
+   ShibRequestSetting REMOTE_ADDR X-Forwarded-For
+   ShibRequestSetting entityID ${b2c_login_entityid_en}
+   ShibUseHeaders On
+   Require valid-user
+   SetHandler dispatcher-handler
+</Location>
+
+ <Location "/content/myedc/fr/mon-compte">
+   SetHandler shib
+   AuthType shibboleth
+   ShibRequestSetting requireSession 1
+   ShibRequestSetting exportAssertion 1
+   ShibRequestSetting REMOTE_ADDR X-Forwarded-For
+   ShibRequestSetting entityID ${b2c_login_entityid_fr}
+   ShibUseHeaders On
+   Require valid-user
+   SetHandler dispatcher-handler
+</Location>
+
+<LocationMatch "/en/my-account/account-edit-b2c\.html">
+   SetHandler shib
+   AuthType shibboleth
+   ShibRequestSetting requireSession 1
+   ShibRequestSetting exportAssertion 1
+   ShibRequestSetting REMOTE_ADDR X-Forwarded-For
+   ShibRequestSetting requireLogoutWith /myedc/auth/LocalLogout
+   ShibRequestSetting entityID ${b2c_editprofile_entityid_en}
+   ShibRequestSetting target /bin/myedc/frontController?actionType=en:basic
+   ShibUseHeaders On
+   Require valid-user
+   SetHandler dispatcher-handler
+</LocationMatch>
+
+ <LocationMatch "/en/my-account/sign-up-b2c\.html">
+   SetHandler shib
+   AuthType shibboleth
+   ShibRequestSetting requireSession 1
+   ShibRequestSetting exportAssertion 1
+   ShibRequestSetting REMOTE_ADDR X-Forwarded-For
+   ShibRequestSetting entityID ${b2c_signup_entityid_en}
+   ShibUseHeaders On
+   Require valid-user
+   SetHandler dispatcher-handler
+</LocationMatch>
+
+<LocationMatch "/en/my-account/change-password-b2c\.html">
+   SetHandler shib
+   AuthType shibboleth
+   ShibRequestSetting requireSession 1
+   ShibRequestSetting exportAssertion 1
+   ShibRequestSetting REMOTE_ADDR X-Forwarded-For
+   ShibRequestSetting requireLogoutWith /myedc/auth/LocalLogout
+   ShibRequestSetting entityID ${b2c_changepassword_entityid_en}
+   ShibRequestSetting target /bin/myedc/frontController?actionType=en:password
+   ShibUseHeaders On
+   Require valid-user
+   SetHandler dispatcher-handler
+</LocationMatch>
+
+ <LocationMatch "/en/my-account/reset-password-b2c\.html">
+   SetHandler shib
+   AuthType shibboleth
+   ShibRequestSetting requireSession 1
+   ShibRequestSetting exportAssertion 1
+   ShibRequestSetting REMOTE_ADDR X-Forwarded-For
+   ShibRequestSetting entityID ${b2c_resetpassword_entityid_en}
+   ShibRequestSetting target /en/my-account/profile.html
+   ShibUseHeaders On
+   Require valid-user
+   SetHandler dispatcher-handler
+</LocationMatch>
+
+#### French IAM Linking URL ####
+
+<LocationMatch "/fr/mon-compte/modifier-compte-b2c\.html">
+   SetHandler shib
+   AuthType shibboleth
+   ShibRequestSetting requireSession 1
+   ShibRequestSetting exportAssertion 1
+   ShibRequestSetting REMOTE_ADDR X-Forwarded-For
+   ShibRequestSetting requireLogoutWith /myedc/auth/LocalLogout
+   ShibRequestSetting entityID ${b2c_editprofile_entityid_fr}
+   ShibRequestSetting target /bin/myedc/frontController?actionType=fr:basic
+   ShibUseHeaders On
+   Require valid-user
+   SetHandler dispatcher-handler
+</LocationMatch>
+
+ <LocationMatch "/fr/mon-compte/inscrire-b2c\.html">
+   SetHandler shib
+   AuthType shibboleth
+   ShibRequestSetting requireSession 1
+   ShibRequestSetting exportAssertion 1
+   ShibRequestSetting REMOTE_ADDR X-Forwarded-For
+   ShibRequestSetting entityID ${b2c_signup_entityid_fr}
+   ShibUseHeaders On
+   Require valid-user
+   SetHandler dispatcher-handler
+</LocationMatch>
+
+ <LocationMatch "/fr/mon-compte/changer-mot-passe-b2c\.html">
+   SetHandler shib
+   AuthType shibboleth
+   ShibRequestSetting requireSession 1
+   ShibRequestSetting exportAssertion 1
+   ShibRequestSetting REMOTE_ADDR X-Forwarded-For
+   ShibRequestSetting requireLogoutWith /myedc/auth/LocalLogout
+   ShibRequestSetting entityID ${b2c_changepassword_entityid_fr}
+   ShibRequestSetting target /bin/myedc/frontController?actionType=fr:password
+   ShibUseHeaders On
+   Require valid-user
+   SetHandler dispatcher-handler
+</LocationMatch>
+
+<LocationMatch "/fr/mon-compte/reinitialiser-mot-passe-b2c\.html">
+   SetHandler shib
+   AuthType shibboleth
+   ShibRequestSetting requireSession 1
+   ShibRequestSetting exportAssertion 1
+   ShibRequestSetting REMOTE_ADDR X-Forwarded-For
+   ShibRequestSetting entityID ${b2c_resetpassword_entityid_fr}
+ShibRequestSetting target /fr/mon-compte/profil.html
+   ShibUseHeaders On
+   Require valid-user
+   SetHandler dispatcher-handler
+</LocationMatch>
+
+RewriteCond %{REQUEST_URI} (\.html)$
+RewriteCond %{REQUEST_URI} ^(/en/my-account|/fr/mon-compte)
+RewriteRule (.*)  /content/myedc$1 [L,PT]
+
+RewriteRule ^/EN/Our-Solutions/Pages/edc-direct-login.aspx$ /en/login.html [R=301,L,NC]
+RewriteRule ^/FR/Our-Solutions/Pages/edc-direct-login.aspx$ /fr/connexion.html [R=301,L,NC]

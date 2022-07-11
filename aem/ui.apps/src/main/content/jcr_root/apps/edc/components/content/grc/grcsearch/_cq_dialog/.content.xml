@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Business Registry Selector"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        granite:class="cq-dialog-grc"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <general
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="General Configuration"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <displaytype
+                                        granite:class="cq-dialog-dropdown-showhide"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldLabel="Display type"
+                                        name="./displaytype">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            cq-dialog-dropdown-showhide-target=".list-option-listfrom-showhide-target"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <inbanner
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Banner (landing page)"
+                                                value="inbanner"/>
+                                            <incontent
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Search results page view"
+                                                value="incontent"/>
+                                            <guide
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Guide landing page view"
+                                                value="guide"/>
+                                        </items>
+                                    </displaytype>
+                                    <searchtarget
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldDescription="Determines if the search results page will open in the current or new window."
+                                        fieldLabel="Search results page target"
+                                        name="./searchtarget">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <existing
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Existing window"
+                                                value="_self"/>
+                                            <new
+                                                jcr:primaryType="nt:unstructured"
+                                                text="New window"
+                                                value="_blank"/>
+                                        </items>
+                                    </searchtarget>
+                                    <bannergroup
+                                        granite:class="hide list-option-listfrom-showhide-target"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            showhidetargetvalue="inbanner"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <heading
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/text"
+                                                class="coral-Heading--4"
+                                                text="Banner settings"/>
+                                            <title
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Search title"
+                                                name="./title"
+                                                validation="grcsearch.field.inbanner" />
+                                            <header
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Header Text"
+                                                name="./header" />
+"
+                                            <description
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                fieldLabel="Search description"
+                                                name="./description"/>
+                                            <searchLabel1
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Label for country search box in banner"
+                                                name="./searchLabel1"
+                                                validation="grcsearch.field.inbanner" />
+                                            <placeholder
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Help text for the search text input"
+                                                fieldLabel="Placeholder"
+                                                name="./placeholder"/>
+                                            <noResultsMessage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the no results message. Example: 'No matches found. Please try a new search.'"
+                                                fieldLabel="No results message"
+                                                validation="grcsearch.field.inbanner"
+                                                name="./noResultsMessage"/>
+                                            <icon
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <heading
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/text"
+                                                        class="coral-Heading--4"
+                                                        text="Illustration"/>
+                                                    <illustration
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                                        fieldDescription="Image to be displayed along with the search input, title and description"
+                                                        fieldLabel="Image"
+                                                        mimeTypes="[image]"
+                                                        multiple="{Boolean}false"
+                                                        name="./illustration"
+                                                        rootPath="/content/dam/edc"
+                                                        validation="grcsearch.field.inbanner" />
+                                                    <imgalt
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Alternate text"
+                                                        name="./illustrationalt"
+                                                        validation="grcsearch.field.inbanner" />
+                                                </items>
+                                            </icon>
+                                            <image
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <heading
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/text"
+                                                        class="coral-Heading--4"
+                                                        text="Image banner"/>
+                                                    <desktop
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                                        fieldLabel="Desktop breakpoint image"
+                                                        mimeTypes="[image]"
+                                                        multiple="{Boolean}false"
+                                                        name="./fileReference"
+                                                        validation="grcsearch.field.inbanner"
+                                                        rootPath="/content/dam/edc"/>
+                                                    <tablet
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                                        fieldLabel="Tablet breakpoint image"
+                                                        mimeTypes="[image]"
+                                                        multiple="{Boolean}false"
+                                                        name="./tabletFileReference"
+                                                        rootPath="/content/dam/edc"/>
+                                                    <phone
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                                        fieldLabel="Phone breakpoint image"
+                                                        mimeTypes="[image]"
+                                                        multiple="{Boolean}false"
+                                                        name="./phoneFileReference"
+                                                        rootPath="/content/dam/edc"/>
+                                                    <alt
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Alternate text"
+                                                        name="./alt"
+                                                        validation="grcsearch.field.inbanner"
+                                                        wrapperClass="core-image-alt"/>
+                                                </items>
+                                            </image>
+                                        </items>
+                                    </bannergroup>
+                                    <guidegroup
+                                        granite:class="hide list-option-listfrom-showhide-target"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            showhidetargetvalue="guide"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <searchLabelGuide
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Label for country search box"
+                                                name="./searchLabelGuide"
+                                                validation="grcsearch.field.guide" />
+                                            <PlaceholderGuide
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Help text for the search text input"
+                                                fieldLabel="Placeholder"
+                                                name="./placeholderGuide"/>
+                                            <noResultsMessageGuide
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the no results message. Example: 'No matches found. Please try a new search.'"
+                                                fieldLabel="No results message"
+                                                validation="grcsearch.field.guide"
+                                                name="./noResultsMessageGuide"/>
+                                            <linkTextGuide
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Link Text"
+                                                name="./linkTextGuide"
+                                                validation="grcsearch.field.guide" />
+                                            <linkTextUrl
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="Link URL"
+                                                multiple="{Boolean}false"
+                                                name="./linkTextUrl"
+                                                rootPath="/content/edc"
+                                                validation="grcsearch.field.guide" />
+                                            <linkTargetGuide
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldDescription="Determines if the link will open in the current or new window."
+                                                fieldLabel="Link page target"
+                                                name="./linkTargetGuide">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <existing
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Existing window"
+                                                        value="_self"/>
+                                                    <new
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="New window"
+                                                        value="_blank"/>
+                                                </items>
+                                            </linkTargetGuide>
+                                        </items>
+                                    </guidegroup>
+                                </items>
+                            </column>
+                        </items>
+                    </general>
+                    <registryCountry
+                        granite:class="hide list-option-listfrom-showhide-target"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Business Registry for Country"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <searchLabel
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <heading
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/text"
+                                                class="coral-Heading--4"
+                                                text="Search box label in 'Search Result Page'"/>
+                                            <searchLabel2
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Label for country search box"
+                                                fieldLabel="Label for country search box"
+                                                name="./searchLable2"
+                                                validation="grcsearch.field.incontent" />
+                                            <placeholdercontent
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Help text for the country search text input"
+                                                fieldLabel="Placeholder (countries dropdown)"
+                                                name="./placeholdercontent"/>
+                                            <noResultsMessage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the no results message. Example: 'No matches found. Please try a new search.'"
+                                                fieldLabel="No results message"
+                                                validation="grcsearch.field.incontent"
+                                                name="./noResultsMessageContent"/>
+                                        </items>
+                                    </searchLabel>
+                                    <defaultMsg
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <heading
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/text"
+                                                class="coral-Heading--4"
+                                                text="When the user has not yet interacted with the component"/>
+                                            <defaultStateTitle
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Display title when the user has not yet interacted with the component "
+                                                fieldLabel="Display title:"
+                                                name="./defaultStateTitle"
+                                                validation="grcsearch.field.incontent" />
+                                            <defaultStateDesc
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                                fieldDescription="Display description when the user has not yet interacted with the component"
+                                                fieldLabel="Display description:"
+                                                name="./defaultStateDesc"
+                                                validation="grcsearch.field.incontent"
+                                                useFixedInlineToolbar="{Boolean}true">
+                                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                                    <format
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="*"/>
+                                                    <lists
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="*"/>
+                                                    <links
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="*"/>
+                                                </rtePlugins>
+                                                <uiSettings jcr:primaryType="nt:unstructured">
+                                                    <cui jcr:primaryType="nt:unstructured">
+                                                        <inline
+                                                            jcr:primaryType="nt:unstructured"
+                                                            toolbar="[format#bold,format#italic,format#underline,#lists,links#modifylink,links#unlink,links#anchor]">
+                                                            <popovers jcr:primaryType="nt:unstructured">
+                                                                <lists
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    items="[lists#unordered,lists#ordered]"
+                                                                    ref="lists"/>
+                                                            </popovers>
+                                                        </inline>
+                                                    </cui>
+                                                </uiSettings>
+                                            </defaultStateDesc>
+                                        </items>
+                                    </defaultMsg>
+                                    <noRegistry
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <heading
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/text"
+                                                class="coral-Heading--4"
+                                                text="When no registry info found"/>
+                                            <noRegTitle
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Display title when no registry info exist"
+                                                fieldLabel="Display title:"
+                                                name="./noRegTitle"
+                                                validation="grcsearch.field.incontent" />
+                                            <noRegDesc
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                fieldDescription="Display description when no registry info exist"
+                                                fieldLabel="Display description:"
+                                                name="./noRegDesc"
+                                                validation="grcsearch.field.incontent" />
+                                        </items>
+                                    </noRegistry>
+                                    <registryIcon
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <heading
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/text"
+                                                class="coral-Heading--4"
+                                                text="Business Registry icon"/>
+                                            <busRegistryIcon
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                                class="cq-droptarget"
+                                                fieldDescription="Business Registry Icon"
+                                                fieldLabel="Icon"
+                                                mimeTypes="[image]"
+                                                multiple="{Boolean}false"
+                                                name="./busRegIcon"
+                                                validation="grcsearch.field.incontent"
+                                                rootPath="/content/dam/edc"/>
+                                            <busRegistryIconAlt
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Icon alternative text"
+                                                name="./busRegIconAlt"
+                                                validation="grcsearch.field.incontent"/>
+                                        </items>
+                                    </registryIcon>
+                                    <multi
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                        composite="{Boolean}true"
+                                        fieldDescription="Business Registry for countries"
+                                        fieldLabel="Country Business Registry Information">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                                            name="./registries">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <registerCountry
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <heading
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/text"
+                                                            class="coral-Heading--4"
+                                                            text="Business Registry Information"/>
+                                                        <countryTag
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                                                            fieldLabel="Country Tag"
+                                                            name="./countryTag"
+                                                            rootPath="/content/cq:tags/edc/region"
+                                                            validation="grcsearch.field.incontent"/>
+                                                        <busRegistryName
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Business Registry Name"
+                                                            name="./busRegName"/>
+                                                        <busRegistryDesc
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                            fieldLabel="Business Registry Description"
+                                                            name="./busRegDesc"/>
+                                                        <busRegistryUrlText
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Business Registry Button"
+                                                            name="./busRegUrlText"/>
+                                                        <busRegistryUrl
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                            fieldLabel="Business Registry URL"
+                                                            name="./busRegUrl"
+                                                            rootPath="/content/edc"/>
+                                                    </items>
+                                                </registerCountry>
+                                                <tipsCountry
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <heading
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/text"
+                                                            class="coral-Heading--4"
+                                                            text="Registry Search Tips"/>
+                                                        <title
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Registry Search Tips Title"
+                                                            name="./busRegTipsTitle"
+                                                            validation="grcsearch.field.incontent"/>
+                                                        <description
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                                            fieldLabel="Registry Search Tips Information"
+                                                            name="./busRegTips"
+                                                            validation="grcsearch.field.incontent"
+                                                            useFixedInlineToolbar="{Boolean}true">
+                                                            <rtePlugins jcr:primaryType="nt:unstructured">
+                                                                <format
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    features="*"/>
+                                                                <lists
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    features="*"/>
+                                                                <links
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    features="*"/>
+                                                            </rtePlugins>
+                                                            <uiSettings jcr:primaryType="nt:unstructured">
+                                                                <cui jcr:primaryType="nt:unstructured">
+                                                                    <inline
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        toolbar="[format#bold,format#italic,format#underline,#lists,links#modifylink,links#unlink,links#anchor]">
+                                                                        <popovers jcr:primaryType="nt:unstructured">
+                                                                            <lists
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                items="[lists#unordered,lists#ordered]"
+                                                                                ref="lists"/>
+                                                                        </popovers>
+                                                                    </inline>
+                                                                </cui>
+                                                            </uiSettings>
+                                                        </description>
+                                                    </items>
+                                                </tipsCountry>
+                                            </items>
+                                        </field>
+                                    </multi>
+                                </items>
+                            </column>
+                        </items>
+                        <granite:data
+                            jcr:primaryType="nt:unstructured"
+                            showhidetargetvalue="incontent"/>
+                    </registryCountry>
+                    <tipsStates
+                        granite:class="hide list-option-listfrom-showhide-target"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Search tips for states in US"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <statelabel
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="State Dropdown Label"
+                                        name="./statelabel"
+                                        validation="grcsearch.field.incontent"/>
+                                    <stateplaceholder
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="State Dropdown Placeholder"
+                                        name="./stateplaceholder"/>
+                                    <multi
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                        composite="{Boolean}true"
+                                        fieldDescription="Business Registry search tips  for states in US"
+                                        fieldLabel="State Business Registry Information">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                                            name="./statesTips">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <registerState
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <heading
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/text"
+                                                            class="coral-Heading--4"
+                                                            text="Business Registry Information"/>
+                                                        <state
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                                                            fieldLabel="State Tag"
+                                                            name="./state"
+                                                            rootPath="/content/cq:tags/edc/region/north-america/united-states"
+                                                            validation="grcsearch.field.incontent"/>
+                                                        <busRegistryName
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Business Registry Name"
+                                                            name="./busRegName"
+                                                            validation="grcsearch.field.incontent"/>
+                                                        <busRegistryDesc
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                            fieldLabel="Business Registry Description"
+                                                            name="./busRegDesc"
+                                                            validation="grcsearch.field.incontent" />
+                                                        <busRegistryUrlText
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Business Registry Button"
+                                                            name="./busRegUrlText"
+                                                            validation="grcsearch.field.incontent"/>
+                                                        <busRegistryUrl
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                            fieldDescription="Business Registry URL"
+                                                            fieldLabel="URL"
+                                                            name="./busRegUrl"
+                                                            validation="grcsearch.field.incontent"
+                                                            rootPath="/content/edc"/>
+                                                    </items>
+                                                </registerState>
+                                                <tipsState
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <heading
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/text"
+                                                            class="coral-Heading--4"
+                                                            text="Registry Search Tips"/>
+                                                        <title
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Registry Search Tips Title"
+                                                            name="./busRegTipsTitle"
+                                                            validation="grcsearch.field.incontent"/>
+                                                        <description
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                                            fieldLabel="Registry Search Tips Information"
+                                                            validation="grcsearch.field.incontent"
+                                                            name="./busRegTips"
+                                                            useFixedInlineToolbar="{Boolean}true">
+                                                            <rtePlugins jcr:primaryType="nt:unstructured">
+                                                                <format
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    features="*"/>
+                                                                <lists
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    features="*"/>
+                                                                <links
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    features="*"/>
+                                                            </rtePlugins>
+                                                            <uiSettings jcr:primaryType="nt:unstructured">
+                                                                <cui jcr:primaryType="nt:unstructured">
+                                                                    <inline
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        toolbar="[format#bold,format#italic,format#underline,#lists,links#modifylink,links#unlink,links#anchor]">
+                                                                        <popovers jcr:primaryType="nt:unstructured">
+                                                                            <lists
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                items="[lists#unordered,lists#ordered]"
+                                                                                ref="lists"/>
+                                                                        </popovers>
+                                                                    </inline>
+                                                                </cui>
+                                                            </uiSettings>
+                                                        </description>
+                                                    </items>
+                                                </tipsState>
+                                            </items>
+                                        </field>
+                                    </multi>
+                                </items>
+                            </column>
+                        </items>
+                        <granite:data
+                            jcr:primaryType="nt:unstructured"
+                            showhidetargetvalue="incontent"/>
+                    </tipsStates>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

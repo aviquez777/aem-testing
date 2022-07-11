@@ -1,0 +1,111 @@
+<sly data-sly-use.pageserie="com.edc.edcweb.core.models.Series" />
+<sly data-sly-use.page="com.adobe.cq.wcm.core.components.models.Page"/>
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.commonTemplates="/apps/edc/components/common/templates.html"/>
+<sly data-sly-test.sbVersion="${properties.seriesbannerversion ? properties.seriesbannerversion : pageserie.SbVerion}"/>
+<sly data-sly-test.hasPolicy="${pageserie.PartLabel && pageserie.OfLabel && pageserie.SeriesLabel}"/> 
+<!--/* No policy defined */-->
+<sly data-sly-call="${template.placeholder @ isEmpty = !hasPolicy, emptyTextAppend='No policy defined for component'}"/>
+<!--/* Policy defined not series defined */-->
+<sly data-sly-call="${template.placeholder @ isEmpty = hasPolicy && !pageserie.IsSerie}"/>
+<sly data-sly-use.ibTemplateObj="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+<!--/* Renders Travel Brief component */-->
+<sly data-sly-test="${pageserie.IsSerie && hasPolicy}">
+    <section class="series-banner full-width" data-sly-test="${(!pageserie.IsValid  && pageserie.IsSerie ) && (wcmmode.edit) }">
+        <div>
+            <h2>Series ERROR LIST</h2>
+            <ul data-sly-list.item="${pageserie.ErrorMessageList}">
+                <li>${item}</li>
+            </ul>
+            <h2>Please check the series content</h2>
+            <ul data-sly-list.item="${pageserie.Content}">
+                <sly data-sly-test.itemFirst="${item.properties.isfirst ? ' - First of series' : '' }" />
+                <li>
+                    <div class="series-banner-other">
+                        <h3>Article Title: ${item.title} ${itemFirst} </h3>
+                        <h4>Article Path: ${item.path}</h4>
+                        <p>Next Article Path: ${item.properties['nextarticle']}</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <sly data-sly-test="${sbVersion != 'enhanced'}">
+        <section class="series-banner full-width" data-sly-test="${pageserie.isSerie && pageserie.IsValid && pageserie.CTA}">
+            <div class="container">
+                <div data-sly-test.ctaPage="${pageserie.CTA}" class="series-banner-next">
+                    <sly data-sly-test.phone="${ctaPage.properties['teaserimage']}" />
+                    <sly data-sly-test.phonealt="${ctaPage.properties['imagealttext']}" />
+
+                    <h3 class="subtitle">${pageserie.PartLabel}${pageserie.IndexCTA}${pageserie.OfLabel}${pageserie.NbPartSeries}${pageserie.SeriesLabel}</h3>
+                    <h2 class="title">
+                        <div class="thumbnail" data-sly-test="${phone}">
+                            <img src=${phone} alt="${phonealt}"/>
+                        </div>
+                        <sly data-sly-use.urlres="${'com.edc.edcweb.core.models.PageModelHelper' @ path = ctaPage.path}"/>
+                        <sly data-sly-call="${commonTemplates.link @ link=urlres.url, ctatext=ctaPage.pageTitle, target='_self', type='link', linkchecker='valid'}"/>
+                    </h2>
+                    <div class="button-wrapper">
+                       <div data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='link', isUsedForModal='nomodal', buttonstate='enabled', link=urlres.url, buttontext=pageserie.ctaText, target='_self', linkchecker='valid'}"  data-sly-unwrap></div>
+                    </div>
+                </div>
+                <div class="series-banner-other-wrapper">
+                    <div>
+                        <div data-sly-test.ctaPage2="${pageserie.CTA2}" class="series-banner-other">
+                            <h4>${pageserie.PartLabel}${pageserie.IndexCTA2}${pageserie.OfLabel}${pageserie.NbPartSeries}${pageserie.SeriesLabel}</h4>
+                            <sly data-sly-use.urlres="${'com.edc.edcweb.core.models.PageModelHelper' @ path = ctaPage2.path}"/>
+                            <sly data-sly-call="${commonTemplates.link @ link=urlres.url, ctatext=ctaPage2.pageTitle, target='_self', classes='previous-link', type='link', linkchecker='valid'}"/>
+                        </div>
+                        <div data-sly-test.ctaPage3="${pageserie.CTA3}" class="series-banner-other">
+                            <h4>${pageserie.PartLabel}${pageserie.IndexCTA3}${pageserie.OfLabel}${pageserie.NbPartSeries}${pageserie.SeriesLabel}</h4>
+                            <sly data-sly-use.urlres="${'com.edc.edcweb.core.models.PageModelHelper' @ path = ctaPage3.path}"/>
+                            <sly data-sly-call="${commonTemplates.link @ link=urlres.url, ctatext=ctaPage3.pageTitle, target='_self', classes='next-link', type='link', linkchecker='valid'}"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="img-wrapper">
+                <sly data-sly-test.desktop="${ctaPage.properties['fileReference']}" />
+                <sly data-sly-test.tablet="${ctaPage.pageproperties['tabletFileReference']}" />
+                <sly data-sly-test="${!tablet}">
+                    <sly data-sly-test.tablet="${ctaPage.pageproperties['tabletFileReference'] ? ctaPage.pageproperties['tabletFileReference'] : desktop}" />
+                </sly>
+                <sly data-sly-call="${commonTemplates.picture @ desktop=desktop, tablet=tablet, phone=tablet, imageAlt=ctaPage.properties.imagealttext}"/>
+            </div>
+        </section>
+    </sly>
+    <sly data-sly-test="${sbVersion == 'enhanced'}">
+        <section class="c-series-banner-version-two" data-sly-test="${pageserie.isSerie && pageserie.IsValid && pageserie.CTA}">
+            <div class="current-part-of-series" data-sly-test.ctaPage="${pageserie.CTA}">
+                <sly data-sly-test.desktop="${ctaPage.properties['fileReference']}" />
+                <sly data-sly-test.tablet="${ctaPage.pageproperties['tabletFileReference']}" />
+                <sly data-sly-test.phone="${ctaPage.properties['teaserimage']}" />
+                <sly data-sly-test.imageAlt="${ctaPage.properties['imagealttext']}" />
+                <h1 class="main-title">${properties.sbmaintitle ? properties.sbmaintitle : pageserie.SbMainTitle}</h1>
+                <picture class="banner-image">
+                    <source media="(min-width: 960px)" srcset="${desktop}" />
+                    <source media="(min-width: 720px)" srcset="${tablet}" />
+                    <source media="(max-width: 719px)" srcset="${phone}" />
+                    <img src="${desktop}" alt="${imageAlt}" />
+                </picture>
+                <p class="current-part-label">${pageserie.PartLabel}${pageserie.IndexCTA}${pageserie.OfLabel}${pageserie.NbPartSeries}${pageserie.SeriesLabel}</p>
+                <h2 class="article-title">${ctaPage.pageTitle}</h2>
+                <sly data-sly-use.urlres="${'com.edc.edcweb.core.models.PageModelHelper' @ path = ctaPage.path}"/>
+                <div data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='link', isUsedForModal='nomodal', buttonstate='enabled', buttontype='primary-outline', link=urlres.url, buttontext=pageserie.ctaText, target='_self', linkchecker='valid'}"  data-sly-unwrap></div>
+            </div>
+            <div class="additional-parts-of-series">
+                <div data-sly-test.ctaPage2="${pageserie.CTA2}" class="additional-parts-one">
+                    <p>${pageserie.PartLabel}${pageserie.IndexCTA2}${pageserie.OfLabel}${pageserie.NbPartSeries}${pageserie.SeriesLabel}</p>
+                    <sly data-sly-use.urlres="${'com.edc.edcweb.core.models.PageModelHelper' @ path = ctaPage2.path}"/>
+                    <div data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='link', isUsedForModal='nomodal', buttonstate='enabled', buttoncssclasses='unstyled', link=urlres.url, buttontext=ctaPage2.pageTitle, target='_self', linkchecker='valid'}"  data-sly-unwrap></div>
+                </div>
+                <div data-sly-test.ctaPage3="${pageserie.CTA3}" class="additional-parts-two">
+                    <p>${pageserie.PartLabel}${pageserie.IndexCTA3}${pageserie.OfLabel}${pageserie.NbPartSeries}${pageserie.SeriesLabel}</p>
+                    <sly data-sly-use.urlres="${'com.edc.edcweb.core.models.PageModelHelper' @ path = ctaPage3.path}"/>
+                    <div data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='link', isUsedForModal='nomodal', buttonstate='enabled', buttoncssclasses='unstyled', link=urlres.url, buttontext=ctaPage3.pageTitle, target='_self', linkchecker='valid'}"  data-sly-unwrap></div>
+                </div>
+            </div>
+        </section>
+    </sly>
+</sly>

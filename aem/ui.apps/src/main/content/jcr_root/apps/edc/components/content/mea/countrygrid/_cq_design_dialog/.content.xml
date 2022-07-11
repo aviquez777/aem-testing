@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="MEA Country Grid"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+  <content jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+          <tabs jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/container">
+            <layout jcr:primaryType="nt:unstructured"
+              sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+              type="nav" />
+                <items jcr:primaryType="nt:unstructured">
+                    <paths
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Paths"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <content
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                margin="{Boolean}false">
+                                <items jcr:primaryType="nt:unstructured">
+                                  <nonpremiumpath
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                    fieldDescription="The Root Path of MEA non-premium pages"
+                                    fieldLabel="Root Path of MEA non-premium page"
+                                    name="./nonpremiumpath"
+                                    required="{Boolean}true"
+                                    forceSelection="{Boolean}true"
+                                    rootPath="/content/edc"/>
+                                </items>
+                            </content>
+                        </items>
+                    </paths>
+                    <titles
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Titles"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <content
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                margin="{Boolean}false">
+                                <items jcr:primaryType="nt:unstructured">
+                                  <nonpremiumtitle
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldDescription="Non Premium Title"
+                                    fieldLabel="Non Premium Title"
+                                    name="./nonpremiumtitle"
+                                    required="{Boolean}true"/>
+                                  <premiumtitle
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldDescription="Premium Title"
+                                    fieldLabel="Premium Title"
+                                    name="./premiumtitle"
+                                    required="{Boolean}true"/>
+                                </items>
+                            </content>
+                        </items>
+                    </titles>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

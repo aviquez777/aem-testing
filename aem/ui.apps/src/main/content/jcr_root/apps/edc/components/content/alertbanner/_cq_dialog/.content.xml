@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Alert Banner"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/container">
+                    <items jcr:primaryType="nt:unstructured"> 
+                        <bodyText
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldDescription="Text for the banner alert"
+                            fieldLabel="Text Banner Alert"
+                            name="./bodyText"
+                            required="{Boolean}false"/>
+                        <iconType
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="/libs/granite/ui/components/coral/foundation/form/select"
+                            fieldDescription="Select the Icon Type"
+                            fieldLabel="Icon Type"
+                            name="./iconType">
+                            <items jcr:primaryType="nt:unstructured">
+                                <warningIcon
+                                    jcr:primaryType="nt:unstructured"
+                                    selected="{Boolean}true"
+                                    text="Warning Icon"
+                                    value="warning-icon"/>
+                                <clockIcon
+                                    jcr:primaryType="nt:unstructured"
+                                    selected="{Boolean}false"
+                                    text="Clock Icon"
+                                    value="clock-icon"/>
+                                <tipIcon
+                                    jcr:primaryType="nt:unstructured"
+                                    selected="{Boolean}false"
+                                    text="Tip Icon"
+                                    value="tip-icon"/>
+                            </items>
+                        </iconType>
+                        <bannerColor
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="/libs/granite/ui/components/coral/foundation/form/select"
+                            fieldDescription="Select the Color Type"
+                            fieldLabel="Color Banner"
+                            name="./bannerColor">
+                            <items jcr:primaryType="nt:unstructured">
+                                <lightBlueColor
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Sky Blue" 
+                                    value="banner-lightblue"/>
+                                <saffronColor
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Saffron"
+                                    value="banner-yellow"/>
+                            </items>
+                        </bannerColor>
+                        <bannerLink
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                            fieldDescription="The URL visitors will be directed to after clicking the banner alert."
+                            fieldLabel="Link url"
+                            name="./bannerLink"
+                            required="{Boolean}false"
+                            rootPath="/content/edc"/>
+                    </items>
+                 </column>
+        </items>
+    </content>
+</jcr:root>

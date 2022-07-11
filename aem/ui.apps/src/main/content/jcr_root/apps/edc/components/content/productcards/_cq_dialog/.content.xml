@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Product Cards"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <headlinetab
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Headline Details"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                    margin="{Boolean}false"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <headline
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Headline"
+                                name="./headline"/>
+                            <headlinetext
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldLabel="Text"
+                                name="./headlinetext"/>
+                            <singlecard
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                text="Style for single product card"
+                                fieldDescription="This option should be selected for proper display of the component in Free Trade Agreements and Proximity Markets"
+                                name="./singlecard"
+                                value="{Boolean}true"/>
+                        </items>
+                    </column>
+                </items>
+            </headlinetab>
+            <firstcardtab
+                jcr:primaryType="nt:unstructured"
+                jcr:title="First Card"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                    margin="{Boolean}false"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <title
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Title"
+                                name="./firsttitle"
+                                required="{Boolean}true"/>
+                            <text
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldLabel="Text"
+                                name="./firsttext"/>
+                            <subtitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Subtitle"
+                                name="./firstsubtitle"/>
+                            <bulletitems
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <multi
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                        composite="{Boolean}true"
+                                        fieldLabel="Bullet items"
+                                        name="./firstmultibulletitems">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                            name="./firstbulletitems">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <column
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <bulletitem
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Bullet item"
+                                                            name="./bulletitem"
+                                                            required="{Boolean}false"/>
+                                                    </items>
+                                                </column>
+                                            </items>
+                                        </field>
+                                    </multi>
+                                </items>
+                            </bulletitems>
+                            <cta1type
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                class="cq-dialog-dropdown-showhide"
+                                cq-dialog-dropdown-showhide-target=".list-option-firstcta1type-showhide-target-1"
+                                fieldLabel="CTA 1 type"
+                                name="./firstcta1type">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <link1
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Link (with Url, target and text)"
+                                        value="cta"/>
+                                    <modal1
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Modal"
+                                        value="modal"/>
+                                </items>
+                            </cta1type>
+                            <setLink1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide list-option-firstcta1type-showhide-target-1 foundation-layout-util-vmargin"
+                                showhidetargetvalue="cta">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <heading
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/heading"
+                                        class="coral-Heading coral-Heading--4"
+                                        level="{Long}4"
+                                        text="Set CTA 1 link options"/>
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <cta1
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <heading
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/text"
+                                                        class="coral-Form-fieldlabel"
+                                                        text="CTA 1"/>
+                                                    <well
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/container">
+                                                        <layout
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <ctatarget1
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                                fieldLabel="Link target"
+                                                                name="./firstctatarget1">
+                                                                <items jcr:primaryType="nt:unstructured">
+                                                                    <existing
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        text="Existing window"
+                                                                        value="_self"/>
+                                                                    <new
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        text="New window"
+                                                                        value="_blank"/>
+                                                                </items>
+                                                            </ctatarget1>
+                                                            <ctatext1
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                fieldLabel="Link text"
+                                                                name="./firstctatext1"/>
+                                                            <ctalink1
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                fieldLabel="Link url"
+                                                                name="./firstctaurl1"
+                                                                required="{Boolean}false"
+                                                                rootPath="/content/edc"/>
+                                                        </items>
+                                                    </well>
+                                                </items>
+                                            </cta1>
+                                        </items>
+                                    </well>
+                                </items>
+                            </setLink1>
+                            <setModal1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide list-option-firstcta1type-showhide-target-1 foundation-layout-util-vmargin"
+                                showhidetargetvalue="modal">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <heading
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/heading"
+                                        class="coral-Heading coral-Heading--4"
+                                        level="{Long}4"
+                                        text="Set CTA 1 modal options"/>
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <modal1text
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Modal button text"
+                                                name="./firstmodaltext1"/>
+                                            <modal1name
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Modal name (unique identifier of the modal to be shown)"
+                                                name="./firstmodalname1"/>
+                                        </items>
+                                    </well>
+                                </items>
+                            </setModal1>
+                            <cta2type
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                class="cq-dialog-dropdown-showhide"
+                                cq-dialog-dropdown-showhide-target=".list-option-firstcta2type-showhide-target-2"
+                                fieldLabel="CTA 2 type"
+                                name="./firstcta2type">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <link2
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Link (with Url, target and text)"
+                                        value="link"/>
+                                    <modal2
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Modal"
+                                        value="modal"/>
+                                </items>
+                            </cta2type>
+                            <setLink2
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide list-option-firstcta2type-showhide-target-2 foundation-layout-util-vmargin"
+                                showhidetargetvalue="link">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <heading
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/heading"
+                                        class="coral-Heading coral-Heading--4"
+                                        level="{Long}4"
+                                        text="Set CTA 2 link options"/>
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <cta2
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <heading
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/text"
+                                                        class="coral-Form-fieldlabel"
+                                                        text="CTA 2"/>
+                                                    <well
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/container">
+                                                        <layout
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <ctatarget2
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                                fieldLabel="Link target"
+                                                                name="./firstctatarget2">
+                                                                <items jcr:primaryType="nt:unstructured">
+                                                                    <existing
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        text="Existing window"
+                                                                        value="_self"/>
+                                                                    <new
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        text="New window"
+                                                                        value="_blank"/>
+                                                                </items>
+                                                            </ctatarget2>
+                                                            <ctatext2
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                fieldLabel="Link text"
+                                                                name="./firstctatext2"/>
+                                                            <ctalink2
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                fieldLabel="Link url"
+                                                                name="./firstctaurl2"
+                                                                required="{Boolean}false"
+                                                                rootPath="/content/edc"/>
+                                                        </items>
+                                                    </well>
+                                                </items>
+                                            </cta2>
+                                        </items>
+                                    </well>
+                                </items>
+                            </setLink2>
+                            <setModal2
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide list-option-firstcta2type-showhide-target-2 foundation-layout-util-vmargin"
+                                showhidetargetvalue="modal">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <heading
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/heading"
+                                        class="coral-Heading coral-Heading--4"
+                                        level="{Long}4"
+                                        text="Set CTA 2 modal options"/>
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <modal1text
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Modal button text"
+                                                name="./firstmodaltext2"/>
+                                            <modal1name
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Modal name (unique identifier of the modal to be shown)"
+                                                name="./firstmodalname2"/>
+                                        </items>
+                                    </well>
+                                </items>
+                            </setModal2>
+                        </items>
+                    </column>
+                </items>
+            </firstcardtab>
+            <secondcardtab
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Second Card"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                    margin="{Boolean}false"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <title
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Title"
+                                name="./secondtitle"/>
+                            <text
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldLabel="Text"
+                                name="./secondtext"/>
+                            <subtitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Subtitle"
+                                name="./secondsubtitle"/>
+                            <bulletitems
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <multi
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                        composite="{Boolean}true"
+                                        fieldLabel="Bullet items"
+                                        key="./secondmultibulletitems">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                            name="./secondbulletitems">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <column
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <bulletitem
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Bullet item"
+                                                            name="./bulletitem"
+                                                            required="{Boolean}false"/>
+                                                    </items>
+                                                </column>
+                                            </items>
+                                        </field>
+                                    </multi>
+                                </items>
+                            </bulletitems>
+                            <cta1type
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                class="cq-dialog-dropdown-showhide"
+                                cq-dialog-dropdown-showhide-target=".list-option-secondcta1type-showhide-target-1"
+                                fieldLabel="CTA 1 type"
+                                name="./secondcta1type">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <link1
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Link (with Url, target and text)"
+                                        value="cta"/>
+                                    <modal1
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Modal"
+                                        value="modal"/>
+                                </items>
+                            </cta1type>
+                            <setLink1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide list-option-secondcta1type-showhide-target-1 foundation-layout-util-vmargin"
+                                showhidetargetvalue="cta">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <heading
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/heading"
+                                        class="coral-Heading coral-Heading--4"
+                                        level="{Long}4"
+                                        text="Set CTA 1 link options"/>
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <cta1
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <heading
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/text"
+                                                        class="coral-Form-fieldlabel"
+                                                        text="CTA 1"/>
+                                                    <well
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/container">
+                                                        <layout
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <ctatarget1
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                                fieldLabel="Link target"
+                                                                name="./secondctatarget1">
+                                                                <items jcr:primaryType="nt:unstructured">
+                                                                    <existing
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        text="Existing window"
+                                                                        value="_self"/>
+                                                                    <new
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        text="New window"
+                                                                        value="_blank"/>
+                                                                </items>
+                                                            </ctatarget1>
+                                                            <ctatext1
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                fieldLabel="Link text"
+                                                                name="./secondctatext1"/>
+                                                            <ctalink1
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                fieldLabel="Link url"
+                                                                name="./secondctaurl1"
+                                                                required="{Boolean}false"
+                                                                rootPath="/content/edc"/>
+                                                        </items>
+                                                    </well>
+                                                </items>
+                                            </cta1>
+                                        </items>
+                                    </well>
+                                </items>
+                            </setLink1>
+                            <setModal1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide list-option-secondcta1type-showhide-target-1 foundation-layout-util-vmargin"
+                                showhidetargetvalue="modal">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <heading
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/heading"
+                                        class="coral-Heading coral-Heading--4"
+                                        level="{Long}4"
+                                        text="Set CTA 1 modal options"/>
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <modal1text
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Modal button text"
+                                                name="./secondmodaltext1"/>
+                                            <modal1name
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Modal name (unique identifier of the modal to be shown)"
+                                                name="./secondmodalname1"/>
+                                        </items>
+                                    </well>
+                                </items>
+                            </setModal1>
+                            <cta2type
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                class="cq-dialog-dropdown-showhide"
+                                cq-dialog-dropdown-showhide-target=".list-option-secondcta2type-showhide-target-2"
+                                fieldLabel="CTA 2 type"
+                                name="./secondcta2type">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <link2
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Link (with Url, target and text)"
+                                        value="link"/>
+                                    <modal2
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Modal"
+                                        value="modal"/>
+                                </items>
+                            </cta2type>
+                            <setLink2
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide list-option-secondcta2type-showhide-target-2 foundation-layout-util-vmargin"
+                                showhidetargetvalue="link">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <heading
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/heading"
+                                        class="coral-Heading coral-Heading--4"
+                                        level="{Long}4"
+                                        text="Set CTA 2 link options"/>
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <cta2
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <heading
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/text"
+                                                        class="coral-Form-fieldlabel"
+                                                        text="CTA 2"/>
+                                                    <well
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/container">
+                                                        <layout
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <ctatarget2
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                                fieldLabel="Link target"
+                                                                name="./secondctatarget2">
+                                                                <items jcr:primaryType="nt:unstructured">
+                                                                    <existing
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        text="Existing window"
+                                                                        value="_self"/>
+                                                                    <new
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        text="New window"
+                                                                        value="_blank"/>
+                                                                </items>
+                                                            </ctatarget2>
+                                                            <ctatext2
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                fieldLabel="Link text"
+                                                                name="./secondctatext2"/>
+                                                            <ctalink2
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                fieldLabel="Link url"
+                                                                name="./secondctaurl2"
+                                                                required="{Boolean}false"
+                                                                rootPath="/content/edc"/>
+                                                        </items>
+                                                    </well>
+                                                </items>
+                                            </cta2>
+                                        </items>
+                                    </well>
+                                </items>
+                            </setLink2>
+                            <setModal2
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide list-option-secondcta2type-showhide-target-2 foundation-layout-util-vmargin"
+                                showhidetargetvalue="modal">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <heading
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/heading"
+                                        class="coral-Heading coral-Heading--4"
+                                        level="{Long}4"
+                                        text="Set CTA 2 modal options"/>
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <modal1text
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Modal button text"
+                                                name="./secondmodaltext2"/>
+                                            <modal1name
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Modal name (unique identifier of the modal to be shown)"
+                                                name="./secondmodalname2"/>
+                                        </items>
+                                    </well>
+                                </items>
+                            </setModal2>
+                        </items>
+                    </column>
+                </items>
+            </secondcardtab>
+        </items>
+    </content>
+</jcr:root>

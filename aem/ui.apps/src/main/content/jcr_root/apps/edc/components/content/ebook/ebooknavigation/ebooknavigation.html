@@ -1,0 +1,60 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.nav="com.edc.edcweb.core.models.EbookNavigation"/>
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-use.policyReader="com.edc.edcweb.core.models.PolicyReader" />
+<sly data-sly-test.policy="${policyReader.policy}"/>
+<sly data-sly-test.chapters="${nav.ebook.size > 0}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !policy, emptyTextAppend='Policy is not defined'}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty =  !chapters, emptyTextAppend='No chapters to be displayed'}"/>
+
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+<sly data-sly-test="${policyReader.labels['title'] && chapters && !nav.preview}" >
+
+    <section class="c-ebook-navigation">
+        <h4 class="nav-title">${policyReader.labels['title']}</h4>
+        <nav role="navigation" aria-label="navigation">
+            <ul data-sly-list="${nav.ebook}">
+                <sly data-sly-test.isCurrent="${item.currentChapter == itemList.count}" />
+                <li class="${isCurrent ? 'selected' : ''}">
+                    <a data-sly-unwrap="${isCurrent}" x-cq-linkchecker="valid" href="${item.chapterUrl}" class="tab-label">
+                        <span>${itemList.count}</span>
+                        ${item.chapterTitle}
+                    </a>
+
+                </li>
+            </ul>
+        </nav>
+        <div class="modal-section">
+            <div class="c-modal modal-example" role="dialog" aria-modal="true">
+                <button type="button" class="edc-btn-unstyled modal-trigger anchor" data-modal-to-trigger="modal-general-${uuid}">${pageProperties.chapterName}</button>
+                <div class="modal-dialog ebook-nav-modal-content" id="modal-general-${uuid}">
+                    <div class="modal-shade"></div>
+                    <div class="modal-container">
+                        <a href="#" class="modal-close">
+                            <i class="iconfont close"></i><!-- //NOSONAR -->
+                        </a>
+                        <div class="modal-content">
+                            <nav role="navigation" aria-label="">
+                                <h4 class="nav-title">${policyReader.labels['mobiletitle']}</h4>
+                                <ul data-sly-list="${nav.ebook}">
+                                    <sly data-sly-test.isCurrent="${item.currentChapter == itemList.count}" />
+                                    <li class="${isCurrent ? 'selected' : ''}">
+                                        <a data-sly-unwrap="${isCurrent}" x-cq-linkchecker="valid" href="${item.chapterUrl}" class="tab-label">
+                                            <span>${itemList.count}</span>
+                                            ${item.chapterTitle}
+                                        </a>
+                                    </li>
+                                </ul>
+                                <span class="key-line"></span>
+                            </nav>
+                            <button class="edc-primary-btn ">
+                                <span>${policyReader.labels['closebtn']}</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span class="key-line"></span>
+    </section>
+</sly>

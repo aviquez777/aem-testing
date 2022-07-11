@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <stepLabel jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Label for Step 1 of 3"
+                fieldLabel="Label for Step 1 of 3"
+                required="{Boolean}true"
+                name="./step1Of3"/>
+            <step1Title
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Title after Step 1 of 1"
+                fieldDescription="i.e. Payment Details"
+                name="./step1Title"
+                required="{Boolean}true"/>
+            <firstNameLabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="First Name Label"
+                fieldDescription="First Name Label"
+                name="./firstNameLabel"
+                required="{Boolean}true"/>
+            <firstNamePH
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="First Name Placeholder"
+                fieldDescription="First Name Placeholder"
+                name="./firstNamePH"
+                required="{Boolean}false"/>
+            <lastNameLabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Last Name Label"
+                fieldDescription="Last Name Label"
+                name="./lastNameLabel"
+                required="{Boolean}true"/>
+            <lastNamePH
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Last Name Placeholder"
+                fieldDescription="Last Name Placeholder"
+                name="./lastNamePH"
+                required="{Boolean}false"/>
+            <companyNameLabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Company Name Label"
+                fieldDescription="Company Name Label"
+                name="./companyNameLabel"
+                required="{Boolean}true"/>
+            <policyNumberLabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Policy Number Label"
+                fieldDescription="Policy Number Label"
+                name="./policyNumberLabel"
+                required="{Boolean}true"/>
+            <paymentAmountLabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Amount Label"
+                fieldDescription="Amount Label"
+                name="./paymentAmountLabel"
+                required="{Boolean}true"/>
+            <amountAlert
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                fieldLabel="Amount Alert"
+                fieldDescription="i.e. The amount you entered does not match the amount on your invoice...."
+                name="./amountAlert"
+                useFixedInlineToolbar="{Boolean}true"
+                required="{Boolean}true">
+                <rtePlugins jcr:primaryType="nt:unstructured">
+                    <format
+                        jcr:primaryType="nt:unstructured"
+                        features="*"/>
+                    <links
+                        jcr:primaryType="nt:unstructured"
+                        features="[modifylink,unlink]"/>
+                </rtePlugins>
+                <uiSettings jcr:primaryType="nt:unstructured">
+                    <cui jcr:primaryType="nt:unstructured">
+                        <inline
+                            jcr:primaryType="nt:unstructured"
+                            toolbar="[format#bold,format#italic,format#underline,#lists,links#modifylink,links#unlink,links#anchor]">
+                        </inline>
+                    </cui>
+                </uiSettings>
+            </amountAlert>
+            <currency
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Currency Label"
+                fieldDescription="Currency Label"
+                name="./paymentCurrencyLabel"
+                required="{Boolean}true"/>
+           <emailLabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Email Label"
+                fieldDescription="Email Label"
+                name="./emailLabel"
+                required="{Boolean}true"/>
+            <emailPH
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Email Placeholder"
+                fieldDescription="Email Placeholder"
+                name="./emailPH"/>
+           <commentsLabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Comments Label"
+                fieldDescription="Comments Label if no label, the field will not show"
+                name="./commentsLabel"
+                required="{Boolean}false"/>
+            <commentsPH
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Comments Placeholder"
+                fieldDescription="Comments Placeholder"
+                name="./commentsPH"/>
+            <nextBtnText
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Next button text"
+                fieldDescription="Next button text"
+                name="./nextBtnText"
+                required="{Boolean}true"/>
+            <level1Message
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                fieldLabel="Message below the form"
+                fieldDescription="i.e. You will be sent to a secure payment page to enter..."
+                name="./level1Message"
+                useFixedInlineToolbar="{Boolean}true"
+                required="{Boolean}true">
+                <rtePlugins jcr:primaryType="nt:unstructured">
+                    <format
+                        jcr:primaryType="nt:unstructured"
+                        features="*"/>
+                    <links
+                        jcr:primaryType="nt:unstructured"
+                        features="[modifylink,unlink]"/>
+                </rtePlugins>
+                <uiSettings jcr:primaryType="nt:unstructured">
+                    <cui jcr:primaryType="nt:unstructured">
+                        <inline
+                            jcr:primaryType="nt:unstructured"
+                            toolbar="[format#bold,format#italic,format#underline,#lists,links#modifylink,links#unlink,links#anchor]">
+                        </inline>
+                    </cui>
+                </uiSettings>
+            </level1Message>
+        </items>
+    </content>
+</jcr:root>

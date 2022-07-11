@@ -1,0 +1,135 @@
+<template data-sly-template.userMenu="${@ header}">
+    <sly data-sly-use.ibTemplateObj="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+    <div class="c-user-menu">
+        <div data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='button', isUsedForModal='nomodal', buttonstate='enabled', buttonsize='ibtn-sm', buttontext=header.loggedOutText, buttoncssclasses='nav-toggle edc-primary-btn'}"  data-sly-unwrap></div>
+        <div data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='button', isUsedForModal='nomodal', buttonstate='enabled', buttonsize='ibtn-sm', buttontext=header.loggedOutText, buttoncssid='menu-btn-desktop', buttoncssclasses='menu-btn  edc-primary-btn'}"  data-sly-unwrap></div>
+        <div class="submenu hidden-for-accessibility hide">
+            <div class="nav-bridge"></div>
+            <div class="nav-column">
+                <ul class="mobile-title" role="menu">
+                    <li role="none">
+                        <a href="#"  role="menuitem">${header.rightTitle}</a>
+                        <button type="button" class="close edc-btn-unstyled" aria-label="${header.closeMenuAccessibility}"></button>
+                    </li>
+                </ul>
+                <ul class="logged-in" role="menu" aria-labelledby="menu-btn-desktop">
+                    <li class="title" role="none">${header.rightTitle}</li>
+                    <li class="user-info" role="none">
+                        <p class="user-name"></p>
+                        <p class="user-email">
+                            <span></span>
+                        </p>
+                    </li>
+                    <sly data-sly-list.link="${header.rightLinks}">
+                        <li data-sly-test="${link.linkText}" class="menu-option" role="none">
+                            <sly data-sly-use.linkresolver="${'com.edc.edcweb.core.helpers.LinkExternalizer' @srcPath=link.linkUrl, scheme=request.scheme}"/>
+                            <sly data-sly-test.linkUrl="${linkresolver.LinkWithHtmlExtension}"/>
+                            <a x-cq-linkchecker="valid" href="${linkUrl}" target="${link.linkTarget}" role="menuitem">${link.linkText}</a>
+                        </li>
+                    </sly>
+                    <li role="none">
+                        <div data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='link', link=header.logoutUrl, buttontext=header.logoutButtonText, isUsedForModal='nomodal', buttonstate='enabled', buttoncssclasses='signout c-interaction-button danger ibtn-sm', linkchecker='skip'}"  data-sly-unwrap></div>
+                    </li>
+                </ul>
+                <ul class="logged-in logged-out" role="menu" aria-labelledby="menu-btn-desktop" >
+                    <li class="title options logged-in" role="none">${header.leftTitleIn}</li>
+                    <li class="title options logged-out" role="none">${header.leftTitle}</li>
+                    <sly data-sly-list.link="${header.leftLinks}">
+                        <li data-sly-test="${link.linkText}">
+                            <sly data-sly-use.linkresolver="${'com.edc.edcweb.core.helpers.LinkExternalizer' @srcPath=link.linkUrl, scheme=request.scheme}"/>
+                            <sly data-sly-test.linkUrl="${linkresolver.LinkWithHtmlExtension}"/>
+                            <a data-sly-test="${linkList.count == 1}" x-cq-linkchecker="valid" href="${linkUrl}" target="${link.linkTarget}"  class="logged-out" role="menuitem">${link.linkText}</a>
+                            <a data-sly-test="${linkList.count > 1}"  x-cq-linkchecker="valid" href="${linkUrl}" target="${link.linkTarget}" role="menuitem">${link.linkText}</a>
+                        </li>
+                    </sly>
+                </ul>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template data-sly-template.languageToggle="${@ header, isMobile}">
+    <sly data-sly-use.ibTemplateObj="${'/apps/edc/components/common/interactionbutton/ibtemplate.html'}"/>
+    <sly data-sly-use.languageToggle="com.edc.edcweb.core.components.LanguageToggle">
+    <sly data-sly-test.cssClasses="${isMobile ? 'unstyled' : 'ibtn-sm secondary-outline'} language-toggle-btn"/>
+        <div data-sly-call="${ibTemplateObj.ibTemplate @ buttonbehavior='link', isUsedForModal='nomodal', buttonstate='enabled', buttontext=languageToggle.toggleLanguage, buttoncssclasses=cssClasses, link=languageToggle.toggleUrl, linkchecker='true', arialabelledby=header.languageToggleAccessibility}"  data-sly-unwrap></div>
+    </sly>
+</template>
+
+<template data-sly-template.bottomNav="${@ header}">
+    <div class="container">
+        <nav class="mega-nav hidden-for-accessibility">
+            <ul class="level-0" data-sly-list.mainmenu="" role="menubar" aria-label="${header.secondaryNavigationBarAccessibility}">
+                <li class="level-0 mobile-nav" role="none">
+                    <button type="button" class="close" aria-label="${header.closeMenuAccessibility}"></button>
+                </li>
+                <sly data-sly-test="${header.showSearch}">
+                    <li class="level-0 mobile-search" role="none">
+                        <button type="button" class="trigger-modal-search" data-modal-to-trigger="modal-search">${header.mSearchLabel}</button>
+                    </li>
+                    <li class="level-0 separator search-separator" role="none">
+                        <div class="divider"></div>
+                    </li>
+                </sly>
+                <sly data-sly-list.mainmenu="${header.pages}">
+                    <sly data-sly-test.pageName="${mainmenu.page.name}"/>
+                    <sly data-sly-test.subMenuClass="${(pageName == 'solutions') ? 'four-columns' : 'two-columns'}"/>
+                    <sly data-sly-test.subMenuClass="${(pageName == 'tradeinsights') ? '' : subMenuClass}"/>
+                    <li class="level-0 ${(pageName == 'about-exporting'|| pageName == 'about-us') ? pageName : ''}" role="none">
+                        <sly data-sly-test.navTitle="${mainmenu.page.navigationTitle || mainmenu.page.title}"/>
+                        <sly data-sly-use.linkresolver="${'com.edc.edcweb.core.helpers.LinkExternalizer' @srcPath=mainmenu.page.path, scheme=request.scheme}"/>
+                        <sly data-sly-test.pageUrl="${mainmenu.page.properties['substitutepath'] ? mainmenu.page.properties['substitutepath'] : linkresolver.LinkWithHtmlExtension}"/>
+                        <a href="${pageUrl}" class="sub-activate" x-cq-linkchecker="valid" aria-haspopup="true" role="menuitem" aria-expanded="false">${navTitle}</a>
+                        <sly data-sly-test.children="${mainmenu.children}" />
+                        <div class="submenu ${subMenuClass}" data-sly-test="${children}">
+                            <div class="mobile-nav parent">
+                                <div class="controls">
+                                    <button type="button" class="back edc-secondary-btn" aria-label="${'back' @ i18n}"></button>
+                                    <button type="button" class="close edc-secondary-btn" aria-label="${'close' @ i18n}"></button>
+                                </div>
+                                <a href="${pageUrl}" x-cq-linkchecker="valid">${navTitle}</a>
+                            </div>
+                            <sly data-sly-list.submenu="${children}">
+                                <div class="nav-column">
+                                    <span class="title">${submenu.page.navigationTitle || submenu.page.title}</span>
+                                    <ul class="level-1" data-sly-list.level1="${submenu.children}" role="menu">
+                                        <sly data-sly-test.pagePath="${level1.page.properties['substitutepath'] ? level1.page.properties['substitutepath'] : level1.page.path}"/>
+                                        <sly data-sly-use.linkresolver="${'com.edc.edcweb.core.helpers.LinkExternalizer' @srcPath=pagePath, scheme=request.scheme}"/>
+                                        <sly data-sly-test.pageUrl="${linkresolver.LinkWithHtmlExtension}"/>
+                                        <li class="level-1" role="none">
+                                            <a href="${pageUrl}" x-cq-linkchecker="valid" role="menuitem">${level1.page.navigationTitle || level1.page.title}</a>
+                                            <ul class="sub-level" data-sly-list.sublevel="${level1.children}">
+                                                <sly data-sly-test.pagePath="${sublevel.page.properties['substitutepath'] ? sublevel.page.properties['substitutepath'] : sublevel.page.path}"/>
+                                                <sly data-sly-use.linkresolver="${'com.edc.edcweb.core.helpers.LinkExternalizer' @srcPath=pagePath, scheme=request.scheme}"/>
+                                                <sly data-sly-test.pageUrl="${linkresolver.LinkWithHtmlExtension}"/>
+                                                <li role="none">
+                                                    <span class="arrow">
+                                                        <span class="arrow"><a href="${pageUrl}" x-cq-linkchecker="valid">${sublevel.page.navigationTitle || sublevel.page.title}</a></span>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </sly>
+                        </div>
+                    </li>
+                </sly>
+                <li class="level-0 separator"  role="none">
+                    <div class="divider"></div>
+                </li>
+                <li class="level-0"  role="none">
+                    <a class="bottom-items" href="tel:${header.phoneNumber}">${header.phoneNumber}</a>
+                </li>
+                <sly data-sly-list.link="${header.links}">
+                    <li class="level-0">
+                        <a x-cq-linkchecker="valid" class="bottom-items" href="${link.linkUrl}" target="${link.linkTarget}">${link.linkText}</a>
+                    </li>
+                </sly>
+                <li class="level-0">
+                    <sly data-sly-call="${languageToggle @ isMobile=true}" />
+                </li>
+            </ul>
+        </nav>
+    </div>
+</template>

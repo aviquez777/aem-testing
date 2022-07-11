@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="17px" viewBox="0 0 16 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
+    <title>D6331AE2-18B9-400B-B21A-D35349ED2793</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <circle id="path-1" cx="8" cy="8" r="8"></circle>
+        <path d="M6.00693843,4.8227782 L8.98362415,1.85260991 C9.03248515,1.80385535 9.11161547,1.80393277 9.16038097,1.85278286 L9.16040077,1.85276309 L10.1612867,2.85534561 C10.21006,2.90420343 10.2099914,2.98334902 10.1611336,3.03212224 C10.161127,3.03212883 10.1611204,3.03213542 10.1611138,3.032142 L7.1867434,6 L10.1611138,8.967858 C10.2099825,9.01662028 10.2100688,9.09576585 10.1613065,9.14463459 C10.1612999,9.14464119 10.1612933,9.14464779 10.1612867,9.14465439 L9.16038097,10.1472171 C9.11161547,10.1960672 9.03248515,10.1961447 8.98362415,10.1473901 L6.00693843,7.1772218 L3.03025271,10.1473901 C2.98139171,10.1961447 2.90226138,10.1960672 2.85349588,10.1472171 L1.8525901,9.14465439 C1.80381689,9.09579657 1.80388547,9.01665098 1.85274329,8.96787776 C1.85274989,8.96787117 1.85275649,8.96786458 1.85276309,8.967858 L4.82713345,6 L1.85276309,3.032142 C1.80389436,2.98337972 1.80380806,2.90423415 1.85257034,2.85536541 C1.85257693,2.85535881 1.85258351,2.85535221 1.8525901,2.85534561 L1.8526099,2.85536537 L2.85349588,1.85278286 C2.90226138,1.80393277 2.98139171,1.80385535 3.03025271,1.85260991 L6.00693843,4.8227782 Z" id="path-3"></path>
+    </defs>
+    <g id="↳-S22---APSG-Form" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="::-[Page]-APSG-Form---Active-Modal-(Desktop)" transform="translate(-954.000000, -497.000000)">
+            <g id="Background-Content" transform="translate(0.000000, -2338.000000)">
+                <g id="::-[Component]-Added-Email" transform="translate(450.000000, 2759.000000)">
+                    <g id="Group-3">
+                        <g id="Icons-/-Utility-/-Medium-/-Add-Button-(24)" transform="translate(504.000000, 76.500000)">
+                            <g id="Colour-/-EDC-Dark-Blue">
+                                <mask id="mask-2" fill="white">
+                                    <use xlink:href="#path-1"></use>
+                                </mask>
+                                <g id="Mask"></g>
+                                <g mask="url(#mask-2)" fill="#1A65B2">
+                                    <rect x="0" y="0" width="16" height="16"></rect>
+                                </g>
+                            </g>
+                            <g id="Close-(24)" transform="translate(8.000000, 8.000000) rotate(-315.000000) translate(-8.000000, -8.000000) translate(2.000000, 2.000000)">
+                                <mask id="mask-4" fill="white">
+                                    <use xlink:href="#path-3"></use>
+                                </mask>
+                                <use id="Mask" fill="#2F78C6" fill-rule="nonzero" transform="translate(6.006938, 6.000000) rotate(-315.000000) translate(-6.006938, -6.000000) " xlink:href="#path-3"></use>
+                                <g id="Colour-/-EDC-Blue" mask="url(#mask-4)" fill="#F4F8FC">
+                                    <g transform="translate(-2.000000, -2.000000)" id="Colour-/-EDC-Blue-(5%)">
+                                        <rect x="0" y="0" width="16" height="16"></rect>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

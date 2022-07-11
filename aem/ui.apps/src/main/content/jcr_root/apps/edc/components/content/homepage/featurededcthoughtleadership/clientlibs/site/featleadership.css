@@ -1,0 +1,571 @@
+.featured-edc-thought-leadership {
+    box-sizing: border-box;
+    background: #fff;
+    padding-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding-bottom: 1rem;
+}
+
+.featured-edc-thought-leadership * {
+    box-sizing: border-box;
+}
+
+.featured-edc-thought-leadership .title-featured {
+    text-align: center;
+    margin: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.featured-edc-thought-leadership .content-info {
+    margin: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.featured-edc-thought-leadership .content-info .content-articles {
+    border: 1px solid rgba(25, 25, 25, 0.1);
+    box-shadow: 0 0 10px 2px rgba(51, 51, 51, 0.1);
+    width: 100%;
+    min-height: 146px;
+    border-top: 1px solid rgba(51, 51, 51, 0.3);
+}
+
+.featured-edc-thought-leadership .content-info .content-articles:hover {
+    box-shadow: 0 0 20px 10px rgba(51, 51, 51, 0.1);
+}
+
+.featured-edc-thought-leadership .content-info .content-articles .card-content {
+    height: 100%;
+}
+
+.featured-edc-thought-leadership .content-info .content-articles .card-content .title::after {
+    display: none;
+}
+
+.featured-edc-thought-leadership .content-info .content-premium {
+    border: 1px solid rgba(25, 25, 25, 0.1);
+    box-shadow: 0 0 10px 2px rgba(51, 51, 51, 0.1);
+    border-bottom-left-radius: 2px;
+    transition: box-shadow .5s ease;
+}
+
+.featured-edc-thought-leadership .content-info .content-premium:hover {
+    box-shadow: 0 0 20px 10px rgba(51, 51, 51, 0.1);
+}
+
+.featured-edc-thought-leadership .card-content .tag-section {
+    display: block;
+}
+
+.featured-edc-thought-leadership .card-content .tag-section .tag-color {
+    display: block;
+    height: 6px;
+    width: 24px;
+    margin-bottom: 2px;
+}
+
+.featured-edc-thought-leadership .card-content .tag-section .tag-color.article, .featured-edc-thought-leadership .card-content .tag-section .tag-color.default {
+    background-color: #8c294e;
+}
+
+.featured-edc-thought-leadership .card-content .tag-section .tag-color.blog {
+    background-color: #26a2b5;
+}
+
+.featured-edc-thought-leadership .card-content .tag-section .tag-color.video {
+    background-color: #746ab9;
+}
+
+.featured-edc-thought-leadership .card-content .tag-section .tag-color.success-story {
+    background-color: #3fa67a;
+}
+
+.featured-edc-thought-leadership .card-content .tag-section .tag-color.weekly-commentary {
+    background-color: #f1c238;
+}
+
+.featured-edc-thought-leadership .card-content .tag-section .tag-color.e-book {
+    background-color: #c4cfca;
+}
+
+.featured-edc-thought-leadership .card-content .tag-section .tag-color.guide, .featured-edc-thought-leadership .card-content .tag-section .tag-color.report, .featured-edc-thought-leadership .card-content .tag-section .tag-color.infographic, .featured-edc-thought-leadership .card-content .tag-section .tag-color.tool {
+    background-color: #ed834e;
+}
+
+.featured-edc-thought-leadership .card-content .tag-section .tag-color.webinar {
+    background-color: #ece9de;
+}
+
+.featured-edc-thought-leadership .card-content .tag-section .tag-title {
+    display: block;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    padding-bottom: 1rem;
+    color: #707070;
+}
+
+.featured-edc-thought-leadership .card-content .description {
+    display: none;
+}
+
+.featured-edc-thought-leadership .content-articles {
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: inline-flex;
+    overflow: hidden;
+    text-decoration: none;
+    transition: box-shadow .5s ease;
+    margin-top: 1rem;
+}
+
+.featured-edc-thought-leadership .content-articles .card-img {
+    height: auto;
+    margin: 0 1rem 0 0;
+    overflow: hidden;
+    position: relative;
+    width: 150px;
+    z-index: 1;
+}
+
+.featured-edc-thought-leadership .content-articles .card-img img {
+    position: absolute;
+    max-height: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.featured-edc-thought-leadership .content-articles .card-img.center img {
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.featured-edc-thought-leadership .content-articles .card-img.left img {
+    left: 0;
+    transform: translate(0%, -50%);
+}
+
+.featured-edc-thought-leadership .content-articles .card-img.right img {
+    left: 100%;
+    transform: translate(-100%, -50%);
+}
+
+.featured-edc-thought-leadership .content-articles .card-content {
+    padding: 1rem 0;
+    width: 100%;
+}
+
+.featured-edc-thought-leadership .content-articles .card-content .title {
+    margin: 0;
+    color: #333;
+    text-decoration: none;
+    padding-right: 1rem;
+}
+
+.featured-edc-thought-leadership .content-articles .card-content p {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.7142;
+    font-weight: normal;
+    top: 50px;
+    margin-bottom: 0;
+    color: #707070;
+    text-align: right;
+}
+
+@media (min-width: 720px) {
+    .featured-edc-thought-leadership .content-articles .card-content p {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .featured-edc-thought-leadership .content-articles .card-content p {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+.featured-edc-thought-leadership .content-articles .card-content .tag-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.featured-edc-thought-leadership .content-articles .card-content .tag-section div {
+    display: block;
+}
+
+.featured-edc-thought-leadership .content-articles .card-content .tag-section div .tag-color {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.featured-edc-thought-leadership .content-articles .card-content .tag-section div .tag-title {
+    display: inline-block;
+}
+
+.featured-edc-thought-leadership .content-articles:hover .card-content .title {
+    color: #37769a;
+    text-decoration: underline;
+}
+
+.featured-edc-thought-leadership .content-recent-articles {
+    background: #fff;
+    margin-top: 0;
+    border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+    padding-bottom: 1rem;
+}
+
+.featured-edc-thought-leadership .content-recent-articles .content-articles {
+    width: 100%;
+    border-radius: 0;
+    border-top: 1px solid rgba(51, 51, 51, 0.3);
+    margin-top: 0;
+}
+
+.featured-edc-thought-leadership .content-recent-articles .card-img {
+    display: none;
+}
+
+.featured-edc-thought-leadership .content-recent-articles .card-content {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.featured-edc-thought-leadership .content-recent-articles .card-content .tag-section .tag-title {
+    padding: 0;
+}
+
+.featured-edc-thought-leadership .content-recent-articles .title-recent {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 1rem;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+    font-size: 16px;
+}
+
+.featured-edc-thought-leadership .content-recent-articles .title-recent + a {
+    border-top: 0;
+}
+
+.featured-edc-thought-leadership .content-recent-articles .content-articles:nth-child(4),
+.featured-edc-thought-leadership .content-recent-articles .content-articles:nth-child(5),
+.featured-edc-thought-leadership .content-recent-articles .content-articles:nth-child(6) {
+    display: none;
+}
+
+.featured-edc-thought-leadership .content-premium {
+    border-radius: 4px;
+    border: 1px solid rgba(51, 51, 51, 0.3);
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.featured-edc-thought-leadership .content-premium .card-img {
+    width: 100%;
+}
+
+.featured-edc-thought-leadership .content-premium .card-img img {
+    width: 100%;
+    border-radius: 4px 4px 0 0;
+    display: block;
+}
+
+.featured-edc-thought-leadership .content-premium .card-content {
+    width: 100%;
+    padding: 1rem;
+}
+
+.featured-edc-thought-leadership .content-premium .card-content .title {
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+    text-decoration: none;
+}
+
+.featured-edc-thought-leadership .content-premium .card-content .tag-color {
+    margin-bottom: .5rem;
+}
+
+.featured-edc-thought-leadership .content-premium:hover .card-content .title {
+    color: #37769a;
+    text-decoration: underline;
+}
+
+.featured-edc-thought-leadership .see-more {
+    display: block;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    float: left;
+    font-weight: 600;
+}
+
+.featured-edc-thought-leadership .hide {
+    display: none;
+}
+
+@media (min-width: 720px) {
+    .featured-edc-thought-leadership {
+        padding-top: 1rem;
+    }
+    .featured-edc-thought-leadership .content-premium {
+        border: 1px solid rgba(51, 51, 51, 0.3);
+        display: inline-flex;
+        height: 100%;
+        min-height: 400px;
+        margin-bottom: 1rem;
+    }
+    .featured-edc-thought-leadership .content-premium .card-img {
+        float: left;
+        display: inline-block;
+        height: 100%;
+        min-height: 400px;
+        width: 50%;
+        position: relative;
+    }
+    .featured-edc-thought-leadership .content-premium .card-img img {
+        height: 100%;
+        width: auto;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(-50%, -50%);
+    }
+    .featured-edc-thought-leadership .content-premium .card-img.center img {
+        left: 50%;
+    }
+    .featured-edc-thought-leadership .content-premium .card-img.left img {
+        left: 0;
+        transform: translate(0%, -50%);
+    }
+    .featured-edc-thought-leadership .content-premium .card-img.right img {
+        left: 100%;
+        transform: translate(-100%, -50%);
+    }
+    .featured-edc-thought-leadership .content-premium .card-content {
+        background: #fff;
+        padding: 5.625rem 1rem 0;
+        width: 50%;
+        max-height: none;
+        overflow: visible;
+        z-index: 1;
+        border-bottom-right-radius: 2px;
+        border-top-right-radius: 2px;
+    }
+    .featured-edc-thought-leadership .content-premium .card-content .title {
+        border: transparent;
+        padding: 0;
+        margin: 0;
+    }
+    .featured-edc-thought-leadership .card-content .description {
+        position: relative;
+        display: block;
+        max-height: 75px;
+        overflow: hidden;
+        margin-top: 1rem;
+    }
+    .featured-edc-thought-leadership .card-content .description p {
+        color: #404041;
+        font-size: 14px;
+        line-height: 1.7142;
+        letter-spacing: 0;
+        margin: 0;
+    }
+    .featured-edc-thought-leadership .card-content .description::after {
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5) 30%, #fff);
+        position: absolute;
+        content: '';
+        width: 160px;
+        height: 25px;
+        bottom: 0;
+        right: 0;
+    }
+    .featured-edc-thought-leadership .content-articles {
+        margin-top: 0;
+    }
+    .featured-edc-thought-leadership .content-articles .card-img {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .featured-edc-thought-leadership .content-articles .card-content {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        border-bottom: transparent;
+    }
+    .featured-edc-thought-leadership .content-info {
+        font-size: 0;
+    }
+    .featured-edc-thought-leadership .content-info .content-articles {
+        border: 1px solid rgba(25, 25, 25, 0.1);
+        box-shadow: 0 0 10px 2px rgba(51, 51, 51, 0.1);
+        border-radius: 4px;
+        transition: box-shadow .5s ease;
+        width: calc(50% - 1rem/2);
+        display: inline-block;
+        vertical-align: top;
+        height: 416px;
+        max-height: 416px;
+        min-height: 416px;
+        border: 1px solid rgba(51, 51, 51, 0.3);
+        padding: 0;
+    }
+    .featured-edc-thought-leadership .content-info .content-articles:hover {
+        box-shadow: 0 0 20px 10px rgba(51, 51, 51, 0.1);
+    }
+    .featured-edc-thought-leadership .content-info .content-articles .card-img {
+        float: none;
+        width: 100%;
+        margin-right: 0;
+        margin-top: 0;
+        min-height: 182px;
+    }
+    .featured-edc-thought-leadership .content-info .content-articles .card-img img {
+        height: auto;
+        width: 100%;
+    }
+    .featured-edc-thought-leadership .content-info .content-articles .card-content {
+        border-bottom: 1px solid #c4cfca;
+        width: 100%;
+        padding: 1rem 1rem 2rem;
+        min-height: 148px;
+    }
+    .featured-edc-thought-leadership .content-info .content-articles .card-content .title {
+        font-size: 18px;
+    }
+    .featured-edc-thought-leadership .content-info .content-articles .card-content .title::after {
+        display: none;
+    }
+    .featured-edc-thought-leadership .content-info .content-articles .card-content .tag-section {
+        display: block;
+    }
+    .featured-edc-thought-leadership .content-info .content-articles .card-content .tag-section .tag-color {
+        display: block;
+        margin-bottom: .5rem;
+    }
+    .featured-edc-thought-leadership .content-info .content-articles .card-content .tag-section .tag-title {
+        padding-left: 0;
+    }
+    .featured-edc-thought-leadership .content-info .content-articles:nth-child(2) {
+        margin-right: 1rem;
+    }
+    .featured-edc-thought-leadership .content-info .content-articles:nth-child(3) {
+        margin-left: 0;
+    }
+    .featured-edc-thought-leadership .content-recent-articles {
+        margin-top: 0;
+        padding-top: 1rem;
+    }
+    .featured-edc-thought-leadership .content-recent-articles .card-img {
+        display: block;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        height: 110px;
+        width: 250px;
+    }
+    .featured-edc-thought-leadership .content-recent-articles .content-articles {
+        margin-top: 0;
+    }
+    .featured-edc-thought-leadership .content-recent-articles .content-articles .card-content .title {
+        margin-left: 0;
+        font-size: 16px;
+    }
+    .featured-edc-thought-leadership .content-recent-articles .title-recent {
+        font-size: 20px;
+        padding: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .featured-edc-thought-leadership {
+        padding-top: 0;
+    }
+    .featured-edc-thought-leadership .content-premium .card-content .title {
+        font-size: 20px;
+    }
+    .featured-edc-thought-leadership .content-info {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 15px;
+        position: relative;
+        width: 66.66666667%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .featured-edc-thought-leadership .content-info {
+        width: 66.66666667%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) {
+    .featured-edc-thought-leadership .content-info .content-articles .card-img {
+        min-height: 200px;
+    }
+    .featured-edc-thought-leadership .content-info .content-articles .card-img img {
+        width: auto;
+        height: 100%;
+    }
+    .featured-edc-thought-leadership .content-info .content-articles .card-content .title {
+        font-size: 20px;
+    }
+    .featured-edc-thought-leadership .content-recent-articles {
+        min-height: 1px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        position: relative;
+        width: 33.33333333%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .featured-edc-thought-leadership .content-recent-articles {
+        width: 33.33333333%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) {
+    .featured-edc-thought-leadership .content-recent-articles .title-recent {
+        font-size: 22px;
+        margin-top: 0;
+        padding-bottom: 1rem;
+    }
+    .featured-edc-thought-leadership .content-recent-articles .card-content {
+        margin-bottom: 2.5rem;
+        padding: 0;
+    }
+    .featured-edc-thought-leadership .content-recent-articles .content-articles .card-img {
+        height: 56px;
+        width: 80px;
+    }
+    .featured-edc-thought-leadership .content-recent-articles .content-articles .card-content .title {
+        font-size: 15px;
+        padding-top: 1rem;
+    }
+    .featured-edc-thought-leadership .content-recent-articles .content-articles:nth-child(4),
+    .featured-edc-thought-leadership .content-recent-articles .content-articles:nth-child(5),
+    .featured-edc-thought-leadership .content-recent-articles .content-articles:nth-child(6) {
+        display: inline-flex;
+    }
+    .featured-edc-thought-leadership .see-more {
+        float: left;
+    }
+}

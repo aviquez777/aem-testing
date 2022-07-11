@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2018-12-05T12:44:31.188-06:00"
+        cq:lastModifiedBy="admin"
+        cq:policy="edc/components/structure/newsrelease/page/policy_1542812841962"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="wcm/core/components/policies/mappings">
+        <root
+            cq:policy="wcm/foundation/components/responsivegrid/edc-structure"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/core/components/policies/mapping">
+            <tagresultheader
+                jcr:created="{Date}2018-11-29T12:47:06.121-06:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2018-11-29T12:52:41.527-06:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="edc/components/content/article/tagresultheader"
+                headline="News Room"/>
+            <responsivegrid
+                cq:policy=""
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/core/components/policies/mapping">
+                <leftgrid
+                    cq:policy=""
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/core/components/policies/mapping">
+                    <centraltext
+                        cq:policy=""
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/core/components/policies/mapping"/>
+                </leftgrid>
+                <right
+                    cq:policy=""
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/core/components/policies/mapping">
+                    <newsfilter
+                        cq:policy=""
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/core/components/policies/mapping"/>
+                </right>
+            </responsivegrid>
+            <header
+                cq:policy="edc/components/structure/header/policy_1503509965268"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/core/components/policies/mapping"/>
+            <footer
+                cq:policy="edc/components/structure/footer/policy_1503595658633"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/core/components/policies/mapping"/>
+        </root>
+    </jcr:content>
+</jcr:root>

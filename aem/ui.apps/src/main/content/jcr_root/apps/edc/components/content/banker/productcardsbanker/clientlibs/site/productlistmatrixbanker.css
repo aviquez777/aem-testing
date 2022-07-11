@@ -1,0 +1,260 @@
+.c-product-matrix-list-banker {
+    background: #f5f5f5;
+    border: 1px solid #ebebeb;
+    display: inline-block;
+    padding-bottom: 64px;
+    padding-top: 64px;
+    box-sizing: border-box;
+}
+
+.c-product-matrix-list-banker * {
+    box-sizing: border-box;
+}
+
+.c-product-matrix-list-banker > div > header {
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    text-align: center;
+}
+
+@media (min-width: 1140px) {
+    .c-product-matrix-list-banker > div > header {
+        width: 100%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.c-product-matrix-list-banker > div > header h2 {
+    /**paddings for content heading **/
+    margin: 16px 0;
+}
+
+@media (min-width: 960px) {
+    .c-product-matrix-list-banker > div > header h2 {
+        margin: 32px 0;
+    }
+}
+
+.c-product-matrix-list-banker .product-list {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    float: left;
+    margin-top: 2.5rem;
+}
+
+.c-product-matrix-list-banker .product-list .c-product-card-banker {
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 720px) {
+    .c-product-matrix-list-banker {
+        padding-bottom: 80px;
+        padding-top: 80px;
+    }
+    .c-product-matrix-list-banker > div > header {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        text-align: center;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-product-matrix-list-banker > div > header {
+        width: 66.66666667%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-product-matrix-list-banker .product-list {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        display: flex;
+        justify-content: left;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-product-matrix-list-banker .product-list {
+        width: 100%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-product-matrix-list-banker .product-list .c-product-card-banker {
+        margin-right: 30px;
+        margin-bottom: 30px;
+    }
+    .c-product-matrix-list-banker .product-list .c-product-card-banker:nth-child(2n) {
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-product-matrix-list-banker > div > header {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        text-align: center;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-product-matrix-list-banker > div > header {
+        width: 50%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-product-matrix-list-banker .product-list {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-product-matrix-list-banker .product-list {
+        width: 100%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-product-matrix-list-banker .product-list.even {
+        padding: 0 10%;
+    }
+    .c-product-matrix-list-banker .product-list.even .c-product-card-banker {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-product-matrix-list-banker .product-list.even .c-product-card-banker {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-product-matrix-list-banker .product-list.odd .c-product-card-banker {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 960px) {
+    .c-product-matrix-list-banker .product-list.odd .c-product-card-banker {
+        width: 33.33333333%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-product-matrix-list-banker .product-list.odd .c-product-card-banker:nth-child(3n+1) {
+        margin-right: 30px;
+    }
+    .c-product-matrix-list-banker .product-list.odd .c-product-card-banker:nth-child(3n+3) {
+        margin-left: 30px;
+    }
+}
+
+@media (min-width: 1140px) {
+    .c-product-matrix-list-banker .product-list {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+    }
+}
+
+@media (min-width: 1140px) and (min-width: 1140px) {
+    .c-product-matrix-list-banker .product-list {
+        width: 100%;
+        float: left;
+    }
+}
+
+@supports (display: grid) {
+    .c-product-matrix-list-banker .product-list {
+        display: grid;
+        grid-gap: 1.625rem;
+        grid-template-columns: repeat(1, 1fr);
+        justify-items: center;
+    }
+    .c-product-matrix-list-banker .product-list .c-product-card-banker {
+        margin: 0;
+        width: 100%;
+    }
+    @media (min-width: 720px) {
+        .c-product-matrix-list-banker .product-list {
+            grid-gap: 30px;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    @media (min-width: 960px) {
+        .c-product-matrix-list-banker .product-list {
+            grid-gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .c-product-matrix-list-banker .product-list .c-product-card-banker {
+            width: 100%;
+            margin: 0;
+        }
+        .c-product-matrix-list-banker .product-list .c-product-card-banker:nth-child(2n), .c-product-matrix-list-banker .product-list .c-product-card-banker:nth-child(3n) {
+            margin: 0;
+        }
+        .c-product-matrix-list-banker .product-list.even {
+            grid-template-columns: repeat(2, 1fr);
+            padding: 0;
+        }
+        .c-product-matrix-list-banker .product-list.even .c-product-card-banker {
+            width: 100%;
+        }
+        .c-product-matrix-list-banker .product-list.even .c-product-card-banker:nth-child(2n+1) {
+            justify-self: end;
+        }
+        .c-product-matrix-list-banker .product-list.even .c-product-card-banker:nth-child(2n+2) {
+            justify-self: start;
+        }
+        .c-product-matrix-list-banker .product-list.odd {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .c-product-matrix-list-banker .product-list.odd .c-product-card-banker {
+            width: 100%;
+            margin-right: 0;
+        }
+    }
+    @media (min-width: 1140px) {
+        .c-product-matrix-list-banker .product-list {
+            grid-gap: 30px;
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}

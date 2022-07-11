@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:ClientLibraryFolder"
+    allowProxy="{Boolean}true"
+    categories="[edc.ehh.landing.page]"
+    dependencies="[]"
+    embed="[edc.components.ehhfilter,edc.components.ehhsearch,edc.components.ehhsearchresult,edc.components.ehhteamform,edc.event,edc.components.articleauthorsevent,edc.components.eventdatelocation,edc.components.eventrelatedinfo,edc.components.webinarsummary,edc.components.webinarcta,edc.components.grcsearch,edc.components.grctabs,edc.components.productformcards]"/>

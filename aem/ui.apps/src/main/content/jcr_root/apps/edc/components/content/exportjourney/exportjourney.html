@@ -1,0 +1,41 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.multifield="${'com.edc.edcweb.core.helpers.MultifieldReaderHelper' @ multifield='items'}"/>
+<sly data-sly-test.steps="${multifield.fields}"/>
+<sly data-sly-use.genuuid="com.edc.edcweb.core.helpers.GenerateUuid"/>
+<sly data-sly-use.policyReader="com.edc.edcweb.core.models.PolicyReader" />
+<sly data-sly-call="${templates.placeholder @ isEmpty = !steps}"/>
+<sly data-sly-use.datalayer="com.edc.edcweb.core.models.DatalayerEvents"/>
+
+<sly data-sly-test.uuid="${genuuid.generateUuid}"/>
+
+<section data-sly-test="${steps}" class="c-export-journey tab-set ${properties.removesticky != 'true' ? 'sticky' : ''}" aria-labelledby="${uuid}" id="${uuid}" data-event-component="${datalayer.componentTitle != '' ? datalayer.componentTitle : 'Export Journey / Timeline'}" data-event-name="click" data-event-type="export stage" data-event-type-variant="timeline interaction" data-event-engagement="1" data-event-action="main body" data-event-level="secondary" data-event-level-variant="1">
+    <div class="headlines">
+        <h2 data-sly-test="${properties.title}">${properties.title}</h2>
+        <p data-sly-test="${properties.subtitle}">${properties.subtitle}</p>
+    </div>
+    <div class="tabs">
+        <div role="tablist" class="nav-bar">
+            <div class="tab-labels-container">
+                <ul data-sly-list="${steps}" class="tab-labels">
+                    <sly data-sly-test.isFirst="${itemList.index == 0}"/>
+                    <li class="${isFirst ? 'active' : ''}">
+                        <button data-step="${itemList.count}" type="button" class="tab-label ${isFirst ? 'selected' : ''}" id="${item.steptarget}-tab" aria-controls="${item.steptarget}" role="tab" aria-selected="${isFirst}">
+                            <span>${item.steptitle}</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="actions-nav">
+                <button type="button" class="icon icon-arrow-right">
+                    <span>${policyReader.labels['scrollright']}</span>
+                </button>
+                <button type="button" class="icon icon-arrow-left">
+                    <span>${policyReader.labels['scrollleft']}</span>
+                </button>
+            </div>
+        </div>
+        <div id="tab-content" aria-live="polite">
+            <div data-sly-unwrap="${!wcmmode.edit || !wcmmode.design}" data-sly-resource="${'container-layout' @ resourceType='wcm/foundation/components/responsivegrid'}"></div>
+        </div>
+    </div>
+</section>

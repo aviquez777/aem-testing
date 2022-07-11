@@ -1,0 +1,289 @@
+.show-separator,
+.keyline,
+.separator {
+    border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+}
+
+/**paddings for content heading **/
+.spacing-content-headings {
+    margin: 16px 0;
+}
+
+@media (min-width: 960px) {
+    .spacing-content-headings {
+        margin: 32px 0;
+    }
+}
+
+.c-matchmaking-events {
+    box-sizing: border-box;
+    margin-bottom: 48px;
+    margin-top: 48px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.c-matchmaking-events * {
+    box-sizing: border-box;
+}
+
+.c-matchmaking-events .cta {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.c-matchmaking-events .hide,
+.c-matchmaking-events span.error {
+    display: none;
+}
+
+.c-matchmaking-events input[type='checkbox'] {
+    cursor: pointer;
+    float: left;
+}
+
+.c-matchmaking-events .levels {
+    clear: both;
+}
+
+.c-matchmaking-events .levels .bottom-ctas {
+    clear: both;
+}
+
+.c-matchmaking-events .levels .form-ctas .back,
+.c-matchmaking-events .levels .form-ctas .cancel {
+    font-weight: 600;
+}
+
+.c-matchmaking-events .levels .form-ctas .cancel {
+    margin-bottom: 48px;
+}
+
+.c-matchmaking-events .levels .form-group {
+    margin-bottom: 16px;
+}
+
+.c-matchmaking-events .levels .level {
+    min-height: 1px;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    width: 100%;
+}
+
+@media (min-width: 720px) {
+    .c-matchmaking-events .levels .level {
+        width: 100%;
+        float: left;
+    }
+}
+
+.c-matchmaking-events .form-disclaimer {
+    margin-bottom: 32px;
+}
+
+.c-matchmaking-events .form-disclaimer label {
+    color: #191919;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 2;
+    display: table-cell;
+}
+
+@media (min-width: 720px) {
+    .c-matchmaking-events .form-disclaimer label {
+        font-size: .75rem;
+        line-height: 2;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-matchmaking-events .form-disclaimer label {
+        font-size: .75rem;
+        line-height: 2;
+    }
+}
+
+.c-matchmaking-events .form-disclaimer p {
+    color: #191919;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 2;
+    margin-top: 32px;
+}
+
+@media (min-width: 720px) {
+    .c-matchmaking-events .form-disclaimer p {
+        font-size: .75rem;
+        line-height: 2;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-matchmaking-events .form-disclaimer p {
+        font-size: .75rem;
+        line-height: 2;
+    }
+}
+
+.c-matchmaking-events .success-message {
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    width: 100%;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+}
+
+@media (min-width: 720px) {
+    .c-matchmaking-events .success-message {
+        width: 100%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.c-matchmaking-events .success-message p {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.c-matchmaking-events .success-message h2 {
+    margin-bottom: 32px;
+}
+
+.c-matchmaking-events .status {
+    border-top: 1px solid rgba(51, 51, 51, 0.3);
+    clear: both;
+    margin-bottom: 48px;
+    margin-top: 16px;
+}
+
+.c-matchmaking-events .status .status-bar {
+    min-height: 1px;
+    padding-left: 0;
+    padding-right: 15px;
+    position: relative;
+    width: 25%;
+    float: left;
+    border-top: 4px solid #3eb07e;
+}
+
+.c-matchmaking-events .show {
+    display: inline-block;
+}
+
+.c-matchmaking-events .show-block {
+    display: block;
+}
+
+.c-matchmaking-events .show-flex {
+    align-items: center;
+    display: flex;
+    display: -webkit-flex;
+}
+
+.c-matchmaking-events .space-center {
+    justify-content: space-between;
+}
+
+.c-matchmaking-events .space-end {
+    justify-content: flex-end;
+}
+
+.c-matchmaking-events .title-color {
+    color: #4386ac;
+}
+
+@media (min-width: 720px) {
+    .c-matchmaking-events .levels {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 66.66666667%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-matchmaking-events .levels {
+        width: 66.66666667%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-matchmaking-events .levels .form-ctas .cancel {
+        margin-bottom: 0;
+    }
+    .c-matchmaking-events .levels .form-group {
+        margin-bottom: 32px;
+    }
+    .c-matchmaking-events .levels .input-group {
+        display: flex;
+        display: -webkit-flex;
+    }
+    .c-matchmaking-events .levels .input-group .first {
+        padding-right: 16px;
+    }
+    .c-matchmaking-events .levels .input-group .last {
+        padding-left: 16px;
+        padding-right: 0;
+    }
+    .c-matchmaking-events .levels .input-half {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-matchmaking-events .levels .input-half {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-matchmaking-events .success {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-matchmaking-events .success {
+        width: 50%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-matchmaking-events .levels {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 720px) {
+    .c-matchmaking-events .levels {
+        width: 50%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

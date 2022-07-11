@@ -1,0 +1,138 @@
+.show-separator,
+.keyline,
+.separator {
+    border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+}
+
+/**paddings for content heading **/
+.spacing-content-headings {
+    margin: 16px 0;
+}
+
+@media (min-width: 960px) {
+    .spacing-content-headings {
+        margin: 32px 0;
+    }
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin: 0 auto 30px;
+    padding: 48px 35px 175px;
+    position: relative;
+    max-width: 300px;
+    transition: box-shadow .5s ease;
+    box-sizing: border-box;
+}
+
+.product-card * {
+    box-sizing: border-box;
+}
+
+.product-card:hover {
+    box-shadow: 0 0 20px 10px rgba(51, 51, 51, 0.1);
+    transition: box-shadow .5s ease;
+}
+
+.product-card header {
+    text-align: center;
+}
+
+.product-card .title {
+    margin-bottom: 32px;
+    margin-top: 0;
+    padding: 0 30px;
+    font-size: 1.1764em;
+    line-height: 1.2;
+}
+
+.product-card .description {
+    margin-top: 0;
+    padding: 0 30px;
+    text-align: center;
+}
+
+.product-card ul {
+    padding-left: 0;
+}
+
+.product-card ul li {
+    color: #333;
+    font-family: "Georgia", "Times New Roman", Times, serif;
+    font-size: 14px;
+    line-height: 1.7142;
+    padding: 15px 20px;
+    position: relative;
+}
+
+.product-card ul li::after {
+    background: #D8D8D8;
+    bottom: 0;
+    content: '';
+    height: 1px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.product-card ul li::before {
+    background: #333;
+    border-radius: 100%;
+    content: '';
+    display: inline-block;
+    height: 4px;
+    left: 0;
+    position: absolute;
+    top: 23px;
+    width: 4px;
+}
+
+.product-card footer {
+    bottom: 40px;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    transform: translateX(-50%);
+    background: transparent;
+}
+
+.product-card footer .button {
+    box-sizing: border-box;
+    margin-top: 40px;
+    min-width: 210px;
+}
+
+.product-card footer .view-more {
+    margin: 20px 0 0;
+}
+
+.product-card footer .view-more a {
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #2f78c6;
+}
+
+@media (min-width: 720px) {
+    .product-card {
+        box-sizing: border-box;
+        margin: 0 30px 0 0;
+    }
+    .product-card .title {
+        margin-bottom: 48px;
+    }
+}
+
+@media (min-width: 960px) {
+    .product-card {
+        margin-bottom: 0;
+        max-width: 370px;
+    }
+    .product-card .lead-copy {
+        margin-top: 50px;
+    }
+    .product-card .title {
+        font-size: 1.25em;
+        line-height: 1.2;
+    }
+}

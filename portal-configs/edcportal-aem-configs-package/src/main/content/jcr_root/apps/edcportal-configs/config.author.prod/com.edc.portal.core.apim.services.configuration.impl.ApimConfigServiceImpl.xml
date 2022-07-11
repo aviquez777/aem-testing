@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+  xmlns:jcr="http://www.jcp.org/jcr/1.0"
+  jcr:primaryType="sling:OsgiConfig"
+  getResource="https://EDCanada.onmicrosoft.com/8598230e-26b4-44b2-8f35-2e48f7c69d09"
+  getAPIMBaseEndpoint="/current/api/pop/v2/"
+  getOCPAPIMsubscriptionKey="cdf121ed3a064e70bfac20ce68f686bb"/>

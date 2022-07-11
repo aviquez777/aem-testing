@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+  xmlns:jcr="http://www.jcp.org/jcr/1.0"
+  jcr:primaryType="sling:OsgiConfig"
+  getOCPSubscriptionKey="c3e9383dfdb6488fb10f95d488b387d8"
+  getDPResource="api://0c6c587e-a3f3-40e8-8f1a-50c50cd00069"
+  getDPProxyUrl="https://proxyqac.api.edc.ca"
+  getDPBaseEndpoint="/digitalpayments/dev/api/v1/payment/standalone"/> 

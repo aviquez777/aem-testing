@@ -1,0 +1,350 @@
+.c-cim-form {
+    box-sizing: border-box;
+    margin: 3rem 0;
+}
+
+.c-cim-form * {
+    box-sizing: border-box;
+}
+
+.c-cim-form .hide,
+.c-cim-form span.error {
+    display: none;
+}
+
+.c-cim-form .form-group input.error ~ span.error,
+.c-cim-form span.error {
+    margin-bottom: 1rem;
+}
+
+.c-cim-form form {
+    padding: 0 15px;
+}
+
+.c-cim-form form .title {
+    margin: 0 0 1.5rem;
+}
+
+.c-cim-form form .description {
+    margin-bottom: 2rem;
+}
+
+.c-cim-form .form-section {
+    margin-bottom: 2.5rem;
+}
+
+.c-cim-form .form-section .section-title {
+    margin: 0 0 2rem;
+}
+
+.c-cim-form .input-group {
+    display: flex;
+}
+
+.c-cim-form .input-group .first {
+    padding-right: .5rem;
+}
+
+.c-cim-form .input-group .last {
+    padding-left: .5rem;
+    padding-right: 0;
+}
+
+.c-cim-form .input-half {
+    min-height: 1px;
+    padding-left: 0;
+    padding-right: 15px;
+    position: relative;
+    width: 50%;
+}
+
+@media (min-width: 720px) {
+    .c-cim-form .input-half {
+        width: 50%;
+        float: left;
+    }
+}
+
+.c-cim-form .form-submit .form-disclaimer {
+    margin-bottom: 1.5rem;
+}
+
+.c-cim-form .form-submit .form-disclaimer p {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    letter-spacing: 0.4px;
+    line-height: 2;
+    line-height: 1rem;
+}
+
+@media (min-width: 720px) {
+    .c-cim-form .form-submit .form-disclaimer p {
+        font-size: .75rem;
+        line-height: 2;
+        letter-spacing: 0.4px;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-cim-form .form-submit .form-disclaimer p {
+        font-size: .75rem;
+        line-height: 2;
+        letter-spacing: 0.4px;
+    }
+}
+
+.c-cim-form .form-submit .form-disclaimer p:last-child {
+    margin: 0;
+}
+
+.c-cim-form .form-submit .button {
+    width: 100%;
+}
+
+.c-cim-form .message-wrapper {
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    width: 100%;
+    float: left;
+    display: inline-block;
+    float: none;
+}
+
+.c-cim-form .message-wrapper .success-message {
+    border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+    margin-bottom: 3.5rem;
+    padding-bottom: 3.5rem;
+}
+
+.c-cim-form .message-content {
+    align-items: center;
+    display: flex;
+    flex-flow: column;
+}
+
+.c-cim-form .message-content .success {
+    height: 82px;
+    margin-bottom: 1.5rem;
+    width: 82px;
+}
+
+.c-cim-form .message-content .title {
+    margin: 0 0 1.5rem;
+    text-align: center;
+}
+
+.c-cim-form .message-content .description {
+    text-align: center;
+}
+
+.c-cim-form .message-content .description p:last-child {
+    margin: 0;
+}
+
+.c-cim-form .message-content .isv-code {
+    margin: 1.5rem 0 0;
+    text-align: center;
+}
+
+.c-cim-form .message-content .isv-code p {
+    color: #333;
+    font-family: "benton-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.7142;
+    margin-bottom: 0;
+}
+
+@media (min-width: 720px) {
+    .c-cim-form .message-content .isv-code p {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-cim-form .message-content .isv-code p {
+        font-size: .875rem;
+        line-height: 1.7142;
+        letter-spacing: 0;
+    }
+}
+
+.c-cim-form .insight-guide {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.c-cim-form .insight-guide .title {
+    margin: 0 0 1.5rem;
+}
+
+.c-cim-form .insight-guide .description {
+    margin-bottom: 2.5rem;
+}
+
+.c-cim-form .insight-guide .description p:last-child {
+    margin-bottom: 0;
+}
+
+.c-cim-form .insight-guide .button {
+    width: 100%;
+}
+
+@media (min-width: 720px) {
+    .c-cim-form form,
+    .c-cim-form .message-content,
+    .c-cim-form .insight-guide,
+    .c-cim-form .c-processing-screen {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 66.66666667%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-cim-form form,
+    .c-cim-form .message-content,
+    .c-cim-form .insight-guide,
+    .c-cim-form .c-processing-screen {
+        width: 66.66666667%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-cim-form .form.title {
+        margin-bottom: 2rem;
+    }
+    .c-cim-form .form-submit {
+        align-items: center;
+        display: flex;
+    }
+    .c-cim-form .form-submit .form-disclaimer {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 15px;
+        position: relative;
+        width: 62.5%;
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-cim-form .form-submit .form-disclaimer {
+        width: 62.5%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-cim-form .form-submit .form-cta {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 0;
+        position: relative;
+        width: 37.5%;
+    }
+}
+
+@media (min-width: 720px) and (min-width: 720px) {
+    .c-cim-form .form-submit .form-cta {
+        width: 37.5%;
+        float: left;
+    }
+}
+
+@media (min-width: 720px) {
+    .c-cim-form .message-wrapper .success-message {
+        margin-bottom: 4.5rem;
+        padding-bottom: 4.5rem;
+    }
+    .c-cim-form .isv-code {
+        display: flex;
+    }
+    .c-cim-form .insight-guide {
+        margin-bottom: 2rem;
+    }
+    .c-cim-form .insight-guide .button {
+        width: auto;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-cim-form form,
+    .c-cim-form .message-content,
+    .c-cim-form .insight-guide,
+    .c-cim-form .c-processing-screen {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 720px) {
+    .c-cim-form form,
+    .c-cim-form .message-content,
+    .c-cim-form .insight-guide,
+    .c-cim-form .c-processing-screen {
+        width: 50%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-cim-form .form-submit .form-disclaimer {
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 15px;
+        position: relative;
+        width: 66.66666667%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 720px) {
+    .c-cim-form .form-submit .form-disclaimer {
+        width: 66.66666667%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-cim-form .form-submit .form-cta {
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 0;
+        position: relative;
+        width: 33.33333333%;
+    }
+}
+
+@media (min-width: 960px) and (min-width: 720px) {
+    .c-cim-form .form-submit .form-cta {
+        width: 33.33333333%;
+        float: left;
+    }
+}
+
+@media (min-width: 960px) {
+    .c-cim-form .message-wrapper .success-message {
+        margin-bottom: 6.5rem;
+        padding-bottom: 6.5rem;
+    }
+    .c-cim-form .insight-guide {
+        margin-bottom: 3.5rem;
+    }
+}
